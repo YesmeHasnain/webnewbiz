@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Plan;
 use App\Models\Subscription;
 use App\Models\User;
+use App\Notifications\WelcomeNotification;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
@@ -30,6 +31,11 @@ class AuthController extends Controller
         if (Auth::attempt($credentials, $request->boolean('remember'))) {
             $request->session()->regenerate();
             Auth::user()->update(['last_login_at' => now()]);
+
+            // Support redirect parameter (from AI builder modal)
+            if ($request->filled('redirect')) {
+                return redirect($request->input('redirect'));
+            }
 
             return redirect()->intended(route('dashboard'));
         }
@@ -74,6 +80,12 @@ class AuthController extends Controller
         }
 
         Auth::login($user);
+        $user->notify(new WelcomeNotification());
+
+        // Support redirect parameter (from AI builder modal)
+        if ($request->filled('redirect')) {
+            return redirect($request->input('redirect'));
+        }
 
         return redirect()->route('dashboard');
     }

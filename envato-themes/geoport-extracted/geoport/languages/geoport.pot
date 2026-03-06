@@ -1,0 +1,5699 @@
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Geoport\n"
+"POT-Creation-Date: 2024-05-30 12:39+0600\n"
+"PO-Revision-Date: 2020-04-23 18:24+0600\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
+"X-Generator: Poedit 3.4.1\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-Flags-xgettext: --add-comments=translators:\n"
+"X-Poedit-WPHeader: style.css\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;"
+"esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;_n_noop:1,2;"
+"_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPathExcluded-0: *.js\n"
+
+#: 404.php:67
+#: inc/plugins/geoport-master/framework/config/framework.config.php:2082
+msgid "404"
+msgstr ""
+
+#: 404.php:68
+msgid "Sorry, Page Not Found"
+msgstr ""
+
+#: 404.php:69
+msgid "The page you are looking for was removed or might never existed."
+msgstr ""
+
+#: 404.php:71
+msgid "Go Back Home"
+msgstr ""
+
+#. translators: 1: title.
+#: comments.php:31 comments.php:112
+msgid "Comment"
+msgstr ""
+
+#. translators: 1: comment count number, 2: title.
+#: comments.php:37
+#, php-format
+msgctxt "comments title"
+msgid "%1$s Comment"
+msgid_plural "%1$s Comments"
+msgstr[0] ""
+msgstr[1] ""
+
+#: comments.php:63
+msgid "Comment navigation"
+msgstr ""
+
+#: comments.php:64
+msgid "&larr; Older Comments"
+msgstr ""
+
+#: comments.php:65
+msgid "Newer Comments &rarr;"
+msgstr ""
+
+#: comments.php:73
+msgid "Comments are closed."
+msgstr ""
+
+#: comments.php:91
+msgid "Name *"
+msgstr ""
+
+#: comments.php:95
+msgid "Email *"
+msgstr ""
+
+#: comments.php:105
+msgid "Post a Comment"
+msgstr ""
+
+#: comments.php:108
+msgid "Cancel Comment"
+msgstr ""
+
+#: comments.php:109
+msgid "Submit"
+msgstr ""
+
+#: comments.php:114
+msgid "Post Comment"
+msgstr ""
+
+#: footers/copyright.php:7
+msgid "Copyright &copy; 2024 by - Geoport"
+msgstr ""
+
+#: headers/logo.php:44 headers/logo.php:63 headers/logo.php:65
+#: headers/logo.php:67
+msgid "Geoport logo"
+msgstr ""
+
+#: headers/logo.php:47 headers/logo.php:49 headers/logo.php:51
+msgid "Chariton logo"
+msgstr ""
+
+#: headers/menu.php:13
+msgid "Add a menu"
+msgstr ""
+
+#: inc/class-tgm-plugin-activation.php:334
+msgid "Install Required Plugins"
+msgstr ""
+
+#: inc/class-tgm-plugin-activation.php:335
+msgid "Install Plugins"
+msgstr ""
+
+#. translators: %s: plugin name.
+#: inc/class-tgm-plugin-activation.php:337
+#, php-format
+msgid "Installing Plugin: %s"
+msgstr ""
+
+#. translators: %s: plugin name.
+#: inc/class-tgm-plugin-activation.php:339
+#, php-format
+msgid "Updating Plugin: %s"
+msgstr ""
+
+#: inc/class-tgm-plugin-activation.php:340
+msgid "Something went wrong with the plugin API."
+msgstr ""
+
+#. translators: 1: plugin name(s).
+#: inc/class-tgm-plugin-activation.php:343
+#, php-format
+msgid "This theme requires the following plugin: %1$s."
+msgid_plural "This theme requires the following plugins: %1$s."
+msgstr[0] ""
+msgstr[1] ""
+
+#. translators: 1: plugin name(s).
+#: inc/class-tgm-plugin-activation.php:349
+#, php-format
+msgid "This theme recommends the following plugin: %1$s."
+msgid_plural "This theme recommends the following plugins: %1$s."
+msgstr[0] ""
+msgstr[1] ""
+
+#. translators: 1: plugin name(s).
+#: inc/class-tgm-plugin-activation.php:355
+#, php-format
+msgid ""
+"The following plugin needs to be updated to its latest version to ensure "
+"maximum compatibility with this theme: %1$s."
+msgid_plural ""
+"The following plugins need to be updated to their latest version to ensure "
+"maximum compatibility with this theme: %1$s."
+msgstr[0] ""
+msgstr[1] ""
+
+#. translators: 1: plugin name(s).
+#: inc/class-tgm-plugin-activation.php:361
+#, php-format
+msgid "There is an update available for: %1$s."
+msgid_plural "There are updates available for the following plugins: %1$s."
+msgstr[0] ""
+msgstr[1] ""
+
+#. translators: 1: plugin name(s).
+#: inc/class-tgm-plugin-activation.php:367
+#, php-format
+msgid "The following required plugin is currently inactive: %1$s."
+msgid_plural "The following required plugins are currently inactive: %1$s."
+msgstr[0] ""
+msgstr[1] ""
+
+#. translators: 1: plugin name(s).
+#: inc/class-tgm-plugin-activation.php:373
+#, php-format
+msgid "The following recommended plugin is currently inactive: %1$s."
+msgid_plural "The following recommended plugins are currently inactive: %1$s."
+msgstr[0] ""
+msgstr[1] ""
+
+#: inc/class-tgm-plugin-activation.php:378
+msgid "Begin installing plugin"
+msgid_plural "Begin installing plugins"
+msgstr[0] ""
+msgstr[1] ""
+
+#: inc/class-tgm-plugin-activation.php:383
+msgid "Begin updating plugin"
+msgid_plural "Begin updating plugins"
+msgstr[0] ""
+msgstr[1] ""
+
+#: inc/class-tgm-plugin-activation.php:388
+msgid "Begin activating plugin"
+msgid_plural "Begin activating plugins"
+msgstr[0] ""
+msgstr[1] ""
+
+#: inc/class-tgm-plugin-activation.php:392
+msgid "Return to Required Plugins Installer"
+msgstr ""
+
+#: inc/class-tgm-plugin-activation.php:393
+#: inc/class-tgm-plugin-activation.php:912
+#: inc/class-tgm-plugin-activation.php:2618
+#: inc/class-tgm-plugin-activation.php:3634
+msgid "Return to the Dashboard"
+msgstr ""
+
+#: inc/class-tgm-plugin-activation.php:394
+#: inc/class-tgm-plugin-activation.php:3244
+msgid "Plugin activated successfully."
+msgstr ""
+
+#: inc/class-tgm-plugin-activation.php:395
+#: inc/class-tgm-plugin-activation.php:3037
+msgid "The following plugin was activated successfully:"
+msgid_plural "The following plugins were activated successfully:"
+msgstr[0] ""
+msgstr[1] ""
+
+#. translators: 1: plugin name.
+#: inc/class-tgm-plugin-activation.php:397
+#, php-format
+msgid "No action taken. Plugin %1$s was already active."
+msgstr ""
+
+#. translators: 1: plugin name.
+#: inc/class-tgm-plugin-activation.php:399
+#, php-format
+msgid ""
+"Plugin not activated. A higher version of %s is needed for this theme. "
+"Please update the plugin."
+msgstr ""
+
+#. translators: 1: dashboard link.
+#: inc/class-tgm-plugin-activation.php:401
+#, php-format
+msgid "All plugins installed and activated successfully. %1$s"
+msgstr ""
+
+#: inc/class-tgm-plugin-activation.php:402
+msgid "Dismiss this notice"
+msgstr ""
+
+#: inc/class-tgm-plugin-activation.php:403
+msgid ""
+"There are one or more required or recommended plugins to install, update or "
+"activate."
+msgstr ""
+
+#: inc/class-tgm-plugin-activation.php:404
+msgid "Please contact the administrator of this site for help."
+msgstr ""
+
+#: inc/class-tgm-plugin-activation.php:607
+msgid "This plugin needs to be updated to be compatible with your theme."
+msgstr ""
+
+#: inc/class-tgm-plugin-activation.php:608
+msgid "Update Required"
+msgstr ""
+
+#: inc/class-tgm-plugin-activation.php:1019
+msgid ""
+"The remote plugin package does not contain a folder with the desired slug "
+"and renaming did not work."
+msgstr ""
+
+#: inc/class-tgm-plugin-activation.php:1019
+#: inc/class-tgm-plugin-activation.php:1022
+msgid ""
+"Please contact the plugin provider and ask them to package their plugin "
+"according to the WordPress guidelines."
+msgstr ""
+
+#: inc/class-tgm-plugin-activation.php:1022
+msgid ""
+"The remote plugin package consists of more than one file, but the files are "
+"not packaged in a folder."
+msgstr ""
+
+#: inc/class-tgm-plugin-activation.php:1206
+#: inc/class-tgm-plugin-activation.php:3033
+msgctxt "plugin A *and* plugin B"
+msgid "and"
+msgstr ""
+
+#. translators: %s: version number
+#: inc/class-tgm-plugin-activation.php:2067
+#, php-format
+msgid "TGMPA v%s"
+msgstr ""
+
+#: inc/class-tgm-plugin-activation.php:2358
+msgid "Required"
+msgstr ""
+
+#: inc/class-tgm-plugin-activation.php:2361
+msgid "Recommended"
+msgstr ""
+
+#: inc/class-tgm-plugin-activation.php:2377
+msgid "WordPress Repository"
+msgstr ""
+
+#: inc/class-tgm-plugin-activation.php:2380
+msgid "External Source"
+msgstr ""
+
+#: inc/class-tgm-plugin-activation.php:2383
+msgid "Pre-Packaged"
+msgstr ""
+
+#: inc/class-tgm-plugin-activation.php:2400
+msgid "Not Installed"
+msgstr ""
+
+#: inc/class-tgm-plugin-activation.php:2404
+msgid "Installed But Not Activated"
+msgstr ""
+
+#: inc/class-tgm-plugin-activation.php:2406
+msgid "Active"
+msgstr ""
+
+#: inc/class-tgm-plugin-activation.php:2412
+msgid "Required Update not Available"
+msgstr ""
+
+#: inc/class-tgm-plugin-activation.php:2415
+msgid "Requires Update"
+msgstr ""
+
+#: inc/class-tgm-plugin-activation.php:2418
+msgid "Update recommended"
+msgstr ""
+
+#. translators: 1: install status, 2: update status
+#: inc/class-tgm-plugin-activation.php:2427
+#, php-format
+msgctxt "Install/Update Status"
+msgid "%1$s, %2$s"
+msgstr ""
+
+#. translators: 1: number of plugins.
+#: inc/class-tgm-plugin-activation.php:2473
+#, php-format
+msgctxt "plugins"
+msgid "All <span class=\"count\">(%s)</span>"
+msgid_plural "All <span class=\"count\">(%s)</span>"
+msgstr[0] ""
+msgstr[1] ""
+
+#. translators: 1: number of plugins.
+#: inc/class-tgm-plugin-activation.php:2477
+#, php-format
+msgid "To Install <span class=\"count\">(%s)</span>"
+msgid_plural "To Install <span class=\"count\">(%s)</span>"
+msgstr[0] ""
+msgstr[1] ""
+
+#. translators: 1: number of plugins.
+#: inc/class-tgm-plugin-activation.php:2481
+#, php-format
+msgid "Update Available <span class=\"count\">(%s)</span>"
+msgid_plural "Update Available <span class=\"count\">(%s)</span>"
+msgstr[0] ""
+msgstr[1] ""
+
+#. translators: 1: number of plugins.
+#: inc/class-tgm-plugin-activation.php:2485
+#, php-format
+msgid "To Activate <span class=\"count\">(%s)</span>"
+msgid_plural "To Activate <span class=\"count\">(%s)</span>"
+msgstr[0] ""
+msgstr[1] ""
+
+#: inc/class-tgm-plugin-activation.php:2567
+msgctxt "as in: \"version nr unknown\""
+msgid "unknown"
+msgstr ""
+
+#: inc/class-tgm-plugin-activation.php:2575
+msgid "Installed version:"
+msgstr ""
+
+#: inc/class-tgm-plugin-activation.php:2583
+msgid "Minimum required version:"
+msgstr ""
+
+#: inc/class-tgm-plugin-activation.php:2595
+msgid "Available version:"
+msgstr ""
+
+#: inc/class-tgm-plugin-activation.php:2618
+msgid "No plugins to install, update or activate."
+msgstr ""
+
+#: inc/class-tgm-plugin-activation.php:2632
+msgid "Plugin"
+msgstr ""
+
+#: inc/class-tgm-plugin-activation.php:2633
+msgid "Source"
+msgstr ""
+
+#: inc/class-tgm-plugin-activation.php:2634
+msgid "Type"
+msgstr ""
+
+#: inc/class-tgm-plugin-activation.php:2638
+msgid "Version"
+msgstr ""
+
+#: inc/class-tgm-plugin-activation.php:2639
+msgid "Status"
+msgstr ""
+
+#. translators: %2$s: plugin name in screen reader markup
+#: inc/class-tgm-plugin-activation.php:2688
+#, php-format
+msgid "Install %2$s"
+msgstr ""
+
+#. translators: %2$s: plugin name in screen reader markup
+#: inc/class-tgm-plugin-activation.php:2693
+#, php-format
+msgid "Update %2$s"
+msgstr ""
+
+#. translators: %2$s: plugin name in screen reader markup
+#: inc/class-tgm-plugin-activation.php:2699
+#, php-format
+msgid "Activate %2$s"
+msgstr ""
+
+#: inc/class-tgm-plugin-activation.php:2769
+msgid "Upgrade message from the plugin author:"
+msgstr ""
+
+#: inc/class-tgm-plugin-activation.php:2802
+msgid "Install"
+msgstr ""
+
+#: inc/class-tgm-plugin-activation.php:2808
+msgid "Update"
+msgstr ""
+
+#: inc/class-tgm-plugin-activation.php:2811
+msgid "Activate"
+msgstr ""
+
+#: inc/class-tgm-plugin-activation.php:2842
+msgid "No plugins were selected to be installed. No action taken."
+msgstr ""
+
+#: inc/class-tgm-plugin-activation.php:2844
+msgid "No plugins were selected to be updated. No action taken."
+msgstr ""
+
+#: inc/class-tgm-plugin-activation.php:2885
+msgid "No plugins are available to be installed at this time."
+msgstr ""
+
+#: inc/class-tgm-plugin-activation.php:2887
+msgid "No plugins are available to be updated at this time."
+msgstr ""
+
+#: inc/class-tgm-plugin-activation.php:2993
+msgid "No plugins were selected to be activated. No action taken."
+msgstr ""
+
+#: inc/class-tgm-plugin-activation.php:3019
+msgid "No plugins are available to be activated at this time."
+msgstr ""
+
+#: inc/class-tgm-plugin-activation.php:3243
+msgid "Plugin activation failed."
+msgstr ""
+
+#. translators: 1: plugin name, 2: action number 3: total number of actions.
+#: inc/class-tgm-plugin-activation.php:3552
+#, php-format
+msgid "Updating Plugin %1$s (%2$d/%3$d)"
+msgstr ""
+
+#. translators: 1: plugin name, 2: error message.
+#: inc/class-tgm-plugin-activation.php:3555
+#, php-format
+msgid "An error occurred while installing %1$s: <strong>%2$s</strong>."
+msgstr ""
+
+#. translators: 1: plugin name.
+#: inc/class-tgm-plugin-activation.php:3557
+#, php-format
+msgid "The installation of %1$s failed."
+msgstr ""
+
+#: inc/class-tgm-plugin-activation.php:3561
+msgid ""
+"The installation and activation process is starting. This process may take a "
+"while on some hosts, so please be patient."
+msgstr ""
+
+#. translators: 1: plugin name.
+#: inc/class-tgm-plugin-activation.php:3563
+#: inc/class-tgm-plugin-activation.php:3571
+#, php-format
+msgid "%1$s done."
+msgstr ""
+
+#: inc/class-tgm-plugin-activation.php:3564
+msgid "All installations and activations have been completed."
+msgstr ""
+
+#. translators: 1: plugin name, 2: action number 3: total number of actions.
+#: inc/class-tgm-plugin-activation.php:3566
+#, php-format
+msgid "Installing and Activating Plugin %1$s (%2$d/%3$d)"
+msgstr ""
+
+#: inc/class-tgm-plugin-activation.php:3569
+msgid ""
+"The installation process is starting. This process may take a while on some "
+"hosts, so please be patient."
+msgstr ""
+
+#: inc/class-tgm-plugin-activation.php:3572
+msgid "All installations have been completed."
+msgstr ""
+
+#. translators: 1: plugin name, 2: action number 3: total number of actions.
+#: inc/class-tgm-plugin-activation.php:3574
+#, php-format
+msgid "Installing Plugin %1$s (%2$d/%3$d)"
+msgstr ""
+
+#: inc/core/geoport-scripts.php:11
+msgctxt "Google font: on or off"
+msgid "on"
+msgstr ""
+
+#: inc/core/geoport-themesetup.php:61
+msgid "Primary Menu"
+msgstr ""
+
+#: inc/core/geoport-themesetup.php:128
+msgid "Sidebar Widgets"
+msgstr ""
+
+#: inc/core/geoport-themesetup.php:130
+msgid "Widgets in this area will be shown on page Sidebar."
+msgstr ""
+
+#: inc/core/geoport-themesetup.php:137
+msgid "Footer Widgets 1"
+msgstr ""
+
+#: inc/core/geoport-themesetup.php:139 inc/core/geoport-themesetup.php:148
+#: inc/core/geoport-themesetup.php:157 inc/core/geoport-themesetup.php:166
+#: inc/plugins/geoport-master/inc/custom-widgets.php:20
+#: inc/plugins/geoport-master/inc/custom-widgets.php:29
+#: inc/plugins/geoport-master/inc/custom-widgets.php:38
+msgid "Widgets in this area will be shown on footer."
+msgstr ""
+
+#: inc/core/geoport-themesetup.php:146
+msgid "Footer Widgets 2"
+msgstr ""
+
+#: inc/core/geoport-themesetup.php:155
+msgid "Footer Widgets 3"
+msgstr ""
+
+#: inc/core/geoport-themesetup.php:164
+msgid "Footer Widgets 4"
+msgstr ""
+
+#: inc/core/geoport-themesetup.php:174
+msgid "Shop Sidebar"
+msgstr ""
+
+#: inc/extras.php:26
+msgid "Pingback:"
+msgstr ""
+
+#: inc/extras.php:26
+msgid "(Edit)"
+msgstr ""
+
+#: inc/extras.php:46
+msgid "Reply"
+msgstr ""
+
+#: inc/extras.php:48
+msgid " at "
+msgstr ""
+
+#: inc/extras.php:77
+msgid "Enter Search Keywords"
+msgstr ""
+
+#: inc/extras.php:130 inc/extras.php:149
+#: inc/plugins/geoport-master/framework/config/framework.config.php:1512
+msgid "Blog Posts"
+msgstr ""
+
+#: inc/extras.php:137 inc/extras.php:148
+#: inc/plugins/geoport-master/framework/config/framework.config.php:1860
+msgid "Team Details"
+msgstr ""
+
+#: inc/extras.php:150
+#: inc/plugins/geoport-master/framework/config/framework.config.php:2075
+msgid "404 Error"
+msgstr ""
+
+#: inc/extras.php:268 inc/extras.php:855 inc/template-tags.php:118
+msgid "Home"
+msgstr ""
+
+#: inc/extras.php:343
+#, php-format
+msgid "Search for: %s"
+msgstr ""
+
+#: inc/plugins/geoport-master/demo-importer/import.php:47
+msgid "Are you sure? you want to setup home 1 as a front page ?"
+msgstr ""
+
+#: inc/plugins/geoport-master/demo-importer/import.php:64
+msgid "Are you sure? you want to setup home 2 as a front page ?"
+msgstr ""
+
+#: inc/plugins/geoport-master/demo-importer/import.php:81
+msgid "Are you sure? you want to setup home 3 as a front page ?"
+msgstr ""
+
+#: inc/plugins/geoport-master/demo-importer/import.php:179
+#: inc/plugins/geoport-master/demo-importer/import.php:180
+msgid "Install Demos"
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/classes/framework.class.php:171
+msgid "Success. Imported backup options."
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/classes/framework.class.php:176
+msgid "Default options restored."
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/classes/framework.class.php:195
+msgid "Default options restored for only this section."
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/classes/framework.class.php:333
+msgid "Settings saved."
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/classes/framework.class.php:335
+msgid "Save"
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/classes/framework.class.php:335
+msgid "Saving..."
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/classes/framework.class.php:336
+msgid "Restore"
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/classes/framework.class.php:339
+#: inc/plugins/geoport-master/framework/fields/backup/backup.php:29
+msgid "Reset All Options"
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/classes/framework.class.php:343
+msgid "show all options"
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/classes/options.class.php:125
+msgid "CONFIG"
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/classes/options.class.php:131
+#: inc/plugins/geoport-master/framework/classes/options.class.php:151
+msgid "USAGE"
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/classes/options.class.php:137
+msgid "VALUE"
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/classes/options.class.php:155
+msgid "ID"
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/classes/options.class.php:227
+#, php-format
+msgid "You are editing language: ( %s )"
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/classes/shortcode.class.php:82
+#: inc/plugins/geoport-master/framework/classes/shortcode.class.php:90
+#: inc/plugins/geoport-master/framework/fields/textarea/textarea.php:27
+msgid "Add Shortcode"
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/classes/shortcode.class.php:92
+msgid "Select a shortcode"
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/classes/shortcode.class.php:108
+msgid "Insert Shortcode"
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/framework.config.php:8
+msgid "Geoport Options"
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/framework.config.php:13
+msgid "Geoport <small>by Johanspond</small>"
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/framework.config.php:29
+msgid "General Settings"
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/framework.config.php:40
+msgid "Favicon Settings"
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/framework.config.php:45
+msgid "Upload Favicon Icon"
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/framework.config.php:47
+msgid "Site Icons should be square and Recommended size is 32 × 32 pixels."
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/framework.config.php:51
+msgid "Logo Settings"
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/framework.config.php:56
+msgid "Uplaod Logo"
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/framework.config.php:58
+#: inc/plugins/geoport-master/framework/config/framework.config.php:65
+msgid "Recommended image size is 200x60 png file"
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/framework.config.php:63
+msgid "Upload Sticky Logo"
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/framework.config.php:70
+msgid "Logo Width"
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/framework.config.php:72
+msgid "Put logo width as like as default value"
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/framework.config.php:77
+msgid "Logo Padding Top"
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/framework.config.php:79
+#: inc/plugins/geoport-master/framework/config/framework.config.php:86
+msgid "Put logo padding top like as default value"
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/framework.config.php:84
+msgid "Logo Padding Bottom"
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/framework.config.php:99
+#: inc/plugins/geoport-master/framework/config/metabox.config.php:272
+msgid "Breadcrumb Settings"
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/framework.config.php:104
+msgid "Breadcrumb Enable/Disable Switch"
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/framework.config.php:110
+msgid "Breadcrumb Background Type"
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/framework.config.php:111
+msgid "Select breadcrumb background image type color or image."
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/framework.config.php:122
+msgid "Breadcrumb Background Image"
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/framework.config.php:124
+msgid ""
+"Upload Breadcrumb Background Image. Recommended image size is 1920x400 jpg/"
+"png file, for secondary header"
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/framework.config.php:130
+msgid "Breadcrumb image overlay color"
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/framework.config.php:131
+msgid "Choose breadcrumb overlay color."
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/framework.config.php:138
+msgid "Breadcrumb Image Opacity"
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/framework.config.php:139
+msgid "Select breadcrumb background image opacity."
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/framework.config.php:158
+msgid "Breadcrumb Background Color"
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/framework.config.php:159
+msgid "Choose breadcrumb background color."
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/framework.config.php:166
+msgid "Breadcrumb Section Padding Top"
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/framework.config.php:167
+#: inc/plugins/geoport-master/framework/config/metabox.config.php:323
+msgid "Breadcrumb padding top with px ( like as 350px )."
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/framework.config.php:173
+msgid "Breadcrumb Section Padding Bottom"
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/framework.config.php:174
+#: inc/plugins/geoport-master/framework/config/framework.config.php:246
+#: inc/plugins/geoport-master/framework/config/metabox.config.php:331
+msgid "Breadcrumb padding bottom with px ( like as 350px )."
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/framework.config.php:180
+#: inc/plugins/geoport-master/framework/config/framework.config.php:245
+msgid "Breadcrumb Title Font Size"
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/framework.config.php:181
+msgid "Breadcrumb title font size with px ( like as 42px )."
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/framework.config.php:188
+msgid "Choose default breadcrumb font weight"
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/framework.config.php:205
+msgid "Choose default breadcrumb text transform"
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/framework.config.php:220
+msgid "Breadcrumb Font Color"
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/framework.config.php:221
+msgid "Choose breadcrumb font color."
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/framework.config.php:227
+msgid "Breadcrumb Hover Link Color"
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/framework.config.php:228
+msgid "Choose breadcrumb hover link font color."
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/framework.config.php:234
+msgid "Breadcrumb Meta Switch"
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/framework.config.php:235
+msgid "Enable/Disable breadcrumb meta navigation label."
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/framework.config.php:240
+msgid "Breadcrumb Responsive Settings"
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/framework.config.php:252
+msgid "Mobile padding top"
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/framework.config.php:253
+msgid "Breadcrumb mobile device padding top with px ( like as 350px )."
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/framework.config.php:259
+msgid "Mobile padding bottom"
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/framework.config.php:260
+msgid "Breadcrumb mobile device padding bottom with px ( like as 50px )."
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/framework.config.php:276
+msgid "Preloader Settings"
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/framework.config.php:281
+msgid "Preloader Switcher"
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/framework.config.php:282
+msgid "Enable/Disable site preloader."
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/framework.config.php:287
+msgid "Spine Preloader"
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/framework.config.php:293
+msgid "Spine Preloader Switcher"
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/framework.config.php:294
+msgid "Enable/Disable Spine Preloader."
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/framework.config.php:301
+msgid "Preloader circle color"
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/framework.config.php:302
+msgid "Choose preloader circle color."
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/framework.config.php:309
+msgid "Preloader circle spine color"
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/framework.config.php:310
+msgid "Choose preloader circle spine color."
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/framework.config.php:318
+msgid "Text Preloader"
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/framework.config.php:324
+msgid "Text Preloader Switcher"
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/framework.config.php:331
+msgid "Preloader Text"
+msgstr ""
+
+#. Theme Name of the plugin/theme
+#: inc/plugins/geoport-master/framework/config/framework.config.php:332
+#: inc/plugins/geoport-master/geoport-elements/geoport-elements.php:43
+msgid "Geoport"
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/framework.config.php:333
+msgid "Put loading texty without space"
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/framework.config.php:339
+msgid "Preloader text color"
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/framework.config.php:340
+msgid "Choose preloader color"
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/framework.config.php:347
+msgid "Preloader text bg watermark color"
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/framework.config.php:348
+msgid "Choose preloader watermark text color"
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/framework.config.php:355
+msgid "Preloader background color"
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/framework.config.php:356
+msgid "Choose preloader background color"
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/framework.config.php:364
+msgid "Scroll to Top"
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/framework.config.php:369
+msgid "Scroll to top on?"
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/framework.config.php:370
+msgid "Enable/Disable scroll to top button."
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/framework.config.php:375
+msgid "Scroll to top icon"
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/framework.config.php:376
+msgid "Choose scroll to top icon."
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/framework.config.php:383
+msgid "Scroll to top background color"
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/framework.config.php:384
+msgid "Choose scroll to top background color."
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/framework.config.php:391
+msgid "Scroll to top font color"
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/framework.config.php:392
+msgid "Choose scroll to top font color."
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/framework.config.php:399
+#: inc/plugins/geoport-master/geoport-elements/widgets/icon-list.php:328
+msgid "Border Radius"
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/framework.config.php:401
+msgid "Put border radius 1-100, it count as a persantage"
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/framework.config.php:420
+msgid "Typography Settings"
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/framework.config.php:432
+msgid "Site Font Settings"
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/framework.config.php:437
+msgid "Body Font"
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/framework.config.php:438
+msgid "Select body font family."
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/framework.config.php:448
+msgid "Body Font Size"
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/framework.config.php:449
+msgid "Select body font size."
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/framework.config.php:455
+msgid "Select body font line height."
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/framework.config.php:456
+msgid "Line Height"
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/framework.config.php:470
+msgid "Heading Font Settings"
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/framework.config.php:475
+msgid "Heading Font"
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/framework.config.php:476
+msgid "Select heading font family."
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/framework.config.php:494
+msgid "Site Color Settings"
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/framework.config.php:499
+msgid "Theme Base Color"
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/framework.config.php:500
+msgid "Choose your website default color."
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/framework.config.php:505
+msgid "Default Button Color Settings"
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/framework.config.php:510
+msgid "Page Button Background Color"
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/framework.config.php:511
+msgid "Choose your website button background color."
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/framework.config.php:517
+msgid "Page Button Text Color"
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/framework.config.php:518
+msgid "Choose your website button text color."
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/framework.config.php:524
+msgid "Page Button Icon Color"
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/framework.config.php:525
+msgid "Choose your website button icon color."
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/framework.config.php:531
+msgid "Page Button Hover Background Color"
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/framework.config.php:532
+msgid "Choose your website button hover background color."
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/framework.config.php:538
+msgid "Page Button Hover Text Color"
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/framework.config.php:539
+msgid "Choose your website button hover text color."
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/framework.config.php:545
+msgid "Page Button Hover Icon Color"
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/framework.config.php:546
+msgid "Choose your website button hover  icon color."
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/framework.config.php:551
+msgid "Slider Button Color Settings"
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/framework.config.php:556
+msgid "Button One Background Color"
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/framework.config.php:557
+msgid "Choose slider button one background color."
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/framework.config.php:563
+msgid "Button One Hover Background Color"
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/framework.config.php:564
+msgid "Choose slider button one hover background color."
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/framework.config.php:570
+msgid "Button One Text Color"
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/framework.config.php:571
+msgid "Choose slider button one text color."
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/framework.config.php:577
+msgid "Button One Hover Text Color"
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/framework.config.php:578
+msgid "Choose slider button one hover text color."
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/framework.config.php:584
+msgid "Button Two Background Color"
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/framework.config.php:585
+msgid "Choose slider button two background color."
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/framework.config.php:591
+msgid "Button Two Hover Background Color"
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/framework.config.php:592
+msgid "Choose slider button two hover background color."
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/framework.config.php:598
+msgid "Button Two Text Color"
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/framework.config.php:599
+msgid "Choose slider button two text color."
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/framework.config.php:605
+msgid "Button Two Hover Text Color"
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/framework.config.php:606
+msgid "Choose slider button two hover text color."
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/framework.config.php:622
+msgid "Header Top Settings"
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/framework.config.php:634
+#: inc/plugins/geoport-master/framework/config/metabox.config.php:23
+msgid "Header Settings"
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/framework.config.php:639
+msgid "Header Top Part On?"
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/framework.config.php:640
+msgid "Enable/Disable Header Top Part."
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/framework.config.php:645
+msgid "Top Header Left List"
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/framework.config.php:650
+msgid "Header Left List On?"
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/framework.config.php:651
+msgid "Enable/Disable Header Left Info"
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/framework.config.php:657
+#: inc/plugins/geoport-master/framework/config/framework.config.php:751
+msgid "Header top left menu"
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/framework.config.php:658
+#: inc/plugins/geoport-master/framework/config/framework.config.php:705
+#: inc/plugins/geoport-master/framework/config/framework.config.php:752
+#: inc/plugins/geoport-master/framework/config/framework.config.php:973
+#: inc/plugins/geoport-master/framework/config/metabox.config.php:521
+#: inc/plugins/geoport-master/framework/config/metabox.config.php:662
+#: inc/plugins/geoport-master/inc/custom-posttype.php:19
+#: inc/plugins/geoport-master/inc/custom-posttype.php:121
+#: inc/plugins/geoport-master/inc/custom-posttype.php:172
+#: inc/plugins/geoport-master/inc/custom-posttype.php:223
+#: inc/plugins/geoport-master/inc/custom-posttype.php:284
+#: inc/plugins/geoport-master/inc/custom-posttype.php:327
+msgid "Add New"
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/framework.config.php:659
+#: inc/plugins/geoport-master/framework/config/framework.config.php:706
+#: inc/plugins/geoport-master/framework/config/framework.config.php:753
+#: inc/plugins/geoport-master/framework/config/metabox.config.php:520
+#: inc/plugins/geoport-master/framework/config/metabox.config.php:663
+msgid "Add New List"
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/framework.config.php:664
+#: inc/plugins/geoport-master/framework/config/framework.config.php:711
+#: inc/plugins/geoport-master/framework/config/framework.config.php:758
+msgid "Text"
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/framework.config.php:669
+#: inc/plugins/geoport-master/framework/config/framework.config.php:716
+#: inc/plugins/geoport-master/framework/config/framework.config.php:763
+#: inc/plugins/geoport-master/framework/config/framework.config.php:984
+#: inc/plugins/geoport-master/geoport-elements/widgets/animated-image.php:65
+#: inc/plugins/geoport-master/geoport-elements/widgets/button.php:68
+#: inc/plugins/geoport-master/geoport-elements/widgets/contact-box.php:120
+#: inc/plugins/geoport-master/geoport-elements/widgets/icon-list.php:123
+#: inc/plugins/geoport-master/geoport-elements/widgets/image-slider.php:86
+#: inc/plugins/geoport-master/geoport-elements/widgets/location-box.php:107
+#: inc/plugins/geoport-master/geoport-elements/widgets/single-icon-item.php:148
+#: inc/plugins/geoport-master/geoport-elements/widgets/working-steps.php:75
+msgid "Link"
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/framework.config.php:674
+#: inc/plugins/geoport-master/framework/config/framework.config.php:721
+#: inc/plugins/geoport-master/framework/config/framework.config.php:768
+#: inc/plugins/geoport-master/geoport-elements/widgets/contact-box.php:58
+#: inc/plugins/geoport-master/geoport-elements/widgets/icon-list.php:116
+#: inc/plugins/geoport-master/geoport-elements/widgets/icon-list.php:191
+#: inc/plugins/geoport-master/geoport-elements/widgets/image-slider.php:92
+#: inc/plugins/geoport-master/geoport-elements/widgets/single-icon-item.php:77
+#: inc/plugins/geoport-master/geoport-elements/widgets/tab-slider.php:83
+msgid "Icon"
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/framework.config.php:692
+msgid "Top Header Right List"
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/framework.config.php:697
+msgid "Header Right List On?"
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/framework.config.php:698
+msgid "Enable/Disable Header Right Info"
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/framework.config.php:704
+msgid "Header top right menu"
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/framework.config.php:739
+msgid "Top Header Contact List"
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/framework.config.php:744
+msgid "Header Top Contact On?"
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/framework.config.php:745
+msgid "Enable/Disable header top left contact info."
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/framework.config.php:786
+msgid "Header Social Buttons"
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/framework.config.php:791
+msgid "Header Social Info On?"
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/framework.config.php:792
+msgid "Enable/Disable Header Social Info"
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/framework.config.php:799
+msgid "Header Top Part Color"
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/framework.config.php:804
+msgid "Top Background Color"
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/framework.config.php:810
+msgid "Top Text Color"
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/framework.config.php:816
+msgid "Top link hover color"
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/framework.config.php:822
+msgid "Top border color"
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/framework.config.php:827
+msgid "Top Header Responsive ( Medium Device ) Settings"
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/framework.config.php:832
+#: inc/plugins/geoport-master/framework/config/framework.config.php:854
+#: inc/plugins/geoport-master/framework/config/framework.config.php:876
+msgid "Header Top Left Menu"
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/framework.config.php:833
+msgid "Enable/Disable header top left menu on medium device"
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/framework.config.php:838
+#: inc/plugins/geoport-master/framework/config/framework.config.php:860
+#: inc/plugins/geoport-master/framework/config/framework.config.php:882
+msgid "Header Top Right Menu"
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/framework.config.php:839
+msgid "Enable/Disable header top right menu on medium device"
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/framework.config.php:844
+#: inc/plugins/geoport-master/framework/config/framework.config.php:866
+#: inc/plugins/geoport-master/framework/config/framework.config.php:888
+msgid "Header Top Left Social Icon"
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/framework.config.php:845
+msgid "Enable/Disable header top right social icon on medium device"
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/framework.config.php:849
+msgid "Top Header Responsive ( Small Device ) Settings"
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/framework.config.php:855
+msgid "Enable/Disable header top left menu on small device"
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/framework.config.php:861
+msgid "Enable/Disable header top right menu on small device"
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/framework.config.php:867
+msgid "Enable/Disable header top right social icon on small device"
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/framework.config.php:871
+msgid "Top Header Responsive ( Extra Small Device ) Settings"
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/framework.config.php:877
+msgid "Enable/Disable header top left menu on extra small device"
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/framework.config.php:883
+msgid "Enable/Disable header top right menu on extra small device"
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/framework.config.php:889
+msgid "Enable/Disable header top right social icon on extra small device"
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/framework.config.php:903
+msgid "Choose Header Style"
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/framework.config.php:908
+msgid "Select Default Header Style"
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/framework.config.php:914
+msgid "This is all default page header style if you select"
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/framework.config.php:919
+msgid "Header 2 padding top"
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/framework.config.php:922
+msgid ""
+"When select header 2, you need to breadcrumb top padding reset if you feel "
+"need"
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/framework.config.php:927
+msgid "Header 2 padding bottom"
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/framework.config.php:930
+msgid ""
+"When select header 2, you need to breadcrumb bottom padding reset if you "
+"feel need"
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/framework.config.php:935
+msgid "Header 3 padding top"
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/framework.config.php:938
+msgid ""
+"When select header 3, you need to breadcrumb top padding reset if you feel "
+"need"
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/framework.config.php:943
+msgid "Header 3 padding bottom"
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/framework.config.php:946
+msgid ""
+"When select header 3, you need to breadcrumb bottom padding reset if you "
+"feel need"
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/framework.config.php:961
+#: inc/plugins/geoport-master/framework/config/framework.config.php:967
+msgid "Social Profile Settings"
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/framework.config.php:972
+msgid "Header Social List"
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/framework.config.php:974
+msgid "Add New Social Button"
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/framework.config.php:979
+msgid "Social Icon"
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/framework.config.php:1021
+msgid "Menu Settings"
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/framework.config.php:1033
+msgid "Menu Color Settings"
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/framework.config.php:1038
+#: inc/plugins/geoport-master/framework/config/metabox.config.php:78
+msgid "Menu Area Background Color"
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/framework.config.php:1040
+msgid "Pick Menu Area Background Color"
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/framework.config.php:1045
+#: inc/plugins/geoport-master/framework/config/framework.config.php:1200
+#: inc/plugins/geoport-master/framework/config/metabox.config.php:85
+msgid "Menu Text Color"
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/framework.config.php:1047
+msgid "Pick Menu Text Color"
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/framework.config.php:1052
+msgid "Menu Hover Text Color"
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/framework.config.php:1054
+msgid "Pick Menu Hover Text Color"
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/framework.config.php:1059
+#: inc/plugins/geoport-master/framework/config/metabox.config.php:99
+msgid "Menu Text Active Color"
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/framework.config.php:1061
+msgid "Pick Menu Text Active Color"
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/framework.config.php:1066
+msgid "Menu Text Font Size"
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/framework.config.php:1067
+msgid "16px"
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/framework.config.php:1068
+msgid "Menu Text Font Size. Default font-size:15px"
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/framework.config.php:1077
+msgid "Select Menu Text Font Weight"
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/framework.config.php:1094
+msgid "Select Menu Text Transform"
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/framework.config.php:1110
+msgid "DropDown Menu Color Settings"
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/framework.config.php:1115
+msgid "DropDown Menu Background Color"
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/framework.config.php:1117
+msgid "Pick DropDown Menu Area Background Color"
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/framework.config.php:1122
+msgid "DropDown Menu Text Color"
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/framework.config.php:1124
+msgid "Pick DropDown Menu Text Color"
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/framework.config.php:1130
+msgid "Select DropDown Menu Text Transform"
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/framework.config.php:1145
+#: inc/plugins/geoport-master/framework/config/framework.config.php:1234
+msgid "DropDown Menu Hover Background Color"
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/framework.config.php:1146
+msgid "Pick Dropdown menu hover background color."
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/framework.config.php:1148
+msgid "Pick DropDown Menu Hover Background Color"
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/framework.config.php:1153
+#: inc/plugins/geoport-master/framework/config/metabox.config.php:106
+msgid "DropDown Menu Hover Text Color"
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/framework.config.php:1155
+msgid "Pick DropDown Menu Hover Text Color"
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/framework.config.php:1160
+msgid "DropDown Menu Border Color"
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/framework.config.php:1162
+msgid "Pick DropDown Menu Border Color"
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/framework.config.php:1177
+msgid "Sticky Menu Settings"
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/framework.config.php:1182
+msgid "Sticky Menu Off?"
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/framework.config.php:1183
+msgid "Enable/Disable Sticky menu."
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/framework.config.php:1188
+msgid "Sticky Menu Color Settings"
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/framework.config.php:1193
+msgid "Menu Background Color"
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/framework.config.php:1195
+msgid "Pick Sticky Menu Background Color."
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/framework.config.php:1202
+msgid "Pick Sticky Menu Text Color."
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/framework.config.php:1207
+#: inc/plugins/geoport-master/framework/config/metabox.config.php:92
+msgid "Menu Text Hover Color"
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/framework.config.php:1209
+msgid "Pick Sticky Menu Text Hover Color."
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/framework.config.php:1215
+msgid "Sticky DropDown Menu Color Settings"
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/framework.config.php:1220
+msgid "Sticky DropDown Menu Background Color"
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/framework.config.php:1222
+msgid "Pick Sticky Dropdown Menu Background Color."
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/framework.config.php:1227
+msgid "Sticky DropDown Menu Text Color"
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/framework.config.php:1229
+msgid "Pick Sticky Dropdown Menu Text Color."
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/framework.config.php:1235
+msgid "Pick Dropdown Menu Hover Background Color."
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/framework.config.php:1241
+msgid "Sticky DropDown Menu Hover Font Color"
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/framework.config.php:1243
+msgid "Pick Sticky Dropdown Menu Hover Font Color."
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/framework.config.php:1248
+msgid "Sticky DropDown Menu Border Color"
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/framework.config.php:1250
+msgid "Pick Sticky Dropdown Menu Border Color."
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/framework.config.php:1264
+msgid "Responsive Menu Color Settings"
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/framework.config.php:1269
+msgid "Responsive Menu Background Color"
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/framework.config.php:1271
+msgid "Pick Responsive Menu Background Color."
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/framework.config.php:1276
+msgid "Responsive Menu Text Color"
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/framework.config.php:1278
+msgid "Pick Responsive Menu Text Color."
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/framework.config.php:1283
+msgid "Responsive Menu Icon color"
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/framework.config.php:1285
+msgid "Pick Responsive Menu Icon Color."
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/framework.config.php:1290
+msgid "Sticky Responsive Menu Icon color"
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/framework.config.php:1292
+msgid "Pick Sticky Responsive Menu Icon Color."
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/framework.config.php:1306
+msgid "Track Order Button Settings"
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/framework.config.php:1311
+msgid "Track Order Button Switcher"
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/framework.config.php:1313
+msgid "Enable/Disable Track Order Button."
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/framework.config.php:1318
+msgid "Track Order Button Icon"
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/framework.config.php:1320
+msgid "Choose Track Order Button Icon."
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/framework.config.php:1325
+msgid "Track Order Button Text"
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/framework.config.php:1326
+msgid "Track Your Order"
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/framework.config.php:1327
+msgid "Input Track Order Button Text."
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/framework.config.php:1332
+msgid "Track Order Button Link"
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/framework.config.php:1334
+msgid "Insert Track Order Button Link."
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/framework.config.php:1339
+msgid "Open Button Link"
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/framework.config.php:1340
+msgid "Open Track Order Button Link."
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/framework.config.php:1350
+#: inc/plugins/geoport-master/geoport-elements/widgets/careers-list.php:151
+#: inc/plugins/geoport-master/geoport-elements/widgets/form-tab.php:156
+msgid "Button Background Color"
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/framework.config.php:1352
+msgid "Pick Track Order Button Background Color."
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/framework.config.php:1357
+msgid "Button Font Color"
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/framework.config.php:1359
+msgid "Pick Track Order Button Text Color."
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/framework.config.php:1364
+msgid "Button Border Color"
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/framework.config.php:1366
+msgid "Pick Track Order Button Border Color."
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/framework.config.php:1371
+msgid "Button Hover Font Color"
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/framework.config.php:1373
+msgid "Pick Track Order Button Hover Text Color."
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/framework.config.php:1378
+msgid "Button Hover Background Color"
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/framework.config.php:1380
+msgid "Pick Track Order Button Hover Background Color."
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/framework.config.php:1385
+msgid "Button Hover Boxshadow"
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/framework.config.php:1387
+msgid "Pick Track Order Button Boxshadow Color."
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/framework.config.php:1392
+msgid "Sticky Button Background Color"
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/framework.config.php:1394
+msgid "Pick Track Order Button Sticky Background Color."
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/framework.config.php:1399
+msgid "Sticky Button Font Color"
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/framework.config.php:1401
+msgid "Pick Track Order Button Sticky Text Color."
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/framework.config.php:1405
+msgid "Track Order Button Responsive Settings"
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/framework.config.php:1410
+msgid "Enable Order Button ( Medium Device )"
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/framework.config.php:1411
+msgid "Enable/Disable track order button on medium device"
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/framework.config.php:1416
+msgid "Enable Order Button ( Small Device )"
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/framework.config.php:1417
+msgid "Enable/Disable track order button on small device"
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/framework.config.php:1422
+msgid "Enable Order Button ( Extra Small Device )"
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/framework.config.php:1423
+msgid "Enable/Disable track order button on extra small device"
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/framework.config.php:1437
+msgid "Language Button Settings"
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/framework.config.php:1442
+msgid "Language Button Switcher"
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/framework.config.php:1443
+msgid "Enable/Disable language button."
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/framework.config.php:1448
+msgid "Language Default Icon"
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/framework.config.php:1450
+msgid "Upload your best size icon for default language."
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/framework.config.php:1455
+msgid "Language Item Active Color"
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/framework.config.php:1461
+msgid "Language Button Shortcode"
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/framework.config.php:1462
+msgid ""
+"Insert language button shortcode. Use this shortcode for polylang flags "
+"[geoportpolylang]"
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/framework.config.php:1466
+msgid "Language Button Responsive Settings"
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/framework.config.php:1471
+msgid "Enable Language Button ( Medium Device )"
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/framework.config.php:1472
+msgid "Enable/Disable language button on medium device"
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/framework.config.php:1477
+msgid "Enable Language Button ( Small Device )"
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/framework.config.php:1478
+msgid "Enable/Disable language button on small device"
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/framework.config.php:1483
+msgid "Enable Language Button ( Extra Small Device )"
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/framework.config.php:1484
+msgid "Enable/Disable language button on extra small device"
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/framework.config.php:1498
+msgid "Blog Page Settings"
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/framework.config.php:1505
+msgid "Blog Page Setting"
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/framework.config.php:1511
+msgid "Post Details Beradcrumb Title"
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/framework.config.php:1513
+msgid "Change blog post details breadcrumb title text."
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/framework.config.php:1519
+msgid "Page Layout Style"
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/framework.config.php:1529
+msgid "Post date meta on?"
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/framework.config.php:1535
+msgid "Post view meta on?"
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/framework.config.php:1540
+msgid "Post comment meta on?"
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/framework.config.php:1546
+#: inc/plugins/geoport-master/framework/config/framework.config.php:1595
+msgid "Post meta admin on?"
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/framework.config.php:1552
+msgid "Post Categories on?"
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/framework.config.php:1558
+msgid "Post Readmore Button on?"
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/framework.config.php:1564
+msgid "Blog post content excerpt length"
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/framework.config.php:1570
+msgid "Blog Heading Text color"
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/framework.config.php:1572
+msgid "Blog Heading Text color."
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/framework.config.php:1578
+msgid "Blog Single Page Settings"
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/framework.config.php:1584
+msgid "Single Layout Style"
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/framework.config.php:1601
+msgid "Post meta date on?"
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/framework.config.php:1607
+msgid "Post categories on?"
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/framework.config.php:1613
+msgid "Post details tags On/Off"
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/framework.config.php:1619
+msgid "Post details share On/Off"
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/framework.config.php:1624
+msgid "Post details related post On/Off"
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/framework.config.php:1629
+msgid "Select Related Post Columns"
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/framework.config.php:1631
+#: inc/plugins/geoport-master/geoport-elements/widgets/testimonial.php:131
+msgid "2 Columns"
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/framework.config.php:1632
+#: inc/plugins/geoport-master/geoport-elements/widgets/testimonial.php:132
+msgid "3 Columns"
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/framework.config.php:1633
+#: inc/plugins/geoport-master/geoport-elements/widgets/testimonial.php:133
+msgid "4 Columns"
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/framework.config.php:1641
+msgid "Blog Sidebar Color Settings"
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/framework.config.php:1647
+msgid "Blog Widgets Title color"
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/framework.config.php:1649
+msgid "Blog widget title color."
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/framework.config.php:1655
+msgid "Blog Widgets Text color"
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/framework.config.php:1657
+msgid "Blog widget Text color."
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/framework.config.php:1670
+msgid "Service Page Settings"
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/framework.config.php:1677
+msgid "Service Details Page"
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/framework.config.php:1683
+msgid "Service Single Page Layout"
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/framework.config.php:1689
+msgid "Choose your service single post layout style."
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/framework.config.php:1694
+msgid "Service Post Thumbnail on?"
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/framework.config.php:1695
+msgid "Enable/Disable service post Thumbnail."
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/framework.config.php:1701
+msgid "Service Pagination switch on?"
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/framework.config.php:1702
+msgid "Previous and next post switching"
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/framework.config.php:1703
+msgid "Enable/Disable service single pagination."
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/framework.config.php:1709
+msgid "Download Brochures Widgets Settings"
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/framework.config.php:1714
+msgid "Download Brochures Background Color"
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/framework.config.php:1716
+msgid "Download Brochures widget area background color."
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/framework.config.php:1721
+msgid "Download Brochures Title Color"
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/framework.config.php:1723
+msgid "Download Brochures widget title color."
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/framework.config.php:1728
+msgid "Download Brochures Sub Title Color"
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/framework.config.php:1730
+msgid "Download Brochures widget sub title color."
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/framework.config.php:1735
+msgid "Download Brochures Button Background"
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/framework.config.php:1737
+#: inc/plugins/geoport-master/framework/config/framework.config.php:1765
+msgid "Download Brochures widget button background color."
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/framework.config.php:1742
+msgid "Download Brochures Button Text"
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/framework.config.php:1744
+msgid "Download Brochures widget button text color."
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/framework.config.php:1749
+msgid "Download Brochures Button Icon"
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/framework.config.php:1751
+msgid "Download Brochures widget button icon color."
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/framework.config.php:1756
+msgid "Download Brochures Button Arrow"
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/framework.config.php:1758
+msgid "Download Brochures widget button arrow icon color."
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/framework.config.php:1763
+msgid "Download Brochures Button Hover Background"
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/framework.config.php:1770
+msgid "Download Brochures Button Hover Text"
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/framework.config.php:1772
+msgid "Download Brochures widget button hover text color."
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/framework.config.php:1779
+msgid "Get In Touch Widgets Settings"
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/framework.config.php:1784
+msgid "Get In Touch Background Color"
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/framework.config.php:1786
+msgid "Get in touch widget area background color."
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/framework.config.php:1792
+msgid "Get In Touch Title Color"
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/framework.config.php:1794
+msgid "Get in touch widget title color."
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/framework.config.php:1800
+msgid "Get In Touch Sub Title Color"
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/framework.config.php:1802
+msgid "Get in touch widget sub title color."
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/framework.config.php:1808
+msgid "Get In Touch Button Background"
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/framework.config.php:1810
+msgid "Get in touch widget button background color."
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/framework.config.php:1816
+msgid "Get In Touch Button Text"
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/framework.config.php:1818
+msgid "Get in touch widget button text color."
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/framework.config.php:1824
+msgid "Get In Touch Button Hover Background"
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/framework.config.php:1826
+msgid "Get in touch widget button hover background color."
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/framework.config.php:1832
+msgid "Get In Touch Button Hover Text"
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/framework.config.php:1834
+msgid "Get in touch widget button hover text color."
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/framework.config.php:1848
+msgid "Team Settings"
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/framework.config.php:1854
+msgid "Team Single Page Settings"
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/framework.config.php:1859
+msgid "Team Breadcrumb Title"
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/framework.config.php:1861
+msgid "Team single page breadcrumb title."
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/framework.config.php:1866
+msgid "Team Post Slug"
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/framework.config.php:1868
+msgid ""
+"Change the team post type slug but when you change the slug you need to "
+"update your permalink again."
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/framework.config.php:1873
+msgid "Gutenberg Enable/Disable Switch"
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/framework.config.php:1874
+msgid "Enable/Disable Gutenberg on the team post type."
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/framework.config.php:1886
+msgid "WooCommerce Settings"
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/framework.config.php:1892
+msgid "Shop Page Settings"
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/framework.config.php:1897
+msgid "Products per page"
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/framework.config.php:1903
+msgid "Shop Page Layout"
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/framework.config.php:1909
+msgid "Choose page layout style."
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/framework.config.php:1914
+msgid "Product column layout"
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/framework.config.php:1924
+msgid "Shop Single Page Settings"
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/framework.config.php:1929
+msgid "Enable/Disable Related Product"
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/framework.config.php:1931
+msgid "Enable/Disable related product on product details page."
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/framework.config.php:1936
+msgid "Related product column layout"
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/framework.config.php:1946
+msgid "Related product per page"
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/framework.config.php:1948
+msgid "How much related product display in single page"
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/framework.config.php:1953
+msgid "Shop Global Color Settings"
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/framework.config.php:1958
+msgid "Shop base color"
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/framework.config.php:1959
+msgid "Change your all shop base color."
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/framework.config.php:1965
+msgid "Shop Button Color Settings"
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/framework.config.php:1970
+msgid "Button Background color"
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/framework.config.php:1971
+msgid "Change shop button background color."
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/framework.config.php:1977
+msgid "Button Text color"
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/framework.config.php:1978
+msgid "Change shop button text color."
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/framework.config.php:1985
+msgid "Button Hover Background color"
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/framework.config.php:1986
+msgid "Change shop button hover background color."
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/framework.config.php:1992
+msgid "Button Hover Text color"
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/framework.config.php:1993
+msgid "Change shop button hover text color."
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/framework.config.php:1999
+msgid "Shop Pagination Color Settings"
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/framework.config.php:2004
+msgid "Pagination Background color"
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/framework.config.php:2005
+msgid "Change shop pagination background color."
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/framework.config.php:2011
+msgid "Pagination Text color"
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/framework.config.php:2012
+msgid "Change shop pagination text color."
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/framework.config.php:2019
+msgid "Pagination Hover Background color"
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/framework.config.php:2020
+msgid "Change shop pagination hover background color."
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/framework.config.php:2026
+msgid "Pagination Hover Text color"
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/framework.config.php:2027
+msgid "Change shop pagination hover text color."
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/framework.config.php:2034
+msgid "Pagination Active Background color"
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/framework.config.php:2035
+msgid "Change shop pagination active background color."
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/framework.config.php:2041
+msgid "Pagination Active Text color"
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/framework.config.php:2042
+msgid "Change shop pagination active text color."
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/framework.config.php:2060
+#: inc/plugins/geoport-master/framework/config/framework.config.php:2067
+msgid "404 Page Settings"
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/framework.config.php:2073
+msgid "404 Breadcrumb Title"
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/framework.config.php:2074
+msgid "404 page breadcrumb title."
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/framework.config.php:2080
+msgid "404 Text"
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/framework.config.php:2081
+msgid "404 page text."
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/framework.config.php:2087
+msgid "404 Page Title"
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/framework.config.php:2088
+msgid "404 page Title."
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/framework.config.php:2089
+msgid "Sorry Page Not Found"
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/framework.config.php:2094
+msgid "404 Button Text"
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/framework.config.php:2095
+msgid "404 page button title."
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/framework.config.php:2096
+msgid " Go Back Home"
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/framework.config.php:2101
+msgid "404 Button 2 Text"
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/framework.config.php:2102
+msgid "404 page button two title."
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/framework.config.php:2103
+msgid "Subscribe"
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/framework.config.php:2108
+msgid "404 Button 2 Link"
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/framework.config.php:2109
+msgid "404 page button two link."
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/framework.config.php:2115
+msgid "Upload 404 Image"
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/framework.config.php:2116
+msgid "Upload 404 page image."
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/framework.config.php:2129
+msgid "Footer Settings"
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/framework.config.php:2142
+msgid "Copyright Settings"
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/framework.config.php:2147
+msgid "Copyright Text"
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/framework.config.php:2154
+msgid "Copyright Background Color"
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/framework.config.php:2160
+msgid "Copyright Text Color"
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/framework.config.php:2166
+msgid "Copyright Link Color"
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/framework.config.php:2172
+msgid "Copyright Link Hover Color"
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/framework.config.php:2186
+msgid "Footer Columns Settings"
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/framework.config.php:2202
+#: inc/plugins/geoport-master/framework/config/framework.config.php:2218
+#: inc/plugins/geoport-master/framework/config/framework.config.php:2234
+#: inc/plugins/geoport-master/framework/config/framework.config.php:2250
+#: inc/plugins/geoport-master/framework/config/framework.config.php:2351
+#: inc/plugins/geoport-master/framework/config/framework.config.php:2367
+#: inc/plugins/geoport-master/framework/config/framework.config.php:2383
+msgid "Total footer area columns is 12"
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/framework.config.php:2254
+msgid "Footer Widget Settings"
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/framework.config.php:2259
+#: inc/plugins/geoport-master/framework/config/framework.config.php:2393
+msgid "Footer background color"
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/framework.config.php:2265
+#: inc/plugins/geoport-master/framework/config/framework.config.php:2399
+msgid "Widget Title Text Color"
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/framework.config.php:2271
+#: inc/plugins/geoport-master/framework/config/framework.config.php:2405
+msgid "Widget Title Font Size"
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/framework.config.php:2273
+#: inc/plugins/geoport-master/framework/config/framework.config.php:2407
+msgid "Put widget title fonts size with px like (34px)"
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/framework.config.php:2277
+#: inc/plugins/geoport-master/framework/config/framework.config.php:2411
+msgid "Footer Content Settings"
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/framework.config.php:2282
+#: inc/plugins/geoport-master/framework/config/framework.config.php:2416
+msgid "Footer Content color"
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/framework.config.php:2288
+#: inc/plugins/geoport-master/framework/config/framework.config.php:2422
+msgid "Footer link hover color"
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/framework.config.php:2292
+msgid "Footer Social Settings"
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/framework.config.php:2297
+#: inc/plugins/geoport-master/framework/config/framework.config.php:2432
+msgid "Footer Social fonts color"
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/framework.config.php:2303
+#: inc/plugins/geoport-master/framework/config/framework.config.php:2438
+msgid "Footer Social background color"
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/framework.config.php:2309
+#: inc/plugins/geoport-master/framework/config/framework.config.php:2444
+msgid "Footer Social hover fonts color"
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/framework.config.php:2315
+#: inc/plugins/geoport-master/framework/config/framework.config.php:2450
+msgid "Footer Social hover background color"
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/framework.config.php:2330
+msgid "Footer 2 background image"
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/framework.config.php:2335
+msgid "Footer 2 Columns"
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/framework.config.php:2388
+msgid "Footer 2 Color"
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/framework.config.php:2427
+msgid "Footer 2 Social Color"
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/framework.config.php:2456
+msgid "Footer left background image"
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/framework.config.php:2470
+msgid "Default footer settings"
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/framework.config.php:2475
+msgid "Select Default Footer"
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/framework.config.php:2480
+msgid "This is all default page footer style if you select"
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/metabox.config.php:14
+msgid "Custom Page Options"
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/metabox.config.php:31
+msgid "Upload Custom Logo"
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/metabox.config.php:36
+msgid "Upload Custom Logo?"
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/metabox.config.php:41
+msgid "Upload Page Logo"
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/metabox.config.php:46
+msgid "Upload Page Sticky Logo"
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/metabox.config.php:52
+msgid "Page header settings"
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/metabox.config.php:57
+msgid "Select Header"
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/metabox.config.php:63
+msgid "Will be this page header style if you select"
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/metabox.config.php:69
+msgid "Enable Custom Color Settings"
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/metabox.config.php:71
+#: inc/plugins/geoport-master/geoport-elements/widgets/image-slider.php:108
+#: inc/plugins/geoport-master/geoport-elements/widgets/tab-slider.php:123
+#: inc/plugins/geoport-master/geoport-elements/widgets/team.php:124
+#: inc/plugins/geoport-master/geoport-elements/widgets/testimonial.php:94
+#: inc/plugins/geoport-master/geoport-elements/widgets/testimonial.php:106
+#: inc/plugins/geoport-master/geoport-elements/widgets/testimonial.php:118
+msgid "No"
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/metabox.config.php:72
+#: inc/plugins/geoport-master/geoport-elements/widgets/image-slider.php:109
+#: inc/plugins/geoport-master/geoport-elements/widgets/tab-slider.php:122
+#: inc/plugins/geoport-master/geoport-elements/widgets/team.php:125
+#: inc/plugins/geoport-master/geoport-elements/widgets/testimonial.php:95
+#: inc/plugins/geoport-master/geoport-elements/widgets/testimonial.php:107
+#: inc/plugins/geoport-master/geoport-elements/widgets/testimonial.php:119
+msgid "Yes"
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/metabox.config.php:79
+#: inc/plugins/geoport-master/framework/config/metabox.config.php:86
+#: inc/plugins/geoport-master/framework/config/metabox.config.php:93
+#: inc/plugins/geoport-master/framework/config/metabox.config.php:100
+#: inc/plugins/geoport-master/framework/config/metabox.config.php:107
+#: inc/plugins/geoport-master/framework/config/metabox.config.php:114
+#: inc/plugins/geoport-master/framework/config/metabox.config.php:121
+#: inc/plugins/geoport-master/framework/config/metabox.config.php:128
+#: inc/plugins/geoport-master/framework/config/metabox.config.php:135
+#: inc/plugins/geoport-master/framework/config/metabox.config.php:142
+#: inc/plugins/geoport-master/framework/config/metabox.config.php:149
+#: inc/plugins/geoport-master/framework/config/metabox.config.php:156
+#: inc/plugins/geoport-master/framework/config/metabox.config.php:166
+#: inc/plugins/geoport-master/framework/config/metabox.config.php:173
+#: inc/plugins/geoport-master/framework/config/metabox.config.php:180
+#: inc/plugins/geoport-master/framework/config/metabox.config.php:187
+#: inc/plugins/geoport-master/framework/config/metabox.config.php:194
+#: inc/plugins/geoport-master/framework/config/metabox.config.php:201
+#: inc/plugins/geoport-master/framework/config/metabox.config.php:208
+#: inc/plugins/geoport-master/framework/config/metabox.config.php:215
+#: inc/plugins/geoport-master/framework/config/metabox.config.php:222
+#: inc/plugins/geoport-master/framework/config/metabox.config.php:232
+#: inc/plugins/geoport-master/framework/config/metabox.config.php:239
+#: inc/plugins/geoport-master/framework/config/metabox.config.php:246
+msgid "Pick Color."
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/metabox.config.php:113
+msgid "Sticky Menu Area Background Color"
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/metabox.config.php:120
+msgid "Sticky Menu Text Color"
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/metabox.config.php:127
+msgid "Sticky Menu Text Hover Color"
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/metabox.config.php:134
+msgid "Sticky Dropdown Menu Text Color"
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/metabox.config.php:141
+msgid "Sticky Dropdown Menu Hover Color"
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/metabox.config.php:148
+msgid "Responsive Menu Icon Color"
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/metabox.config.php:155
+msgid "Sticky Responsive Menu Icon Color"
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/metabox.config.php:165
+msgid "Track Order Button Background Color"
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/metabox.config.php:172
+msgid "Track Order Button Text Color"
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/metabox.config.php:179
+msgid "Track Order Button Border Color"
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/metabox.config.php:186
+msgid "Track Order Button Hover Background Color"
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/metabox.config.php:193
+msgid "Track Order Button Hover Text Color"
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/metabox.config.php:200
+msgid "Track Order Button Hover Border Color"
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/metabox.config.php:207
+msgid "Track Order Button Boxshadow"
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/metabox.config.php:214
+msgid "Sticky Track Order Button Background Color"
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/metabox.config.php:221
+msgid "Sticky Track Order Button Text Color"
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/metabox.config.php:231
+msgid "Top Part Background Color"
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/metabox.config.php:238
+msgid "Top Part Text Color"
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/metabox.config.php:245
+msgid "Top Part Link Hover Color"
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/metabox.config.php:253
+msgid "Page footer settings"
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/metabox.config.php:258
+msgid "Select Footer"
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/metabox.config.php:263
+msgid "Will be this page footer style if you select"
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/metabox.config.php:278
+msgid "This page breadcrumb settings"
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/metabox.config.php:284
+msgid "Enable breadcrumb for this page?"
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/metabox.config.php:289
+msgid "Breadcrumb background image"
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/metabox.config.php:296
+msgid "Breatcrumb background color"
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/metabox.config.php:297
+msgid "It is breadcrumb background color."
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/metabox.config.php:304
+msgid "Breadcrumb Background Image Opacity"
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/metabox.config.php:322
+msgid "Breatcrumb padding top"
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/metabox.config.php:330
+msgid "Breadcrumb padding bottom"
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/metabox.config.php:338
+msgid "Breatcrumb font color"
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/metabox.config.php:339
+msgid "It is breadcrumb font color."
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/metabox.config.php:346
+msgid "Breatcrumb hover link color"
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/metabox.config.php:347
+msgid "It is breadcrumb link hover font color."
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/metabox.config.php:354
+msgid "Breadcrumb title"
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/metabox.config.php:371
+msgid "Post Settings"
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/metabox.config.php:384
+msgid "Custom Post Format"
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/metabox.config.php:386
+msgid "Video"
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/metabox.config.php:387
+msgid "Audio"
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/metabox.config.php:388
+msgid "Quote"
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/metabox.config.php:389
+msgid "Gallery"
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/metabox.config.php:396
+msgid "Put Video Link"
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/metabox.config.php:402
+msgid "Put Audio Link"
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/metabox.config.php:408
+msgid "Select gallery images"
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/metabox.config.php:414
+msgid "Quote icon img"
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/metabox.config.php:430
+msgid "Testimonial settings"
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/metabox.config.php:443
+msgid "Rate Giver Name"
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/metabox.config.php:444
+msgid "Put name who give rate"
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/metabox.config.php:449
+msgid "Rate Giver Designation"
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/metabox.config.php:450
+msgid "Put Designation who give rate"
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/metabox.config.php:455
+msgid "Rate Giver Organization"
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/metabox.config.php:456
+msgid "Put Organization Name"
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/metabox.config.php:461
+msgid "Rate Giver Organization Link"
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/metabox.config.php:462
+msgid "Put Organization Link"
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/metabox.config.php:467
+msgid "Select Rating"
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/metabox.config.php:469
+msgid "1 Star"
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/metabox.config.php:470
+msgid "2 Star"
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/metabox.config.php:471
+msgid "3 Star"
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/metabox.config.php:472
+msgid "4 Star"
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/metabox.config.php:473
+msgid "5 Star"
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/metabox.config.php:480
+msgid "Rating color"
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/metabox.config.php:495
+msgid "Contact Tab Settings"
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/metabox.config.php:508
+#: inc/plugins/geoport-master/geoport-elements/widgets/form-tab.php:77
+#: inc/plugins/geoport-master/geoport-elements/widgets/geoport-accordion.php:75
+#: inc/plugins/geoport-master/geoport-elements/widgets/geoport-accordion.php:85
+msgid "Title Icon"
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/metabox.config.php:514
+msgid "Information Title"
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/metabox.config.php:515
+msgid "Contact Information Title"
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/metabox.config.php:522
+msgid "Add Info List"
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/metabox.config.php:527
+msgid "Information Text"
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/metabox.config.php:532
+msgid "List Icon"
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/metabox.config.php:539
+msgid "Map Embeded Code"
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/metabox.config.php:541
+msgid "Google map location embeded code put here"
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/metabox.config.php:557
+msgid "Team settings"
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/metabox.config.php:624
+msgid "Journey settings"
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/metabox.config.php:636
+msgid "Journey date"
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/metabox.config.php:649
+msgid "Jon list Settings"
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/metabox.config.php:661
+msgid "Job List Details"
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/metabox.config.php:668
+msgid "Experience"
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/metabox.config.php:673
+msgid "Qualification"
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/metabox.config.php:678
+msgid "Salary"
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/metabox.config.php:683
+#: inc/plugins/geoport-master/geoport-elements/widgets/careers-list.php:64
+msgid "Apply Button"
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/config/metabox.config.php:688
+msgid "Apply Button Link"
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/fields/background/background.php:34
+#: inc/plugins/geoport-master/framework/fields/background/background.php:35
+#: inc/plugins/geoport-master/framework/fields/upload/upload.php:23
+#: inc/plugins/geoport-master/framework/fields/upload/upload.php:24
+msgid "Upload"
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/fields/background/background.php:36
+#: inc/plugins/geoport-master/framework/fields/upload/upload.php:25
+msgid "Use Image"
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/fields/backup/backup.php:21
+msgid "Import a Backup"
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/fields/backup/backup.php:22
+msgid "copy-paste your backup string here"
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/fields/backup/backup.php:27
+msgid "Export and Download Backup"
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/fields/backup/backup.php:28
+msgid "or"
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/fields/backup/backup.php:30
+msgid "Please be sure for reset all of framework options."
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/fields/gallery/gallery.php:21
+msgid "Add Gallery"
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/fields/gallery/gallery.php:22
+msgid "Edit Gallery"
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/fields/gallery/gallery.php:23
+msgid "Clear"
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/fields/group/group.php:22
+msgid "Adding"
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/fields/group/group.php:45
+#: inc/plugins/geoport-master/framework/fields/group/group.php:77
+msgid "Remove"
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/fields/icon/icon.php:25
+#: inc/plugins/geoport-master/framework/functions/actions.php:82
+msgid "Add Icon"
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/fields/icon/icon.php:26
+msgid "Remove Icon"
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/fields/image/image.php:22
+msgid "Add Image"
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/fields/sorter/sorter.php:24
+msgid "Enabled Modules"
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/fields/sorter/sorter.php:25
+msgid "Disabled Modules"
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/fields/switcher/switcher.php:20
+msgid "on"
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/fields/switcher/switcher.php:20
+msgid "off"
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/fields/typography/typography.php:73
+msgid "Web Safe Fonts"
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/fields/typography/typography.php:79
+msgid "Google Fonts"
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/fields/typography/typography.php:107
+#: inc/plugins/geoport-master/framework/functions/actions.php:32
+msgid "Error! Can not load json file."
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/functions/actions.php:83
+msgid "Search a Icon..."
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/functions/actions.php:84
+msgid "Loading..."
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/functions/helpers.php:49
+msgid "This field class is not available!"
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/functions/validate.php:14
+msgid "Please write a valid email address!"
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/functions/validate.php:33
+msgid "Please write a numeric data!"
+msgstr ""
+
+#: inc/plugins/geoport-master/framework/functions/validate.php:51
+msgid "Fatal Error! This field is required!"
+msgstr ""
+
+#: inc/plugins/geoport-master/geoport-elements/controls/johanspond-icon.php:2456
+#: inc/plugins/geoport-master/geoport-elements/controls/johanspond-icon.php:2457
+msgid "Select Icon"
+msgstr ""
+
+#: inc/plugins/geoport-master/geoport-elements/helper/elements-helper.php:57
+msgid "100"
+msgstr ""
+
+#: inc/plugins/geoport-master/geoport-elements/helper/elements-helper.php:58
+msgid "200"
+msgstr ""
+
+#: inc/plugins/geoport-master/geoport-elements/helper/elements-helper.php:59
+msgid "300"
+msgstr ""
+
+#: inc/plugins/geoport-master/geoport-elements/helper/elements-helper.php:60
+msgid "400"
+msgstr ""
+
+#: inc/plugins/geoport-master/geoport-elements/helper/elements-helper.php:61
+msgid "500"
+msgstr ""
+
+#: inc/plugins/geoport-master/geoport-elements/helper/elements-helper.php:62
+msgid "600"
+msgstr ""
+
+#: inc/plugins/geoport-master/geoport-elements/helper/elements-helper.php:63
+msgid "700"
+msgstr ""
+
+#: inc/plugins/geoport-master/geoport-elements/helper/elements-helper.php:64
+msgid "800"
+msgstr ""
+
+#: inc/plugins/geoport-master/geoport-elements/helper/elements-helper.php:65
+msgid "900"
+msgstr ""
+
+#: inc/plugins/geoport-master/geoport-elements/helper/elements-helper.php:147
+#: inc/plugins/geoport-master/geoport-elements/helper/elements-helper.php:170
+#: inc/plugins/geoport-master/geoport-elements/helper/elements-helper.php:192
+msgid "-- Select Post --"
+msgstr ""
+
+#: inc/plugins/geoport-master/geoport-elements/helper/elements-helper.php:154
+msgid "None Found, Do post"
+msgstr ""
+
+#: inc/plugins/geoport-master/geoport-elements/helper/elements-helper.php:177
+msgid "None Found, Do service post"
+msgstr ""
+
+#: inc/plugins/geoport-master/geoport-elements/helper/elements-helper.php:199
+msgid "None Found, Do team post"
+msgstr ""
+
+#: inc/plugins/geoport-master/geoport-elements/widgets/animated-image.php:48
+msgid "Animated Image"
+msgstr ""
+
+#: inc/plugins/geoport-master/geoport-elements/widgets/animated-image.php:54
+#: inc/plugins/geoport-master/geoport-elements/widgets/contact-box.php:59
+#: inc/plugins/geoport-master/geoport-elements/widgets/counter-items.php:139
+#: inc/plugins/geoport-master/geoport-elements/widgets/image-slider.php:64
+#: inc/plugins/geoport-master/geoport-elements/widgets/single-counter.php:81
+#: inc/plugins/geoport-master/geoport-elements/widgets/single-icon-item.php:78
+msgid "Image"
+msgstr ""
+
+#: inc/plugins/geoport-master/geoport-elements/widgets/animated-image.php:67
+#: inc/plugins/geoport-master/geoport-elements/widgets/button.php:70
+#: inc/plugins/geoport-master/geoport-elements/widgets/contact-box.php:122
+#: inc/plugins/geoport-master/geoport-elements/widgets/single-icon-item.php:150
+msgid "https://your-link.com"
+msgstr ""
+
+#: inc/plugins/geoport-master/geoport-elements/widgets/animated-image.php:79
+msgid "Image Animation"
+msgstr ""
+
+#: inc/plugins/geoport-master/geoport-elements/widgets/animated-image.php:87
+#: inc/plugins/geoport-master/geoport-elements/widgets/section-head.php:94
+#: inc/plugins/geoport-master/geoport-elements/widgets/section-head.php:131
+#: inc/plugins/geoport-master/geoport-elements/widgets/section-head.php:168
+msgid "Animation Delay"
+msgstr ""
+
+#: inc/plugins/geoport-master/geoport-elements/widgets/animated-image.php:97
+#: inc/plugins/geoport-master/geoport-elements/widgets/button.php:90
+#: inc/plugins/geoport-master/geoport-elements/widgets/contact-box.php:128
+#: inc/plugins/geoport-master/geoport-elements/widgets/counter-items.php:225
+#: inc/plugins/geoport-master/geoport-elements/widgets/icon-list.php:154
+#: inc/plugins/geoport-master/geoport-elements/widgets/location-box.php:115
+#: inc/plugins/geoport-master/geoport-elements/widgets/section-head-two.php:112
+#: inc/plugins/geoport-master/geoport-elements/widgets/section-head.php:189
+#: inc/plugins/geoport-master/geoport-elements/widgets/single-counter.php:136
+#: inc/plugins/geoport-master/geoport-elements/widgets/single-icon-item.php:231
+msgid "Alignment"
+msgstr ""
+
+#: inc/plugins/geoport-master/geoport-elements/widgets/animated-image.php:101
+#: inc/plugins/geoport-master/geoport-elements/widgets/button.php:94
+#: inc/plugins/geoport-master/geoport-elements/widgets/contact-box.php:132
+#: inc/plugins/geoport-master/geoport-elements/widgets/counter-items.php:229
+#: inc/plugins/geoport-master/geoport-elements/widgets/icon-list.php:158
+#: inc/plugins/geoport-master/geoport-elements/widgets/location-box.php:119
+#: inc/plugins/geoport-master/geoport-elements/widgets/section-head-two.php:116
+#: inc/plugins/geoport-master/geoport-elements/widgets/section-head.php:193
+#: inc/plugins/geoport-master/geoport-elements/widgets/single-counter.php:140
+#: inc/plugins/geoport-master/geoport-elements/widgets/single-icon-item.php:235
+msgid "Left"
+msgstr ""
+
+#: inc/plugins/geoport-master/geoport-elements/widgets/animated-image.php:105
+#: inc/plugins/geoport-master/geoport-elements/widgets/button.php:98
+#: inc/plugins/geoport-master/geoport-elements/widgets/contact-box.php:136
+#: inc/plugins/geoport-master/geoport-elements/widgets/counter-items.php:233
+#: inc/plugins/geoport-master/geoport-elements/widgets/icon-list.php:162
+#: inc/plugins/geoport-master/geoport-elements/widgets/location-box.php:123
+#: inc/plugins/geoport-master/geoport-elements/widgets/section-head-two.php:120
+#: inc/plugins/geoport-master/geoport-elements/widgets/section-head.php:197
+#: inc/plugins/geoport-master/geoport-elements/widgets/single-counter.php:144
+#: inc/plugins/geoport-master/geoport-elements/widgets/single-icon-item.php:239
+msgid "Center"
+msgstr ""
+
+#: inc/plugins/geoport-master/geoport-elements/widgets/animated-image.php:109
+#: inc/plugins/geoport-master/geoport-elements/widgets/button.php:102
+#: inc/plugins/geoport-master/geoport-elements/widgets/contact-box.php:140
+#: inc/plugins/geoport-master/geoport-elements/widgets/counter-items.php:237
+#: inc/plugins/geoport-master/geoport-elements/widgets/icon-list.php:166
+#: inc/plugins/geoport-master/geoport-elements/widgets/location-box.php:127
+#: inc/plugins/geoport-master/geoport-elements/widgets/section-head-two.php:124
+#: inc/plugins/geoport-master/geoport-elements/widgets/section-head.php:201
+#: inc/plugins/geoport-master/geoport-elements/widgets/single-counter.php:148
+#: inc/plugins/geoport-master/geoport-elements/widgets/single-icon-item.php:243
+msgid "Right"
+msgstr ""
+
+#: inc/plugins/geoport-master/geoport-elements/widgets/animated-image.php:130
+#: inc/plugins/geoport-master/geoport-elements/widgets/single-icon-item.php:420
+msgid "Image style"
+msgstr ""
+
+#: inc/plugins/geoport-master/geoport-elements/widgets/animated-image.php:137
+#: inc/plugins/geoport-master/geoport-elements/widgets/icon-list.php:212
+#: inc/plugins/geoport-master/geoport-elements/widgets/icon-list.php:350
+#: inc/plugins/geoport-master/geoport-elements/widgets/prograss-bar.php:145
+#: inc/plugins/geoport-master/geoport-elements/widgets/single-icon-item.php:270
+msgid "Background Color"
+msgstr ""
+
+#: inc/plugins/geoport-master/geoport-elements/widgets/animated-image.php:147
+#: inc/plugins/geoport-master/geoport-elements/widgets/button.php:147
+#: inc/plugins/geoport-master/geoport-elements/widgets/geoport-accordion.php:200
+msgid "Margin"
+msgstr ""
+
+#: inc/plugins/geoport-master/geoport-elements/widgets/animated-image.php:158
+#: inc/plugins/geoport-master/geoport-elements/widgets/button.php:158
+#: inc/plugins/geoport-master/geoport-elements/widgets/geoport-accordion.php:189
+#: inc/plugins/geoport-master/geoport-elements/widgets/icon-list.php:274
+#: inc/plugins/geoport-master/geoport-elements/widgets/single-icon-item.php:282
+#: inc/plugins/geoport-master/geoport-elements/widgets/single-icon-item.php:303
+#: inc/plugins/geoport-master/geoport-elements/widgets/single-icon-item.php:324
+#: inc/plugins/geoport-master/geoport-elements/widgets/single-icon-item.php:607
+msgid "Padding"
+msgstr ""
+
+#: inc/plugins/geoport-master/geoport-elements/widgets/animated-image.php:170
+#: inc/plugins/geoport-master/geoport-elements/widgets/button.php:199
+#: inc/plugins/geoport-master/geoport-elements/widgets/button.php:265
+#: inc/plugins/geoport-master/geoport-elements/widgets/contact-box.php:174
+#: inc/plugins/geoport-master/geoport-elements/widgets/contact-box.php:207
+#: inc/plugins/geoport-master/geoport-elements/widgets/contact-box.php:339
+#: inc/plugins/geoport-master/geoport-elements/widgets/geoport-accordion.php:160
+#: inc/plugins/geoport-master/geoport-elements/widgets/location-box.php:173
+#: inc/plugins/geoport-master/geoport-elements/widgets/location-box.php:206
+#: inc/plugins/geoport-master/geoport-elements/widgets/single-icon-item.php:347
+msgid "Border"
+msgstr ""
+
+#: inc/plugins/geoport-master/geoport-elements/widgets/animated-image.php:177
+#: inc/plugins/geoport-master/geoport-elements/widgets/button.php:206
+#: inc/plugins/geoport-master/geoport-elements/widgets/contact-box.php:181
+#: inc/plugins/geoport-master/geoport-elements/widgets/contact-box.php:346
+#: inc/plugins/geoport-master/geoport-elements/widgets/gallery.php:91
+#: inc/plugins/geoport-master/geoport-elements/widgets/geoport-accordion.php:178
+#: inc/plugins/geoport-master/geoport-elements/widgets/location-box.php:180
+#: inc/plugins/geoport-master/geoport-elements/widgets/single-icon-item.php:354
+#: inc/plugins/geoport-master/geoport-elements/widgets/working-steps.php:295
+msgid "Border radius"
+msgstr ""
+
+#: inc/plugins/geoport-master/geoport-elements/widgets/button.php:51
+msgid "Geoport Button Setting"
+msgstr ""
+
+#: inc/plugins/geoport-master/geoport-elements/widgets/button.php:58
+msgid "Button text"
+msgstr ""
+
+#: inc/plugins/geoport-master/geoport-elements/widgets/button.php:82
+msgid "Button icon"
+msgstr ""
+
+#: inc/plugins/geoport-master/geoport-elements/widgets/button.php:106
+msgid "Justified"
+msgstr ""
+
+#: inc/plugins/geoport-master/geoport-elements/widgets/button.php:125
+#: inc/plugins/geoport-master/geoport-elements/widgets/gallery.php:84
+#: inc/plugins/geoport-master/geoport-elements/widgets/video-button.php:81
+#: inc/plugins/geoport-master/geoport-elements/widgets/working-steps.php:95
+msgid "Style"
+msgstr ""
+
+#: inc/plugins/geoport-master/geoport-elements/widgets/button.php:133
+#: inc/plugins/geoport-master/geoport-elements/widgets/careers-list.php:125
+#: inc/plugins/geoport-master/geoport-elements/widgets/careers-list.php:144
+#: inc/plugins/geoport-master/geoport-elements/widgets/careers-list.php:174
+#: inc/plugins/geoport-master/geoport-elements/widgets/contact-box.php:379
+#: inc/plugins/geoport-master/geoport-elements/widgets/contact-box.php:451
+#: inc/plugins/geoport-master/geoport-elements/widgets/contact-box.php:479
+#: inc/plugins/geoport-master/geoport-elements/widgets/form-tab.php:255
+#: inc/plugins/geoport-master/geoport-elements/widgets/geoport-accordion.php:237
+#: inc/plugins/geoport-master/geoport-elements/widgets/location-box.php:275
+#: inc/plugins/geoport-master/geoport-elements/widgets/location-box.php:303
+#: inc/plugins/geoport-master/geoport-elements/widgets/section-blog.php:188
+#: inc/plugins/geoport-master/geoport-elements/widgets/section-blog.php:260
+#: inc/plugins/geoport-master/geoport-elements/widgets/section-head-two.php:166
+#: inc/plugins/geoport-master/geoport-elements/widgets/section-head-two.php:198
+#: inc/plugins/geoport-master/geoport-elements/widgets/section-head.php:245
+#: inc/plugins/geoport-master/geoport-elements/widgets/section-head.php:275
+#: inc/plugins/geoport-master/geoport-elements/widgets/section-head.php:306
+#: inc/plugins/geoport-master/geoport-elements/widgets/section-head.php:369
+#: inc/plugins/geoport-master/geoport-elements/widgets/single-counter.php:183
+#: inc/plugins/geoport-master/geoport-elements/widgets/single-counter.php:214
+#: inc/plugins/geoport-master/geoport-elements/widgets/single-icon-item.php:566
+#: inc/plugins/geoport-master/geoport-elements/widgets/single-icon-item.php:599
+#: inc/plugins/geoport-master/geoport-elements/widgets/tab-slider.php:158
+#: inc/plugins/geoport-master/geoport-elements/widgets/video-button.php:98
+#: inc/plugins/geoport-master/geoport-elements/widgets/working-steps.php:131
+#: inc/plugins/geoport-master/geoport-elements/widgets/working-steps.php:166
+#: inc/plugins/geoport-master/geoport-elements/widgets/working-steps.php:265
+msgid "Typography"
+msgstr ""
+
+#: inc/plugins/geoport-master/geoport-elements/widgets/button.php:172
+msgid "Normal"
+msgstr ""
+
+#: inc/plugins/geoport-master/geoport-elements/widgets/button.php:178
+#: inc/plugins/geoport-master/geoport-elements/widgets/button.php:244
+msgid "Font color"
+msgstr ""
+
+#: inc/plugins/geoport-master/geoport-elements/widgets/button.php:188
+#: inc/plugins/geoport-master/geoport-elements/widgets/button.php:254
+msgid "Background color"
+msgstr ""
+
+#: inc/plugins/geoport-master/geoport-elements/widgets/button.php:218
+#: inc/plugins/geoport-master/geoport-elements/widgets/section-blog.php:180
+#: inc/plugins/geoport-master/geoport-elements/widgets/section-blog.php:216
+msgid "Box Shadow"
+msgstr ""
+
+#: inc/plugins/geoport-master/geoport-elements/widgets/button.php:230
+msgid "Hover"
+msgstr ""
+
+#: inc/plugins/geoport-master/geoport-elements/widgets/button.php:236
+#: inc/plugins/geoport-master/geoport-elements/widgets/contact-box.php:218
+#: inc/plugins/geoport-master/geoport-elements/widgets/contact-box.php:224
+#: inc/plugins/geoport-master/geoport-elements/widgets/contact-box.php:389
+#: inc/plugins/geoport-master/geoport-elements/widgets/contact-box.php:461
+#: inc/plugins/geoport-master/geoport-elements/widgets/contact-box.php:529
+#: inc/plugins/geoport-master/geoport-elements/widgets/contact-box.php:597
+#: inc/plugins/geoport-master/geoport-elements/widgets/location-box.php:217
+#: inc/plugins/geoport-master/geoport-elements/widgets/location-box.php:223
+#: inc/plugins/geoport-master/geoport-elements/widgets/location-box.php:285
+#: inc/plugins/geoport-master/geoport-elements/widgets/location-box.php:353
+#: inc/plugins/geoport-master/geoport-elements/widgets/location-box.php:421
+msgid "Hover State"
+msgstr ""
+
+#: inc/plugins/geoport-master/geoport-elements/widgets/button.php:273
+msgid "Hover Box Shadow"
+msgstr ""
+
+#: inc/plugins/geoport-master/geoport-elements/widgets/careers-list.php:48
+#: inc/plugins/geoport-master/inc/custom-posttype.php:325
+#: inc/plugins/geoport-master/inc/custom-posttype.php:326
+msgid "Job List"
+msgstr ""
+
+#: inc/plugins/geoport-master/geoport-elements/widgets/careers-list.php:54
+msgid "Number of List"
+msgstr ""
+
+#: inc/plugins/geoport-master/geoport-elements/widgets/careers-list.php:55
+#: inc/plugins/geoport-master/geoport-elements/widgets/our-history.php:59
+#: inc/plugins/geoport-master/geoport-elements/widgets/section-blog.php:58
+#: inc/plugins/geoport-master/geoport-elements/widgets/section-services.php:58
+#: inc/plugins/geoport-master/geoport-elements/widgets/team.php:60
+#: inc/plugins/geoport-master/geoport-elements/widgets/testimonial.php:60
+msgid "Give -1 for all post"
+msgstr ""
+
+#: inc/plugins/geoport-master/geoport-elements/widgets/careers-list.php:67
+#: inc/plugins/geoport-master/geoport-elements/widgets/counter-items.php:184
+#: inc/plugins/geoport-master/geoport-elements/widgets/prograss-bar.php:127
+#: inc/plugins/geoport-master/geoport-elements/widgets/section-blog.php:98
+#: inc/plugins/geoport-master/geoport-elements/widgets/section-blog.php:109
+#: inc/plugins/geoport-master/geoport-elements/widgets/section-blog.php:120
+#: inc/plugins/geoport-master/geoport-elements/widgets/section-head.php:315
+#: inc/plugins/geoport-master/geoport-elements/widgets/section-services.php:98
+msgid "Show"
+msgstr ""
+
+#: inc/plugins/geoport-master/geoport-elements/widgets/careers-list.php:68
+#: inc/plugins/geoport-master/geoport-elements/widgets/counter-items.php:185
+#: inc/plugins/geoport-master/geoport-elements/widgets/prograss-bar.php:128
+#: inc/plugins/geoport-master/geoport-elements/widgets/section-blog.php:99
+#: inc/plugins/geoport-master/geoport-elements/widgets/section-blog.php:110
+#: inc/plugins/geoport-master/geoport-elements/widgets/section-blog.php:121
+#: inc/plugins/geoport-master/geoport-elements/widgets/section-head.php:316
+#: inc/plugins/geoport-master/geoport-elements/widgets/section-services.php:99
+msgid "Hide"
+msgstr ""
+
+#: inc/plugins/geoport-master/geoport-elements/widgets/careers-list.php:84
+msgid "Table Item Style"
+msgstr ""
+
+#: inc/plugins/geoport-master/geoport-elements/widgets/careers-list.php:91
+msgid "Table Item Background Color"
+msgstr ""
+
+#: inc/plugins/geoport-master/geoport-elements/widgets/careers-list.php:106
+msgid "Table Body Style"
+msgstr ""
+
+#: inc/plugins/geoport-master/geoport-elements/widgets/careers-list.php:113
+#: inc/plugins/geoport-master/geoport-elements/widgets/geoport-accordion.php:224
+#: inc/plugins/geoport-master/geoport-elements/widgets/prograss-bar.php:189
+#: inc/plugins/geoport-master/geoport-elements/widgets/single-icon-item.php:516
+msgid "Title Color"
+msgstr ""
+
+#: inc/plugins/geoport-master/geoport-elements/widgets/careers-list.php:132
+#: inc/plugins/geoport-master/geoport-elements/widgets/counter-items.php:273
+#: inc/plugins/geoport-master/geoport-elements/widgets/counter-items.php:305
+#: inc/plugins/geoport-master/geoport-elements/widgets/form-tab.php:242
+#: inc/plugins/geoport-master/geoport-elements/widgets/section-head-two.php:153
+#: inc/plugins/geoport-master/geoport-elements/widgets/section-head-two.php:186
+#: inc/plugins/geoport-master/geoport-elements/widgets/section-head.php:232
+#: inc/plugins/geoport-master/geoport-elements/widgets/section-head.php:294
+#: inc/plugins/geoport-master/geoport-elements/widgets/section-head.php:354
+#: inc/plugins/geoport-master/geoport-elements/widgets/single-counter.php:170
+#: inc/plugins/geoport-master/geoport-elements/widgets/single-counter.php:201
+msgid "Text Color"
+msgstr ""
+
+#: inc/plugins/geoport-master/geoport-elements/widgets/careers-list.php:162
+msgid "Button Color"
+msgstr ""
+
+#: inc/plugins/geoport-master/geoport-elements/widgets/contact-box.php:49
+msgid "Contact Box"
+msgstr ""
+
+#: inc/plugins/geoport-master/geoport-elements/widgets/contact-box.php:55
+#: inc/plugins/geoport-master/geoport-elements/widgets/geoport-accordion.php:64
+#: inc/plugins/geoport-master/geoport-elements/widgets/single-icon-item.php:73
+msgid "Icon Type"
+msgstr ""
+
+#: inc/plugins/geoport-master/geoport-elements/widgets/contact-box.php:67
+#: inc/plugins/geoport-master/geoport-elements/widgets/geoport-accordion.php:68
+#: inc/plugins/geoport-master/geoport-elements/widgets/single-icon-item.php:88
+msgid "Font Icon"
+msgstr ""
+
+#: inc/plugins/geoport-master/geoport-elements/widgets/contact-box.php:79
+#: inc/plugins/geoport-master/geoport-elements/widgets/location-box.php:69
+#: inc/plugins/geoport-master/geoport-elements/widgets/single-icon-item.php:99
+msgid "Icon Image"
+msgstr ""
+
+#: inc/plugins/geoport-master/geoport-elements/widgets/contact-box.php:93
+#: inc/plugins/geoport-master/geoport-elements/widgets/counter-items.php:202
+#: inc/plugins/geoport-master/geoport-elements/widgets/counter-items.php:297
+#: inc/plugins/geoport-master/geoport-elements/widgets/form-tab.php:84
+#: inc/plugins/geoport-master/geoport-elements/widgets/geoport-accordion.php:95
+#: inc/plugins/geoport-master/geoport-elements/widgets/image-slider.php:73
+#: inc/plugins/geoport-master/geoport-elements/widgets/location-box.php:80
+#: inc/plugins/geoport-master/geoport-elements/widgets/prograss-bar.php:101
+#: inc/plugins/geoport-master/geoport-elements/widgets/section-head-two.php:64
+#: inc/plugins/geoport-master/geoport-elements/widgets/section-head.php:69
+#: inc/plugins/geoport-master/geoport-elements/widgets/section-head.php:77
+#: inc/plugins/geoport-master/geoport-elements/widgets/single-counter.php:193
+#: inc/plugins/geoport-master/geoport-elements/widgets/single-icon-item.php:114
+#: inc/plugins/geoport-master/geoport-elements/widgets/tab-slider.php:61
+#: inc/plugins/geoport-master/geoport-elements/widgets/working-steps.php:61
+#: inc/plugins/geoport-master/inc/custom-widgets.php:186
+#: inc/plugins/geoport-master/inc/custom-widgets.php:366
+#: inc/plugins/geoport-master/inc/custom-widgets.php:813
+msgid "Title"
+msgstr ""
+
+#: inc/plugins/geoport-master/geoport-elements/widgets/contact-box.php:95
+#: inc/plugins/geoport-master/geoport-elements/widgets/location-box.php:82
+#: inc/plugins/geoport-master/geoport-elements/widgets/single-icon-item.php:116
+msgid "Item Title"
+msgstr ""
+
+#: inc/plugins/geoport-master/geoport-elements/widgets/contact-box.php:102
+#: inc/plugins/geoport-master/geoport-elements/widgets/geoport-accordion.php:102
+#: inc/plugins/geoport-master/geoport-elements/widgets/location-box.php:89
+#: inc/plugins/geoport-master/geoport-elements/widgets/single-icon-item.php:123
+#: inc/plugins/geoport-master/inc/custom-widgets.php:221
+msgid "Description"
+msgstr ""
+
+#: inc/plugins/geoport-master/geoport-elements/widgets/contact-box.php:104
+#: inc/plugins/geoport-master/geoport-elements/widgets/location-box.php:91
+msgid "12/A, Haska City Hall, London, UK"
+msgstr ""
+
+#: inc/plugins/geoport-master/geoport-elements/widgets/contact-box.php:111
+#: inc/plugins/geoport-master/geoport-elements/widgets/contact-box.php:113
+#: inc/plugins/geoport-master/geoport-elements/widgets/image-slider.php:80
+msgid "Link Text"
+msgstr ""
+
+#: inc/plugins/geoport-master/geoport-elements/widgets/contact-box.php:157
+#: inc/plugins/geoport-master/geoport-elements/widgets/location-box.php:144
+#: inc/plugins/geoport-master/geoport-elements/widgets/single-icon-item.php:262
+msgid "Full item Style"
+msgstr ""
+
+#: inc/plugins/geoport-master/geoport-elements/widgets/contact-box.php:167
+#: inc/plugins/geoport-master/geoport-elements/widgets/contact-box.php:258
+#: inc/plugins/geoport-master/geoport-elements/widgets/contact-box.php:433
+#: inc/plugins/geoport-master/geoport-elements/widgets/contact-box.php:501
+#: inc/plugins/geoport-master/geoport-elements/widgets/contact-box.php:569
+#: inc/plugins/geoport-master/geoport-elements/widgets/location-box.php:154
+#: inc/plugins/geoport-master/geoport-elements/widgets/location-box.php:257
+#: inc/plugins/geoport-master/geoport-elements/widgets/location-box.php:325
+#: inc/plugins/geoport-master/geoport-elements/widgets/location-box.php:393
+msgid "Normal State"
+msgstr ""
+
+#: inc/plugins/geoport-master/geoport-elements/widgets/contact-box.php:198
+#: inc/plugins/geoport-master/geoport-elements/widgets/location-box.php:197
+msgid "Link border style"
+msgstr ""
+
+#: inc/plugins/geoport-master/geoport-elements/widgets/contact-box.php:232
+#: inc/plugins/geoport-master/geoport-elements/widgets/location-box.php:231
+msgid "Hover border color"
+msgstr ""
+
+#: inc/plugins/geoport-master/geoport-elements/widgets/contact-box.php:250
+msgid "Item Icon Style"
+msgstr ""
+
+#: inc/plugins/geoport-master/geoport-elements/widgets/contact-box.php:264
+msgid "Icon Box Width"
+msgstr ""
+
+#: inc/plugins/geoport-master/geoport-elements/widgets/contact-box.php:285
+msgid "Icon Box Height"
+msgstr ""
+
+#: inc/plugins/geoport-master/geoport-elements/widgets/contact-box.php:306
+msgid "Icon Box Line Height"
+msgstr ""
+
+#: inc/plugins/geoport-master/geoport-elements/widgets/contact-box.php:327
+msgid "Icon box background color"
+msgstr ""
+
+#: inc/plugins/geoport-master/geoport-elements/widgets/contact-box.php:366
+msgid "Icon box icon color"
+msgstr ""
+
+#: inc/plugins/geoport-master/geoport-elements/widgets/contact-box.php:395
+msgid "Icon box hover background color"
+msgstr ""
+
+#: inc/plugins/geoport-master/geoport-elements/widgets/contact-box.php:406
+msgid "Icon box hover icon color"
+msgstr ""
+
+#: inc/plugins/geoport-master/geoport-elements/widgets/contact-box.php:425
+#: inc/plugins/geoport-master/geoport-elements/widgets/location-box.php:249
+msgid "Item Title Style"
+msgstr ""
+
+#: inc/plugins/geoport-master/geoport-elements/widgets/contact-box.php:439
+#: inc/plugins/geoport-master/geoport-elements/widgets/contact-box.php:467
+#: inc/plugins/geoport-master/geoport-elements/widgets/location-box.php:263
+#: inc/plugins/geoport-master/geoport-elements/widgets/location-box.php:291
+msgid "Box title color"
+msgstr ""
+
+#: inc/plugins/geoport-master/geoport-elements/widgets/contact-box.php:493
+#: inc/plugins/geoport-master/geoport-elements/widgets/location-box.php:317
+msgid "Item Description Style"
+msgstr ""
+
+#: inc/plugins/geoport-master/geoport-elements/widgets/contact-box.php:507
+#: inc/plugins/geoport-master/geoport-elements/widgets/contact-box.php:535
+#: inc/plugins/geoport-master/geoport-elements/widgets/location-box.php:331
+#: inc/plugins/geoport-master/geoport-elements/widgets/location-box.php:359
+msgid "Box description color"
+msgstr ""
+
+#: inc/plugins/geoport-master/geoport-elements/widgets/contact-box.php:519
+#: inc/plugins/geoport-master/geoport-elements/widgets/contact-box.php:547
+#: inc/plugins/geoport-master/geoport-elements/widgets/location-box.php:343
+#: inc/plugins/geoport-master/geoport-elements/widgets/location-box.php:371
+msgid "Description typography"
+msgstr ""
+
+#: inc/plugins/geoport-master/geoport-elements/widgets/contact-box.php:561
+#: inc/plugins/geoport-master/geoport-elements/widgets/location-box.php:385
+msgid "Item Link Style"
+msgstr ""
+
+#: inc/plugins/geoport-master/geoport-elements/widgets/contact-box.php:575
+#: inc/plugins/geoport-master/geoport-elements/widgets/location-box.php:399
+msgid "Box link color"
+msgstr ""
+
+#: inc/plugins/geoport-master/geoport-elements/widgets/contact-box.php:587
+#: inc/plugins/geoport-master/geoport-elements/widgets/location-box.php:411
+msgid "Link typography"
+msgstr ""
+
+#: inc/plugins/geoport-master/geoport-elements/widgets/contact-box.php:603
+#: inc/plugins/geoport-master/geoport-elements/widgets/location-box.php:427
+msgid "Box link hover color"
+msgstr ""
+
+#: inc/plugins/geoport-master/geoport-elements/widgets/contact-box.php:615
+#: inc/plugins/geoport-master/geoport-elements/widgets/location-box.php:440
+msgid "Link hover typography"
+msgstr ""
+
+#: inc/plugins/geoport-master/geoport-elements/widgets/contact-box.php:660
+#: inc/plugins/geoport-master/geoport-elements/widgets/contact-box.php:685
+#: inc/plugins/geoport-master/geoport-elements/widgets/contact-box.php:695
+#: inc/plugins/geoport-master/geoport-elements/widgets/location-box.php:476
+#: inc/plugins/geoport-master/geoport-elements/widgets/location-box.php:496
+#: inc/plugins/geoport-master/geoport-elements/widgets/single-icon-item.php:700
+#: inc/plugins/geoport-master/geoport-elements/widgets/single-icon-item.php:704
+#: inc/plugins/geoport-master/geoport-elements/widgets/single-icon-item.php:724
+#: inc/plugins/geoport-master/geoport-elements/widgets/single-icon-item.php:732
+#: inc/plugins/geoport-master/geoport-elements/widgets/single-icon-item.php:757
+#: inc/plugins/geoport-master/geoport-elements/widgets/single-icon-item.php:761
+#: inc/plugins/geoport-master/geoport-elements/widgets/single-icon-item.php:776
+#: inc/plugins/geoport-master/geoport-elements/widgets/single-icon-item.php:780
+#: inc/plugins/geoport-master/geoport-elements/widgets/single-icon-item.php:791
+#: inc/plugins/geoport-master/geoport-elements/widgets/single-icon-item.php:795
+msgid "img"
+msgstr ""
+
+#: inc/plugins/geoport-master/geoport-elements/widgets/contact-tab.php:51
+#: inc/plugins/geoport-master/inc/custom-posttype.php:170
+#: inc/plugins/geoport-master/inc/custom-posttype.php:171
+msgid "Contact Tab"
+msgstr ""
+
+#: inc/plugins/geoport-master/geoport-elements/widgets/contact-tab.php:57
+#: inc/plugins/geoport-master/geoport-elements/widgets/section-blog.php:57
+#: inc/plugins/geoport-master/geoport-elements/widgets/section-services.php:57
+msgid "Number of Item"
+msgstr ""
+
+#: inc/plugins/geoport-master/geoport-elements/widgets/contact-tab.php:58
+msgid "Give -1 for all contact"
+msgstr ""
+
+#: inc/plugins/geoport-master/geoport-elements/widgets/contact-tab.php:66
+#: inc/plugins/geoport-master/geoport-elements/widgets/our-history.php:67
+#: inc/plugins/geoport-master/geoport-elements/widgets/section-blog.php:84
+#: inc/plugins/geoport-master/geoport-elements/widgets/section-services.php:84
+#: inc/plugins/geoport-master/geoport-elements/widgets/team.php:78
+#: inc/plugins/geoport-master/geoport-elements/widgets/testimonial.php:77
+msgid "Order"
+msgstr ""
+
+#: inc/plugins/geoport-master/geoport-elements/widgets/contact-tab.php:70
+#: inc/plugins/geoport-master/geoport-elements/widgets/our-history.php:71
+#: inc/plugins/geoport-master/geoport-elements/widgets/section-blog.php:88
+#: inc/plugins/geoport-master/geoport-elements/widgets/section-services.php:88
+#: inc/plugins/geoport-master/geoport-elements/widgets/team.php:82
+#: inc/plugins/geoport-master/geoport-elements/widgets/testimonial.php:81
+msgid "Ascending Order"
+msgstr ""
+
+#: inc/plugins/geoport-master/geoport-elements/widgets/contact-tab.php:71
+#: inc/plugins/geoport-master/geoport-elements/widgets/our-history.php:72
+#: inc/plugins/geoport-master/geoport-elements/widgets/section-blog.php:89
+#: inc/plugins/geoport-master/geoport-elements/widgets/section-services.php:89
+#: inc/plugins/geoport-master/geoport-elements/widgets/team.php:83
+#: inc/plugins/geoport-master/geoport-elements/widgets/testimonial.php:82
+msgid "Descending"
+msgstr ""
+
+#: inc/plugins/geoport-master/geoport-elements/widgets/counter-items.php:54
+#: inc/plugins/geoport-master/geoport-elements/widgets/counter-items.php:127
+msgid "Counter"
+msgstr ""
+
+#: inc/plugins/geoport-master/geoport-elements/widgets/counter-items.php:134
+msgid "Counter Items"
+msgstr ""
+
+#: inc/plugins/geoport-master/geoport-elements/widgets/counter-items.php:153
+#: inc/plugins/geoport-master/geoport-elements/widgets/single-counter.php:102
+msgid "Number Prefix"
+msgstr ""
+
+#: inc/plugins/geoport-master/geoport-elements/widgets/counter-items.php:163
+#: inc/plugins/geoport-master/geoport-elements/widgets/single-counter.php:114
+msgid "Number Suffix"
+msgstr ""
+
+#: inc/plugins/geoport-master/geoport-elements/widgets/counter-items.php:169
+#: inc/plugins/geoport-master/geoport-elements/widgets/single-counter.php:119
+msgid "Plus"
+msgstr ""
+
+#: inc/plugins/geoport-master/geoport-elements/widgets/counter-items.php:173
+msgid "Animation Duration"
+msgstr ""
+
+#: inc/plugins/geoport-master/geoport-elements/widgets/counter-items.php:181
+msgid "Thousand Separator"
+msgstr ""
+
+#: inc/plugins/geoport-master/geoport-elements/widgets/counter-items.php:189
+msgid "Separator"
+msgstr ""
+
+#: inc/plugins/geoport-master/geoport-elements/widgets/counter-items.php:208
+#: inc/plugins/geoport-master/geoport-elements/widgets/counter-items.php:209
+msgid "Cool Number"
+msgstr ""
+
+#: inc/plugins/geoport-master/geoport-elements/widgets/counter-items.php:213
+#: inc/plugins/geoport-master/geoport-elements/widgets/icon-list.php:180
+msgid "View"
+msgstr ""
+
+#: inc/plugins/geoport-master/geoport-elements/widgets/counter-items.php:249
+msgid "Counter Columns"
+msgstr ""
+
+#: inc/plugins/geoport-master/geoport-elements/widgets/counter-items.php:253
+msgid "Columns 2"
+msgstr ""
+
+#: inc/plugins/geoport-master/geoport-elements/widgets/counter-items.php:254
+msgid "Columns 3"
+msgstr ""
+
+#: inc/plugins/geoport-master/geoport-elements/widgets/counter-items.php:255
+msgid "Columns 4"
+msgstr ""
+
+#: inc/plugins/geoport-master/geoport-elements/widgets/counter-items.php:265
+#: inc/plugins/geoport-master/geoport-elements/widgets/single-counter.php:93
+#: inc/plugins/geoport-master/geoport-elements/widgets/single-counter.php:162
+msgid "Number"
+msgstr ""
+
+#: inc/plugins/geoport-master/geoport-elements/widgets/form-tab.php:52
+msgid "Form Tab"
+msgstr ""
+
+#: inc/plugins/geoport-master/geoport-elements/widgets/form-tab.php:59
+msgid "Form Tab Version"
+msgstr ""
+
+#: inc/plugins/geoport-master/geoport-elements/widgets/form-tab.php:63
+#: inc/plugins/geoport-master/geoport-elements/widgets/location-box.php:60
+#: inc/plugins/geoport-master/geoport-elements/widgets/section-blog.php:133
+#: inc/plugins/geoport-master/geoport-elements/widgets/section-head.php:59
+#: inc/plugins/geoport-master/geoport-elements/widgets/single-counter.php:71
+msgid "Style 1"
+msgstr ""
+
+#: inc/plugins/geoport-master/geoport-elements/widgets/form-tab.php:64
+#: inc/plugins/geoport-master/geoport-elements/widgets/location-box.php:61
+#: inc/plugins/geoport-master/geoport-elements/widgets/section-blog.php:134
+#: inc/plugins/geoport-master/geoport-elements/widgets/section-head.php:60
+#: inc/plugins/geoport-master/geoport-elements/widgets/single-counter.php:72
+msgid "Style 2"
+msgstr ""
+
+#: inc/plugins/geoport-master/geoport-elements/widgets/form-tab.php:72
+msgid "Tab Items"
+msgstr ""
+
+#: inc/plugins/geoport-master/geoport-elements/widgets/form-tab.php:91
+msgid "Form Title"
+msgstr ""
+
+#: inc/plugins/geoport-master/geoport-elements/widgets/form-tab.php:98
+msgid "Form Sub Title"
+msgstr ""
+
+#: inc/plugins/geoport-master/geoport-elements/widgets/form-tab.php:105
+msgid "Form Shortcode"
+msgstr ""
+
+#: inc/plugins/geoport-master/geoport-elements/widgets/form-tab.php:117
+msgid "Tab Side Image"
+msgstr ""
+
+#: inc/plugins/geoport-master/geoport-elements/widgets/form-tab.php:134
+#: inc/plugins/geoport-master/geoport-elements/widgets/tab-slider.php:137
+msgid "Tab Style Settings"
+msgstr ""
+
+#: inc/plugins/geoport-master/geoport-elements/widgets/form-tab.php:144
+msgid "Buttom Margin Top"
+msgstr ""
+
+#: inc/plugins/geoport-master/geoport-elements/widgets/form-tab.php:167
+msgid "Button Text Color"
+msgstr ""
+
+#: inc/plugins/geoport-master/geoport-elements/widgets/form-tab.php:179
+msgid "Active Button Background Color"
+msgstr ""
+
+#: inc/plugins/geoport-master/geoport-elements/widgets/form-tab.php:191
+msgid "Active Button Text Color"
+msgstr ""
+
+#: inc/plugins/geoport-master/geoport-elements/widgets/form-tab.php:203
+msgid "Request Button Background Color"
+msgstr ""
+
+#: inc/plugins/geoport-master/geoport-elements/widgets/form-tab.php:215
+msgid "Request Button Text Color"
+msgstr ""
+
+#: inc/plugins/geoport-master/geoport-elements/widgets/form-tab.php:232
+msgid "Form Tab Style"
+msgstr ""
+
+#: inc/plugins/geoport-master/geoport-elements/widgets/gallery.php:47
+msgid "Photo Gallery"
+msgstr ""
+
+#: inc/plugins/geoport-master/geoport-elements/widgets/gallery.php:54
+msgid "Add Images"
+msgstr ""
+
+#: inc/plugins/geoport-master/geoport-elements/widgets/gallery.php:62
+#: inc/plugins/geoport-master/geoport-elements/widgets/team.php:102
+msgid "Columns"
+msgstr ""
+
+#: inc/plugins/geoport-master/geoport-elements/widgets/gallery.php:66
+#: inc/plugins/geoport-master/geoport-elements/widgets/image-slider.php:121
+#: inc/plugins/geoport-master/geoport-elements/widgets/image-slider.php:150
+#: inc/plugins/geoport-master/geoport-elements/widgets/image-slider.php:179
+#: inc/plugins/geoport-master/geoport-elements/widgets/image-slider.php:208
+#: inc/plugins/geoport-master/geoport-elements/widgets/image-slider.php:235
+#: inc/plugins/geoport-master/geoport-elements/widgets/section-blog.php:145
+#: inc/plugins/geoport-master/geoport-elements/widgets/section-services.php:111
+#: inc/plugins/geoport-master/geoport-elements/widgets/tab-slider.php:106
+#: inc/plugins/geoport-master/geoport-elements/widgets/team.php:106
+#: inc/plugins/geoport-master/geoport-elements/widgets/team.php:140
+#: inc/plugins/geoport-master/geoport-elements/widgets/team.php:158
+#: inc/plugins/geoport-master/geoport-elements/widgets/team.php:176
+#: inc/plugins/geoport-master/geoport-elements/widgets/team.php:193
+#: inc/plugins/geoport-master/geoport-elements/widgets/team.php:209
+#: inc/plugins/geoport-master/geoport-elements/widgets/testimonial.php:149
+#: inc/plugins/geoport-master/geoport-elements/widgets/testimonial.php:176
+#: inc/plugins/geoport-master/geoport-elements/widgets/testimonial.php:203
+#: inc/plugins/geoport-master/geoport-elements/widgets/testimonial.php:230
+#: inc/plugins/geoport-master/geoport-elements/widgets/testimonial.php:255
+msgid "2"
+msgstr ""
+
+#: inc/plugins/geoport-master/geoport-elements/widgets/gallery.php:67
+#: inc/plugins/geoport-master/geoport-elements/widgets/image-slider.php:122
+#: inc/plugins/geoport-master/geoport-elements/widgets/image-slider.php:151
+#: inc/plugins/geoport-master/geoport-elements/widgets/image-slider.php:180
+#: inc/plugins/geoport-master/geoport-elements/widgets/image-slider.php:209
+#: inc/plugins/geoport-master/geoport-elements/widgets/image-slider.php:236
+#: inc/plugins/geoport-master/geoport-elements/widgets/section-blog.php:146
+#: inc/plugins/geoport-master/geoport-elements/widgets/section-services.php:112
+#: inc/plugins/geoport-master/geoport-elements/widgets/tab-slider.php:107
+#: inc/plugins/geoport-master/geoport-elements/widgets/team.php:107
+#: inc/plugins/geoport-master/geoport-elements/widgets/team.php:141
+#: inc/plugins/geoport-master/geoport-elements/widgets/team.php:159
+#: inc/plugins/geoport-master/geoport-elements/widgets/team.php:177
+#: inc/plugins/geoport-master/geoport-elements/widgets/team.php:194
+#: inc/plugins/geoport-master/geoport-elements/widgets/team.php:210
+#: inc/plugins/geoport-master/geoport-elements/widgets/testimonial.php:150
+#: inc/plugins/geoport-master/geoport-elements/widgets/testimonial.php:177
+#: inc/plugins/geoport-master/geoport-elements/widgets/testimonial.php:204
+#: inc/plugins/geoport-master/geoport-elements/widgets/testimonial.php:231
+#: inc/plugins/geoport-master/geoport-elements/widgets/testimonial.php:256
+msgid "3"
+msgstr ""
+
+#: inc/plugins/geoport-master/geoport-elements/widgets/gallery.php:68
+#: inc/plugins/geoport-master/geoport-elements/widgets/image-slider.php:123
+#: inc/plugins/geoport-master/geoport-elements/widgets/image-slider.php:152
+#: inc/plugins/geoport-master/geoport-elements/widgets/image-slider.php:181
+#: inc/plugins/geoport-master/geoport-elements/widgets/section-blog.php:147
+#: inc/plugins/geoport-master/geoport-elements/widgets/section-services.php:113
+#: inc/plugins/geoport-master/geoport-elements/widgets/tab-slider.php:108
+#: inc/plugins/geoport-master/geoport-elements/widgets/team.php:108
+#: inc/plugins/geoport-master/geoport-elements/widgets/team.php:142
+#: inc/plugins/geoport-master/geoport-elements/widgets/team.php:160
+#: inc/plugins/geoport-master/geoport-elements/widgets/team.php:178
+#: inc/plugins/geoport-master/geoport-elements/widgets/testimonial.php:151
+#: inc/plugins/geoport-master/geoport-elements/widgets/testimonial.php:178
+#: inc/plugins/geoport-master/geoport-elements/widgets/testimonial.php:205
+msgid "4"
+msgstr ""
+
+#: inc/plugins/geoport-master/geoport-elements/widgets/gallery.php:69
+#: inc/plugins/geoport-master/geoport-elements/widgets/image-slider.php:124
+#: inc/plugins/geoport-master/geoport-elements/widgets/tab-slider.php:110
+#: inc/plugins/geoport-master/geoport-elements/widgets/team.php:109
+#: inc/plugins/geoport-master/geoport-elements/widgets/team.php:143
+#: inc/plugins/geoport-master/geoport-elements/widgets/testimonial.php:152
+msgid "6"
+msgstr ""
+
+#: inc/plugins/geoport-master/geoport-elements/widgets/gallery.php:113
+msgid "Gallery Image"
+msgstr ""
+
+#: inc/plugins/geoport-master/geoport-elements/widgets/geoport-accordion.php:52
+msgid "Accordion"
+msgstr ""
+
+#: inc/plugins/geoport-master/geoport-elements/widgets/geoport-accordion.php:59
+msgid "Accordion Items"
+msgstr ""
+
+#: inc/plugins/geoport-master/geoport-elements/widgets/geoport-accordion.php:69
+msgid "Text Icon"
+msgstr ""
+
+#: inc/plugins/geoport-master/geoport-elements/widgets/geoport-accordion.php:77
+msgid "Title Here"
+msgstr ""
+
+#: inc/plugins/geoport-master/geoport-elements/widgets/geoport-accordion.php:87
+msgid "01"
+msgstr ""
+
+#: inc/plugins/geoport-master/geoport-elements/widgets/geoport-accordion.php:97
+msgid "Tab Title"
+msgstr ""
+
+#: inc/plugins/geoport-master/geoport-elements/widgets/geoport-accordion.php:104
+msgid ""
+"Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod "
+"tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, "
+"quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo "
+"consequat."
+msgstr ""
+
+#: inc/plugins/geoport-master/geoport-elements/widgets/geoport-accordion.php:115
+msgid "Close Icon"
+msgstr ""
+
+#: inc/plugins/geoport-master/geoport-elements/widgets/geoport-accordion.php:124
+msgid "Open Icon"
+msgstr ""
+
+#: inc/plugins/geoport-master/geoport-elements/widgets/geoport-accordion.php:134
+msgid "Open Type"
+msgstr ""
+
+#: inc/plugins/geoport-master/geoport-elements/widgets/geoport-accordion.php:138
+msgid "Open by click"
+msgstr ""
+
+#: inc/plugins/geoport-master/geoport-elements/widgets/geoport-accordion.php:139
+msgid "Open by hover"
+msgstr ""
+
+#: inc/plugins/geoport-master/geoport-elements/widgets/geoport-accordion.php:152
+msgid "Full Accordion Style"
+msgstr ""
+
+#: inc/plugins/geoport-master/geoport-elements/widgets/geoport-accordion.php:167
+msgid "Last item border"
+msgstr ""
+
+#: inc/plugins/geoport-master/geoport-elements/widgets/geoport-accordion.php:217
+msgid "Accordion Title Style"
+msgstr ""
+
+#: inc/plugins/geoport-master/geoport-elements/widgets/geoport-accordion.php:249
+msgid "Accordion Icon Style"
+msgstr ""
+
+#: inc/plugins/geoport-master/geoport-elements/widgets/geoport-accordion.php:257
+#: inc/plugins/geoport-master/geoport-elements/widgets/single-icon-item.php:454
+#: inc/plugins/geoport-master/geoport-elements/widgets/tab-slider.php:175
+msgid "Icon Color"
+msgstr ""
+
+#: inc/plugins/geoport-master/geoport-elements/widgets/geoport-accordion.php:268
+#: inc/plugins/geoport-master/geoport-elements/widgets/geoport-accordion.php:305
+#: inc/plugins/geoport-master/geoport-elements/widgets/tab-slider.php:187
+msgid "Width"
+msgstr ""
+
+#: inc/plugins/geoport-master/geoport-elements/widgets/geoport-accordion.php:297
+msgid "Right Icon Settings"
+msgstr ""
+
+#: inc/plugins/geoport-master/geoport-elements/widgets/geoport-accordion.php:332
+msgid "Right Icon Color"
+msgstr ""
+
+#: inc/plugins/geoport-master/geoport-elements/widgets/geoport-accordion.php:343
+msgid "Right Icon Active Color"
+msgstr ""
+
+#: inc/plugins/geoport-master/geoport-elements/widgets/icon-list.php:48
+msgid "Geo Social Icons"
+msgstr ""
+
+#: inc/plugins/geoport-master/geoport-elements/widgets/icon-list.php:93
+#: inc/plugins/geoport-master/geoport-elements/widgets/icon-list.php:100
+msgid "Social Icons"
+msgstr ""
+
+#: inc/plugins/geoport-master/geoport-elements/widgets/icon-list.php:129
+msgid "http://your-link.com"
+msgstr ""
+
+#: inc/plugins/geoport-master/geoport-elements/widgets/icon-list.php:139
+msgid "Shape"
+msgstr ""
+
+#: inc/plugins/geoport-master/geoport-elements/widgets/icon-list.php:143
+msgid "Rounded"
+msgstr ""
+
+#: inc/plugins/geoport-master/geoport-elements/widgets/icon-list.php:144
+msgid "Square"
+msgstr ""
+
+#: inc/plugins/geoport-master/geoport-elements/widgets/icon-list.php:145
+msgid "Circle"
+msgstr ""
+
+#: inc/plugins/geoport-master/geoport-elements/widgets/icon-list.php:199
+#: inc/plugins/geoport-master/geoport-elements/widgets/prograss-bar.php:239
+#: inc/plugins/geoport-master/geoport-elements/widgets/single-icon-item.php:584
+msgid "Color"
+msgstr ""
+
+#: inc/plugins/geoport-master/geoport-elements/widgets/icon-list.php:203
+msgid "Official Color"
+msgstr ""
+
+#: inc/plugins/geoport-master/geoport-elements/widgets/icon-list.php:204
+msgid "Custom"
+msgstr ""
+
+#: inc/plugins/geoport-master/geoport-elements/widgets/icon-list.php:226
+#: inc/plugins/geoport-master/geoport-elements/widgets/icon-list.php:365
+#: inc/plugins/geoport-master/geoport-elements/widgets/section-blog.php:248
+msgid "Font Color"
+msgstr ""
+
+#: inc/plugins/geoport-master/geoport-elements/widgets/icon-list.php:240
+msgid "Box Size"
+msgstr ""
+
+#: inc/plugins/geoport-master/geoport-elements/widgets/icon-list.php:257
+#: inc/plugins/geoport-master/geoport-elements/widgets/single-icon-item.php:431
+msgid "Icon Size"
+msgstr ""
+
+#: inc/plugins/geoport-master/geoport-elements/widgets/icon-list.php:302
+msgid "Spacing"
+msgstr ""
+
+#: inc/plugins/geoport-master/geoport-elements/widgets/icon-list.php:342
+msgid "Icon Hover"
+msgstr ""
+
+#: inc/plugins/geoport-master/geoport-elements/widgets/icon-list.php:380
+msgid "Border Color"
+msgstr ""
+
+#: inc/plugins/geoport-master/geoport-elements/widgets/icon-list.php:395
+msgid "Animation"
+msgstr ""
+
+#: inc/plugins/geoport-master/geoport-elements/widgets/image-slider.php:52
+msgid "Image Slider"
+msgstr ""
+
+#: inc/plugins/geoport-master/geoport-elements/widgets/image-slider.php:59
+msgid "Slider Items"
+msgstr ""
+
+#: inc/plugins/geoport-master/geoport-elements/widgets/image-slider.php:104
+#: inc/plugins/geoport-master/geoport-elements/widgets/testimonial.php:102
+msgid "Slider"
+msgstr ""
+
+#: inc/plugins/geoport-master/geoport-elements/widgets/image-slider.php:116
+#: inc/plugins/geoport-master/geoport-elements/widgets/team.php:135
+#: inc/plugins/geoport-master/geoport-elements/widgets/testimonial.php:144
+msgid "Show on large device"
+msgstr ""
+
+#: inc/plugins/geoport-master/geoport-elements/widgets/image-slider.php:120
+#: inc/plugins/geoport-master/geoport-elements/widgets/image-slider.php:149
+#: inc/plugins/geoport-master/geoport-elements/widgets/image-slider.php:178
+#: inc/plugins/geoport-master/geoport-elements/widgets/image-slider.php:207
+#: inc/plugins/geoport-master/geoport-elements/widgets/image-slider.php:234
+#: inc/plugins/geoport-master/geoport-elements/widgets/team.php:139
+#: inc/plugins/geoport-master/geoport-elements/widgets/team.php:157
+#: inc/plugins/geoport-master/geoport-elements/widgets/team.php:175
+#: inc/plugins/geoport-master/geoport-elements/widgets/team.php:192
+#: inc/plugins/geoport-master/geoport-elements/widgets/team.php:208
+#: inc/plugins/geoport-master/geoport-elements/widgets/testimonial.php:148
+#: inc/plugins/geoport-master/geoport-elements/widgets/testimonial.php:175
+#: inc/plugins/geoport-master/geoport-elements/widgets/testimonial.php:202
+#: inc/plugins/geoport-master/geoport-elements/widgets/testimonial.php:229
+#: inc/plugins/geoport-master/geoport-elements/widgets/testimonial.php:254
+msgid "1"
+msgstr ""
+
+#: inc/plugins/geoport-master/geoport-elements/widgets/image-slider.php:134
+msgid "Large Center Padding"
+msgstr ""
+
+#: inc/plugins/geoport-master/geoport-elements/widgets/image-slider.php:145
+#: inc/plugins/geoport-master/geoport-elements/widgets/team.php:153
+#: inc/plugins/geoport-master/geoport-elements/widgets/testimonial.php:171
+msgid "Show on desktop"
+msgstr ""
+
+#: inc/plugins/geoport-master/geoport-elements/widgets/image-slider.php:153
+#: inc/plugins/geoport-master/geoport-elements/widgets/image-slider.php:182
+#: inc/plugins/geoport-master/geoport-elements/widgets/tab-slider.php:109
+#: inc/plugins/geoport-master/geoport-elements/widgets/team.php:161
+#: inc/plugins/geoport-master/geoport-elements/widgets/testimonial.php:179
+#: inc/plugins/geoport-master/geoport-elements/widgets/testimonial.php:206
+msgid "5"
+msgstr ""
+
+#: inc/plugins/geoport-master/geoport-elements/widgets/image-slider.php:163
+msgid "Desktop Center Padding"
+msgstr ""
+
+#: inc/plugins/geoport-master/geoport-elements/widgets/image-slider.php:174
+#: inc/plugins/geoport-master/geoport-elements/widgets/team.php:171
+#: inc/plugins/geoport-master/geoport-elements/widgets/testimonial.php:198
+msgid "Show on Tablet"
+msgstr ""
+
+#: inc/plugins/geoport-master/geoport-elements/widgets/image-slider.php:192
+msgid "Tablet Center Padding"
+msgstr ""
+
+#: inc/plugins/geoport-master/geoport-elements/widgets/image-slider.php:203
+#: inc/plugins/geoport-master/geoport-elements/widgets/team.php:188
+#: inc/plugins/geoport-master/geoport-elements/widgets/testimonial.php:225
+msgid "Show on tab"
+msgstr ""
+
+#: inc/plugins/geoport-master/geoport-elements/widgets/image-slider.php:219
+msgid "Tab Center Padding"
+msgstr ""
+
+#: inc/plugins/geoport-master/geoport-elements/widgets/image-slider.php:230
+#: inc/plugins/geoport-master/geoport-elements/widgets/team.php:204
+#: inc/plugins/geoport-master/geoport-elements/widgets/testimonial.php:250
+msgid "Show on phone"
+msgstr ""
+
+#: inc/plugins/geoport-master/geoport-elements/widgets/image-slider.php:246
+msgid "Mobile Center Padding"
+msgstr ""
+
+#: inc/plugins/geoport-master/geoport-elements/widgets/location-box.php:49
+msgid "Location Box"
+msgstr ""
+
+#: inc/plugins/geoport-master/geoport-elements/widgets/location-box.php:56
+msgid "Location Style Version"
+msgstr ""
+
+#: inc/plugins/geoport-master/geoport-elements/widgets/location-box.php:98
+#: inc/plugins/geoport-master/geoport-elements/widgets/location-box.php:100
+msgid "Help Center"
+msgstr ""
+
+#: inc/plugins/geoport-master/geoport-elements/widgets/location-box.php:109
+msgid "https://your-domain.com"
+msgstr ""
+
+#: inc/plugins/geoport-master/geoport-elements/widgets/location-box.php:160
+msgid "Border color"
+msgstr ""
+
+#: inc/plugins/geoport-master/geoport-elements/widgets/our-history.php:52
+msgid "Our History"
+msgstr ""
+
+#: inc/plugins/geoport-master/geoport-elements/widgets/our-history.php:58
+#: inc/plugins/geoport-master/geoport-elements/widgets/team.php:59
+msgid "Number of team"
+msgstr ""
+
+#: inc/plugins/geoport-master/geoport-elements/widgets/prograss-bar.php:49
+#: inc/plugins/geoport-master/geoport-elements/widgets/prograss-bar.php:94
+#: inc/plugins/geoport-master/geoport-elements/widgets/prograss-bar.php:138
+msgid "Progress Bar"
+msgstr ""
+
+#: inc/plugins/geoport-master/geoport-elements/widgets/prograss-bar.php:103
+msgid "Enter your title"
+msgstr ""
+
+#: inc/plugins/geoport-master/geoport-elements/widgets/prograss-bar.php:104
+msgid "My Skill"
+msgstr ""
+
+#: inc/plugins/geoport-master/geoport-elements/widgets/prograss-bar.php:112
+msgid "Percentage"
+msgstr ""
+
+#: inc/plugins/geoport-master/geoport-elements/widgets/prograss-bar.php:123
+msgid "Display Percentage"
+msgstr ""
+
+#: inc/plugins/geoport-master/geoport-elements/widgets/prograss-bar.php:151
+msgid "Full bar background color"
+msgstr ""
+
+#: inc/plugins/geoport-master/geoport-elements/widgets/prograss-bar.php:157
+msgid "Animate bg Color"
+msgstr ""
+
+#: inc/plugins/geoport-master/geoport-elements/widgets/prograss-bar.php:163
+msgid "Animation bar background color"
+msgstr ""
+
+#: inc/plugins/geoport-master/geoport-elements/widgets/prograss-bar.php:173
+#: inc/plugins/geoport-master/geoport-elements/widgets/working-steps.php:111
+msgid "Title Style"
+msgstr ""
+
+#: inc/plugins/geoport-master/geoport-elements/widgets/prograss-bar.php:229
+msgid "Persantage Style"
+msgstr ""
+
+#: inc/plugins/geoport-master/geoport-elements/widgets/section-blog.php:51
+msgid "Blog Grid"
+msgstr ""
+
+#: inc/plugins/geoport-master/geoport-elements/widgets/section-blog.php:66
+#: inc/plugins/geoport-master/geoport-elements/widgets/section-services.php:66
+msgid "Post Excerpt"
+msgstr ""
+
+#: inc/plugins/geoport-master/geoport-elements/widgets/section-blog.php:67
+#: inc/plugins/geoport-master/geoport-elements/widgets/section-services.php:67
+msgid "Post content excerpt"
+msgstr ""
+
+#: inc/plugins/geoport-master/geoport-elements/widgets/section-blog.php:75
+#: inc/plugins/geoport-master/geoport-elements/widgets/section-services.php:75
+#: inc/plugins/geoport-master/geoport-elements/widgets/team.php:69
+#: inc/plugins/geoport-master/geoport-elements/widgets/testimonial.php:68
+msgid "Order by"
+msgstr ""
+
+#: inc/plugins/geoport-master/geoport-elements/widgets/section-blog.php:96
+msgid "Hide Post Category"
+msgstr ""
+
+#: inc/plugins/geoport-master/geoport-elements/widgets/section-blog.php:107
+msgid "Hide Post Admin"
+msgstr ""
+
+#: inc/plugins/geoport-master/geoport-elements/widgets/section-blog.php:118
+msgid "Hide Post Comments"
+msgstr ""
+
+#: inc/plugins/geoport-master/geoport-elements/widgets/section-blog.php:129
+msgid "Blog Style"
+msgstr ""
+
+#: inc/plugins/geoport-master/geoport-elements/widgets/section-blog.php:141
+msgid "Blog columns"
+msgstr ""
+
+#: inc/plugins/geoport-master/geoport-elements/widgets/section-blog.php:159
+msgid "Category Style"
+msgstr ""
+
+#: inc/plugins/geoport-master/geoport-elements/widgets/section-blog.php:168
+msgid "Category Background Color"
+msgstr ""
+
+#: inc/plugins/geoport-master/geoport-elements/widgets/section-blog.php:196
+msgid "Hover Style"
+msgstr ""
+
+#: inc/plugins/geoport-master/geoport-elements/widgets/section-blog.php:204
+msgid "Hover Background Color"
+msgstr ""
+
+#: inc/plugins/geoport-master/geoport-elements/widgets/section-blog.php:223
+msgid "Hover Font Color"
+msgstr ""
+
+#: inc/plugins/geoport-master/geoport-elements/widgets/section-blog.php:238
+msgid "Content Style"
+msgstr ""
+
+#: inc/plugins/geoport-master/geoport-elements/widgets/section-blog.php:267
+msgid "Icon Font Color"
+msgstr ""
+
+#: inc/plugins/geoport-master/geoport-elements/widgets/section-blog.php:280
+msgid "Link hover Color"
+msgstr ""
+
+#: inc/plugins/geoport-master/geoport-elements/widgets/section-blog.php:432
+#: inc/plugins/geoport-master/geoport-elements/widgets/section-blog.php:470
+#: inc/plugins/geoport-master/geoport-elements/widgets/section-blog.php:497
+#: inc/plugins/geoport-master/geoport-elements/widgets/section-blog.php:524
+#: inc/plugins/geoport-master/geoport-elements/widgets/section-blog.php:554
+#: inc/plugins/geoport-master/geoport-elements/widgets/section-blog.php:657
+#: inc/plugins/geoport-master/geoport-elements/widgets/section-blog.php:694
+#: inc/plugins/geoport-master/geoport-elements/widgets/section-blog.php:719
+#: inc/plugins/geoport-master/geoport-elements/widgets/section-blog.php:760
+#: inc/plugins/geoport-master/geoport-elements/widgets/section-blog.php:851
+#: inc/plugins/geoport-master/geoport-elements/widgets/section-blog.php:888
+#: inc/plugins/geoport-master/geoport-elements/widgets/section-blog.php:916
+#: inc/plugins/geoport-master/geoport-elements/widgets/section-blog.php:974
+#: template-parts/content-search.php:140 template-parts/content-search.php:188
+#: template-parts/content-search.php:225 template-parts/content-search.php:286
+#: template-parts/content-single.php:126 template-parts/content.php:144
+#: template-parts/content.php:196 template-parts/content.php:237
+#: template-parts/content.php:306
+msgid "By "
+msgstr ""
+
+#: inc/plugins/geoport-master/geoport-elements/widgets/section-blog.php:453
+#: template-parts/content.php:164
+msgid "Post gallery image"
+msgstr ""
+
+#: inc/plugins/geoport-master/geoport-elements/widgets/section-blog.php:516
+#: inc/plugins/geoport-master/geoport-elements/widgets/section-blog.php:735
+#: inc/plugins/geoport-master/geoport-elements/widgets/section-blog.php:929
+#: template-parts/content-search.php:242 template-parts/content.php:254
+msgid "quote icon"
+msgstr ""
+
+#: inc/plugins/geoport-master/geoport-elements/widgets/section-blog.php:565
+#: inc/plugins/geoport-master/geoport-elements/widgets/section-blog.php:769
+#: inc/plugins/geoport-master/geoport-elements/widgets/section-blog.php:980
+#: template-parts/content-search.php:298 template-parts/content.php:318
+msgid "Sticky"
+msgstr ""
+
+#: inc/plugins/geoport-master/geoport-elements/widgets/section-blog.php:643
+#: inc/plugins/geoport-master/geoport-elements/widgets/section-blog.php:940
+#: inc/plugins/geoport-master/inc/helper.php:381 template-parts/content.php:128
+#: template-parts/content.php:182 template-parts/content.php:223
+#: template-parts/content.php:264 template-parts/content.php:292
+msgid "Views"
+msgstr ""
+
+#: inc/plugins/geoport-master/geoport-elements/widgets/section-blog.php:662
+#: inc/plugins/geoport-master/geoport-elements/widgets/section-blog.php:764
+#: inc/plugins/geoport-master/geoport-elements/widgets/single-icon-item.php:746
+#: inc/plugins/geoport-master/geoport-elements/widgets/single-icon-item.php:810
+#: template-parts/content-search.php:146 template-parts/content-search.php:194
+#: template-parts/content-search.php:231 template-parts/content-search.php:292
+#: template-parts/content.php:150 template-parts/content.php:202
+#: template-parts/content.php:243 template-parts/content.php:312
+msgid "Read More"
+msgstr ""
+
+#: inc/plugins/geoport-master/geoport-elements/widgets/section-blog.php:677
+#: inc/plugins/geoport-master/geoport-elements/widgets/section-blog.php:866
+#: template-parts/content-search.php:160 template-parts/content-single.php:106
+msgid "post gallery image"
+msgstr ""
+
+#: inc/plugins/geoport-master/geoport-elements/widgets/section-head-two.php:48
+msgid "Section Head Two"
+msgstr ""
+
+#: inc/plugins/geoport-master/geoport-elements/widgets/section-head-two.php:56
+msgid "Title Settings"
+msgstr ""
+
+#: inc/plugins/geoport-master/geoport-elements/widgets/section-head-two.php:67
+#: inc/plugins/geoport-master/geoport-elements/widgets/section-head.php:80
+msgid "Title 1 Text Here"
+msgstr ""
+
+#: inc/plugins/geoport-master/geoport-elements/widgets/section-head-two.php:75
+#: inc/plugins/geoport-master/geoport-elements/widgets/section-head.php:143
+msgid "Sub Title Settings"
+msgstr ""
+
+#: inc/plugins/geoport-master/geoport-elements/widgets/section-head-two.php:83
+#: inc/plugins/geoport-master/geoport-elements/widgets/section-head.php:151
+#: inc/plugins/geoport-master/inc/custom-widgets.php:824
+msgid "Sub Title"
+msgstr ""
+
+#: inc/plugins/geoport-master/geoport-elements/widgets/section-head-two.php:86
+#: inc/plugins/geoport-master/geoport-elements/widgets/section-head-two.php:105
+#: inc/plugins/geoport-master/geoport-elements/widgets/section-head.php:154
+msgid "Sub Title Text"
+msgstr ""
+
+#: inc/plugins/geoport-master/geoport-elements/widgets/section-head-two.php:94
+msgid "Description Settings"
+msgstr ""
+
+#: inc/plugins/geoport-master/geoport-elements/widgets/section-head-two.php:102
+msgid "Description Text"
+msgstr ""
+
+#: inc/plugins/geoport-master/geoport-elements/widgets/section-head-two.php:143
+#: inc/plugins/geoport-master/geoport-elements/widgets/section-head.php:222
+msgid "Title Line 1 Style"
+msgstr ""
+
+#: inc/plugins/geoport-master/geoport-elements/widgets/section-head-two.php:178
+#: inc/plugins/geoport-master/geoport-elements/widgets/section-head.php:286
+msgid "Sub Title Style"
+msgstr ""
+
+#: inc/plugins/geoport-master/geoport-elements/widgets/section-head-two.php:211
+msgid "Description Text Style"
+msgstr ""
+
+#: inc/plugins/geoport-master/geoport-elements/widgets/section-head-two.php:219
+msgid "Description Text Color"
+msgstr ""
+
+#: inc/plugins/geoport-master/geoport-elements/widgets/section-head-two.php:231
+msgid "Description Typography"
+msgstr ""
+
+#: inc/plugins/geoport-master/geoport-elements/widgets/section-head.php:48
+msgid "Section Header"
+msgstr ""
+
+#: inc/plugins/geoport-master/geoport-elements/widgets/section-head.php:55
+#: inc/plugins/geoport-master/geoport-elements/widgets/single-counter.php:67
+msgid "Section Head Version"
+msgstr ""
+
+#: inc/plugins/geoport-master/geoport-elements/widgets/section-head.php:86
+#: inc/plugins/geoport-master/geoport-elements/widgets/section-head.php:123
+msgid "Title Animation"
+msgstr ""
+
+#: inc/plugins/geoport-master/geoport-elements/widgets/section-head.php:106
+#: inc/plugins/geoport-master/geoport-elements/widgets/section-head.php:114
+msgid "Title 2"
+msgstr ""
+
+#: inc/plugins/geoport-master/geoport-elements/widgets/section-head.php:116
+msgid "Title 2 Text Here"
+msgstr ""
+
+#: inc/plugins/geoport-master/geoport-elements/widgets/section-head.php:160
+msgid "Sub Title Animation"
+msgstr ""
+
+#: inc/plugins/geoport-master/geoport-elements/widgets/section-head.php:178
+msgid "Background Icon Image"
+msgstr ""
+
+#: inc/plugins/geoport-master/geoport-elements/widgets/section-head.php:256
+msgid "Title Line 2 Style"
+msgstr ""
+
+#: inc/plugins/geoport-master/geoport-elements/widgets/section-head.php:263
+msgid "Title 2 Color"
+msgstr ""
+
+#: inc/plugins/geoport-master/geoport-elements/widgets/section-head.php:313
+msgid "Hide Line"
+msgstr ""
+
+#: inc/plugins/geoport-master/geoport-elements/widgets/section-head.php:324
+msgid "Line Banckground Color"
+msgstr ""
+
+#: inc/plugins/geoport-master/geoport-elements/widgets/section-head.php:344
+msgid "Watermark Style"
+msgstr ""
+
+#: inc/plugins/geoport-master/geoport-elements/widgets/section-services.php:51
+msgid "Service posts"
+msgstr ""
+
+#: inc/plugins/geoport-master/geoport-elements/widgets/section-services.php:96
+msgid "Hide Post category"
+msgstr ""
+
+#: inc/plugins/geoport-master/geoport-elements/widgets/section-services.php:107
+msgid "Service columns"
+msgstr ""
+
+#: inc/plugins/geoport-master/geoport-elements/widgets/single-counter.php:60
+msgid "Single Counter"
+msgstr ""
+
+#: inc/plugins/geoport-master/geoport-elements/widgets/single-counter.php:73
+msgid "Style 3"
+msgstr ""
+
+#: inc/plugins/geoport-master/geoport-elements/widgets/single-counter.php:126
+#: inc/plugins/geoport-master/geoport-elements/widgets/single-counter.php:128
+msgid "Counter Title"
+msgstr ""
+
+#: inc/plugins/geoport-master/geoport-elements/widgets/single-icon-item.php:49
+msgid "Single Icon Box"
+msgstr ""
+
+#: inc/plugins/geoport-master/geoport-elements/widgets/single-icon-item.php:56
+msgid "Icon Box Type"
+msgstr ""
+
+#: inc/plugins/geoport-master/geoport-elements/widgets/single-icon-item.php:60
+msgid "Default Item"
+msgstr ""
+
+#: inc/plugins/geoport-master/geoport-elements/widgets/single-icon-item.php:61
+msgid "Service Item"
+msgstr ""
+
+#: inc/plugins/geoport-master/geoport-elements/widgets/single-icon-item.php:62
+msgid "Feature Item"
+msgstr ""
+
+#: inc/plugins/geoport-master/geoport-elements/widgets/single-icon-item.php:63
+msgid "About Item"
+msgstr ""
+
+#: inc/plugins/geoport-master/geoport-elements/widgets/single-icon-item.php:125
+msgid ""
+"Vehicles traveling on these networks may include automobiles, buses, trains, "
+"trucks, helicopters, watercraft."
+msgstr ""
+
+#: inc/plugins/geoport-master/geoport-elements/widgets/single-icon-item.php:133
+msgid "Item link Type"
+msgstr ""
+
+#: inc/plugins/geoport-master/geoport-elements/widgets/single-icon-item.php:137
+msgid "Custom link"
+msgstr ""
+
+#: inc/plugins/geoport-master/geoport-elements/widgets/single-icon-item.php:138
+msgid "Post Link"
+msgstr ""
+
+#: inc/plugins/geoport-master/geoport-elements/widgets/single-icon-item.php:166
+#: inc/plugins/geoport-master/inc/custom-widgets.php:377
+msgid "Select Post Type"
+msgstr ""
+
+#: inc/plugins/geoport-master/geoport-elements/widgets/single-icon-item.php:170
+msgid "Default Posts"
+msgstr ""
+
+#: inc/plugins/geoport-master/geoport-elements/widgets/single-icon-item.php:171
+msgid "Service Posts"
+msgstr ""
+
+#: inc/plugins/geoport-master/geoport-elements/widgets/single-icon-item.php:181
+msgid "Default Link"
+msgstr ""
+
+#: inc/plugins/geoport-master/geoport-elements/widgets/single-icon-item.php:207
+msgid "Service Link"
+msgstr ""
+
+#: inc/plugins/geoport-master/geoport-elements/widgets/single-icon-item.php:371
+msgid "Service box hover color"
+msgstr ""
+
+#: inc/plugins/geoport-master/geoport-elements/widgets/single-icon-item.php:385
+msgid "Feature box hover color"
+msgstr ""
+
+#: inc/plugins/geoport-master/geoport-elements/widgets/single-icon-item.php:402
+#: inc/plugins/geoport-master/geoport-elements/widgets/single-icon-item.php:409
+msgid "Icon style"
+msgstr ""
+
+#: inc/plugins/geoport-master/geoport-elements/widgets/single-icon-item.php:471
+msgid "Image Size"
+msgstr ""
+
+#: inc/plugins/geoport-master/geoport-elements/widgets/single-icon-item.php:491
+msgid "Icon or image box background color"
+msgstr ""
+
+#: inc/plugins/geoport-master/geoport-elements/widgets/single-icon-item.php:509
+msgid "Title style"
+msgstr ""
+
+#: inc/plugins/geoport-master/geoport-elements/widgets/single-icon-item.php:531
+msgid "Title Hover Color"
+msgstr ""
+
+#: inc/plugins/geoport-master/geoport-elements/widgets/single-icon-item.php:542
+msgid "Title Border Color"
+msgstr ""
+
+#: inc/plugins/geoport-master/geoport-elements/widgets/single-icon-item.php:554
+msgid "Title Hover Border Color"
+msgstr ""
+
+#: inc/plugins/geoport-master/geoport-elements/widgets/single-icon-item.php:577
+msgid "Text style"
+msgstr ""
+
+#: inc/plugins/geoport-master/geoport-elements/widgets/single-icon-item.php:622
+msgid "Read More Style"
+msgstr ""
+
+#: inc/plugins/geoport-master/geoport-elements/widgets/single-icon-item.php:629
+msgid "Read More Color"
+msgstr ""
+
+#: inc/plugins/geoport-master/geoport-elements/widgets/single-icon-item.php:639
+msgid "Read More Hover Color"
+msgstr ""
+
+#: inc/plugins/geoport-master/geoport-elements/widgets/tab-slider.php:53
+msgid "Tab Image Slider"
+msgstr ""
+
+#: inc/plugins/geoport-master/geoport-elements/widgets/tab-slider.php:64
+msgid "Tab Slider Title"
+msgstr ""
+
+#: inc/plugins/geoport-master/geoport-elements/widgets/tab-slider.php:71
+msgid "Upload Image"
+msgstr ""
+
+#: inc/plugins/geoport-master/geoport-elements/widgets/tab-slider.php:92
+msgid "Tab Slider Items"
+msgstr ""
+
+#: inc/plugins/geoport-master/geoport-elements/widgets/tab-slider.php:102
+msgid "Show tab item"
+msgstr ""
+
+#: inc/plugins/geoport-master/geoport-elements/widgets/tab-slider.php:118
+msgid "Auto Play"
+msgstr ""
+
+#: inc/plugins/geoport-master/geoport-elements/widgets/tab-slider.php:145
+msgid "Tab Background Color"
+msgstr ""
+
+#: inc/plugins/geoport-master/geoport-elements/widgets/tab-slider.php:166
+msgid "Icon Settings"
+msgstr ""
+
+#: inc/plugins/geoport-master/geoport-elements/widgets/tab-slider.php:220
+msgid "Active Tab Style"
+msgstr ""
+
+#: inc/plugins/geoport-master/geoport-elements/widgets/tab-slider.php:228
+msgid "Active Background Color"
+msgstr ""
+
+#: inc/plugins/geoport-master/geoport-elements/widgets/tab-slider.php:240
+msgid "Active Font Color"
+msgstr ""
+
+#: inc/plugins/geoport-master/geoport-elements/widgets/team.php:51
+#: inc/plugins/geoport-master/geoport-elements/widgets/team.php:94
+msgid "Team Grid"
+msgstr ""
+
+#: inc/plugins/geoport-master/geoport-elements/widgets/team.php:90
+msgid "Team Switch"
+msgstr ""
+
+#: inc/plugins/geoport-master/geoport-elements/widgets/team.php:95
+msgid "Team Slider"
+msgstr ""
+
+#: inc/plugins/geoport-master/geoport-elements/widgets/team.php:120
+#: inc/plugins/geoport-master/geoport-elements/widgets/testimonial.php:114
+msgid "Slider Navigation"
+msgstr ""
+
+#: inc/plugins/geoport-master/geoport-elements/widgets/testimonial.php:52
+#: inc/plugins/geoport-master/inc/custom-posttype.php:119
+#: inc/plugins/geoport-master/inc/custom-posttype.php:120
+msgid "Testimonial"
+msgstr ""
+
+#: inc/plugins/geoport-master/geoport-elements/widgets/testimonial.php:59
+msgid "Number of testimonial"
+msgstr ""
+
+#: inc/plugins/geoport-master/geoport-elements/widgets/testimonial.php:90
+msgid "Review Disable ?"
+msgstr ""
+
+#: inc/plugins/geoport-master/geoport-elements/widgets/testimonial.php:126
+msgid "Grid Columns"
+msgstr ""
+
+#: inc/plugins/geoport-master/geoport-elements/widgets/testimonial.php:130
+msgid "1 Columns"
+msgstr ""
+
+#: inc/plugins/geoport-master/geoport-elements/widgets/testimonial.php:162
+msgid "Center Padding"
+msgstr ""
+
+#: inc/plugins/geoport-master/geoport-elements/widgets/testimonial.php:165
+#: inc/plugins/geoport-master/geoport-elements/widgets/testimonial.php:192
+#: inc/plugins/geoport-master/geoport-elements/widgets/testimonial.php:219
+#: inc/plugins/geoport-master/geoport-elements/widgets/testimonial.php:244
+#: inc/plugins/geoport-master/geoport-elements/widgets/testimonial.php:269
+msgid "Center Padding is slider gap fixer"
+msgstr ""
+
+#: inc/plugins/geoport-master/geoport-elements/widgets/testimonial.php:189
+msgid "Center Padding For Desktop"
+msgstr ""
+
+#: inc/plugins/geoport-master/geoport-elements/widgets/testimonial.php:216
+msgid "Center Padding For Tablet"
+msgstr ""
+
+#: inc/plugins/geoport-master/geoport-elements/widgets/testimonial.php:241
+msgid "Center Padding For Tab"
+msgstr ""
+
+#: inc/plugins/geoport-master/geoport-elements/widgets/testimonial.php:266
+msgid "Center Padding For Phone"
+msgstr ""
+
+#: inc/plugins/geoport-master/geoport-elements/widgets/video-button.php:48
+msgid "Video Setting"
+msgstr ""
+
+#: inc/plugins/geoport-master/geoport-elements/widgets/video-button.php:54
+msgid "Video link"
+msgstr ""
+
+#: inc/plugins/geoport-master/geoport-elements/widgets/video-button.php:58
+msgid "Enter any video link from external sources"
+msgstr ""
+
+#: inc/plugins/geoport-master/geoport-elements/widgets/video-button.php:64
+msgid "Video icon"
+msgstr ""
+
+#: inc/plugins/geoport-master/geoport-elements/widgets/video-button.php:89
+msgid "Button Style"
+msgstr ""
+
+#: inc/plugins/geoport-master/geoport-elements/widgets/video-button.php:105
+msgid "Button Width"
+msgstr ""
+
+#: inc/plugins/geoport-master/geoport-elements/widgets/video-button.php:131
+msgid "Button Height"
+msgstr ""
+
+#: inc/plugins/geoport-master/geoport-elements/widgets/video-button.php:155
+msgid "Icon Line Height"
+msgstr ""
+
+#: inc/plugins/geoport-master/geoport-elements/widgets/video-button.php:180
+msgid "Button background color"
+msgstr ""
+
+#: inc/plugins/geoport-master/geoport-elements/widgets/video-button.php:191
+msgid "Button icon color"
+msgstr ""
+
+#: inc/plugins/geoport-master/geoport-elements/widgets/video-button.php:203
+msgid "Button Border"
+msgstr ""
+
+#: inc/plugins/geoport-master/geoport-elements/widgets/video-button.php:212
+msgid "Wave Style"
+msgstr ""
+
+#: inc/plugins/geoport-master/geoport-elements/widgets/video-button.php:221
+msgid "Wave Border"
+msgstr ""
+
+#: inc/plugins/geoport-master/geoport-elements/widgets/video-button.php:228
+msgid "Wave 1 Arround Gap"
+msgstr ""
+
+#: inc/plugins/geoport-master/geoport-elements/widgets/video-button.php:254
+msgid "Wave 2 Arround Width"
+msgstr ""
+
+#: inc/plugins/geoport-master/geoport-elements/widgets/working-steps.php:48
+#: inc/plugins/geoport-master/geoport-elements/widgets/working-steps.php:55
+msgid "Working Steps"
+msgstr ""
+
+#: inc/plugins/geoport-master/geoport-elements/widgets/working-steps.php:63
+msgid "Stpe Title Here"
+msgstr ""
+
+#: inc/plugins/geoport-master/geoport-elements/widgets/working-steps.php:68
+msgid "Box description"
+msgstr ""
+
+#: inc/plugins/geoport-master/geoport-elements/widgets/working-steps.php:70
+msgid "Stpe Short Description Here"
+msgstr ""
+
+#: inc/plugins/geoport-master/geoport-elements/widgets/working-steps.php:78
+msgid "If have link"
+msgstr ""
+
+#: inc/plugins/geoport-master/geoport-elements/widgets/working-steps.php:119
+msgid "Title text color"
+msgstr ""
+
+#: inc/plugins/geoport-master/geoport-elements/widgets/working-steps.php:146
+msgid "Description Style"
+msgstr ""
+
+#: inc/plugins/geoport-master/geoport-elements/widgets/working-steps.php:154
+msgid "Description color"
+msgstr ""
+
+#: inc/plugins/geoport-master/geoport-elements/widgets/working-steps.php:181
+msgid "Number Style"
+msgstr ""
+
+#: inc/plugins/geoport-master/geoport-elements/widgets/working-steps.php:189
+#: inc/plugins/geoport-master/geoport-elements/widgets/working-steps.php:215
+#: inc/plugins/geoport-master/geoport-elements/widgets/working-steps.php:306
+msgid "Verticle line width"
+msgstr ""
+
+#: inc/plugins/geoport-master/geoport-elements/widgets/working-steps.php:241
+msgid "Number color"
+msgstr ""
+
+#: inc/plugins/geoport-master/geoport-elements/widgets/working-steps.php:252
+msgid "Number background color"
+msgstr ""
+
+#: inc/plugins/geoport-master/geoport-elements/widgets/working-steps.php:272
+msgid "Box border radius"
+msgstr ""
+
+#: inc/plugins/geoport-master/geoport-elements/widgets/working-steps.php:283
+#: inc/plugins/geoport-master/geoport-elements/widgets/working-steps.php:333
+msgid "Number border color"
+msgstr ""
+
+#: inc/plugins/geoport-master/inc/custom-posttype.php:15
+msgctxt "post type general name"
+msgid "Services"
+msgstr ""
+
+#: inc/plugins/geoport-master/inc/custom-posttype.php:16
+msgctxt "post type singular name"
+msgid "Service"
+msgstr ""
+
+#: inc/plugins/geoport-master/inc/custom-posttype.php:17
+#: inc/plugins/geoport-master/inc/custom-widgets.php:803
+msgid "Services"
+msgstr ""
+
+#: inc/plugins/geoport-master/inc/custom-posttype.php:18
+msgid "Service"
+msgstr ""
+
+#: inc/plugins/geoport-master/inc/custom-posttype.php:20
+msgid "Add New Service"
+msgstr ""
+
+#: inc/plugins/geoport-master/inc/custom-posttype.php:21
+msgid "New Service"
+msgstr ""
+
+#: inc/plugins/geoport-master/inc/custom-posttype.php:22
+msgid "Edit Service"
+msgstr ""
+
+#: inc/plugins/geoport-master/inc/custom-posttype.php:23
+msgid "View Service"
+msgstr ""
+
+#: inc/plugins/geoport-master/inc/custom-posttype.php:24
+msgid "All Services"
+msgstr ""
+
+#: inc/plugins/geoport-master/inc/custom-posttype.php:25
+msgid "Search Services"
+msgstr ""
+
+#: inc/plugins/geoport-master/inc/custom-posttype.php:26
+msgid "Parent Services:"
+msgstr ""
+
+#: inc/plugins/geoport-master/inc/custom-posttype.php:27
+#: inc/plugins/geoport-master/inc/custom-posttype.php:292
+msgid "No Service found."
+msgstr ""
+
+#: inc/plugins/geoport-master/inc/custom-posttype.php:28
+#: inc/plugins/geoport-master/inc/custom-posttype.php:293
+msgid "No Service found in Trash."
+msgstr ""
+
+#: inc/plugins/geoport-master/inc/custom-posttype.php:58
+msgctxt "Taxonomy plural name"
+msgid "Service Category"
+msgstr ""
+
+#: inc/plugins/geoport-master/inc/custom-posttype.php:59
+msgctxt "Taxonomy singular name"
+msgid "Service Category"
+msgstr ""
+
+#: inc/plugins/geoport-master/inc/custom-posttype.php:60
+msgid "Search Service Category"
+msgstr ""
+
+#: inc/plugins/geoport-master/inc/custom-posttype.php:61
+msgid "Popular Service Category"
+msgstr ""
+
+#: inc/plugins/geoport-master/inc/custom-posttype.php:62
+msgid "All Categories"
+msgstr ""
+
+#: inc/plugins/geoport-master/inc/custom-posttype.php:63
+#: inc/plugins/geoport-master/inc/custom-posttype.php:64
+msgid "Parent Service Category"
+msgstr ""
+
+#: inc/plugins/geoport-master/inc/custom-posttype.php:65
+msgid "Edit Service Category"
+msgstr ""
+
+#: inc/plugins/geoport-master/inc/custom-posttype.php:66
+msgid "Update Service Category"
+msgstr ""
+
+#: inc/plugins/geoport-master/inc/custom-posttype.php:67
+msgid "Add New Category"
+msgstr ""
+
+#: inc/plugins/geoport-master/inc/custom-posttype.php:68
+msgid "New Service Menu Name"
+msgstr ""
+
+#: inc/plugins/geoport-master/inc/custom-posttype.php:69
+msgid "Add or remove Service Category"
+msgstr ""
+
+#: inc/plugins/geoport-master/inc/custom-posttype.php:70
+msgid "Choose from most used text-domain"
+msgstr ""
+
+#: inc/plugins/geoport-master/inc/custom-posttype.php:71
+msgid "Category"
+msgstr ""
+
+#: inc/plugins/geoport-master/inc/custom-posttype.php:117
+msgctxt "post type general name"
+msgid "Testimonial"
+msgstr ""
+
+#: inc/plugins/geoport-master/inc/custom-posttype.php:118
+msgctxt "post type singular name"
+msgid "Testimonial"
+msgstr ""
+
+#: inc/plugins/geoport-master/inc/custom-posttype.php:122
+msgid "Add New Testimonial"
+msgstr ""
+
+#: inc/plugins/geoport-master/inc/custom-posttype.php:123
+msgid "New Testimonial"
+msgstr ""
+
+#: inc/plugins/geoport-master/inc/custom-posttype.php:124
+msgid "Edit Testimonial"
+msgstr ""
+
+#: inc/plugins/geoport-master/inc/custom-posttype.php:125
+msgid "View Testimonial"
+msgstr ""
+
+#: inc/plugins/geoport-master/inc/custom-posttype.php:126
+msgid "All Testimonials"
+msgstr ""
+
+#: inc/plugins/geoport-master/inc/custom-posttype.php:127
+msgid "Search Testimonial"
+msgstr ""
+
+#: inc/plugins/geoport-master/inc/custom-posttype.php:128
+msgid "Parent Testimonial:"
+msgstr ""
+
+#: inc/plugins/geoport-master/inc/custom-posttype.php:129
+msgid "No Testimonial found."
+msgstr ""
+
+#: inc/plugins/geoport-master/inc/custom-posttype.php:130
+msgid "No Testimonial found in Trash."
+msgstr ""
+
+#: inc/plugins/geoport-master/inc/custom-posttype.php:168
+msgctxt "post type general name"
+msgid "Contact Tab"
+msgstr ""
+
+#: inc/plugins/geoport-master/inc/custom-posttype.php:169
+msgctxt "post type singular name"
+msgid "Contact Tab"
+msgstr ""
+
+#: inc/plugins/geoport-master/inc/custom-posttype.php:173
+msgid "Add New Contact Tab"
+msgstr ""
+
+#: inc/plugins/geoport-master/inc/custom-posttype.php:174
+msgid "New Contact Tab"
+msgstr ""
+
+#: inc/plugins/geoport-master/inc/custom-posttype.php:175
+msgid "Edit Contact Tab"
+msgstr ""
+
+#: inc/plugins/geoport-master/inc/custom-posttype.php:176
+msgid "View Contact Tab"
+msgstr ""
+
+#: inc/plugins/geoport-master/inc/custom-posttype.php:177
+msgid "All Contact Tabs"
+msgstr ""
+
+#: inc/plugins/geoport-master/inc/custom-posttype.php:178
+msgid "Search Contact Tab"
+msgstr ""
+
+#: inc/plugins/geoport-master/inc/custom-posttype.php:179
+msgid "Parent Contact Tab:"
+msgstr ""
+
+#: inc/plugins/geoport-master/inc/custom-posttype.php:180
+msgid "No Contact Tab found."
+msgstr ""
+
+#: inc/plugins/geoport-master/inc/custom-posttype.php:181
+msgid "No Contact Tab found in Trash."
+msgstr ""
+
+#: inc/plugins/geoport-master/inc/custom-posttype.php:219
+msgctxt "post type general name"
+msgid "Team"
+msgstr ""
+
+#: inc/plugins/geoport-master/inc/custom-posttype.php:220
+msgctxt "post type singular name"
+msgid "Team"
+msgstr ""
+
+#: inc/plugins/geoport-master/inc/custom-posttype.php:221
+#: inc/plugins/geoport-master/inc/custom-posttype.php:222
+msgid "Team"
+msgstr ""
+
+#: inc/plugins/geoport-master/inc/custom-posttype.php:224
+msgid "Add New Team"
+msgstr ""
+
+#: inc/plugins/geoport-master/inc/custom-posttype.php:225
+msgid "New Team"
+msgstr ""
+
+#: inc/plugins/geoport-master/inc/custom-posttype.php:226
+msgid "Edit Team"
+msgstr ""
+
+#: inc/plugins/geoport-master/inc/custom-posttype.php:227
+msgid "View Team"
+msgstr ""
+
+#: inc/plugins/geoport-master/inc/custom-posttype.php:228
+msgid "All Teams"
+msgstr ""
+
+#: inc/plugins/geoport-master/inc/custom-posttype.php:229
+msgid "Search Team"
+msgstr ""
+
+#: inc/plugins/geoport-master/inc/custom-posttype.php:230
+msgid "Parent Team:"
+msgstr ""
+
+#: inc/plugins/geoport-master/inc/custom-posttype.php:231
+msgid "No Team found."
+msgstr ""
+
+#: inc/plugins/geoport-master/inc/custom-posttype.php:232
+msgid "No Team found in Trash."
+msgstr ""
+
+#: inc/plugins/geoport-master/inc/custom-posttype.php:280
+msgctxt "post type general name"
+msgid "Journeys"
+msgstr ""
+
+#: inc/plugins/geoport-master/inc/custom-posttype.php:281
+msgctxt "post type singular name"
+msgid "Journey"
+msgstr ""
+
+#: inc/plugins/geoport-master/inc/custom-posttype.php:282
+msgid "Journeys"
+msgstr ""
+
+#: inc/plugins/geoport-master/inc/custom-posttype.php:283
+msgid "Journey"
+msgstr ""
+
+#: inc/plugins/geoport-master/inc/custom-posttype.php:285
+msgid "Add New Journey"
+msgstr ""
+
+#: inc/plugins/geoport-master/inc/custom-posttype.php:286
+msgid "New Journey"
+msgstr ""
+
+#: inc/plugins/geoport-master/inc/custom-posttype.php:287
+msgid "Edit Journey"
+msgstr ""
+
+#: inc/plugins/geoport-master/inc/custom-posttype.php:288
+msgid "View Journey"
+msgstr ""
+
+#: inc/plugins/geoport-master/inc/custom-posttype.php:289
+msgid "All Journeys"
+msgstr ""
+
+#: inc/plugins/geoport-master/inc/custom-posttype.php:290
+msgid "Search Journeys"
+msgstr ""
+
+#: inc/plugins/geoport-master/inc/custom-posttype.php:291
+msgid "Parent Journeys:"
+msgstr ""
+
+#: inc/plugins/geoport-master/inc/custom-posttype.php:323
+msgctxt "post type general name"
+msgid "Job List"
+msgstr ""
+
+#: inc/plugins/geoport-master/inc/custom-posttype.php:324
+msgctxt "post type singular name"
+msgid "Job List"
+msgstr ""
+
+#: inc/plugins/geoport-master/inc/custom-posttype.php:328
+msgid "Add New Job List"
+msgstr ""
+
+#: inc/plugins/geoport-master/inc/custom-posttype.php:329
+msgid "New Job List"
+msgstr ""
+
+#: inc/plugins/geoport-master/inc/custom-posttype.php:330
+msgid "Edit Job List"
+msgstr ""
+
+#: inc/plugins/geoport-master/inc/custom-posttype.php:331
+msgid "View Job List"
+msgstr ""
+
+#: inc/plugins/geoport-master/inc/custom-posttype.php:332
+msgid "All Job Lists"
+msgstr ""
+
+#: inc/plugins/geoport-master/inc/custom-posttype.php:333
+msgid "Search Job List"
+msgstr ""
+
+#: inc/plugins/geoport-master/inc/custom-posttype.php:334
+msgid "Parent Job List:"
+msgstr ""
+
+#: inc/plugins/geoport-master/inc/custom-posttype.php:335
+msgid "No Job List found."
+msgstr ""
+
+#: inc/plugins/geoport-master/inc/custom-posttype.php:336
+msgid "No Job List found in Trash."
+msgstr ""
+
+#: inc/plugins/geoport-master/inc/custom-widgets.php:18
+msgid "Footer 2 Widgets 1"
+msgstr ""
+
+#: inc/plugins/geoport-master/inc/custom-widgets.php:27
+msgid "Footer 2 Widgets 2"
+msgstr ""
+
+#: inc/plugins/geoport-master/inc/custom-widgets.php:36
+msgid "Footer 2 Widgets 3"
+msgstr ""
+
+#: inc/plugins/geoport-master/inc/custom-widgets.php:46
+msgid "Service Details widgets"
+msgstr ""
+
+#: inc/plugins/geoport-master/inc/custom-widgets.php:48
+msgid "Widgets in this area will be shown on service page sidebar."
+msgstr ""
+
+#: inc/plugins/geoport-master/inc/custom-widgets.php:75
+msgid "About Me Widget."
+msgstr ""
+
+#: inc/plugins/geoport-master/inc/custom-widgets.php:77
+msgid "A::1 About Me Widget"
+msgstr ""
+
+#: inc/plugins/geoport-master/inc/custom-widgets.php:129
+msgid "Author logo"
+msgstr ""
+
+#: inc/plugins/geoport-master/inc/custom-widgets.php:197
+#: inc/plugins/geoport-master/inc/custom-widgets.php:558
+msgid "Logo Image"
+msgstr ""
+
+#: inc/plugins/geoport-master/inc/custom-widgets.php:198
+#: inc/plugins/geoport-master/inc/custom-widgets.php:559
+msgid "About Widghet Logo Upload Here"
+msgstr ""
+
+#: inc/plugins/geoport-master/inc/custom-widgets.php:209
+msgid "Name"
+msgstr ""
+
+#: inc/plugins/geoport-master/inc/custom-widgets.php:232
+msgid "Social List"
+msgstr ""
+
+#: inc/plugins/geoport-master/inc/custom-widgets.php:260
+msgid "Recent Post Widget."
+msgstr ""
+
+#: inc/plugins/geoport-master/inc/custom-widgets.php:262
+msgid "A::2 Recent Post"
+msgstr ""
+
+#: inc/plugins/geoport-master/inc/custom-widgets.php:382
+msgid "Select post type"
+msgstr ""
+
+#: inc/plugins/geoport-master/inc/custom-widgets.php:393
+msgid "Select Post Order"
+msgstr ""
+
+#: inc/plugins/geoport-master/inc/custom-widgets.php:398
+#: inc/plugins/geoport-master/inc/custom-widgets.php:426
+msgid "Select post order"
+msgstr ""
+
+#: inc/plugins/geoport-master/inc/custom-widgets.php:409
+msgid "Post Per Page"
+msgstr ""
+
+#: inc/plugins/geoport-master/inc/custom-widgets.php:410
+msgid "How post display here"
+msgstr ""
+
+#: inc/plugins/geoport-master/inc/custom-widgets.php:421
+msgid "Recent or Popular?"
+msgstr ""
+
+#: inc/plugins/geoport-master/inc/custom-widgets.php:489
+msgid "footer logo"
+msgstr ""
+
+#: inc/plugins/geoport-master/inc/custom-widgets.php:738
+msgid "Service Categories."
+msgstr ""
+
+#: inc/plugins/geoport-master/inc/custom-widgets.php:740
+msgid "A::5 Service Cats"
+msgstr ""
+
+#: inc/plugins/geoport-master/inc/custom-widgets.php:802
+msgid "Transport Services"
+msgstr ""
+
+#: inc/plugins/geoport-master/inc/custom-widgets.php:928
+msgid "Download Background Image"
+msgstr ""
+
+#: inc/plugins/geoport-master/inc/custom-widgets.php:929
+msgid "Download BG Image Upload Here"
+msgstr ""
+
+#: inc/plugins/geoport-master/inc/helper.php:72
+msgid "Social Share:"
+msgstr ""
+
+#: inc/plugins/geoport-master/inc/helper.php:232
+#: inc/plugins/geoport-master/inc/helper.php:267
+msgid "Categories"
+msgstr ""
+
+#: inc/plugins/geoport-master/inc/helper.php:233
+#: inc/plugins/geoport-master/inc/helper.php:268
+msgid "Date"
+msgstr ""
+
+#: inc/plugins/geoport-master/inc/helper.php:247
+#: inc/plugins/geoport-master/inc/helper.php:282
+msgid "Not under categories"
+msgstr ""
+
+#: inc/plugins/geoport-master/inc/post-like.php:21
+msgid "Not permitted"
+msgstr ""
+
+#: inc/plugins/geoport-master/inc/post-like.php:195
+msgid "Unlike"
+msgstr ""
+
+#: inc/plugins/geoport-master/inc/post-like.php:199
+msgid "Like"
+msgstr ""
+
+#: inc/plugins/geoport-master/inc/post-like.php:343
+msgid "You Like:"
+msgstr ""
+
+#: inc/plugins/geoport-master/inc/post-like.php:369
+msgid "You do not like anything yet."
+msgstr ""
+
+#: inc/template-tags.php:27 inc/template-tags.php:29 inc/template-tags.php:31
+#: inc/template-tags.php:33 inc/template-tags.php:35 inc/template-tags.php:37
+#, php-format
+msgid "%s"
+msgstr ""
+
+#: inc/template-tags.php:33
+msgctxt "yearly archives date format"
+msgid "Y"
+msgstr ""
+
+#: inc/template-tags.php:35
+msgctxt "monthly archives date format"
+msgid "F Y"
+msgstr ""
+
+#: inc/template-tags.php:37
+msgctxt "daily archives date format"
+msgid "F j, Y"
+msgstr ""
+
+#: inc/template-tags.php:40
+msgctxt "post format archive title"
+msgid "Asides"
+msgstr ""
+
+#: inc/template-tags.php:42
+msgctxt "post format archive title"
+msgid "Galleries"
+msgstr ""
+
+#: inc/template-tags.php:44
+msgctxt "post format archive title"
+msgid "Images"
+msgstr ""
+
+#: inc/template-tags.php:46
+msgctxt "post format archive title"
+msgid "Videos"
+msgstr ""
+
+#: inc/template-tags.php:48
+msgctxt "post format archive title"
+msgid "Quotes"
+msgstr ""
+
+#: inc/template-tags.php:50
+msgctxt "post format archive title"
+msgid "Links"
+msgstr ""
+
+#: inc/template-tags.php:52
+msgctxt "post format archive title"
+msgid "Statuses"
+msgstr ""
+
+#: inc/template-tags.php:54
+msgctxt "post format archive title"
+msgid "Audio"
+msgstr ""
+
+#: inc/template-tags.php:56
+msgctxt "post format archive title"
+msgid "Chats"
+msgstr ""
+
+#: inc/template-tags.php:59
+#, php-format
+msgid "Archives: %s"
+msgstr ""
+
+#. translators: 1: Taxonomy singular name, 2: Current taxonomy term
+#: inc/template-tags.php:63
+#, php-format
+msgid "%1$s: %2$s"
+msgstr ""
+
+#: inc/template-tags.php:65
+msgid "Archives"
+msgstr ""
+
+#: inc/template-tags.php:119
+#, php-format
+msgid "Archive by Category: %s"
+msgstr ""
+
+#: inc/template-tags.php:120
+#, php-format
+msgid "Search Results for: %s"
+msgstr ""
+
+#: inc/template-tags.php:121
+#, php-format
+msgid "Posts Tagged: %s"
+msgstr ""
+
+#: inc/template-tags.php:122
+#, php-format
+msgid "Posted by %s"
+msgstr ""
+
+#: inc/template-tags.php:123
+msgid "Error 404"
+msgstr ""
+
+#: inc/template-tags.php:124
+#, php-format
+msgid "Page %s"
+msgstr ""
+
+#: inc/template-tags.php:125
+#, php-format
+msgid "Comment Page %s"
+msgstr ""
+
+#: inc/template-tags.php:238
+msgid "There have no posts"
+msgstr ""
+
+#: inc/template-tags.php:430
+msgid "Prev Post"
+msgstr ""
+
+#: inc/template-tags.php:443
+msgid "Next Post"
+msgstr ""
+
+#: inc/template-tags.php:471
+msgid "Older posts"
+msgstr ""
+
+#: inc/template-tags.php:475
+msgid "Newer posts"
+msgstr ""
+
+#: inc/tgmpa.php:34
+msgid "Geoport Master"
+msgstr ""
+
+#: inc/tgmpa.php:41
+msgid "Revolution Slider"
+msgstr ""
+
+#: inc/tgmpa.php:49
+msgid "Elementor Page Builder"
+msgstr ""
+
+#: inc/tgmpa.php:54
+msgid "WooCommerce"
+msgstr ""
+
+#: inc/tgmpa.php:59
+msgid "Contact Form 7"
+msgstr ""
+
+#: inc/tgmpa.php:64
+msgid "MailChimp for WordPress"
+msgstr ""
+
+#: inc/tgmpa.php:69
+msgid "Classic Widgets"
+msgstr ""
+
+#: inc/tgmpa.php:74
+msgid "Instagram Feed"
+msgstr ""
+
+#: inc/tgmpa.php:79
+msgid "One Click Demo Import"
+msgstr ""
+
+#: template-parts/content-none.php:20 template-parts/content-none.php:41
+#, php-format
+msgid ""
+"Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
+msgstr ""
+
+#: template-parts/content-none.php:27 template-parts/content-none.php:48
+msgid ""
+"It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps "
+"searching can help."
+msgstr ""
+
+#: template-parts/content-none.php:37
+msgid "Nothing Found"
+msgstr ""
+
+#: template-parts/content-none.php:43
+msgid ""
+"Sorry, but nothing matched your search terms. Please try again with some "
+"different keywords."
+msgstr ""
+
+#: template-parts/content-page.php:16 template-parts/content-single.php:136
+msgid "Pages:"
+msgstr ""
+
+#. translators: %s: Name of current post. Only visible to screen readers
+#: template-parts/content-page.php:30
+#, php-format
+msgid "Edit <span class=\"screen-reader-text\">%s</span>"
+msgstr ""
+
+#: template-parts/content-single.php:33
+msgid "Releted Post"
+msgstr ""
+
+#: template-parts/content-single.php:159
+msgid "Tags :"
+msgstr ""
+
+#: template-parts/content-single.php:213
+msgid "Written by"
+msgstr ""
+
+#: template-parts/content.php:131 template-parts/content.php:185
+#: template-parts/content.php:226 template-parts/content.php:267
+#: template-parts/content.php:295
+msgid "No comment"
+msgstr ""
+
+#: template-parts/content.php:131 template-parts/content.php:185
+#: template-parts/content.php:226 template-parts/content.php:267
+#: template-parts/content.php:295
+msgid "One comment"
+msgstr ""
+
+#: template-parts/content.php:131 template-parts/content.php:185
+#: template-parts/content.php:226 template-parts/content.php:267
+#: template-parts/content.php:295
+#, no-php-format
+msgid "% comments"
+msgstr ""
+
+#. Theme URI of the plugin/theme
+msgid "https://pluginspoint.com/geoport"
+msgstr ""
+
+#. Description of the plugin/theme
+msgid "Geoport - Transport & Logistics WordPress Theme."
+msgstr ""
+
+#. Author of the plugin/theme
+msgid "https://themeforest.net/user/johanspond"
+msgstr ""
+
+#. Author URI of the plugin/theme
+msgid "https://pluginspoint.com"
+msgstr ""

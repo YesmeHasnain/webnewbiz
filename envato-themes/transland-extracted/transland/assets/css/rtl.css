@@ -1,0 +1,72 @@
+body {
+    direction: rtl;
+    unicode-bidi: embed;
+}
+
+.main-sidebar .single-sidebar-widget .wid-title::before {
+    left: auto;
+    right: 0px;
+}
+
+.main-sidebar .single-sidebar-widget .wid-title::after {
+    left: auto;
+    right: 22px;
+}
+
+.blog-wrapper .single-blog-post, .page-banner-wrap,
+.single-sidebar-widget,
+.elementor-text-editor,
+.elementor-image,
+.blog-wrapper .single-blog-post .post-content {
+    text-align: right;
+}
+
+.main-sidebar .single-sidebar-widget .wid-title {
+    padding-left: 0px;
+    padding-right: 45px;
+}
+
+
+.blog-wrapper .single-blog-post .post-content ul li::before {
+    left: auto;
+    right: 0px;
+}
+
+.blog-wrapper .single-blog-post .post-content ul li {
+    padding-left: 0px;
+    padding-right: 30px;
+}
+
+img.alignleft {
+    float: right;
+    margin-right: 0px;
+    margin-left: 20px;
+}
+
+.single-form-input input, .comment-form textarea {
+    text-align: right;
+}
+
+.comment-form-wrap {
+    text-align: right;
+}
+
+.text-center p,
+.text-center h1,
+.text-center h2,
+.text-center h3,
+.text-center h4,
+.text-center h5,
+.text-center h6 {
+    text-align: center !important;
+}
+
+.elementor-icon {
+    float: right;
+}
+
+code,
+pre,
+blockquote  {
+    text-align: right;
+}

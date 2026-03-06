@@ -1,0 +1,47 @@
+[
+  {
+    "id": "sb00001", "elType": "section",
+    "settings": {
+      "layout": "full_width", "content_width": {"unit": "px", "size": 960},
+      "height": "min-height", "custom_height": {"unit": "px", "size": 350},
+      "background_background": "classic", "background_color": "#111827",
+      "content_position": "middle",
+      "padding": {"unit": "px", "top": "100", "right": "40", "bottom": "100", "left": "40", "isLinked": false}
+    },
+    "elements": [{"id": "sb00002", "elType": "column", "settings": {"_column_size": 100, "align": "center"},
+      "elements": [
+        {"id": "sb00003", "elType": "widget", "widgetType": "divider", "settings": {"style": "solid", "weight": {"unit": "px", "size": 4}, "width": {"unit": "px", "size": 50}, "color": "{{accent}}", "align": "center", "_margin": {"unit": "px", "top": "0", "right": "0", "bottom": "20", "left": "0", "isLinked": false}}},
+        {"id": "sb00004", "elType": "widget", "widgetType": "heading", "settings": {"title": "{{hero_title}}", "header_size": "h1", "align": "center", "title_color": "#FFFFFF", "typography_typography": "custom", "typography_font_family": "Poppins", "typography_font_size": {"unit": "px", "size": 46}, "typography_font_size_tablet": {"unit": "px", "size": 36}, "typography_font_size_mobile": {"unit": "px", "size": 28}, "typography_font_weight": "700", "_margin": {"unit": "px", "top": "0", "right": "0", "bottom": "16", "left": "0", "isLinked": false}}},
+        {"id": "sb00005", "elType": "widget", "widgetType": "text-editor", "settings": {"editor": "<p style=\"text-align:center;\">{{hero_subtitle}}</p>", "align": "center", "text_color": "rgba(255,255,255,0.7)", "typography_typography": "custom", "typography_font_family": "Open Sans", "typography_font_size": {"unit": "px", "size": 16}, "typography_line_height": {"unit": "em", "size": 1.7}, "_element_width": "initial", "_element_custom_width": {"unit": "%", "size": 60}}}
+      ]
+    }]
+  },
+  {
+    "id": "sn00001", "elType": "section",
+    "settings": {
+      "layout": "boxed", "content_width": {"unit": "px", "size": 960},
+      "background_background": "classic", "background_color": "#FFFFFF",
+      "padding": {"unit": "px", "top": "120", "right": "40", "bottom": "120", "left": "40", "isLinked": false}
+    },
+    "elements": [{"id": "sn00002", "elType": "column", "settings": {"_column_size": 100},
+      "elements": [
+        {"id": "sn00003", "elType": "widget", "widgetType": "text-editor", "settings": {"editor": "{{content}}", "text_color": "#999999", "typography_typography": "custom", "typography_font_family": "Open Sans", "typography_font_size": {"unit": "px", "size": 16}, "typography_line_height": {"unit": "em", "size": 1.8}}}
+      ]
+    }]
+  },
+  {
+    "id": "sc00001", "elType": "section",
+    "settings": {
+      "layout": "full_width", "content_width": {"unit": "px", "size": 960},
+      "background_background": "classic", "background_color": "#111827",
+      "padding": {"unit": "px", "top": "120", "right": "40", "bottom": "120", "left": "40", "isLinked": false}
+    },
+    "elements": [{"id": "sc00002", "elType": "column", "settings": {"_column_size": 100, "align": "center"},
+      "elements": [
+        {"id": "sc00003", "elType": "widget", "widgetType": "heading", "settings": {"title": "{{cta_title}}", "header_size": "h2", "align": "center", "title_color": "#FFFFFF", "typography_typography": "custom", "typography_font_family": "Poppins", "typography_font_size": {"unit": "px", "size": 30}, "typography_font_weight": "700", "_margin": {"unit": "px", "top": "0", "right": "0", "bottom": "18", "left": "0", "isLinked": false}, "_element_width": "initial", "_element_custom_width": {"unit": "%", "size": 70}}},
+        {"id": "sc00004", "elType": "widget", "widgetType": "text-editor", "settings": {"editor": "<p style=\"text-align:center;\">{{cta_subtitle}}</p>", "align": "center", "text_color": "rgba(255,255,255,0.7)", "typography_typography": "custom", "typography_font_family": "Open Sans", "typography_font_size": {"unit": "px", "size": 16}, "typography_line_height": {"unit": "em", "size": 1.7}, "_margin": {"unit": "px", "top": "0", "right": "0", "bottom": "36", "left": "0", "isLinked": false}, "_element_width": "initial", "_element_custom_width": {"unit": "%", "size": 55}}},
+        {"id": "sc00005", "elType": "widget", "widgetType": "button", "settings": {"text": "{{cta_button}}", "align": "center", "size": "md", "typography_typography": "custom", "typography_font_family": "Poppins", "typography_font_size": {"unit": "px", "size": 14}, "typography_font_weight": "700", "typography_text_transform": "uppercase", "border_radius": {"unit": "px", "top": "4", "right": "4", "bottom": "4", "left": "4", "isLinked": true}, "button_text_color": "#111827", "background_color": "{{accent}}", "button_hover_text_color": "#FFFFFF", "button_background_hover_color": "{{primary}}", "button_padding": {"unit": "px", "top": "17", "right": "35", "bottom": "17", "left": "35", "isLinked": false}}}
+      ]
+    }]
+  }
+]

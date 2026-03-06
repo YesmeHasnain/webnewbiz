@@ -1,0 +1,92 @@
+/* 
+    Wishlist css 
+*/
+.woosw-list table.woosw-items tr td {
+    padding: 20px;
+}
+.woosw-list table.woosw-items .woosw-item .woosw-item--name a {
+    font-size: 20px;
+    color: var(--title-color);
+}
+.woosw-list table.woosw-items .woosw-item .woosw-item--name a {
+    font-size: 20px;
+}
+.woosw-list table.woosw-items tr .woosw-item--actions {
+    width: 88px;
+}
+.woosw-list table.woosw-items .woosw-item .woosw-item--name a:hover {
+       color: var(--theme-color);
+}
+
+.woosw-list table.woosw-items .woosw-item .woosw-item--atc .add_to_cart_inline .cart-button.icon-btn.added {
+    display: none;
+}
+.woosw-list table.woosw-items tr .woosw-item--actions {
+    width: 170px;
+}
+.woosw-list table.woosw-items .woosw-item .woosw-item--atc p, .woosw-list table.woosw-items .woosw-item .woosw-item--atc .add_to_cart_inline {
+    text-align: center;
+}
+.woosw-list table.woosw-items .woosw-item .woosw-item--atc .add_to_cart_inline .added_to_cart.wc-forward {
+    height: 50px;
+    display: block;
+    line-height: 50px;
+    text-align: center;
+    padding: 0 20px;
+    background-color: var(--icon-bg, #f7f7f7);
+    border: 1px solid var(--th-border-color);
+    color: var(--title-color);
+}
+
+/* 
+    Style css 
+*/
+/* Header sub-menu icon */
+.hide-icon.main-menu ul.sub-menu li a:before {
+    display: none;
+}
+.hide-icon.main-menu ul.sub-menu li a:hover {
+    padding-left: 0;
+}
+
+/* Animation edit more */
+body.elementor-editor-active .reveal {
+    position: relative;
+    display: -webkit-inline-box;
+    display: -webkit-inline-flex;
+    display: -ms-inline-flexbox;
+    display: inline-flex;
+    overflow: hidden;
+    visibility: visible;
+}
+/* wow */
+body.elementor-editor-active .wow {
+  /* visibility: visible !important; */
+  animation-name: none !important;
+}
+body.elementor-editor-active .fadeinleft,
+body.elementor-editor-active .fadeinup,
+body.elementor-editor-active .fadeinright,
+body.elementor-editor-active .fadeintop{
+    opacity: 1 !important;
+    animation-name: none !important;
+}
+/* scrollCue */
+body.elementor-editor-active [data-cue="slideInUp"], 
+body.elementor-editor-active [data-cues="slideInUp"] > *,
+body.elementor-editor-active [data-cue="slideInLeft"], 
+body.elementor-editor-active [data-cues="slideInLeft"] > *,
+body.elementor-editor-active [data-cue="slideInRight"], 
+body.elementor-editor-active [data-cues="slideInRight"] > * {
+    opacity: 1 !important;
+}
+
+/* sidebar */
+.widget.no-banner-widget {
+    padding: 0;
+    background-color: transparent;
+    margin-bottom: 0px;
+    position: relative;
+    border-radius: 0px;
+    border: 0px solid transparent;
+}

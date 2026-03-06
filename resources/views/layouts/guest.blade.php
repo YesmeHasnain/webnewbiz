@@ -5,40 +5,52 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <title>@yield('title', 'Welcome') - Webnewbiz</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
             theme: {
                 extend: {
-                    colors: {
-                        primary: { 50: '#eff6ff', 100: '#dbeafe', 200: '#bfdbfe', 300: '#93c5fd', 400: '#60a5fa', 500: '#3b82f6', 600: '#2563eb', 700: '#1d4ed8', 800: '#1e40af', 900: '#1e3a8a' },
+                    fontFamily: {
+                        sans: ['Inter', 'system-ui', '-apple-system', 'sans-serif'],
                     }
                 }
             }
         }
     </script>
     <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
-    <style>[x-cloak] { display: none !important; }</style>
+    <style>
+        *, *::before, *::after { -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+        [x-cloak] { display: none !important; }
+        @keyframes fadeInUp { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: translateY(0); } }
+        .animate-up { animation: fadeInUp 0.5s ease-out forwards; }
+        .grid-bg { background-image: linear-gradient(rgba(48,54,61,0.3) 1px, transparent 1px), linear-gradient(90deg, rgba(48,54,61,0.3) 1px, transparent 1px); background-size: 64px 64px; }
+    </style>
 </head>
-<body class="min-h-screen bg-gradient-to-br from-blue-50 via-white to-indigo-50 flex items-center justify-center p-4">
-    <div class="w-full max-w-md">
-        <div class="text-center mb-8">
-            <a href="{{ url('/') }}" class="inline-flex items-center gap-3">
-                <div class="w-12 h-12 bg-blue-600 rounded-xl flex items-center justify-center">
-                    <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"/>
+<body class="min-h-screen flex items-center justify-center p-4 relative overflow-hidden bg-[#0d1117]">
+    {{-- Subtle grid --}}
+    <div class="grid-bg absolute inset-0 opacity-40"></div>
+
+    {{-- Glow --}}
+    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[400px] bg-gradient-to-r from-indigo-500/10 via-violet-500/10 to-transparent rounded-full blur-3xl pointer-events-none"></div>
+
+    <div class="w-full max-w-md relative z-10">
+        <div class="text-center mb-8 animate-up">
+            <a href="{{ url('/') }}" class="inline-flex items-center gap-3 group">
+                <div class="w-10 h-10 bg-white rounded-xl flex items-center justify-center transition-transform duration-200 group-hover:scale-105">
+                    <svg class="w-5 h-5 text-gray-900" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/>
                     </svg>
                 </div>
-                <div class="text-left">
-                    <h1 class="text-2xl font-bold text-gray-900">Webnewbiz</h1>
-                    <p class="text-sm text-gray-500">AI Website Builder</p>
-                </div>
+                <span class="text-xl font-bold tracking-tight text-white">Webnewbiz</span>
             </a>
         </div>
 
-        <div class="bg-white rounded-2xl shadow-xl shadow-gray-200/50 border border-gray-100 p-8">
+        <div class="bg-[#161b22] rounded-xl border border-[#30363d] p-8 shadow-2xl shadow-black/40 animate-up" style="animation-delay: 0.1s;">
             @if($errors->any())
-                <div class="mb-6 p-4 bg-red-50 border border-red-200 rounded-lg text-red-700 text-sm">
+                <div class="mb-6 p-3 bg-red-500/10 border border-red-500/20 rounded-lg text-red-300 text-sm">
                     @foreach($errors->all() as $error)
                         <p>{{ $error }}</p>
                     @endforeach
@@ -46,7 +58,7 @@
             @endif
 
             @if(session('success'))
-                <div class="mb-6 p-4 bg-green-50 border border-green-200 rounded-lg text-green-700 text-sm">
+                <div class="mb-6 p-3 bg-green-500/10 border border-green-500/20 rounded-lg text-green-300 text-sm">
                     {{ session('success') }}
                 </div>
             @endif
@@ -54,7 +66,7 @@
             @yield('content')
         </div>
 
-        <p class="text-center text-sm text-gray-400 mt-8">&copy; {{ date('Y') }} Webnewbiz. All rights reserved.</p>
+        <p class="text-center text-xs text-[#484f58] mt-8">&copy; {{ date('Y') }} Webnewbiz. All rights reserved.</p>
     </div>
 </body>
 </html>

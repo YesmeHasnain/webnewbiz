@@ -23,7 +23,7 @@ Route::middleware('auth:sanctum')->group(function () {
     Route::put('/auth/profile', [AuthController::class, 'updateProfile']);
 
     // Websites
-    Route::apiResource('websites', WebsiteController::class);
+    Route::apiResource('websites', WebsiteController::class)->names('api.websites');
     Route::post('/websites/generate', [WebsiteController::class, 'generate']);
     Route::get('/websites/{website}/status', [WebsiteController::class, 'status']);
     Route::post('/websites/{website}/suspend', [WebsiteController::class, 'suspend']);

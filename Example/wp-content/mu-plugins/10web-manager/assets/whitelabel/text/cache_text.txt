@@ -1,0 +1,1 @@
+We use NGINX FastCGI Static Page Caching to cache everything from pages to feeds to 301-redirects on sub-domains. It helps your site to load super fast for your non-logged-in visitors.

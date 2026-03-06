@@ -1,0 +1,131 @@
+footer {
+    ul {
+        margin: 0px;
+        padding: 0px;
+        list-style: none;
+
+        li {
+            list-style: none;
+        }
+    }
+
+    .footer-widgets-wrapper {
+        padding: 60px 0px 100px;
+
+        @media (max-width: 991px) {
+            padding: 40px 0px 80px;
+        }
+    }
+
+    .single-footer-wid {
+        margin-top: 40px;
+
+        .wid-title {
+            margin-bottom: 25px;
+
+            @media (min-width: 767px) {
+                margin-top: 20px;
+            }
+
+            h6 {
+                font-weight: 600;
+                color: #fff;
+                font-size: 17px;
+            }
+        }
+
+        ul {
+
+            li {
+                
+                a {
+                    margin-top: 8px;
+                    color: #9dacb8;
+                    display: block;
+                    font-size: 16px;
+                }
+            }
+        }
+    }
+
+    .footer-bottom {
+        background-color: $theme-color;
+        color: #fff;
+
+        @media (max-width: 767px) {
+            text-align: center;
+        }
+
+        .bottom-content-wrapper {
+            background-color: $third-color;
+            padding: 35px 50px;
+
+            @media (max-width: 767px) {
+                padding: 30px;
+            }
+    
+            p, b, strong {
+                color: $white;
+                font-size: 16px;
+                text-transform: capitalize;
+            }
+    
+            a {
+                font-weight: 500;
+            }
+    
+            ul {
+                li {
+                    display: inline-block;
+
+                    &:first-of-type {
+                        a {
+                            margin-left: 0;
+                        }
+                    }
+    
+                    a {
+                        display: inline-block;
+                        margin-left: 15px;
+                        font-size: 15px;
+                        color: #fff;
+                        text-transform: capitalize;
+                    }
+                }
+            }
+        }
+
+        .social-links {
+            a {
+                display: inline-block;
+                margin-right: 15px;
+                color: #fff;
+
+                &:hover {
+                    color: $theme-color;
+                }
+
+                &:last-of-type {
+                    margin-left: 0;
+                }
+            }
+        }
+    }
+
+    .footer-bottom-bar {
+        background-color: $theme-color;
+        padding: 24px 0px;
+        color: #fff;
+        text-transform: capitalize;
+
+        p {
+            color: #fff;
+        }
+
+        a, b, strong {
+            color: $second-color;
+            font-weight: 500;
+        }
+    }
+
+}

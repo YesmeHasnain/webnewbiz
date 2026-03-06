@@ -18,9 +18,20 @@ return Application::configure(basePath: dirname(__DIR__))
         },
     )
     ->withMiddleware(function (Middleware $middleware): void {
+        // Auto-login as User 1 (no manual login needed during dev)
+        $middleware->web(append: [
+            \App\Http\Middleware\AutoLoginMiddleware::class,
+        ]);
+
         $middleware->alias([
             'admin' => \App\Http\Middleware\AdminMiddleware::class,
             'api.key' => \App\Http\Middleware\ApiKeyMiddleware::class,
+        ]);
+
+        // Disable CSRF for chatbot API (called from WordPress sites cross-origin)
+        $middleware->validateCsrfTokens(except: [
+            'websites/*/chat',
+            'websites/*/chat/history',
         ]);
     })
     ->withExceptions(function (Exceptions $exceptions): void {

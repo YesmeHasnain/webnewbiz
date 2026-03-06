@@ -1,0 +1,47 @@
+/*
+Theme Name: Transland
+Author: Modina Theme
+Author URI: https://themeforest.net/user/modinatheme/
+Theme URI: https://modinatheme.com/transland/
+Description: Transport & Logistics WordPress Theme
+Version: 2.2.0
+*/
+
+// BASIC
+@import 'basic';
+// MIXIN
+@import 'variables';
+// TYPOGRAPHYcod
+@import 'typography';
+// MIX
+@import 'mix';
+// HELPER
+@import 'helper';
+// ANIMATION
+@import 'animation';
+// Button 
+@import 'btn';
+// Preloader 
+@import 'preloader';
+
+// WP Default CSS - Style
+@import 'wp';
+
+/* ----------------------------------
+    Template Section Styles
+ ------------------------------------*/
+
+// Menu - Header Section 
+@import 'header';
+
+// Section Title - Heading 
+@import 'section';
+
+// Blog - Section 
+@import 'blog';
+
+// elmentor addon - Section 
+@import 'addons';
+
+// footer - Section 
+@import 'footer';

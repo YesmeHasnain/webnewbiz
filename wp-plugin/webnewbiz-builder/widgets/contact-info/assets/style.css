@@ -1,0 +1,16 @@
+.wnb-contact { padding: 20px 0; }
+.wnb-contact--side { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: start; }
+.wnb-contact-title { font-size: 36px; font-weight: 700; color: #111827; margin: 0 0 12px; }
+.wnb-contact-subtitle { font-size: 16px; color: #6b7280; margin: 0 0 32px; line-height: 1.6; }
+.wnb-contact-items { display: flex; flex-direction: column; gap: 20px; }
+.wnb-contact-item { display: flex; align-items: flex-start; gap: 14px; }
+.wnb-contact-icon { font-size: 20px; color: #2563eb; flex-shrink: 0; width: 24px; text-align: center; padding-top: 2px; }
+.wnb-contact-text { font-size: 16px; color: #374151; text-decoration: none; line-height: 1.5; }
+a.wnb-contact-text:hover { color: #2563eb; }
+.wnb-contact-map { margin-top: 32px; }
+.wnb-contact--side .wnb-contact-map { margin-top: 0; }
+
+@media (max-width: 768px) {
+    .wnb-contact--side { grid-template-columns: 1fr; }
+    .wnb-contact-title { font-size: 28px; }
+}

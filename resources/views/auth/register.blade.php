@@ -2,46 +2,49 @@
 @section('title', 'Register')
 
 @section('content')
-    <h2 class="text-2xl font-bold text-gray-900 mb-2">Create your account</h2>
-    <p class="text-gray-500 mb-6">Start building websites with AI in seconds</p>
+    <h2 class="text-xl font-bold text-white mb-1">Create your account</h2>
+    <p class="text-[#8b949e] text-sm mb-6">Start building websites with AI in seconds.</p>
 
     <form method="POST" action="{{ route('register') }}">
         @csrf
+        @if(request('prompt'))
+            <input type="hidden" name="prompt" value="{{ request('prompt') }}">
+        @endif
         <div class="mb-4">
-            <label class="block text-sm font-medium text-gray-700 mb-1.5">Full Name</label>
+            <label class="block text-sm font-medium text-[#e6edf3] mb-1.5">Full Name</label>
             <input type="text" name="name" value="{{ old('name') }}" required autofocus
-                class="w-full px-4 py-2.5 border border-gray-300 rounded-lg text-gray-900 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                class="w-full px-3.5 py-2.5 bg-[#0d1117] border border-[#30363d] rounded-lg text-[#e6edf3] placeholder-[#484f58] focus:outline-none focus:ring-2 focus:ring-[#58a6ff]/40 focus:border-[#58a6ff] transition-all text-sm"
                 placeholder="John Doe">
         </div>
 
         <div class="mb-4">
-            <label class="block text-sm font-medium text-gray-700 mb-1.5">Email</label>
+            <label class="block text-sm font-medium text-[#e6edf3] mb-1.5">Email</label>
             <input type="email" name="email" value="{{ old('email') }}" required
-                class="w-full px-4 py-2.5 border border-gray-300 rounded-lg text-gray-900 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                class="w-full px-3.5 py-2.5 bg-[#0d1117] border border-[#30363d] rounded-lg text-[#e6edf3] placeholder-[#484f58] focus:outline-none focus:ring-2 focus:ring-[#58a6ff]/40 focus:border-[#58a6ff] transition-all text-sm"
                 placeholder="you@example.com">
         </div>
 
         <div class="mb-4">
-            <label class="block text-sm font-medium text-gray-700 mb-1.5">Password</label>
+            <label class="block text-sm font-medium text-[#e6edf3] mb-1.5">Password</label>
             <input type="password" name="password" required
-                class="w-full px-4 py-2.5 border border-gray-300 rounded-lg text-gray-900 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                class="w-full px-3.5 py-2.5 bg-[#0d1117] border border-[#30363d] rounded-lg text-[#e6edf3] placeholder-[#484f58] focus:outline-none focus:ring-2 focus:ring-[#58a6ff]/40 focus:border-[#58a6ff] transition-all text-sm"
                 placeholder="Min 8 characters">
         </div>
 
         <div class="mb-6">
-            <label class="block text-sm font-medium text-gray-700 mb-1.5">Confirm Password</label>
+            <label class="block text-sm font-medium text-[#e6edf3] mb-1.5">Confirm Password</label>
             <input type="password" name="password_confirmation" required
-                class="w-full px-4 py-2.5 border border-gray-300 rounded-lg text-gray-900 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                class="w-full px-3.5 py-2.5 bg-[#0d1117] border border-[#30363d] rounded-lg text-[#e6edf3] placeholder-[#484f58] focus:outline-none focus:ring-2 focus:ring-[#58a6ff]/40 focus:border-[#58a6ff] transition-all text-sm"
                 placeholder="Repeat your password">
         </div>
 
-        <button type="submit" class="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2.5 px-4 rounded-lg transition">
-            Create Account
+        <button type="submit" class="w-full bg-white hover:bg-gray-100 text-gray-900 font-semibold py-2.5 px-4 rounded-lg transition-colors text-sm">
+            Create account
         </button>
     </form>
 
-    <p class="text-center text-sm text-gray-500 mt-6">
+    <p class="text-center text-sm text-[#8b949e] mt-6">
         Already have an account?
-        <a href="{{ route('login') }}" class="text-blue-600 hover:text-blue-700 font-medium">Sign in</a>
+        <a href="{{ route('login', request('prompt') ? ['prompt' => request('prompt')] : []) }}" class="text-[#58a6ff] hover:underline font-medium">Sign in</a>
     </p>
 @endsection

@@ -54,4 +54,29 @@ return [
         'api_url' => 'https://generativelanguage.googleapis.com/v1beta',
     ],
 
+    'ideogram' => [
+        'api_key' => env('IDEOGRAM_API_KEY'),
+        'api_url' => 'https://api.ideogram.ai',
+    ],
+
+    'unsplash' => [
+        'access_key' => env('UNSPLASH_ACCESS_KEY'),
+    ],
+
+    'pexels' => [
+        'api_key' => env('PEXELS_API_KEY'),
+    ],
+
+    'anthropic' => [
+        'api_key' => env('ANTHROPIC_API_KEY'),
+        'model' => env('ANTHROPIC_MODEL', 'claude-sonnet-4-20250514'),
+        'api_url' => 'https://api.anthropic.com/v1',
+    ],
+
+    'glm' => [
+        'api_key' => env('GLM_API_KEY'),
+        'model' => env('GLM_MODEL', 'glm-4.5-flash'),
+        'api_url' => 'https://open.bigmodel.cn/api/paas/v4',
+    ],
+
 ];

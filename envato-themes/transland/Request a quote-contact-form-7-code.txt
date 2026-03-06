@@ -1,0 +1,54 @@
+<div class="row d-flex align-item-center">
+    <div class="col-sm-6 col-12">
+    [text* cname placeholder "Full name"]
+    </div>
+    <div class="col-sm-6 col-12">
+       [email* cemail placeholder "Email"]
+    </div>
+    <div class="col-sm-6 col-12">
+        [text* cphone placeholder "Phone"]
+    </div>
+    <div class="col-sm-6 col-12">
+        [text* csubject placeholder "Subject"]
+    </div>
+    <div class="col-sm-6 col-12">
+        [text* dcity placeholder "Delivery city"]
+    </div>
+    <div class="col-sm-6 col-12">
+        [text* ccityd placeholder "City of departure"]
+    </div>
+    <div class="col-sm-6 col-12">
+       [select freighttype id:transfreight class:wide "Freight Type" "Air Freight" "Road Freight" "Ship Freight" "Drone Freight"]
+    </div>
+    <div class="col-sm-6 col-12">
+    [select valuetype id:incoterms class:wide "Value 1" "Value 2" "Value 3"]
+    </div>
+    <div class="col-6 col-sm-3">
+        [text pweight placeholder "Weight"]
+    </div>
+    <div class="col-6 col-sm-3">
+        [text pheight placeholder "Height"]
+    </div>
+    <div class="col-6 col-sm-3">
+    [text pwidth placeholder "Width"]
+    </div>
+    <div class="col-6 col-sm-3">
+       [text plength placeholder "Length"]
+    </div>
+    <div class="col-sm-3 col-6 d-flex align-items-center">
+[checkbox checkbox-746 use_label_element "fragile"]
+    </div>
+    <div class="col-sm-3 col-6 d-flex align-items-center">
+        [checkbox checkbox-2 use_label_element "Express"]
+    </div>
+    <div class="col-sm-3 col-6 d-flex align-items-center">
+[radio cinsurance use_label_element "Insurance"]
+    </div>
+    <div class="col-sm-3 col-6 d-flex align-items-center">
+        [radio cpackaging use_label_element "Packaging"]
+    </div>
+
+    <div class="col-sm-12">
+   [submit class:theme-btn "Request a quote"]
+    </div>
+</div>

@@ -1,0 +1,32 @@
+.wnb-cta {
+    position: relative;
+    padding: 80px 24px;
+    text-align: center;
+    overflow: hidden;
+    background: linear-gradient(135deg, #2563eb, #1e40af);
+}
+.wnb-cta-overlay { position: absolute; inset: 0; z-index: 1; }
+.wnb-cta-content { position: relative; z-index: 2; max-width: 700px; margin: 0 auto; }
+.wnb-cta-title { font-size: 36px; font-weight: 700; color: #fff; margin: 0 0 16px; }
+.wnb-cta-desc { font-size: 18px; color: rgba(255,255,255,0.9); margin: 0 0 32px; line-height: 1.6; }
+.wnb-cta-btn {
+    display: inline-block;
+    padding: 14px 40px;
+    background: #fff;
+    color: #2563eb;
+    font-size: 16px;
+    font-weight: 600;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+.wnb-cta-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+    color: #2563eb;
+}
+
+@media (max-width: 768px) {
+    .wnb-cta { padding: 60px 20px; }
+    .wnb-cta-title { font-size: 28px; }
+}

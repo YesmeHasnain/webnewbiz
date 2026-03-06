@@ -111,4 +111,14 @@ class User extends Authenticatable
 
         return $subscription?->plan;
     }
+
+    public function canCreateWebsite(): bool
+    {
+        $plan = $this->currentPlan();
+        if (!$plan) {
+            return false;
+        }
+
+        return $this->websites()->count() < $plan->max_websites;
+    }
 }
