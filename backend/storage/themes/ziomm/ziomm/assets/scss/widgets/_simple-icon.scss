@@ -1,0 +1,35 @@
+/* WIDGET: SIMPLE ICON
+-------------------------------------------- */
+
+.vlt-simple-icon {
+	display: inline-flex;
+	line-height: 1;
+	color: var(--vlt-accent-1);
+
+	img {
+		display: block;
+		width: auto;
+		height: 1em !important;
+	}
+
+	svg {
+		height: 1em;
+	}
+
+	&--framed {
+		align-items: center;
+		justify-content: center;
+		width: px2rem(60px);
+		height: px2rem(60px);
+		border: 1px solid var(--vlt-color-3);
+		border-radius: 50%;
+	}
+
+	&--text {
+		font-family: var(--vlt-secondary-font);
+		font-size: px2rem(map-get($scales, "s5"));
+		line-height: 1;
+		letter-spacing: 0.015em;
+	}
+
+}

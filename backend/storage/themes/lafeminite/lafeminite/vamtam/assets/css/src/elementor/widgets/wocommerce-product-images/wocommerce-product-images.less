@@ -1,0 +1,73 @@
+// Product Images.
+.elementor-widget-woocommerce-product-images {
+	// Base Theme Widget Styles.
+	&.vamtam-has-theme-widget-styles {
+		div.images {
+			margin: 0px;
+
+			img {
+				transition-duration: 0s;
+			}
+
+			.flex-control-thumbs {
+				display: flex;
+				flex-direction: column;
+				max-width: 100px;
+				margin-right: 5px !important;
+
+				.woocommerce div.product & li {
+					width: 100%;
+				}
+
+				li {
+					img {
+						opacity: 1;
+						border-bottom: solid 2px transparent;
+						transition: all 0.3s ease;
+
+						&:hover {
+							border-color: var(--vamtam-accent-color-1);
+						}
+					}
+					img.flex-active {
+						border-color: var(--vamtam-accent-color-1);
+					}
+				}
+			}
+		}
+
+		.woocommerce-product-gallery {
+			display: flex;
+			flex-direction: row-reverse;
+
+			> :is(.flex-viewport, .flex-control-thumbs, .woocommerce-product-gallery__wrapper) {
+				flex: 1;
+			}
+
+			img:hover {
+				filter: none;
+			}
+
+			.flex-viewport {
+				.woocommerce-product-gallery__image {
+					will-change: opacity;
+					transition: opacity .5s ease;
+					&:not(.flex-active-slide) {
+						opacity: 0;
+					}
+				}
+			}
+		}
+
+		span.onsale {
+			top: 0;
+			background-color: var(--vamtam-accent-color-1);
+		}
+
+		.woocommerce-product-gallery {
+			&.vamtam-hide {
+				opacity: 0 !important;
+			}
+		}
+	}
+}

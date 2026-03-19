@@ -1,0 +1,24 @@
+/* WIDGET: TAG CLOUD
+-------------------------------------------- */
+
+.vlt-widget.widget_tag_cloud,
+.vlt-widget.widget_product_tag_cloud {
+	margin-bottom: px2rem(-8px);
+
+	a {
+		margin: 0 px2rem(8px) px2rem(8px) 0;
+		@extend %vlt_tag_button;
+
+		.vlt-offcanvas-sidebar--dark & {
+			color: var(--vlt-color-4);
+			background-color: var(--vlt-color-8);
+
+			&:hover {
+				background-color: var(--vlt-color-7);
+			}
+
+		}
+
+	}
+
+}

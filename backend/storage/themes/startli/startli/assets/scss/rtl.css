@@ -1,0 +1,147 @@
+.rtl .rt-blog-slider.slider-style-3 .blog-btn.react-button a svg {
+  transform: rotate(224deg);
+}
+.rtl .left_icon_yes ul li a:before {
+  left: unset;
+  right: 0;
+  transform: rotate(180deg);
+}
+.rtl .footer_style1 #menu-single-menu li a {
+  padding-right: 32px !important;
+  padding-left: 0;
+}
+.rtl .rt-arrow-right:before {
+  transform: rotate(180deg);
+}
+.rtl .rt-slider-navigation,
+.rtl #top-to-bottom {
+  right: unset;
+  left: 30px;
+}
+.rtl .slider-inner-wrapper .trasted-client {
+  right: 60px;
+  left: unset;
+}
+.rtl .slider-inner-wrapper .rt--slider.slider-style2 .single--item .banner-image .quote {
+  left: unset;
+  right: -30px;
+}
+.rtl .rt-arrow-right-long:before,
+.rtl .rt-arrow-left-long:before {
+  transform: rotate(180deg);
+}
+.rtl .menu-wrap-off {
+  left: 0;
+  right: unset;
+  transform: translate3d(-520px, 0, 0);
+}
+.rtl .menu-ofcn.off-open {
+  transform: translate3d(0px, 0, 0);
+}
+.rtl .menu-wrap-off .inner-offcan .nav-link-container,
+.rtl .react-sideabr .widget_block label.wp-block-search__label:after,
+.rtl .react-sideabr .widget_block h2:after, .rtl .react-sideabr .widget-title:after {
+  right: 0;
+  left: unset;
+}
+.rtl .menu-area .navbar ul li:hover ul {
+  right: 32px;
+}
+.rtl .menu-area .navbar ul li .sub-menu li ul {
+  right: 100%;
+  left: unset;
+}
+.rtl .menu-area .navbar ul li ul.sub-menu li a {
+  text-align: right;
+}
+.rtl .menu-area .navbar ul li.menu-item-has-children ul li.menu-item-has-children > a:before {
+  right: auto !important;
+  left: 0 !important;
+}
+.rtl .menu-area .icon2 .navbar ul.sub-menu > li.menu-item-has-children > a {
+  margin-right: 0 !important;
+}
+.rtl .single-teams .adress-box .address-content {
+  margin-right: 15px;
+  margin-left: 0;
+}
+.rtl .rs-skill-bar.style1 .skillbar .skill-bar-percent,
+.rtl .bs-search button {
+  left: 0;
+  right: unset;
+}
+.rtl .close-search {
+  left: 50px;
+  right: unset;
+}
+.rtl .mf-form-wrapper .metform-form-content .metform-form-main-wrapper .mf-input-wrapper .mf-input {
+  text-align: right;
+}
+.rtl .rt-blog-slider.slider-style-2 .rts-blog-h-2-wrapper .image-part .blog-badge,
+.rtl .react-sideabr .widget_search button, .rtl .react-sideabr .bs-search button {
+  left: 0;
+  right: unset;
+}
+.rtl .react-addon-services.services-style4 .rts-single-service-three .content-area {
+  margin-right: 22px;
+  margin-left: 0;
+}
+.rtl .react-addon-services.services-style9 .service-area-eight .badge-area .icon,
+.rtl .react-addon-services.services-style9 .service-area-eight .hov-area .badge {
+  left: -1px;
+  right: unset;
+}
+.rtl .elementor-widget-rt-price-table .elementor-widget-container .rt-pricing-table-price.display-inline .rt-pricing-table-period:before {
+  right: -10px;
+  left: unset;
+}
+.rtl .elementor-widget-rt-price-table .elementor-widget-container .rt-pricing-table-price.display-inline .rt-pricing-table-period {
+  padding: 0;
+  margin-right: 24px;
+}
+.rtl .elementor-widget-rt-price-table .elementor-widget-container .rt-pricing-table-body .rt-pricing-table-features-list li i {
+  margin-right: 0;
+  margin-left: 10px;
+}
+.rtl .slider-call-area .icon i {
+  margin-left: 15px;
+  margin-right: 0;
+}
+.rtl.blog .reactheme-blog .blog-item .full-blog-content .user-info .single-info, .rtl.archive .reactheme-blog .blog-item .full-blog-content .user-info .single-info, .rtl.single-post .reactheme-blog-details .type-post .single-content-full .user-info .single-info {
+  margin-left: 30px;
+  margin-right: 0;
+}
+.rtl.single-post .react-order-list li:before {
+  right: 0;
+  left: unset;
+}
+.rtl.single-post .react-order-list li {
+  padding-right: 22px;
+  padding-left: 0;
+}
+.rtl .reactheme-breadcrumbs .breadcrumbs-title span a:before {
+  right: unset;
+  left: -7px;
+}
+.rtl .reactheme-breadcrumbs .breadcrumbs-title span a.home span {
+  padding-right: 0;
+  padding-left: unset;
+  margin-left: 4px;
+  margin-right: 0;
+}
+.rtl .reactheme-breadcrumbs .breadcrumbs-single {
+  margin-top: -70px;
+}
+.rtl .reactheme-breadcrumbs .breadcrumbs-title span span {
+  padding-left: 2px;
+  padding-right: 15px;
+}
+.rtl .react-sideabr .widget_search input, .rtl .react-sideabr .bs-search input {
+  padding-left: 65px;
+  padding-right: 20px;
+}
+.rtl .react-sideabr .show-featured .post-img {
+  float: right;
+  padding-right: 0;
+  padding-left: 15px;
+}/*# sourceMappingURL=rtl.css.map */

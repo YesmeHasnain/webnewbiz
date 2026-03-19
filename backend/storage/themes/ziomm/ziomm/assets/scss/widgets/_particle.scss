@@ -1,0 +1,23 @@
+/* WIDGET: PARTICLE
+-------------------------------------------- */
+
+.vlt-particle {
+	font-size: 0;
+	backface-visibility: hidden;
+	will-change: transform;
+	z-index: 0;
+
+	&:not([data-animation-name="none"]) {
+		visibility: hidden;
+	}
+
+	&.animate__animated {
+		visibility: visible;
+	}
+
+	&~*:not(.vlt-particle) {
+		position: relative;
+		z-index: 1;
+	}
+
+}

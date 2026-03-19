@@ -1,0 +1,79 @@
+// Product Data Tabs.
+.elementor-element.elementor-widget-woocommerce-product-data-tabs { // extra class to ensure higher specificity
+	// Base Theme Widget Styles.
+    &.vamtam-has-theme-widget-styles {
+		.woocommerce-Tabs-panel--reviews {
+			.woocommerce-noreviews {
+				margin-bottom: var(--vamtam-content-space-l);
+			}
+		}
+		.woocommerce-Tabs-panel--additional_information > h2,
+		.woocommerce-Tabs-panel--reviews .woocommerce-Reviews-title {
+			display: none;
+		}
+		.woocommerce-tabs {
+			.tabs.wc-tabs {
+				display: flex;
+				justify-content: center;
+				align-items: center;
+
+				li {
+					text-align: center;
+					border: 1px solid var(--vamtam-accent-color-2);
+					border-radius: 30px;
+					background: none;
+					padding: 0;
+					margin: 0 10px;
+					a {
+						display: block;
+						text-align: center;
+						padding: 15px 40px;
+						color: var(--vamtam-accent-color-2);
+					}
+					&.active {
+						border: 1px solid var(--vamtam-accent-color-1) !important;
+						background-color: var(--vamtam-accent-color-1);
+						a {
+							color: var(--vamtam-accent-color-1-hc);
+						}
+					}
+				}
+			}
+
+			.woocommerce-Tabs-panel.panel {
+				border-top: 0;
+				padding: 2em 0 2em 0;
+				margin: 0;
+			}
+
+			&:last-child .panel {
+				padding-bottom: 0;
+			}
+
+			&,
+			&:after,
+			> ul:after {
+				display: block;
+				clear: both;
+				content: "";
+			}
+
+			p.stars a {
+				font-size: 16px !important;
+				margin-right: 5px !important;
+				border: var( --vamtam-no-border-link );
+			}
+
+			table.shop_attributes {
+				border-left: 1px dotted rgba(0,0,0,.1);
+
+				th,
+				td {
+					border-right: 1px dotted rgba(0,0,0,.1);
+					text-align: start;
+					padding: 8px;
+				}
+			}
+		}
+	}
+}

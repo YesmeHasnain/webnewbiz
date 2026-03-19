@@ -1,0 +1,350 @@
+body {
+	background: #ffffff;
+	background-color: #ffffff;
+	background-repeat: no-repeat;
+	background-position: center center;
+	background-attachment: scroll;
+	font-family: Inter;
+	font-size: 1rem;
+	font-weight: 400;
+	line-height: 1.625;
+	text-transform: none;
+	color: #242424;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-ms-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+}
+
+::selection {
+	color: #ffffff !important;
+	background-color: #eb2353 !important;
+}
+
+::-moz-selection {
+	color: #ffffff !important;
+	background-color: #eb2353 !important;
+}
+
+::-webkit-scrollbar {
+	background-color: rgba(16, 16, 16, .05);
+	width: 5px;
+}
+
+::-webkit-scrollbar-thumb {
+	background-color: #eb2353;
+}
+
+.vlt-navbar-logo img {
+	height: 20px;
+}
+
+.vlt-navbar-logo.vlt-navbar-logo--small img {
+	height: 50px;
+}
+
+.vlt-nav--fullscreen__background {
+	background-image: url("http://wp.vlthemes.me/ziomm/wp-content/uploads/2021/02/menu-background-2.jpg");
+	background-color: #ffffff;
+	background-repeat: no-repeat;
+	background-position: top center;
+	background-attachment: scroll;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-ms-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+}
+
+.vlt-nav--fullscreen-dark .vlt-nav--fullscreen__background {
+	background-image: url("http://wp.vlthemes.me/ziomm/wp-content/uploads/2021/02/menu-background-2-dark.jpg");
+	background-color: #101010;
+	background-repeat: no-repeat;
+	background-position: top center;
+	background-attachment: scroll;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-ms-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+}
+
+.vlt-nav--fullscreen-dropdown .vlt-nav--fullscreen__background {
+	background-image: url("http://wp.vlthemes.me/ziomm/wp-content/uploads/2021/02/menu-background.jpg");
+	background-color: #ffffff;
+	background-repeat: no-repeat;
+	background-position: top center;
+	background-attachment: scroll;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-ms-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+}
+
+.vlt-nav--fullscreen-dropdown.vlt-nav--fullscreen-dark .vlt-nav--fullscreen__background {
+	background-image: url("http://wp.vlthemes.me/ziomm/wp-content/uploads/2021/02/menu-background-dark.jpg");
+	background-color: #101010;
+	background-repeat: no-repeat;
+	background-position: top center;
+	background-attachment: scroll;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-ms-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+}
+
+.vlt-nav--slide__background {
+	background-image: url("http://wp.vlthemes.me/ziomm/wp-content/uploads/2021/02/menu-background.jpg");
+	background-color: #ffffff;
+	background-repeat: no-repeat;
+	background-position: top center;
+	background-attachment: scroll;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-ms-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+}
+
+.vlt-page--404 {
+	background-image: url("http://wp.vlthemes.me/ziomm/wp-content/uploads/2021/01/page-404.jpg");
+	background-color: #ffffff;
+	background-repeat: no-repeat;
+	background-position: center center;
+	background-attachment: scroll;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-ms-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+}
+
+:root {
+	--vlt-primary-font: Inter;
+	--vlt-secondary-font: Bebas Neue;
+}
+
+h1,
+.h1 {
+	font-family: Bebas Neue;
+	font-size: 4.375rem;
+	font-weight: 400;
+	letter-spacing: 0.005em;
+	line-height: 1.15;
+	text-transform: none;
+	color: #101010;
+}
+
+h2,
+.h2 {
+	font-family: Bebas Neue;
+	font-size: 2.875rem;
+	font-weight: 400;
+	letter-spacing: 0.015em;
+	line-height: 1.15;
+	text-transform: none;
+	color: #101010;
+}
+
+h3,
+.h3 {
+	font-family: Bebas Neue;
+	font-size: 2.125rem;
+	font-weight: 400;
+	letter-spacing: 0.015em;
+	line-height: 1.3;
+	text-transform: none;
+	color: #101010;
+}
+
+h4,
+.h4 {
+	font-family: Bebas Neue;
+	font-size: 1.625rem;
+	font-weight: 400;
+	letter-spacing: 0.015em;
+	line-height: 1.3;
+	text-transform: none;
+	color: #101010;
+}
+
+h5,
+.h5 {
+	font-family: Inter;
+	font-size: 1.25rem;
+	font-weight: 700;
+	line-height: 1.5;
+	text-transform: none;
+	color: #101010;
+}
+
+h6,
+.h6 {
+	font-family: Inter;
+	font-size: 0.9375rem;
+	font-weight: 700;
+	line-height: 1.45;
+	text-transform: none;
+	color: #101010;
+}
+
+blockquote {
+	font-family: Bebas Neue;
+	font-size: 2.125rem;
+	font-weight: 400;
+	letter-spacing: 0.015em;
+	line-height: 1.3;
+	text-transform: none;
+	color: #101010;
+}
+
+.vlt-btn {
+	font-family: Inter;
+	font-size: 0.9375rem;
+	font-weight: 700;
+	line-height: 1.1;
+	text-transform: none;
+}
+
+input[type="text"],
+input[type="date"],
+input[type="email"],
+input[type="password"],
+input[type="tel"],
+input[type="url"],
+input[type="search"],
+input[type="number"],
+textarea,
+select {
+	font-family: Inter;
+	font-size: 1rem;
+	font-weight: 400;
+	line-height: 1.625;
+	text-transform: none;
+}
+
+label {
+	font-family: Inter;
+	font-size: 1rem;
+	font-weight: 400;
+	line-height: 1.625;
+	text-transform: none;
+	color: #101010;
+}
+
+.vlt-widget__title {
+	font-family: Bebas Neue;
+	font-size: 1.625rem;
+	font-weight: 400;
+	letter-spacing: 0.015em;
+	line-height: 1.3;
+	text-transform: none;
+}
+
+@media (max-width: 767px) {
+	body {
+		font-size: 1rem;
+		line-height: 1.625;
+	}
+
+	h1,
+	.h1 {
+		font-size: 4.375rem;
+		line-height: 1.15;
+	}
+
+	h2,
+	.h2 {
+		font-size: 2.875rem;
+		line-height: 1.15;
+	}
+
+	h3,
+	.h3 {
+		font-size: 2.125rem;
+		line-height: 1.3;
+	}
+
+	h4,
+	.h4 {
+		font-size: 1.625rem;
+		line-height: 1.3;
+	}
+
+	h5,
+	.h5 {
+		font-size: 1.25rem;
+		line-height: 1.5;
+	}
+
+	h6,
+	.h6 {
+		font-size: 0.9375rem;
+		line-height: 1.45;
+	}
+
+	blockquote {
+		font-size: 2.125rem;
+		line-height: 1.3;
+	}
+}
+
+@media (max-width: 575px) {
+	body {
+		font-size: 1rem;
+		line-height: 1.625;
+	}
+
+	h1,
+	.h1 {
+		font-size: 4.375rem;
+		line-height: 1.15;
+	}
+
+	h2,
+	.h2 {
+		font-size: 2.875rem;
+		line-height: 1.15;
+	}
+
+	h3,
+	.h3 {
+		font-size: 2.125rem;
+		line-height: 1.3;
+	}
+
+	h4,
+	.h4 {
+		font-size: 1.625rem;
+		line-height: 1.3;
+	}
+
+	h5,
+	.h5 {
+		font-size: 1.25rem;
+		line-height: 1.5;
+	}
+
+	h6,
+	.h6 {
+		font-size: 0.9375rem;
+		line-height: 1.45;
+	}
+
+	blockquote {
+		font-size: 2.125rem;
+		line-height: 1.3;
+	}
+}
+
+:root {
+	--vlt-accent-1-h: 346;
+	--vlt-accent-1-s: 83%;
+	--vlt-accent-1-l: 53%;
+	--vlt-accent-2-h: 30;
+	--vlt-accent-2-s: 100%;
+	--vlt-accent-2-l: 55%;
+}

@@ -1,0 +1,44 @@
+a:4:{s:8:"template";s:4:"knor";s:4:"mods";a:3:{i:0;b:0;s:18:"nav_menu_locations";a:2:{s:7:"primary";i:7;s:10:"footermenu";i:12;}s:18:"custom_css_post_id";i:2383;}s:7:"options";a:2:{s:9:"site_icon";s:1:"0";s:23:"nav_menus_created_posts";a:0:{}}s:6:"wp_css";s:1064:".header-signup-btn a {
+    background: linear-gradient(to bottom,rgba(95,90,255,0.8),#5f5aff);
+    transition: all .3s ease;
+}
+
+.header-signup-btn a:hover {
+    background: linear-gradient(to right,rgba(75,71,219,0.8),#4b47db);
+}
+
+.footer-social a:hover {
+	color: #9b98e4;
+}
+
+.team-section-wrap .team-member-content h3 a:hover {
+	color: #5F5AFF!important;
+}
+
+.theme-portfolio-section-wrap .theme-portfolio-grid-item .grid-portfolio-text h4 a:hover, .blog.main-container .post-block-style-wrapper .post-block-content-wrap h2.post-title a:hover {
+	color: #5F5AFF!important;
+}
+
+.blog-sidebar ul.wp-block-categories-list.wp-block-categories li a:hover {
+	color: #5F5AFF;
+}
+
+.pricing-menu-style-two ul.pricing-menu-list.list-style2 li span {
+    font-weight: 600;
+    color: #080D0C;
+}
+
+.widget_theme_recent_posts .recent-post-list-inner.recent_post_Content h3 a:hover {
+	color: #5F5AFF;
+}
+
+.header-login-btn a:hover {
+    border-color: #07C5BD!important;
+    color: #fff;
+}
+
+@media (min-width: 1201px) and (max-width: 1399px) {
+.header-signup-btn {
+	display: none;
+}
+}";}

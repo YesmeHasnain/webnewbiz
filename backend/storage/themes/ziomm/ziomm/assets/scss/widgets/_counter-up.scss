@@ -1,0 +1,28 @@
+/* WIDGET: COUNTER UP
+-------------------------------------------- */
+
+.vlt-counter-up {
+	display: inline-flex;
+	align-items: center;
+	flex-grow: 1;
+
+	&__number {
+		display: inline-flex;
+		justify-content: center;
+		font-family: var(--vlt-secondary-font);
+		font-size: map-get($scales, "s2");
+		line-height: 1;
+		color: var(--vlt-accent-2);
+		letter-spacing: 0.005em;
+		white-space: pre-wrap;
+	}
+
+	&__title {
+		margin: 0 0 0 px2rem(18px);
+		font-size: map-get($scales, "s8");
+		line-height: 1.5;
+		text-align: left;
+		flex-basis: 100%;
+	}
+
+}

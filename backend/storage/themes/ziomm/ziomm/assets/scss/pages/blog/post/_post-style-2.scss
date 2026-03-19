@@ -1,0 +1,34 @@
+/* POST: STYLE 2
+-------------------------------------------- */
+
+.vlt-post--style-2 {
+
+	.vlt-post-media+.vlt-post-content,
+	.vp-portfolio__item-img-wrap+.vlt-post-content {
+		margin-top: px2rem(27px);
+	}
+
+	.vlt-post-header {
+
+		.vlt-post-title {
+			padding-right: 25%;
+			font-size: px2rem(map-get($scales, "s5"));
+			line-height: 1.3;
+		}
+
+	}
+
+	.vlt-post-excerpt {
+		margin-top: px2rem(15px);
+	}
+
+	.vlt-post-footer {
+		margin-top: px2rem(24px);
+
+		.vlt-link-with-arrow {
+			color: var(--vlt-accent-1);
+		}
+
+	}
+
+}

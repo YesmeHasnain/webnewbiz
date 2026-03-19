@@ -1,0 +1,85 @@
+/* PAGE: PORTFOLIO
+-------------------------------------------- */
+
+.vp-portfolio[data-vp-layout=slider] {
+	--vp-layout-slider--arrows__width: auto;
+	--vp-layout-slider--arrows__height: auto;
+	--vp-layout-slider--arrows__offset: 50px;
+	--vp-layout-slider--arrows__compensation: 10px;
+	--vp-layout-slider--arrows__color: #101010;
+	--vp-layout-slider--arrows__background-color: transparent;
+	--vp-layout-slider--arrows__border-radius: 0;
+	--vp-layout-slider--arrows__box-shadow: none;
+
+	.vp-portfolio__items-arrow {
+		font-size: .6em;
+		outline: none;
+		opacity: 1;
+	}
+
+	.vp-portfolio__items-bullets {
+		line-height: 0;
+
+		>.swiper-pagination-bullet {
+			width: px2rem(7px);
+			height: px2rem(7px);
+			margin: 0;
+			cursor: pointer;
+			background-color: var(--vlt-color-4);
+			border-radius: 100%;
+			outline: none;
+			opacity: 1;
+			transition: all var(--vlt-transition-duration) var(--vlt-transition-easing);
+			transform: scale(.7);
+
+			&:not(.swiper-pagination-bullet-active):hover {
+				opacity: 0.8;
+			}
+
+			&.swiper-pagination-bullet-active {
+				background-color: var(--vlt-accent-1);
+				transform: scale(1);
+			}
+
+		}
+
+		.swiper-pagination-bullet+.swiper-pagination-bullet {
+			margin-left: px2rem(10px);
+		}
+
+	}
+
+}
+
+.vlt-page-content .vp-portfolio {
+	--vp-elements__gap: 0;
+}
+
+.vp-portfolio__item .vlt-badge {
+	position: absolute;
+	right: 0;
+	z-index: 10;
+}
+
+[data-vp-slider-slides-per-view="auto"] .swiper-slide {
+	width: auto;
+}
+
+.vp-portfolio__item-tilt {
+
+	.vp-portfolio__item-meta-wrap {
+		transition: transform 200ms linear;
+	}
+
+}
+
+// import
+@import "portfolio/pagination";
+@import "portfolio/filters";
+@import "portfolio/styles/default";
+@import "portfolio/styles/fly";
+@import "portfolio/styles/emerge";
+@import "portfolio/styles/fade";
+@import "portfolio/work/instagram";
+@import "portfolio/work/work-style-2";
+@import "portfolio/work/work-style-2";

@@ -1,0 +1,92 @@
+/* WIDGET: SERVICE BOX 4
+-------------------------------------------- */
+
+.vlt-service-box--style-4 {
+	padding: px2rem(45px) px2rem(60px) px2rem(50px);
+	background-color: var(--vlt-color-0);
+	box-shadow: inset 0 0 0 1px var(--vlt-color-3);
+
+	@include media-breakpoint-down(sm) {
+		padding: px2rem(35px) px2rem(50px) px2rem(40px);
+	}
+
+	.vlt-service-box__icon {
+		font-size: px2rem(60px);
+		line-height: 1;
+		color: var(--vlt-accent-1);
+
+		svg {
+			width: 1em;
+			height: 1em;
+		}
+
+	}
+
+	&.vlt-service-box--top {
+
+		.vlt-service-box__icon {
+			margin-bottom: px2rem(45px);
+		}
+
+		.vlt-service-box__content {
+			flex-basis: 100%;
+		}
+
+	}
+
+	&.vlt-service-box--left {
+		display: flex;
+
+		@include media-breakpoint-down(sm) {
+			display: block;
+
+			.vlt-service-box__icon {
+				margin-right: 0;
+				margin-bottom: px2rem(45px);
+			}
+
+			.vlt-service-box__content {
+				flex-basis: 100%;
+			}
+
+		}
+
+		.vlt-service-box__icon {
+			margin-right: px2rem(50px);
+		}
+
+	}
+
+	.vlt-service-box__text {
+		margin-top: px2rem(15px);
+		margin-bottom: 0;
+		font-size: px2rem(map-get($scales, "s8"));
+		line-height: 1.6;
+		color: var(--vlt-color-8);
+	}
+
+	.vlt-service-box__instruments {
+		display: inline-flex;
+		padding: 0;
+		margin: 0;
+		margin-top: px2rem(40px);
+		list-style-type: none;
+
+		li+li {
+			margin-left: px2rem(22px);
+		}
+
+		li {
+			font-size: px2rem(23px);
+			line-height: 1;
+
+			svg {
+				width: 1em;
+				height: 1em;
+			}
+
+		}
+
+	}
+
+}

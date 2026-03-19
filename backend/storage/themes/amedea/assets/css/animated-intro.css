@@ -1,0 +1,113 @@
+/*	
+
+	Author : Amedea
+	Author URI : http://amedea.pro
+	Author : Moskva Yigit
+	Author URI : http://moskvayigit.com
+	Version : 0.0.3.3
+
+	Table of Contents
+	- Animated Intro
+	 
+*/
+
+/*----------------------------
+	.-- Animated Intro
+-----------------------------*/
+
+.animated-intro-container{
+	width: 100%;
+	height: 100vh;
+	position: relative;
+}
+
+.animated-intro-container.dark .animated-intro-headings{
+	color: var(--amedea--preset--color--black);
+}
+
+.animated-intro-container.light .animated-intro-headings{
+	color: var(--amedea--preset--color--white);
+}
+	
+.animated-intro-content {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100vh;
+	width: 100%;
+	position: absolute;
+	left: 0;
+	top: 0;
+	overflow:hidden;
+}
+
+.debug {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	width: 100vw;
+	height: 1px;
+	border-radius: 5px;
+	background-color: red;
+	transform: translate(-50%, -50%);
+}
+
+.animated-intro-scene {
+	perspective: 1000px;
+	overflow: hidden;
+	position: absolute;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100vh;
+	width: 100vw;
+	left: 0;
+	top: 0;
+}
+
+.animated-intro-card {
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%, -50%);
+	z-index:100;
+}
+
+.animated-intro-card__img {
+	width: 5em;
+	border-radius: 5px;
+	aspect-ratio: 2/3;
+	background-position: center;
+	background-size: cover;
+}
+
+.animated-intro-headings {
+	text-align: center;
+	position: relative;
+	z-index: 10;
+	text-transform: uppercase;
+}
+
+.animated-intro-headings__main {
+	line-height: 1.5;
+	font-size: clamp(2.5rem, 1.59rem + 3.883vw, 6.25rem);
+}
+
+.animated-intro-headings_subtitle {
+	line-height: 0.5;
+	font-size: clamp(1rem, 0.757rem + 1.036vw, 2rem);
+}
+
+.animated-intro__video {
+		height: 100%;
+		width: 100%;
+		object-fit: cover;
+}
+
+@media screen and (min-width: 53em) {
+	
+	.animated-intro-card__img {
+		width: 6em;
+	}
+	
+}

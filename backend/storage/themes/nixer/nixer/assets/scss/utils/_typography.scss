@@ -1,0 +1,32 @@
+
+// font url
+$font-url: 'https://fonts.googleapis.com/css2?family=Marcellus&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Prata&family=Syne:wght@400..800&family=Unbounded:wght@200..900&family=Big+Shoulders+Display:wght@100..900&display=swap';
+
+
+// font family
+$font-family: (
+    'ff': (
+        'heading': "'Syne', sans-serif",
+        'heading-2': "'Marcellus', serif",
+        'heading-3': "'Plus Jakarta Sans', sans-serif",
+        'heading-4': "'Prata', serif",
+        'heading-5': "'Poppins', sans-serif",
+        'menu-f': "'Big Shoulders Display', serif",
+        'body': "'Syne', sans-serif",
+        'p': "'Syne', sans-serif",
+        'others': "'Unbounded', sans-serif",
+        'fontawesome': '"Font Awesome 6 Pro"',
+    )
+);
+
+
+// font size
+$font-size: (
+    'fz': (
+        'body': 18px,
+        'p': 18px,
+    )
+);
+
+
+

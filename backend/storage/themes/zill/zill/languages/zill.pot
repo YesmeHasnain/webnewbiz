@@ -1,0 +1,1526 @@
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Marja\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-07-14 13:38+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: \n"
+"Language: \n"
+"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Loco https://localise.biz/\n"
+"X-Loco-Version: 2.6.3; wp-6.1.1\n"
+"X-Domain: marja"
+
+#: framework/woocommerce/woocommerce-compare.php:147
+#, php-format
+msgid "\"%1$s\" has been added"
+msgstr ""
+
+#: framework/woocommerce/woocommerce-wishlist.php:135
+#, php-format
+msgid "\"%1$s\" has been added to your cart."
+msgstr ""
+
+#: framework/woocommerce/woocommerce-compare.php:112
+#, php-format
+msgid "\"%1$s\" has been removed from list"
+msgstr ""
+
+#: framework/woocommerce/woocommerce-wishlist.php:120
+#, php-format
+msgid "\"%1$s\" has been removed from wishlist"
+msgstr ""
+
+#: framework/functions/helpers.php:131
+#, php-format
+msgid "%s "
+msgstr ""
+
+#: partials/default/footer.php:10
+#, php-format
+msgid "%s Created by LaStudio"
+msgstr ""
+
+#: partials/archive.php:77 partials/search.php:48
+msgid "&laquo;"
+msgstr ""
+
+#: partials/archive.php:78 partials/search.php:49
+msgid "&raquo;"
+msgstr ""
+
+#: framework/functions/helpers.php:111
+msgid "(Edit)"
+msgstr ""
+
+#. %s location.
+#: woocommerce/cart/cart-totals-table.php:61
+#, php-format
+msgid "(estimated for %s)"
+msgstr ""
+
+#: framework/classes/breadcrumbs.php:289
+msgid "404 Not Found"
+msgstr ""
+
+#: framework/configs/options.php:631 framework/configs/options.php:632
+msgid "[icon]Congratulations! You've got free shipping!"
+msgstr ""
+
+#: framework/configs/options.php:623 framework/configs/options.php:624
+msgid "[icon]Spend [amount] to get Free Shipping"
+msgstr ""
+
+#: functions.php:752 functions.php:770
+msgid "Accent"
+msgstr ""
+
+#: framework/classes/ajax-manager.php:126
+#: framework/classes/ajax-manager.php:146
+#: framework/classes/ajax-manager.php:154
+msgid "Action not found."
+msgstr ""
+
+#: woocommerce/cart/popup-order-notes.php:10
+msgid "Add note for seller"
+msgstr ""
+
+#: framework/woocommerce/woocommerce-compare.php:284
+msgid "Add to cart"
+msgstr ""
+
+#: framework/woocommerce/woocommerce-wishlist.php:170
+msgid "Added to the wishlist!"
+msgstr ""
+
+#: framework/woocommerce/woocommerce-helpers.php:432
+msgctxt "admin-view"
+msgid "Add Badge"
+msgstr ""
+
+#: framework/woocommerce/woocommerce-helpers.php:440
+msgctxt "admin-view"
+msgid "Badge Text"
+msgstr ""
+
+#: tgm/tgm-plugin-activation.php:99
+msgctxt "admin-view"
+msgid "Contact Form 7"
+msgstr ""
+
+#: framework/woocommerce/woocommerce-helpers.php:446
+msgctxt "admin-view"
+msgid "Custom Badge Background Color"
+msgstr ""
+
+#: framework/woocommerce/woocommerce-helpers.php:452
+msgctxt "admin-view"
+msgid "Custom Badge Text Color"
+msgstr ""
+
+#: framework/woocommerce/woocommerce-helpers.php:431
+msgctxt "admin-view"
+msgid "Custom Badges"
+msgstr ""
+
+#: tgm/tgm-plugin-activation.php:61
+msgctxt "admin-view"
+msgid "Elementor"
+msgstr ""
+
+#: framework/woocommerce/woocommerce-helpers.php:421
+msgctxt "admin-view"
+msgid "Enable Custom Badges"
+msgstr ""
+
+#: tgm/tgm-plugin-activation.php:91
+msgctxt "admin-view"
+msgid "Envato Market"
+msgstr ""
+
+#: framework/woocommerce/woocommerce-helpers.php:458
+msgctxt "admin-view"
+msgid "Extra CSS class for badge"
+msgstr ""
+
+#: tgm/tgm-plugin-activation.php:68
+msgctxt "admin-view"
+msgid "LA-Studio Element Kit for Elementor"
+msgstr ""
+
+#: tgm/tgm-plugin-activation.php:113
+msgctxt "admin-view"
+msgid "LA-Studio Pagespeed"
+msgstr ""
+
+#: tgm/tgm-plugin-activation.php:121
+msgctxt "admin-view"
+msgid "LA-Studio Updater"
+msgstr ""
+
+#: functions.php:294
+msgctxt "admin-view"
+msgid "light grayish magenta"
+msgstr ""
+
+#: functions.php:217
+msgctxt "admin-view"
+msgid "Main Navigation"
+msgstr ""
+
+#: framework/woocommerce/woocommerce-helpers.php:423
+msgctxt "admin-view"
+msgid "No Change"
+msgstr ""
+
+#: framework/woocommerce/woocommerce-helpers.php:424
+msgctxt "admin-view"
+msgid "Override"
+msgstr ""
+
+#: functions.php:271
+msgctxt "admin-view"
+msgid "pale pink"
+msgstr ""
+
+#: framework/woocommerce/woocommerce-helpers.php:425
+msgctxt "admin-view"
+msgid "Remove Existing Data"
+msgstr ""
+
+#: framework/woocommerce/woocommerce-config.php:157
+msgctxt "admin-view"
+msgid "Sidebar - Filter"
+msgstr ""
+
+#: tgm/tgm-plugin-activation.php:105
+msgctxt "admin-view"
+msgid "Slider Revolution"
+msgstr ""
+
+#: functions.php:289
+msgctxt "admin-view"
+msgid "strong magenta"
+msgstr ""
+
+#: functions.php:277
+msgctxt "admin-view"
+msgid "theme primary"
+msgstr ""
+
+#: functions.php:283
+msgctxt "admin-view"
+msgid "theme secondary"
+msgstr ""
+
+#: functions.php:304
+msgctxt "admin-view"
+msgid "very dark gray"
+msgstr ""
+
+#: functions.php:299
+msgctxt "admin-view"
+msgid "very light gray"
+msgstr ""
+
+#: tgm/tgm-plugin-activation.php:76
+msgctxt "admin-view"
+msgid "WooCommerce"
+msgstr ""
+
+#: tgm/tgm-plugin-activation.php:83
+msgctxt "admin-view"
+msgid "Zill Package Demo Data"
+msgstr ""
+
+#: framework/configs/options.php:651
+msgid "Ajax Add to Cart"
+msgstr ""
+
+#: framework/third/elementor/postformat-widget.php:53
+msgid "Alignment"
+msgstr ""
+
+#: woocommerce/cart/popup-coupon.php:19
+msgid "Apply coupon"
+msgstr ""
+
+#: framework/classes/breadcrumbs.php:290
+msgid "Archives"
+msgstr ""
+
+#: framework/woocommerce/woocommerce-compare.php:288
+msgid "Availability"
+msgstr ""
+
+#: woocommerce/single-product/product-image.php:54
+msgid "Awaiting product image"
+msgstr ""
+
+#: framework/configs/metaboxes.php:51
+msgid "Awards"
+msgstr ""
+
+#: framework/configs/metaboxes.php:156
+#: framework/third/elementor/postformat-widget.php:171
+#: framework/third/elementor/postformat-widget.php:221
+msgid "Background Color"
+msgstr ""
+
+#: framework/configs/metaboxes.php:22 framework/configs/metaboxes.php:74
+msgid "Background Image"
+msgstr ""
+
+#: functions.php:692
+msgctxt "Bely Display font: on or off"
+msgid "on"
+msgstr ""
+
+#: framework/configs/metaboxes.php:126
+msgid "Blank"
+msgstr ""
+
+#: framework/configs/options.php:124
+msgid "Body Background Color"
+msgstr ""
+
+#: framework/configs/options.php:346
+msgid "Body text"
+msgstr ""
+
+#: framework/configs/options.php:194
+msgid "Border color"
+msgstr ""
+
+#: framework/classes/breadcrumbs.php:287
+msgctxt "breadcrumbs aria label"
+msgid "Breadcrumbs"
+msgstr ""
+
+#: framework/woocommerce/woocommerce-helpers.php:322
+msgid "Buy [amount] more to enjoy <strong>FREE Shipping</strong>"
+msgstr ""
+
+#: woocommerce/cart/popup-shipping-calculator.php:11
+msgid "Calculate shipping rates "
+msgstr ""
+
+#: woocommerce/cart/popup-order-notes.php:16
+#: woocommerce/cart/popup-coupon.php:20
+#: woocommerce/cart/popup-shipping-calculator.php:12
+msgid "Cancel"
+msgstr ""
+
+#: framework/configs/options.php:607
+msgid "Cart"
+msgstr ""
+
+#: framework/configs/options.php:683
+msgid "Catalog Mode"
+msgstr ""
+
+#: framework/configs/options.php:691
+msgid "Catalog Mode Price"
+msgstr ""
+
+#: framework/configs/options.php:952
+#: framework/third/elementor/postformat-widget.php:61
+msgid "Center"
+msgstr ""
+
+#: framework/configs/options.php:41 framework/configs/options.php:53
+msgid "Change Logo"
+msgstr ""
+
+#: framework/configs/options.php:449 framework/configs/options.php:557
+#: framework/configs/options.php:857
+msgid "Character Set"
+msgstr ""
+
+#: framework/configs/metaboxes.php:95
+msgid ""
+"Choose image(s) for the gallery. This setting is used for your gallery post "
+"formats."
+msgstr ""
+
+#: framework/configs/metaboxes.php:32
+msgid "Choose image(s) for the gallery. This setting is used for your gallery."
+msgstr ""
+
+#: framework/configs/metaboxes.php:123
+msgid ""
+"Choose your target for the url. This setting is used for your link post "
+"formats."
+msgstr ""
+
+#: framework/configs/metaboxes.php:145
+msgid "Cite"
+msgstr ""
+
+#: framework/third/elementor/postformat-widget.php:203
+msgid "Cite Typography"
+msgstr ""
+
+#: framework/woocommerce/woocommerce-config.php:600
+msgid "Clear All Filter"
+msgstr ""
+
+#: framework/configs/metaboxes.php:43
+msgid "Client"
+msgstr ""
+
+#: framework/configs/options.php:896
+msgid "Color Scheme"
+msgstr ""
+
+#: framework/configs/options.php:678
+msgid "Comma-separated. ( i.e: 2,3,4)"
+msgstr ""
+
+#: framework/configs/options.php:670
+msgid "Comma-separated. ( i.e: 3,6,9)"
+msgstr ""
+
+#: comments.php:70
+msgid "Comments are closed."
+msgstr ""
+
+#: framework/configs/options.php:601
+msgid "Compare & Wishlist"
+msgstr ""
+
+#: framework/configs/options.php:728
+msgid "Compare fields to show"
+msgstr ""
+
+#: framework/configs/options.php:721
+msgid "Compare Page"
+msgstr ""
+
+#: framework/configs/options.php:340
+msgid "Configure typography settings"
+msgstr ""
+
+#: framework/woocommerce/woocommerce-helpers.php:323
+msgid "Congrats! You are eligible for <strong>FREE Shipping</strong>"
+msgstr ""
+
+#: woocommerce/la_wishlist.php:173
+msgid "Continue shopping"
+msgstr ""
+
+#: framework/woocommerce/woocommerce-helpers.php:368
+msgid "Coupon"
+msgstr ""
+
+#: woocommerce/cart/popup-coupon.php:13
+msgid "Coupon code"
+msgstr ""
+
+#: framework/configs/options.php:84
+msgid "Custom"
+msgstr ""
+
+#: framework/configs/options.php:88
+msgid "Custom page preloader image"
+msgstr ""
+
+#: framework/configs/options.php:937
+msgid "Cyrillic"
+msgstr ""
+
+#: framework/configs/options.php:935
+msgid "Cyrillic Extended"
+msgstr ""
+
+#: framework/classes/breadcrumbs.php:940 framework/classes/breadcrumbs.php:1372
+msgctxt "daily archives date format"
+msgid "j"
+msgstr ""
+
+#: framework/configs/metaboxes.php:47
+msgid "Date"
+msgstr ""
+
+#: framework/woocommerce/woocommerce-helpers.php:51
+msgid "Default"
+msgstr ""
+
+#: functions.php:661
+msgid "Default Sidebar"
+msgstr ""
+
+#: framework/configs/metaboxes.php:55
+msgid "Demo Link 1"
+msgstr ""
+
+#: framework/configs/metaboxes.php:59
+msgid "Demo Link 2"
+msgstr ""
+
+#: framework/woocommerce/woocommerce-compare.php:287
+msgid "Description"
+msgstr ""
+
+#: framework/woocommerce/woocommerce-compare.php:290
+msgid "Dimensions"
+msgstr ""
+
+#: framework/woocommerce/woocommerce-helpers.php:508
+msgid "Don’t have account ?"
+msgstr ""
+
+#: framework/functions/helpers.php:149
+msgid "Edit"
+msgstr ""
+
+#: framework/functions/helpers.php:176
+msgid "Email"
+msgstr ""
+
+#: framework/third/elementor/postformat-widget.php:115
+msgid "Enable Custom Image Height"
+msgstr ""
+
+#: framework/configs/options.php:614
+msgid "Enable Free shipping amount notice"
+msgstr ""
+
+#: framework/third/lastudio-kit.php:105
+msgid "Enable Lightbox"
+msgstr ""
+
+#: framework/configs/options.php:644
+msgid "Enable WooCommerce LightBox"
+msgstr ""
+
+#: framework/configs/options.php:637
+msgid "Enable WooCommerce Zoom"
+msgstr ""
+
+#: framework/configs/metaboxes.php:146
+msgid ""
+"Enter the quote source. This setting is used for your quote post formats."
+msgstr ""
+
+#: framework/configs/options.php:662
+msgid "Enter total products display per page"
+msgstr ""
+
+#: framework/configs/metaboxes.php:117
+msgid ""
+"Enter your external url. This setting is used for your link post formats."
+msgstr ""
+
+#: framework/configs/metaboxes.php:140
+msgid "Enter your quote. This setting is used for your quote post formats."
+msgstr ""
+
+#: framework/configs/metaboxes.php:111
+msgid "Enter your text. This setting is used for your link post formats."
+msgstr ""
+
+#: woocommerce/cart/popup-shipping-calculator.php:7
+msgid "Estimate shipping rates"
+msgstr ""
+
+#: framework/configs/options.php:20
+msgid "Favicon"
+msgstr ""
+
+#: partials/default/content.php:36
+msgid "Featured"
+msgstr ""
+
+#: framework/woocommerce/woocommerce-config.php:571
+msgid "Filters"
+msgstr ""
+
+#: framework/configs/options.php:352 framework/configs/options.php:479
+#: framework/configs/options.php:758
+msgid "Font Family"
+msgstr ""
+
+#: framework/configs/options.php:392 framework/configs/options.php:798
+msgid "Font Size, px"
+msgstr ""
+
+#: framework/configs/options.php:364 framework/configs/options.php:491
+#: framework/configs/options.php:770
+msgid "Font Style"
+msgstr ""
+
+#: framework/configs/options.php:378 framework/configs/options.php:505
+#: framework/configs/options.php:784
+msgid "Font Weight"
+msgstr ""
+
+#: partials/404.php:19
+msgctxt "front-end"
+msgid "404. Page not found."
+msgstr ""
+
+#: partials/404.php:20
+msgctxt "front-end"
+msgid ""
+"Sorry, we couldn’t find the page you where looking for. We suggest that you "
+"return to homepage."
+msgstr ""
+
+#: framework/woocommerce/woocommerce-config.php:275
+#: framework/woocommerce/woocommerce-config.php:278
+#: framework/woocommerce/woocommerce-config.php:285
+msgctxt "front-view"
+msgid "Add to compare"
+msgstr ""
+
+#: framework/woocommerce/woocommerce-config.php:317
+msgctxt "front-view"
+msgid "Add to Wishlist"
+msgstr ""
+
+#: framework/woocommerce/woocommerce-config.php:344
+#: framework/woocommerce/woocommerce-config.php:367
+msgctxt "front-view"
+msgid "Add to wishlist"
+msgstr ""
+
+#: functions.php:567 functions.php:580
+msgctxt "front-view"
+msgid "An error occurred ,Please try again !"
+msgstr ""
+
+#: functions.php:572 functions.php:577
+msgctxt "front-view"
+msgid "An error occurred, Please try again !"
+msgstr ""
+
+#: functions.php:563
+msgctxt "front-view"
+msgid "Back"
+msgstr ""
+
+#: partials/404.php:21
+msgctxt "front-view"
+msgid "Back to homepage"
+msgstr ""
+
+#: framework/woocommerce/woocommerce-helpers.php:133
+msgctxt "front-view"
+msgid "Choose an option"
+msgstr ""
+
+#: functions.php:565 framework/third/lastudio-kit.php:196
+msgctxt "front-view"
+msgid "Compare List"
+msgstr ""
+
+#: functions.php:586
+msgctxt "front-view"
+msgid "Continue Shopping"
+msgstr ""
+
+#: functions.php:566
+msgctxt "front-view"
+msgid "has been added to comparison list."
+msgstr ""
+
+#: functions.php:576
+msgctxt "front-view"
+msgid "has been added to your cart"
+msgstr ""
+
+#: functions.php:571
+msgctxt "front-view"
+msgid "has been added to your wishlist."
+msgstr ""
+
+#: partials/default/none.php:11
+msgctxt "front-view"
+msgid ""
+"It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps "
+"searching can help."
+msgstr ""
+
+#: functions.php:581
+msgctxt "front-view"
+msgid "It seems we can’t find what you’re looking for, please try again !"
+msgstr ""
+
+#: woocommerce/la_wishlist.php:58
+msgctxt "front-view"
+msgid "Next"
+msgstr ""
+
+#: functions.php:585
+msgctxt "front-view"
+msgid "Please enter Comment !"
+msgstr ""
+
+#: functions.php:583
+msgctxt "front-view"
+msgid "Please enter Email Address !"
+msgstr ""
+
+#: functions.php:582
+msgctxt "front-view"
+msgid "Please enter Name !"
+msgstr ""
+
+#: functions.php:584
+msgctxt "front-view"
+msgid "Please select a rating !"
+msgstr ""
+
+#: framework/functions/helpers.php:337
+msgctxt "front-view"
+msgid "Posted in"
+msgstr ""
+
+#: woocommerce/la_wishlist.php:57
+msgctxt "front-view"
+msgid "Prev"
+msgstr ""
+
+#: woocommerce/la_compare.php:92
+msgctxt "front-view"
+msgid "Product Info"
+msgstr ""
+
+#: woocommerce/product-searchform.php:24
+msgctxt "front-view"
+msgid "Search entire store&hellip;"
+msgstr ""
+
+#: woocommerce/product-searchform.php:24
+msgctxt "front-view"
+msgid "Search for:"
+msgstr ""
+
+#: functions.php:589
+msgctxt "front-view"
+msgid "Show Less"
+msgstr ""
+
+#: functions.php:588
+msgctxt "front-view"
+msgid "Show More +"
+msgstr ""
+
+#: woocommerce/loop/orderby-kit.php:33
+msgctxt "front-view"
+msgid "Sort by"
+msgstr ""
+
+#: functions.php:575
+msgctxt "front-view"
+msgid "View Cart"
+msgstr ""
+
+#: functions.php:590
+msgctxt "front-view"
+msgid "View More"
+msgstr ""
+
+#: functions.php:570 framework/woocommerce/woocommerce-config.php:312
+#: framework/woocommerce/woocommerce-config.php:339
+#: framework/woocommerce/woocommerce-config.php:362
+#: framework/third/lastudio-kit.php:176
+msgctxt "front-view"
+msgid "View Wishlist"
+msgstr ""
+
+#: functions.php:587
+msgctxt "front-view"
+msgid ""
+"We are sorry, but this feature is available only if cookies are enabled on "
+"your browser"
+msgstr ""
+
+#: framework/configs/metaboxes.php:89
+msgid "Gallery"
+msgstr ""
+
+#: framework/configs/options.php:14
+msgid "General Site settings"
+msgstr ""
+
+#: framework/configs/options.php:932
+msgid "Greek"
+msgstr ""
+
+#: framework/configs/options.php:933
+msgid "Greek Extended"
+msgstr ""
+
+#: framework/woocommerce/woocommerce-config.php:577
+msgid "Grid view"
+msgstr ""
+
+#: framework/configs/options.php:752
+#, php-format
+msgid "H%s Heading"
+msgstr ""
+
+#: framework/configs/options.php:254
+msgid "H1 color"
+msgstr ""
+
+#: framework/configs/options.php:268
+msgid "H2 color"
+msgstr ""
+
+#: framework/configs/options.php:282
+msgid "H3 color"
+msgstr ""
+
+#: framework/configs/options.php:296
+msgid "H4 color"
+msgstr ""
+
+#: framework/configs/options.php:310
+msgid "H5 color"
+msgstr ""
+
+#: framework/configs/options.php:324
+msgid "H6 color"
+msgstr ""
+
+#: framework/configs/options.php:236
+msgid "Heading color"
+msgstr ""
+
+#: framework/configs/options.php:473
+msgid "Heading Typography"
+msgstr ""
+
+#: framework/classes/breadcrumbs.php:288 partials/default/header.php:17
+msgid "Home"
+msgstr ""
+
+#: framework/classes/breadcrumbs.php:922
+msgctxt "hour archives time format"
+msgid "g a"
+msgstr ""
+
+#. URI of the theme
+msgid "https://themeforest.net/user/LaStudio/portfolio?ref=LaStudio"
+msgstr ""
+
+#. Author URI of the theme
+msgid "https://themeforest.net/user/LaStudio?ref=LaStudio"
+msgstr ""
+
+#: woocommerce/cart/popup-coupon.php:10
+msgid "If you have a coupon code, please apply it below."
+msgstr ""
+
+#: framework/woocommerce/woocommerce-compare.php:282
+msgid "Image"
+msgstr ""
+
+#: framework/configs/metaboxes.php:31 framework/configs/metaboxes.php:94
+msgid "Image Gallery"
+msgstr ""
+
+#: framework/third/elementor/postformat-widget.php:128
+msgid "Image Height"
+msgstr ""
+
+#: framework/third/elementor/postformat-widget.php:44
+msgid "Image Size"
+msgstr ""
+
+#: framework/third/elementor/postformat-widget.php:85
+msgid "Image/Gallery"
+msgstr ""
+
+#: woocommerce/la_compare.php:141
+msgid "In stock"
+msgstr ""
+
+#: framework/configs/options.php:916 framework/configs/options.php:951
+msgid "Inherit"
+msgstr ""
+
+#: framework/configs/metaboxes.php:168
+msgid "Insert Youtube or Vimeo video link"
+msgstr ""
+
+#: framework/woocommerce/woocommerce-wishlist.php:98
+#: framework/woocommerce/woocommerce-compare.php:90
+msgid "Invalid Product ID"
+msgstr ""
+
+#: framework/configs/options.php:914
+msgid "Italic"
+msgstr ""
+
+#: functions.php:676
+msgctxt "Jost: on or off"
+msgid "off"
+msgstr ""
+
+#: framework/third/elementor/postformat-widget.php:69
+msgid "Justified"
+msgstr ""
+
+#: framework/configs/options.php:953
+msgid "Justify"
+msgstr ""
+
+#. Author of the theme
+msgid "LA Studio"
+msgstr ""
+
+#: framework/third/elementor/postformat-widget.php:16
+msgid "LaStudioKit PostFormat Content"
+msgstr ""
+
+#: framework/configs/options.php:931
+msgid "Latin"
+msgstr ""
+
+#: framework/configs/options.php:936
+msgid "Latin Extended"
+msgstr ""
+
+#: framework/configs/options.php:954
+#: framework/third/elementor/postformat-widget.php:57
+msgid "Left"
+msgstr ""
+
+#: framework/configs/options.php:430 framework/configs/options.php:538
+#: framework/configs/options.php:837
+msgid "Letter Spacing, px"
+msgstr ""
+
+#: framework/configs/options.php:411 framework/configs/options.php:519
+#: framework/configs/options.php:818
+msgid "Line Height"
+msgstr ""
+
+#: framework/configs/metaboxes.php:105
+#: framework/third/elementor/postformat-widget.php:213
+msgid "Link"
+msgstr ""
+
+#: framework/configs/options.php:208
+msgid "Link color"
+msgstr ""
+
+#: framework/configs/options.php:222
+msgid "Link hover color"
+msgstr ""
+
+#: framework/configs/metaboxes.php:122
+msgid "Link Target"
+msgstr ""
+
+#: framework/configs/metaboxes.php:110
+msgid "Link Text"
+msgstr ""
+
+#: framework/third/elementor/postformat-widget.php:244
+msgid "Link Typography"
+msgstr ""
+
+#: framework/configs/metaboxes.php:116
+msgid "Link URL"
+msgstr ""
+
+#: framework/configs/metaboxes.php:167
+msgid "Link Video URL"
+msgstr ""
+
+#: framework/woocommerce/woocommerce-config.php:576
+msgid "List view"
+msgstr ""
+
+#: comments.php:79
+msgid "Log out &raquo;"
+msgstr ""
+
+#: comments.php:79
+msgid "Log out of this account"
+msgstr ""
+
+#: comments.php:79
+msgid "Logged in as"
+msgstr ""
+
+#: framework/configs/options.php:27 framework/configs/options.php:33
+msgid "Logo"
+msgstr ""
+
+#: framework/configs/options.php:45
+msgid "Logo Transparency"
+msgstr ""
+
+#. Minute archive title. %s is the minute time format.
+#: framework/classes/breadcrumbs.php:296
+#, php-format
+msgid "Minute %s"
+msgstr ""
+
+#: framework/classes/breadcrumbs.php:888
+msgctxt "minute and hour archives time format"
+msgid "g:i a"
+msgstr ""
+
+#: framework/classes/breadcrumbs.php:905
+msgctxt "minute archives time format"
+msgid "i"
+msgstr ""
+
+#: framework/classes/breadcrumbs.php:939 framework/classes/breadcrumbs.php:995
+#: framework/classes/breadcrumbs.php:1368
+msgctxt "monthly archives date format"
+msgid "F"
+msgstr ""
+
+#: woocommerce/la_compare.php:48
+msgid "N/A"
+msgstr ""
+
+#: framework/functions/helpers.php:174
+msgid "Name (required)"
+msgstr ""
+
+#: comments.php:62
+msgid "Next"
+msgstr ""
+
+#: framework/third/lastudio-kit.php:108
+#: framework/third/elementor/postformat-widget.php:118
+msgid "No"
+msgstr ""
+
+#: woocommerce/cart/mini-cart-override.php:115
+msgid "No products in the cart."
+msgstr ""
+
+#: woocommerce/la_wishlist.php:159
+msgid "No products were added to the wishlist"
+msgstr ""
+
+#: framework/configs/options.php:913
+msgid "Normal"
+msgstr ""
+
+#: framework/woocommerce/woocommerce-helpers.php:355
+msgid "Note"
+msgstr ""
+
+#: framework/woocommerce/woocommerce-helpers.php:568
+msgid "Notes about your order, e.g. special notes for delivery."
+msgstr ""
+
+#: framework/configs/options.php:915
+msgid "Oblique"
+msgstr ""
+
+#: woocommerce/la_wishlist.php:172
+msgid "Open wishlist page"
+msgstr ""
+
+#: woocommerce/la_compare.php:144
+msgid "Out of stock"
+msgstr ""
+
+#: framework/third/elementor/postformat-widget.php:251
+msgid "Padding"
+msgstr ""
+
+#. %s is the page number.
+#: framework/classes/breadcrumbs.php:294
+#, php-format
+msgid "Page %s"
+msgstr ""
+
+#: framework/configs/options.php:58
+msgid "Page preloader"
+msgstr ""
+
+#: framework/configs/options.php:72
+msgid "Page preloader type"
+msgstr ""
+
+#: single-elementor_library.php:53 templates/no-sidebar.php:60
+#: partials/single.php:50
+msgid "Pages:"
+msgstr ""
+
+#: framework/configs/options.php:667
+msgid "Per Page Allow"
+msgstr ""
+
+#: framework/configs/options.php:659
+msgid "Per Page Default"
+msgstr ""
+
+#: framework/configs/options.php:675
+msgid "Per Row Allow"
+msgstr ""
+
+#: framework/functions/helpers.php:110
+msgid "Pingback:"
+msgstr ""
+
+#: framework/configs/metaboxes.php:14
+msgid "Portfolio Settings"
+msgstr ""
+
+#: comments.php:84
+msgid "Post Comment"
+msgstr ""
+
+#: framework/configs/metaboxes.php:66
+msgid "Post Settings"
+msgstr ""
+
+#: framework/configs/options.php:95
+msgid "Preloader background color"
+msgstr ""
+
+#: framework/configs/options.php:109
+msgid "Preloader text color"
+msgstr ""
+
+#: comments.php:61
+msgid "Previous"
+msgstr ""
+
+#: woocommerce/la_wishlist.php:73 woocommerce/la_wishlist.php:128
+#: framework/woocommerce/woocommerce-compare.php:285
+msgid "Price"
+msgstr ""
+
+#: functions.php:740 functions.php:758
+msgid "Primary"
+msgstr ""
+
+#: framework/configs/options.php:152
+msgid "Primary color"
+msgstr ""
+
+#: woocommerce/la_wishlist.php:72 woocommerce/la_wishlist.php:123
+msgid "Product"
+msgstr ""
+
+#: framework/woocommerce/woocommerce-compare.php:143
+msgid "Product already in list"
+msgstr ""
+
+#: framework/woocommerce/woocommerce-wishlist.php:166
+msgid "Product already in wishlist"
+msgstr ""
+
+#: framework/woocommerce/woocommerce-compare.php:171
+msgid "Product does not exist in list"
+msgstr ""
+
+#: framework/woocommerce/woocommerce-wishlist.php:194
+msgid "Product does not exist in wishlist"
+msgstr ""
+
+#: framework/woocommerce/woocommerce-compare.php:162
+msgid "Product has been removed from list"
+msgstr ""
+
+#: framework/woocommerce/woocommerce-wishlist.php:185
+msgid "Product has been removed from wishlist"
+msgstr ""
+
+#: framework/configs/options.php:595
+msgid "Product settings"
+msgstr ""
+
+#: framework/configs/metaboxes.php:134 framework/configs/metaboxes.php:139
+#: framework/third/elementor/postformat-widget.php:163
+msgid "Quote"
+msgstr ""
+
+#: framework/third/elementor/postformat-widget.php:194
+msgid "Quote Typography"
+msgstr ""
+
+#: partials/default/content.php:55
+msgid "Read more"
+msgstr ""
+
+#: partials/archive.php:20
+msgid "Recent Posts"
+msgstr ""
+
+#: framework/configs/options.php:412 framework/configs/options.php:520
+#: framework/configs/options.php:819
+msgid "Relative to the font-size of the element"
+msgstr ""
+
+#: woocommerce/la_compare.php:112
+msgid "Remove"
+msgstr ""
+
+#: framework/configs/options.php:40 framework/configs/options.php:52
+msgid "Remove Logo"
+msgstr ""
+
+#: woocommerce/la_wishlist.php:114 woocommerce/cart/mini-cart-override.php:47
+msgid "Remove this item"
+msgstr ""
+
+#: framework/configs/options.php:955
+#: framework/third/elementor/postformat-widget.php:65
+msgid "Right"
+msgstr ""
+
+#: woocommerce/cart/popup-order-notes.php:15
+msgid "Save"
+msgstr ""
+
+#. %s is the search query. The HTML entities are opening and closing curly quotes.
+#: framework/classes/breadcrumbs.php:292
+msgid "Search results for"
+msgstr ""
+
+#: partials/search.php:18
+msgid "Search results for: "
+msgstr ""
+
+#: functions.php:744 functions.php:762
+msgid "Secondary"
+msgstr ""
+
+#: framework/configs/options.php:166
+msgid "Secondary color"
+msgstr ""
+
+#: framework/configs/options.php:39 framework/configs/options.php:51
+msgid "Select Logo"
+msgstr ""
+
+#: woocommerce/cart/popup-coupon.php:7
+msgid "Select or input Coupon"
+msgstr ""
+
+#: framework/configs/options.php:729
+msgid "Select the fields to show in the comparison table"
+msgstr ""
+
+#: framework/configs/metaboxes.php:127
+msgid "Self"
+msgstr ""
+
+#: framework/configs/metaboxes.php:34 framework/configs/metaboxes.php:99
+msgid "Set Gallery Images"
+msgstr ""
+
+#: framework/configs/metaboxes.php:27 framework/configs/metaboxes.php:79
+msgid "Set Image"
+msgstr ""
+
+#: framework/third/elementor/postformat-widget.php:36
+msgid "Settings"
+msgstr ""
+
+#: framework/woocommerce/woocommerce-helpers.php:361
+msgid "Shipping"
+msgstr ""
+
+#: framework/configs/options.php:621
+msgid "Shipping bar text 1"
+msgstr ""
+
+#: framework/configs/options.php:629
+msgid "Shipping bar text 2"
+msgstr ""
+
+#: framework/configs/options.php:589
+msgid "Shop settings"
+msgstr ""
+
+#: framework/configs/metaboxes.php:38
+msgid "Short Description"
+msgstr ""
+
+#: framework/woocommerce/woocommerce-config.php:557
+#: framework/woocommerce/woocommerce-config.php:561
+msgid "Show"
+msgstr ""
+
+#: framework/configs/options.php:706
+msgid "Show Compare Button"
+msgstr ""
+
+#: framework/configs/options.php:64
+msgid "Show page preloader"
+msgstr ""
+
+#: framework/configs/options.php:699
+msgid "Show Wishlist Button"
+msgstr ""
+
+#: framework/woocommerce/woocommerce-config.php:147
+msgid "Sidebar - Shop"
+msgstr ""
+
+#: framework/woocommerce/woocommerce-helpers.php:508
+msgid "Sign up now"
+msgstr ""
+
+#: framework/third/elementor/postformat-widget.php:93
+msgid "Size (%)"
+msgstr ""
+
+#: framework/woocommerce/woocommerce-compare.php:286
+msgid "Sku"
+msgstr ""
+
+#: framework/woocommerce/woocommerce-helpers.php:181
+msgid "Sort by Default"
+msgstr ""
+
+#: framework/woocommerce/woocommerce-helpers.php:184
+msgid "Sort by Latest"
+msgstr ""
+
+#: framework/woocommerce/woocommerce-helpers.php:182
+msgid "Sort by Popularity"
+msgstr ""
+
+#: framework/woocommerce/woocommerce-helpers.php:185
+#: framework/woocommerce/woocommerce-helpers.php:186
+#, php-format
+msgid "Sort by Price: %s"
+msgstr ""
+
+#: framework/woocommerce/woocommerce-helpers.php:183
+msgid "Sort by Rated"
+msgstr ""
+
+#: woocommerce/la_wishlist.php:74 woocommerce/la_wishlist.php:131
+msgid "Stock status"
+msgstr ""
+
+#: woocommerce/cart/cart-totals-table.php:26
+#: woocommerce/cart/cart-totals-table.php:27
+msgid "Subtotal"
+msgstr ""
+
+#: framework/configs/options.php:652
+msgid "Support Ajax Add to cart for all types of products"
+msgstr ""
+
+#: templates/no-sidebar.php:56 partials/single.php:46
+msgid "Tagged: "
+msgstr ""
+
+#: functions.php:748 functions.php:766
+msgid "Text"
+msgstr ""
+
+#: framework/configs/options.php:457 framework/configs/options.php:565
+#: framework/configs/options.php:865
+msgid "Text Align"
+msgstr ""
+
+#: framework/configs/metaboxes.php:151
+#: framework/third/elementor/postformat-widget.php:182
+#: framework/third/elementor/postformat-widget.php:232
+msgid "Text Color"
+msgstr ""
+
+#: framework/configs/options.php:138
+msgid "Text color"
+msgstr ""
+
+#: framework/configs/options.php:722
+msgid "The content of page must be contain [la_compare] shortcode"
+msgstr ""
+
+#: framework/configs/options.php:715
+msgid "The content of page must be contain [la_wishlist] shortcode"
+msgstr ""
+
+#: framework/third/lastudio-kit.php:9
+msgid "Theme Options"
+msgstr ""
+
+#: framework/configs/options.php:180
+msgid "Third color"
+msgstr ""
+
+#: framework/configs/metaboxes.php:23 framework/configs/metaboxes.php:75
+msgid "This option will work on some cases."
+msgstr ""
+
+#: comments.php:42
+#, php-format
+msgid "This post has %s comments"
+msgstr ""
+
+#: comments.php:40
+msgid "This post has one comment"
+msgstr ""
+
+#: framework/woocommerce/woocommerce-compare.php:283
+msgid "Title"
+msgstr ""
+
+#: framework/classes/ajax-manager.php:121
+msgid "Token Expired."
+msgstr ""
+
+#: woocommerce/cart/cart-totals-table.php:87
+#: woocommerce/cart/cart-totals-table.php:88
+msgid "Total"
+msgstr ""
+
+#: framework/configs/options.php:684
+msgid "Turn on to disable the shopping functionality of WooCommerce."
+msgstr ""
+
+#: framework/configs/options.php:692
+msgid "Turn on to do not show product price"
+msgstr ""
+
+#: framework/configs/options.php:79
+msgid "Type 1"
+msgstr ""
+
+#: framework/configs/options.php:80
+msgid "Type 2"
+msgstr ""
+
+#: framework/configs/options.php:81
+msgid "Type 3"
+msgstr ""
+
+#: framework/configs/options.php:82
+msgid "Type 4"
+msgstr ""
+
+#: framework/configs/options.php:83
+msgid "Type 5"
+msgstr ""
+
+#: framework/configs/options.php:339
+msgid "Typography"
+msgstr ""
+
+#: framework/configs/metaboxes.php:162
+msgid "Video & Audio"
+msgstr ""
+
+#: framework/configs/options.php:934
+msgid "Vietnamese"
+msgstr ""
+
+#: framework/woocommerce/woocommerce-config.php:547
+#: framework/woocommerce/woocommerce-config.php:550
+msgid "View"
+msgstr ""
+
+#: woocommerce/single-quickcart.php:46
+msgid "View Detail"
+msgstr ""
+
+#: partials/default/content.php:55
+msgid "View more"
+msgstr ""
+
+#: framework/functions/helpers.php:178
+msgid "Website"
+msgstr ""
+
+#. Weekly archive title. %s is the week date format.
+#: framework/classes/breadcrumbs.php:298
+#, php-format
+msgid "Week %s"
+msgstr ""
+
+#: framework/classes/breadcrumbs.php:968
+msgctxt "weekly archives date format"
+msgid "W"
+msgstr ""
+
+#: framework/woocommerce/woocommerce-compare.php:289
+msgid "Weight"
+msgstr ""
+
+#: functions.php:663
+msgid ""
+"Widgets in this area will be displayed in the left or right sidebar area if "
+"you choose the Left or Right Sidebar layout."
+msgstr ""
+
+#: framework/woocommerce/woocommerce-config.php:149
+msgid "Widgets in this area will be displayed in the shop page."
+msgstr ""
+
+#: woocommerce/la_wishlist.php:28
+msgid "Wishlist"
+msgstr ""
+
+#: framework/configs/options.php:714
+msgid "Wishlist Page"
+msgstr ""
+
+#: framework/configs/options.php:613
+msgid "WooCommerce Enable Free Shipping Thresholds"
+msgstr ""
+
+#: framework/classes/breadcrumbs.php:938 framework/classes/breadcrumbs.php:967
+#: framework/classes/breadcrumbs.php:994 framework/classes/breadcrumbs.php:1021
+#: framework/classes/breadcrumbs.php:1364
+msgctxt "yearly archives date format"
+msgid "Y"
+msgstr ""
+
+#: framework/third/lastudio-kit.php:107
+#: framework/third/elementor/postformat-widget.php:117
+msgid "Yes"
+msgstr ""
+
+#: comments.php:78
+#, php-format
+msgid "You must be %1$slogged in%2$s to post a comment."
+msgstr ""
+
+#: comments.php:82
+msgid "Your Comment Here..."
+msgstr ""
+
+#: framework/functions/helpers.php:137
+msgid "Your comment is awaiting moderation."
+msgstr ""
+
+#: framework/woocommerce/woocommerce-helpers.php:248
+msgid "Your order"
+msgstr ""
+
+#: framework/woocommerce/woocommerce-helpers.php:578
+msgid "Your order notes saved."
+msgstr ""
+
+#. Name of the theme
+msgid "Zill"
+msgstr ""
+
+#. Description of the theme
+msgid "Zill - Multi-purpose WordPress Theme"
+msgstr ""
+
+#. Name of the template
+msgid "Zill Full Width"
+msgstr ""
+
+#. Name of the template
+msgid "Zill No Sidebar"
+msgstr ""

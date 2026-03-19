@@ -1,0 +1,138 @@
+/* HEADER: SLIDE
+-------------------------------------------- */
+
+$navbar-width: 90px;
+
+.vlt-header--slide {
+	position: fixed;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	width: px2rem($navbar-width);
+	z-index: z("header-slide");
+
+	@include admin-sticky-fix;
+
+	.vlt-navbar {
+		height: 100%;
+		padding: 0;
+
+		&-inner {
+			justify-content: space-between;
+			height: 100%;
+			padding: 0;
+			text-align: center;
+			flex-direction: column;
+			box-shadow: inset -1px 0 var(--vlt-color-9-opacity-1);
+
+			&--top {
+				padding-top: px2rem(40px);
+			}
+
+			&--bottom {
+
+				a {
+					display: flex;
+					align-items: center;
+					justify-content: center;
+					height: px2rem($navbar-width);
+					font-size: px2rem(20px);
+					color: var(--vlt-color-0);
+					background-color: var(--vlt-accent-1);
+
+					i {
+						display: inline-flex;
+					}
+
+					&:hover {
+
+						i {
+							animation: vlt_animate_icon_down var(--vlt-transition-duration) var(--vlt-transition-easing) forwards;
+						}
+
+					}
+
+				}
+
+			}
+
+		}
+
+	}
+
+}
+
+/* CONTENT AREA
+-------------------------------------------- */
+
+.vlt-is--header-slide {
+
+	@include media-breakpoint-up(lg) {
+
+		body {
+			padding-left: px2rem($navbar-width) !important;
+		}
+
+	}
+
+}
+
+/* SLIDE NAVIGATION
+-------------------------------------------- */
+
+.vlt-nav--slide {
+	position: fixed;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	display: flex;
+	padding: px2rem(60px) 0;
+	color: var(--vlt-color-9);
+	visibility: hidden;
+	background-color: var(--vlt-color-0);
+	opacity: 0;
+	backface-visibility: hidden;
+	z-index: z("slide-menu");
+
+	@include admin-sticky-fix;
+
+	.vlt-header--dark & {
+		background-color: var(--vlt-color-9);
+	}
+
+	.row {
+		height: 100%;
+	}
+
+	[class^="col"] {
+		max-height: 100%;
+	}
+
+	&__background {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		background-repeat: no-repeat;
+		background-position: top center;
+		background-size: cover;
+		z-index: -1;
+	}
+
+	&__navigation {
+		@extend %vlt_large_navigation;
+		@extend %vlt_large_navigation_submenu;
+	}
+
+	.vlt-navbar-socials {
+		width: 100%;
+
+		.vlt-social-icon:not(:hover) {
+			color: inherit;
+		}
+
+	}
+
+}

@@ -1,0 +1,98 @@
+/* PARTIAL: POST MEDIA TITLE
+-------------------------------------------- */
+
+.vlt-post-media-title {
+	position: relative;
+	overflow: hidden;
+	z-index: 1;
+
+	&__overlay {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		background-color: var(--vlt-color-9-opacity-2);
+		z-index: -1;
+	}
+
+	.swiper-container {
+		overflow: unset;
+	}
+
+	.swiper-slide {
+		padding-top: px2rem(530px);
+
+		img {
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			/* support for plugin https://github.com/bfred-it/object-fit-images */
+			font-family: "object-fit: cover;";
+			object-fit: cover;
+		}
+
+	}
+
+}
+
+/* STYLE 1
+-------------------------------------------- */
+
+.vlt-post-media-title--style-1 {
+	min-height: px2rem(580px);
+
+	.swiper-slide {
+		padding-top: px2rem(580px);
+	}
+
+}
+
+/* STYLE 2
+-------------------------------------------- */
+
+.vlt-post-media-title--style-2 {
+	padding: px2rem(185px) 0;
+	text-align: center;
+
+	.vlt-post-media-title__overlay {
+		background-color: var(--vlt-color-9-opacity-3);
+	}
+
+	.vlt-post-title,
+	.vlt-post-meta {
+		color: var(--vlt-color-0);
+	}
+
+	.vlt-post-meta {
+		justify-content: center;
+		margin-bottom: px2rem(25px);
+
+		a:hover {
+			color: inherit;
+		}
+
+	}
+
+}
+
+/* STYLE 3
+-------------------------------------------- */
+
+.vlt-post-media-title--style-3 {
+	min-height: px2rem(530px);
+
+	.swiper-slide {
+		padding-top: px2rem(530px);
+	}
+
+}
+
+/* STYLE 4
+-------------------------------------------- */
+
+.vlt-post-media-title--style-4 {
+	min-height: px2rem(450px);
+}

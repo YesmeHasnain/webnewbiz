@@ -1,0 +1,1920 @@
+# Copyright (C) 2018 gauthier_for_elementor
+# This file is distributed under the same license as the gauthier_for_elementor package.
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: gauthier_for_elementor\n"
+"Report-Msgid-Bugs-To: https://themesgrove.com\n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: 2018-MO-DA HO:MI+ZONE\n"
+"Last-Translator: themesgrove <info@themesgrove.com>\n"
+"Language-Team: Tothetheme<info@tothetheme.com>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;_n_noop:1,2;_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
+"X-Generator: Poedit 3.2.2\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPathExcluded-0: *.js\n"
+
+#: 404.php:33
+msgid "Select category"
+msgstr ""
+
+#: 404.php:47
+msgid "Select page"
+msgstr ""
+
+#: 404.php:64 page-templates/content-none.php:14
+msgid "Kindly search your topic below or browse the recent posts."
+msgstr ""
+
+#: archive.php:13
+#, php-format
+msgid "Daily Archives %s"
+msgstr ""
+
+#: archive.php:15
+#, php-format
+msgid "Monthly Archives %s"
+msgstr ""
+
+#: archive.php:15
+msgctxt "monthly archives date format"
+msgid "F Y"
+msgstr ""
+
+#: archive.php:17
+#, php-format
+msgid "Yearly Archives %s"
+msgstr ""
+
+#: archive.php:17
+msgctxt "yearly archives date format"
+msgid "Y"
+msgstr ""
+
+#: archive.php:19
+msgid "Archives"
+msgstr ""
+
+#: archive.php:47 author.php:145 blog-wide.php:40 blog.php:40 index.php:38
+#: page-templates/category1.php:60 page-templates/category2.php:57
+#: page-templates/category3.php:57 page-templates/category4.php:57
+#: page-templates/category5.php:62 page-templates/category_default.php:63
+#: page-templates/tag1.php:53 page-templates/tag2.php:53
+#: page-templates/tag3.php:60 page-templates/tag4.php:60
+#: page-templates/tag5.php:64 page-templates/tag_default.php:67
+msgid "&laquo; Older Entries"
+msgstr ""
+
+#: archive.php:48 author.php:148 blog-wide.php:43 blog.php:43 index.php:41
+#: page-templates/category1.php:63 page-templates/category2.php:60
+#: page-templates/category3.php:60 page-templates/category4.php:60
+#: page-templates/category5.php:65 page-templates/category_default.php:66
+#: page-templates/tag1.php:56 page-templates/tag2.php:56
+#: page-templates/tag3.php:63 page-templates/tag4.php:63
+#: page-templates/tag5.php:67 page-templates/tag_default.php:70
+msgid "Newer Entries &raquo;"
+msgstr ""
+
+#: author.php:20 page-templates/catcontent5.php:32
+#: page-templates/content-search.php:10
+msgid " - "
+msgstr ""
+
+#: author.php:25
+#, php-format
+msgid "%s article"
+msgid_plural "%s articles"
+msgstr[0] ""
+msgstr[1] ""
+
+#: author.php:28
+#, php-format
+msgid "About %s"
+msgstr ""
+
+#: author.php:35 inc/author-singlepost.php:16
+msgid "Twitter"
+msgstr ""
+
+#: author.php:41 inc/author-singlepost.php:20
+msgid "Facebook"
+msgstr ""
+
+#: author.php:47 inc/author-singlepost.php:23
+msgid "Youtube"
+msgstr ""
+
+#: author.php:53 inc/author-singlepost.php:26
+msgid "Vimeo"
+msgstr ""
+
+#: author.php:59 inc/author-singlepost.php:30
+msgid "Linkedin"
+msgstr ""
+
+#: author.php:65 inc/author-singlepost.php:34
+msgid "Deviant"
+msgstr ""
+
+#: author.php:71 inc/author-singlepost.php:38
+msgid "Dribble"
+msgstr ""
+
+#: author.php:77 inc/author-singlepost.php:42
+msgid "Flickr"
+msgstr ""
+
+#: author.php:83 inc/author-singlepost.php:46
+msgid "Instagram"
+msgstr ""
+
+#: author.php:89 inc/author-singlepost.php:50
+msgid "Behance"
+msgstr ""
+
+#: author.php:95 inc/author-singlepost.php:54
+msgid "Reddit"
+msgstr ""
+
+#: author.php:101 inc/author-singlepost.php:58
+msgid "Github"
+msgstr ""
+
+#: author.php:107 inc/author-singlepost.php:62
+msgid "Pinterest"
+msgstr ""
+
+#: comments.php:11 page-templates/content2.php:102
+#: page-templates/content3.php:59 page-templates/content4.php:82
+#: page-templates/content5.php:90 page-templates/content6-audio.php:60
+#: page-templates/content6-gallery.php:59 page-templates/content6-video.php:60
+#: page-templates/content6.php:59 page-templates/page-content.php:91
+#: single-style2.php:34
+msgid "0 Comments"
+msgstr ""
+
+#: comments.php:11 page-templates/content2.php:102
+#: page-templates/content3.php:59 page-templates/content4.php:82
+#: page-templates/content5.php:90 page-templates/content6-audio.php:60
+#: page-templates/content6-gallery.php:59 page-templates/content6-video.php:60
+#: page-templates/content6.php:59 page-templates/page-content.php:91
+#: single-style2.php:34
+msgid "1 Comment"
+msgstr ""
+
+#: comments.php:11 page-templates/content2.php:102
+#: page-templates/content3.php:59 page-templates/content4.php:82
+#: page-templates/content5.php:90 page-templates/content6-audio.php:60
+#: page-templates/content6-gallery.php:59 page-templates/content6-video.php:60
+#: page-templates/content6.php:59 page-templates/page-content.php:91
+#: single-style2.php:34
+msgid "% Comments"
+msgstr ""
+
+#: comments.php:20
+msgid "Comment navigation"
+msgstr ""
+
+#: comments.php:23
+msgid "&larr; Older Comments"
+msgstr ""
+
+#: comments.php:26
+msgid "Newer Comments &rarr;"
+msgstr ""
+
+#: comments.php:31 comments.php:38
+msgid "Comments are closed."
+msgstr ""
+
+#: comments.php:44
+msgid "Leave a Reply"
+msgstr ""
+
+#: comments.php:44
+#, php-format
+msgid "Leave a Reply to %s"
+msgstr ""
+
+#: comments.php:50
+#, php-format
+msgid "You must be %1$slogged in%2$s to post a comment."
+msgstr ""
+
+#: comments.php:56
+msgid "Logged in as"
+msgstr ""
+
+#: comments.php:58
+msgid "Log out of this account"
+msgstr ""
+
+#: comments.php:59
+msgid "Log out"
+msgstr ""
+
+#: comments.php:60 functions.php:522
+msgid "&raquo;"
+msgstr ""
+
+#: comments.php:65
+msgid "Your Name*"
+msgstr ""
+
+#: comments.php:68
+msgid "E-Mail* will not be published"
+msgstr ""
+
+#: comments.php:71
+msgid "Got a website?"
+msgstr ""
+
+#: comments.php:75
+msgid "Your Comment here..."
+msgstr ""
+
+#: comments.php:77
+msgid "Submit"
+msgstr ""
+
+#: comments.php:81
+msgid "You can use these tags"
+msgstr ""
+
+#: footer.php:37 page-templates/footer-style2.php:23
+#: page-templates/footer-style4.php:42 page-templates/footer-style5.php:29
+#: page-templates/footer-style6.php:31
+msgid "Scroll To Top "
+msgstr ""
+
+#: full-width.php:17 functions.php:195
+msgid "Post navigation"
+msgstr ""
+
+#: full-width.php:23
+msgctxt "Previous post link"
+msgid "&larr;"
+msgstr ""
+
+#: full-width.php:30
+msgctxt "Next post link"
+msgid "&rarr;"
+msgstr ""
+
+#: functions.php:28
+msgid "Primary Menu"
+msgstr ""
+
+#: functions.php:29
+msgid "Footer Menu"
+msgstr ""
+
+#: functions.php:74
+msgctxt "Google font: on or off"
+msgid "on"
+msgstr ""
+
+#: functions.php:94
+msgid "Main Sidebar"
+msgstr ""
+
+#: functions.php:96 functions.php:123 functions.php:132 functions.php:141
+#: functions.php:150 functions.php:159
+msgid "This is a Sitewide sidebar which appears on posts and pages"
+msgstr ""
+
+#: functions.php:103
+msgid "Main Header 1"
+msgstr ""
+
+#: functions.php:105 functions.php:114
+msgid "This is a Sitewide header which appears on posts and pages"
+msgstr ""
+
+#: functions.php:112
+msgid "Main Header 2"
+msgstr ""
+
+#: functions.php:121
+msgid "Footer 1"
+msgstr ""
+
+#: functions.php:130
+msgid "Footer 2"
+msgstr ""
+
+#: functions.php:139
+msgid "Footer 3"
+msgstr ""
+
+#: functions.php:148
+msgid "Footer 4"
+msgstr ""
+
+#: functions.php:157
+msgid "Footer 5"
+msgstr ""
+
+#: functions.php:166
+msgid "Slide Menu"
+msgstr ""
+
+#: functions.php:168
+msgid "This is a Sitewide header which appears on slide Menu"
+msgstr ""
+
+#: functions.php:175
+msgid "Woo Widget"
+msgstr ""
+
+#: functions.php:177
+msgid "This widget which appears on WooCommerce Page/post"
+msgstr ""
+
+#: functions.php:196
+msgid "<span class=\"meta-nav\">&larr;</span> Older posts"
+msgstr ""
+
+#: functions.php:197
+msgid "Newer posts <span class=\"meta-nav\">&rarr;</span>"
+msgstr ""
+
+#: functions.php:215
+msgid "Pingback:"
+msgstr ""
+
+#: functions.php:215
+msgid "(Edit)"
+msgstr ""
+
+#: functions.php:231
+msgid "Post author"
+msgstr ""
+
+#: functions.php:238
+#, php-format
+msgid "%1$s"
+msgstr ""
+
+#: functions.php:243
+msgid "Your comment is awaiting moderation."
+msgstr ""
+
+#: functions.php:248 header-style2.php:104 header-style3.php:114
+#: header-style4.php:109 header-style5.php:110 header-style6.php:126
+#: header-style7.php:94 header.php:102
+msgid "Edit"
+msgstr ""
+
+#: functions.php:250
+msgid "Reply"
+msgstr ""
+
+#: functions.php:266 functions.php:268
+msgid ", "
+msgstr ""
+
+#: functions.php:277
+#, php-format
+msgid "View all posts by %s"
+msgstr ""
+
+#: functions.php:282
+#, php-format
+msgid "This entry was posted in %1$s and tagged %2$s on %3$s<span class=\"by-author\"> by %4$s</span>."
+msgstr ""
+
+#: functions.php:284
+#, php-format
+msgid "This entry was posted in %1$s on %3$s<span class=\"by-author\"> by %4$s</span>."
+msgstr ""
+
+#: functions.php:286
+#, php-format
+msgid "This entry was posted on %3$s<span class=\"by-author\"> by %4$s</span>."
+msgstr ""
+
+#: functions.php:428
+msgid "Home"
+msgstr ""
+
+#: functions.php:493
+msgid "Posted by"
+msgstr ""
+
+#: functions.php:500
+msgid "Page"
+msgstr ""
+
+#: functions.php:523
+msgid "&laquo;"
+msgstr ""
+
+#: functions.php:618
+msgid " min"
+msgstr ""
+
+#: functions.php:622
+msgid " sec"
+msgstr ""
+
+#: functions.php:630
+#, php-format
+msgid "%s view"
+msgid_plural "%s views"
+msgstr[0] ""
+msgstr[1] ""
+
+#: functions.php:640
+msgid "Views"
+msgstr ""
+
+#: header-style6.php:62 page-templates/catcontent1.php:65
+msgid "POSTS"
+msgstr ""
+
+#: header.php:64 header.php:85
+msgid "Gauthier"
+msgstr ""
+
+#: image.php:18
+#, php-format
+msgid "<span class=\"meta-prep meta-prep-entry-date\">Published </span> <span class=\"entry-date\"><time class=\"entry-date\" datetime=\"%1$s\">%2$s</time></span> at <a href=\"%3$s\" title=\"Link to full-size image\">%4$s &times; %5$s</a> in <a href=\"%6$s\" title=\"Return to %7$s\" rel=\"gallery\">%8$s</a>."
+msgstr ""
+
+#: image.php:31
+msgid "&larr; Previous"
+msgstr ""
+
+#: image.php:33
+msgid "Next &rarr;"
+msgstr ""
+
+#: image.php:76 page-templates/catcontent.php:41
+#: page-templates/catcontent5.php:38 page-templates/content-page.php:14
+#: page-templates/content-search.php:32 page-templates/content-woo.php:25
+#: page-templates/content2.php:70 page-templates/content3.php:72
+#: page-templates/content4.php:67 page-templates/content5.php:42
+#: page-templates/content6-audio.php:92 page-templates/content6-gallery.php:91
+#: page-templates/content6-video.php:94 page-templates/content6.php:100
+#: page-templates/page-content.php:70
+msgid "Pages:"
+msgstr ""
+
+#: inc/author-singlepost.php:8
+msgid "-"
+msgstr ""
+
+#: inc/author-singlepost.php:9
+#, php-format
+msgid "Published post: %d"
+msgid_plural "Published posts: %d"
+msgstr[0] ""
+msgstr[1] ""
+
+#: inc/author-singlepost.php:11 page-templates/content-search.php:9
+#: page-templates/content.php:32 page-templates/content2.php:42
+#: page-templates/content3.php:46 page-templates/content4.php:51
+#: page-templates/content5.php:77 page-templates/content6-audio.php:55
+#: page-templates/content6-gallery.php:54 page-templates/content6-video.php:55
+#: page-templates/content6.php:54 page-templates/page-content.php:42
+#, php-format
+msgid " %s"
+msgstr ""
+
+#: inc/class-tgm-plugin-activation.php:73
+msgid "Install Required Plugins"
+msgstr ""
+
+#: inc/class-tgm-plugin-activation.php:74
+msgid "Install Plugins"
+msgstr ""
+
+#: inc/class-tgm-plugin-activation.php:76
+#, php-format
+msgid "Installing Plugin: %s"
+msgstr ""
+
+#: inc/class-tgm-plugin-activation.php:78
+#, php-format
+msgid "Updating Plugin: %s"
+msgstr ""
+
+#: inc/class-tgm-plugin-activation.php:79
+msgid "Something went wrong with the plugin API."
+msgstr ""
+
+#: inc/class-tgm-plugin-activation.php:82
+#, php-format
+msgid "This theme requires the following plugin: %1$s."
+msgid_plural "This theme requires the following plugins: %1$s."
+msgstr[0] ""
+msgstr[1] ""
+
+#: inc/class-tgm-plugin-activation.php:88
+#, php-format
+msgid "This theme recommends the following plugin: %1$s."
+msgid_plural "This theme recommends the following plugins: %1$s."
+msgstr[0] ""
+msgstr[1] ""
+
+#: inc/class-tgm-plugin-activation.php:94
+#, php-format
+msgid "The following plugin needs to be updated to its latest version to ensure maximum compatibility with this theme: %1$s."
+msgid_plural "The following plugins need to be updated to their latest version to ensure maximum compatibility with this theme: %1$s."
+msgstr[0] ""
+msgstr[1] ""
+
+#: inc/class-tgm-plugin-activation.php:100
+#, php-format
+msgid "There is an update available for: %1$s."
+msgid_plural "There are updates available for the following plugins: %1$s."
+msgstr[0] ""
+msgstr[1] ""
+
+#: inc/class-tgm-plugin-activation.php:106
+#, php-format
+msgid "The following required plugin is currently inactive: %1$s."
+msgid_plural "The following required plugins are currently inactive: %1$s."
+msgstr[0] ""
+msgstr[1] ""
+
+#: inc/class-tgm-plugin-activation.php:112
+#, php-format
+msgid "The following recommended plugin is currently inactive: %1$s."
+msgid_plural "The following recommended plugins are currently inactive: %1$s."
+msgstr[0] ""
+msgstr[1] ""
+
+#: inc/class-tgm-plugin-activation.php:117
+msgid "Begin installing plugin"
+msgid_plural "Begin installing plugins"
+msgstr[0] ""
+msgstr[1] ""
+
+#: inc/class-tgm-plugin-activation.php:122
+msgid "Begin updating plugin"
+msgid_plural "Begin updating plugins"
+msgstr[0] ""
+msgstr[1] ""
+
+#: inc/class-tgm-plugin-activation.php:127
+msgid "Begin activating plugin"
+msgid_plural "Begin activating plugins"
+msgstr[0] ""
+msgstr[1] ""
+
+#: inc/class-tgm-plugin-activation.php:131
+msgid "Return to Required Plugins Installer"
+msgstr ""
+
+#: inc/class-tgm-plugin-activation.php:132
+#: inc/class-tgm-plugin-activation.php:476
+#: inc/class-tgm-plugin-activation.php:1726
+#: inc/class-tgm-plugin-activation.php:2561
+msgid "Return to the Dashboard"
+msgstr ""
+
+#: inc/class-tgm-plugin-activation.php:133
+#: inc/class-tgm-plugin-activation.php:2242
+msgid "Plugin activated successfully."
+msgstr ""
+
+#: inc/class-tgm-plugin-activation.php:134
+#: inc/class-tgm-plugin-activation.php:2096
+msgid "The following plugin was activated successfully:"
+msgid_plural "The following plugins were activated successfully:"
+msgstr[0] ""
+msgstr[1] ""
+
+#: inc/class-tgm-plugin-activation.php:136
+#, php-format
+msgid "No action taken. Plugin %1$s was already active."
+msgstr ""
+
+#: inc/class-tgm-plugin-activation.php:138
+#, php-format
+msgid "Plugin not activated. A higher version of %s is needed for this theme. Please update the plugin."
+msgstr ""
+
+#: inc/class-tgm-plugin-activation.php:140
+#, php-format
+msgid "All plugins installed and activated successfully. %1$s"
+msgstr ""
+
+#: inc/class-tgm-plugin-activation.php:141
+msgid "Dismiss this notice"
+msgstr ""
+
+#: inc/class-tgm-plugin-activation.php:142
+msgid "There are one or more required or recommended plugins to install, update or activate."
+msgstr ""
+
+#: inc/class-tgm-plugin-activation.php:143
+msgid "Please contact the administrator of this site for help."
+msgstr ""
+
+#: inc/class-tgm-plugin-activation.php:264
+msgid "This plugin needs to be updated to be compatible with your theme."
+msgstr ""
+
+#: inc/class-tgm-plugin-activation.php:265
+msgid "Update Required"
+msgstr ""
+
+#: inc/class-tgm-plugin-activation.php:558
+msgid "The remote plugin package does not contain a folder with the desired slug and renaming did not work."
+msgstr ""
+
+#: inc/class-tgm-plugin-activation.php:558
+#: inc/class-tgm-plugin-activation.php:561
+msgid "Please contact the plugin provider and ask them to package their plugin according to the WordPress guidelines."
+msgstr ""
+
+#: inc/class-tgm-plugin-activation.php:561
+msgid "The remote plugin package consists of more than one file, but the files are not packaged in a folder."
+msgstr ""
+
+#: inc/class-tgm-plugin-activation.php:722
+#: inc/class-tgm-plugin-activation.php:2092
+msgctxt "plugin A *and* plugin B"
+msgid "and"
+msgstr ""
+
+#: inc/class-tgm-plugin-activation.php:1319
+#, php-format
+msgid "TGMPA v%s"
+msgstr ""
+
+#: inc/class-tgm-plugin-activation.php:1520
+msgid "Required"
+msgstr ""
+
+#: inc/class-tgm-plugin-activation.php:1522
+msgid "Recommended"
+msgstr ""
+
+#: inc/class-tgm-plugin-activation.php:1531
+msgid "WordPress Repository"
+msgstr ""
+
+#: inc/class-tgm-plugin-activation.php:1534
+msgid "External Source"
+msgstr ""
+
+#: inc/class-tgm-plugin-activation.php:1537
+msgid "Pre-Packaged"
+msgstr ""
+
+#: inc/class-tgm-plugin-activation.php:1547
+msgid "Not Installed"
+msgstr ""
+
+#: inc/class-tgm-plugin-activation.php:1551
+msgid "Installed But Not Activated"
+msgstr ""
+
+#: inc/class-tgm-plugin-activation.php:1553
+msgid "Active"
+msgstr ""
+
+#: inc/class-tgm-plugin-activation.php:1559
+msgid "Required Update not Available"
+msgstr ""
+
+#: inc/class-tgm-plugin-activation.php:1562
+msgid "Requires Update"
+msgstr ""
+
+#: inc/class-tgm-plugin-activation.php:1565
+msgid "Update recommended"
+msgstr ""
+
+#: inc/class-tgm-plugin-activation.php:1574
+#, php-format
+msgctxt "Install/Update Status"
+msgid "%1$s, %2$s"
+msgstr ""
+
+#: inc/class-tgm-plugin-activation.php:1611
+#, php-format
+msgctxt "plugins"
+msgid "All <span class=\"count\">(%s)</span>"
+msgid_plural "All <span class=\"count\">(%s)</span>"
+msgstr[0] ""
+msgstr[1] ""
+
+#: inc/class-tgm-plugin-activation.php:1615
+#, php-format
+msgid "To Install <span class=\"count\">(%s)</span>"
+msgid_plural "To Install <span class=\"count\">(%s)</span>"
+msgstr[0] ""
+msgstr[1] ""
+
+#: inc/class-tgm-plugin-activation.php:1619
+#, php-format
+msgid "Update Available <span class=\"count\">(%s)</span>"
+msgid_plural "Update Available <span class=\"count\">(%s)</span>"
+msgstr[0] ""
+msgstr[1] ""
+
+#: inc/class-tgm-plugin-activation.php:1623
+#, php-format
+msgid "To Activate <span class=\"count\">(%s)</span>"
+msgid_plural "To Activate <span class=\"count\">(%s)</span>"
+msgstr[0] ""
+msgstr[1] ""
+
+#: inc/class-tgm-plugin-activation.php:1681
+msgctxt "as in: \"version nr unknown\""
+msgid "unknown"
+msgstr ""
+
+#: inc/class-tgm-plugin-activation.php:1689
+msgid "Installed version:"
+msgstr ""
+
+#: inc/class-tgm-plugin-activation.php:1697
+msgid "Minimum required version:"
+msgstr ""
+
+#: inc/class-tgm-plugin-activation.php:1709
+msgid "Available version:"
+msgstr ""
+
+#: inc/class-tgm-plugin-activation.php:1726
+msgid "No plugins to install, update or activate."
+msgstr ""
+
+#: inc/class-tgm-plugin-activation.php:1736
+msgid "Plugin"
+msgstr ""
+
+#: inc/class-tgm-plugin-activation.php:1737
+msgid "Source"
+msgstr ""
+
+#: inc/class-tgm-plugin-activation.php:1738
+msgid "Type"
+msgstr ""
+
+#: inc/class-tgm-plugin-activation.php:1742
+msgid "Version"
+msgstr ""
+
+#: inc/class-tgm-plugin-activation.php:1743
+msgid "Status"
+msgstr ""
+
+#: inc/class-tgm-plugin-activation.php:1777
+#, php-format
+msgid "Install %2$s"
+msgstr ""
+
+#: inc/class-tgm-plugin-activation.php:1782
+#, php-format
+msgid "Update %2$s"
+msgstr ""
+
+#: inc/class-tgm-plugin-activation.php:1788
+#, php-format
+msgid "Activate %2$s"
+msgstr ""
+
+#: inc/class-tgm-plugin-activation.php:1841
+msgid "Upgrade message from the plugin author:"
+msgstr ""
+
+#: inc/class-tgm-plugin-activation.php:1866
+msgid "Install"
+msgstr ""
+
+#: inc/class-tgm-plugin-activation.php:1872
+msgid "Update"
+msgstr ""
+
+#: inc/class-tgm-plugin-activation.php:1875
+msgid "Activate"
+msgstr ""
+
+#: inc/class-tgm-plugin-activation.php:1901
+msgid "No plugins were selected to be installed. No action taken."
+msgstr ""
+
+#: inc/class-tgm-plugin-activation.php:1903
+msgid "No plugins were selected to be updated. No action taken."
+msgstr ""
+
+#: inc/class-tgm-plugin-activation.php:1944
+msgid "No plugins are available to be installed at this time."
+msgstr ""
+
+#: inc/class-tgm-plugin-activation.php:1946
+msgid "No plugins are available to be updated at this time."
+msgstr ""
+
+#: inc/class-tgm-plugin-activation.php:2052
+msgid "No plugins were selected to be activated. No action taken."
+msgstr ""
+
+#: inc/class-tgm-plugin-activation.php:2078
+msgid "No plugins are available to be activated at this time."
+msgstr ""
+
+#: inc/class-tgm-plugin-activation.php:2241
+msgid "Plugin activation failed."
+msgstr ""
+
+#: inc/class-tgm-plugin-activation.php:2490
+#, php-format
+msgid "Updating Plugin %1$s (%2$d/%3$d)"
+msgstr ""
+
+#: inc/class-tgm-plugin-activation.php:2493
+#, php-format
+msgid "An error occurred while installing %1$s: <strong>%2$s</strong>."
+msgstr ""
+
+#: inc/class-tgm-plugin-activation.php:2495
+#, php-format
+msgid "The installation of %1$s failed."
+msgstr ""
+
+#: inc/class-tgm-plugin-activation.php:2499
+msgid "The installation and activation process is starting. This process may take a while on some hosts, so please be patient."
+msgstr ""
+
+#: inc/class-tgm-plugin-activation.php:2501
+#, php-format
+msgid "%1$s installed and activated successfully."
+msgstr ""
+
+#: inc/class-tgm-plugin-activation.php:2501
+#: inc/class-tgm-plugin-activation.php:2509
+msgid "Show Details"
+msgstr ""
+
+#: inc/class-tgm-plugin-activation.php:2501
+#: inc/class-tgm-plugin-activation.php:2509
+msgid "Hide Details"
+msgstr ""
+
+#: inc/class-tgm-plugin-activation.php:2502
+msgid "All installations and activations have been completed."
+msgstr ""
+
+#: inc/class-tgm-plugin-activation.php:2504
+#, php-format
+msgid "Installing and Activating Plugin %1$s (%2$d/%3$d)"
+msgstr ""
+
+#: inc/class-tgm-plugin-activation.php:2507
+msgid "The installation process is starting. This process may take a while on some hosts, so please be patient."
+msgstr ""
+
+#: inc/class-tgm-plugin-activation.php:2509
+#, php-format
+msgid "%1$s installed successfully."
+msgstr ""
+
+#: inc/class-tgm-plugin-activation.php:2510
+msgid "All installations have been completed."
+msgstr ""
+
+#: inc/class-tgm-plugin-activation.php:2512
+#, php-format
+msgid "Installing Plugin %1$s (%2$d/%3$d)"
+msgstr ""
+
+#: inc/extra-functions.php:9 page-templates/content-woo.php:13
+#, php-format
+msgid "Permalink to %s"
+msgstr ""
+
+#: inc/gauthier-options.php:49
+msgid "Gauthier Options"
+msgstr ""
+
+#: inc/gauthier-options.php:50
+msgid "gauthier Options"
+msgstr ""
+
+#: inc/gauthier-options.php:115 inc/gauthier-options.php:1494
+msgid "Documentation"
+msgstr ""
+
+#: inc/gauthier-options.php:121
+msgid "Support"
+msgstr ""
+
+#: inc/gauthier-options.php:126
+msgid "Extensions"
+msgstr ""
+
+#: inc/gauthier-options.php:158
+#, php-format
+msgid "<p>Did you know that Redux sets a global variable for you? To access any of your saved options from within your code you can use your global variable: <strong>$%1$s</strong></p>"
+msgstr ""
+
+#: inc/gauthier-options.php:160
+msgid "<p>This text is displayed above the options panel. It isn't required, but more info is always better! The intro_text field accepts all HTML.</p>"
+msgstr ""
+
+#: inc/gauthier-options.php:163
+msgid "<p>This text is displayed below the options panel. It isn't required, but more info is always better! The footer_text field accepts all HTML.</p>"
+msgstr ""
+
+#: inc/gauthier-options.php:174
+msgid "Theme Information 1"
+msgstr ""
+
+#: inc/gauthier-options.php:175 inc/gauthier-options.php:180
+msgid "<p>This is the tab content, HTML is allowed.</p>"
+msgstr ""
+
+#: inc/gauthier-options.php:179
+msgid "Theme Information 2"
+msgstr ""
+
+#: inc/gauthier-options.php:185
+msgid "<p>This is the sidebar content, HTML is allowed.</p>"
+msgstr ""
+
+#: inc/gauthier-options.php:199
+msgid "General Settings"
+msgstr ""
+
+#: inc/gauthier-options.php:201 inc/gauthier-options.php:229
+msgid "These are really basic fields!"
+msgstr ""
+
+#: inc/gauthier-options.php:207
+msgid "Favicon"
+msgstr ""
+
+#: inc/gauthier-options.php:216
+msgid "Custom Favicon"
+msgstr ""
+
+#: inc/gauthier-options.php:218 inc/gauthier-options.php:608
+msgid "Upload your logo"
+msgstr ""
+
+#: inc/gauthier-options.php:227
+msgid "Scheme"
+msgstr ""
+
+#: inc/gauthier-options.php:235
+msgid "Background"
+msgstr ""
+
+#: inc/gauthier-options.php:243
+msgid "Body Background"
+msgstr ""
+
+#: inc/gauthier-options.php:244
+msgid "Body background with image or color."
+msgstr ""
+
+#: inc/gauthier-options.php:250 inc/gauthier-options.php:286
+msgid "Element Background"
+msgstr ""
+
+#: inc/gauthier-options.php:287
+msgid "Use the same color background for other web element, ex.- icon background."
+msgstr ""
+
+#: inc/gauthier-options.php:293
+msgid "Elements Color"
+msgstr ""
+
+#: inc/gauthier-options.php:301 inc/gauthier-options.php:677
+#: inc/gauthier-options.php:735
+msgid "TEXT COLOR"
+msgstr ""
+
+#: inc/gauthier-options.php:302 inc/gauthier-options.php:309
+#: inc/gauthier-options.php:678 inc/gauthier-options.php:685
+#: inc/gauthier-options.php:692 inc/gauthier-options.php:736
+#: inc/gauthier-options.php:743 inc/gauthier-options.php:750
+msgid "Pick a title color for the theme (default: #000)."
+msgstr ""
+
+#: inc/gauthier-options.php:308 inc/gauthier-options.php:684
+#: inc/gauthier-options.php:742
+msgid "LINK COLOR"
+msgstr ""
+
+#: inc/gauthier-options.php:315 inc/gauthier-options.php:691
+#: inc/gauthier-options.php:749
+msgid "HOVER COLOR"
+msgstr ""
+
+#: inc/gauthier-options.php:316
+msgid "Pick a title color for the theme (default: #999)."
+msgstr ""
+
+#: inc/gauthier-options.php:321
+msgid "FULL BORDER ELEMENTS"
+msgstr ""
+
+#: inc/gauthier-options.php:322
+msgid "Color for border elements. Submit, input etc..."
+msgstr ""
+
+#: inc/gauthier-options.php:325 inc/gauthier-options.php:471
+#: inc/gauthier-options.php:480 inc/gauthier-options.php:616
+msgid "This is the description field, again good for additional info."
+msgstr ""
+
+#: inc/gauthier-options.php:330
+msgid "TOP and BOTTOM BORDER ELEMENTS"
+msgstr ""
+
+#: inc/gauthier-options.php:331
+msgid "SET ONLY TOP and BOTTOM BORDER."
+msgstr ""
+
+#: inc/gauthier-options.php:334
+msgid "Input number only for TOP and BOTTOM border."
+msgstr ""
+
+#: inc/gauthier-options.php:339
+msgid "BOTTOM BORDER ELEMENTS"
+msgstr ""
+
+#: inc/gauthier-options.php:340
+msgid "SET ONLY BORDER BOTTOM."
+msgstr ""
+
+#: inc/gauthier-options.php:343
+msgid "Input number only for BOTTOM border."
+msgstr ""
+
+#: inc/gauthier-options.php:351
+msgid "Header Area"
+msgstr ""
+
+#: inc/gauthier-options.php:353
+msgid "SET THE HEADER!"
+msgstr ""
+
+#: inc/gauthier-options.php:360
+msgid "Header Layout"
+msgstr ""
+
+#: inc/gauthier-options.php:367
+msgid "HEADER LAYOUT"
+msgstr ""
+
+#: inc/gauthier-options.php:368
+msgid "Choose the header layout"
+msgstr ""
+
+#: inc/gauthier-options.php:416
+msgid "Header Logo"
+msgstr ""
+
+#: inc/gauthier-options.php:424
+msgid "IMAGE LOGO"
+msgstr ""
+
+#: inc/gauthier-options.php:426
+msgid "If you dont upload image, then type your logos name bellow"
+msgstr ""
+
+#: inc/gauthier-options.php:431
+msgid "TEXT LOGO"
+msgstr ""
+
+#: inc/gauthier-options.php:432
+msgid "Enter your text logo here."
+msgstr ""
+
+#: inc/gauthier-options.php:433
+msgid "If you dont use image as logo, then this text will appear."
+msgstr ""
+
+#: inc/gauthier-options.php:442
+msgid "Text Logo Typography"
+msgstr ""
+
+#: inc/gauthier-options.php:443
+msgid "Specify the header font properties."
+msgstr ""
+
+#: inc/gauthier-options.php:459
+msgid "Navigation Layout"
+msgstr ""
+
+#: inc/gauthier-options.php:460
+msgid "Setting up the navigation layout"
+msgstr ""
+
+#: inc/gauthier-options.php:467
+msgid "Top Navigation Border"
+msgstr ""
+
+#: inc/gauthier-options.php:468 inc/gauthier-options.php:477
+msgid "Only color validation can be done on this field type"
+msgstr ""
+
+#: inc/gauthier-options.php:476
+msgid "Main Navigation Border"
+msgstr ""
+
+#: inc/gauthier-options.php:492
+msgid " Menu Border"
+msgstr ""
+
+#: inc/gauthier-options.php:493
+msgid "Border for Menu."
+msgstr ""
+
+#: inc/gauthier-options.php:496
+msgid "Input number only for LEFT border."
+msgstr ""
+
+#: inc/gauthier-options.php:507
+msgid "Top Navigation Background"
+msgstr ""
+
+#: inc/gauthier-options.php:508 inc/gauthier-options.php:516
+msgid "Nav background with image or color."
+msgstr ""
+
+#: inc/gauthier-options.php:515
+msgid "Main Navigation Background"
+msgstr ""
+
+#: inc/gauthier-options.php:524
+msgid "Header FAQ"
+msgstr ""
+
+#: inc/gauthier-options.php:540
+msgid "Footer Area"
+msgstr ""
+
+#: inc/gauthier-options.php:543
+msgid "Change your footer layout."
+msgstr ""
+
+#: inc/gauthier-options.php:547
+msgid "Footer Layout"
+msgstr ""
+
+#: inc/gauthier-options.php:554
+msgid "footer LAYOUT"
+msgstr ""
+
+#: inc/gauthier-options.php:555
+msgid "Choose the footer layout"
+msgstr ""
+
+#: inc/gauthier-options.php:598
+msgid "Footer Text and Logo"
+msgstr ""
+
+#: inc/gauthier-options.php:606
+msgid "Footer Logo"
+msgstr ""
+
+#: inc/gauthier-options.php:614
+msgid "Footer Text"
+msgstr ""
+
+#: inc/gauthier-options.php:615
+msgid "Enter your custom footer text here. You can also insert HTML and image"
+msgstr ""
+
+#: inc/gauthier-options.php:624
+msgid "Main Footer Decoration"
+msgstr ""
+
+#: inc/gauthier-options.php:631
+msgid "Background Color Scheme"
+msgstr ""
+
+#: inc/gauthier-options.php:632
+msgid "Define the scheme will handle the footer content color"
+msgstr ""
+
+#: inc/gauthier-options.php:651
+msgid "MAIN FOOTER BACKGROUND"
+msgstr ""
+
+#: inc/gauthier-options.php:652 inc/gauthier-options.php:660
+#: inc/gauthier-options.php:716
+msgid "footer background with image or color."
+msgstr ""
+
+#: inc/gauthier-options.php:659
+msgid "BODER COLOR FOR FOOTER STYLE 2"
+msgstr ""
+
+#: inc/gauthier-options.php:665 inc/gauthier-options.php:722
+msgid "FOOTER BORDER"
+msgstr ""
+
+#: inc/gauthier-options.php:666 inc/gauthier-options.php:723
+msgid "Change options for footer border"
+msgstr ""
+
+#: inc/gauthier-options.php:669 inc/gauthier-options.php:726
+msgid "If you want to hide the border, just put \"0\"(zero) value into the box."
+msgstr ""
+
+#: inc/gauthier-options.php:700 inc/gauthier-options.php:756
+msgid "ACTIVE COLOR"
+msgstr ""
+
+#: inc/gauthier-options.php:707
+msgid "Bottom Footer Decoration"
+msgstr ""
+
+#: inc/gauthier-options.php:715
+msgid "BOTTOM FOOTER BACKGROUND"
+msgstr ""
+
+#: inc/gauthier-options.php:762
+msgid "FAQ Footer"
+msgstr ""
+
+#: inc/gauthier-options.php:780
+msgid "Typography"
+msgstr ""
+
+#: inc/gauthier-options.php:787
+msgid "Body Font"
+msgstr ""
+
+#: inc/gauthier-options.php:788 inc/gauthier-options.php:798
+#: inc/gauthier-options.php:815 inc/gauthier-options.php:831
+#: inc/gauthier-options.php:847 inc/gauthier-options.php:863
+#: inc/gauthier-options.php:879 inc/gauthier-options.php:895
+msgid "Specify the body font properties."
+msgstr ""
+
+#: inc/gauthier-options.php:797
+msgid "h1 Font"
+msgstr ""
+
+#: inc/gauthier-options.php:814
+msgid "h2 Font"
+msgstr ""
+
+#: inc/gauthier-options.php:830
+msgid "h3 Font"
+msgstr ""
+
+#: inc/gauthier-options.php:846
+msgid "h4 Font"
+msgstr ""
+
+#: inc/gauthier-options.php:862
+msgid "h5 Font"
+msgstr ""
+
+#: inc/gauthier-options.php:878
+msgid "h6 Font"
+msgstr ""
+
+#: inc/gauthier-options.php:894
+msgid "Widget Title"
+msgstr ""
+
+#: inc/gauthier-options.php:913
+msgid "Sidebar Style"
+msgstr ""
+
+#: inc/gauthier-options.php:920
+msgid "SELECT SIDEBAR STYLE"
+msgstr ""
+
+#: inc/gauthier-options.php:921
+msgid "2 Styles Available"
+msgstr ""
+
+#: inc/gauthier-options.php:943
+msgid "Category Template"
+msgstr ""
+
+#: inc/gauthier-options.php:945
+msgid "You can display your category page with different style"
+msgstr ""
+
+#: inc/gauthier-options.php:954
+msgid "Select Category 1"
+msgstr ""
+
+#: inc/gauthier-options.php:955 inc/gauthier-options.php:978
+#: inc/gauthier-options.php:1001 inc/gauthier-options.php:1024
+#: inc/gauthier-options.php:1047 inc/gauthier-options.php:1070
+#: inc/gauthier-options.php:1093
+msgid "Select 1 or more Category"
+msgstr ""
+
+#: inc/gauthier-options.php:960
+msgid "Select Template for Category 1"
+msgstr ""
+
+#: inc/gauthier-options.php:961 inc/gauthier-options.php:984
+#: inc/gauthier-options.php:1007 inc/gauthier-options.php:1030
+#: inc/gauthier-options.php:1053 inc/gauthier-options.php:1076
+#: inc/gauthier-options.php:1099 inc/gauthier-options.php:1135
+#: inc/gauthier-options.php:1158 inc/gauthier-options.php:1181
+#: inc/gauthier-options.php:1205 inc/gauthier-options.php:1228
+#: inc/gauthier-options.php:1251
+msgid "Select template"
+msgstr ""
+
+#: inc/gauthier-options.php:977
+msgid "Select Category 2"
+msgstr ""
+
+#: inc/gauthier-options.php:983
+msgid "Select Template for Category 2"
+msgstr ""
+
+#: inc/gauthier-options.php:1000
+msgid "Select Category 3"
+msgstr ""
+
+#: inc/gauthier-options.php:1006
+msgid "Select Template for Category 3"
+msgstr ""
+
+#: inc/gauthier-options.php:1023
+msgid "Select Category 4"
+msgstr ""
+
+#: inc/gauthier-options.php:1029
+msgid "Select Template for Category 4"
+msgstr ""
+
+#: inc/gauthier-options.php:1046
+msgid "Select Category 5"
+msgstr ""
+
+#: inc/gauthier-options.php:1052
+msgid "Select Template for Category 5"
+msgstr ""
+
+#: inc/gauthier-options.php:1069
+msgid "Select Category 6"
+msgstr ""
+
+#: inc/gauthier-options.php:1075
+msgid "Select Template for Category 6"
+msgstr ""
+
+#: inc/gauthier-options.php:1092
+msgid "Select Category 7"
+msgstr ""
+
+#: inc/gauthier-options.php:1098
+msgid "Select Template for Category 7"
+msgstr ""
+
+#: inc/gauthier-options.php:1117
+msgid "TAGS Template"
+msgstr ""
+
+#: inc/gauthier-options.php:1119
+msgid "You can display your tag page with different style"
+msgstr ""
+
+#: inc/gauthier-options.php:1128
+msgid "Select tag 1"
+msgstr ""
+
+#: inc/gauthier-options.php:1129 inc/gauthier-options.php:1152
+#: inc/gauthier-options.php:1175 inc/gauthier-options.php:1199
+#: inc/gauthier-options.php:1222 inc/gauthier-options.php:1245
+msgid "Select 1 or more tag"
+msgstr ""
+
+#: inc/gauthier-options.php:1134
+msgid "Select Template for tag 1"
+msgstr ""
+
+#: inc/gauthier-options.php:1151
+msgid "Select tag 2"
+msgstr ""
+
+#: inc/gauthier-options.php:1157
+msgid "Select Template for tag 2"
+msgstr ""
+
+#: inc/gauthier-options.php:1174
+msgid "Select tag 3"
+msgstr ""
+
+#: inc/gauthier-options.php:1180
+msgid "Select Template for tag 3"
+msgstr ""
+
+#: inc/gauthier-options.php:1198
+msgid "Select tag 4"
+msgstr ""
+
+#: inc/gauthier-options.php:1204
+msgid "Select Template for tag 4"
+msgstr ""
+
+#: inc/gauthier-options.php:1221
+msgid "Select tag 5"
+msgstr ""
+
+#: inc/gauthier-options.php:1227
+msgid "Select Template for tag 5"
+msgstr ""
+
+#: inc/gauthier-options.php:1244
+msgid "Select tag 6"
+msgstr ""
+
+#: inc/gauthier-options.php:1250
+msgid "Select Template for tag 6"
+msgstr ""
+
+#: inc/gauthier-options.php:1270
+msgid "Social Media"
+msgstr ""
+
+#: inc/gauthier-options.php:1272
+msgid "SOCIAL MEDIA"
+msgstr ""
+
+#: inc/gauthier-options.php:1276
+msgid "Social Media 1"
+msgstr ""
+
+#: inc/gauthier-options.php:1283 inc/gauthier-options.php:1309
+#: inc/gauthier-options.php:1334 inc/gauthier-options.php:1360
+#: inc/gauthier-options.php:1385 inc/gauthier-options.php:1410
+msgid "Social media Name"
+msgstr ""
+
+#: inc/gauthier-options.php:1284 inc/gauthier-options.php:1310
+#: inc/gauthier-options.php:1335 inc/gauthier-options.php:1361
+#: inc/gauthier-options.php:1386 inc/gauthier-options.php:1411
+msgid "Type Your Social Media Name"
+msgstr ""
+
+#: inc/gauthier-options.php:1289
+msgid "Social media 1 Link"
+msgstr ""
+
+#: inc/gauthier-options.php:1290 inc/gauthier-options.php:1316
+#: inc/gauthier-options.php:1341 inc/gauthier-options.php:1367
+#: inc/gauthier-options.php:1392 inc/gauthier-options.php:1417
+msgid "Type Your Social Media Link"
+msgstr ""
+
+#: inc/gauthier-options.php:1295
+msgid "Social media 1 tooltip"
+msgstr ""
+
+#: inc/gauthier-options.php:1296 inc/gauthier-options.php:1322
+#: inc/gauthier-options.php:1348 inc/gauthier-options.php:1373
+#: inc/gauthier-options.php:1398 inc/gauthier-options.php:1423
+msgid "Type For Tooltip When Hovering"
+msgstr ""
+
+#: inc/gauthier-options.php:1302
+msgid "Social Media 2"
+msgstr ""
+
+#: inc/gauthier-options.php:1315
+msgid "Social media 2 Link"
+msgstr ""
+
+#: inc/gauthier-options.php:1321
+msgid "Social media 2 tooltip"
+msgstr ""
+
+#: inc/gauthier-options.php:1327
+msgid "Social Media 3"
+msgstr ""
+
+#: inc/gauthier-options.php:1340
+msgid "Social media 3 Link"
+msgstr ""
+
+#: inc/gauthier-options.php:1347
+msgid "Social media 3 tooltip"
+msgstr ""
+
+#: inc/gauthier-options.php:1353
+msgid "Social Media 4"
+msgstr ""
+
+#: inc/gauthier-options.php:1366
+msgid "Social media 4 Link"
+msgstr ""
+
+#: inc/gauthier-options.php:1372
+msgid "Social media 4 tooltip"
+msgstr ""
+
+#: inc/gauthier-options.php:1378
+msgid "Social Media 5"
+msgstr ""
+
+#: inc/gauthier-options.php:1391
+msgid "Social media 5 Link"
+msgstr ""
+
+#: inc/gauthier-options.php:1397
+msgid "Social media 5 tooltip"
+msgstr ""
+
+#: inc/gauthier-options.php:1403
+msgid "Social Media 6"
+msgstr ""
+
+#: inc/gauthier-options.php:1416
+msgid "Social media 6 Link"
+msgstr ""
+
+#: inc/gauthier-options.php:1422
+msgid "Social media 6 tooltip"
+msgstr ""
+
+#: inc/gauthier-options.php:1429
+msgid "404"
+msgstr ""
+
+#: inc/gauthier-options.php:1436
+msgid "404 IMAGE"
+msgstr ""
+
+#: inc/gauthier-options.php:1445
+msgid "MAIN TITLE FOR 404"
+msgstr ""
+
+#: inc/gauthier-options.php:1452
+msgid "SUBTITLE FOR 404"
+msgstr ""
+
+#: inc/gauthier-options.php:1461
+msgid "Show/Hide Elements"
+msgstr ""
+
+#: inc/gauthier-options.php:1468
+msgid "HIDE/SHOW TOP NAVIGATION"
+msgstr ""
+
+#: inc/gauthier-options.php:1469
+msgid "Hide/show top navigation"
+msgstr ""
+
+#: inc/gauthier-options.php:1479
+msgid "HIDE/SHOW RELATED POST"
+msgstr ""
+
+#: inc/gauthier-options.php:1480
+msgid "Hide/show related posts"
+msgstr ""
+
+#: inc/gauthier-options.php:1606
+msgid "Section via hook"
+msgstr ""
+
+#: inc/gauthier-options.php:1607
+msgid "<p class=\"description\">This is a section created by adding a filter to the sections array. Can be used by child themes to add/remove sections from the options.</p>"
+msgstr ""
+
+#: inc/gauthier-sguide.php:19
+msgid "<b>Gauthier Help & Stard Guide</b>"
+msgstr ""
+
+#: inc/gauthier-sguide.php:21
+msgid "For detail guide and documentation, please visit the documentation online."
+msgstr ""
+
+#: inc/gauthier-sguide.php:31
+msgid "<b>QUICK STEPS TO BUILD YOUR WEB</b>"
+msgstr ""
+
+#: inc/gauthier-sguide.php:35
+msgid "I. Make sure all the required plugins are installed and activated."
+msgstr ""
+
+#: inc/gauthier-sguide.php:39 inc/gauthier-sguide.php:63
+#: inc/gauthier-sguide.php:84
+msgid "Step 1 :"
+msgstr ""
+
+#: inc/gauthier-sguide.php:41
+msgid "After installing and activated the theme, you will see the notification that appears at the top of page."
+msgstr ""
+
+#: inc/gauthier-sguide.php:47 inc/gauthier-sguide.php:68
+#: inc/gauthier-sguide.php:89
+msgid "Step 2 :"
+msgstr ""
+
+#: inc/gauthier-sguide.php:49
+msgid "Click <b>Begin Install Plugins</b>."
+msgstr ""
+
+#: inc/gauthier-sguide.php:50
+msgid ""
+"wait until the installation process is complete. \n"
+"</li>\n"
+"<br>\n"
+"<li>Activate the plugins after the installation process is complete."
+msgstr ""
+
+#: inc/gauthier-sguide.php:59
+msgid "II. Import Demo Data"
+msgstr ""
+
+#: inc/gauthier-sguide.php:65
+msgid "Go to Dashboard> Appearance > Import Demo Data."
+msgstr ""
+
+#: inc/gauthier-sguide.php:70
+msgid "On One Click Demo Imports page, choose the layout and click Import button."
+msgstr ""
+
+#: inc/gauthier-sguide.php:73 inc/gauthier-sguide.php:94
+msgid "Step 3 :"
+msgstr ""
+
+#: inc/gauthier-sguide.php:75
+msgid " Wait until the process is complete."
+msgstr ""
+
+#: inc/gauthier-sguide.php:80
+msgid "III. Setup Menu"
+msgstr ""
+
+#: inc/gauthier-sguide.php:86
+msgid " Go to Dashboard> Appearance > Menus."
+msgstr ""
+
+#: inc/gauthier-sguide.php:91
+msgid "On Menus page, setting up the menu placement."
+msgstr ""
+
+#: inc/gauthier-sguide.php:96
+msgid "Go to Dashboard> Mega Main Menu. Click Specific options tab. Scrolling down till you see Download backup file with current settings."
+msgstr ""
+
+#: inc/gauthier-sguide.php:99
+msgid "Step 4 :"
+msgstr ""
+
+#: inc/gauthier-sguide.php:101
+msgid "Search the file name Mega-main-menu.txt on your theme on folder name inc>installation. "
+msgstr ""
+
+#: inc/gauthier-sguide.php:106
+msgid "IV. Theme Option and Customization"
+msgstr ""
+
+#: inc/gauthier-sguide.php:108
+msgid ""
+"You can rearrange the appearance of the web layout through the <b>gauthier theme option.</b> In this option, you can make changes to the header, footer, sidebar, typography, and\n"
+"other elements"
+msgstr ""
+
+#: inc/next.php:10 inc/next2.php:10
+msgid "NEXT ARTICLES"
+msgstr ""
+
+#: inc/prev.php:11 inc/prev2.php:11
+msgid "PREVIOUS ARTICLES"
+msgstr ""
+
+#: inc/redux_one_click.php:20 inc/redux_one_click.php:36
+#: inc/redux_one_click.php:52 inc/redux_one_click.php:68
+#: inc/redux_one_click.php:84 inc/redux_one_click.php:100
+#: inc/redux_one_click.php:118 inc/redux_one_click.php:134
+#: inc/redux_one_click.php:150 inc/redux_one_click.php:166
+#: inc/redux_one_click.php:182 inc/redux_one_click.php:199
+#: inc/redux_one_click.php:215 inc/redux_one_click.php:231
+msgid "After import demo data, you will need to:<br>1. Import Menu Navigation setup separately.<br>2. Import Mega Menu setting."
+msgstr ""
+
+#: inc/related-post.php:3 inc/related-post2.php:3
+msgid "Related Post"
+msgstr ""
+
+#: metabox.php:84
+msgid "Article Gallery"
+msgstr ""
+
+#: metabox.php:93
+msgid "Insert gallery code here"
+msgstr ""
+
+#: metabox.php:94
+msgid "Create gallery on your post, then cut and paste the code here. Custom Place for Gallery instead on standard post location"
+msgstr ""
+
+#: metabox.php:104
+msgid "VIDEO LINK"
+msgstr ""
+
+#: metabox.php:113
+msgid "Video URL"
+msgstr ""
+
+#: metabox.php:114
+msgid "Insert Video URL Here"
+msgstr ""
+
+#: metabox.php:124
+msgid "AUDIO LINK"
+msgstr ""
+
+#: metabox.php:134
+msgid "Audio URL"
+msgstr ""
+
+#: metabox.php:135
+msgid "Insert Audio URL Here"
+msgstr ""
+
+#: metabox.php:145
+msgid "CUSTOMIZE POST ELEMENTS"
+msgstr ""
+
+#: metabox.php:152
+msgid "ARTICLE INTRO"
+msgstr ""
+
+#: metabox.php:153
+msgid "Type Intro For Your Article"
+msgstr ""
+
+#: metabox.php:165
+msgid "Right/default"
+msgstr ""
+
+#: metabox.php:166
+msgid "Left"
+msgstr ""
+
+#: metabox.php:177
+msgid "1 Column"
+msgstr ""
+
+#: metabox.php:178
+msgid "2 Columns"
+msgstr ""
+
+#: metabox.php:183
+msgid "ADV Top Header"
+msgstr ""
+
+#: metabox.php:189
+msgid "ADV Top Header link"
+msgstr ""
+
+#: metabox.php:190 metabox.php:202 metabox.php:214 metabox.php:226
+#: metabox.php:256 metabox.php:269
+msgid "Type complete link ex. https://abcd.com"
+msgstr ""
+
+#: metabox.php:195
+msgid "ADV Top"
+msgstr ""
+
+#: metabox.php:201
+msgid "ADV Top link"
+msgstr ""
+
+#: metabox.php:207
+msgid "ADV Bottom"
+msgstr ""
+
+#: metabox.php:213
+msgid "ADV Bottom link"
+msgstr ""
+
+#: metabox.php:219
+msgid "ADV Sidebar"
+msgstr ""
+
+#: metabox.php:225
+msgid "ADV Sidebar link"
+msgstr ""
+
+#: metabox.php:236
+msgid "Category Options"
+msgstr ""
+
+#: metabox.php:255
+msgid "Adv Horizontal Top Link"
+msgstr ""
+
+#: metabox.php:268
+msgid "Adv Horizontal Bottom Link"
+msgstr ""
+
+#: metabox.php:281
+#, php-format
+msgid "%s &mdash; Updated!"
+msgstr ""
+
+#: page-templates/catcontent.php:9 page-templates/catcontent1.php:9
+#: page-templates/catcontent2.php:8 page-templates/catcontent3.php:8
+#: page-templates/catcontent4.php:8 page-templates/catcontent5.php:9
+#: page-templates/content2.php:9 page-templates/content3.php:9
+#: page-templates/content4.php:9 page-templates/content5.php:9
+#: page-templates/index-content.php:7 page-templates/page-content.php:9
+msgid "FEATURED"
+msgstr ""
+
+#: page-templates/catcontent1.php:60 page-templates/catcontent5.php:26
+#: search.php:15
+#, php-format
+msgid "%s"
+msgstr ""
+
+#: page-templates/catcontent1.php:71
+msgid " ..."
+msgstr ""
+
+#: page-templates/catcontent5.php:28
+msgid " / "
+msgstr ""
+
+#: page-templates/category1.php:6 page-templates/category2.php:6
+#: page-templates/category3.php:6 page-templates/category4.php:6
+#: page-templates/category5.php:6 page-templates/category_default.php:6
+#: page-templates/tag1.php:6 page-templates/tag2.php:6
+#: page-templates/tag3.php:6 page-templates/tag4.php:6
+#: page-templates/tag5.php:6 page-templates/tag_default.php:6
+msgid "Post Count: "
+msgstr ""
+
+#: page-templates/content-none.php:9 search.php:34
+msgid "Nothing Found"
+msgstr ""
+
+#: page-templates/content-search.php:30 page-templates/content-woo.php:24
+#: page-templates/content.php:58 page-templates/content2.php:68
+#: page-templates/content3.php:70 page-templates/content4.php:65
+#: page-templates/content5.php:40 page-templates/content6-audio.php:90
+#: page-templates/content6-gallery.php:89 page-templates/content6-video.php:92
+#: page-templates/content6.php:98 page-templates/page-content.php:68
+msgid "Continue reading <span class=\"meta-nav\">&rarr;</span>"
+msgstr ""
+
+#: page-templates/content.php:61 page-templates/content2.php:75
+#: page-templates/content3.php:77 page-templates/content4.php:91
+#: page-templates/content5.php:47 page-templates/content6-audio.php:103
+#: page-templates/content6-gallery.php:102
+#: page-templates/content6-video.php:105 page-templates/content6.php:111
+msgid "TAGS: "
+msgstr ""
+
+#: search.php:13
+msgid "Search Result For:"
+msgstr ""
+
+#: search.php:39
+msgid "Sorry, but nothing matched your search criteria. Please try again with some different keywords."
+msgstr ""
+
+#: woocommerce/cart/cross-sells.php:21
+msgid "You may be interested in"
+msgstr ""
+
+#: woocommerce/global/quantity-input.php:26
+#, php-format
+msgid "%s quantity"
+msgstr ""
+
+#: woocommerce/global/quantity-input.php:26
+msgid "Quantity"
+msgstr ""
+
+#: woocommerce/global/quantity-input.php:39
+msgctxt "Product quantity input tooltip"
+msgid "Qty"
+msgstr ""
+
+#: woocommerce/sale-flash.php:15 woocommerce/sale-flashmodule.php:15
+msgid "Sale!"
+msgstr ""
+
+#: woocommerce/single-product/related.php:23
+msgid "Related products"
+msgstr ""
+
+#: woocommerce/single-product/up-sells.php:24
+msgid "You may also like&hellip;"
+msgstr ""

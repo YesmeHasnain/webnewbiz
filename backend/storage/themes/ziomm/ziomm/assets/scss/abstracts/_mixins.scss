@@ -1,0 +1,104 @@
+@mixin defineColorHSL($color, $hue, $saturation, $lightness) {
+	#{$color}: unquote("hsl(#{$hue}, #{$saturation}, #{$lightness})");
+}
+
+@mixin defineColorHSLA($color, $hue, $saturation, $lightness, $alpha) {
+	#{$color}: unquote("hsla(#{$hue}, #{$saturation}, #{$lightness}, #{$alpha})");
+}
+
+@mixin clearfix {
+
+	&::after {
+		content: "";
+		display: table;
+		clear: both;
+	}
+
+}
+
+@mixin pseudo($display: block, $pos: absolute, $content: "") {
+	content: $content;
+	position: $pos;
+	display: $display;
+}
+
+@mixin input-placeholder {
+	&.placeholder {
+		@content;
+	}
+
+	&:-moz-placeholder {
+		@content;
+	}
+
+	&::-moz-placeholder {
+		@content;
+	}
+
+	&:-ms-input-placeholder {
+		@content;
+	}
+
+	&::-webkit-input-placeholder {
+		@content;
+	}
+}
+
+@mixin selection {
+	::-moz-selection {
+		@content;
+	}
+
+	::selection {
+		@content;
+	}
+}
+
+@mixin gap($gap) {
+	height: px2rem($gap);
+
+	&--xs {
+
+		@include media-breakpoint-down(sm) {
+			height: px2rem($gap);
+		}
+
+	}
+
+	&--sm {
+
+		@include media-breakpoint-down(md) {
+			height: px2rem($gap);
+		}
+
+	}
+
+	&--md {
+
+		@include media-breakpoint-down(lg) {
+			height: px2rem($gap);
+		}
+
+	}
+
+}
+
+@mixin admin-sticky-fix($offset: 0) {
+	$narrow-offset: 46px;
+	$wide-offset: 32px;
+
+	@if $offset !=0 and type-of($offset)=="number" {
+		$narrow-offset: $narrow-offset + $offset;
+		$wide-offset: $wide-offset + $offset;
+	}
+
+	.admin-bar & {
+		top: $narrow-offset;
+
+		@media screen and (min-width: 783px) {
+			top: $wide-offset;
+		}
+
+	}
+
+}

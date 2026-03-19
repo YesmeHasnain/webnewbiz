@@ -1,0 +1,84 @@
+/* WIDGET: PROGRESS BAR
+-------------------------------------------- */
+
+.vlt-progress-bar {
+
+	&__title {
+		margin: 0 0 px2rem(5px);
+		font-size: px2rem(map-get($scales, "s7"));
+		line-height: 1.625;
+
+		>span {
+			margin-left: px2rem(15px);
+
+			&::after {
+				content: "%";
+			}
+
+		}
+
+	}
+
+}
+
+/* DEFAULT
+-------------------------------------------- */
+
+.vlt-progress-bar--default {
+
+	.vlt-progress-bar__track {
+		position: relative;
+		width: 100%;
+		height: px2rem(5px);
+		overflow: hidden;
+		background-color: var(--vlt-color-9-opacity-1);
+
+		>.bar {
+			position: absolute;
+			top: 0;
+			left: 0;
+			height: 100%;
+			background-color: var(--vlt-accent-1);
+		}
+
+	}
+
+}
+
+/* DOTTED
+-------------------------------------------- */
+
+.vlt-progress-bar--dotted {
+
+	.vlt-progress-bar__track {
+		position: relative;
+		display: flex;
+		justify-content: space-between;
+		height: px2rem(14px);
+
+		.dot {
+			display: inline-flex;
+			width: px2rem(14px);
+			height: px2rem(14px);
+			background-color: var(--vlt-color-9-opacity-1);
+			border-radius: 100%;
+		}
+
+		>.bar {
+			position: absolute;
+			top: 0;
+			left: 0;
+			display: flex;
+			justify-content: space-between;
+			width: 100%;
+			height: 100%;
+
+			>.dot {
+				background-color: var(--vlt-accent-1);
+			}
+
+		}
+
+	}
+
+}

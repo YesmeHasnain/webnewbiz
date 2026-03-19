@@ -1,0 +1,296 @@
+@use '../../utils' as *;
+
+/*----------------------------------------*/
+/*  4.1 Main menu css
+/*----------------------------------------*/
+
+.#{$theme-prefix}-main-menu{
+    & > nav{
+        & > ul{
+            & > li{
+            position: relative;
+            list-style: none;
+            display: inline-block;
+            transition: none;
+            margin: 0 15px;
+            @media #{$xl} {
+                margin: 0 10px;
+            }
+            & > a{
+                font-size: 17px;
+                font-weight: 500;
+                display: inline-block;
+                padding: 28px 0;
+                letter-spacing: -0.32px;
+                color: var(--tp-common-white);
+                font-family: var(--tp-ff-heading);
+            }
+            &.has-dropdown{
+                & > a{
+                    &::after{
+                        content: "\f107";
+                        font-size: 15px;
+                        font-weight: 400;
+                        margin-left: 6px;
+                        display: inline-block;
+                        @include transition();
+                        color: var(--tp-common-white);
+                        font-family: var(--tp-ff-fontawesome);
+                    }
+                }
+                &.p-static{
+                    position: static;
+                }
+            }
+            &.has-homemenu{
+                position: static;
+                & .tp-mega-menu{
+                    width: 100%;
+                }
+            }
+            & .sub-menu{
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 240px;
+                z-index: 99;
+                opacity: 0;
+                visibility: hidden;
+                padding: 40px 0;
+                background: var(--tp-common-white);
+                @include transition(.3s, ease-out, all);
+                @include transform-rotateX(-90deg, 0 0);
+                backdrop-filter: blur(8px);
+                background: rgba(255, 255, 255, 0.9);
+                box-shadow: 0px 10px 30px 0px rgba(25, 25, 26, 0.1);
+                & li{
+                    width: 100%;
+                    margin: 0;
+                    line-height: 1;
+                    padding: 5px 30px;
+                    display: inline-block;
+                    transition: all 0.2s cubic-bezier(0.4, 0.28, 0.31, 1.28) 0s;
+                    &:not(:last-child){
+                        margin-bottom: 12px;
+                    }
+                    &.has-dropdown{
+                        & > a{
+                            &::after{
+                                position: absolute;
+                                top: 50%;
+                                right: 25px;
+                                @include transform(translateY(-50%) rotate(-90deg));
+                            }
+                        }
+                    }
+                    & > a{
+                        position: relative;
+                        font-size: 15px;
+                        font-weight: 600;
+                        width: 100%;
+                        z-index: 1;
+                        padding: 0;
+                        color: #575758;
+                        letter-spacing: -0.3px;
+                        display: inline-block;
+                        text-transform: uppercase;
+                    }
+                    & > .sub-menu{
+                        left: 120%;
+                        top: 20px;
+                        visibility: hidden;
+                        opacity: 0;
+                    }
+                    &:hover{
+                        & > a{
+                            letter-spacing: 0.5px;
+                            color: var(--tp-common-black);
+                        }
+                        & > .sub-menu{
+                            top: 20px;
+                            left: 100%;
+                            visibility: visible;
+                            opacity: 1;
+                        }
+                    }
+                }
+            }
+            &:hover{
+                & > a{
+                    color: var(--tp-theme-secondary);
+                    &.hover{
+                        &::after{
+                            transform: rotate(180deg);
+                            color: var(--tp-theme-secondary);
+                        }
+                    }
+                    &::after{
+                        transform: rotate(180deg);
+                        color: var(--tp-theme-secondary);
+                    }
+                }
+                & .sub-menu,
+                & .tp-mega-menu{
+                    opacity: 1;
+                    visibility: visible;
+                    -webkit-transform: rotateX(0);
+                    -ms-transform: rotateX(0);
+                    transform: rotateX(0);
+                }
+            }
+          }
+       }
+    }
+}
+
+
+.tp-mega-menu {
+    position: absolute;
+    top: 100%;
+    opacity: 0;
+    left: 0;
+    right: 0;
+    z-index: 99;
+    padding: 0;
+    width: 1490px;
+    margin: 0 auto;
+    border-radius: 0;
+    visibility: hidden;
+    backdrop-filter: blur(8px);
+    background-color: var(--tp-common-white);
+    @include transition(.3s, ease-out, all);
+    @include transform-rotateX(-90deg, 0 0);
+    background: rgba(255, 255, 255, 0.9);
+    box-shadow: 0px 10px 30px 0px rgba(25, 25, 26, 0.1);
+    @media #{$lg,$md,$xs}{
+        width: auto;
+        opacity: 1;
+        visibility: visible;
+        transition: none;
+        position: static;
+        display: none;
+        -webkit-transform: rotateX(0);
+        -ms-transform: rotateX(0);
+        transform: rotateX(0);
+        background: var(--tp-common-black);
+    }
+    @media #{$xxl,$xl} {
+        width: 100%;
+    }
+    &-list{
+        padding: 50px 40px;
+        @media #{$lg,$md,$xs} {
+            padding: 20px 0 0 20px;
+        }
+        & .tp-gx-50{
+            @media #{$lg,$md,$xs} {
+                --bs-gutter-x: 0px;
+            }
+        }
+        &-title{
+            font-size: 16px;
+            font-weight: 700;
+            margin-bottom: 30px;
+            padding-bottom: 20px;
+            letter-spacing: -0.32px;
+            text-transform: uppercase;
+            color: var(--tp-heading-primary);
+            border-bottom: 1px solid rgba(58, 57, 54, 0.10);
+            @media #{$lg,$md,$xs} {
+                margin-bottom: 15px;
+                color: var(--tp-heading-secondary);
+                border-color: rgba($color: #ffff, $alpha: 0.3);
+            }
+        }
+        &-thumb{
+            @media #{$lg,$md,$xs} {
+                display: none;
+            }
+        }
+        &-content{
+            @media #{$lg,$md,$xs} {
+                margin-bottom: 30px;
+            }
+            & ul{
+                & li{
+                    list-style: none;
+                    &:not(:last-child) {
+                        margin-bottom: 16px;
+                        @media #{$lg,$md,$xs} {
+                            margin-bottom: 0;
+                        }
+                    }
+                    & a{
+                        position: relative;
+                        font-size: 15px;
+                        font-weight: 600;
+                        width: 100%;
+                        z-index: 1;
+                        padding: 0;
+                        color: #575758;
+                        letter-spacing: -0.3px;
+                        display: inline-block;
+                        text-transform: uppercase;
+                        &:hover{
+                            letter-spacing: 0.5px;
+                            color: var(--tp-common-black);
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+.tp-homemenu{
+    &-wrapper{
+        padding: 50px 280px 0;
+        @media #{$xxl} {
+            padding: 50px 150px 0;
+        }
+        @media #{$xl} {
+            padding: 50px 50px 0;
+        }
+        @media #{$lg,$md,$xs} {
+            padding: 0;
+            padding-top: 30px;
+        }
+        & .homemenu{
+            &-item{
+                @media #{$lg,$md,$xs} {
+                    margin-bottom: 20px;
+                }
+            }
+            &-thumb{
+                &-wrap{
+                    padding: 10px;
+                    border: 1px solid rgba(0, 0, 0, 0.1);
+                }
+                & img{
+                    width: 100%;
+                    transition: 1s;
+                }
+                &:hover{
+                    & img{
+                        transform: scale(1.1);
+                    }
+                }
+            }
+            &-title{
+                font-size: 18px;
+                font-weight: 600;
+                letter-spacing: -0.15px;
+                text-transform: uppercase;
+                color: var(--tp-heading-primary);
+                @media #{$xl} {
+                    font-size: 16px;
+                }
+                @media #{$lg,$md,$xs} {
+                    font-size: 16px;
+                    color: var(--tp-heading-secondary);
+                }
+            }
+        }
+    }
+}

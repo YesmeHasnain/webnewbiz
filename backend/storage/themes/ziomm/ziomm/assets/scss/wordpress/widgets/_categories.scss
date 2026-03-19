@@ -1,0 +1,20 @@
+/* WIDGET: CATEGORIES
+-------------------------------------------- */
+
+.vlt-widget.widget_categories,
+.vlt-widget.widget_product_categories,
+%widget-categories {
+	font-size: px2rem(map-get($scales, "s8"));
+	font-weight: 700;
+	color: var(--vlt-color-9);
+
+	.vlt-offcanvas-sidebar--dark & {
+		color: var(--vlt-color-4);
+	}
+
+	li+li,
+	ul.children {
+		margin-top: px2rem(12px);
+	}
+
+}

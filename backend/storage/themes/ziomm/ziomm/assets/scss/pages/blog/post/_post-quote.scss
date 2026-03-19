@@ -1,0 +1,51 @@
+/* POST: QUOTE
+-------------------------------------------- */
+
+.vlt-post-quote {
+	position: relative;
+	padding: px2rem(60px);
+	overflow: hidden;
+	color: var(--vlt-color-0);
+	background-color: var(--vlt-accent-2);
+	z-index: 1;
+
+	&::after {
+		content: "";
+		position: absolute;
+		top: px2rem(-20px);
+		left: px2rem(-20px);
+		width: px2rem(150px);
+		height: px2rem(150px);
+		background-image: url(../img/quote.png);
+		background-repeat: no-repeat;
+		background-position: center;
+		background-size: cover;
+		opacity: 0.8;
+	}
+
+	a {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		z-index: 1;
+	}
+
+	&__text {
+		margin: 0;
+		font-family: var(--vlt-secondary-font);
+		font-size: px2rem(map-get($scales, "s5"));
+		color: inherit;
+		letter-spacing: 0.015em;
+	}
+
+	&__author {
+		display: block;
+		margin-top: px2rem(20px);
+		font-size: px2rem(map-get($scales, "s8"));
+		line-height: 1.6;
+		color: var(--vlt-color-0);
+	}
+
+}

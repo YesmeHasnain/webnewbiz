@@ -1,0 +1,176 @@
+== Changelog ==
+
+
+= 1.3.1 - 2025-10-22 =
+* New Functionality: Added theme updater.
+
+
+= 1.3.0 - 2025-04-22 =
+* Tweak: Importer optimization.
+* Tweak: Added `CMSMasters Framework` plugin.
+
+
+= 1.2.1 - 2025-03-04 =
+* Tweak: Importer optimization.
+* Bug Fix: Fixed animation in page preloader.
+
+
+= 1.2.0 - 2025-01-22 =
+* Tweak: Improve importer.
+* Tweak: Improve security.
+* Bug Fix: Fixed translations in theme.
+
+
+= 1.1.11 - 2024-12-26 =
+* Tweak: Improved demo content import process.
+* Bug Fix: Fixed responsive for latest events.
+* Bug Fix: Fixed elementor editor for user roles.
+* Bug Fix: Fixed Forminator post types registration.
+
+
+= 1.1.10 - 2024-10-22 =
+* Tweak: Added logger for theme.
+* Tweak: Optimized installer.
+* Tweak: Optimized scripts running.
+* Tweak: Replaced unsafe methods.
+* Tweak: Added message for plugins page in installer.
+* Bug Fix: Fixed plugins redirection on installation.
+
+
+= 1.1.9 - 2024-10-09 =
+* Tweak: Added caching in API requests for optimization.
+* Tweak: Fixed updating default colors in customize event calendar settings when theme uses rgba color format.
+* Tweak: Add possibility to loading installation log.
+* Bux Fix: Fixed woocommerce products import.
+* Bug Fix: Fixed duplication on import.
+
+
+= 1.1.8 - 2024-08-22 =
+* Tweak: Changed installation notices.
+* Bug Fix: Fixed svg icons on import.
+
+
+= 1.1.7 - 2024-08-14 =
+* Bug Fix: Fixed error on check sitewide location in kit.
+* Bug Fix: Fixed duplication elementor templates on import.
+* Bug Fix: Removed font-weight: bolder; in b, strong for correct view in editor and frontend
+
+
+= 1.1.6 - 2024-07-10 =
+* Tweak: Increase timeout in requests.
+* Tweak: Improved importer for different servers.
+* Tweak: Added cached to import revslider.
+* Tweak: Added tribe-events templates import.
+* Bug Fix: Fixed deprecation PHP syntax.
+
+
+= 1.1.5 - 2024-05-20 =
+* Bug Fix: Fixed deprecations for php 8.2.
+
+
+= 1.1.4 - 2024-05-08 =
+* Tweak: Added `Icon Animation Type` control for `Lazyload Widget`.
+* Tweak: Added functionality for license-data updating.
+* Tweak: Added client data functionality to installer.
+* Tweak: Added client data functionality to theme activation.
+
+
+= 1.1.3 - 2024-03-28 =
+* Tweak: Regenerate theme styles on theme update.
+* Tweak: Added notice for Body Background.
+* Bug Fix: Fixed background gradient.
+* Bug Fix: Replace woocommerce pages on import.
+* Bug Fix: Fixed import for query in products slider widget.
+* Bug Fix: Fixed kit styles.
+* Bug Fix: Added parsing ids in dynamic tags on import.
+* Bug Fix: Changed templates import.
+* Bug Fix Fixed import templates in woo-archive-products widget.
+
+
+= 1.1.2 - 2023-10-26 =
+* Tweak: Optimized getter for kit options.
+* Bug Fix: Fixed deprecated methods.
+* Bug Fix: Fixed settings for Elementor 3.17.0.
+
+
+= 1.1.1 - 2023-10-16 =
+* New Functionality: Added `Widget Lazy Load` functionality.
+* Bug Fix: Fixed dynamic popup importer.
+* Bug Fix: Fixed importer for toggles templates.
+* Bug Fix: Fixed ACF Pro update in Plugin Activator.
+* Bug Fix: Fixed progress bar percents on import.
+
+
+= 1.1.0 - 2023-08-10 =
+* New Functionality: Add mode switcher settings section.
+* New Functionality: Add second logo functionality for mode switcher.
+* Tweak: Added word-spacing to typography.
+* Bug Fix: Fixed size/units structure in typography default constants.
+* Bug Fix: Importer optimization.
+* Bug Fix: Update taxonomy and comments counts after import.
+* Bug Fix: Fixed elementor preview dialog buttons.
+* Bug Fix: Fixed installer styles.
+
+
+= 1.0.7 - 2023-03-24 =
+* Tweak: Optimize importer.
+* Tweak: Update swiper 8.4.5.
+* Bug fix: Fixed gutenberg widget `gallery`.
+* Bug fix: Fixed gutenberg widget `columns`.
+
+
+= 1.0.6 - 2022-10-27 =
+* Tweak: Changes for installer (fast activation issue).
+* Tweak: Updated widget importer.
+* Tweak: Updated content importer.
+* Bug Fix: Fixed MP Timetable import.
+* Bug Fix: Fixed removing default widgets in sidebars before import.
+* Bug Fix: Fixed content importer.
+* Bug Fix: Fixed admin menu icon.
+* Bug Fix: Fixed audio player button styles.
+* Bug Fix: Fix for gutenberg button icon.
+* Bug Fix: Fix for products list.
+* Bug Fix: Fixed gutenberg editor.
+
+
+= 1.0.5 - 2022-05-26 =
+* Tweak: Importer optimization.
+* Bug Fix: Fixed activation redirect for woocommerce.
+* Bug Fix: Fixed admin menu icon.
+
+
+= 1.0.4 - 2022-03-31 =
+* Tweak: Change installer demos styles.
+* Tweak: Add IMPORT_TYPE functionality (demos/kit).
+* Bug Fix: Fixed "Soft Deprecation" for Elementor 3.6.0.
+* Bug Fix: Fixed activation redirect for Elementor 3.6.0.
+* Bug Fix: Fixed import templates for elementor.
+* Bug Fix: Allow unfiltered file upload for templates import.
+* Bug Fix: Fixed main layout.
+* Bug Fix: Fixed logo img.
+
+
+= 1.0.3 - 2021-12-29 =
+* Tweak: Updated scripts for elementor `Improved Asset Loading`.
+* Bug Fix: Fixed main layout.
+
+
+= 1.0.2 - 2021-12-20 =
+* Tweak: Changed gutenberg-wp styles.
+* Tweak: Changed WooCommerce notices styles.
+* Tweak: Filtered page title for WooCommerce shop page.
+* Tweak: Added box-shadow controls to dropdown container in Kits.
+
+
+= 1.0.1 - 2021-12-10 =
+* Tweak: Changed styles for comment-respond.
+* Tweak: Added creation kit if it was not created.
+* Tweak: Change woocommerce styles.
+* Tweak: Changes for WPML support.
+* Tweak: Changes for Elementor Pro support.
+* Tweak: Added selection styles.
+* Tweak: Changes for elementor custom breakpoints.
+
+
+= 1.0.0 - 2021-08-19 =
+* Release

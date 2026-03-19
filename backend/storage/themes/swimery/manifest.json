@@ -1,0 +1,937 @@
+{
+    "manifest_version": "1.0.21",
+    "title": "Swimery",
+    "page_builder": "elementor",
+    "kit_version": "1.0.0",
+    "templates": [
+        {
+            "name": "Global Kit Styles",
+            "screenshot": "screenshots\/global-kit-styles.jpg",
+            "source": "templates\/global.json",
+            "preview_url": "https:\/\/kitpro.site",
+            "type": "section",
+            "category": "page",
+            "metadata": {
+                "template_type": "global-styles",
+                "include_in_zip": "1",
+                "elementor_pro_required": null,
+                "additional_template_information": [
+                    "These are the global theme styles configured through the Elementor Theme Styles area."
+                ]
+            },
+            "elementor_pro_required": false
+        },
+        {
+            "name": "Home",
+            "screenshot": "screenshots\/home.jpg",
+            "source": "templates\/home.json",
+            "preview_url": "https:\/\/kitpro.site\/swimery\/template-kit\/home\/",
+            "type": "section",
+            "category": "page",
+            "metadata": {
+                "template_type": "single-home",
+                "include_in_zip": "1",
+                "elementor_pro_required": null
+            },
+            "elementor_pro_required": false
+        },
+        {
+            "name": "About Us",
+            "screenshot": "screenshots\/about-us.jpg",
+            "source": "templates\/about-us.json",
+            "preview_url": "https:\/\/kitpro.site\/swimery\/template-kit\/about-us\/",
+            "type": "page",
+            "category": "page",
+            "metadata": {
+                "template_type": "single-page",
+                "include_in_zip": "1",
+                "elementor_pro_required": null
+            },
+            "elementor_pro_required": false
+        },
+        {
+            "name": "Classes",
+            "screenshot": "screenshots\/classes.jpg",
+            "source": "templates\/classes.json",
+            "preview_url": "https:\/\/kitpro.site\/swimery\/template-kit\/classes\/",
+            "type": "page",
+            "category": "page",
+            "metadata": {
+                "template_type": "single-page",
+                "include_in_zip": "1",
+                "elementor_pro_required": null
+            },
+            "elementor_pro_required": false
+        },
+        {
+            "name": "Class Details",
+            "screenshot": "screenshots\/class-details.jpg",
+            "source": "templates\/class-details.json",
+            "preview_url": "https:\/\/kitpro.site\/swimery\/template-kit\/class-details\/",
+            "type": "page",
+            "category": "page",
+            "metadata": {
+                "template_type": "single-page",
+                "include_in_zip": "1",
+                "elementor_pro_required": null
+            },
+            "elementor_pro_required": false
+        },
+        {
+            "name": "Pricing",
+            "screenshot": "screenshots\/pricing.jpg",
+            "source": "templates\/pricing.json",
+            "preview_url": "https:\/\/kitpro.site\/swimery\/template-kit\/pricing\/",
+            "type": "page",
+            "category": "page",
+            "metadata": {
+                "template_type": "single-page",
+                "include_in_zip": "1",
+                "elementor_pro_required": null
+            },
+            "elementor_pro_required": false
+        },
+        {
+            "name": "Blog",
+            "screenshot": "screenshots\/blog.jpg",
+            "source": "templates\/blog.json",
+            "preview_url": "https:\/\/kitpro.site\/swimery\/template-kit\/blog\/",
+            "type": "page",
+            "category": "page",
+            "metadata": {
+                "template_type": "single-page",
+                "include_in_zip": "1",
+                "elementor_pro_required": null
+            },
+            "elementor_pro_required": false
+        },
+        {
+            "name": "Single Blog",
+            "screenshot": "screenshots\/single-blog.jpg",
+            "source": "templates\/single-blog.json",
+            "preview_url": "https:\/\/kitpro.site\/swimery\/template-kit\/single-blog\/",
+            "type": "page",
+            "category": "page",
+            "metadata": {
+                "template_type": "single-page",
+                "include_in_zip": "1",
+                "elementor_pro_required": null
+            },
+            "elementor_pro_required": false
+        },
+        {
+            "name": "FAQs",
+            "screenshot": "screenshots\/faqs.jpg",
+            "source": "templates\/faqs.json",
+            "preview_url": "https:\/\/kitpro.site\/swimery\/template-kit\/faqs\/",
+            "type": "page",
+            "category": "page",
+            "metadata": {
+                "template_type": "single-page",
+                "include_in_zip": "1",
+                "elementor_pro_required": null
+            },
+            "elementor_pro_required": false
+        },
+        {
+            "name": "404",
+            "screenshot": "screenshots\/404.jpg",
+            "source": "templates\/404.json",
+            "preview_url": "https:\/\/kitpro.site\/swimery\/template-kit\/404\/",
+            "type": "page",
+            "category": "page",
+            "metadata": {
+                "template_type": "single-page",
+                "include_in_zip": "1",
+                "elementor_pro_required": null
+            },
+            "elementor_pro_required": false
+        },
+        {
+            "name": "Contact Us",
+            "screenshot": "screenshots\/contact-us.jpg",
+            "source": "templates\/contact-us.json",
+            "preview_url": "https:\/\/kitpro.site\/swimery\/template-kit\/contact-us\/",
+            "type": "page",
+            "category": "page",
+            "metadata": {
+                "template_type": "single-page",
+                "include_in_zip": "1",
+                "elementor_pro_required": null
+            },
+            "elementor_pro_required": false
+        },
+        {
+            "name": "Header",
+            "screenshot": "screenshots\/header.jpg",
+            "source": "templates\/header.json",
+            "preview_url": "https:\/\/kitpro.site\/swimery\/template-kit\/header\/",
+            "type": "section",
+            "category": "section",
+            "metadata": {
+                "template_type": "section-header",
+                "include_in_zip": "1",
+                "elementor_pro_required": null
+            },
+            "elementor_pro_required": false
+        },
+        {
+            "name": "Footer",
+            "screenshot": "screenshots\/footer.jpg",
+            "source": "templates\/footer.json",
+            "preview_url": "https:\/\/kitpro.site\/swimery\/template-kit\/footer\/",
+            "type": "section",
+            "category": "section",
+            "metadata": {
+                "template_type": "section-footer",
+                "include_in_zip": "1",
+                "elementor_pro_required": null
+            },
+            "elementor_pro_required": false
+        },
+        {
+            "name": "Newsletters Home",
+            "screenshot": "screenshots\/newsletters-home.jpg",
+            "source": "templates\/newsletters-home.json",
+            "preview_url": "https:\/\/kitpro.site\/swimery\/template-kit\/newsletters-home\/",
+            "type": "section",
+            "category": "section",
+            "metadata": {
+                "template_type": "section-other",
+                "include_in_zip": "1",
+                "elementor_pro_required": null
+            },
+            "elementor_pro_required": false
+        },
+        {
+            "name": "Newsletters Form",
+            "screenshot": "screenshots\/newsletters-form.jpg",
+            "source": "templates\/newsletters-form.json",
+            "preview_url": "https:\/\/kitpro.site\/swimery\/template-kit\/newsletters-form\/",
+            "type": "section",
+            "category": "section",
+            "metadata": {
+                "template_type": "section-other",
+                "include_in_zip": "1",
+                "elementor_pro_required": null
+            },
+            "elementor_pro_required": false
+        },
+        {
+            "name": "Contact Form",
+            "screenshot": "screenshots\/contact-form.jpg",
+            "source": "templates\/contact-form.json",
+            "preview_url": "https:\/\/kitpro.site\/swimery\/template-kit\/contact-form\/",
+            "type": "section",
+            "category": "section",
+            "metadata": {
+                "template_type": "section-other",
+                "include_in_zip": "1",
+                "elementor_pro_required": null
+            },
+            "elementor_pro_required": false
+        }
+    ],
+    "required_plugins": [
+        {
+            "name": "ElementsKit Lite",
+            "version": "2.6.2",
+            "file": "elementskit-lite\/elementskit-lite.php",
+            "author": "Wpmet"
+        },
+        {
+            "name": "Elementor Header & Footer Builder",
+            "version": "1.6.9",
+            "file": "header-footer-elementor\/header-footer-elementor.php",
+            "author": "Brainstorm Force, Nikhil Chavan"
+        },
+        {
+            "name": "MetForm",
+            "version": "2.1.2",
+            "file": "metform\/metform.php",
+            "author": "Wpmet"
+        },
+        {
+            "name": "Elementor",
+            "version": "3.5.5",
+            "file": "elementor\/elementor.php",
+            "author": "Elementor.com"
+        }
+    ],
+    "images": [
+        {
+            "filename": "fit-swimmer-training-in-the-swimming-pool-P6KBZ9G.jpg",
+            "thumbnail_url": "https:\/\/kitpro.site\/swimery\/wp-content\/uploads\/sites\/105\/2022\/08\/fit-swimmer-training-in-the-swimming-pool-P6KBZ9G-800x533.jpg",
+            "templates": [
+                {
+                    "source": "templates\/home.json",
+                    "name": "Home"
+                },
+                {
+                    "source": "templates\/about-us.json",
+                    "name": "About Us"
+                },
+                {
+                    "source": "templates\/classes.json",
+                    "name": "Classes"
+                },
+                {
+                    "source": "templates\/class-details.json",
+                    "name": "Class Details"
+                },
+                {
+                    "source": "templates\/pricing.json",
+                    "name": "Pricing"
+                },
+                {
+                    "source": "templates\/blog.json",
+                    "name": "Blog"
+                },
+                {
+                    "source": "templates\/single-blog.json",
+                    "name": "Single Blog"
+                },
+                {
+                    "source": "templates\/faqs.json",
+                    "name": "FAQs"
+                },
+                {
+                    "source": "templates\/contact-us.json",
+                    "name": "Contact Us"
+                }
+            ],
+            "filesize": 187395,
+            "dimensions": [
+                1500,
+                1000
+            ],
+            "image_source": "envato_elements",
+            "person_or_place": "yes",
+            "image_urls": "https:\/\/elements.envato.com\/collections\/EBA32SK5Y4"
+        },
+        {
+            "filename": "young-female-swimmer-training-in-the-pool-P2FNJ9C.jpg",
+            "thumbnail_url": "https:\/\/kitpro.site\/swimery\/wp-content\/uploads\/sites\/105\/2022\/08\/young-female-swimmer-training-in-the-pool-P2FNJ9C-800x533.jpg",
+            "templates": [
+                {
+                    "source": "templates\/home.json",
+                    "name": "Home"
+                },
+                {
+                    "source": "templates\/pricing.json",
+                    "name": "Pricing"
+                }
+            ],
+            "filesize": 256041,
+            "dimensions": [
+                1400,
+                933
+            ],
+            "image_source": "envato_elements",
+            "person_or_place": "yes",
+            "image_urls": "https:\/\/elements.envato.com\/collections\/EBA32SK5Y4"
+        },
+        {
+            "filename": "minimalist-waves-seamless-patterns-7HMYQLZ.png",
+            "thumbnail_url": "https:\/\/kitpro.site\/swimery\/wp-content\/uploads\/sites\/105\/2022\/08\/minimalist-waves-seamless-patterns-7HMYQLZ-800x341.png",
+            "templates": [
+                {
+                    "source": "templates\/home.json",
+                    "name": "Home"
+                },
+                {
+                    "source": "templates\/about-us.json",
+                    "name": "About Us"
+                },
+                {
+                    "source": "templates\/classes.json",
+                    "name": "Classes"
+                },
+                {
+                    "source": "templates\/class-details.json",
+                    "name": "Class Details"
+                },
+                {
+                    "source": "templates\/404.json",
+                    "name": "404"
+                },
+                {
+                    "source": "templates\/contact-us.json",
+                    "name": "Contact Us"
+                }
+            ],
+            "filesize": 173533,
+            "dimensions": [
+                3004,
+                1282
+            ],
+            "image_source": "envato_elements",
+            "person_or_place": "no",
+            "image_urls": "https:\/\/elements.envato.com\/collections\/EBA32SK5Y4"
+        },
+        {
+            "filename": "2-yellow.png",
+            "thumbnail_url": "https:\/\/kitpro.site\/swimery\/wp-content\/uploads\/sites\/105\/2022\/08\/2-yellow.png",
+            "templates": [
+                {
+                    "source": "templates\/home.json",
+                    "name": "Home"
+                },
+                {
+                    "source": "templates\/classes.json",
+                    "name": "Classes"
+                }
+            ],
+            "filesize": 15939,
+            "dimensions": [
+                512,
+                512
+            ],
+            "image_source": "envato_elements",
+            "person_or_place": "no",
+            "image_urls": "https:\/\/elements.envato.com\/collections\/EBA32SK5Y4"
+        },
+        {
+            "filename": "15-yellow.png",
+            "thumbnail_url": "https:\/\/kitpro.site\/swimery\/wp-content\/uploads\/sites\/105\/2022\/08\/15-yellow.png",
+            "templates": [
+                {
+                    "source": "templates\/home.json",
+                    "name": "Home"
+                },
+                {
+                    "source": "templates\/classes.json",
+                    "name": "Classes"
+                }
+            ],
+            "filesize": 13711,
+            "dimensions": [
+                512,
+                512
+            ],
+            "image_source": "envato_elements",
+            "person_or_place": "no",
+            "image_urls": "https:\/\/elements.envato.com\/collections\/EBA32SK5Y4"
+        },
+        {
+            "filename": "female-diver-and-male-divemaster-diving-school-BMDBVW4.jpg",
+            "thumbnail_url": "https:\/\/kitpro.site\/swimery\/wp-content\/uploads\/sites\/105\/2022\/08\/female-diver-and-male-divemaster-diving-school-BMDBVW4.jpg",
+            "templates": [
+                {
+                    "source": "templates\/home.json",
+                    "name": "Home"
+                },
+                {
+                    "source": "templates\/about-us.json",
+                    "name": "About Us"
+                },
+                {
+                    "source": "templates\/classes.json",
+                    "name": "Classes"
+                }
+            ],
+            "filesize": 131661,
+            "dimensions": [
+                648,
+                1000
+            ],
+            "image_source": "envato_elements",
+            "person_or_place": "yes",
+            "image_urls": "https:\/\/elements.envato.com\/collections\/EBA32SK5Y4"
+        },
+        {
+            "filename": "female-diver-and-male-divemaster-diving-school-BMDBVW4-1.jpg",
+            "thumbnail_url": "https:\/\/kitpro.site\/swimery\/wp-content\/uploads\/sites\/105\/2022\/08\/female-diver-and-male-divemaster-diving-school-BMDBVW4-1.jpg",
+            "templates": [
+                {
+                    "source": "templates\/home.json",
+                    "name": "Home"
+                },
+                {
+                    "source": "templates\/about-us.json",
+                    "name": "About Us"
+                },
+                {
+                    "source": "templates\/classes.json",
+                    "name": "Classes"
+                }
+            ],
+            "filesize": 139093,
+            "dimensions": [
+                648,
+                1000
+            ],
+            "image_source": "envato_elements",
+            "person_or_place": "yes",
+            "image_urls": "https:\/\/elements.envato.com\/collections\/EBA32SK5Y4"
+        },
+        {
+            "filename": "swimming-logo-template-TU8TXH6.png",
+            "thumbnail_url": "https:\/\/kitpro.site\/swimery\/wp-content\/uploads\/sites\/105\/2022\/08\/swimming-logo-template-TU8TXH6.png",
+            "templates": [
+                {
+                    "source": "templates\/home.json",
+                    "name": "Home"
+                },
+                {
+                    "source": "templates\/about-us.json",
+                    "name": "About Us"
+                }
+            ],
+            "filesize": 302988,
+            "dimensions": [
+                800,
+                800
+            ],
+            "image_source": "envato_elements",
+            "person_or_place": "no",
+            "image_urls": "https:\/\/elements.envato.com\/collections\/EBA32SK5Y4"
+        },
+        {
+            "filename": "water-sport-logo-template-9C2MC69.png",
+            "thumbnail_url": "https:\/\/kitpro.site\/swimery\/wp-content\/uploads\/sites\/105\/2022\/08\/water-sport-logo-template-9C2MC69.png",
+            "templates": [
+                {
+                    "source": "templates\/home.json",
+                    "name": "Home"
+                },
+                {
+                    "source": "templates\/about-us.json",
+                    "name": "About Us"
+                }
+            ],
+            "filesize": 249534,
+            "dimensions": [
+                800,
+                800
+            ],
+            "image_source": "envato_elements",
+            "person_or_place": "no",
+            "image_urls": "https:\/\/elements.envato.com\/collections\/EBA32SK5Y4"
+        },
+        {
+            "filename": "swimming-logo-template-2CGSB2Y.png",
+            "thumbnail_url": "https:\/\/kitpro.site\/swimery\/wp-content\/uploads\/sites\/105\/2022\/08\/swimming-logo-template-2CGSB2Y.png",
+            "templates": [
+                {
+                    "source": "templates\/home.json",
+                    "name": "Home"
+                },
+                {
+                    "source": "templates\/about-us.json",
+                    "name": "About Us"
+                }
+            ],
+            "filesize": 276788,
+            "dimensions": [
+                800,
+                800
+            ],
+            "image_source": "envato_elements",
+            "person_or_place": "no",
+            "image_urls": "https:\/\/elements.envato.com\/collections\/EBA32SK5Y4"
+        },
+        {
+            "filename": "dolphin-HYVFR7.png",
+            "thumbnail_url": "https:\/\/kitpro.site\/swimery\/wp-content\/uploads\/sites\/105\/2022\/08\/dolphin-HYVFR7.png",
+            "templates": [
+                {
+                    "source": "templates\/home.json",
+                    "name": "Home"
+                },
+                {
+                    "source": "templates\/about-us.json",
+                    "name": "About Us"
+                }
+            ],
+            "filesize": 243836,
+            "dimensions": [
+                800,
+                800
+            ],
+            "image_source": "envato_elements",
+            "person_or_place": "no",
+            "image_urls": "https:\/\/elements.envato.com\/collections\/EBA32SK5Y4"
+        },
+        {
+            "filename": "1-yellow.png",
+            "thumbnail_url": "https:\/\/kitpro.site\/swimery\/wp-content\/uploads\/sites\/105\/2022\/08\/1-yellow.png",
+            "templates": [
+                {
+                    "source": "templates\/home.json",
+                    "name": "Home"
+                },
+                {
+                    "source": "templates\/classes.json",
+                    "name": "Classes"
+                }
+            ],
+            "filesize": 11723,
+            "dimensions": [
+                512,
+                512
+            ],
+            "image_source": "envato_elements",
+            "person_or_place": "no",
+            "image_urls": "https:\/\/elements.envato.com\/collections\/EBA32SK5Y4"
+        },
+        {
+            "filename": "10-yellow.png",
+            "thumbnail_url": "https:\/\/kitpro.site\/swimery\/wp-content\/uploads\/sites\/105\/2022\/08\/10-yellow.png",
+            "templates": [
+                {
+                    "source": "templates\/home.json",
+                    "name": "Home"
+                },
+                {
+                    "source": "templates\/classes.json",
+                    "name": "Classes"
+                }
+            ],
+            "filesize": 14513,
+            "dimensions": [
+                512,
+                512
+            ],
+            "image_source": "envato_elements",
+            "person_or_place": "no",
+            "image_urls": "https:\/\/elements.envato.com\/collections\/EBA32SK5Y4"
+        },
+        {
+            "filename": "4-yellow.png",
+            "thumbnail_url": "https:\/\/kitpro.site\/swimery\/wp-content\/uploads\/sites\/105\/2022\/08\/4-yellow.png",
+            "templates": [
+                {
+                    "source": "templates\/home.json",
+                    "name": "Home"
+                },
+                {
+                    "source": "templates\/classes.json",
+                    "name": "Classes"
+                }
+            ],
+            "filesize": 16375,
+            "dimensions": [
+                512,
+                512
+            ],
+            "image_source": "envato_elements",
+            "person_or_place": "no",
+            "image_urls": "https:\/\/elements.envato.com\/collections\/EBA32SK5Y4"
+        },
+        {
+            "filename": "swimming-TKZGZM2.jpg",
+            "thumbnail_url": "https:\/\/kitpro.site\/swimery\/wp-content\/uploads\/sites\/105\/2022\/08\/swimming-TKZGZM2.jpg",
+            "templates": [
+                {
+                    "source": "templates\/home.json",
+                    "name": "Home"
+                },
+                {
+                    "source": "templates\/classes.json",
+                    "name": "Classes"
+                }
+            ],
+            "filesize": 98904,
+            "dimensions": [
+                700,
+                700
+            ],
+            "image_source": "envato_elements",
+            "person_or_place": "yes",
+            "image_urls": "https:\/\/elements.envato.com\/collections\/EBA32SK5Y4"
+        },
+        {
+            "filename": "senior-woman-looking-at-smartwatch-when-swimming-i-5P92EB4.jpg",
+            "thumbnail_url": "https:\/\/kitpro.site\/swimery\/wp-content\/uploads\/sites\/105\/2022\/08\/senior-woman-looking-at-smartwatch-when-swimming-i-5P92EB4.jpg",
+            "templates": [
+                {
+                    "source": "templates\/home.json",
+                    "name": "Home"
+                },
+                {
+                    "source": "templates\/classes.json",
+                    "name": "Classes"
+                }
+            ],
+            "filesize": 101434,
+            "dimensions": [
+                700,
+                700
+            ],
+            "image_source": "envato_elements",
+            "person_or_place": "yes",
+            "image_urls": "https:\/\/elements.envato.com\/collections\/EBA32SK5Y4"
+        },
+        {
+            "filename": "happy-little-swimmer-in-modern-pool-C3N9BE7.jpg",
+            "thumbnail_url": "https:\/\/kitpro.site\/swimery\/wp-content\/uploads\/sites\/105\/2022\/08\/happy-little-swimmer-in-modern-pool-C3N9BE7.jpg",
+            "templates": [
+                {
+                    "source": "templates\/home.json",
+                    "name": "Home"
+                },
+                {
+                    "source": "templates\/classes.json",
+                    "name": "Classes"
+                }
+            ],
+            "filesize": 94846,
+            "dimensions": [
+                700,
+                700
+            ],
+            "image_source": "envato_elements",
+            "person_or_place": "yes",
+            "image_urls": "https:\/\/elements.envato.com\/collections\/EBA32SK5Y4"
+        },
+        {
+            "filename": "female-swimmer-wearing-swimming-goggles-at-lakesho-2JFX5SJ.jpg",
+            "thumbnail_url": "https:\/\/kitpro.site\/swimery\/wp-content\/uploads\/sites\/105\/2022\/08\/female-swimmer-wearing-swimming-goggles-at-lakesho-2JFX5SJ.jpg",
+            "templates": [
+                {
+                    "source": "templates\/home.json",
+                    "name": "Home"
+                },
+                {
+                    "source": "templates\/classes.json",
+                    "name": "Classes"
+                }
+            ],
+            "filesize": 77349,
+            "dimensions": [
+                700,
+                700
+            ],
+            "image_source": "envato_elements",
+            "person_or_place": "yes",
+            "image_urls": "https:\/\/elements.envato.com\/collections\/EBA32SK5Y4"
+        },
+        {
+            "filename": "instructor-with-children-stands-near-water-PWG6S38.jpg",
+            "thumbnail_url": "https:\/\/kitpro.site\/swimery\/wp-content\/uploads\/sites\/105\/2022\/08\/instructor-with-children-stands-near-water-PWG6S38.jpg",
+            "templates": [
+                {
+                    "source": "templates\/home.json",
+                    "name": "Home"
+                }
+            ],
+            "filesize": 193853,
+            "dimensions": [
+                648,
+                1000
+            ],
+            "image_source": "envato_elements",
+            "person_or_place": "yes",
+            "image_urls": "https:\/\/elements.envato.com\/collections\/EBA32SK5Y4"
+        },
+        {
+            "filename": "swimming-FPPBU2R.jpg",
+            "thumbnail_url": "https:\/\/kitpro.site\/swimery\/wp-content\/uploads\/sites\/105\/2022\/08\/swimming-FPPBU2R.jpg",
+            "templates": [
+                {
+                    "source": "templates\/home.json",
+                    "name": "Home"
+                }
+            ],
+            "filesize": 94911,
+            "dimensions": [
+                648,
+                1000
+            ],
+            "image_source": "envato_elements",
+            "person_or_place": "yes",
+            "image_urls": "https:\/\/elements.envato.com\/collections\/EBA32SK5Y4"
+        },
+        {
+            "filename": "female-diver-and-male-divemaster-diving-school-ZW2K4DR.jpg",
+            "thumbnail_url": "https:\/\/kitpro.site\/swimery\/wp-content\/uploads\/sites\/105\/2022\/08\/female-diver-and-male-divemaster-diving-school-ZW2K4DR-800x532.jpg",
+            "templates": [
+                {
+                    "source": "templates\/home.json",
+                    "name": "Home"
+                }
+            ],
+            "filesize": 214128,
+            "dimensions": [
+                1804,
+                1200
+            ],
+            "image_source": "envato_elements",
+            "person_or_place": "yes",
+            "image_urls": "https:\/\/elements.envato.com\/collections\/EBA32SK5Y4"
+        },
+        {
+            "filename": "kids-doing-exercise-in-swimming-pool-PK2T68A.jpg",
+            "thumbnail_url": "https:\/\/kitpro.site\/swimery\/wp-content\/uploads\/sites\/105\/2022\/08\/kids-doing-exercise-in-swimming-pool-PK2T68A-800x534.jpg",
+            "templates": [
+                {
+                    "source": "templates\/home.json",
+                    "name": "Home"
+                },
+                {
+                    "source": "templates\/class-details.json",
+                    "name": "Class Details"
+                }
+            ],
+            "filesize": 243211,
+            "dimensions": [
+                1700,
+                1135
+            ],
+            "image_source": "envato_elements",
+            "person_or_place": "yes",
+            "image_urls": "https:\/\/elements.envato.com\/collections\/EBA32SK5Y4"
+        },
+        {
+            "filename": "underwater-picture-of-young-swimmer-in-cap-and-gog-BNWUZ9V.jpg",
+            "thumbnail_url": "https:\/\/kitpro.site\/swimery\/wp-content\/uploads\/sites\/105\/2022\/08\/underwater-picture-of-young-swimmer-in-cap-and-gog-BNWUZ9V-800x533.jpg",
+            "templates": [
+                {
+                    "source": "templates\/home.json",
+                    "name": "Home"
+                },
+                {
+                    "source": "templates\/about-us.json",
+                    "name": "About Us"
+                },
+                {
+                    "source": "templates\/class-details.json",
+                    "name": "Class Details"
+                }
+            ],
+            "filesize": 224611,
+            "dimensions": [
+                1500,
+                1000
+            ],
+            "image_source": "envato_elements",
+            "person_or_place": "yes",
+            "image_urls": "https:\/\/elements.envato.com\/collections\/EBA32SK5Y4"
+        },
+        {
+            "filename": "underwater-picture-of-male-swimmer-swimming-i-swim-X57RRVK.jpg",
+            "thumbnail_url": "https:\/\/kitpro.site\/swimery\/wp-content\/uploads\/sites\/105\/2022\/08\/underwater-picture-of-male-swimmer-swimming-i-swim-X57RRVK-800x533.jpg",
+            "templates": [
+                {
+                    "source": "templates\/home.json",
+                    "name": "Home"
+                },
+                {
+                    "source": "templates\/class-details.json",
+                    "name": "Class Details"
+                },
+                {
+                    "source": "templates\/faqs.json",
+                    "name": "FAQs"
+                }
+            ],
+            "filesize": 206405,
+            "dimensions": [
+                1920,
+                1280
+            ],
+            "image_source": "envato_elements",
+            "person_or_place": "yes",
+            "image_urls": "https:\/\/elements.envato.com\/collections\/EBA32SK5Y4"
+        },
+        {
+            "filename": "female-diver-and-male-divemaster-diving-school-ZW2K4DR-1.jpg",
+            "thumbnail_url": "https:\/\/kitpro.site\/swimery\/wp-content\/uploads\/sites\/105\/2022\/08\/female-diver-and-male-divemaster-diving-school-ZW2K4DR-1.jpg",
+            "templates": [
+                {
+                    "source": "templates\/about-us.json",
+                    "name": "About Us"
+                },
+                {
+                    "source": "templates\/single-blog.json",
+                    "name": "Single Blog"
+                }
+            ],
+            "filesize": 171677,
+            "dimensions": [
+                774,
+                991
+            ],
+            "image_source": "envato_elements",
+            "person_or_place": "yes",
+            "image_urls": "https:\/\/elements.envato.com\/collections\/EBA32SK5Y4"
+        },
+        {
+            "filename": "fit-swimmer-training-in-the-swimming-pool-P6KBZ9G-1.jpg",
+            "thumbnail_url": "https:\/\/kitpro.site\/swimery\/wp-content\/uploads\/sites\/105\/2022\/08\/fit-swimmer-training-in-the-swimming-pool-P6KBZ9G-1.jpg",
+            "templates": [
+                {
+                    "source": "templates\/about-us.json",
+                    "name": "About Us"
+                }
+            ],
+            "filesize": 156262,
+            "dimensions": [
+                774,
+                991
+            ],
+            "image_source": "envato_elements",
+            "person_or_place": "yes",
+            "image_urls": "https:\/\/elements.envato.com\/collections\/EBA32SK5Y4"
+        },
+        {
+            "filename": "female-athlete-swimming-in-pool-PRCA8RD.jpg",
+            "thumbnail_url": "https:\/\/kitpro.site\/swimery\/wp-content\/uploads\/sites\/105\/2022\/08\/female-athlete-swimming-in-pool-PRCA8RD-800x533.jpg",
+            "templates": [
+                {
+                    "source": "templates\/class-details.json",
+                    "name": "Class Details"
+                }
+            ],
+            "filesize": 195225,
+            "dimensions": [
+                1520,
+                1013
+            ],
+            "image_source": "envato_elements",
+            "person_or_place": "yes",
+            "image_urls": "https:\/\/elements.envato.com\/collections\/EBA32SK5Y4"
+        },
+        {
+            "filename": "logo-white.png",
+            "thumbnail_url": "https:\/\/kitpro.site\/swimery\/wp-content\/uploads\/sites\/105\/2022\/08\/logo-white-800x163.png",
+            "templates": [
+                {
+                    "source": "templates\/header.json",
+                    "name": "Header"
+                },
+                {
+                    "source": "templates\/footer.json",
+                    "name": "Footer"
+                }
+            ],
+            "filesize": 48243,
+            "dimensions": [
+                2994,
+                610
+            ],
+            "image_source": "self_created",
+            "person_or_place": "no",
+            "image_urls": ""
+        },
+        {
+            "filename": "male-swimmer-turning-over-in-swimming-pool-PD7J7NJ.jpg",
+            "thumbnail_url": "https:\/\/kitpro.site\/swimery\/wp-content\/uploads\/sites\/105\/2022\/08\/male-swimmer-turning-over-in-swimming-pool-PD7J7NJ-800x533.jpg",
+            "templates": [
+                {
+                    "source": "templates\/footer.json",
+                    "name": "Footer"
+                }
+            ],
+            "filesize": 209456,
+            "dimensions": [
+                1500,
+                1000
+            ],
+            "image_source": "envato_elements",
+            "person_or_place": "yes",
+            "image_urls": "https:\/\/elements.envato.com\/collections\/EBA32SK5Y4"
+        }
+    ]
+}

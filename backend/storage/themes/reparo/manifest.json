@@ -1,0 +1,909 @@
+{
+    "manifest_version": "1.0.14",
+    "title": "Reparo",
+    "page_builder": "elementor",
+    "kit_version": "1.0.0",
+    "templates": [
+        {
+            "name": "Global Kit Styles",
+            "screenshot": "screenshots\/global-kit-styles.jpg",
+            "source": "templates\/global.json",
+            "preview_url": "https:\/\/templatekit.kulokale.com",
+            "type": "section",
+            "category": "page",
+            "metadata": {
+                "template_type": "global-styles",
+                "include_in_zip": "1",
+                "elementor_pro_required": null,
+                "additional_template_information": [
+                    "These are the global theme styles configured through the Elementor Theme Styles area."
+                ]
+            },
+            "elementor_pro_required": false
+        },
+        {
+            "name": "Footer",
+            "screenshot": "screenshots\/footer.jpg",
+            "source": "templates\/footer.json",
+            "preview_url": "https:\/\/templatekit.kulokale.com\/reparo\/template-kit\/footer\/",
+            "type": "section",
+            "category": "section",
+            "metadata": {
+                "template_type": "section-footer",
+                "include_in_zip": "1",
+                "elementor_pro_required": null
+            },
+            "elementor_pro_required": false
+        },
+        {
+            "name": "Header",
+            "screenshot": "screenshots\/header.jpg",
+            "source": "templates\/header.json",
+            "preview_url": "https:\/\/templatekit.kulokale.com\/reparo\/template-kit\/header\/",
+            "type": "section",
+            "category": "section",
+            "metadata": {
+                "template_type": "section-header",
+                "include_in_zip": "1",
+                "elementor_pro_required": null
+            },
+            "elementor_pro_required": false
+        },
+        {
+            "name": "Help & Support",
+            "screenshot": "screenshots\/help-support.jpg",
+            "source": "templates\/help-support.json",
+            "preview_url": "https:\/\/templatekit.kulokale.com\/reparo\/template-kit\/help-support\/",
+            "type": "page",
+            "category": "page",
+            "metadata": {
+                "template_type": "single-page",
+                "include_in_zip": "1",
+                "elementor_pro_required": null
+            },
+            "elementor_pro_required": false
+        },
+        {
+            "name": "Restoration Service",
+            "screenshot": "screenshots\/restoration-service.jpg",
+            "source": "templates\/restoration-service.json",
+            "preview_url": "https:\/\/templatekit.kulokale.com\/reparo\/template-kit\/restoration-service\/",
+            "type": "page",
+            "category": "page",
+            "metadata": {
+                "template_type": "single-page",
+                "include_in_zip": "1",
+                "elementor_pro_required": null
+            },
+            "elementor_pro_required": false
+        },
+        {
+            "name": "Maintenance Service",
+            "screenshot": "screenshots\/maintenance-service.jpg",
+            "source": "templates\/maintenance-service.json",
+            "preview_url": "https:\/\/templatekit.kulokale.com\/reparo\/template-kit\/maintenance-service\/",
+            "type": "page",
+            "category": "page",
+            "metadata": {
+                "template_type": "single-page",
+                "include_in_zip": "1",
+                "elementor_pro_required": null
+            },
+            "elementor_pro_required": false
+        },
+        {
+            "name": "Testimonial",
+            "screenshot": "screenshots\/testimonial.jpg",
+            "source": "templates\/testimonial.json",
+            "preview_url": "https:\/\/templatekit.kulokale.com\/reparo\/template-kit\/testimonial\/",
+            "type": "page",
+            "category": "page",
+            "metadata": {
+                "template_type": "single-page",
+                "include_in_zip": "1",
+                "elementor_pro_required": null
+            },
+            "elementor_pro_required": false
+        },
+        {
+            "name": "Our Team",
+            "screenshot": "screenshots\/our-team.jpg",
+            "source": "templates\/our-team.json",
+            "preview_url": "https:\/\/templatekit.kulokale.com\/reparo\/template-kit\/our-team\/",
+            "type": "page",
+            "category": "page",
+            "metadata": {
+                "template_type": "single-page",
+                "include_in_zip": "1",
+                "elementor_pro_required": null
+            },
+            "elementor_pro_required": false
+        },
+        {
+            "name": "Faq",
+            "screenshot": "screenshots\/faq.jpg",
+            "source": "templates\/faq.json",
+            "preview_url": "https:\/\/templatekit.kulokale.com\/reparo\/template-kit\/faq\/",
+            "type": "page",
+            "category": "page",
+            "metadata": {
+                "template_type": "single-page",
+                "include_in_zip": "1",
+                "elementor_pro_required": null
+            },
+            "elementor_pro_required": false
+        },
+        {
+            "name": "About",
+            "screenshot": "screenshots\/about.jpg",
+            "source": "templates\/about.json",
+            "preview_url": "https:\/\/templatekit.kulokale.com\/reparo\/template-kit\/about\/",
+            "type": "page",
+            "category": "page",
+            "metadata": {
+                "template_type": "single-page",
+                "include_in_zip": "1",
+                "elementor_pro_required": null
+            },
+            "elementor_pro_required": false
+        },
+        {
+            "name": "Contact",
+            "screenshot": "screenshots\/contact.jpg",
+            "source": "templates\/contact.json",
+            "preview_url": "https:\/\/templatekit.kulokale.com\/reparo\/template-kit\/contact\/",
+            "type": "page",
+            "category": "page",
+            "metadata": {
+                "template_type": "single-page",
+                "include_in_zip": "1",
+                "elementor_pro_required": null
+            },
+            "elementor_pro_required": false
+        },
+        {
+            "name": "Home 2",
+            "screenshot": "screenshots\/home-2.jpg",
+            "source": "templates\/home-2.json",
+            "preview_url": "https:\/\/templatekit.kulokale.com\/reparo\/template-kit\/home-2\/",
+            "type": "section",
+            "category": "page",
+            "metadata": {
+                "template_type": "single-home",
+                "include_in_zip": "1",
+                "elementor_pro_required": null
+            },
+            "elementor_pro_required": false
+        },
+        {
+            "name": "Home 1",
+            "screenshot": "screenshots\/home-1.jpg",
+            "source": "templates\/home-1.json",
+            "preview_url": "https:\/\/templatekit.kulokale.com\/reparo\/template-kit\/home-1\/",
+            "type": "section",
+            "category": "page",
+            "metadata": {
+                "template_type": "single-home",
+                "include_in_zip": "1",
+                "elementor_pro_required": null
+            },
+            "elementor_pro_required": false
+        }
+    ],
+    "required_plugins": [
+        {
+            "name": "Elementor",
+            "version": "2.9.14",
+            "file": "elementor\/elementor.php",
+            "author": "Elementor.com"
+        },
+        {
+            "name": "Elementor - Header, Footer & Blocks",
+            "version": "1.5.1",
+            "file": "header-footer-elementor\/header-footer-elementor.php",
+            "author": "Brainstorm Force, Nikhil Chavan"
+        },
+        {
+            "name": "Contact Form 7",
+            "version": "5.2",
+            "file": "contact-form-7\/wp-contact-form-7.php",
+            "author": "Takayuki Miyoshi"
+        },
+        {
+            "name": "Essential Addons for Elementor",
+            "version": "4.1.1",
+            "file": "essential-addons-for-elementor-lite\/essential_adons_elementor.php",
+            "author": "WPDeveloper"
+        }
+    ],
+    "images": [
+        {
+            "filename": "mechanics-inspecting-car-small.jpg",
+            "thumbnail_url": "https:\/\/templatekit.kulokale.com\/reparo\/wp-content\/uploads\/sites\/2\/2020\/07\/mechanics-inspecting-car-small-600x400.jpg",
+            "templates": [
+                {
+                    "source": "templates\/help-support.json",
+                    "name": "Help & Support"
+                },
+                {
+                    "source": "templates\/home-2.json",
+                    "name": "Home 2"
+                }
+            ],
+            "filesize": 239609,
+            "dimensions": [
+                2000,
+                1333
+            ],
+            "image_source": "envato_elements",
+            "person_or_place": "yes",
+            "image_urls": "https:\/\/elements.envato.com\/mechanics-inspecting-car-3QCLUT3"
+        },
+        {
+            "filename": "worker-in-uniform-checks-engine-car-service-small.jpg",
+            "thumbnail_url": "https:\/\/templatekit.kulokale.com\/reparo\/wp-content\/uploads\/sites\/2\/2020\/07\/worker-in-uniform-checks-engine-car-service-small-600x400.jpg",
+            "templates": [
+                {
+                    "source": "templates\/help-support.json",
+                    "name": "Help & Support"
+                },
+                {
+                    "source": "templates\/restoration-service.json",
+                    "name": "Restoration Service"
+                },
+                {
+                    "source": "templates\/maintenance-service.json",
+                    "name": "Maintenance Service"
+                }
+            ],
+            "filesize": 141549,
+            "dimensions": [
+                1500,
+                1001
+            ],
+            "image_source": "envato_elements",
+            "person_or_place": "yes",
+            "image_urls": "https:\/\/elements.envato.com\/worker-in-uniform-checks-engine-car-service-63MWLXA"
+        },
+        {
+            "filename": "modern-car-servicing-small.jpg",
+            "thumbnail_url": "https:\/\/templatekit.kulokale.com\/reparo\/wp-content\/uploads\/sites\/2\/2020\/07\/modern-car-servicing-small-600x374.jpg",
+            "templates": [
+                {
+                    "source": "templates\/help-support.json",
+                    "name": "Help & Support"
+                },
+                {
+                    "source": "templates\/maintenance-service.json",
+                    "name": "Maintenance Service"
+                }
+            ],
+            "filesize": 203334,
+            "dimensions": [
+                1500,
+                934
+            ],
+            "image_source": "envato_elements",
+            "person_or_place": "yes",
+            "image_urls": "https:\/\/elements.envato.com\/modern-car-servicing-6DQGKTH"
+        },
+        {
+            "filename": "car-repair-service-small.jpg",
+            "thumbnail_url": "https:\/\/templatekit.kulokale.com\/reparo\/wp-content\/uploads\/sites\/2\/2020\/07\/car-repair-service-small-600x400.jpg",
+            "templates": [
+                {
+                    "source": "templates\/help-support.json",
+                    "name": "Help & Support"
+                },
+                {
+                    "source": "templates\/maintenance-service.json",
+                    "name": "Maintenance Service"
+                }
+            ],
+            "filesize": 198681,
+            "dimensions": [
+                1500,
+                1000
+            ],
+            "image_source": "envato_elements",
+            "person_or_place": "yes",
+            "image_urls": "https:\/\/elements.envato.com\/car-repair-service-JWYSBRX"
+        },
+        {
+            "filename": "car-repair-small.jpg",
+            "thumbnail_url": "https:\/\/templatekit.kulokale.com\/reparo\/wp-content\/uploads\/sites\/2\/2020\/07\/car-repair-small-600x400.jpg",
+            "templates": [
+                {
+                    "source": "templates\/help-support.json",
+                    "name": "Help & Support"
+                },
+                {
+                    "source": "templates\/restoration-service.json",
+                    "name": "Restoration Service"
+                }
+            ],
+            "filesize": 164716,
+            "dimensions": [
+                1500,
+                1001
+            ],
+            "image_source": "envato_elements",
+            "person_or_place": "yes",
+            "image_urls": "https:\/\/elements.envato.com\/car-repair-PTK4XW6"
+        },
+        {
+            "filename": "auto-service-business-small.jpg",
+            "thumbnail_url": "https:\/\/templatekit.kulokale.com\/reparo\/wp-content\/uploads\/sites\/2\/2020\/07\/auto-service-business-small-600x420.jpg",
+            "templates": [
+                {
+                    "source": "templates\/help-support.json",
+                    "name": "Help & Support"
+                },
+                {
+                    "source": "templates\/restoration-service.json",
+                    "name": "Restoration Service"
+                },
+                {
+                    "source": "templates\/maintenance-service.json",
+                    "name": "Maintenance Service"
+                },
+                {
+                    "source": "templates\/testimonial.json",
+                    "name": "Testimonial"
+                },
+                {
+                    "source": "templates\/our-team.json",
+                    "name": "Our Team"
+                },
+                {
+                    "source": "templates\/faq.json",
+                    "name": "Faq"
+                },
+                {
+                    "source": "templates\/about.json",
+                    "name": "About"
+                },
+                {
+                    "source": "templates\/home-2.json",
+                    "name": "Home 2"
+                },
+                {
+                    "source": "templates\/home-1.json",
+                    "name": "Home 1"
+                }
+            ],
+            "filesize": 184567,
+            "dimensions": [
+                2000,
+                1401
+            ],
+            "image_source": "envato_elements",
+            "person_or_place": "yes",
+            "image_urls": "https:\/\/elements.envato.com\/auto-service-business-JQKT4A3"
+        },
+        {
+            "filename": "wheel-replacement-in-service-small.jpg",
+            "thumbnail_url": "https:\/\/templatekit.kulokale.com\/reparo\/wp-content\/uploads\/sites\/2\/2020\/07\/wheel-replacement-in-service-small-600x400.jpg",
+            "templates": [
+                {
+                    "source": "templates\/restoration-service.json",
+                    "name": "Restoration Service"
+                }
+            ],
+            "filesize": 142202,
+            "dimensions": [
+                1500,
+                1001
+            ],
+            "image_source": "envato_elements",
+            "person_or_place": "yes",
+            "image_urls": "https:\/\/elements.envato.com\/wheel-replacement-in-service-7DY7F8N"
+        },
+        {
+            "filename": "brutal-tattooed-mechanic-repairs-the-car-engine-in-small.jpg",
+            "thumbnail_url": "https:\/\/templatekit.kulokale.com\/reparo\/wp-content\/uploads\/sites\/2\/2020\/07\/brutal-tattooed-mechanic-repairs-the-car-engine-in-small-600x400.jpg",
+            "templates": [
+                {
+                    "source": "templates\/restoration-service.json",
+                    "name": "Restoration Service"
+                },
+                {
+                    "source": "templates\/about.json",
+                    "name": "About"
+                },
+                {
+                    "source": "templates\/home-1.json",
+                    "name": "Home 1"
+                }
+            ],
+            "filesize": 260454,
+            "dimensions": [
+                1500,
+                1000
+            ],
+            "image_source": "envato_elements",
+            "person_or_place": "yes",
+            "image_urls": "https:\/\/elements.envato.com\/brutal-tattooed-mechanic-repairs-the-car-engine-in-GWDKTTL"
+        },
+        {
+            "filename": "technician-with-notebook-car-with-opened-hood-small.jpg",
+            "thumbnail_url": "https:\/\/templatekit.kulokale.com\/reparo\/wp-content\/uploads\/sites\/2\/2020\/07\/technician-with-notebook-car-with-opened-hood-small-600x400.jpg",
+            "templates": [
+                {
+                    "source": "templates\/restoration-service.json",
+                    "name": "Restoration Service"
+                },
+                {
+                    "source": "templates\/home-1.json",
+                    "name": "Home 1"
+                }
+            ],
+            "filesize": 104614,
+            "dimensions": [
+                1500,
+                1001
+            ],
+            "image_source": "envato_elements",
+            "person_or_place": "yes",
+            "image_urls": "https:\/\/elements.envato.com\/technician-with-notebook-car-with-opened-hood-CE8TQYX"
+        },
+        {
+            "filename": "two-bearded-auto-mechanic-working-in-repair-garage-small.jpg",
+            "thumbnail_url": "https:\/\/templatekit.kulokale.com\/reparo\/wp-content\/uploads\/sites\/2\/2020\/07\/two-bearded-auto-mechanic-working-in-repair-garage-small-600x431.jpg",
+            "templates": [
+                {
+                    "source": "templates\/maintenance-service.json",
+                    "name": "Maintenance Service"
+                },
+                {
+                    "source": "templates\/home-2.json",
+                    "name": "Home 2"
+                }
+            ],
+            "filesize": 365942,
+            "dimensions": [
+                2000,
+                1437
+            ],
+            "image_source": "envato_elements",
+            "person_or_place": "yes",
+            "image_urls": "https:\/\/elements.envato.com\/two-bearded-auto-mechanic-working-in-repair-garage-MUUR5TA"
+        },
+        {
+            "filename": "car-maintenance-small.jpg",
+            "thumbnail_url": "https:\/\/templatekit.kulokale.com\/reparo\/wp-content\/uploads\/sites\/2\/2020\/07\/car-maintenance-small-600x400.jpg",
+            "templates": [
+                {
+                    "source": "templates\/maintenance-service.json",
+                    "name": "Maintenance Service"
+                },
+                {
+                    "source": "templates\/about.json",
+                    "name": "About"
+                },
+                {
+                    "source": "templates\/home-1.json",
+                    "name": "Home 1"
+                }
+            ],
+            "filesize": 159752,
+            "dimensions": [
+                1500,
+                1001
+            ],
+            "image_source": "envato_elements",
+            "person_or_place": "yes",
+            "image_urls": "https:\/\/elements.envato.com\/car-maintenance-RH7LNJ4"
+        },
+        {
+            "filename": "car-mechanic-work-small.jpg",
+            "thumbnail_url": "https:\/\/templatekit.kulokale.com\/reparo\/wp-content\/uploads\/sites\/2\/2020\/07\/car-mechanic-work-small-600x400.jpg",
+            "templates": [
+                {
+                    "source": "templates\/maintenance-service.json",
+                    "name": "Maintenance Service"
+                },
+                {
+                    "source": "templates\/home-2.json",
+                    "name": "Home 2"
+                },
+                {
+                    "source": "templates\/home-1.json",
+                    "name": "Home 1"
+                }
+            ],
+            "filesize": 198487,
+            "dimensions": [
+                2000,
+                1333
+            ],
+            "image_source": "envato_elements",
+            "person_or_place": "yes",
+            "image_urls": "https:\/\/elements.envato.com\/car-mechanic-work-K3QCLFT"
+        },
+        {
+            "filename": "Icon-car-4.png",
+            "thumbnail_url": "https:\/\/templatekit.kulokale.com\/reparo\/wp-content\/uploads\/sites\/2\/2020\/07\/Icon-car-4.png",
+            "templates": [
+                {
+                    "source": "templates\/maintenance-service.json",
+                    "name": "Maintenance Service"
+                },
+                {
+                    "source": "templates\/home-2.json",
+                    "name": "Home 2"
+                }
+            ],
+            "filesize": 5269,
+            "dimensions": [
+                250,
+                250
+            ],
+            "image_source": "envato_elements",
+            "person_or_place": "no",
+            "image_urls": "https:\/\/elements.envato.com\/60-car-servicing-blue-black-icons-TRDFRE"
+        },
+        {
+            "filename": "Icon-car-3.png",
+            "thumbnail_url": "https:\/\/templatekit.kulokale.com\/reparo\/wp-content\/uploads\/sites\/2\/2020\/07\/Icon-car-3.png",
+            "templates": [
+                {
+                    "source": "templates\/maintenance-service.json",
+                    "name": "Maintenance Service"
+                },
+                {
+                    "source": "templates\/home-2.json",
+                    "name": "Home 2"
+                }
+            ],
+            "filesize": 5468,
+            "dimensions": [
+                250,
+                250
+            ],
+            "image_source": "envato_elements",
+            "person_or_place": "no",
+            "image_urls": "https:\/\/elements.envato.com\/60-car-servicing-blue-black-icons-TRDFRE"
+        },
+        {
+            "filename": "Icon-car-2.png",
+            "thumbnail_url": "https:\/\/templatekit.kulokale.com\/reparo\/wp-content\/uploads\/sites\/2\/2020\/07\/Icon-car-2.png",
+            "templates": [
+                {
+                    "source": "templates\/maintenance-service.json",
+                    "name": "Maintenance Service"
+                },
+                {
+                    "source": "templates\/home-2.json",
+                    "name": "Home 2"
+                }
+            ],
+            "filesize": 9801,
+            "dimensions": [
+                250,
+                250
+            ],
+            "image_source": "envato_elements",
+            "person_or_place": "no",
+            "image_urls": "https:\/\/elements.envato.com\/60-car-servicing-blue-black-icons-TRDFRE"
+        },
+        {
+            "filename": "Icon-car-1.png",
+            "thumbnail_url": "https:\/\/templatekit.kulokale.com\/reparo\/wp-content\/uploads\/sites\/2\/2020\/07\/Icon-car-1.png",
+            "templates": [
+                {
+                    "source": "templates\/maintenance-service.json",
+                    "name": "Maintenance Service"
+                },
+                {
+                    "source": "templates\/home-2.json",
+                    "name": "Home 2"
+                }
+            ],
+            "filesize": 7648,
+            "dimensions": [
+                250,
+                250
+            ],
+            "image_source": "envato_elements",
+            "person_or_place": "no",
+            "image_urls": "https:\/\/elements.envato.com\/60-car-servicing-blue-black-icons-TRDFRE"
+        },
+        {
+            "filename": "mechanic-shaking-hands-with-businessman-small.jpg",
+            "thumbnail_url": "https:\/\/templatekit.kulokale.com\/reparo\/wp-content\/uploads\/sites\/2\/2020\/07\/mechanic-shaking-hands-with-businessman-small-600x400.jpg",
+            "templates": [
+                {
+                    "source": "templates\/testimonial.json",
+                    "name": "Testimonial"
+                },
+                {
+                    "source": "templates\/about.json",
+                    "name": "About"
+                },
+                {
+                    "source": "templates\/home-2.json",
+                    "name": "Home 2"
+                },
+                {
+                    "source": "templates\/home-1.json",
+                    "name": "Home 1"
+                }
+            ],
+            "filesize": 124417,
+            "dimensions": [
+                1500,
+                1000
+            ],
+            "image_source": "envato_elements",
+            "person_or_place": "yes",
+            "image_urls": "https:\/\/elements.envato.com\/mechanic-shaking-hands-with-businessman-DN6RY8J"
+        },
+        {
+            "filename": "car-service-shop-small.jpg",
+            "thumbnail_url": "https:\/\/templatekit.kulokale.com\/reparo\/wp-content\/uploads\/sites\/2\/2020\/07\/car-service-shop-small-600x400.jpg",
+            "templates": [
+                {
+                    "source": "templates\/our-team.json",
+                    "name": "Our Team"
+                },
+                {
+                    "source": "templates\/faq.json",
+                    "name": "Faq"
+                },
+                {
+                    "source": "templates\/about.json",
+                    "name": "About"
+                },
+                {
+                    "source": "templates\/contact.json",
+                    "name": "Contact"
+                },
+                {
+                    "source": "templates\/home-1.json",
+                    "name": "Home 1"
+                }
+            ],
+            "filesize": 266786,
+            "dimensions": [
+                1500,
+                1000
+            ],
+            "image_source": "envato_elements",
+            "person_or_place": "no",
+            "image_urls": "https:\/\/elements.envato.com\/car-service-shop-JTVAB7Z"
+        },
+        {
+            "filename": "Team-1.jpg",
+            "thumbnail_url": "https:\/\/templatekit.kulokale.com\/reparo\/wp-content\/uploads\/sites\/2\/2020\/07\/Team-1-600x675.jpg",
+            "templates": [
+                {
+                    "source": "templates\/our-team.json",
+                    "name": "Our Team"
+                }
+            ],
+            "filesize": 144443,
+            "dimensions": [
+                800,
+                900
+            ],
+            "image_source": "envato_elements",
+            "person_or_place": "yes",
+            "image_urls": "https:\/\/elements.envato.com\/auto-mechanic-with-spanner-V6MB6M8"
+        },
+        {
+            "filename": "Team-2.jpg",
+            "thumbnail_url": "https:\/\/templatekit.kulokale.com\/reparo\/wp-content\/uploads\/sites\/2\/2020\/07\/Team-2-600x675.jpg",
+            "templates": [
+                {
+                    "source": "templates\/our-team.json",
+                    "name": "Our Team"
+                }
+            ],
+            "filesize": 117317,
+            "dimensions": [
+                800,
+                900
+            ],
+            "image_source": "envato_elements",
+            "person_or_place": "yes",
+            "image_urls": "https:\/\/elements.envato.com\/mechanic-in-auto-shop-PHQNK2T"
+        },
+        {
+            "filename": "Team-3.jpg",
+            "thumbnail_url": "https:\/\/templatekit.kulokale.com\/reparo\/wp-content\/uploads\/sites\/2\/2020\/07\/Team-3-600x675.jpg",
+            "templates": [
+                {
+                    "source": "templates\/our-team.json",
+                    "name": "Our Team"
+                }
+            ],
+            "filesize": 143928,
+            "dimensions": [
+                800,
+                900
+            ],
+            "image_source": "envato_elements",
+            "person_or_place": "yes",
+            "image_urls": "https:\/\/elements.envato.com\/mechanic-makes-a-conclusion-in-the-service-S6RDYXU"
+        },
+        {
+            "filename": "Team-4.jpg",
+            "thumbnail_url": "https:\/\/templatekit.kulokale.com\/reparo\/wp-content\/uploads\/sites\/2\/2020\/07\/Team-4-600x675.jpg",
+            "templates": [
+                {
+                    "source": "templates\/our-team.json",
+                    "name": "Our Team"
+                }
+            ],
+            "filesize": 205930,
+            "dimensions": [
+                800,
+                900
+            ],
+            "image_source": "envato_elements",
+            "person_or_place": "yes",
+            "image_urls": "https:\/\/elements.envato.com\/mechanic-posing-at-modern-factory-78E3PJB"
+        },
+        {
+            "filename": "Team-5.jpg",
+            "thumbnail_url": "https:\/\/templatekit.kulokale.com\/reparo\/wp-content\/uploads\/sites\/2\/2020\/07\/Team-5-600x675.jpg",
+            "templates": [
+                {
+                    "source": "templates\/our-team.json",
+                    "name": "Our Team"
+                }
+            ],
+            "filesize": 124209,
+            "dimensions": [
+                800,
+                900
+            ],
+            "image_source": "envato_elements",
+            "person_or_place": "yes",
+            "image_urls": "https:\/\/elements.envato.com\/mechanic-working-in-the-factory-SN5KXDL"
+        },
+        {
+            "filename": "Team-6.jpg",
+            "thumbnail_url": "https:\/\/templatekit.kulokale.com\/reparo\/wp-content\/uploads\/sites\/2\/2020\/07\/Team-6-600x675.jpg",
+            "templates": [
+                {
+                    "source": "templates\/our-team.json",
+                    "name": "Our Team"
+                }
+            ],
+            "filesize": 180506,
+            "dimensions": [
+                800,
+                900
+            ],
+            "image_source": "envato_elements",
+            "person_or_place": "yes",
+            "image_urls": "https:\/\/elements.envato.com\/portrait-of-car-mechanic-man-77MYAAW"
+        },
+        {
+            "filename": "Team-7.jpg",
+            "thumbnail_url": "https:\/\/templatekit.kulokale.com\/reparo\/wp-content\/uploads\/sites\/2\/2020\/07\/Team-7-600x675.jpg",
+            "templates": [
+                {
+                    "source": "templates\/our-team.json",
+                    "name": "Our Team"
+                }
+            ],
+            "filesize": 114923,
+            "dimensions": [
+                800,
+                900
+            ],
+            "image_source": "envato_elements",
+            "person_or_place": "yes",
+            "image_urls": "https:\/\/elements.envato.com\/portrait-of-male-student-studying-for-auto-mechani-4E5Z4NR"
+        },
+        {
+            "filename": "Team-8.jpg",
+            "thumbnail_url": "https:\/\/templatekit.kulokale.com\/reparo\/wp-content\/uploads\/sites\/2\/2020\/07\/Team-8-600x675.jpg",
+            "templates": [
+                {
+                    "source": "templates\/our-team.json",
+                    "name": "Our Team"
+                }
+            ],
+            "filesize": 127920,
+            "dimensions": [
+                800,
+                900
+            ],
+            "image_source": "envato_elements",
+            "person_or_place": "yes",
+            "image_urls": "https:\/\/elements.envato.com\/technician-with-notebook-car-with-opened-hood-CE8TQYX"
+        },
+        {
+            "filename": "mechanics-choose-a-removal-tool-for-fixing-the-car-small.jpg",
+            "thumbnail_url": "https:\/\/templatekit.kulokale.com\/reparo\/wp-content\/uploads\/sites\/2\/2020\/07\/mechanics-choose-a-removal-tool-for-fixing-the-car-small-600x452.jpg",
+            "templates": [
+                {
+                    "source": "templates\/about.json",
+                    "name": "About"
+                },
+                {
+                    "source": "templates\/home-2.json",
+                    "name": "Home 2"
+                },
+                {
+                    "source": "templates\/home-1.json",
+                    "name": "Home 1"
+                }
+            ],
+            "filesize": 170492,
+            "dimensions": [
+                1500,
+                1130
+            ],
+            "image_source": "envato_elements",
+            "person_or_place": "yes",
+            "image_urls": "https:\/\/elements.envato.com\/mechanics-choose-a-removal-tool-for-fixing-the-car-PXCXLA5"
+        },
+        {
+            "filename": "repairing-car-small.jpg",
+            "thumbnail_url": "https:\/\/templatekit.kulokale.com\/reparo\/wp-content\/uploads\/sites\/2\/2020\/07\/repairing-car-small-600x401.jpg",
+            "templates": [
+                {
+                    "source": "templates\/about.json",
+                    "name": "About"
+                },
+                {
+                    "source": "templates\/home-1.json",
+                    "name": "Home 1"
+                }
+            ],
+            "filesize": 265121,
+            "dimensions": [
+                2000,
+                1335
+            ],
+            "image_source": "envato_elements",
+            "person_or_place": "yes",
+            "image_urls": "https:\/\/elements.envato.com\/repairing-car-Q4DR7JF"
+        },
+        {
+            "filename": "mechanics-inspecting-car-small-1.jpg",
+            "thumbnail_url": "https:\/\/templatekit.kulokale.com\/reparo\/wp-content\/uploads\/sites\/2\/2020\/07\/mechanics-inspecting-car-small-1-600x400.jpg",
+            "templates": [
+                {
+                    "source": "templates\/about.json",
+                    "name": "About"
+                },
+                {
+                    "source": "templates\/home-1.json",
+                    "name": "Home 1"
+                }
+            ],
+            "filesize": 239694,
+            "dimensions": [
+                2000,
+                1333
+            ],
+            "image_source": "envato_elements",
+            "person_or_place": "yes",
+            "image_urls": "https:\/\/elements.envato.com\/mechanics-inspecting-car-3QCLUT3"
+        },
+        {
+            "filename": "worker-shaking-hands-with-client-in-car-service-sh-small.jpg",
+            "thumbnail_url": "https:\/\/templatekit.kulokale.com\/reparo\/wp-content\/uploads\/sites\/2\/2020\/07\/worker-shaking-hands-with-client-in-car-service-sh-small-600x400.jpg",
+            "templates": [
+                {
+                    "source": "templates\/home-1.json",
+                    "name": "Home 1"
+                }
+            ],
+            "filesize": 231514,
+            "dimensions": [
+                2000,
+                1333
+            ],
+            "image_source": "envato_elements",
+            "person_or_place": "yes",
+            "image_urls": "https:\/\/elements.envato.com\/worker-shaking-hands-with-client-in-car-service-sh-UYJTLKE"
+        }
+    ]
+}

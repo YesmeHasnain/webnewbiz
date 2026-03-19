@@ -1,0 +1,45 @@
+@use '../../utils' as *;
+/*----------------------------------------*/
+/*  3.3 Header Style 3
+/*----------------------------------------*/
+
+
+.#{$theme-prefix}-header-3{
+    &-cart{
+        margin-right: 25px;
+        & button{
+            & em{
+                position: absolute;
+                right: -12px;
+                top: -1px;
+                font-size: 18px;
+                font-weight: 400;
+                height: 18px;
+                width: 18px;
+                line-height: 16px;
+                border-radius: 50%;
+                text-align: center;
+                font-style: normal;
+                background-color: var(--tp-common-white);
+                color: var(--tp-common-black);
+            }
+        }
+    }
+    &-btn{
+        @media #{$lg,$md,$xs} {
+            margin-right: 20px;
+        }
+        & .tp-btn{
+            font-size: 16px;
+            font-weight: 600;
+            padding: 9px 29px 9px;
+            text-transform: uppercase;
+            color: var(--tp-common-white);
+            border-color: var(--tp-common-white);
+            &:hover{
+                color: var(--tp-theme-primary);
+                background-color: var(--tp-heading-secondary);
+            }
+        }
+    }
+}

@@ -1,0 +1,47 @@
+/**
+*
+* -----------------------------------------------------------------------------
+*
+* Template JS for Admin*
+* -----------------------------------------------------------------------------
+*
+**/
+
+(function($) {
+
+	"use strict";
+
+	// When the checkbox is clicked
+	$('#is_envato_elements').on('change', function() {
+        console.log('changed');
+        
+        if($(this).is(':checked')) {
+            $('#reacthemes-code-help-elements').css('display', 'block');
+        } else {
+            $('#reacthemes-code-help-elements').css('display', 'none');
+        }
+    });
+
+
+	 $('.radio-select label').on('click', function(event) {   
+	    $('.radio-select label').removeClass('active');
+	    $(this).addClass('active');	      
+	});
+
+	$('#meta-image-button').on('click', function() {
+	    var send_attachment_bkp = wp.media.editor.send.attachment;
+	    wp.media.editor.send.attachment = function(props, attachment) {
+	        $('#meta-image').val(attachment.url);
+	 		 $('#meta-image-preview').attr('src',attachment.url);
+	        wp.media.editor.send.attachment = send_attachment_bkp;
+	    }
+	    wp.media.editor.open();
+	    return false;
+	});
+	
+	$(".meta-img-wrap i").on('click', function(){
+		$('.meta-img-wrap').hide();
+	    $("#meta-image").val('');
+	});
+	
+})(jQuery);

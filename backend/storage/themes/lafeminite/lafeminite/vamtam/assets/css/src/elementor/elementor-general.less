@@ -1,0 +1,455 @@
+/*
+
+!! --- Don't remove when initializing a new theme. --- !!
+
+These are general-purpose style fixes used across themes.
+
+*/
+
+// Theme Icons.
+[class^="vamtam-theme-"], [class*=" vamtam-theme-"] {
+	/* use !important to prevent issues with browser extensions that change fonts */
+	font-family: "theme-icons" !important;
+	speak: none;
+	font-style: normal;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: none;
+	line-height: 1;
+
+	/* Better Font Rendering =========== */
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+// Elementor Lightbox.
+.dialog-lightbox-widget.dialog-type-buttons.elementor-lightbox {
+	// Fix for slideshow controls.
+	:is(.swiper-container, .swiper) * {
+		box-sizing: border-box;
+	}
+}
+#elementor-lightbox.dialog-type-lightbox {
+	z-index: 99999;
+}
+.elementor-lightbox .elementor-lightbox-image,
+.elementor-lightbox .elementor-video-container {
+	box-shadow: none;
+	border-radius: 0;
+}
+
+// Vamtam Popup Toggle.
+.vamtam-popup-toggle {
+	&, &-clone {
+		i, svg {
+			transition: all .3s ease;
+		}
+	}
+	&-clone {
+		z-index: 99999;
+		position: fixed;
+		&, * {
+			background: transparent !important;
+			padding: 0 !important;
+			margin: 0 !important;
+		}
+		a {
+			pointer-events: none !important;
+		}
+		&, li {
+			list-style: none;
+		}
+		opacity: 0;
+		pointer-events: none;
+		&.is-active {
+			opacity: 1;
+			&.is-clickable {
+				pointer-events: all;
+			}
+			i {
+				transition: all .3s ease !important;
+			}
+			&:hover i {
+				color: var(--vamtam-accent-color-1) !important;
+			}
+		}
+		&.hidden {
+			z-index: -99999;
+			pointer-events: none;
+			transition: none !important;
+			opacity: 0 !important;
+		}
+	}
+
+	// Hide toggle when clone is active.
+	&:not(.vamtam-popup-toggle-clone).clone-active {
+		opacity: 0 !important;
+	}
+    // Fading for popup toggle clone.
+    @keyframes vamtam-fade-out {
+        0% {
+            opacity: 1;
+        }
+        100% {
+            opacity: 0;
+        }
+    }
+    @keyframes vamtam-fade-in {
+        0% {
+            opacity: 0;
+        }
+        100% {
+            opacity: 1;
+        }
+    }
+    // Clone
+    &.vamtam-popup-toggle-clone {
+        // Active state
+        &.is-active {
+            opacity: 1;
+            animation: vamtam-fade-in 1s forwards linear !important;
+        }
+    }
+}
+
+/* Scroll to Top */
+#scroll-to-top {
+	position: fixed;
+	z-index: 200;
+	opacity: 0;
+	bottom: 15px;
+	right: 15px;
+	width: 27px;
+	height: 30px;
+	padding: 10px 0;
+	font-size: 2em;
+	line-height: 24px;
+	margin-left: 0px;
+	border: none;
+	text-shadow: none;
+	transition: opacity .3s ease-out, color .3s ease-out, transform .3s ease-out;
+	backface-visibility: hidden;
+	transform: scale3d( 0, 0, 0 );
+	text-align: center;
+	cursor: pointer;
+	background: e("color( from var(--vamtam-accent-color-5) srgb r g b / .8 )");
+	border-radius: 9999px;
+
+	svg {
+		pointer-events: none;
+		height: 30px;
+	}
+
+	&:hover {
+		color: inherit;
+		transform: translateY(-10px)!important;
+	}
+}
+
+// Disable Scoll.
+.vamtam-disable-scroll {
+	overflow: hidden;
+	max-height: 100vh;
+	box-sizing: border-box;
+}
+// iOS-only. 🤮
+html.ios-safari .vamtam-disable-scroll {
+	position: fixed;
+	width: 100%;
+}
+
+// Lists.
+ol,
+ul {
+	margin-block-start: 1em;
+	margin-block-end: 1em;
+	margin-inline-start: 0px;
+	margin-inline-end: 0px;
+	padding-inline-start: 1.7em;
+}
+// Select2.
+body {
+	.select2-container--default .select2-results ul {
+		/* UL Exeption */
+		margin: 0;
+		padding: 0;
+		margin-block-start: 0 !important;
+		margin-block-end: 0 !important;
+		padding-inline-start: 0em !important;
+	}
+	.select2-search--dropdown {
+		margin: 20px;
+		width: calc(100% - 40px);
+		padding: 0;
+	}
+	.select2-container--open .select2-dropdown--above,
+	.select2-container--open .select2-dropdown--below {
+		border: 2px solid;
+		border-radius: 6px;
+		overflow: hidden; /* Fix for this: https://www.dropbox.com/s/kjhz3grsgm7ofq5/Screenshot%202021-06-05%20at%2013.22.55.png?dl=0  */
+	}
+	.select2-container--open .select2-dropdown--above {
+		margin-top: -5px;
+	}
+	.select2-container--open .select2-dropdown--below {
+		margin-top: 5px;
+	}
+	.select2-dropdown .select2-search .select2-search__field {
+		border: 2px solid !important;
+	}
+	.select2-container--default .select2-results__option {
+		padding: 6px 20px;
+	}
+
+	.select2-container--default .select2-results__option {
+		&[data-selected=true],
+		&[aria-selected=true] {
+			background-color: var(--vamtam-accent-color-7);
+			color: var(--vamtam-accent-color-7-hc);
+		}
+	}
+
+	.select2-container--default .select2-results__option--highlighted {
+		&[data-selected],
+		&[aria-selected] {
+			background-color: var(--vamtam-accent-color-1);
+			color: var(--vamtam-accent-color-1-hc);
+		}
+	}
+
+	select,
+	.elementor-field-group .elementor-select-wrapper select,
+	.select2.select2-container .select2-selection[role="combobox"] {
+		padding-right: 40px !important;
+	}
+}
+
+.rotate-270 {
+	transform: rotate(-90deg) translate(-50%, 0%);
+	transform-origin: 0 0;
+	display: inline-table;
+}
+
+// TODO: Check if we need styles below anymore.
+.elementor-container {
+	form.elementor-form {
+		input[type], select {
+			margin-bottom: 0;
+		}
+
+		.elementor-field-group .elementor-field-label {
+			padding-left: 20px;
+			padding-right: 20px;
+		}
+
+		.elementor-field-textual {
+			&.elementor-size-xl {
+				padding: 6px 20px;
+			}
+
+			&.elementor-size-lg {
+				padding: 6px 20px;
+			}
+
+			&.elementor-size-md {
+				padding: 6px 20px;
+			}
+
+			&.elementor-size-sm {
+				padding: 5px 20px;
+			}
+
+			&.elementor-size-xs {
+				padding: 3px 20px;
+			}
+		}
+
+		textarea.elementor-field.elementor-field-textual {
+			padding-top: 13px;
+			padding-bottom: 13px;
+		}
+
+		.elementor-field-option {
+			input[type="radio"] {
+				vertical-align: middle;
+			}
+			label {
+				padding-left: 10px;
+			}
+		}
+	}
+}
+.elementor-field-textual {
+	border-radius: 0;
+	&.elementor-size-lg {
+		min-height: 60px
+	}
+}
+.elementor-field-group {
+	.elementor-field-textual:focus {
+		box-shadow: none;
+	}
+
+	.elementor-select-wrapper:before {
+		right: 20px;
+		text-shadow: none;
+	}
+}
+
+.elementor-select-wrapper {
+	&:before {
+		z-index: 1;
+		color: currentColor;
+	}
+
+	&.woocommerce-input-wrapper:before {
+		inset-inline-end: 30px;
+	}
+}
+
+body[class*="elementor-"] {
+	.select2.select2-container .select2-selection[role="combobox"] {
+		line-height: normal;
+		// Bijoux-after.
+		display: flex;
+		align-items: center;
+		padding: 14px 20px;
+
+		.select2-selection__arrow {
+			display: none;
+		}
+
+		.select2-selection__rendered {
+			line-height: inherit;
+			padding: 0px;
+		}
+	}
+
+	:not([class*="elementor-select-wrapper"]) > .select2.select2-container .select2-selection[role="combobox"] {
+		&:before {
+			content: "\e92a";
+			font-family: eicons;
+			font-size: 15px;
+			position: absolute;
+			top: 50%;
+			transform: translateY(-50%);
+			right: 30px;
+			pointer-events: none;
+		}
+	}
+}
+
+.vamtam-overlay-trigger--overlay {
+	> .vamtam-overlay-element {
+		pointer-events: none;
+		position: fixed;
+		display: block;
+		width: 100vw;
+		height: 100vh;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		background-color: rgba(0,0,0,0.5);
+		z-index: 100;
+	}
+}
+
+#sb_instagram .sbi_photo {
+	opacity: 1 !important;
+}
+
+@media (min-width: 481px){
+	.vamtam-sbi.elementor-widget-sbi-widget {
+		/* instagram */
+		#sb_instagram #sbi_images {
+			padding: 0 !important;
+		}
+		#sb_instagram #sbi_images .sbi_item{
+			position: relative;
+			transform: scale(1.09);
+		}
+		#sb_instagram #sbi_images .sbi_item {
+			padding: 0px !important;
+		}
+		#sb_instagram #sbi_images .sbi_item:nth-child(even){
+			margin-top: -25px !important;
+			margin-left: -0.5% !important;
+			> .sbi_inner_wrap {
+				border-left: 15px solid var(--vamtam-accent-color-5);
+				border-bottom: 15px solid var(--vamtam-accent-color-5);
+			}
+		}
+		#sb_instagram #sbi_images .sbi_item:nth-child(odd){
+			margin-top: 25px !important;
+		}
+		#sb_instagram #sbi_images .sbi_item:nth-child(1){
+			margin-left: 0.8%!important;
+		}
+	}
+	#sb_instagram .sbi_photo_wrap:hover .sbi_link {
+		background: rgba(0, 0, 0, 0.15) !important;
+	}
+	#sb_instagram .sbi_link .sbi_instagram_link {
+		bottom: 38%;
+		right: 42%;
+		opacity: 1;
+		font-size: 26px;
+		bottom: calc(50% - 26px);
+		right: calc(50% - 13px);
+	}
+}
+
+/*
+	Fix for Elementor Pro v3.12.0 adding the editor's color-scheme to the page.
+	TODO: Remove when fixed.
+*/
+@media (prefers-color-scheme: dark) {
+	:root {
+		color-scheme: unset;
+	}
+}
+
+.dialog-widget-content {
+	background-color: #fff;
+}
+
+// Fix for "Upgrade Swiper Library" experiment.
+.swiper-container {
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+}
+.elementor-swiper-button {
+	cursor: pointer;
+	position: absolute;
+	display: inline-flex;
+	z-index: 1;
+	top: 50%;
+	transform: translateY(-50%);
+
+	&-prev {
+		left: 10px;
+	}
+	&-next {
+		right: 10px;
+	}
+}
+
+// Fix for blink-based browsers so the scrollbar is not included in the calculation (like in max-width:100%).
+body.e--ua-blink .elementor-popup-modal :is(.dialog-widget-content, .dialog-message) {
+	max-width: calc(100vw - var(--vamtam-scrollbar-width, 0) );
+}
+
+// Override overlay option pointer-events: all
+.elementor-popup-modal.vamtam-header-mega-menu {
+	pointer-events: none !important;
+}
+
+// iOS - Safari Disable Link Preview.
+body.e--ua-isTouchDevice.e--ua-appleWebkit a {
+	-webkit-tap-highlight-color: transparent;
+	-webkit-touch-callout: none;
+}

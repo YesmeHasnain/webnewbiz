@@ -1,0 +1,33 @@
+#scroll-to-top {
+	position: fixed;
+	z-index: 200;
+	opacity: 0;
+	bottom: 15px;
+	right: 15px;
+	width: 27px;
+	height: 30px;
+	padding: 10px 0;
+	font-size: 2em;
+	line-height: 24px;
+	margin-left: 0px;
+	border: none;
+	text-shadow: none;
+	transition: opacity .3s ease-out, color .3s ease-out, transform .3s ease-out;
+	backface-visibility: hidden;
+	transform: scale3d( 0, 0, 0 );
+	text-align: center;
+	cursor: pointer;
+	background: e("color( from var(--vamtam-accent-color-5) srgb r g b / .8 )");
+	border-radius: 9999px;
+
+	svg {
+		pointer-events: none;
+		height: 30px;
+	}
+
+	&:hover {
+		color: inherit;
+		transform: translateY(-10px)!important;
+	}
+}
+

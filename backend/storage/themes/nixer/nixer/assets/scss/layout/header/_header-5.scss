@@ -1,0 +1,44 @@
+@use '../../utils' as *;
+/*----------------------------------------*/
+/*  3.5 Header Style 5
+/*----------------------------------------*/
+
+
+.#{$theme-prefix}-header-5{
+    &-ptb{
+        &.header-sticky{
+            & .tp-header-5-border{
+                border: none;
+                padding: 0;
+            }
+        }
+    }
+    &-border{
+        border-bottom: 1px solid rgba(46, 46, 46, 0.90);
+        @media #{$lg,$md,$xs} {
+            padding: 20px 0;
+        }
+    }
+    &-logo{
+        padding-right: 50px;
+    }
+    &-menu{
+        margin-right: 10px;
+    }
+    &-call{
+        & a{
+            font-size: 20px;
+            font-weight: 400;
+            display: inline-block;
+            font-family: var(--tp-ff-heading);
+            color: var(--tp-heading-secondary);
+            &:hover{
+                color: var(--tp-theme-5);
+            }
+        }
+    }
+    &-btn{
+        margin-left: 30px;
+    }
+}
+

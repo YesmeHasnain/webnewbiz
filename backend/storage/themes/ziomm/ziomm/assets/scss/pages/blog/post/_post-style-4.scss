@@ -1,0 +1,53 @@
+/* POST: STYLE 4
+-------------------------------------------- */
+
+.vlt-post--style-4 {
+	display: grid;
+	grid-template-columns: px2rem(470px) 1fr;
+	grid-gap: px2rem(70px);
+
+	@include media-breakpoint-down(md) {
+		grid-template-columns: repeat(1, 1fr);
+		grid-gap: px2rem(48px);
+	}
+
+	.vlt-post-media,
+	.vp-portfolio__item-img-wrap {
+
+		@include media-breakpoint-up(md) {
+
+			.vlt-badge {
+				right: auto;
+				left: 0;
+			}
+
+		}
+
+	}
+
+	.vlt-post-content {
+		align-self: center;
+	}
+
+	.vlt-post-header {
+
+		.vlt-post-title {
+			padding-right: 25%;
+		}
+
+	}
+
+	.vlt-post-excerpt {
+		margin-top: px2rem(20px);
+	}
+
+	.vlt-post-footer {
+		margin-top: px2rem(30px);
+
+		.vlt-link-with-arrow {
+			color: var(--vlt-accent-1);
+		}
+
+	}
+
+}

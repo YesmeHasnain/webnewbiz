@@ -1,0 +1,27 @@
+/* LAYOUT: FOOTER
+-------------------------------------------- */
+
+.vlt-footer {
+	position: relative;
+	overflow: hidden;
+	background-color: var(--vlt-color-0);
+
+	&--fixed {
+		will-change: transform;
+		z-index: z("footer-fixed");
+
+		@include media-breakpoint-down(sm) {
+			transform: none !important;
+		}
+
+	}
+
+}
+
+.vlt-is--footer-fixed {
+
+	.vlt-main {
+		z-index: z("footer-fixed-content");
+	}
+
+}

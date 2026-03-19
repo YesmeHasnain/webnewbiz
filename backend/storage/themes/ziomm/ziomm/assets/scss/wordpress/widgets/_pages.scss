@@ -1,0 +1,21 @@
+/* WIDGET: PAGES
+-------------------------------------------- */
+
+.vlt-widget.widget_pages {
+	@extend %widget-categories;
+
+	.sf-with-ul::after {
+		content: "+";
+		padding-left: px2rem(8px);
+	}
+
+	.sfHover>.sf-with-ul::after {
+		content: "-";
+	}
+
+	ul.children {
+		display: none;
+		margin-top: px2rem(12px);
+	}
+
+}

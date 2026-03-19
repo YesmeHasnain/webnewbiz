@@ -1,0 +1,168 @@
+@import '../general/elementor-wc-common.less';
+
+body.woocommerce {
+	// Account.
+	&.woocommerce-account {
+		// Sub Header.
+		.elementor-wc-sub-header();
+		// Limit-wrapper
+		.elementor-wc-limit-wrapper();
+		// Login/Register form.
+        .elementor-wc-account-register-login-form();
+		// Account page.
+		.elementor-wc-account-page();
+		// Lost password.
+		.elementor-wc-account-lost-password();
+	}
+}
+
+.elementor-wc-account-page() {
+	// Navigation.
+	.woocommerce-MyAccount-navigation {
+		border: solid 1px var(--vamtam-default-line-color);
+		border-radius: var(--vamtam-border-radius);
+		margin-bottom: 30px;
+
+		ol, ul {
+			margin: 0px;
+		}
+
+		ul li {
+			border-bottom: solid 1px var(--vamtam-default-line-color);
+			padding: .6em 1em;
+			&:last-child {
+				border: none;
+			}
+		}
+	}
+	// Content.
+	.woocommerce-MyAccount-content {
+		> p {
+			margin-bottom: 10px;
+			> mark {
+				background-color: transparent;
+			}
+		}
+
+		// Form Labels
+        .elementor-wc-form-labels();
+
+		table {
+			border-collapse: collapse;
+			.product-total {
+				text-align: end;
+			}
+			th {
+				font-weight: inherit;
+				line-height: inherit;
+			}
+
+			tfoot td {
+				text-align: end;
+			}
+			td {
+				border: solid 1px var(--vamtam-default-line-color);
+			}
+		}
+
+		.addresses {
+			.woocommerce-Address-title {
+				.edit {
+					margin-left: auto;
+				}
+			}
+			address {
+				font-style: italic;
+				margin: 0 0 24px;
+			}
+		}
+
+		.woocommerce-column--1 address {
+			margin-bottom: 35px;
+		}
+
+		.woocommerce-address-fields {
+			.woocommerce-input-wrapper {
+				width: 100%;
+			}
+		}
+
+		.edit-account {
+			button[type=submit] {
+				margin-top: 1em;
+			}
+		}
+
+		.woocommerce-order-details .woocommerce-order-details__title,
+		.woocommerce-customer-details .woocommerce-column__title {
+			&:extend(.vamtam-font-h4);
+			margin-bottom: 10px;
+		}
+	}
+}
+
+.elementor-wc-account-register-login-form() {
+    form.woocommerce-form-register.register,
+	form.woocommerce-form-login.login {
+		border: 0;
+		&,
+		.form-row {
+			display: flex;
+			flex-direction: column;
+			padding: 0;
+			button[name="login"] {
+				margin-top: 30px;
+				margin-right: 0;
+			}
+			.woocommerce-form-login__rememberme {
+				.vamtam-checkbox();
+			}
+		}
+
+		.form-row-first,
+		.form-row-last {
+			width: 100%;
+		}
+
+		p {
+			margin-bottom: 10px;
+		}
+
+		p.lost_password {
+			&::before {
+				display: none;
+			}
+
+			padding: 0;
+			margin: 0;
+		}
+	}
+}
+
+.elementor-wc-account-lost-password() {
+	&.woocommerce-lost-password {
+		min-height: 100vh;
+		display: flex;
+		flex-direction: column;
+
+		> .elementor-location-header {
+			flex-shrink: 0;
+		}
+
+		> #page {
+			flex-grow: 1;
+			display: flex;
+			flex-direction: column;
+			margin: 0;
+
+			> #main-content {
+				flex-grow: 1;
+				margin-bottom: 30px;
+			}
+
+			> .footer-wrapper {
+				flex-shrink: 0;
+			}
+		}
+	}
+}

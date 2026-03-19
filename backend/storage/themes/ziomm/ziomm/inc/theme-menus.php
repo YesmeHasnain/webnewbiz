@@ -1,0 +1,21 @@
+<?php
+
+/**
+ * @author: VLThemes
+ * @version: 1.0.5
+ */
+
+/**
+ * Fallback menu
+ */
+if ( ! function_exists( 'ziomm_fallback_menu' ) ) {
+
+	function ziomm_fallback_menu() {
+
+		if ( current_user_can( 'administrator' ) ) {
+			echo '<p class="vlt-no-menu-message">' . esc_html__( 'Please register navigation from', 'ziomm' ) . ' ' . '<a href="' . esc_url( admin_url( 'nav-menus.php' ) ) . '" target="_blank">' . esc_html__( 'Appearance > Menus', 'ziomm' ) . '</a></p>';
+		}
+
+	}
+
+}

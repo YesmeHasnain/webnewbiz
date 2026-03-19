@@ -1,0 +1,19 @@
+/*
+	Theme Name: Nixer
+	Theme URI: https://shthemes.net/demosd/nixer
+	Author: Shtheme
+	Author URI: https://themeforest.net/user/shtheme
+	Release Date: 21 April 2025
+	Requirements: WordPress 6.0 or higher, PHP 7
+	Compatibility: WordPress 6.0
+	Tags: web app
+	Last Update Date: 21 April 2025
+*/
+
+/**** Readme ****/
+
+"Please backup your theme pack files at first before you update the theme into the latest version"
+
+
+2025.04.21 - version 1.0.0
+- First release.

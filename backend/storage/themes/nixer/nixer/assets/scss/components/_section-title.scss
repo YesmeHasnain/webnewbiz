@@ -1,0 +1,102 @@
+@use '../utils' as *;
+
+/*----------------------------------------*/
+/*  2.8 Section Title
+/*----------------------------------------*/
+
+.#{$theme-prefix}-section{
+    &-title{
+        font-size: 100px;
+        font-weight: 600;
+        line-height: 0.9;
+        overflow: hidden;
+        margin-bottom: 20px;
+        letter-spacing: -6px;
+        font-family: var(--tp-ff-heading);
+        color: var(--tp-heading-primary);
+        & br{
+            @media #{$md,$xs} {
+                display: none;
+            }
+        }
+        @media #{$xl,$lg,$md} {
+            font-size: 70px;
+        }
+        @media #{$xs} {
+            font-size: 55px;
+            line-height: 1;
+        }
+        @media #{$xs1} {
+            font-size: 50px;
+        }
+        &-pre{
+            position: relative;
+            font-size: 16px;
+            font-weight: 700;
+            margin-bottom: 14px;
+            letter-spacing: 0.32px;
+            text-transform: uppercase;
+            display: inline-block;
+            font-family: var(--tp-ff-heading);
+            color: var(--tp-theme-primary);
+            &.orange{
+                color: var(--tp-theme-secondary);
+            }
+        }
+    }
+    &-4{
+        &-title{
+            font-size: 100px;
+            font-weight: 600;
+            line-height: 1;
+            margin-bottom: 25px;
+            letter-spacing: -2px;
+            color: var(--tp-heading-secondary);
+            font-family: var(--tp-ff-heading-3);
+            @media #{$xxl,$md} {
+                font-size: 90px;
+            }
+            @media #{$xl} {
+                font-size: 80px;
+            }
+            @media #{$lg} {
+                font-size: 70px;
+            }
+            @media #{$xs} {
+                font-size: 60px;
+            }
+        }
+    }
+    &-5{
+        &-title{
+            font-size: 70px;
+            font-weight: 400;
+            line-height: 1.2;
+            margin-bottom: 20px;
+            letter-spacing: -1.4px;
+            color: var(--tp-heading-primary);
+            font-family: var(--tp-ff-heading-4);
+            @media #{$xl} {
+                font-size: 60px;
+            }
+            @media #{$lg} {
+                font-size: 55px;
+            }
+            @media #{$md,$sm} {
+                font-size: 50px;
+            }
+            @media #{$xs1} {
+                font-size: 45px;
+            }
+            & br{
+                @media #{$md,$xs} {
+                    display: none;
+                }
+            }
+        }
+    }
+}
+
+.split-parent {
+    overflow: hidden;
+}

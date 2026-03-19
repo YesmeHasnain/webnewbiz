@@ -1,0 +1,24 @@
+@charset "UTF-8";
+/*
+Theme Name: Prana Yoga
+Theme URI: https://prana-yoga.cmsmasters.net/
+Author: cmsmasters
+Author URI: https://cmsmasters.net/
+Description: Prana Yoga Elementor Theme is a ready solution for any yoga studio – hatha yoga, bikram yoga, kundalini yoga, and other yoga studio types, as well as meditation classes, all kinds of fitness studios, pilates studio, and even online yoga classes.
+Version: 1.3.1
+Tested up to: 6.6
+Requires PHP: 7.4
+License:
+License URI:
+Text Domain: prana-yoga
+Domain Path: /theme-config/languages
+Copyright: cmsmasters 2024 / All Rights Reserved
+Tags: one-column, two-columns, three-columns, four-columns, left-sidebar, right-sidebar, custom-background, custom-colors, custom-header, custom-menu, editor-style, featured-image-header, featured-images, flexible-header, full-width-template, microformats, post-formats, rtl-language-support, sticky-post, theme-options, threaded-comments, translation-ready
+*/
+
+
+.sticky,
+.bypostauthor,
+.screen-reader-text {
+  outline: none;
+}

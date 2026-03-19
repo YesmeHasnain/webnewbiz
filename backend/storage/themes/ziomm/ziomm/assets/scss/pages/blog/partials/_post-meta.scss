@@ -1,0 +1,43 @@
+/* PARTIAL: POST META
+-------------------------------------------- */
+
+.vlt-post-meta {
+	display: flex;
+	font-size: px2rem(map-get($scales, "s8"));
+	line-height: 1.8;
+
+	@include media-breakpoint-down(sm) {
+		flex-wrap: wrap;
+	}
+
+	span {
+		white-space: nowrap;
+	}
+
+	span+span:not(.vlt-post-tags) {
+
+		&::before {
+			content: "/";
+			padding-right: px2rem(6px);
+			margin-left: px2rem(6px);
+		}
+
+	}
+
+	.vlt-post-tags {
+		margin-left: auto;
+
+		@include media-breakpoint-down(sm) {
+			margin-top: px2rem(5px);
+			margin-left: unset;
+		}
+
+		i {
+			position: relative;
+			top: 0.1em;
+			margin-right: px2rem(6px);
+		}
+
+	}
+
+}

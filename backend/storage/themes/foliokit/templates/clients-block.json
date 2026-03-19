@@ -1,0 +1,381 @@
+{
+    "version": "0.4",
+    "title": "Clients &#8211; Block",
+    "type": "section",
+    "metadata": {
+        "template_type": "section-clients",
+        "include_in_zip": "1",
+        "elementor_pro_required": "1",
+        "wp_page_template": "default"
+    },
+    "content": [
+        {
+            "id": "17bf4829",
+            "settings": {
+                "background_background": "classic",
+                "background_color": "#F9F9F9",
+                "padding": {
+                    "unit": "px",
+                    "top": "100",
+                    "right": "20",
+                    "bottom": "100",
+                    "left": "20",
+                    "isLinked": false
+                },
+                "padding_mobile": {
+                    "unit": "px",
+                    "top": "30",
+                    "right": "10",
+                    "bottom": "30",
+                    "left": "10",
+                    "isLinked": false
+                },
+                "ekit_section_parallax_multi_items": []
+            },
+            "elements": [
+                {
+                    "id": "2e41519c",
+                    "settings": {
+                        "_column_size": 100,
+                        "_inline_size": null
+                    },
+                    "elements": [
+                        {
+                            "id": "1df1b65e",
+                            "settings": {
+                                "structure": "20",
+                                "animation": "fadeIn",
+                                "ekit_section_parallax_multi_items": []
+                            },
+                            "elements": [
+                                {
+                                    "id": "10346c66",
+                                    "settings": {
+                                        "_column_size": 50,
+                                        "_inline_size": 70.536
+                                    },
+                                    "elements": [
+                                        {
+                                            "id": "752bb00",
+                                            "settings": {
+                                                "title": "Our clients",
+                                                "typography_typography": "custom",
+                                                "typography_font_size": {
+                                                    "unit": "px",
+                                                    "size": 102,
+                                                    "sizes": []
+                                                },
+                                                "typography_font_size_tablet": {
+                                                    "unit": "px",
+                                                    "size": 60,
+                                                    "sizes": []
+                                                },
+                                                "typography_font_size_mobile": {
+                                                    "unit": "px",
+                                                    "size": 40,
+                                                    "sizes": []
+                                                },
+                                                "align_mobile": "center",
+                                                "typography_letter_spacing": {
+                                                    "unit": "px",
+                                                    "size": -5,
+                                                    "sizes": []
+                                                },
+                                                "typography_letter_spacing_mobile": {
+                                                    "unit": "px",
+                                                    "size": -2,
+                                                    "sizes": []
+                                                }
+                                            },
+                                            "elements": [],
+                                            "isInner": false,
+                                            "widgetType": "heading",
+                                            "elType": "widget"
+                                        },
+                                        {
+                                            "id": "5bb86843",
+                                            "settings": {
+                                                "editor": "<p>Sit voluptatem accusantium dolore muey laudan tium, totam rem aperiam.<\/p>",
+                                                "text_color": "#272727",
+                                                "typography_typography": "custom",
+                                                "typography_font_size": {
+                                                    "unit": "px",
+                                                    "size": 26,
+                                                    "sizes": []
+                                                },
+                                                "typography_font_size_tablet": {
+                                                    "unit": "px",
+                                                    "size": 20,
+                                                    "sizes": []
+                                                },
+                                                "typography_font_size_mobile": {
+                                                    "unit": "px",
+                                                    "size": 18,
+                                                    "sizes": []
+                                                },
+                                                "align_mobile": "center"
+                                            },
+                                            "elements": [],
+                                            "isInner": false,
+                                            "widgetType": "text-editor",
+                                            "elType": "widget"
+                                        }
+                                    ],
+                                    "isInner": true,
+                                    "elType": "column"
+                                },
+                                {
+                                    "id": "67367d87",
+                                    "settings": {
+                                        "_column_size": 50,
+                                        "_inline_size": 29.421
+                                    },
+                                    "elements": [],
+                                    "isInner": true,
+                                    "elType": "column"
+                                }
+                            ],
+                            "isInner": true,
+                            "elType": "section"
+                        },
+                        {
+                            "id": "42f7e0c5",
+                            "settings": {
+                                "structure": "30",
+                                "margin": {
+                                    "unit": "px",
+                                    "top": "20",
+                                    "right": 0,
+                                    "bottom": "20",
+                                    "left": 0,
+                                    "isLinked": true
+                                },
+                                "ekit_section_parallax_multi_items": []
+                            },
+                            "elements": [
+                                {
+                                    "id": "d4fb581",
+                                    "settings": {
+                                        "_column_size": 33,
+                                        "_inline_size": null
+                                    },
+                                    "elements": [
+                                        {
+                                            "id": "580a5fd4",
+                                            "settings": {
+                                                "image": {
+                                                    "url": "https:\/\/wordpress-355652-1662348.cloudwaysapps.com\/wp-content\/uploads\/2020\/08\/6.jpg",
+                                                    "id": 217
+                                                },
+                                                "hover_animation": "shrink",
+                                                "image_box_shadow_box_shadow": {
+                                                    "horizontal": 0,
+                                                    "vertical": 4,
+                                                    "blur": 34,
+                                                    "spread": -6,
+                                                    "color": "rgba(0, 0, 0, 0.17)"
+                                                },
+                                                "_animation": "fadeIn"
+                                            },
+                                            "elements": [],
+                                            "isInner": false,
+                                            "widgetType": "image",
+                                            "elType": "widget"
+                                        }
+                                    ],
+                                    "isInner": true,
+                                    "elType": "column"
+                                },
+                                {
+                                    "id": "6f246144",
+                                    "settings": {
+                                        "_column_size": 33,
+                                        "_inline_size": null
+                                    },
+                                    "elements": [
+                                        {
+                                            "id": "622ca45e",
+                                            "settings": {
+                                                "image": {
+                                                    "url": "https:\/\/wordpress-355652-1662348.cloudwaysapps.com\/wp-content\/uploads\/2020\/08\/5.jpg",
+                                                    "id": 216
+                                                },
+                                                "hover_animation": "shrink",
+                                                "image_box_shadow_box_shadow": {
+                                                    "horizontal": 0,
+                                                    "vertical": 4,
+                                                    "blur": 34,
+                                                    "spread": -6,
+                                                    "color": "rgba(0, 0, 0, 0.17)"
+                                                },
+                                                "_animation": "fadeIn"
+                                            },
+                                            "elements": [],
+                                            "isInner": false,
+                                            "widgetType": "image",
+                                            "elType": "widget"
+                                        }
+                                    ],
+                                    "isInner": true,
+                                    "elType": "column"
+                                },
+                                {
+                                    "id": "17dbb2dd",
+                                    "settings": {
+                                        "_column_size": 33,
+                                        "_inline_size": null
+                                    },
+                                    "elements": [
+                                        {
+                                            "id": "5fc9df08",
+                                            "settings": {
+                                                "image": {
+                                                    "url": "https:\/\/wordpress-355652-1662348.cloudwaysapps.com\/wp-content\/uploads\/2020\/08\/4.jpg",
+                                                    "id": 215
+                                                },
+                                                "hover_animation": "shrink",
+                                                "image_box_shadow_box_shadow": {
+                                                    "horizontal": 0,
+                                                    "vertical": 4,
+                                                    "blur": 34,
+                                                    "spread": -6,
+                                                    "color": "rgba(0, 0, 0, 0.17)"
+                                                },
+                                                "_animation": "fadeIn"
+                                            },
+                                            "elements": [],
+                                            "isInner": false,
+                                            "widgetType": "image",
+                                            "elType": "widget"
+                                        }
+                                    ],
+                                    "isInner": true,
+                                    "elType": "column"
+                                }
+                            ],
+                            "isInner": true,
+                            "elType": "section"
+                        },
+                        {
+                            "id": "19d55a83",
+                            "settings": {
+                                "structure": "30",
+                                "ekit_section_parallax_multi_items": []
+                            },
+                            "elements": [
+                                {
+                                    "id": "540eb965",
+                                    "settings": {
+                                        "_column_size": 33,
+                                        "_inline_size": null
+                                    },
+                                    "elements": [
+                                        {
+                                            "id": "278b3613",
+                                            "settings": {
+                                                "image": {
+                                                    "url": "https:\/\/wordpress-355652-1662348.cloudwaysapps.com\/wp-content\/uploads\/2020\/08\/3.jpg",
+                                                    "id": 214
+                                                },
+                                                "hover_animation": "shrink",
+                                                "image_box_shadow_box_shadow": {
+                                                    "horizontal": 0,
+                                                    "vertical": 4,
+                                                    "blur": 34,
+                                                    "spread": -6,
+                                                    "color": "rgba(0, 0, 0, 0.17)"
+                                                },
+                                                "_animation": "fadeIn"
+                                            },
+                                            "elements": [],
+                                            "isInner": false,
+                                            "widgetType": "image",
+                                            "elType": "widget"
+                                        }
+                                    ],
+                                    "isInner": true,
+                                    "elType": "column"
+                                },
+                                {
+                                    "id": "2a1a572f",
+                                    "settings": {
+                                        "_column_size": 33,
+                                        "_inline_size": null
+                                    },
+                                    "elements": [
+                                        {
+                                            "id": "50e23a36",
+                                            "settings": {
+                                                "image": {
+                                                    "url": "https:\/\/wordpress-355652-1662348.cloudwaysapps.com\/wp-content\/uploads\/2020\/08\/2.jpg",
+                                                    "id": 213
+                                                },
+                                                "hover_animation": "shrink",
+                                                "image_box_shadow_box_shadow": {
+                                                    "horizontal": 0,
+                                                    "vertical": 4,
+                                                    "blur": 34,
+                                                    "spread": -6,
+                                                    "color": "rgba(0, 0, 0, 0.17)"
+                                                },
+                                                "_animation": "fadeIn"
+                                            },
+                                            "elements": [],
+                                            "isInner": false,
+                                            "widgetType": "image",
+                                            "elType": "widget"
+                                        }
+                                    ],
+                                    "isInner": true,
+                                    "elType": "column"
+                                },
+                                {
+                                    "id": "685b61f7",
+                                    "settings": {
+                                        "_column_size": 33,
+                                        "_inline_size": null
+                                    },
+                                    "elements": [
+                                        {
+                                            "id": "263fbd7d",
+                                            "settings": {
+                                                "image": {
+                                                    "url": "https:\/\/wordpress-355652-1662348.cloudwaysapps.com\/wp-content\/uploads\/2020\/08\/1.jpg",
+                                                    "id": 212
+                                                },
+                                                "hover_animation": "shrink",
+                                                "image_box_shadow_box_shadow": {
+                                                    "horizontal": 0,
+                                                    "vertical": 4,
+                                                    "blur": 34,
+                                                    "spread": -6,
+                                                    "color": "rgba(0, 0, 0, 0.17)"
+                                                },
+                                                "_animation": "fadeIn"
+                                            },
+                                            "elements": [],
+                                            "isInner": false,
+                                            "widgetType": "image",
+                                            "elType": "widget"
+                                        }
+                                    ],
+                                    "isInner": true,
+                                    "elType": "column"
+                                }
+                            ],
+                            "isInner": true,
+                            "elType": "section"
+                        }
+                    ],
+                    "isInner": false,
+                    "elType": "column"
+                }
+            ],
+            "isInner": false,
+            "elType": "section"
+        }
+    ],
+    "page_settings": {
+        "hide_title": "yes"
+    }
+}

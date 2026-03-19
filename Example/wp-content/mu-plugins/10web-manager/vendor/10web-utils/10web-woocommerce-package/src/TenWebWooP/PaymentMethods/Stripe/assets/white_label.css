@@ -1,3 +1,0 @@
-.wc_gateways #tenweb_payments_stripe, .settings-payment-gateways #tenweb_payments_stripe, .wc_gateways [data-gateway_id="tenweb_payments_stripe"]{
-    display: none !important;
-}

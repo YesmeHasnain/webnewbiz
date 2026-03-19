@@ -1,0 +1,50 @@
+.elementor-widget-nav-menu {
+	&.vamtam-has-theme-widget-styles {
+		.sub-arrow {
+			padding-left: 0px;
+
+			i.fas {
+				padding-left: 6px;
+			}
+		}
+
+		.elementor-menu-toggle {
+			i.elementor-menu-toggle__icon--open.eicon-menu-bar,
+			i.elementor-menu-toggle__icon--close.eicon-close {
+				font-family: 'theme-icons';
+			}
+
+			i.elementor-menu-toggle__icon--open.eicon-menu-bar {
+				&:before {
+					content: "\e905";
+				}
+			}
+
+			i.elementor-menu-toggle__icon--close.eicon-close {
+				&:before {
+					content: "\e908";
+				}
+			}
+
+			&:focus {
+				outline: none;
+			}
+		}
+
+		ul.elementor-nav-menu--dropdown a {
+			&, &:focus, &:hover {
+				border-left: 0;
+			}
+		}
+
+		html.ios-safari & li {
+			outline: 0 !important;
+		}
+
+		&:not(.vamtam-has-submenu-icon) {
+			.elementor-nav-menu .sub-arrow {
+				display: none;
+			}
+		}
+	}
+}

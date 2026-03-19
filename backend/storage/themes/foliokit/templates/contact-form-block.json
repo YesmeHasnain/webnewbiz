@@ -1,0 +1,216 @@
+{
+    "version": "0.4",
+    "title": "Contact form &#8211; Block",
+    "type": "section",
+    "metadata": {
+        "template_type": "section-contact",
+        "include_in_zip": "1",
+        "elementor_pro_required": "1",
+        "wp_page_template": "default"
+    },
+    "content": [
+        {
+            "id": "5235ce6f",
+            "settings": {
+                "padding": {
+                    "unit": "px",
+                    "top": "80",
+                    "right": "20",
+                    "bottom": "80",
+                    "left": "20",
+                    "isLinked": false
+                },
+                "padding_mobile": {
+                    "unit": "px",
+                    "top": "30",
+                    "right": "10",
+                    "bottom": "30",
+                    "left": "10",
+                    "isLinked": false
+                },
+                "ekit_section_parallax_multi_items": [],
+                "background_background": "classic",
+                "background_color": "#F9F9F9"
+            },
+            "elements": [
+                {
+                    "id": "2aed4fb5",
+                    "settings": {
+                        "_column_size": 100,
+                        "_inline_size": null
+                    },
+                    "elements": [
+                        {
+                            "id": "165c8e9e",
+                            "settings": {
+                                "structure": "20",
+                                "animation": "fadeIn",
+                                "ekit_section_parallax_multi_items": []
+                            },
+                            "elements": [
+                                {
+                                    "id": "7ea7f1d8",
+                                    "settings": {
+                                        "_column_size": 50,
+                                        "_inline_size": 85.446
+                                    },
+                                    "elements": [
+                                        {
+                                            "id": "25162963",
+                                            "settings": {
+                                                "title": "Let\u2019s contact<br\/>\nto get started.",
+                                                "typography_typography": "custom",
+                                                "typography_font_size": {
+                                                    "unit": "px",
+                                                    "size": 102,
+                                                    "sizes": []
+                                                },
+                                                "typography_font_size_tablet": {
+                                                    "unit": "px",
+                                                    "size": 60,
+                                                    "sizes": []
+                                                },
+                                                "typography_font_size_mobile": {
+                                                    "unit": "px",
+                                                    "size": 30,
+                                                    "sizes": []
+                                                },
+                                                "typography_line_height": {
+                                                    "unit": "em",
+                                                    "size": 1,
+                                                    "sizes": []
+                                                },
+                                                "align_mobile": "center",
+                                                "typography_letter_spacing": {
+                                                    "unit": "px",
+                                                    "size": -5,
+                                                    "sizes": []
+                                                },
+                                                "typography_letter_spacing_mobile": {
+                                                    "unit": "px",
+                                                    "size": -2,
+                                                    "sizes": []
+                                                }
+                                            },
+                                            "elements": [],
+                                            "isInner": false,
+                                            "widgetType": "heading",
+                                            "elType": "widget"
+                                        }
+                                    ],
+                                    "isInner": true,
+                                    "elType": "column"
+                                },
+                                {
+                                    "id": "10688920",
+                                    "settings": {
+                                        "_column_size": 50,
+                                        "_inline_size": 14.511
+                                    },
+                                    "elements": [],
+                                    "isInner": true,
+                                    "elType": "column"
+                                }
+                            ],
+                            "isInner": true,
+                            "elType": "section"
+                        },
+                        {
+                            "id": "2e420a35",
+                            "settings": {
+                                "structure": "20",
+                                "margin": {
+                                    "unit": "px",
+                                    "top": "50",
+                                    "right": 0,
+                                    "bottom": "0",
+                                    "left": 0,
+                                    "isLinked": false
+                                },
+                                "ekit_section_parallax_multi_items": []
+                            },
+                            "elements": [
+                                {
+                                    "id": "56b6004c",
+                                    "settings": {
+                                        "_column_size": 50,
+                                        "_inline_size": 85.446
+                                    },
+                                    "elements": [
+                                        {
+                                            "id": "6a3d77c6",
+                                            "settings": {
+                                                "ekit_contact_form7": "85",
+                                                "ekit_contact_form_input_style_height": {
+                                                    "unit": "px",
+                                                    "size": 65,
+                                                    "sizes": []
+                                                },
+                                                "ekit_contact_form_input_style_margin_bottom": {
+                                                    "unit": "px",
+                                                    "size": 0,
+                                                    "sizes": []
+                                                },
+                                                "ekit_contact_form_input_typography_typography": "custom",
+                                                "ekit_contact_form_input_typography_font_family": "Poppins",
+                                                "ekit_contact_form_button_typography_typography": "custom",
+                                                "ekit_contact_form_button_typography_font_size": {
+                                                    "unit": "px",
+                                                    "size": 15,
+                                                    "sizes": []
+                                                },
+                                                "ekit_contact_form_button_typography_font_weight": "600",
+                                                "ekit_contact_form_button_typography_letter_spacing": {
+                                                    "unit": "px",
+                                                    "size": 0.6,
+                                                    "sizes": []
+                                                },
+                                                "ekit_contact_form_button_border_padding": {
+                                                    "unit": "px",
+                                                    "top": "30",
+                                                    "right": "50",
+                                                    "bottom": "30",
+                                                    "left": "50",
+                                                    "isLinked": false
+                                                },
+                                                "ekit_contact_form_button_background_background": "classic",
+                                                "ekit_contact_form_button_background_color": "#262626",
+                                                "ekit_contact_form_button_hover_background_background": "classic",
+                                                "ekit_contact_form_button_hover_background_color": "#3534FB"
+                                            },
+                                            "elements": [],
+                                            "isInner": false,
+                                            "widgetType": "elementskit-contact-form7",
+                                            "elType": "widget"
+                                        }
+                                    ],
+                                    "isInner": true,
+                                    "elType": "column"
+                                },
+                                {
+                                    "id": "2ab71d27",
+                                    "settings": {
+                                        "_column_size": 50,
+                                        "_inline_size": 14.511
+                                    },
+                                    "elements": [],
+                                    "isInner": true,
+                                    "elType": "column"
+                                }
+                            ],
+                            "isInner": true,
+                            "elType": "section"
+                        }
+                    ],
+                    "isInner": false,
+                    "elType": "column"
+                }
+            ],
+            "isInner": false,
+            "elType": "section"
+        }
+    ],
+    "page_settings": {
+        "hide_title": "yes"
+    }
+}

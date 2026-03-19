@@ -1,0 +1,42 @@
+/* WIDGET: SERVICE BOX 1
+-------------------------------------------- */
+
+.vlt-service-box--style-1 {
+
+	.vlt-service-box__image {
+		position: relative;
+		overflow: hidden;
+
+		img {
+			width: 100%;
+			transition: transform var(--vlt-transition-duration) var(--vlt-transition-easing);
+			backface-visibility: hidden;
+		}
+
+		.vlt-badge {
+			position: absolute;
+			top: 0;
+			right: 0;
+			z-index: 1;
+		}
+
+	}
+
+	&.is-badge--left .vlt-service-box__image .vlt-badge {
+		right: auto;
+		left: 0;
+	}
+
+	.vlt-service-box__title {
+		margin-top: px2rem(35px);
+	}
+
+	&:hover {
+
+		.vlt-service-box__image img {
+			transform: scale(1.05);
+		}
+
+	}
+
+}

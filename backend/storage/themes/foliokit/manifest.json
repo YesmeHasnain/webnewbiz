@@ -1,0 +1,1047 @@
+{
+    "manifest_version": "1.0.17",
+    "title": "Foliokit - Portfolio Elementor Template Kit",
+    "page_builder": "elementor",
+    "kit_version": "1.0.0",
+    "templates": [
+        {
+            "name": "Global Kit Styles",
+            "screenshot": "screenshots\/global-kit-styles.png",
+            "source": "templates\/global.json",
+            "preview_url": "https:\/\/wordpress-355652-1662348.cloudwaysapps.com",
+            "type": "section",
+            "category": "page",
+            "metadata": {
+                "template_type": "global-styles",
+                "include_in_zip": "1",
+                "elementor_pro_required": "1",
+                "additional_template_information": [
+                    "These are the global theme styles configured through the Elementor Theme Styles area."
+                ]
+            },
+            "elementor_pro_required": true
+        },
+        {
+            "name": "Home - Page",
+            "screenshot": "screenshots\/home-page.png",
+            "source": "templates\/home-page.json",
+            "preview_url": "https:\/\/wordpress-355652-1662348.cloudwaysapps.com\/template-kit\/home-page\/",
+            "type": "page",
+            "category": "page",
+            "metadata": {
+                "template_type": "single-page",
+                "include_in_zip": "1",
+                "elementor_pro_required": "1"
+            },
+            "elementor_pro_required": true
+        },
+        {
+            "name": "Archive",
+            "screenshot": "screenshots\/archive.jpg",
+            "source": "templates\/archive.json",
+            "preview_url": "https:\/\/wordpress-355652-1662348.cloudwaysapps.com\/?elementor_library=archive-2",
+            "type": "archive",
+            "category": "page",
+            "metadata": {
+                "template_type": "archive-blog",
+                "include_in_zip": "1",
+                "elementor_pro_required": "1",
+                "elementor_library_type": "archive",
+                "elementor_pro_conditions": [
+                    "include\/archive"
+                ],
+                "additional_template_information": [
+                    "This is a \"Archive\" template for Elementor Pro.",
+                    "This template will display on: All Archives."
+                ]
+            },
+            "elementor_pro_required": true
+        },
+        {
+            "name": "Project Details - Page",
+            "screenshot": "screenshots\/project-details-page.png",
+            "source": "templates\/project-details-page.json",
+            "preview_url": "https:\/\/wordpress-355652-1662348.cloudwaysapps.com\/template-kit\/project-details-page\/",
+            "type": "page",
+            "category": "page",
+            "metadata": {
+                "template_type": "single-page",
+                "include_in_zip": "1",
+                "elementor_pro_required": "1"
+            },
+            "elementor_pro_required": true
+        },
+        {
+            "name": "Portfolio - Page",
+            "screenshot": "screenshots\/portfolio-page.png",
+            "source": "templates\/portfolio-page.json",
+            "preview_url": "https:\/\/wordpress-355652-1662348.cloudwaysapps.com\/template-kit\/portfolio-page\/",
+            "type": "page",
+            "category": "page",
+            "metadata": {
+                "template_type": "single-page",
+                "include_in_zip": "1",
+                "elementor_pro_required": "1"
+            },
+            "elementor_pro_required": true
+        },
+        {
+            "name": "About us - Page",
+            "screenshot": "screenshots\/about-us-page.png",
+            "source": "templates\/about-us-page.json",
+            "preview_url": "https:\/\/wordpress-355652-1662348.cloudwaysapps.com\/template-kit\/about-us-page\/",
+            "type": "page",
+            "category": "page",
+            "metadata": {
+                "template_type": "single-page",
+                "include_in_zip": "1",
+                "elementor_pro_required": "1"
+            },
+            "elementor_pro_required": true
+        },
+        {
+            "name": "What we do - Page",
+            "screenshot": "screenshots\/what-we-do-page.png",
+            "source": "templates\/what-we-do-page.json",
+            "preview_url": "https:\/\/wordpress-355652-1662348.cloudwaysapps.com\/template-kit\/what-we-do-page\/",
+            "type": "page",
+            "category": "page",
+            "metadata": {
+                "template_type": "single-page",
+                "include_in_zip": "1",
+                "elementor_pro_required": "1"
+            },
+            "elementor_pro_required": true
+        },
+        {
+            "name": "Single post",
+            "screenshot": "screenshots\/single-post.jpg",
+            "source": "templates\/single-post.json",
+            "preview_url": "https:\/\/wordpress-355652-1662348.cloudwaysapps.com\/?elementor_library=single-post-2",
+            "type": "single",
+            "category": "page",
+            "metadata": {
+                "template_type": "single-post",
+                "include_in_zip": "1",
+                "elementor_pro_required": "1",
+                "elementor_library_type": "single",
+                "elementor_pro_conditions": [
+                    "include\/singular\/post"
+                ],
+                "additional_template_information": [
+                    "This is a \"Single\" template for Elementor Pro.",
+                    "This template will display on: Posts."
+                ]
+            },
+            "elementor_pro_required": true
+        },
+        {
+            "name": "Welcome - Block",
+            "screenshot": "screenshots\/welcome-block.png",
+            "source": "templates\/welcome-block.json",
+            "preview_url": "https:\/\/wordpress-355652-1662348.cloudwaysapps.com\/template-kit\/welcome-block\/",
+            "type": "section",
+            "category": "section",
+            "metadata": {
+                "template_type": "section-hero",
+                "include_in_zip": "1",
+                "elementor_pro_required": "1"
+            },
+            "elementor_pro_required": true
+        },
+        {
+            "name": "Contact - Page",
+            "screenshot": "screenshots\/contact-page.png",
+            "source": "templates\/contact-page.json",
+            "preview_url": "https:\/\/wordpress-355652-1662348.cloudwaysapps.com\/template-kit\/contact-page\/",
+            "type": "page",
+            "category": "page",
+            "metadata": {
+                "template_type": "single-page",
+                "include_in_zip": "1",
+                "elementor_pro_required": "1"
+            },
+            "elementor_pro_required": true
+        },
+        {
+            "name": "Expertise - Block",
+            "screenshot": "screenshots\/expertise-block.png",
+            "source": "templates\/expertise-block.json",
+            "preview_url": "https:\/\/wordpress-355652-1662348.cloudwaysapps.com\/template-kit\/expertise-block\/",
+            "type": "section",
+            "category": "section",
+            "metadata": {
+                "template_type": "section-portfolio",
+                "include_in_zip": "1",
+                "elementor_pro_required": "1"
+            },
+            "elementor_pro_required": true
+        },
+        {
+            "name": "Footer",
+            "screenshot": "screenshots\/footer.jpg",
+            "source": "templates\/footer.json",
+            "preview_url": "https:\/\/wordpress-355652-1662348.cloudwaysapps.com\/?elementor_library=footer",
+            "type": "footer",
+            "category": "section",
+            "metadata": {
+                "template_type": "section-footer",
+                "include_in_zip": "1",
+                "elementor_pro_required": "1",
+                "elementor_library_type": "footer",
+                "elementor_pro_conditions": [
+                    "include\/general"
+                ],
+                "additional_template_information": [
+                    "This is a \"Footer\" template for Elementor Pro.",
+                    "This template will display on: Entire Site."
+                ]
+            },
+            "elementor_pro_required": true
+        },
+        {
+            "name": "Slide menu",
+            "screenshot": "screenshots\/slide-menu.jpg",
+            "source": "templates\/slide-menu.json",
+            "preview_url": "https:\/\/wordpress-355652-1662348.cloudwaysapps.com\/?elementor_library=slide-menu",
+            "type": "popup",
+            "category": "section",
+            "metadata": {
+                "template_type": "section-popup",
+                "include_in_zip": "1",
+                "elementor_pro_required": "1",
+                "elementor_library_type": "popup",
+                "elementor_pro_conditions": [
+                    "include\/general"
+                ],
+                "additional_template_information": [
+                    "This is a \"Popup\" template for Elementor Pro.",
+                    "This template will display on: Entire Site."
+                ]
+            },
+            "elementor_pro_required": true
+        },
+        {
+            "name": "Team - Block",
+            "screenshot": "screenshots\/team-block.png",
+            "source": "templates\/team-block.json",
+            "preview_url": "https:\/\/wordpress-355652-1662348.cloudwaysapps.com\/template-kit\/team-block\/",
+            "type": "section",
+            "category": "section",
+            "metadata": {
+                "template_type": "section-team",
+                "include_in_zip": "1",
+                "elementor_pro_required": "1"
+            },
+            "elementor_pro_required": true
+        },
+        {
+            "name": "Clients - Block",
+            "screenshot": "screenshots\/clients-block.png",
+            "source": "templates\/clients-block.json",
+            "preview_url": "https:\/\/wordpress-355652-1662348.cloudwaysapps.com\/template-kit\/clients-block\/",
+            "type": "section",
+            "category": "section",
+            "metadata": {
+                "template_type": "section-clients",
+                "include_in_zip": "1",
+                "elementor_pro_required": "1"
+            },
+            "elementor_pro_required": true
+        },
+        {
+            "name": "Awards - Block",
+            "screenshot": "screenshots\/awards-block.png",
+            "source": "templates\/awards-block.json",
+            "preview_url": "https:\/\/wordpress-355652-1662348.cloudwaysapps.com\/template-kit\/awards-block\/",
+            "type": "section",
+            "category": "section",
+            "metadata": {
+                "template_type": "section-logo-grid",
+                "include_in_zip": "1",
+                "elementor_pro_required": "1"
+            },
+            "elementor_pro_required": true
+        },
+        {
+            "name": "Video - Block",
+            "screenshot": "screenshots\/video-block.png",
+            "source": "templates\/video-block.json",
+            "preview_url": "https:\/\/wordpress-355652-1662348.cloudwaysapps.com\/template-kit\/video-block\/",
+            "type": "section",
+            "category": "section",
+            "metadata": {
+                "template_type": "section-other",
+                "include_in_zip": "1",
+                "elementor_pro_required": "1"
+            },
+            "elementor_pro_required": true
+        },
+        {
+            "name": "Contact form - Block",
+            "screenshot": "screenshots\/contact-form-block.png",
+            "source": "templates\/contact-form-block.json",
+            "preview_url": "https:\/\/wordpress-355652-1662348.cloudwaysapps.com\/template-kit\/contact-form-block\/",
+            "type": "section",
+            "category": "section",
+            "metadata": {
+                "template_type": "section-contact",
+                "include_in_zip": "1",
+                "elementor_pro_required": "1"
+            },
+            "elementor_pro_required": true
+        },
+        {
+            "name": "Contact - Block",
+            "screenshot": "screenshots\/contact-block.png",
+            "source": "templates\/contact-block.json",
+            "preview_url": "https:\/\/wordpress-355652-1662348.cloudwaysapps.com\/template-kit\/contact-block\/",
+            "type": "section",
+            "category": "section",
+            "metadata": {
+                "template_type": "section-contact",
+                "include_in_zip": "1",
+                "elementor_pro_required": "1"
+            },
+            "elementor_pro_required": true
+        },
+        {
+            "name": "CTA - Block",
+            "screenshot": "screenshots\/cta-block.png",
+            "source": "templates\/cta-block.json",
+            "preview_url": "https:\/\/wordpress-355652-1662348.cloudwaysapps.com\/template-kit\/cta-block\/",
+            "type": "section",
+            "category": "section",
+            "metadata": {
+                "template_type": "section-cta",
+                "include_in_zip": "1",
+                "elementor_pro_required": "1"
+            },
+            "elementor_pro_required": true
+        },
+        {
+            "name": "Portfolio - Block",
+            "screenshot": "screenshots\/portfolio-block.png",
+            "source": "templates\/portfolio-block.json",
+            "preview_url": "https:\/\/wordpress-355652-1662348.cloudwaysapps.com\/template-kit\/portfolio-block\/",
+            "type": "section",
+            "category": "section",
+            "metadata": {
+                "template_type": "section-portfolio",
+                "include_in_zip": "1",
+                "elementor_pro_required": "1"
+            },
+            "elementor_pro_required": true
+        },
+        {
+            "name": "Page Header - Block",
+            "screenshot": "screenshots\/page-header-block.png",
+            "source": "templates\/page-header-block.json",
+            "preview_url": "https:\/\/wordpress-355652-1662348.cloudwaysapps.com\/template-kit\/page-header-block\/",
+            "type": "section",
+            "category": "section",
+            "metadata": {
+                "template_type": "section-hero",
+                "include_in_zip": "1",
+                "elementor_pro_required": "1"
+            },
+            "elementor_pro_required": true
+        },
+        {
+            "name": "Header",
+            "screenshot": "screenshots\/header.jpg",
+            "source": "templates\/header.json",
+            "preview_url": "https:\/\/wordpress-355652-1662348.cloudwaysapps.com\/?elementor_library=header",
+            "type": "header",
+            "category": "section",
+            "metadata": {
+                "template_type": "section-header",
+                "include_in_zip": "1",
+                "elementor_pro_required": "1",
+                "elementor_library_type": "header",
+                "elementor_pro_conditions": [
+                    "include\/general"
+                ],
+                "additional_template_information": [
+                    "This is a \"Header\" template for Elementor Pro.",
+                    "This template will display on: Entire Site."
+                ]
+            },
+            "elementor_pro_required": true
+        }
+    ],
+    "required_plugins": [
+        {
+            "name": "Elementor Pro",
+            "version": "2.9.5",
+            "file": "elementor-pro\/elementor-pro.php",
+            "author": "Elementor.com"
+        },
+        {
+            "name": "Elementor",
+            "version": "3.0.15",
+            "file": "elementor\/elementor.php",
+            "author": "Elementor.com"
+        }
+    ],
+    "images": [
+        {
+            "filename": "fashion-PM7YA6Y.jpg",
+            "thumbnail_url": "https:\/\/wordpress-355652-1662348.cloudwaysapps.com\/wp-content\/uploads\/2020\/08\/fashion-PM7YA6Y.jpg",
+            "templates": [
+                {
+                    "source": "templates\/home-page.json",
+                    "name": "Home - Page"
+                },
+                {
+                    "source": "templates\/project-details-page.json",
+                    "name": "Project Details - Page"
+                },
+                {
+                    "source": "templates\/portfolio-page.json",
+                    "name": "Portfolio - Page"
+                },
+                {
+                    "source": "templates\/about-us-page.json",
+                    "name": "About us - Page"
+                },
+                {
+                    "source": "templates\/team-block.json",
+                    "name": "Team - Block"
+                },
+                {
+                    "source": "templates\/portfolio-block.json",
+                    "name": "Portfolio - Block"
+                }
+            ],
+            "filesize": 282394,
+            "dimensions": [
+                1800,
+                1800
+            ],
+            "image_source": "envato_elements",
+            "person_or_place": "no",
+            "image_urls": "https:\/\/elements.envato.com\/image-PM7YA6Y"
+        },
+        {
+            "filename": "portfolio-1121097.jpg",
+            "thumbnail_url": "https:\/\/wordpress-355652-1662348.cloudwaysapps.com\/wp-content\/uploads\/2020\/08\/portfolio-1121097.jpg",
+            "templates": [
+                {
+                    "source": "templates\/home-page.json",
+                    "name": "Home - Page"
+                },
+                {
+                    "source": "templates\/portfolio-page.json",
+                    "name": "Portfolio - Page"
+                },
+                {
+                    "source": "templates\/what-we-do-page.json",
+                    "name": "What we do - Page"
+                },
+                {
+                    "source": "templates\/expertise-block.json",
+                    "name": "Expertise - Block"
+                },
+                {
+                    "source": "templates\/portfolio-block.json",
+                    "name": "Portfolio - Block"
+                }
+            ],
+            "filesize": 95569,
+            "dimensions": [
+                1800,
+                1869
+            ],
+            "image_source": "envato_elements",
+            "person_or_place": "no",
+            "image_urls": "https:\/\/elements.envato.com\/image-1121097"
+        },
+        {
+            "filename": "portfolio-2047905-scaled.jpg",
+            "thumbnail_url": "https:\/\/wordpress-355652-1662348.cloudwaysapps.com\/wp-content\/uploads\/2020\/08\/portfolio-2047905-scaled.jpg",
+            "templates": [
+                {
+                    "source": "templates\/home-page.json",
+                    "name": "Home - Page"
+                },
+                {
+                    "source": "templates\/portfolio-page.json",
+                    "name": "Portfolio - Page"
+                },
+                {
+                    "source": "templates\/portfolio-block.json",
+                    "name": "Portfolio - Block"
+                }
+            ],
+            "filesize": 148619,
+            "dimensions": [
+                1707,
+                2560
+            ],
+            "image_source": "envato_elements",
+            "person_or_place": "no",
+            "image_urls": "https:\/\/elements.envato.com\/image-2047905"
+        },
+        {
+            "filename": "portfolio-1208783-scaled.jpg",
+            "thumbnail_url": "https:\/\/wordpress-355652-1662348.cloudwaysapps.com\/wp-content\/uploads\/2020\/08\/portfolio-1208783-scaled.jpg",
+            "templates": [
+                {
+                    "source": "templates\/home-page.json",
+                    "name": "Home - Page"
+                },
+                {
+                    "source": "templates\/portfolio-page.json",
+                    "name": "Portfolio - Page"
+                },
+                {
+                    "source": "templates\/portfolio-block.json",
+                    "name": "Portfolio - Block"
+                }
+            ],
+            "filesize": 703638,
+            "dimensions": [
+                1707,
+                2560
+            ],
+            "image_source": "envato_elements",
+            "person_or_place": "no",
+            "image_urls": "https:\/\/elements.envato.com\/image-1208783"
+        },
+        {
+            "filename": "portfolio-904276.jpg",
+            "thumbnail_url": "https:\/\/wordpress-355652-1662348.cloudwaysapps.com\/wp-content\/uploads\/2020\/08\/portfolio-904276.jpg",
+            "templates": [
+                {
+                    "source": "templates\/home-page.json",
+                    "name": "Home - Page"
+                },
+                {
+                    "source": "templates\/project-details-page.json",
+                    "name": "Project Details - Page"
+                },
+                {
+                    "source": "templates\/portfolio-page.json",
+                    "name": "Portfolio - Page"
+                },
+                {
+                    "source": "templates\/about-us-page.json",
+                    "name": "About us - Page"
+                },
+                {
+                    "source": "templates\/team-block.json",
+                    "name": "Team - Block"
+                },
+                {
+                    "source": "templates\/portfolio-block.json",
+                    "name": "Portfolio - Block"
+                }
+            ],
+            "filesize": 322717,
+            "dimensions": [
+                1800,
+                1200
+            ],
+            "image_source": "envato_elements",
+            "person_or_place": "yes",
+            "image_urls": "https:\/\/elements.envato.com\/image-904276"
+        },
+        {
+            "filename": "portfolio-1037992.jpg",
+            "thumbnail_url": "https:\/\/wordpress-355652-1662348.cloudwaysapps.com\/wp-content\/uploads\/2020\/08\/portfolio-1037992.jpg",
+            "templates": [
+                {
+                    "source": "templates\/home-page.json",
+                    "name": "Home - Page"
+                },
+                {
+                    "source": "templates\/portfolio-page.json",
+                    "name": "Portfolio - Page"
+                },
+                {
+                    "source": "templates\/portfolio-block.json",
+                    "name": "Portfolio - Block"
+                }
+            ],
+            "filesize": 37774,
+            "dimensions": [
+                1800,
+                1202
+            ],
+            "image_source": "envato_elements",
+            "person_or_place": "no",
+            "image_urls": "https:\/\/elements.envato.com\/image-1037992"
+        },
+        {
+            "filename": "portfolio-344621.jpg",
+            "thumbnail_url": "https:\/\/wordpress-355652-1662348.cloudwaysapps.com\/wp-content\/uploads\/2020\/08\/portfolio-344621.jpg",
+            "templates": [
+                {
+                    "source": "templates\/home-page.json",
+                    "name": "Home - Page"
+                },
+                {
+                    "source": "templates\/about-us-page.json",
+                    "name": "About us - Page"
+                },
+                {
+                    "source": "templates\/what-we-do-page.json",
+                    "name": "What we do - Page"
+                },
+                {
+                    "source": "templates\/team-block.json",
+                    "name": "Team - Block"
+                }
+            ],
+            "filesize": 113022,
+            "dimensions": [
+                1800,
+                1350
+            ],
+            "image_source": "envato_elements",
+            "person_or_place": "no",
+            "image_urls": "https:\/\/elements.envato.com\/image-344621"
+        },
+        {
+            "filename": "portfolio-838869.jpg",
+            "thumbnail_url": "https:\/\/wordpress-355652-1662348.cloudwaysapps.com\/wp-content\/uploads\/2020\/08\/portfolio-838869.jpg",
+            "templates": [
+                {
+                    "source": "templates\/home-page.json",
+                    "name": "Home - Page"
+                },
+                {
+                    "source": "templates\/about-us-page.json",
+                    "name": "About us - Page"
+                },
+                {
+                    "source": "templates\/what-we-do-page.json",
+                    "name": "What we do - Page"
+                },
+                {
+                    "source": "templates\/team-block.json",
+                    "name": "Team - Block"
+                }
+            ],
+            "filesize": 26075,
+            "dimensions": [
+                1800,
+                1273
+            ],
+            "image_source": "envato_elements",
+            "person_or_place": "yes",
+            "image_urls": "https:\/\/elements.envato.com\/image-838869"
+        },
+        {
+            "filename": "portfolio-PUBLVEY.jpg",
+            "thumbnail_url": "https:\/\/wordpress-355652-1662348.cloudwaysapps.com\/wp-content\/uploads\/2020\/08\/portfolio-PUBLVEY.jpg",
+            "templates": [
+                {
+                    "source": "templates\/home-page.json",
+                    "name": "Home - Page"
+                },
+                {
+                    "source": "templates\/about-us-page.json",
+                    "name": "About us - Page"
+                },
+                {
+                    "source": "templates\/team-block.json",
+                    "name": "Team - Block"
+                }
+            ],
+            "filesize": 203602,
+            "dimensions": [
+                1800,
+                1350
+            ],
+            "image_source": "envato_elements",
+            "person_or_place": "yes",
+            "image_urls": "https:\/\/elements.envato.com\/image-PUBLVEY"
+        },
+        {
+            "filename": "1.jpg",
+            "thumbnail_url": "https:\/\/wordpress-355652-1662348.cloudwaysapps.com\/wp-content\/uploads\/2020\/08\/1.jpg",
+            "templates": [
+                {
+                    "source": "templates\/home-page.json",
+                    "name": "Home - Page"
+                },
+                {
+                    "source": "templates\/about-us-page.json",
+                    "name": "About us - Page"
+                },
+                {
+                    "source": "templates\/clients-block.json",
+                    "name": "Clients - Block"
+                }
+            ],
+            "filesize": 15304,
+            "dimensions": [
+                340,
+                340
+            ],
+            "image_source": "cc0",
+            "person_or_place": "no",
+            "image_urls": "NA"
+        },
+        {
+            "filename": "2.jpg",
+            "thumbnail_url": "https:\/\/wordpress-355652-1662348.cloudwaysapps.com\/wp-content\/uploads\/2020\/08\/2.jpg",
+            "templates": [
+                {
+                    "source": "templates\/home-page.json",
+                    "name": "Home - Page"
+                },
+                {
+                    "source": "templates\/about-us-page.json",
+                    "name": "About us - Page"
+                },
+                {
+                    "source": "templates\/clients-block.json",
+                    "name": "Clients - Block"
+                }
+            ],
+            "filesize": 13067,
+            "dimensions": [
+                340,
+                340
+            ],
+            "image_source": "cc0",
+            "person_or_place": "no",
+            "image_urls": "NA"
+        },
+        {
+            "filename": "3.jpg",
+            "thumbnail_url": "https:\/\/wordpress-355652-1662348.cloudwaysapps.com\/wp-content\/uploads\/2020\/08\/3.jpg",
+            "templates": [
+                {
+                    "source": "templates\/home-page.json",
+                    "name": "Home - Page"
+                },
+                {
+                    "source": "templates\/about-us-page.json",
+                    "name": "About us - Page"
+                },
+                {
+                    "source": "templates\/clients-block.json",
+                    "name": "Clients - Block"
+                }
+            ],
+            "filesize": 15714,
+            "dimensions": [
+                340,
+                340
+            ],
+            "image_source": "cc0",
+            "person_or_place": "no",
+            "image_urls": "NA"
+        },
+        {
+            "filename": "4.jpg",
+            "thumbnail_url": "https:\/\/wordpress-355652-1662348.cloudwaysapps.com\/wp-content\/uploads\/2020\/08\/4.jpg",
+            "templates": [
+                {
+                    "source": "templates\/home-page.json",
+                    "name": "Home - Page"
+                },
+                {
+                    "source": "templates\/about-us-page.json",
+                    "name": "About us - Page"
+                },
+                {
+                    "source": "templates\/clients-block.json",
+                    "name": "Clients - Block"
+                }
+            ],
+            "filesize": 14723,
+            "dimensions": [
+                340,
+                340
+            ],
+            "image_source": "cc0",
+            "person_or_place": "no",
+            "image_urls": "NA"
+        },
+        {
+            "filename": "5.jpg",
+            "thumbnail_url": "https:\/\/wordpress-355652-1662348.cloudwaysapps.com\/wp-content\/uploads\/2020\/08\/5.jpg",
+            "templates": [
+                {
+                    "source": "templates\/home-page.json",
+                    "name": "Home - Page"
+                },
+                {
+                    "source": "templates\/about-us-page.json",
+                    "name": "About us - Page"
+                },
+                {
+                    "source": "templates\/clients-block.json",
+                    "name": "Clients - Block"
+                }
+            ],
+            "filesize": 15206,
+            "dimensions": [
+                340,
+                340
+            ],
+            "image_source": "cc0",
+            "person_or_place": "no",
+            "image_urls": "NA"
+        },
+        {
+            "filename": "6.jpg",
+            "thumbnail_url": "https:\/\/wordpress-355652-1662348.cloudwaysapps.com\/wp-content\/uploads\/2020\/08\/6.jpg",
+            "templates": [
+                {
+                    "source": "templates\/home-page.json",
+                    "name": "Home - Page"
+                },
+                {
+                    "source": "templates\/about-us-page.json",
+                    "name": "About us - Page"
+                },
+                {
+                    "source": "templates\/clients-block.json",
+                    "name": "Clients - Block"
+                }
+            ],
+            "filesize": 20387,
+            "dimensions": [
+                340,
+                340
+            ],
+            "image_source": "cc0",
+            "person_or_place": "no",
+            "image_urls": "NA"
+        },
+        {
+            "filename": "portfolio-1708827.jpg",
+            "thumbnail_url": "https:\/\/wordpress-355652-1662348.cloudwaysapps.com\/wp-content\/uploads\/2020\/08\/portfolio-1708827.jpg",
+            "templates": [
+                {
+                    "source": "templates\/project-details-page.json",
+                    "name": "Project Details - Page"
+                },
+                {
+                    "source": "templates\/about-us-page.json",
+                    "name": "About us - Page"
+                },
+                {
+                    "source": "templates\/contact-page.json",
+                    "name": "Contact - Page"
+                },
+                {
+                    "source": "templates\/contact-block.json",
+                    "name": "Contact - Block"
+                }
+            ],
+            "filesize": 113581,
+            "dimensions": [
+                1800,
+                1200
+            ],
+            "image_source": "envato_elements",
+            "person_or_place": "no",
+            "image_urls": "https:\/\/elements.envato.com\/image-1708827"
+        },
+        {
+            "filename": "fashion-PM7YA6Y-1.jpg",
+            "thumbnail_url": "https:\/\/wordpress-355652-1662348.cloudwaysapps.com\/wp-content\/uploads\/2020\/08\/fashion-PM7YA6Y-1.jpg",
+            "templates": [
+                {
+                    "source": "templates\/project-details-page.json",
+                    "name": "Project Details - Page"
+                },
+                {
+                    "source": "templates\/about-us-page.json",
+                    "name": "About us - Page"
+                },
+                {
+                    "source": "templates\/what-we-do-page.json",
+                    "name": "What we do - Page"
+                }
+            ],
+            "filesize": 282394,
+            "dimensions": [
+                1800,
+                1800
+            ],
+            "image_source": "envato_elements",
+            "person_or_place": "yes",
+            "image_urls": "https:\/\/elements.envato.com\/image-PM7YA6Y"
+        },
+        {
+            "filename": "portfolio-NQEM3W2-scaled.jpg",
+            "thumbnail_url": "https:\/\/wordpress-355652-1662348.cloudwaysapps.com\/wp-content\/uploads\/2020\/08\/portfolio-NQEM3W2-scaled.jpg",
+            "templates": [
+                {
+                    "source": "templates\/project-details-page.json",
+                    "name": "Project Details - Page"
+                },
+                {
+                    "source": "templates\/what-we-do-page.json",
+                    "name": "What we do - Page"
+                }
+            ],
+            "filesize": 571745,
+            "dimensions": [
+                1709,
+                2560
+            ],
+            "image_source": "envato_elements",
+            "person_or_place": "no",
+            "image_urls": "https:\/\/elements.envato.com\/image-NQEM3W2"
+        },
+        {
+            "filename": "portfolio-1208783-1-scaled.jpg",
+            "thumbnail_url": "https:\/\/wordpress-355652-1662348.cloudwaysapps.com\/wp-content\/uploads\/2020\/08\/portfolio-1208783-1-scaled.jpg",
+            "templates": [
+                {
+                    "source": "templates\/project-details-page.json",
+                    "name": "Project Details - Page"
+                },
+                {
+                    "source": "templates\/what-we-do-page.json",
+                    "name": "What we do - Page"
+                },
+                {
+                    "source": "templates\/expertise-block.json",
+                    "name": "Expertise - Block"
+                }
+            ],
+            "filesize": 703638,
+            "dimensions": [
+                1707,
+                2560
+            ],
+            "image_source": "envato_elements",
+            "person_or_place": "no",
+            "image_urls": "https:\/\/elements.envato.com\/image-1208783"
+        },
+        {
+            "filename": "portfolio-1037992-1.jpg",
+            "thumbnail_url": "https:\/\/wordpress-355652-1662348.cloudwaysapps.com\/wp-content\/uploads\/2020\/08\/portfolio-1037992-1.jpg",
+            "templates": [
+                {
+                    "source": "templates\/about-us-page.json",
+                    "name": "About us - Page"
+                },
+                {
+                    "source": "templates\/what-we-do-page.json",
+                    "name": "What we do - Page"
+                }
+            ],
+            "filesize": 37774,
+            "dimensions": [
+                1800,
+                1202
+            ],
+            "image_source": "envato_elements",
+            "person_or_place": "no",
+            "image_urls": "https:\/\/elements.envato.com\/image-1037992"
+        },
+        {
+            "filename": "portfolio-P3KQR4Z.jpg",
+            "thumbnail_url": "https:\/\/wordpress-355652-1662348.cloudwaysapps.com\/wp-content\/uploads\/2020\/08\/portfolio-P3KQR4Z.jpg",
+            "templates": [
+                {
+                    "source": "templates\/about-us-page.json",
+                    "name": "About us - Page"
+                },
+                {
+                    "source": "templates\/team-block.json",
+                    "name": "Team - Block"
+                }
+            ],
+            "filesize": 215543,
+            "dimensions": [
+                1800,
+                1350
+            ],
+            "image_source": "envato_elements",
+            "person_or_place": "yes",
+            "image_urls": "https:\/\/elements.envato.com\/image-P3KQR4Z"
+        },
+        {
+            "filename": "Group-2.png",
+            "thumbnail_url": "https:\/\/wordpress-355652-1662348.cloudwaysapps.com\/wp-content\/uploads\/2020\/08\/Group-2.png",
+            "templates": [
+                {
+                    "source": "templates\/what-we-do-page.json",
+                    "name": "What we do - Page"
+                },
+                {
+                    "source": "templates\/video-block.json",
+                    "name": "Video - Block"
+                }
+            ],
+            "filesize": 9845,
+            "dimensions": [
+                1920,
+                960
+            ],
+            "image_source": "self_created",
+            "person_or_place": "no",
+            "image_urls": "NA"
+        },
+        {
+            "filename": "portfolio-2047905-1-scaled.jpg",
+            "thumbnail_url": "https:\/\/wordpress-355652-1662348.cloudwaysapps.com\/wp-content\/uploads\/2020\/08\/portfolio-2047905-1-scaled.jpg",
+            "templates": [
+                {
+                    "source": "templates\/what-we-do-page.json",
+                    "name": "What we do - Page"
+                },
+                {
+                    "source": "templates\/expertise-block.json",
+                    "name": "Expertise - Block"
+                }
+            ],
+            "filesize": 148619,
+            "dimensions": [
+                1707,
+                2560
+            ],
+            "image_source": "envato_elements",
+            "person_or_place": "no",
+            "image_urls": "https:\/\/elements.envato.com\/image-2047905"
+        },
+        {
+            "filename": "placeholder.png",
+            "thumbnail_url": "https:\/\/wordpress-355652-1662348.cloudwaysapps.com\/wp-content\/uploads\/2020\/12\/placeholder.png",
+            "templates": [
+                {
+                    "source": "templates\/single-post.json",
+                    "name": "Single post"
+                }
+            ],
+            "filesize": 6146,
+            "dimensions": [
+                1200,
+                800
+            ],
+            "image_source": "cc0",
+            "person_or_place": "no",
+            "image_urls": "NA"
+        },
+        {
+            "filename": "Group-1.png",
+            "thumbnail_url": "https:\/\/wordpress-355652-1662348.cloudwaysapps.com\/wp-content\/uploads\/2020\/08\/Group-1.png",
+            "templates": [
+                {
+                    "source": "templates\/header.json",
+                    "name": "Header"
+                }
+            ],
+            "filesize": 581,
+            "dimensions": [
+                121,
+                26
+            ],
+            "image_source": "cc0",
+            "person_or_place": "no",
+            "image_urls": "NA"
+        }
+    ]
+}

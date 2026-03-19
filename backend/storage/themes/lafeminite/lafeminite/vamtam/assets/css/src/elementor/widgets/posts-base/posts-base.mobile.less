@@ -1,0 +1,61 @@
+// Posts / Archive Posts - Mobile.
+
+// Theme-dependant.
+.posts-base-mobile() {
+
+	&.elementor-posts--thumbnail-mobile-top {
+		.elementor-post {
+			display: block;
+		}
+		.elementor-post__thumbnail__link {
+			margin-bottom: 20px;
+		}
+
+		.elementor-post__text {
+			width: 100%;
+		}
+
+		&.elementor-posts--align-left .elementor-post__thumbnail__link {
+			margin-right: auto;
+		}
+
+		&.elementor-posts--align-right .elementor-post__thumbnail__link {
+			margin-left: auto;
+		}
+
+		&.elementor-posts--align-center .elementor-post__thumbnail__link {
+			margin-right: auto;
+			margin-left: auto;
+		}
+	}
+
+	&.elementor-posts--thumbnail-mobile-left,
+	&.elementor-posts--thumbnail-mobile-right {
+		.elementor-post {
+			display: flex;
+
+			.elementor-post__thumbnail__link {
+				margin-bottom: 0;
+			}
+		}
+
+		.elementor-post__thumbnail__link {
+			flex-shrink: 0;
+			width: 25%;
+		}
+	}
+
+	&.elementor-posts--thumbnail-mobile-left .elementor-post__thumbnail__link {
+		order: 0;
+		margin-left: 20px;
+	}
+
+	&.elementor-posts--thumbnail-mobile-right .elementor-post__thumbnail__link {
+		order: 5;
+		margin-right: 20px;
+	}
+
+	&.elementor-posts--thumbnail-mobile-none .elementor-posts-container .elementor-post__thumbnail__link {
+		display: none;
+	}
+}

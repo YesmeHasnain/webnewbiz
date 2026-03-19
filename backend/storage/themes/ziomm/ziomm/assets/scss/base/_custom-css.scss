@@ -1,0 +1,10 @@
+.vlt-custom--5156::before {
+	content: "";
+	position: absolute;
+	top: 0;
+	right: 100%;
+	bottom: 0;
+	width: 9999em;
+	background-color: var(--vlt-color-9);
+	z-index: -1;
+}

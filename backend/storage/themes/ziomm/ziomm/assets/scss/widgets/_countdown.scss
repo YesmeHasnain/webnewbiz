@@ -1,0 +1,59 @@
+/* WIDGET: COUNTODWN
+-------------------------------------------- */
+
+.vlt-countdown {
+	display: grid;
+
+	@include media-breakpoint-up(md) {
+
+		.vlt-countdown-item+.vlt-countdown-item {
+			position: relative;
+
+			&::before {
+				content: ":";
+				position: absolute;
+				top: .2em;
+				left: 0;
+				margin-left: -.1em;
+				font-family: var(--vlt-secondary-font);
+				font-size: px2rem(map-get($scales, "s3"));
+				line-height: 1.1;
+				color: var(--vlt-accent-2);
+				letter-spacing: 0.005em;
+			}
+
+		}
+
+	}
+
+	&__item {
+		text-align: center;
+
+		.digits {
+			font-family: var(--vlt-secondary-font);
+			font-size: px2rem(map-get($scales, "s2"));
+			line-height: 1.1;
+			color: var(--vlt-accent-2);
+			letter-spacing: 0.005em;
+			white-space: nowrap;
+
+			&.d-inline-block {
+				margin-right: px2rem(15px);
+			}
+
+			&.d-block {
+				margin-bottom: 0;
+			}
+
+		}
+
+		.label {
+			font-size: px2rem(map-get($scales, "s8"));
+			font-weight: 700;
+			line-height: 1.45;
+			color: var(--vlt-color-9);
+		}
+
+	}
+
+}

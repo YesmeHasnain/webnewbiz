@@ -15,7 +15,21 @@
       "Read(//c/xampp/htdocs/creative-digital-marketing-agency-6va2/wp-content/plugins/header-footer-elementor/inc/widgets-manager/base/**)",
       "Read(//c/xampp/htdocs/**)",
       "Bash(/c/xampp/mysql/bin/mysql -u root wp_zaid -e \"SELECT meta_key, meta_value FROM wp_postmeta WHERE post_id = 2 AND meta_key NOT LIKE ''%elementor_data%'';\")",
-      "Read(//c/xampp/mysql/bin/**)"
+      "Read(//c/xampp/mysql/bin/**)",
+      "WebFetch(domain:web.archive.org)",
+      "Bash(npx ng generate component components/navbar --skip-tests --inline-style=false)",
+      "Bash(npx ng generate component components/hero --skip-tests --inline-style=false)",
+      "Bash(npx ng generate component components/features --skip-tests --inline-style=false)",
+      "Bash(npx ng generate component components/how-it-works --skip-tests --inline-style=false)",
+      "Bash(npx ng generate component components/pricing --skip-tests --inline-style=false)",
+      "Bash(npx ng generate component components/footer --skip-tests --inline-style=false)",
+      "Bash(npx ng generate component pages/home --skip-tests --inline-style=false)",
+      "Bash(unzip -l /c/Users/1/Desktop/Webnewbiz/hasnain.zip)",
+      "Read(//c/Users/1/Desktop/Webnewbiz/**)",
+      "Bash(echo \"exit: $?\" ls /c/xampp/htdocs/hop-entral/)",
+      "Bash(test -f /c/xampp/htdocs/hop-entral/wp-load.php)",
+      "Bash(# Restart MySQL via XAMPP /c/xampp/mysql/bin/mysqld.exe --defaults-file=/c/xampp/mysql/bin/my.ini & sleep 3 && netstat -an)",
+      "Bash(mkdir:*)"
     ],
     "additionalDirectories": [
       "\\tmp"

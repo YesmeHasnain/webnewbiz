@@ -1,0 +1,6 @@
+/* WIDGET: POPULAR POSTS
+-------------------------------------------- */
+
+.vlt-widget.vlt_widget_popular_posts {
+	@extend %widget-recent-posts;
+}

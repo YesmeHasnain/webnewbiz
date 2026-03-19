@@ -1,0 +1,73 @@
+/* WIDGET: TIMELINE
+-------------------------------------------- */
+
+.vlt-timeline {
+	position: relative;
+	padding: px2rem(20px) 0 0;
+	margin: 0;
+	list-style-type: none;
+
+	&--has-icon::before {
+		content: "";
+		position: absolute;
+		top: 0;
+		left: px2rem(30px);
+		height: 100%;
+		border-left: 1px solid var(--vlt-color-3);
+		z-index: 1;
+	}
+
+	li+li {
+		margin-top: px2rem(65px);
+	}
+
+	&__item {
+		position: relative;
+		display: flex;
+		z-index: 1;
+	}
+
+	&__icon {
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		width: px2rem(60px);
+		height: px2rem(60px);
+		margin-right: px2rem(40px);
+		font-size: px2rem(20px);
+		color: var(--vlt-accent-1);
+		background-color: var(--vlt-color-0);
+		border: 1px solid var(--vlt-color-3);
+		border-radius: 50%;
+		flex-shrink: 0;
+
+		svg {
+			width: 1em;
+			height: 1em;
+		}
+
+	}
+
+	&__content {
+		flex-basis: 100%;
+	}
+
+	&__subtitle {
+		font-size: px2rem(map-get($scales, "s8"));
+		line-height: 1.5;
+		color: var(--vlt-color-6);
+	}
+
+	&__title {
+		margin-top: px2rem(12px);
+	}
+
+	&__text {
+		max-width: px2rem(300px);
+		margin-top: px2rem(19px);
+		margin-bottom: 0;
+		font-size: px2rem(map-get($scales, "s8"));
+		line-height: 1.6;
+	}
+
+}

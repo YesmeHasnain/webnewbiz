@@ -1,0 +1,440 @@
+@use '../utils' as *;
+/*---------------------------------
+    1.2 Common Classes
+---------------------------------*/
+
+.w-img{
+	& img{
+		width: 100%;
+	}
+}
+
+.m-img{
+	& img{
+		max-width: 100%;
+	}
+}
+
+.fix {
+    overflow:hidden
+}
+.clear{
+    clear: both;
+}
+
+.z-index-1{
+	z-index: 1;
+}
+
+.z-index-3{
+	z-index: 3;
+}
+
+.z-index-11{
+	z-index: 11;
+}
+
+.overflow-y-visible{
+	overflow-x: hidden;
+	overflow-y: visible;
+}
+
+.p-relative{
+	position: relative;
+}
+.p-absolute{
+	position: absolute;
+}
+
+.include-bg{
+	@include background();
+}
+
+.grid__item-img {
+	display: block;
+	height: 500px;
+	width: 500px;
+}
+
+.hide{
+	display: none;
+  }
+
+@media (min-width: 1400px){
+	.container-1800{
+		max-width: 1830px;
+	}
+}
+
+@media (min-width: 1400px){
+	.container-1760{
+		max-width: 1790px;
+	}
+}
+
+@media (min-width: 1400px){
+	.container-1720{
+		max-width: 1750px;
+	}
+}
+
+@media (min-width: 1400px){
+	.container-1520{
+		max-width: 1550px;
+	}
+}
+
+@media (min-width: 1400px){
+	.container-1430{
+		max-width: 1460px;
+	}
+}
+
+@media (min-width: 1400px){
+	.container-1380{
+		max-width: 1410px;
+	}
+}
+
+@media (min-width: 1400px){
+	.container-1480{
+		max-width: 1510px;
+	}
+}
+
+@media (min-width: 1400px){
+	.container-1660{
+		max-width: 1690px;
+	}
+}
+
+@media (min-width: 1400px){
+	.container-1610{
+		max-width: 1640px;
+	}
+}
+
+
+@media (min-width: 1400px){
+	.container-1170{
+		max-width: 1200px;
+	}
+}
+
+// demo for method
+.demo{
+	@include transition(color, .3s, linear);	
+
+	@include transition-mul((color .3s linear, transform .2s ease));	
+
+	@include rtl{
+		margin-left: 0;
+		margin-right: 15px;
+	}
+	@include root('div'){
+		img{
+			margin-left: 10px;
+		}
+	}
+}
+
+.position-middle {
+	position: absolute;
+	top: 50%;
+	left: 0;
+	right: 0;
+	margin: 0 auto;
+	transform: translateY(-50%);
+}
+
+// video btn effect
+.video-animation {
+  position: relative;
+  z-index: 2;
+  &::after {
+    position: absolute;
+    content: "";
+    left: 50%;
+    top: 50%;
+    width: 90%;
+    height: 90%;
+		z-index: -1;
+    transform: scale(1);
+    border: 1px solid var(--tp-common-white);
+    animation: video-border 1.5s linear infinite;
+    border-radius: 50%;
+  }
+}
+
+
+/* gutter for x axis */
+.tp-gx-5{
+	--bs-gutter-x: 5px;
+
+	@media #{$lg}{
+		--bs-gutter-x: 5px;
+	}
+
+	@media #{$md}{
+		--bs-gutter-x: 5px;
+	}
+
+	@media #{$sm}{
+		--bs-gutter-x: 5px;
+	}
+
+	@media #{$xs}{
+		--bs-gutter-x: 5px;
+	}
+
+	& [class*="col-"]{
+		padding-right: calc(var(--bs-gutter-x) * .5);
+		padding-left: calc(var(--bs-gutter-x) * .5);
+		margin-top: var(--bs-gutter-y);
+	}
+}
+
+
+.tp-gx-10{
+	--bs-gutter-x: 10px;
+
+	@media #{$lg}{
+		--bs-gutter-x: 10px;
+	}
+
+	@media #{$md}{
+		--bs-gutter-x: 10px;
+	}
+
+	@media #{$sm}{
+		--bs-gutter-x: 5px;
+	}
+
+	@media #{$xs}{
+		--bs-gutter-x: 5px;
+	}
+
+	& [class*="col-"]{
+		padding-right: calc(var(--bs-gutter-x) * .5);
+		padding-left: calc(var(--bs-gutter-x) * .5);
+		margin-top: var(--bs-gutter-y);
+	}
+}
+
+.tp-gx-15{
+	--bs-gutter-x: 15px;
+
+	@media #{$lg}{
+		--bs-gutter-x: 15px;
+	}
+
+	@media #{$md}{
+		--bs-gutter-x: 10px;
+	}
+
+	@media #{$sm}{
+		--bs-gutter-x: 5px;
+	}
+
+	@media #{$xs}{
+		--bs-gutter-x: 5px;
+	}
+
+	& [class*="col-"]{
+		padding-right: calc(var(--bs-gutter-x) * .5);
+		padding-left: calc(var(--bs-gutter-x) * .5);
+		margin-top: var(--bs-gutter-y);
+	}
+}
+
+.tp-gx-20{
+	--bs-gutter-x: 20px;
+
+	@media #{$lg}{
+		--bs-gutter-x: 20px;
+	}
+
+	@media #{$md}{
+		--bs-gutter-x: 20px;
+	}
+
+	@media #{$sm}{
+		--bs-gutter-x: 15px;
+	}
+
+	@media #{$xs}{
+		--bs-gutter-x: 10px;
+	}
+
+	& [class*="col-"]{
+		padding-right: calc(var(--bs-gutter-x) * .5);
+		padding-left: calc(var(--bs-gutter-x) * .5);
+		margin-top: var(--bs-gutter-y);
+	}
+}
+
+/* gutter for x axis */
+.tp-gx-40{
+	--bs-gutter-x: 40px;
+
+	@media #{$lg}{
+		--bs-gutter-x: 40px;
+	}
+
+	@media #{$md}{
+		--bs-gutter-x: 30px;
+	}
+
+	@media #{$sm}{
+		--bs-gutter-x: 15px;
+	}
+
+	@media #{$xs}{
+		--bs-gutter-x: 10px;
+	}
+
+	& [class*="col-"]{
+		padding-right: calc(var(--bs-gutter-x) * .5);
+		padding-left: calc(var(--bs-gutter-x) * .5);
+		margin-top: var(--bs-gutter-y);
+	}
+}
+
+/* gutter for x axis */
+.tp-gx-50{
+	--bs-gutter-x: 50px;
+
+	@media #{$xl}{
+		--bs-gutter-x: 30px;
+	}
+
+	@media #{$lg}{
+		--bs-gutter-x: 30px;
+	}
+
+	@media #{$md}{
+		--bs-gutter-x: 30px;
+	}
+
+	@media #{$sm}{
+		--bs-gutter-x: 30px;
+	}
+
+	@media #{$xs}{
+		--bs-gutter-x: 15px;
+	}
+
+	& [class*="col-"]{
+		padding-right: calc(var(--bs-gutter-x) * .5);
+		padding-left: calc(var(--bs-gutter-x) * .5);
+		margin-top: var(--bs-gutter-y);
+	}
+}
+
+/* gutter for x axis */
+.tp-gx-80{
+	--bs-gutter-x: 80px;
+
+	@media #{$xl}{
+		--bs-gutter-x: 50px;
+	}
+
+	@media #{$lg}{
+		--bs-gutter-x: 50px;
+	}
+
+	@media #{$md}{
+		--bs-gutter-x: 30px;
+	}
+
+	@media #{$sm}{
+		--bs-gutter-x: 30px;
+	}
+
+	@media #{$xs}{
+		--bs-gutter-x: 15px;
+	}
+
+	& [class*="col-"]{
+		padding-right: calc(var(--bs-gutter-x) * .5);
+		padding-left: calc(var(--bs-gutter-x) * .5);
+		margin-top: var(--bs-gutter-y);
+	}
+}
+
+.textline {
+	position: relative;
+	&::after{
+		position: absolute;
+		bottom: 8px;
+		left: 0;
+		content: '';
+		height: 2px;
+		width: 0;
+		@include transition-mul(0.6s);
+		background-color: var(--tp-theme-primary);
+	}
+	&:hover{
+		&::after{
+			width: 100%;
+		}
+	}
+}
+
+.tp-modal-box{
+	& .modal{
+		--bs-modal-width: 546px;
+	}
+}
+
+.image-anime{
+	position: relative;
+	overflow: hidden;
+	&::after{
+		position: absolute;
+		content: "";
+		width: 200%;
+		height: 0%;
+		left: 50%;
+		top: 50%;
+		background-color: rgba(255,255,255,.3);
+		transform: translate(-50%,-50%) rotate(-45deg);
+		z-index: 1;
+	}
+	&:hover{
+		&::after{
+			height: 250%;
+			transition: all 600ms linear;
+			background-color: transparent;
+		}
+	}
+}
+
+.tp-noice{
+	position: relative;
+	z-index: 1;
+	&::before{
+		position: absolute;
+		content: "";
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		z-index: -1;
+		background-image: url(../img/team/team/team-details-bg.png);
+	}
+}
+
+
+.ajax-response{
+	&.error{
+		color: red;
+	}
+	&.success{
+		color: green;
+	}
+}
+
+.white{
+	color: var(--tp-common-white) !important;
+}

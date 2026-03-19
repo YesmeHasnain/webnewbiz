@@ -1,0 +1,57 @@
+@use '../../utils' as *;
+/*----------------------------------------*/
+/*  3.2 Header Style 2
+/*----------------------------------------*/
+
+
+.#{$theme-prefix}-header{
+    &-2{
+        &-ptb{
+            padding: 35px 0;
+            @media #{$xl,$lg,$md,$xs} {
+                padding: 18px 0;
+            }
+            &.header-sticky{
+                padding: 14px 0;
+                background: rgba(255, 255, 255, 0.9);
+                @media #{$md,$xs} {
+                    padding: 18px 0;
+                }
+            }
+        }
+        &-hamburger{
+            & .tp-hamburger-btn {
+                & span{
+                    background-color: var(--tp-heading-primary);
+                }
+            }
+            &.hamburger-four{
+                & .tp-hamburger-btn {
+                    & span{
+                        background-color: var(--tp-heading-secondary);
+                    }
+                }
+            }
+        }
+        &-right{
+            &-btn{
+                line-height: 1;
+                width: 180px;
+                margin-left: auto;
+                overflow: hidden;
+                &.btn-four{
+                    & .tp-btn-animation{
+                        border-color: #D9D9D9;
+                        & span{
+                            color: var(--tp-heading-secondary);
+                            &::before{
+                                background-color: var(--tp-heading-secondary);
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+

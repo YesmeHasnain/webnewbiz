@@ -1,0 +1,11 @@
+/* WIDGET: WIDGET SOCIALS
+-------------------------------------------- */
+
+.vlt-widget.vlt_widget_socials {
+	color: var(--vlt-color-9);
+
+	.vlt-offcanvas-sidebar--dark & {
+		color: var(--vlt-color-0);
+	}
+
+}

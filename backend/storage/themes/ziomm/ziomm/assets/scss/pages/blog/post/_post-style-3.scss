@@ -1,0 +1,82 @@
+/* POST: STYLE 3
+-------------------------------------------- */
+
+.vlt-post--style-3 {
+	position: relative;
+
+	&:not(.has-post-thumbnail) {
+
+		.vlt-post-media {
+			min-height: px2rem(400px);
+		}
+
+	}
+
+	.vlt-post-media,
+	.vp-portfolio__item-img-wrap {
+
+		&::after {
+			content: "";
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			background-image: linear-gradient(to bottom, transparent, var(--vlt-color-9-opacity-6));
+			z-index: 2;
+		}
+
+	}
+
+	.vlt-post-content {
+		position: absolute;
+		right: 0;
+		bottom: 0;
+		left: 0;
+		z-index: 3;
+	}
+
+	.vlt-post-permalink {
+		position: absolute;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		left: 0;
+		z-index: 4;
+	}
+
+	.vlt-post-header {
+		padding: px2rem(40px) 0 px2rem(40px) px2rem(40px);
+
+		.vlt-post-title {
+			padding-right: 20%;
+			font-size: px2rem(map-get($scales, "s5"));
+			line-height: 1.3;
+			color: var(--vlt-color-0);
+
+			i.icon-arrow-right {
+				display: inline-block;
+				margin-left: px2rem(18px);
+				overflow: hidden;
+
+				&::before {
+					display: inline-flex;
+					font-size: .3em;
+					vertical-align: super;
+				}
+
+			}
+
+		}
+
+	}
+
+	&:hover .vlt-post-header {
+
+		i.icon-arrow-right::before {
+			animation: vlt_animate_icon_right var(--vlt-transition-duration) var(--vlt-transition-easing) forwards;
+		}
+
+	}
+
+}

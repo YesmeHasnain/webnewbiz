@@ -1,0 +1,42 @@
+/* WORK: STYLE 1
+-------------------------------------------- */
+
+.vp-portfolio__items-style-ziomm_work_style_1 {
+
+	// Links.
+	--vp-items-style-ziomm-style-1--links__text-decoration: none;
+
+	// Image.
+	--vp-items-style-ziomm-style-1--image-hover__transform: scale(1.05);
+
+	// Transitions.
+	--vp-items-style-ziomm-style-1-transition-duration: 600ms;
+	--vp-items-style-ziomm-style-1-transition-easing: ease-in-out;
+
+	.vp-portfolio__item a {
+		text-decoration: var(--vp-items-style-ziomm-style-1--links__text-decoration);
+		outline: none;
+		box-shadow: none;
+	}
+
+	// Transitions
+	.vp-portfolio__item-img img {
+		transition: var(--vp-items-style-ziomm-style-1-transition-duration) transform var(--vp-items-style-ziomm-style-1-transition-easing), var(--vp-items-style-ziomm-style-1-transition-duration) opacity var(--vp-items-style-ziomm-style-1-transition-easing);
+		will-change: transform, opacity;
+
+		// Fix FireFox image blinking
+		// https://github.com/nk-o/visual-portfolio/issues/92
+		z-index: 1;
+	}
+
+	// Overlay
+	.vp-portfolio__item:hover,
+	.vp-portfolio__item-focus {
+
+		.vp-portfolio__item-img img {
+			transform: var(--vp-items-style-ziomm-style-1--image-hover__transform);
+		}
+
+	}
+
+}

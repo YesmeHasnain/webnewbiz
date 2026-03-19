@@ -1,0 +1,148 @@
+// Products / Archive Products / Product Related / Upsells.
+
+// Theme-dependant.
+.products-base() {
+	// WC Products
+	ul.products li.product:not(.product-category) {
+		display: flex;
+		flex-direction: column;
+		height: 100%;
+
+		.woocommerce-loop-category__title,
+		.woocommerce-loop-product__title {
+			padding: 0;
+		}
+
+		& {
+			overflow: hidden;
+			//  Safari border-radius + overflow: hidden + CSS transform fix 🤮
+			-webkit-mask-image: -webkit-radial-gradient(white, black);
+		}
+
+		.woocommerce-loop-product__link {
+			height: 100%;
+			flex: 1;
+		}
+
+		@slide-up-val: 60px; // The amount of space the content will take from the thumbnail sliding upwards.
+		> a, > a:hover {
+			color: inherit;
+		}
+
+		> a img {
+			margin: 0;
+		}
+
+		.vamtam-product-content {
+			flex: 1;
+			background-color: var(--vamtam-accent-color-5);
+
+			.woocommerce-loop-product__title {
+				padding-top: var(--vamtam-img-spacing);
+			}
+		}
+
+		> a img:not([class*="elementor-animation"]),
+		.vamtam-product-content {
+			transition: transform .4s cubic-bezier(0, 0, 0.2, 1), filter .4s cubic-bezier(0, 0, 0.2, 1) !important;
+		}
+
+		.vamtam-add-to-cart-wrap {
+			position: relative;
+
+			a.button,
+			a.added_to_cart {
+				position: absolute;
+				left: 0px;
+				bottom: 0px;
+				width: 100%;
+				opacity: 0;
+				transition: transform .5s ease, opacity .5s ease, color .3s ease-out, border .3s ease-out, background .3s ease-out, box-shadow .3s ease-out !important; // !important necessary for RevSlider compatibility (>=5.1)
+				will-change: transform;
+				transform: translateY(60px);
+			}
+		}
+
+		&:hover {
+			.vamtam-product-content {
+				transform: translateY((-@slide-up-val+6px));
+			}
+
+			.vamtam-add-to-cart-wrap {
+				a.button, a.added_to_cart {
+					opacity: 1;
+					transform: translateY(0);
+				}
+			}
+
+		}
+		.woocommerce-loop-product__title,
+		.woocommerce-product-details__short-description {
+			padding: 10px 0;
+		}
+		.woocommerce-product-details__short-description {
+			padding-bottom: 0;
+
+			ul {
+				margin: 0;
+			}
+		}
+		a.button,
+		a.added_to_cart {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+
+			&.added {
+				opacity: 0 !important;
+				display: none;
+			}
+
+			&.loading:after {
+				position: relative;
+				top: unset;
+				right: unset;
+				margin-left: 10px;
+				overflow: hidden;
+				line-height: 16px;
+				font-size: 16px;
+				height: 15px;
+			}
+		}
+
+		.vamtam-product-content {
+			> a {
+				height: auto;
+				flex: auto;
+				overflow: auto;
+			}
+		}
+
+		span.onsale {
+			transform: rotate(-90deg) translate(-100%, 0);
+			transform-origin: 0 0;
+		}
+	}
+
+	// Touch devices (and others with reduced pointer accuracy).
+	@media (pointer:coarse) {
+		// WC Products
+		ul.products li.product:not(.product-category) {
+			.vamtam-add-to-cart-wrap {
+				a.button, a.added_to_cart {
+					opacity: 1;
+					position: relative;
+					transform: translateY(0);
+				}
+			}
+
+			&:hover {
+				> a img:not([class*="elementor-animation"]),
+				.vamtam-product-content,
+				.vamtam-product-content > * {
+					transform: translateY(0);
+				}
+			}
+		}
+	}
+}

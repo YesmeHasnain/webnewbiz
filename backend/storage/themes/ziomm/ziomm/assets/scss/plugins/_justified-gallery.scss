@@ -1,0 +1,16 @@
+/* VENDOR: JUSTIFIED GALLERY
+-------------------------------------------- */
+
+.justified-gallery>a>.jg-caption,
+.justified-gallery>div>.jg-caption,
+.justified-gallery>figure>.jg-caption {
+	display: block;
+	padding: px2rem(5px) px2rem(15px);
+	font-family: inherit;
+	font-size: px2rem(map-get($scales, "s8"));
+	font-weight: 400;
+	color: var(--vlt-color-0);
+	background-color: var(--vlt-color-9);
+	opacity: 0;
+	transition: opacity var(--vlt-transition-duration) var(--vlt-transition-easing);
+}

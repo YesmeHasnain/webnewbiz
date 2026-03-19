@@ -1,0 +1,45 @@
+@use '../../utils' as *;
+
+/*----------------------------------------*/
+/*  8.9 Error Css
+/*----------------------------------------*/
+
+.#{$theme-prefix}-error{
+    &-content{
+        & p{
+            font-size: 22px;
+            color: #5D5D63;
+        }
+    }
+    &-thumb{
+        & img{
+            @media #{$md,$xs} {
+                width: 100%;
+            }
+        }
+    }
+    &-title{
+        font-size: 120px;
+        font-weight: 500;
+        line-height: 1;
+        color: #141414;
+        margin-bottom: 30px;
+        letter-spacing: -7.2px;
+        @media #{$xl} {
+            font-size: 110px;
+        }
+        @media #{$lg} {
+            font-size: 100px;
+        }
+        @media #{$md} {
+            font-size: 90px;
+        }
+        @media #{$xs} {
+            font-size: 60px;
+            letter-spacing: 0;
+        }
+        @media #{$xs1} {
+            font-size: 42px;
+        }
+    }
+}

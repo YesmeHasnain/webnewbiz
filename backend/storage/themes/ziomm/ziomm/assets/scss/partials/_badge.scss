@@ -1,0 +1,35 @@
+/* PARTIAL: BADGE
+-------------------------------------------- */
+
+.vlt-badge {
+	display: inline-flex;
+	align-items: center;
+	padding: px2rem(14px) px2rem(20px);
+	font-size: px2rem(map-get($scales, "s8"));
+	font-weight: 700;
+	line-height: 1.5;
+	color: var(--vlt-color-9);
+	text-align: center;
+	background-color: var(--vlt-color-0);
+	backface-visibility: hidden;
+
+	&--lg {
+		padding: px2rem(14px) px2rem(30px);
+	}
+
+	img.emoji,
+	img.wp-smiley {
+		position: static;
+	}
+
+	>span+span {
+
+		&::before {
+			content: "/";
+			padding-right: px2rem(6px);
+			margin-left: px2rem(6px);
+		}
+
+	}
+
+}

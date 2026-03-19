@@ -1,0 +1,41 @@
+/* WIDGET: SLIDER CONTROLS
+-------------------------------------------- */
+
+.vlt-slider-controls {
+	position: relative;
+	display: inline-flex;
+	align-items: center;
+	line-height: 0;
+	pointer-events: none;
+	z-index: 1;
+
+	.vlt-swiper-button-prev,
+	.vlt-swiper-button-next {
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		width: px2rem(20px);
+		height: px2rem(20px);
+		pointer-events: auto;
+
+		i {
+			font-size: 0.5em;
+		}
+
+	}
+
+	&--style-1 {
+
+		.vlt-swiper-button-prev+.vlt-swiper-button-next {
+			margin-left: px2rem(20px);
+		}
+
+	}
+
+	&--style-2 {
+		display: flex;
+		justify-content: space-between;
+		height: 0;
+	}
+
+}

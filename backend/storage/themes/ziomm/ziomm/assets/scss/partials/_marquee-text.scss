@@ -1,0 +1,16 @@
+/* PARTIAL: MARQUEE TEXT
+-------------------------------------------- */
+
+[data-marquee] {
+	display: flex;
+	max-width: 100%;
+	white-space: nowrap;
+
+	[data-marquee-text] {
+		display: inline-block;
+		padding-right: 2em;
+		animation: vlt_marquee 5s linear infinite;
+		will-change: transform;
+	}
+
+}

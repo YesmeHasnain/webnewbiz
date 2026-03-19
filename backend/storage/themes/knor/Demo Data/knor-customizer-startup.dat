@@ -1,0 +1,137 @@
+a:4:{s:8:"template";s:4:"knor";s:4:"mods";a:3:{i:0;b:0;s:18:"nav_menu_locations";a:2:{s:7:"primary";i:2;s:10:"footermenu";i:7;}s:18:"custom_css_post_id";i:1519;}s:7:"options";a:2:{s:9:"site_icon";s:1:"0";s:23:"nav_menus_created_posts";a:0:{}}s:6:"wp_css";s:2781:".theme-banner-startup-wrapper a.banner-btn.banner-btn-filled {
+    border-radius: 3px;
+    padding: 17px 32px;
+    margin-right: 30px;
+    border: 0px solid;
+}
+
+.theme-banner-startup-wrapper a.banner-btn.banner-btn-bordered {
+    border-radius: 3px;
+    padding: 17px 32px;
+    border: 1px solid rgba(28, 38, 57, 0.25);
+}
+
+.theme-banner-startup-wrapper h1.banner-heading {
+    padding-right: 20px;
+	  max-width: 500px;
+}
+
+.theme-banner-startup-wrapper h4.banner-sub-heading {
+    padding: 12px 30px;
+}
+
+.custom-startup-herowrap .theme-banner-startup-wrapper .banner-description {
+    max-width: 475px;
+}
+
+.custom-feature-box-start .theme-feature-box-icon {
+    background: #C6E0F9;
+    width: 56px;
+    height: 56px;
+    border-radius: 8px;
+    line-height: 56px;
+    text-align: center;
+}
+
+.custom-feature-box-start .feature-box-btn.theme_featured_box__Button {
+    display: none;
+}
+
+.custom-feature-box-start .theme-feature-box-one-wrapper:hover .theme-feature-box-icon {
+    background-color: #C6E0F9!important;
+}
+
+
+.custom-feature-box-start a.feature-box-btn {
+    display: none;
+}
+
+.custom-feature-box-start .theme-feature-box-one-wrapper:hover .theme-feature-box-icon svg path {
+    fill: #1C2639;
+}
+
+.startup-servicesbox .theme-feature-box-one-wrapper:hover .feature-box-content {
+    color: #555!important;
+    opacity: 1!important;
+}
+
+.theme-feature-box-one-wrapper:hover .theme-feature-box-icon i {
+    color: #1C2639!important;
+}
+
+.header-signup-btn a {
+    background: #1C2639; 
+}
+
+.header-signup-btn a:hover { 
+	background: #3BCBB0;
+	color: #fff;
+}
+
+.nav-menu-wrapper .mainmenu ul li a {
+    font-size: 16px;
+    color: rgb(16 16 27); 
+}
+
+.header-style-one {
+    padding-top: 22px;
+}
+
+.nav-menu-wrapper .mainmenu ul li a:hover {
+    color: rgb(16 16 27);
+}
+
+.header-signup-btn a {
+    font-family: 'Poppins';
+    font-weight: 500;
+}
+
+.nav-menu-wrapper .mainmenu ul li a, .footer-widget ul li, .startup-subscribe-wrap .subscribe-form input[type="submit"], .subscribe-form input[type="email"] {
+    font-family: 'Poppins'; 
+}
+
+.footer-widget.widget h4 {
+    font-size: 22px;
+	  font-family: 'Poppins'; 
+}
+
+footer.theme-footer-wrapper .widget_text p {
+    font-size: 18px;
+    line-height: 1.65;
+	font-family: 'Poppins'; 
+}
+
+.footer-widget ul li a {
+    font-size: 16px;
+	font-family: 'Poppins'; 
+}
+
+ul.footer-nav li a, p.copyright-text {
+    font-size: 15px;
+	font-family: 'Poppins'; 
+}
+
+.subscribe-form input[type="email"] {
+    width: 100%;
+    border-radius: 10px; 
+	  font-size: 17px; 
+}
+
+.startup-subscribe-wrap .subscribe-form input[type="submit"] {
+    border-radius: 10px;
+	 font-size: 16px;
+    font-weight: 500;
+}
+ .footer-divider {
+    height: 1px; 
+}
+
+.nav-menu-wrapper .mainmenu ul>li.menu-item-has-children>a:hover:after {
+    color: rgb(16 16 27);
+}
+
+
+
+
+
+";}

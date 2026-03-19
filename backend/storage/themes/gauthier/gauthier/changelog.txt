@@ -1,0 +1,4 @@
+Changelog for gauthier WordPress Theme | 
+
+= 1.0 =
+* Released: Nov 03, 2022

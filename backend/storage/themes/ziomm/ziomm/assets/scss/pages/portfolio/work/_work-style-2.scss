@@ -1,0 +1,172 @@
+/* WORK: STYLE 2
+-------------------------------------------- */
+
+.vp-portfolio__items-style-ziomm_work_style_2 {
+
+	// Links.
+	--vp-items-style-ziomm-style-2--links__text-decoration: none;
+
+	// Image.
+	--vp-items-style-ziomm-style-2--image-hover__transform: scale(1.05);
+
+	// Transitions.
+	--vp-items-style-ziomm-style-2-transition-duration: 600ms;
+	--vp-items-style-ziomm-style-2-transition-easing: ease-in-out;
+
+	// Meta Categories.
+	--vp-items-style-ziomm-style-2--meta-categories__gap: .4em;
+	--vp-items-style-ziomm-style-2--meta-categories__separator: ", ";
+
+	@include media-breakpoint-down(lg) {
+
+		.vp-portfolio__item-img-wrap+.vp-portfolio__item-meta {
+			margin-top: px2rem(60px);
+		}
+
+	}
+
+	.vp-portfolio__item a {
+		text-decoration: var(--vp-items-style-ziomm-style-2--links__text-decoration);
+		outline: none;
+		box-shadow: none;
+	}
+
+	// Transitions
+	.vp-portfolio__item-img img {
+		transition: var(--vp-items-style-ziomm-style-2-transition-duration) transform var(--vp-items-style-ziomm-style-2-transition-easing), var(--vp-items-style-ziomm-style-2-transition-duration) opacity var(--vp-items-style-ziomm-style-2-transition-easing);
+		will-change: transform, opacity;
+
+		// Fix FireFox image blinking
+		// https://github.com/nk-o/visual-portfolio/issues/92
+		z-index: 1;
+	}
+
+	// Overlay
+	.vp-portfolio__item:hover,
+	.vp-portfolio__item-focus {
+
+		.vp-portfolio__item-img img {
+			transform: var(--vp-items-style-ziomm-style-2--image-hover__transform);
+		}
+
+	}
+
+	.vp-portfolio__item-img-wrap {
+		flex-basis: 100%;
+
+		@include media-breakpoint-up(lg) {
+			max-width: 65%;
+		}
+
+	}
+
+	.vp-portfolio__item {
+		display: flex;
+		align-items: flex-end;
+		flex-direction: row-reverse;
+		flex-wrap: nowrap;
+
+		@include media-breakpoint-down(lg) {
+			flex-direction: unset;
+			flex-wrap: wrap;
+		}
+
+	}
+
+	.vp-portfolio__item-meta {
+		position: absolute;
+		left: 0;
+		width: 100%;
+		max-width: 50%;
+		z-index: 1;
+
+		@include media-breakpoint-down(lg) {
+			position: static;
+			max-width: 100%;
+		}
+
+	}
+
+	.vp-portfolio__item-meta-title {
+		position: relative;
+		padding-left: px2rem(100px);
+		font-size: 70px;
+		line-height: 1.05;
+		letter-spacing: 0.005em;
+
+		@include media-breakpoint-up(lg) {
+			background: linear-gradient(to right, var(--vlt-color-9) calc(100% - 30%), var(--vlt-color-0) 0);
+			background-clip: text;
+			-webkit-text-fill-color: transparent;
+		}
+
+		@include media-breakpoint-down(sm) {
+			padding-left: 0;
+		}
+
+		&::before {
+			content: "";
+			position: absolute;
+			top: 30px;
+			left: 0;
+			display: inline-block;
+			width: 20px;
+			height: 2px;
+			background-color: var(--vlt-color-9);
+
+			@include media-breakpoint-down(sm) {
+				display: none;
+			}
+
+		}
+
+	}
+
+	.vp-portfolio__item-meta-read-more {
+		margin-top: px2rem(80px);
+		margin-left: px2rem(100px);
+
+		@include media-breakpoint-down(sm) {
+			margin-left: 0;
+		}
+
+	}
+
+	.vp-portfolio__item-meta-categories {
+		display: inline-flex;
+		margin-left: calc(-1 * var(--vp-items-style-ziomm-style-2--meta-categories__gap));
+		flex-wrap: wrap;
+
+		.vp-portfolio__item-meta-category {
+			display: flex;
+			margin-left: var(--vp-items-style-ziomm-style-2--meta-categories__gap);
+
+			@if variable-exists(rtl) and $rtl {
+
+				&::before {
+					content: var(--vp-items-style-ziomm-style-2--meta-categories__separator);
+				}
+
+				&:first-of-type::before {
+					content: none;
+				}
+
+			}
+
+			@else {
+
+				&::after {
+					content: var(--vp-items-style-ziomm-style-2--meta-categories__separator);
+				}
+
+				&:last-of-type::after {
+					content: none;
+				}
+
+			}
+
+		}
+
+	}
+
+}

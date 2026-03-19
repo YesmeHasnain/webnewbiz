@@ -1,0 +1,92 @@
+/* WORDPRESS: SIDEBAR
+-------------------------------------------- */
+
+.vlt-sidebar--right {
+	padding-left: px2rem(40px);
+
+	@include media-breakpoint-down(lg) {
+		padding-left: 0;
+		margin-top: px2rem(60px);
+	}
+
+}
+
+.vlt-sidebar--left {
+	padding-right: px2rem(40px);
+
+	@include media-breakpoint-down(lg) {
+		padding-right: 0;
+		margin-top: px2rem(60px);
+	}
+
+}
+
+/* WIDGET
+-------------------------------------------- */
+
+.vlt-widget {
+	display: block;
+
+	&~& {
+		margin-top: px2rem(57px);
+
+		.vlt-offcanvas-sidebar--dark & {
+			margin-top: px2rem(43px);
+		}
+
+	}
+
+	&__title {
+		margin: 0 0 px2rem(24px);
+
+		.vlt-offcanvas-sidebar & {
+			margin: 0 0 px2rem(40px);
+			font-size: px2rem(map-get($scales, "s4"));
+			line-height: 1.3;
+			letter-spacing: 0.015em;
+		}
+
+		.vlt-offcanvas-sidebar--dark & {
+			color: var(--vlt-color-0);
+		}
+
+	}
+
+	ul {
+		padding: 0;
+		margin: 0;
+		list-style-type: none;
+
+		li {
+			clear: both;
+		}
+
+		.children {
+			margin-left: px2rem(10px);
+		}
+
+	}
+
+}
+
+// import
+@import "widgets/categories";
+@import "widgets/search-form";
+@import "widgets/archive";
+@import "widgets/pages";
+@import "widgets/meta";
+@import "widgets/recent-comments";
+@import "widgets/recent-entries";
+@import "widgets/nav-menu";
+@import "widgets/tag-cloud";
+@import "widgets/text";
+@import "widgets/rss";
+@import "widgets/calendar";
+@import "widgets/vlthemes-about-me";
+@import "widgets/vlthemes-widget-socials";
+@import "widgets/vlthemes-recent-posts";
+@import "widgets/vlthemes-popular-posts";
+@import "widgets/woo-mini-cart";
+@import "widgets/woo-price-filter";
+@import "widgets/woo-products";
+@import "widgets/woo-rating-filter";

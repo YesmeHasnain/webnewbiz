@@ -1,0 +1,24 @@
+/* WIDGET: HEADING
+-------------------------------------------- */
+
+h1.vlt-heading,
+h2.vlt-heading,
+h3.vlt-heading,
+h4.vlt-heading,
+h5.vlt-heading,
+h6.vlt-heading {
+	margin: 0;
+
+	&.has-background-fill {
+		background-repeat: no-repeat;
+		background-position: center;
+		-webkit-background-clip: text;
+		background-size: cover;
+		-webkit-text-fill-color: transparent;
+	}
+
+	a:hover {
+		color: inherit;
+	}
+
+}

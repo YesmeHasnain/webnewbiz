@@ -1,0 +1,27 @@
+@import (reference) '../../general/main/elementor-wc-mixins.less';
+
+body.responsive-layout {
+    &.woocommerce.woocommerce-checkout {
+        // Sub-header.
+        .elementor-wc-sub-header-small();
+        // Limit wrapper.
+        .elementor-wc-limit-wrapper-small();
+
+        .checkout_coupon {
+            padding: 10px;
+        }
+
+        &.woocommerce-order-received .woocommerce ul.order_details.woocommerce-order-overview {
+            float: none;
+            border: none;
+        }
+
+        form.checkout.woocommerce-checkout .col2-set .col-2 {
+            padding: 30px 20px 20px 20px;
+        }
+
+        .checkout_coupon {
+            padding: 20px;
+        }
+    }
+}

@@ -1,0 +1,42 @@
+/* WIDGET: CONTENT MARQUEE
+-------------------------------------------- */
+
+.vlt-content-marquee {
+	--speed: 10s;
+	position: relative;
+	display: inline-flex;
+	white-space: nowrap;
+	animation: var(--speed) vlt_marquee linear infinite;
+
+	&.has-stopable:hover {
+		animation-play-state: paused;
+	}
+
+	&__original,
+	&__copy {
+
+		>* {
+			display: inline-flex;
+		}
+
+		.elementor-section {
+			left: auto !important;
+			width: 100% !important;
+
+			.elementor-widget-wrap {
+				flex-wrap: nowrap;
+			}
+
+		}
+
+	}
+
+	&__copy {
+		position: absolute;
+		top: 0;
+		left: 100%;
+		width: 100%;
+		height: 100%;
+	}
+
+}

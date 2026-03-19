@@ -1,0 +1,22 @@
+/* WIDGET: NAV MENU
+-------------------------------------------- */
+
+.elementor-widget-wp-widget-nav_menu .menu {
+	display: inline-block;
+	padding: 0;
+	margin: 0;
+	list-style-type: none;
+
+	li {
+		display: inline-block;
+		padding: px2rem(5px) px2rem(18px) 0 px2rem(18px);
+
+		a {
+			font-size: px2rem(map-get($scales, "s8"));
+			font-weight: 700;
+			line-height: 1.45;
+		}
+
+	}
+
+}

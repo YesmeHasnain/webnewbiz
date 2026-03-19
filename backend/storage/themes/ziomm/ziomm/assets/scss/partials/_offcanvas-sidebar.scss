@@ -1,0 +1,58 @@
+/* PARTIAL: OFFCANVAS SIDEBAR
+-------------------------------------------- */
+
+.vlt-offcanvas-sidebar {
+	position: fixed;
+	top: 0;
+	right: 0;
+	width: 100%;
+	max-width: px2rem(442px);
+	height: 100%;
+	max-height: 100%;
+	padding: px2rem(70px);
+	overflow-y: auto;
+	color: var(--vlt-color-6);
+	visibility: hidden;
+	background-color: var(--vlt-color-0);
+	transform: translateX(100%);
+	backface-visibility: hidden;
+	z-index: z("offcanvas-sidebar");
+
+	@include admin-sticky-fix;
+
+	.vlt-menu-burger {
+		position: absolute;
+		top: px2rem(40px);
+		right: px2rem(40px);
+		color: var(--vlt-color-6);
+
+		&:hover {
+			color: var(--vlt-color-9);
+		}
+
+	}
+
+	.vlt-widget.vlt_widget_instagram+.vlt-widget.vlt_widget_socials {
+		margin-top: px2rem(50px);
+	}
+
+	.vlt-widget.vlt_widget_socials+.vlt-widget.widget_custom_html {
+		margin-top: px2rem(18px);
+	}
+
+	&--dark {
+		color: var(--vlt-color-4);
+		background-color: var(--vlt-color-9);
+
+		.vlt-menu-burger {
+			color: var(--vlt-color-5);
+
+			&:hover {
+				color: var(--vlt-color-0);
+			}
+
+		}
+
+	}
+
+}

@@ -1,0 +1,52 @@
+a:4:{s:8:"template";s:4:"knor";s:4:"mods";a:3:{i:0;b:0;s:18:"nav_menu_locations";a:2:{s:7:"primary";i:8;s:10:"footermenu";i:7;}s:18:"custom_css_post_id";i:1683;}s:7:"options";a:2:{s:9:"site_icon";s:1:"0";s:23:"nav_menus_created_posts";a:0:{}}s:6:"wp_css";s:1040:".header-signup-btn a {
+    font-weight: 500;
+}
+
+.scrolltotop i {
+    color: #FF8B37;
+}
+
+.nav-menu-wrapper .mainmenu ul li a:hover {
+    color: #1c2639;
+}
+
+.theme-banner-it-wrapper a.banner-btn.banner-btn-rounded:hover {
+    background: #e86f19;
+}
+
+.nav-menu-wrapper .mainmenu ul>li.menu-item-has-children>a:hover:after {
+    color: #1c2639;
+}
+
+.subscribe-form-it-solution input[type="submit"]:hover {
+    background: #e66b14;
+}
+
+.header-signup-btn a {
+    font-weight: 500;
+    background-image: none;
+    background: #1c2639;
+    transition: all .3s ease;
+	  color: #fff;
+}
+
+.header-signup-btn a:hover {
+	  background-image: none;
+    background: #00cc5e;
+	  color: #fff;
+}
+
+.home-blog-one-grid-wrap .post-block-style-one-inner .post-block-content-wrap h3.post-title a:hover, .home-blog-two-grid-wrap article.post-block-style-list-inner .post-block-style-one-inner .post-block-content-wrap h4.post-title a:hover {
+	color: #FF8B37;
+}
+
+@media (min-width: 992px) and (max-width: 1199px) {
+	
+	.header-signup-btn a {
+		font-size: 18px;
+	}
+
+}
+
+
+";}

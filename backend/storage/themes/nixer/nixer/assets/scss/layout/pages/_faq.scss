@@ -1,0 +1,199 @@
+@use '../../utils' as *;
+
+/*----------------------------------------*/
+/*  7.8 Faq Css
+/*----------------------------------------*/
+
+.#{$theme-prefix}-faq{
+  &-ptb{
+    &::before{
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 625px;
+      content: '';
+      background-color: var(--tp-theme-5);
+      @media #{$xl,$lg,$md,$xs} {
+        content: none;
+      }
+    }
+  }
+  &-heading{
+    @media #{$xs} {
+      margin-bottom: 40px;
+    }
+    & .tp-section-5-title{
+    color: var(--tp-heading-secondary);
+    }
+  }
+  &-wrap{
+    padding-left: 50px;
+    @media #{$xxl,$xl,$lg,$md,$xs} {
+      padding-left: 0;
+    }
+  }
+  &-thumb{
+    & img{
+      @media #{$xxl,$xl,$lg,$md,$xs} {
+        width: 100%;
+      }
+    }
+  }
+  &-wrapper{
+    @media #{$md,$xs} {
+      margin-bottom: 50px;
+    }
+    & .accordion-item{
+      padding-bottom: 17px;
+      background-color: transparent !important;
+      border-bottom: 1px solid rgba(245, 247, 245, 0.10);
+      &.active{
+        border-color: var(--tp-heading-secondary);
+        &:last-child{
+          border-color: var(--tp-heading-secondary);
+        }
+      }
+      &:last-child{
+        border-bottom: 1px solid rgba(245, 247, 245, 0.10);
+      }
+    }
+    & .accordion-button{
+      font-size: 30px;
+      font-weight: 600;
+      box-shadow: none;
+      padding: 30px 30px 15px 0px;
+      background-color: transparent;
+      color: var(--tp-heading-secondary);
+      border: 1px solid transparent;
+      @media #{$xl,$lg,$xs} {
+        font-size: 25px;
+      }
+      &::after{
+        content: none;
+      }
+      &.collapsed{
+       
+      }
+      &:not(.collapsed) {
+        & .accordion-btn{
+          color: var(--tp-common-white);
+          background: var(--tp-theme-primary);
+            &::before{
+              background-color: var(--tp-common-white);
+              @include transform(translate(-50%, -50%) rotate(0deg));
+            }
+            &::after{
+                background-color: var(--tp-common-white);
+            }
+        }
+      }
+      & .accordion-btn{
+        position: absolute;
+        top: 50%;
+        right: 10px;
+        &::after,
+        &::before{
+            position: absolute;
+            content: '';
+            width: 20px;
+            height: 2px;
+            left: 50%;
+            top: 50%;
+            border-radius: 50px;
+            @include transition();
+            @include transform(translate(-50%, -50%));
+            background-color: var(--tp-heading-secondary);
+        }
+        &::before{
+          background-color: var(--tp-heading-secondary);
+          @include transform(translate(-50%, -50%) rotate(90deg));
+        }
+      }
+    }
+    & .accordion-body{
+      font-size: 18px;
+      font-weight: 400;
+      line-height: 26px;
+      padding: 0 128px 25px 0px;
+      color: var(--tp-text-body);
+      @media #{$lg,$xs} {
+        padding-right: 40px;
+      }
+    }
+    &.faq-inner{
+      & .accordion-item{
+        border-bottom: 1px solid rgba(25, 25, 26, 0.20);
+        &.active{
+          border-color: var(--tp-common-black-1);
+        }
+      }
+      & .accordion-button{
+        color: var(--tp-common-black-1);
+        &.collapsed{
+          border: 1px solid transparent;
+          color: var(--tp-common-black-1);
+        }
+        &:not(.collapsed) {
+          color: var(--tp-common-black-1);
+          & .accordion-btn{
+            color: var(--tp-common-black-1);
+              &::before{
+                background-color: var(--tp-common-black-1);
+              }
+              &::after{
+                  background-color: var(--tp-common-black-1);
+              }
+          }
+        }
+      }
+      & .accordion-btn{
+        &::after,
+        &::before{
+            background-color: var(--tp-common-black-1);
+        }
+        &::before{
+          background-color: var(--tp-common-black-1);
+        }
+      }
+    }
+  }
+}
+
+
+
+.#{$theme-prefix}-faq{
+  &-inner{
+    &-heading{
+      @media #{$md,$xs} {
+        padding-bottom: 40px;
+      }
+      & .tp-breadcrumb-title tp-title-anim{
+        color: var(--tp-common-white);
+      }
+      & p{
+        font-size: 28px;
+        font-weight: 500;
+        color: var(--tp-common-black-1);
+        & br{
+          @media #{$lg,$md,$xs} {
+            display: none;
+          }
+        }
+      }
+    }
+    &-title{
+      font-size: 60px;
+      font-weight: 700;
+      margin-bottom: 30px;
+      letter-spacing: -1.2px;
+      text-transform: uppercase;
+      color: var(--tp-common-black-1);
+    }
+    &-top-heading{
+      @media #{$md,$xs} {
+        margin-bottom: 0;
+      }
+    }
+  }
+}

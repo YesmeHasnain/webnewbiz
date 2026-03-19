@@ -1,0 +1,1553 @@
+{
+    "manifest_version": "1.0.21",
+    "title": "Cargox - Logistic & Transportation Elementor Template kit",
+    "page_builder": "elementor",
+    "kit_version": "1.0.0",
+    "templates": [
+        {
+            "name": "Global Kit Styles",
+            "screenshot": "screenshots\/global-kit-styles.jpg",
+            "source": "templates\/global.json",
+            "preview_url": "https:\/\/promo-theme.com\/cargox",
+            "type": "section",
+            "category": "page",
+            "metadata": {
+                "template_type": "global-styles",
+                "include_in_zip": "1",
+                "elementor_pro_required": "1",
+                "additional_template_information": [
+                    "These are the global theme styles configured through the Elementor Theme Styles area."
+                ]
+            },
+            "elementor_pro_required": true
+        },
+        {
+            "name": "Header",
+            "screenshot": "screenshots\/header.jpg",
+            "source": "templates\/header.json",
+            "preview_url": "https:\/\/promo-theme.com\/cargox\/?elementor_library=header",
+            "type": "header",
+            "category": "section",
+            "metadata": {
+                "template_type": "section-header",
+                "include_in_zip": "1",
+                "elementor_pro_required": "1",
+                "elementor_library_type": "header",
+                "elementor_pro_conditions": [
+                    "include\/general"
+                ],
+                "additional_template_information": [
+                    "This is a \"Header\" template for Elementor Pro.",
+                    "This template will display on: Entire Site."
+                ]
+            },
+            "elementor_pro_required": true
+        },
+        {
+            "name": "Footer",
+            "screenshot": "screenshots\/footer.jpg",
+            "source": "templates\/footer.json",
+            "preview_url": "https:\/\/promo-theme.com\/cargox\/?elementor_library=footer",
+            "type": "footer",
+            "category": "section",
+            "metadata": {
+                "template_type": "section-footer",
+                "include_in_zip": "1",
+                "elementor_pro_required": "1",
+                "elementor_library_type": "footer",
+                "elementor_pro_conditions": [
+                    "include\/general"
+                ],
+                "additional_template_information": [
+                    "This is a \"Footer\" template for Elementor Pro.",
+                    "This template will display on: Entire Site."
+                ]
+            },
+            "elementor_pro_required": true
+        },
+        {
+            "name": "Home",
+            "screenshot": "screenshots\/home.jpg",
+            "source": "templates\/home.json",
+            "preview_url": "https:\/\/promo-theme.com\/cargox\/template-kit\/home\/",
+            "type": "section",
+            "category": "page",
+            "metadata": {
+                "template_type": "single-home",
+                "include_in_zip": "1",
+                "elementor_pro_required": "1"
+            },
+            "elementor_pro_required": true
+        },
+        {
+            "name": "About Us",
+            "screenshot": "screenshots\/about-us.jpg",
+            "source": "templates\/about-us.json",
+            "preview_url": "https:\/\/promo-theme.com\/cargox\/template-kit\/about-us\/",
+            "type": "page",
+            "category": "page",
+            "metadata": {
+                "template_type": "single-page",
+                "include_in_zip": "1",
+                "elementor_pro_required": "1"
+            },
+            "elementor_pro_required": true
+        },
+        {
+            "name": "Services",
+            "screenshot": "screenshots\/services.jpg",
+            "source": "templates\/services.json",
+            "preview_url": "https:\/\/promo-theme.com\/cargox\/template-kit\/services\/",
+            "type": "page",
+            "category": "page",
+            "metadata": {
+                "template_type": "single-page",
+                "include_in_zip": "1",
+                "elementor_pro_required": "1"
+            },
+            "elementor_pro_required": true
+        },
+        {
+            "name": "Team",
+            "screenshot": "screenshots\/team.jpg",
+            "source": "templates\/team.json",
+            "preview_url": "https:\/\/promo-theme.com\/cargox\/template-kit\/team\/",
+            "type": "page",
+            "category": "page",
+            "metadata": {
+                "template_type": "single-page",
+                "include_in_zip": "1",
+                "elementor_pro_required": "1"
+            },
+            "elementor_pro_required": true
+        },
+        {
+            "name": "Service details",
+            "screenshot": "screenshots\/service-details.jpg",
+            "source": "templates\/service-details.json",
+            "preview_url": "https:\/\/promo-theme.com\/cargox\/template-kit\/service-details\/",
+            "type": "page",
+            "category": "page",
+            "metadata": {
+                "template_type": "single-page",
+                "include_in_zip": "1",
+                "elementor_pro_required": "1"
+            },
+            "elementor_pro_required": true
+        },
+        {
+            "name": "Contact Us",
+            "screenshot": "screenshots\/contact-us.jpg",
+            "source": "templates\/contact-us.json",
+            "preview_url": "https:\/\/promo-theme.com\/cargox\/template-kit\/contact-us\/",
+            "type": "page",
+            "category": "page",
+            "metadata": {
+                "template_type": "single-page",
+                "include_in_zip": "1",
+                "elementor_pro_required": "1"
+            },
+            "elementor_pro_required": true
+        },
+        {
+            "name": "Blog",
+            "screenshot": "screenshots\/blog.jpg",
+            "source": "templates\/blog.json",
+            "preview_url": "https:\/\/promo-theme.com\/cargox\/template-kit\/blog\/",
+            "type": "page",
+            "category": "page",
+            "metadata": {
+                "template_type": "single-page",
+                "include_in_zip": "1",
+                "elementor_pro_required": "1"
+            },
+            "elementor_pro_required": true
+        },
+        {
+            "name": "Single post",
+            "screenshot": "screenshots\/single-post.jpg",
+            "source": "templates\/single-post.json",
+            "preview_url": "https:\/\/promo-theme.com\/cargox\/template-kit\/single-post\/",
+            "type": "section",
+            "category": "page",
+            "metadata": {
+                "template_type": "single-post",
+                "include_in_zip": "1",
+                "elementor_pro_required": "1"
+            },
+            "elementor_pro_required": true
+        },
+        {
+            "name": "404",
+            "screenshot": "screenshots\/404.jpg",
+            "source": "templates\/404.json",
+            "preview_url": "https:\/\/promo-theme.com\/cargox\/?elementor_library=404",
+            "type": "error-404",
+            "category": "page",
+            "metadata": {
+                "template_type": "single-404",
+                "include_in_zip": "1",
+                "elementor_pro_required": "1",
+                "elementor_library_type": "error-404",
+                "elementor_pro_conditions": [
+                    "include\/singular\/not_found404"
+                ],
+                "additional_template_information": [
+                    "This is a \"Error 404\" template for Elementor Pro.",
+                    "This template will display on: 404 Page."
+                ]
+            },
+            "elementor_pro_required": true
+        },
+        {
+            "name": "Archive",
+            "screenshot": "screenshots\/archive.jpg",
+            "source": "templates\/archive.json",
+            "preview_url": "https:\/\/promo-theme.com\/cargox\/?elementor_library=elementor-archive-1823",
+            "type": "archive",
+            "category": "page",
+            "metadata": {
+                "template_type": "archive-blog",
+                "include_in_zip": "1",
+                "elementor_pro_required": "1",
+                "elementor_library_type": "archive",
+                "elementor_pro_conditions": [
+                    "include\/archive"
+                ],
+                "additional_template_information": [
+                    "This is a \"Archive\" template for Elementor Pro.",
+                    "This template will display on: All Archives."
+                ]
+            },
+            "elementor_pro_required": true
+        },
+        {
+            "name": "Block: Main Banner",
+            "screenshot": "screenshots\/block-main-banner.jpg",
+            "source": "templates\/block-main-banner.json",
+            "preview_url": "https:\/\/promo-theme.com\/cargox\/template-kit\/block-main-banner\/",
+            "type": "section",
+            "category": "section",
+            "metadata": {
+                "template_type": "section-gallery",
+                "include_in_zip": "1",
+                "elementor_pro_required": "1"
+            },
+            "elementor_pro_required": true
+        },
+        {
+            "name": "Block: Banner Inner page",
+            "screenshot": "screenshots\/block-banner-inner-page.jpg",
+            "source": "templates\/block-banner-inner-page.json",
+            "preview_url": "https:\/\/promo-theme.com\/cargox\/template-kit\/block-banner-inner-page\/",
+            "type": "section",
+            "category": "section",
+            "metadata": {
+                "template_type": "section-gallery",
+                "include_in_zip": "1",
+                "elementor_pro_required": "1"
+            },
+            "elementor_pro_required": true
+        },
+        {
+            "name": "Block: About us 1",
+            "screenshot": "screenshots\/block-about-us-1.jpg",
+            "source": "templates\/block-about-us-1.json",
+            "preview_url": "https:\/\/promo-theme.com\/cargox\/template-kit\/block-about-us-1\/",
+            "type": "section",
+            "category": "section",
+            "metadata": {
+                "template_type": "section-about",
+                "include_in_zip": "1",
+                "elementor_pro_required": "1"
+            },
+            "elementor_pro_required": true
+        },
+        {
+            "name": "Block: About us 2",
+            "screenshot": "screenshots\/block-about-us-2.jpg",
+            "source": "templates\/block-about-us-2.json",
+            "preview_url": "https:\/\/promo-theme.com\/cargox\/template-kit\/block-about-us-2\/",
+            "type": "section",
+            "category": "section",
+            "metadata": {
+                "template_type": "section-about",
+                "include_in_zip": "1",
+                "elementor_pro_required": "1"
+            },
+            "elementor_pro_required": true
+        },
+        {
+            "name": "Block: About us 3",
+            "screenshot": "screenshots\/block-about-us-3.jpg",
+            "source": "templates\/block-about-us-3.json",
+            "preview_url": "https:\/\/promo-theme.com\/cargox\/template-kit\/block-about-us-3\/",
+            "type": "page",
+            "category": "page",
+            "metadata": {
+                "template_type": "single-page",
+                "include_in_zip": "1",
+                "elementor_pro_required": "1"
+            },
+            "elementor_pro_required": true
+        },
+        {
+            "name": "Block: About our company",
+            "screenshot": "screenshots\/block-about-our-company.jpg",
+            "source": "templates\/block-about-our-company.json",
+            "preview_url": "https:\/\/promo-theme.com\/cargox\/template-kit\/block-about-our-company\/",
+            "type": "section",
+            "category": "section",
+            "metadata": {
+                "template_type": "section-about",
+                "include_in_zip": "1",
+                "elementor_pro_required": "1"
+            },
+            "elementor_pro_required": true
+        },
+        {
+            "name": "Block: Features",
+            "screenshot": "screenshots\/block-features.jpg",
+            "source": "templates\/block-features.json",
+            "preview_url": "https:\/\/promo-theme.com\/cargox\/template-kit\/block-features\/",
+            "type": "section",
+            "category": "section",
+            "metadata": {
+                "template_type": "section-features",
+                "include_in_zip": "1",
+                "elementor_pro_required": "1"
+            },
+            "elementor_pro_required": true
+        },
+        {
+            "name": "Block: Features 2",
+            "screenshot": "screenshots\/block-features-2.jpg",
+            "source": "templates\/block-features-2.json",
+            "preview_url": "https:\/\/promo-theme.com\/cargox\/template-kit\/block-features-2\/",
+            "type": "section",
+            "category": "section",
+            "metadata": {
+                "template_type": "section-features",
+                "include_in_zip": "1",
+                "elementor_pro_required": "1"
+            },
+            "elementor_pro_required": true
+        },
+        {
+            "name": "Block: Service details",
+            "screenshot": "screenshots\/block-service-details.jpg",
+            "source": "templates\/block-service-details.json",
+            "preview_url": "https:\/\/promo-theme.com\/cargox\/template-kit\/block-service-details\/",
+            "type": "section",
+            "category": "section",
+            "metadata": {
+                "template_type": "section-services",
+                "include_in_zip": "1",
+                "elementor_pro_required": "1"
+            },
+            "elementor_pro_required": true
+        },
+        {
+            "name": "Block: Services",
+            "screenshot": "screenshots\/block-services.jpg",
+            "source": "templates\/block-services.json",
+            "preview_url": "https:\/\/promo-theme.com\/cargox\/template-kit\/block-services\/",
+            "type": "section",
+            "category": "section",
+            "metadata": {
+                "template_type": "section-services",
+                "include_in_zip": "1",
+                "elementor_pro_required": "1"
+            },
+            "elementor_pro_required": true
+        },
+        {
+            "name": "Block: Icon counter",
+            "screenshot": "screenshots\/block-icon-counter.jpg",
+            "source": "templates\/block-icon-counter.json",
+            "preview_url": "https:\/\/promo-theme.com\/cargox\/template-kit\/block-icon-counter\/",
+            "type": "section",
+            "category": "section",
+            "metadata": {
+                "template_type": "section-countdown",
+                "include_in_zip": "1",
+                "elementor_pro_required": "1"
+            },
+            "elementor_pro_required": true
+        },
+        {
+            "name": "Block: Team",
+            "screenshot": "screenshots\/block-team.jpg",
+            "source": "templates\/block-team.json",
+            "preview_url": "https:\/\/promo-theme.com\/cargox\/template-kit\/block-team\/",
+            "type": "section",
+            "category": "section",
+            "metadata": {
+                "template_type": "section-team",
+                "include_in_zip": "1",
+                "elementor_pro_required": "1"
+            },
+            "elementor_pro_required": true
+        },
+        {
+            "name": "Block: Team 2",
+            "screenshot": "screenshots\/block-team-2.jpg",
+            "source": "templates\/block-team-2.json",
+            "preview_url": "https:\/\/promo-theme.com\/cargox\/template-kit\/block-team-2\/",
+            "type": "section",
+            "category": "section",
+            "metadata": {
+                "template_type": "section-team",
+                "include_in_zip": "1",
+                "elementor_pro_required": "1"
+            },
+            "elementor_pro_required": true
+        },
+        {
+            "name": "Block: Pricing plan",
+            "screenshot": "screenshots\/block-pricing-plan.jpg",
+            "source": "templates\/block-pricing-plan.json",
+            "preview_url": "https:\/\/promo-theme.com\/cargox\/template-kit\/block-pricing-plan\/",
+            "type": "section",
+            "category": "section",
+            "metadata": {
+                "template_type": "section-pricing",
+                "include_in_zip": "1",
+                "elementor_pro_required": "1"
+            },
+            "elementor_pro_required": true
+        },
+        {
+            "name": "Block: Counter",
+            "screenshot": "screenshots\/block-counter.jpg",
+            "source": "templates\/block-counter.json",
+            "preview_url": "https:\/\/promo-theme.com\/cargox\/template-kit\/block-counter\/",
+            "type": "section",
+            "category": "section",
+            "metadata": {
+                "template_type": "section-countdown",
+                "include_in_zip": "1",
+                "elementor_pro_required": "1"
+            },
+            "elementor_pro_required": true
+        },
+        {
+            "name": "Block: Contact Icons",
+            "screenshot": "screenshots\/block-contact-icons.jpg",
+            "source": "templates\/block-contact-icons.json",
+            "preview_url": "https:\/\/promo-theme.com\/cargox\/template-kit\/block-contact-icons\/",
+            "type": "section",
+            "category": "section",
+            "metadata": {
+                "template_type": "section-contact",
+                "include_in_zip": "1",
+                "elementor_pro_required": "1"
+            },
+            "elementor_pro_required": true
+        },
+        {
+            "name": "Block: Contact us",
+            "screenshot": "screenshots\/block-contact-us.jpg",
+            "source": "templates\/block-contact-us.json",
+            "preview_url": "https:\/\/promo-theme.com\/cargox\/template-kit\/block-contact-us\/",
+            "type": "section",
+            "category": "section",
+            "metadata": {
+                "template_type": "section-contact",
+                "include_in_zip": "1",
+                "elementor_pro_required": "1"
+            },
+            "elementor_pro_required": true
+        },
+        {
+            "name": "Block: Testimonials",
+            "screenshot": "screenshots\/block-testimonials.jpg",
+            "source": "templates\/block-testimonials.json",
+            "preview_url": "https:\/\/promo-theme.com\/cargox\/template-kit\/block-testimonials\/",
+            "type": "section",
+            "category": "section",
+            "metadata": {
+                "template_type": "section-testimonial",
+                "include_in_zip": "1",
+                "elementor_pro_required": "1"
+            },
+            "elementor_pro_required": true
+        },
+        {
+            "name": "Block: Blog",
+            "screenshot": "screenshots\/block-blog.jpg",
+            "source": "templates\/block-blog.json",
+            "preview_url": "https:\/\/promo-theme.com\/cargox\/template-kit\/block-blog\/",
+            "type": "section",
+            "category": "section",
+            "metadata": {
+                "template_type": "section-other",
+                "include_in_zip": "1",
+                "elementor_pro_required": "1"
+            },
+            "elementor_pro_required": true
+        },
+        {
+            "name": "Block: Banner feedback",
+            "screenshot": "screenshots\/block-banner-feedback.jpg",
+            "source": "templates\/block-banner-feedback.json",
+            "preview_url": "https:\/\/promo-theme.com\/cargox\/template-kit\/block-banner-feedback\/",
+            "type": "section",
+            "category": "section",
+            "metadata": {
+                "template_type": "section-cta",
+                "include_in_zip": "1",
+                "elementor_pro_required": "1"
+            },
+            "elementor_pro_required": true
+        }
+    ],
+    "required_plugins": [
+        {
+            "name": "Elementor Pro",
+            "version": "3.6.4",
+            "file": "elementor-pro\/elementor-pro.php",
+            "author": "Elementor.com"
+        },
+        {
+            "name": "Elementor",
+            "version": "3.6.5",
+            "file": "elementor\/elementor.php",
+            "author": "Elementor.com"
+        },
+        {
+            "name": "ElementsKit Lite",
+            "version": "2.6.0",
+            "file": "elementskit-lite\/elementskit-lite.php",
+            "author": "Wpmet"
+        },
+        {
+            "name": "Premium Addons for Elementor",
+            "version": "4.9.14",
+            "file": "premium-addons-for-elementor\/premium-addons-for-elementor.php",
+            "author": "Leap13"
+        },
+        {
+            "name": "Sticky Header Effects for Elementor",
+            "version": "1.4.8",
+            "file": "sticky-header-effects-for-elementor\/sticky-header-effects-for-elementor.php",
+            "author": "Rwattner"
+        }
+    ],
+    "images": [
+        {
+            "filename": "logo-foot-1.png",
+            "thumbnail_url": "https:\/\/promo-theme.com\/cargox\/wp-content\/uploads\/2022\/03\/logo-foot-1.png",
+            "templates": [
+                {
+                    "source": "templates\/footer.json",
+                    "name": "Footer"
+                }
+            ],
+            "filesize": 2941,
+            "dimensions": [
+                150,
+                42
+            ],
+            "image_source": "self_created",
+            "person_or_place": "no",
+            "image_urls": ""
+        },
+        {
+            "filename": "i6.png",
+            "thumbnail_url": "https:\/\/promo-theme.com\/cargox\/wp-content\/uploads\/2022\/03\/i6.png",
+            "templates": [
+                {
+                    "source": "templates\/footer.json",
+                    "name": "Footer"
+                }
+            ],
+            "filesize": 526,
+            "dimensions": [
+                20,
+                20
+            ],
+            "image_source": "self_created",
+            "person_or_place": "no",
+            "image_urls": ""
+        },
+        {
+            "filename": "i7.png",
+            "thumbnail_url": "https:\/\/promo-theme.com\/cargox\/wp-content\/uploads\/2022\/03\/i7.png",
+            "templates": [
+                {
+                    "source": "templates\/footer.json",
+                    "name": "Footer"
+                }
+            ],
+            "filesize": 518,
+            "dimensions": [
+                20,
+                20
+            ],
+            "image_source": "self_created",
+            "person_or_place": "no",
+            "image_urls": ""
+        },
+        {
+            "filename": "i8.png",
+            "thumbnail_url": "https:\/\/promo-theme.com\/cargox\/wp-content\/uploads\/2022\/03\/i8.png",
+            "templates": [
+                {
+                    "source": "templates\/footer.json",
+                    "name": "Footer"
+                }
+            ],
+            "filesize": 580,
+            "dimensions": [
+                20,
+                20
+            ],
+            "image_source": "self_created",
+            "person_or_place": "no",
+            "image_urls": ""
+        },
+        {
+            "filename": "i9.png",
+            "thumbnail_url": "https:\/\/promo-theme.com\/cargox\/wp-content\/uploads\/2022\/03\/i9.png",
+            "templates": [
+                {
+                    "source": "templates\/footer.json",
+                    "name": "Footer"
+                }
+            ],
+            "filesize": 624,
+            "dimensions": [
+                20,
+                20
+            ],
+            "image_source": "self_created",
+            "person_or_place": "no",
+            "image_urls": ""
+        },
+        {
+            "filename": "img27.jpg",
+            "thumbnail_url": "https:\/\/promo-theme.com\/cargox\/wp-content\/uploads\/2022\/03\/img27.jpg",
+            "templates": [
+                {
+                    "source": "templates\/home.json",
+                    "name": "Home"
+                },
+                {
+                    "source": "templates\/block-main-banner.json",
+                    "name": "Block: Main Banner"
+                }
+            ],
+            "filesize": 265988,
+            "dimensions": [
+                1600,
+                1200
+            ],
+            "image_source": "cc0",
+            "person_or_place": "no",
+            "image_urls": "https:\/\/unsplash.com\/photos\/daSq9zhROxY"
+        },
+        {
+            "filename": "i1.png",
+            "thumbnail_url": "https:\/\/promo-theme.com\/cargox\/wp-content\/uploads\/2022\/03\/i1.png",
+            "templates": [
+                {
+                    "source": "templates\/home.json",
+                    "name": "Home"
+                },
+                {
+                    "source": "templates\/block-main-banner.json",
+                    "name": "Block: Main Banner"
+                }
+            ],
+            "filesize": 1050,
+            "dimensions": [
+                60,
+                60
+            ],
+            "image_source": "self_created",
+            "person_or_place": "no",
+            "image_urls": ""
+        },
+        {
+            "filename": "i3.png",
+            "thumbnail_url": "https:\/\/promo-theme.com\/cargox\/wp-content\/uploads\/2022\/03\/i3.png",
+            "templates": [
+                {
+                    "source": "templates\/home.json",
+                    "name": "Home"
+                },
+                {
+                    "source": "templates\/block-about-us-1.json",
+                    "name": "Block: About us 1"
+                }
+            ],
+            "filesize": 827,
+            "dimensions": [
+                30,
+                30
+            ],
+            "image_source": "self_created",
+            "person_or_place": "no",
+            "image_urls": ""
+        },
+        {
+            "filename": "i4.png",
+            "thumbnail_url": "https:\/\/promo-theme.com\/cargox\/wp-content\/uploads\/2022\/03\/i4.png",
+            "templates": [
+                {
+                    "source": "templates\/home.json",
+                    "name": "Home"
+                },
+                {
+                    "source": "templates\/block-about-us-1.json",
+                    "name": "Block: About us 1"
+                }
+            ],
+            "filesize": 883,
+            "dimensions": [
+                30,
+                30
+            ],
+            "image_source": "self_created",
+            "person_or_place": "no",
+            "image_urls": ""
+        },
+        {
+            "filename": "i5.png",
+            "thumbnail_url": "https:\/\/promo-theme.com\/cargox\/wp-content\/uploads\/2022\/03\/i5.png",
+            "templates": [
+                {
+                    "source": "templates\/home.json",
+                    "name": "Home"
+                },
+                {
+                    "source": "templates\/block-about-us-1.json",
+                    "name": "Block: About us 1"
+                }
+            ],
+            "filesize": 1138,
+            "dimensions": [
+                30,
+                30
+            ],
+            "image_source": "self_created",
+            "person_or_place": "no",
+            "image_urls": ""
+        },
+        {
+            "filename": "img9.jpg",
+            "thumbnail_url": "https:\/\/promo-theme.com\/cargox\/wp-content\/uploads\/2022\/03\/img9.jpg",
+            "templates": [
+                {
+                    "source": "templates\/home.json",
+                    "name": "Home"
+                },
+                {
+                    "source": "templates\/block-about-us-1.json",
+                    "name": "Block: About us 1"
+                }
+            ],
+            "filesize": 149386,
+            "dimensions": [
+                675,
+                1200
+            ],
+            "image_source": "cc0",
+            "person_or_place": "no",
+            "image_urls": "https:\/\/unsplash.com\/photos\/zN4mtLHkHn4"
+        },
+        {
+            "filename": "step.png",
+            "thumbnail_url": "https:\/\/promo-theme.com\/cargox\/wp-content\/uploads\/2022\/03\/step.png",
+            "templates": [
+                {
+                    "source": "templates\/home.json",
+                    "name": "Home"
+                },
+                {
+                    "source": "templates\/about-us.json",
+                    "name": "About Us"
+                },
+                {
+                    "source": "templates\/block-features.json",
+                    "name": "Block: Features"
+                }
+            ],
+            "filesize": 1886,
+            "dimensions": [
+                792,
+                32
+            ],
+            "image_source": "self_created",
+            "person_or_place": "no",
+            "image_urls": ""
+        },
+        {
+            "filename": "img21.jpg",
+            "thumbnail_url": "https:\/\/promo-theme.com\/cargox\/wp-content\/uploads\/2022\/03\/img21.jpg",
+            "templates": [
+                {
+                    "source": "templates\/home.json",
+                    "name": "Home"
+                },
+                {
+                    "source": "templates\/services.json",
+                    "name": "Services"
+                },
+                {
+                    "source": "templates\/block-services.json",
+                    "name": "Block: Services"
+                }
+            ],
+            "filesize": 221341,
+            "dimensions": [
+                1700,
+                1133
+            ],
+            "image_source": "cc0",
+            "person_or_place": "no",
+            "image_urls": "https:\/\/www.pexels.com\/photo\/white-dump-truck-near-pine-tress-during-daytime-93398\/"
+        },
+        {
+            "filename": "img2.jpg",
+            "thumbnail_url": "https:\/\/promo-theme.com\/cargox\/wp-content\/uploads\/2022\/03\/img2.jpg",
+            "templates": [
+                {
+                    "source": "templates\/home.json",
+                    "name": "Home"
+                },
+                {
+                    "source": "templates\/services.json",
+                    "name": "Services"
+                },
+                {
+                    "source": "templates\/blog.json",
+                    "name": "Blog"
+                },
+                {
+                    "source": "templates\/single-post.json",
+                    "name": "Single post"
+                },
+                {
+                    "source": "templates\/archive.json",
+                    "name": "Archive"
+                },
+                {
+                    "source": "templates\/block-services.json",
+                    "name": "Block: Services"
+                }
+            ],
+            "filesize": 217917,
+            "dimensions": [
+                1700,
+                1133
+            ],
+            "image_source": "cc0",
+            "person_or_place": "no",
+            "image_urls": "https:\/\/unsplash.com\/photos\/haZNHEV2WXQ"
+        },
+        {
+            "filename": "img18.jpg",
+            "thumbnail_url": "https:\/\/promo-theme.com\/cargox\/wp-content\/uploads\/2022\/03\/img18.jpg",
+            "templates": [
+                {
+                    "source": "templates\/home.json",
+                    "name": "Home"
+                },
+                {
+                    "source": "templates\/services.json",
+                    "name": "Services"
+                },
+                {
+                    "source": "templates\/block-services.json",
+                    "name": "Block: Services"
+                }
+            ],
+            "filesize": 230257,
+            "dimensions": [
+                1600,
+                1200
+            ],
+            "image_source": "cc0",
+            "person_or_place": "no",
+            "image_urls": "https:\/\/unsplash.com\/photos\/oCsQLKENz34"
+        },
+        {
+            "filename": "img20.jpg",
+            "thumbnail_url": "https:\/\/promo-theme.com\/cargox\/wp-content\/uploads\/2022\/03\/img20.jpg",
+            "templates": [
+                {
+                    "source": "templates\/home.json",
+                    "name": "Home"
+                },
+                {
+                    "source": "templates\/services.json",
+                    "name": "Services"
+                },
+                {
+                    "source": "templates\/block-services.json",
+                    "name": "Block: Services"
+                }
+            ],
+            "filesize": 99082,
+            "dimensions": [
+                800,
+                1200
+            ],
+            "image_source": "cc0",
+            "person_or_place": "no",
+            "image_urls": "https:\/\/www.pexels.com\/photo\/cardboard-boxes-on-living-room-3434533\/"
+        },
+        {
+            "filename": "img19.jpg",
+            "thumbnail_url": "https:\/\/promo-theme.com\/cargox\/wp-content\/uploads\/2022\/03\/img19.jpg",
+            "templates": [
+                {
+                    "source": "templates\/home.json",
+                    "name": "Home"
+                },
+                {
+                    "source": "templates\/about-us.json",
+                    "name": "About Us"
+                },
+                {
+                    "source": "templates\/block-about-us-2.json",
+                    "name": "Block: About us 2"
+                }
+            ],
+            "filesize": 97172,
+            "dimensions": [
+                1700,
+                1133
+            ],
+            "image_source": "cc0",
+            "person_or_place": "no",
+            "image_urls": "https:\/\/www.pexels.com\/photo\/crop-man-taping-carrying-box-with-scotch-4246120\/"
+        },
+        {
+            "filename": "img8-1-rotated.jpg",
+            "thumbnail_url": "https:\/\/promo-theme.com\/cargox\/wp-content\/uploads\/2022\/03\/img8-1-rotated.jpg",
+            "templates": [
+                {
+                    "source": "templates\/home.json",
+                    "name": "Home"
+                },
+                {
+                    "source": "templates\/services.json",
+                    "name": "Services"
+                },
+                {
+                    "source": "templates\/block-testimonials.json",
+                    "name": "Block: Testimonials"
+                }
+            ],
+            "filesize": 117559,
+            "dimensions": [
+                1200,
+                675
+            ],
+            "image_source": "cc0",
+            "person_or_place": "no",
+            "image_urls": "https:\/\/unsplash.com\/photos\/lNpkIWnFzTo"
+        },
+        {
+            "filename": "client1.png",
+            "thumbnail_url": "https:\/\/promo-theme.com\/cargox\/wp-content\/uploads\/2022\/03\/client1.png",
+            "templates": [
+                {
+                    "source": "templates\/home.json",
+                    "name": "Home"
+                },
+                {
+                    "source": "templates\/services.json",
+                    "name": "Services"
+                },
+                {
+                    "source": "templates\/block-testimonials.json",
+                    "name": "Block: Testimonials"
+                }
+            ],
+            "filesize": 5870,
+            "dimensions": [
+                70,
+                70
+            ],
+            "image_source": "self_created",
+            "person_or_place": "no",
+            "image_urls": ""
+        },
+        {
+            "filename": "img10.jpg",
+            "thumbnail_url": "https:\/\/promo-theme.com\/cargox\/wp-content\/uploads\/2022\/03\/img10.jpg",
+            "templates": [
+                {
+                    "source": "templates\/home.json",
+                    "name": "Home"
+                },
+                {
+                    "source": "templates\/about-us.json",
+                    "name": "About Us"
+                },
+                {
+                    "source": "templates\/team.json",
+                    "name": "Team"
+                },
+                {
+                    "source": "templates\/service-details.json",
+                    "name": "Service details"
+                },
+                {
+                    "source": "templates\/block-banner-feedback.json",
+                    "name": "Block: Banner feedback"
+                }
+            ],
+            "filesize": 227179,
+            "dimensions": [
+                1700,
+                1133
+            ],
+            "image_source": "cc0",
+            "person_or_place": "no",
+            "image_urls": "https:\/\/unsplash.com\/photos\/HjBOmBPbi9k"
+        },
+        {
+            "filename": "img13.jpg",
+            "thumbnail_url": "https:\/\/promo-theme.com\/cargox\/wp-content\/uploads\/2022\/03\/img13.jpg",
+            "templates": [
+                {
+                    "source": "templates\/about-us.json",
+                    "name": "About Us"
+                },
+                {
+                    "source": "templates\/block-banner-inner-page.json",
+                    "name": "Block: Banner Inner page"
+                }
+            ],
+            "filesize": 266355,
+            "dimensions": [
+                1700,
+                1133
+            ],
+            "image_source": "cc0",
+            "person_or_place": "no",
+            "image_urls": "https:\/\/unsplash.com\/photos\/csrScXTXdug"
+        },
+        {
+            "filename": "i10.png",
+            "thumbnail_url": "https:\/\/promo-theme.com\/cargox\/wp-content\/uploads\/2022\/03\/i10.png",
+            "templates": [
+                {
+                    "source": "templates\/about-us.json",
+                    "name": "About Us"
+                },
+                {
+                    "source": "templates\/team.json",
+                    "name": "Team"
+                },
+                {
+                    "source": "templates\/service-details.json",
+                    "name": "Service details"
+                },
+                {
+                    "source": "templates\/block-about-us-3.json",
+                    "name": "Block: About us 3"
+                },
+                {
+                    "source": "templates\/block-service-details.json",
+                    "name": "Block: Service details"
+                },
+                {
+                    "source": "templates\/block-pricing-plan.json",
+                    "name": "Block: Pricing plan"
+                }
+            ],
+            "filesize": 854,
+            "dimensions": [
+                30,
+                30
+            ],
+            "image_source": "self_created",
+            "person_or_place": "no",
+            "image_urls": ""
+        },
+        {
+            "filename": "img7.jpg",
+            "thumbnail_url": "https:\/\/promo-theme.com\/cargox\/wp-content\/uploads\/2022\/03\/img7.jpg",
+            "templates": [
+                {
+                    "source": "templates\/about-us.json",
+                    "name": "About Us"
+                },
+                {
+                    "source": "templates\/team.json",
+                    "name": "Team"
+                },
+                {
+                    "source": "templates\/block-about-us-3.json",
+                    "name": "Block: About us 3"
+                }
+            ],
+            "filesize": 152447,
+            "dimensions": [
+                1700,
+                1135
+            ],
+            "image_source": "cc0",
+            "person_or_place": "no",
+            "image_urls": "https:\/\/unsplash.com\/photos\/zWOgsj3j0wA"
+        },
+        {
+            "filename": "img5.jpg",
+            "thumbnail_url": "https:\/\/promo-theme.com\/cargox\/wp-content\/uploads\/2022\/03\/img5.jpg",
+            "templates": [
+                {
+                    "source": "templates\/about-us.json",
+                    "name": "About Us"
+                },
+                {
+                    "source": "templates\/block-about-our-company.json",
+                    "name": "Block: About our company"
+                }
+            ],
+            "filesize": 374004,
+            "dimensions": [
+                1700,
+                1133
+            ],
+            "image_source": "cc0",
+            "person_or_place": "no",
+            "image_urls": "https:\/\/unsplash.com\/photos\/eqwFWHfQipg"
+        },
+        {
+            "filename": "i11.png",
+            "thumbnail_url": "https:\/\/promo-theme.com\/cargox\/wp-content\/uploads\/2022\/03\/i11.png",
+            "templates": [
+                {
+                    "source": "templates\/about-us.json",
+                    "name": "About Us"
+                },
+                {
+                    "source": "templates\/block-icon-counter.json",
+                    "name": "Block: Icon counter"
+                }
+            ],
+            "filesize": 2378,
+            "dimensions": [
+                48,
+                48
+            ],
+            "image_source": "self_created",
+            "person_or_place": "no",
+            "image_urls": ""
+        },
+        {
+            "filename": "i12.png",
+            "thumbnail_url": "https:\/\/promo-theme.com\/cargox\/wp-content\/uploads\/2022\/03\/i12.png",
+            "templates": [
+                {
+                    "source": "templates\/about-us.json",
+                    "name": "About Us"
+                },
+                {
+                    "source": "templates\/block-icon-counter.json",
+                    "name": "Block: Icon counter"
+                }
+            ],
+            "filesize": 808,
+            "dimensions": [
+                48,
+                48
+            ],
+            "image_source": "self_created",
+            "person_or_place": "no",
+            "image_urls": ""
+        },
+        {
+            "filename": "i13.png",
+            "thumbnail_url": "https:\/\/promo-theme.com\/cargox\/wp-content\/uploads\/2022\/03\/i13.png",
+            "templates": [
+                {
+                    "source": "templates\/about-us.json",
+                    "name": "About Us"
+                },
+                {
+                    "source": "templates\/block-icon-counter.json",
+                    "name": "Block: Icon counter"
+                }
+            ],
+            "filesize": 984,
+            "dimensions": [
+                48,
+                48
+            ],
+            "image_source": "self_created",
+            "person_or_place": "no",
+            "image_urls": ""
+        },
+        {
+            "filename": "i14.png",
+            "thumbnail_url": "https:\/\/promo-theme.com\/cargox\/wp-content\/uploads\/2022\/03\/i14.png",
+            "templates": [
+                {
+                    "source": "templates\/about-us.json",
+                    "name": "About Us"
+                },
+                {
+                    "source": "templates\/block-icon-counter.json",
+                    "name": "Block: Icon counter"
+                }
+            ],
+            "filesize": 1244,
+            "dimensions": [
+                48,
+                48
+            ],
+            "image_source": "self_created",
+            "person_or_place": "no",
+            "image_urls": ""
+        },
+        {
+            "filename": "img3.jpg",
+            "thumbnail_url": "https:\/\/promo-theme.com\/cargox\/wp-content\/uploads\/2022\/03\/img3.jpg",
+            "templates": [
+                {
+                    "source": "templates\/services.json",
+                    "name": "Services"
+                },
+                {
+                    "source": "templates\/service-details.json",
+                    "name": "Service details"
+                }
+            ],
+            "filesize": 255523,
+            "dimensions": [
+                1700,
+                1133
+            ],
+            "image_source": "cc0",
+            "person_or_place": "no",
+            "image_urls": "https:\/\/unsplash.com\/photos\/CpsTAUPoScw"
+        },
+        {
+            "filename": "img28.jpg",
+            "thumbnail_url": "https:\/\/promo-theme.com\/cargox\/wp-content\/uploads\/2022\/03\/img28.jpg",
+            "templates": [
+                {
+                    "source": "templates\/services.json",
+                    "name": "Services"
+                }
+            ],
+            "filesize": 47495,
+            "dimensions": [
+                960,
+                1200
+            ],
+            "image_source": "cc0",
+            "person_or_place": "no",
+            "image_urls": "https:\/\/unsplash.com\/photos\/BFdSCxmqvYc"
+        },
+        {
+            "filename": "img14.jpg",
+            "thumbnail_url": "https:\/\/promo-theme.com\/cargox\/wp-content\/uploads\/2022\/03\/img14.jpg",
+            "templates": [
+                {
+                    "source": "templates\/services.json",
+                    "name": "Services"
+                }
+            ],
+            "filesize": 128793,
+            "dimensions": [
+                1700,
+                1133
+            ],
+            "image_source": "cc0",
+            "person_or_place": "no",
+            "image_urls": "https:\/\/unsplash.com\/photos\/jm70AzcV5AQ"
+        },
+        {
+            "filename": "t1.jpg",
+            "thumbnail_url": "https:\/\/promo-theme.com\/cargox\/wp-content\/uploads\/2022\/03\/t1.jpg",
+            "templates": [
+                {
+                    "source": "templates\/services.json",
+                    "name": "Services"
+                },
+                {
+                    "source": "templates\/team.json",
+                    "name": "Team"
+                },
+                {
+                    "source": "templates\/block-team.json",
+                    "name": "Block: Team"
+                },
+                {
+                    "source": "templates\/block-team-2.json",
+                    "name": "Block: Team 2"
+                }
+            ],
+            "filesize": 39743,
+            "dimensions": [
+                255,
+                280
+            ],
+            "image_source": "envato_elements",
+            "person_or_place": "yes",
+            "image_urls": "https:\/\/elements.envato.com\/ru\/portrait-of-construction-worker-in-uniform-is-in-t-NB287FH"
+        },
+        {
+            "filename": "t2.jpg",
+            "thumbnail_url": "https:\/\/promo-theme.com\/cargox\/wp-content\/uploads\/2022\/03\/t2.jpg",
+            "templates": [
+                {
+                    "source": "templates\/services.json",
+                    "name": "Services"
+                },
+                {
+                    "source": "templates\/team.json",
+                    "name": "Team"
+                },
+                {
+                    "source": "templates\/block-team.json",
+                    "name": "Block: Team"
+                },
+                {
+                    "source": "templates\/block-team-2.json",
+                    "name": "Block: Team 2"
+                }
+            ],
+            "filesize": 37102,
+            "dimensions": [
+                255,
+                280
+            ],
+            "image_source": "envato_elements",
+            "person_or_place": "yes",
+            "image_urls": "https:\/\/elements.envato.com\/ru\/portrait-of-senior-storage-worker-in-warehouse-in--ZNDTF6H"
+        },
+        {
+            "filename": "t4.jpg",
+            "thumbnail_url": "https:\/\/promo-theme.com\/cargox\/wp-content\/uploads\/2022\/03\/t4.jpg",
+            "templates": [
+                {
+                    "source": "templates\/services.json",
+                    "name": "Services"
+                },
+                {
+                    "source": "templates\/team.json",
+                    "name": "Team"
+                },
+                {
+                    "source": "templates\/block-team.json",
+                    "name": "Block: Team"
+                },
+                {
+                    "source": "templates\/block-team-2.json",
+                    "name": "Block: Team 2"
+                }
+            ],
+            "filesize": 35802,
+            "dimensions": [
+                256,
+                280
+            ],
+            "image_source": "envato_elements",
+            "person_or_place": "yes",
+            "image_urls": "https:\/\/elements.envato.com\/ru\/portrait-of-young-storage-worker-in-warehouse-in-u-A8GQK9S"
+        },
+        {
+            "filename": "t3.jpg",
+            "thumbnail_url": "https:\/\/promo-theme.com\/cargox\/wp-content\/uploads\/2022\/03\/t3.jpg",
+            "templates": [
+                {
+                    "source": "templates\/services.json",
+                    "name": "Services"
+                },
+                {
+                    "source": "templates\/team.json",
+                    "name": "Team"
+                },
+                {
+                    "source": "templates\/block-team.json",
+                    "name": "Block: Team"
+                },
+                {
+                    "source": "templates\/block-team-2.json",
+                    "name": "Block: Team 2"
+                }
+            ],
+            "filesize": 33301,
+            "dimensions": [
+                255,
+                280
+            ],
+            "image_source": "envato_elements",
+            "person_or_place": "yes",
+            "image_urls": "https:\/\/elements.envato.com\/ru\/storage-worker-in-uniform-and-notepad-in-hands-che-2FTBB8R"
+        },
+        {
+            "filename": "img25.jpg",
+            "thumbnail_url": "https:\/\/promo-theme.com\/cargox\/wp-content\/uploads\/2022\/03\/img25.jpg",
+            "templates": [
+                {
+                    "source": "templates\/team.json",
+                    "name": "Team"
+                }
+            ],
+            "filesize": 191547,
+            "dimensions": [
+                1700,
+                1088
+            ],
+            "image_source": "envato_elements",
+            "person_or_place": "yes",
+            "image_urls": "https:\/\/elements.envato.com\/ru\/portrait-of-young-storage-worker-in-warehouse-in-u-A8GQK9S"
+        },
+        {
+            "filename": "img16.jpg",
+            "thumbnail_url": "https:\/\/promo-theme.com\/cargox\/wp-content\/uploads\/2022\/03\/img16.jpg",
+            "templates": [
+                {
+                    "source": "templates\/service-details.json",
+                    "name": "Service details"
+                },
+                {
+                    "source": "templates\/block-service-details.json",
+                    "name": "Block: Service details"
+                }
+            ],
+            "filesize": 263224,
+            "dimensions": [
+                1700,
+                1133
+            ],
+            "image_source": "cc0",
+            "person_or_place": "no",
+            "image_urls": "pBy09rxLb2c"
+        },
+        {
+            "filename": "i10-w.png",
+            "thumbnail_url": "https:\/\/promo-theme.com\/cargox\/wp-content\/uploads\/2022\/03\/i10-w.png",
+            "templates": [
+                {
+                    "source": "templates\/service-details.json",
+                    "name": "Service details"
+                },
+                {
+                    "source": "templates\/block-pricing-plan.json",
+                    "name": "Block: Pricing plan"
+                }
+            ],
+            "filesize": 278,
+            "dimensions": [
+                20,
+                20
+            ],
+            "image_source": "self_created",
+            "person_or_place": "no",
+            "image_urls": ""
+        },
+        {
+            "filename": "img32.jpg",
+            "thumbnail_url": "https:\/\/promo-theme.com\/cargox\/wp-content\/uploads\/2022\/03\/img32.jpg",
+            "templates": [
+                {
+                    "source": "templates\/contact-us.json",
+                    "name": "Contact Us"
+                }
+            ],
+            "filesize": 449815,
+            "dimensions": [
+                1700,
+                961
+            ],
+            "image_source": "cc0",
+            "person_or_place": "no",
+            "image_urls": "https:\/\/unsplash.com\/photos\/kD4142VIQ"
+        },
+        {
+            "filename": "i15.png",
+            "thumbnail_url": "https:\/\/promo-theme.com\/cargox\/wp-content\/uploads\/2022\/03\/i15.png",
+            "templates": [
+                {
+                    "source": "templates\/contact-us.json",
+                    "name": "Contact Us"
+                },
+                {
+                    "source": "templates\/block-contact-icons.json",
+                    "name": "Block: Contact Icons"
+                }
+            ],
+            "filesize": 640,
+            "dimensions": [
+                48,
+                48
+            ],
+            "image_source": "self_created",
+            "person_or_place": "no",
+            "image_urls": ""
+        },
+        {
+            "filename": "i16.png",
+            "thumbnail_url": "https:\/\/promo-theme.com\/cargox\/wp-content\/uploads\/2022\/03\/i16.png",
+            "templates": [
+                {
+                    "source": "templates\/contact-us.json",
+                    "name": "Contact Us"
+                },
+                {
+                    "source": "templates\/block-contact-icons.json",
+                    "name": "Block: Contact Icons"
+                }
+            ],
+            "filesize": 1036,
+            "dimensions": [
+                48,
+                48
+            ],
+            "image_source": "self_created",
+            "person_or_place": "no",
+            "image_urls": ""
+        },
+        {
+            "filename": "i17.png",
+            "thumbnail_url": "https:\/\/promo-theme.com\/cargox\/wp-content\/uploads\/2022\/03\/i17.png",
+            "templates": [
+                {
+                    "source": "templates\/contact-us.json",
+                    "name": "Contact Us"
+                },
+                {
+                    "source": "templates\/block-contact-icons.json",
+                    "name": "Block: Contact Icons"
+                }
+            ],
+            "filesize": 1070,
+            "dimensions": [
+                48,
+                48
+            ],
+            "image_source": "self_created",
+            "person_or_place": "no",
+            "image_urls": ""
+        },
+        {
+            "filename": "img1.jpg",
+            "thumbnail_url": "https:\/\/promo-theme.com\/cargox\/wp-content\/uploads\/2022\/03\/img1.jpg",
+            "templates": [
+                {
+                    "source": "templates\/404.json",
+                    "name": "404"
+                }
+            ],
+            "filesize": 155684,
+            "dimensions": [
+                1700,
+                1093
+            ],
+            "image_source": "cc0",
+            "person_or_place": "no",
+            "image_urls": "https:\/\/unsplash.com\/photos\/87V6jfHXcW0"
+        }
+    ]
+}

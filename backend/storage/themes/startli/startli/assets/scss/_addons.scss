@@ -1,0 +1,123 @@
+.single-teams{
+    .bg-team{
+        background: $titleColor;
+        .col-lg-5,
+        .col-lg-7{
+            padding: 0;
+        }
+    }
+    .team-information{
+        padding:50px;
+        h3{
+            font-weight: 700;
+            font-size: 40px;
+            line-height: 61px;
+            color: #FFFFFF;
+            margin-bottom: 10px;
+        }
+        .theme_btn{
+            margin-top: 30px;
+            display: inline-block;
+            color: #ffffff;
+            border-radius: 0;
+            border: 1px solid transparent;
+            transition: all .6s;
+            &:hover {
+                border: 1px solid #ddd;
+                background: transparent;
+                color: #111111;                
+            }
+        }
+        .team-dsocial {
+            margin-top: 50px;
+            a {
+                color: #111111;
+                width: 50px;
+                height: 50px;
+                line-height: 50px;
+                display: inline-block;
+                border: 2px solid #efefef;
+                text-align: center;
+                margin-right: 10px;
+                transition: all .5s;
+                &:hover {
+                    background: $primaryColor;
+                    color: #ffffff;
+                    border: 2px solid $primaryColor;
+                }
+            }
+        }
+    }
+    .team-info-shape {
+        margin-bottom: 15px;
+        span {
+            width: 10px;
+            height: 10px;
+            display: inline-block;
+            background: #dd5903;
+            margin: 0 5px;
+            transform: rotate(45deg);
+        }
+    }
+    .designation-info{
+        font-weight: 700;
+        letter-spacing: 0.05em;
+        text-transform: uppercase;   
+        font-size:14px;
+        color:$primaryColor;   
+    }
+    .short-desc{
+        margin-bottom: 50px;
+    }
+    .adress-box{
+        display: flex;
+        align-items: center;
+        gap: 6px;
+        margin-bottom: 18px;
+        margin-bottom: 25px;
+        i{
+            width: 60px;
+            height: 60px;
+            color: $primaryColor;
+            background: #EDEDED;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 400;
+            font-size: 20px;
+            line-height: 20px;
+        }
+        .address-content{
+            margin-left: 15px;
+            span{
+                display: block;
+                font-weight: 400;
+                font-size: 16px;
+                line-height: 24px;
+                color: #6E777D;
+                font-family: $titleFont;
+                transition: 0.3s;
+            
+            }
+            h5{
+                font-weight: 600;
+                font-size: 20px;
+                line-height: 30px;
+                color: #FFFFFF;
+                transition: 0.3s;
+                margin-bottom: 0;
+            }
+        }
+    }
+}
+
+.big-bg-porduct-details{
+    position: relative;
+    img{
+        width: 100%;        
+    }
+}
+.rt-portfolio-style8.grid-portfolio .rts-business-case-s-2 .inner{
+    opacity: 0;
+}

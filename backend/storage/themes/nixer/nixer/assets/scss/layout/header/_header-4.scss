@@ -1,0 +1,18 @@
+@use '../../utils' as *;
+/*----------------------------------------*/
+/*  3.4 Header Style 4
+/*----------------------------------------*/
+
+
+.#{$theme-prefix}-header-4{
+    &-ptb{
+        padding: 35px 0;
+        @media #{$xl,$lg,$md,$xs} {
+            padding: 18px 0;
+        }
+        &.header-sticky{
+            padding: 18px 0;
+        }
+    }
+}
+

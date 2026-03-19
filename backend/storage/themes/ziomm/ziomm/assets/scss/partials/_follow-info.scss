@@ -1,0 +1,66 @@
+/* PARTIAL: FOLLOW INFO
+-------------------------------------------- */
+
+[data-follow-info-title],
+[data-follow-info-content] {
+	display: none;
+}
+
+.vlt-follow-info {
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	pointer-events: none;
+	visibility: hidden;
+	transition: transform var(--vlt-transition-duration) var(--vlt-transition-easing);
+	z-index: z("follow-info");
+
+	&--right {
+		text-align: right;
+		transform: translateX(-100%);
+	}
+
+	&__title,
+	&__subtitle {
+		white-space: nowrap;
+		clip-path: inset(0 100% 0 0);
+	}
+
+	&__title {
+		display: inline-block;
+		padding: px2rem(10px) px2rem(19px);
+		background-color: var(--vlt-color-0);
+
+		>* {
+			margin: 0;
+		}
+
+	}
+
+	&__subtitle {
+		position: relative;
+		top: px2rem(-12px);
+		display: inline-block;
+		padding: px2rem(10px) px2rem(19px);
+		font-size: px2rem(map-get($scales, "s8"));
+		line-height: 1.6;
+		color: var(--vlt-color-9);
+		background-color: var(--vlt-color-0);
+	}
+
+	&.is-active {
+		visibility: visible;
+
+		.vlt-follow-info__title,
+		.vlt-follow-info__subtitle {
+			transition: clip-path var(--vlt-transition-duration) + 200ms var(--vlt-transition-easing);
+			clip-path: inset(0 0 0 0);
+		}
+
+		.vlt-follow-info__subtitle {
+			transition-delay: 150ms;
+		}
+
+	}
+
+}

@@ -1,0 +1,820 @@
+<wpml-config>
+    <built-with-page-builder>/\[(solak_builder_container|solak_builder_row|solak_builder_row_inner|solak_builder_column|solak_builder_column_inner)/</built-with-page-builder>
+    <shortcode-list>solak_alert,solak_blog,solak_button,solak_checklist,solak_li_item,solak_code,solak_builder_row,solak_builder_row_inner,solak_builder_column,solak_builder_column_inner,solak_builder_container,solak_content_boxes,solak_content_box,solak_countdown,solak_counters_box,solak_counter_box,solak_counters_circle,solak_counter_circle,solak_dropcap,solak_events,solak_faq,solak_flip_boxes,solak_flip_box,solak_fontawesome,solak_solakslider,solak_map,solak_images,solak_image,solak_imageframe,layerslider,solak_lightbox,solak_menu_anchor,solak_modal,solak_modal_text_link,solak_one_page_text_link,solak_person,solak_popover,solak_popover,solak_portfolio,solak_postslider,solak_pricing_table,solak_pricing_column,solak_pricing_price,solak_pricing_row,solak_pricing_footer,solak_progress,solak_recent_posts,rev_slider,solak_section_separator,solak_separator,solak_sharing,solak_slider,solak_slide,solak_social_links,solak_soundcloud,solak_soundcloud,solak_tabs,solak_tab,solak_tagline_box,solak_testimonials,solak_testimonial,solak_text,solak_title,solak_accordion,solak_toggle,solak_tooltip,solak_login,solak_lost_password,solak_register,solak_vimeo,solak_widget_area,solak_products_slider,solak_featured_products_slider,solak_youtube,solak_tb_author,solak_tb_comments,solak_tb_content,solak_tb_featured_slider,solak_tb_pagination,solak_tb_related,solak_tb_results,solak_tb_project_details,solak_contact_form,solak_privacy,solak_audio,solak_breadcrumbs,solak_convert_plus,solak_highlight,solak_search,solak_syntax_highlighter,solak_video,solak_widget,solak_form</shortcode-list>
+    <admin-texts>
+        <key name="solak_options">
+            <key name="header_number"/>
+            <key name="header_email"/>
+            <key name="header_tagline"/>
+            <key name="breacrumb_prefix"/>
+            <key name="breadcrumb_separator"/>
+            <key name="footer_text"/>
+            <key name="blog_title"/>
+            <key name="blog_subtitle"/>
+            <key name="alternate_date_format_month_year"/>
+            <key name="alternate_date_format_day"/>
+            <key name="timeline_date_format"/>
+            <key name="date_format"/>
+            <key name="portfolio_slug"/>
+            <key name="sharing_social_tagline"/>
+            <key name="email_address"/>
+            <key name="contact_form_privacy_label"/>
+            <key name="gmap_address"/>
+            <key name="email_address"/>
+            <key name="blog_subtitle"/>
+            <key name="date_format"/>
+            <key name="map_infobox_content"/>
+            <key name="sharing_social_tagline"/>
+            <key name="privacy_bar_text"/>
+            <key name="privacy_bar_more_text"/>
+            <key name="privacy_bar_update_text"/>
+            <key name="google_analytics"/>
+            <key name="space_head"/>
+            <key name="space_body"/>
+            <key name="syntax_highlighter_copy_to_clipboard_text"/>
+        </key>
+    </admin-texts>
+    <custom-types>
+        <custom-type translate="1">themesolak_elastic</custom-type>
+        <custom-type translate="1">slide</custom-type>
+        <custom-type translate="1">layerslider</custom-type>
+        <custom-type translate="1">revslider</custom-type>
+        <custom-type translate="1">solak_faq</custom-type>
+        <custom-type translate="1">solak_portfolio</custom-type>
+        <custom-type translate="1">solak_tb_section</custom-type>
+        <custom-type translate="1">solak_element</custom-type>
+        <custom-type translate="0">solak_icons</custom-type>
+        <custom-type translate="1" automatic="0">solak_form</custom-type>
+        <custom-type translate="1" display-as-translated="1">awb_off_canvas</custom-type>
+    </custom-types>
+    <taxonomies>
+        <taxonomy translate="1">portfolio_category</taxonomy>
+        <taxonomy translate="1">faq_category</taxonomy>
+        <taxonomy translate="1">portfolio_skills</taxonomy>
+        <taxonomy translate="1">portfolio_tags</taxonomy>
+        <taxonomy translate="1">themesolak_es_groups</taxonomy>
+        <taxonomy translate="1">slide-page</taxonomy>
+        <taxonomy translate="1">solak_tb_category</taxonomy>
+        <taxonomy translate="0">element_category</taxonomy>
+    </taxonomies>
+    <custom-fields>
+        <custom-field action="copy-once">solak_post_views_count</custom-field>
+        <custom-field action="copy-once">pyre_address</custom-field>
+        <custom-field action="copy-once">pyre_caption_1</custom-field>
+        <custom-field action="copy-once">pyre_caption_2</custom-field>
+        <custom-field action="translate">pyre_copy_url</custom-field>
+        <custom-field action="translate">pyre_copy_url_text</custom-field>
+        <custom-field action="copy-once">pyre_displayed_menu</custom-field>
+        <custom-field action="copy-once">pyre_display_copyright</custom-field>
+        <custom-field action="copy-once">pyre_display_footer</custom-field>
+        <custom-field action="copy-once">pyre_display_header</custom-field>
+        <custom-field action="copy-once">pyre_elasticslider</custom-field>
+        <custom-field action="copy-once">pyre_email</custom-field>
+        <custom-field action="copy-once">pyre_fallback</custom-field>
+        <custom-field action="copy-once">pyre_fimg_height</custom-field>
+        <custom-field action="copy-once">pyre_fimg_width</custom-field>
+        <custom-field action="copy-once">pyre_flexslider</custom-field>
+        <custom-field action="copy-once">pyre_full_width</custom-field>
+        <custom-field action="copy-once">pyre_gmap</custom-field>
+        <custom-field action="copy-once">pyre_header_bg</custom-field>
+        <custom-field action="copy-once">pyre_header_bg_color</custom-field>
+        <custom-field action="copy-once">pyre_header_bg_full</custom-field>
+        <custom-field action="copy-once">pyre_header_bg_repeat</custom-field>
+        <custom-field action="copy-once">pyre_hundredp_padding</custom-field>
+        <custom-field action="copy-once">pyre_image_rollover_icons</custom-field>
+        <custom-field action="copy-once">pyre_link_icon_target</custom-field>
+        <custom-field action="translate">pyre_link_icon_url</custom-field>
+        <custom-field action="copy-once">pyre_main_bottom_padding</custom-field>
+        <custom-field action="copy-once">pyre_main_top_padding</custom-field>
+        <custom-field action="copy-once">pyre_overall_score</custom-field>
+        <custom-field action="copy-once">pyre_page_bg</custom-field>
+        <custom-field action="copy-once">pyre_page_bg_color</custom-field>
+        <custom-field action="copy-once">pyre_page_bg_full</custom-field>
+        <custom-field action="copy-once">pyre_page_bg_layout</custom-field>
+        <custom-field action="copy-once">pyre_page_bg_repeat</custom-field>
+        <custom-field action="copy-once">pyre_page_title</custom-field>
+        <custom-field action="copy-once">pyre_page_title_bar_bg</custom-field>
+        <custom-field action="copy-once">pyre_page_title_bar_bg_color</custom-field>
+        <custom-field action="copy-once">pyre_page_title_bar_bg_full</custom-field>
+        <custom-field action="copy-once">pyre_page_title_bar_bg_retina</custom-field>
+        <custom-field action="copy-once">pyre_page_title_bg_parallax</custom-field>
+        <custom-field action="copy-once">pyre_page_title_custom_subheader</custom-field>
+        <custom-field action="translate">pyre_page_title_custom_text</custom-field>
+        <custom-field action="copy-once">page_title_text_size</custom-field>
+        <custom-field action="copy-once">page_title_text_alignment</custom-field>
+        <custom-field action="copy-once">page_title_custom_subheader_text_size</custom-field>
+        <custom-field action="copy-once">page_title_breadcrumbs_search_bar</custom-field>
+        <custom-field action="copy-once">pyre_page_title_text</custom-field>
+        <custom-field action="copy-once">pyre_phone</custom-field>
+        <custom-field action="copy-once">pyre_portfolio_category</custom-field>
+        <custom-field action="copy-once">pyre_portfolio_excerpt</custom-field>
+        <custom-field action="copy-once">pyre_portfolio_filters</custom-field>
+        <custom-field action="copy-once">pyre_portfolio_full_width</custom-field>
+        <custom-field action="copy-once">pyre_portfolio_sidebar_position</custom-field>
+        <custom-field action="copy-once">pyre_portfolio_width_100</custom-field>
+        <custom-field action="copy-once">pyre_project_desc_title</custom-field>
+        <custom-field action="copy-once">pyre_project_details</custom-field>
+        <custom-field action="copy-once">pyre_project_url</custom-field>
+        <custom-field action="translate">pyre_project_url_text</custom-field>
+        <custom-field action="copy-once">pyre_related_posts</custom-field>
+        <custom-field action="copy-once">pyre_revslider</custom-field>
+        <custom-field action="copy-once">pyre_show_first_featured_image</custom-field>
+        <custom-field action="copy-once">pyre_sidebar</custom-field>
+        <custom-field action="copy-once">pyre_sidebar_position</custom-field>
+        <custom-field action="copy-once">pyre_slider</custom-field>
+        <custom-field action="copy-once">pyre_slider_position</custom-field>
+        <custom-field action="copy-once">pyre_slider_type</custom-field>
+        <custom-field action="copy-once">pyre_transparent_header</custom-field>
+        <custom-field action="translate">pyre_video</custom-field>
+        <custom-field action="translate">pyre_video_url</custom-field>
+        <custom-field action="copy-once">pyre_wide_page_bg</custom-field>
+        <custom-field action="copy-once">pyre_wide_page_bg_color</custom-field>
+        <custom-field action="copy-once">pyre_wide_page_bg_full</custom-field>
+        <custom-field action="copy-once">pyre_wide_page_bg_repeat</custom-field>
+        <custom-field action="copy-once">pyre_width</custom-field>
+        <custom-field action="copy-once">pyre_wooslider</custom-field>
+        <custom-field action="copy-once">sbg_selected_sidebar</custom-field>
+        <custom-field action="copy-once">sbg_selected_sidebar_replacement</custom-field>
+        <custom-field action="copy-once">sbg_selected_sidebar_2</custom-field>
+        <custom-field action="copy-once">sbg_selected_sidebar_2_replacement</custom-field>
+        <custom-field action="copy-once">slide_template</custom-field>
+        <custom-field action="copy-once">pyre_solak_rev_styles</custom-field>
+        <custom-field action="copy-once">pyre_footer_100_width</custom-field>
+        <custom-field action="copy-once">pyre_header_100_width</custom-field>
+        <custom-field action="copy-once">pyre_page_title_100_width</custom-field>
+        <custom-field action="copy-once">pyre_page_title_breadcrumbs_search_bar</custom-field>
+        <custom-field action="copy-once">pyre_page_title_text_alignment</custom-field>
+        <custom-field action="translate">pyre_project_url_text</custom-field>
+        <custom-field action="translate">pyre_heading</custom-field>
+        <custom-field action="translate">pyre_caption</custom-field>
+        <custom-field action="copy-once">pyre_type</custom-field>
+        <custom-field action="copy-once">pyre_content_alignment</custom-field>
+        <custom-field action="copy-once">pyre_webm</custom-field>
+        <custom-field action="copy-once">pyre_mp4</custom-field>
+        <custom-field action="copy-once">pyre_ogv</custom-field>
+        <custom-field action="copy-once">pyre_preview_image</custom-field>
+        <custom-field action="copy-once">pyre_video_bg_color</custom-field>
+        <custom-field action="copy-once">pyre_mute_video</custom-field>
+        <custom-field action="copy-once">pyre_autoplay_video</custom-field>
+        <custom-field action="copy-once">pyre_loop_video</custom-field>
+        <custom-field action="copy-once">pyre_hide_video_controls</custom-field>
+        <custom-field action="translate">pyre_youtube_id</custom-field>
+        <custom-field action="copy-once">pyre_aspect_ratio</custom-field>
+        <custom-field action="copy-once">pyre_video_display</custom-field>
+        <custom-field action="translate">pyre_vimeo_id</custom-field>
+        <custom-field action="copy-once">pyre_heading_font_size</custom-field>
+        <custom-field action="copy-once">pyre_heading_color</custom-field>
+        <custom-field action="copy-once">pyre_heading_bg</custom-field>
+        <custom-field action="copy-once">pyre_heading_bg_color</custom-field>
+        <custom-field action="copy-once">pyre_caption_font_size</custom-field>
+        <custom-field action="copy-once">pyre_caption_color</custom-field>
+        <custom-field action="copy-once">pyre_caption_bg</custom-field>
+        <custom-field action="copy-once">pyre_caption_bg_color</custom-field>
+        <custom-field action="copy-once">pyre_link_type</custom-field>
+        <custom-field action="translate">pyre_button_1</custom-field>
+        <custom-field action="translate">pyre_button_2</custom-field>
+        <custom-field action="copy-once">pyre_slide_link</custom-field>
+        <custom-field action="copy-once">pyre_slide_target</custom-field>
+        <custom-field action="copy-once">pyre_post_links_target</custom-field>
+        <custom-field action="copy-once">pyre_share_box</custom-field>
+        <custom-field action="copy-once">pyre_post_pagination</custom-field>
+        <custom-field action="copy-once">pyre_author_info</custom-field>
+        <custom-field action="copy-once">pyre_post_meta</custom-field>
+        <custom-field action="copy-once">pyre_header_bg_opacity</custom-field>
+        <custom-field action="copy-once">pyre_sidebar_sticky</custom-field>
+        <custom-field action="copy-once">pyre_sidebar_bg_color</custom-field>
+        <custom-field action="copy-once">pyre_page_title_text_size</custom-field>
+        <custom-field action="copy-once">pyre_page_title_line_height</custom-field>
+        <custom-field action="copy-once">pyre_page_title_custom_subheader_text_size</custom-field>
+        <custom-field action="copy-once">pyre_page_title_font_color</custom-field>
+        <custom-field action="copy-once">pyre_page_title_height</custom-field>
+        <custom-field action="copy-once">pyre_page_title_mobile_height</custom-field>
+        <custom-field action="copy-once">pyre_page_title_bar_borders_color</custom-field>
+        <custom-field action="copy-once">kd_featured-image-2_post_id</custom-field>
+        <custom-field action="copy-once">kd_featured-image-3_post_id</custom-field>
+        <custom-field action="copy-once">kd_featured-image-4_post_id</custom-field>
+        <custom-field action="copy-once">kd_featured-image-5_post_id</custom-field>
+        <custom-field action="copy-once">solak_builder_status</custom-field>
+        <custom-field action="ignore">solak_demo_import</custom-field>
+        <custom-field action="copy-once">_solak_is_global</custom-field>
+        <custom-field action="copy-once">_solak_builder_custom_css</custom-field>
+        <custom-field action="translate">_solak</custom-field>
+        <custom-field action="copy-once">_menu_item_solak_megamenu</custom-field>
+        <custom-field action="copy">_solak_google_fonts</custom-field>
+    </custom-fields>
+    <custom-fields-texts>
+        <key name="_solak">
+            <key name="page_title_custom_text" />
+            <key name="page_title_custom_subheader" />
+            <key name="video" />
+            <key name="link_icon_url" />
+            <key name="video_url" />
+            <key name="project_url" />
+            <key name="project_url_text" />
+            <key name="copy_url" />
+            <key name="copy_url_text" />
+            <key name="youtube_id" />
+            <key name="heading" />
+            <key name="caption" />
+            <key name="button_1" />
+            <key name="button_2" />
+            <key name="vimeo_id" />
+        </key>
+    </custom-fields-texts>
+    <custom-term-fields>
+        <custom-term-field action="copy">solak_slider_options</custom-term-field>
+        <custom-term-field action="copy">_solak</custom-term-field>
+    </custom-term-fields>
+    <shortcodes>
+        <shortcode>
+            <tag>solak_alert</tag>
+            <attributes>
+                <attribute>dynamic_params</attribute>
+            </attributes>
+        </shortcode>
+        <shortcode>
+            <tag>solak_blog</tag>
+            <attributes>
+                <attribute type="link">title_link</attribute>
+            </attributes>
+        </shortcode>
+        <shortcode>
+            <tag>solak_button</tag>
+            <attributes>
+                <attribute type="link">link</attribute>
+                <attribute>title</attribute>
+                <attribute>dynamic_params</attribute>
+            </attributes>
+        </shortcode>
+        <shortcode>
+            <tag>solak_checklist</tag>
+        </shortcode>
+        <shortcode>
+            <tag>solak_li_item</tag>
+            <attributes>
+                <attribute>dynamic_params</attribute>
+            </attributes>
+        </shortcode>
+        <shortcode>
+            <tag encoding="base64" encoding-condition="option:solak_disable_encoding=1">solak_code</tag>
+        </shortcode>
+        <shortcode>
+            <tag>solak_builder_row</tag>
+        </shortcode>
+        <shortcode>
+            <tag>solak_builder_column</tag>
+            <attributes>
+                <attribute type="link">link</attribute>
+            </attributes>
+        </shortcode>
+        <shortcode>
+            <tag>solak_builder_column_inner</tag>
+            <attributes>
+                <attribute type="link">link</attribute>
+            </attributes>
+        </shortcode>
+        <shortcode>
+            <tag>solak_builder_container</tag>
+            <attributes>
+                <attribute>menu_anchor</attribute>
+                <attribute>video_mp4</attribute>
+                <attribute>video_url</attribute>
+            </attributes>
+        </shortcode>
+        <shortcode>
+            <tag>solak_content_boxes</tag>
+            <attributes>
+                <attribute type="media-url">image</attribute>
+            </attributes>
+        </shortcode>
+        <shortcode>
+            <tag>solak_content_box</tag>
+            <attributes>
+                <attribute>title</attribute>
+                <attribute type="link">link</attribute>
+                <attribute>linktext</attribute>
+                <attribute type="media-url">image</attribute>
+                <attribute>dynamic_params</attribute>
+            </attributes>
+        </shortcode>
+        <shortcode>
+            <tag>solak_countdown</tag>
+            <attributes>
+                <attribute>heading_text</attribute>
+                <attribute>subheading_text</attribute>
+                <attribute type="link">link_url</attribute>
+                <attribute>link_text</attribute>
+                <attribute>dynamic_params</attribute>
+            </attributes>
+        </shortcode>
+        <shortcode>
+            <tag>solak_counters_box</tag>
+        </shortcode>
+        <shortcode>
+            <tag>solak_counter_box</tag>
+            <attributes>
+                <attribute>dynamic_params</attribute>
+            </attributes>
+        </shortcode>
+        <shortcode>
+            <tag>solak_counters_circle</tag>
+        </shortcode>
+        <shortcode>
+            <tag>solak_counter_circle</tag>
+            <attributes>
+                <attribute>dynamic_params</attribute>
+            </attributes>
+        </shortcode>
+        <shortcode>
+            <tag>solak_dropcap</tag>
+        </shortcode>
+        <shortcode>
+            <tag>solak_events</tag>
+            <attributes>
+                <attribute>cat_slug</attribute>
+            </attributes>
+        </shortcode>
+        <shortcode>
+            <tag>solak_faq</tag>
+            <attributes>
+                <attribute>cats_slug</attribute>
+                <attribute>exclude_cats</attribute>
+            </attributes>
+        </shortcode>
+        <shortcode>
+            <tag>solak_flip_boxes</tag>
+            <attributes>
+                <attribute type="media-url">image</attribute>
+            </attributes>
+        </shortcode>
+        <shortcode>
+            <tag>solak_flip_box</tag>
+            <attributes>
+                <attribute>title_front</attribute>
+                <attribute>title_back</attribute>
+                <attribute>text_front</attribute>
+                <attribute type="media-url">image</attribute>
+                <attribute>dynamic_params</attribute>
+            </attributes>
+        </shortcode>
+        <shortcode>
+            <tag>solak_fontawesome</tag>
+            <attributes>
+                <attribute encoding="base64">dynamic_params</attribute>
+            </attributes>
+        </shortcode>
+        <shortcode>
+            <tag>solak_solakslider</tag>
+            <attributes>
+                <attribute>name</attribute>
+            </attributes>
+        </shortcode>
+        <shortcode>
+            <tag>solak_map</tag>
+            <attributes>
+                <attribute>address</attribute>
+                <attribute encoding="base64">infobox_content</attribute>
+                <attribute>infobox</attribute>
+            </attributes>
+        </shortcode>
+        <shortcode>
+            <tag>solak_images</tag>
+        </shortcode>
+        <shortcode>
+            <tag>solak_image</tag>
+            <attributes>
+                <attribute type="link">link</attribute>
+                <attribute>alt</attribute>
+                <attribute type="media-url">image</attribute>
+                <attribute>image_title</attribute>
+                <attribute>image_caption</attribute>
+            </attributes>
+        </shortcode>
+        <shortcode>
+            <tag ignore-content="1">solak_imageframe</tag>
+            <attributes>
+                <attribute label="Image: Alt Text">alt</attribute>
+                <attribute label="Image: Link" type="link">link</attribute>
+                <attribute type="media-ids">image_id</attribute>
+                <attribute label="Image: Dynamic Params">dynamic_params</attribute>
+                <attribute label="Image: Title">caption_title</attribute>
+                <attribute label="Image: Caption">caption_text</attribute>
+            </attributes>
+        </shortcode>
+        <shortcode>
+            <tag>layerslider</tag>
+        </shortcode>
+        <shortcode>
+            <tag>solak_lightbox</tag>
+            <attributes>
+                <attribute>video_url</attribute>
+                <attribute>description</attribute>
+                <attribute>alt_text</attribute>
+                <attribute type="media-url">full_image</attribute>
+                <attribute type="media-url">thumbnail_image</attribute>
+                <attribute>dynamic_params</attribute>
+            </attributes>
+        </shortcode>
+        <shortcode>
+            <tag>solak_menu_anchor</tag>
+        </shortcode>
+        <shortcode>
+            <tag>solak_modal</tag>
+            <attributes>
+                <attribute>title</attribute>
+                <attribute>dynamic_params</attribute>
+            </attributes>
+        </shortcode>
+        <shortcode>
+            <tag>solak_modal_text_link</tag>
+            <attributes>
+                <attribute>dynamic_params</attribute>
+            </attributes>
+        </shortcode>
+        <shortcode>
+            <tag>solak_one_page_text_link</tag>
+            <attributes>
+                <attribute type="link">link</attribute>
+            </attributes>
+        </shortcode>
+        <shortcode>
+            <tag>solak_person</tag>
+            <attributes>
+                <attribute>name</attribute>
+                <attribute>title</attribute>
+                <attribute type="link">pic_link</attribute>
+                <attribute type="media-url">picture</attribute>
+                <attribute>dynamic_params</attribute>
+            </attributes>
+        </shortcode>
+        <shortcode>
+            <tag>solak_popover</tag>
+            <attributes>
+                <attribute>title</attribute>
+                <attribute>content</attribute>
+                <attribute>dynamic_params</attribute>
+            </attributes>
+        </shortcode>
+        <shortcode>
+            <tag>solak_post_cards</tag>
+            <attributes>
+                <attribute type="post-ids">post_card</attribute>
+                <attribute type="taxonomy-ids">include_product_cat</attribute>
+            </attributes>
+        </shortcode>
+        <shortcode>
+            <tag>solak_pricing_table</tag>
+        </shortcode>
+        <shortcode>
+            <tag>solak_pricing_column</tag>
+            <attributes>
+                <attribute>title</attribute>
+            </attributes>
+        </shortcode>
+        <shortcode>
+            <tag>solak_pricing_price</tag>
+            <attributes>
+                <attribute>currency</attribute>
+                <attribute>price</attribute>
+                <attribute>time</attribute>
+            </attributes>
+        </shortcode>
+        <shortcode>
+            <tag>solak_pricing_row</tag>
+        </shortcode>
+        <shortcode>
+            <tag>solak_pricing_footer</tag>
+        </shortcode>
+        <shortcode>
+            <tag>solak_progress</tag>
+        </shortcode>
+        <shortcode>
+            <tag>rev_slider</tag>
+        </shortcode>
+        <shortcode>
+            <tag>solak_section_separator</tag>
+        </shortcode>
+        <shortcode>
+            <tag>solak_separator</tag>
+        </shortcode>
+        <shortcode>
+            <tag>solak_sharing</tag>
+            <attributes>
+                <attribute>tagline</attribute>
+                <attribute>title</attribute>
+                <attribute type="link">link</attribute>
+                <attribute>description</attribute>
+                <attribute type="media-url">pinterest_image</attribute>
+                <attribute>dynamic_params</attribute>
+            </attributes>
+        </shortcode>
+        <shortcode>
+            <tag>solak_slider</tag>
+        </shortcode>
+        <shortcode>
+            <tag type="media-url">solak_slide</tag>
+            <attributes>
+                <attribute type="link">link</attribute>
+            </attributes>
+        </shortcode>
+        <shortcode>
+            <tag>solak_social_links</tag>
+            <attributes>
+                <attribute>dynamic_params</attribute>
+            </attributes>
+        </shortcode>
+        <shortcode>
+            <tag>solak_soundcloud</tag>
+            <attributes>
+                <attribute>url</attribute>
+            </attributes>
+        </shortcode>
+        <shortcode>
+            <tag>solak_tabs</tag>
+            <attributes>
+                <attribute>dynamic_params</attribute>
+            </attributes>
+        </shortcode>
+        <shortcode>
+            <tag>solak_tab</tag>
+            <attributes>
+                <attribute>title</attribute>
+            </attributes>
+        </shortcode>
+        <shortcode>
+            <tag>solak_testimonials</tag>
+        </shortcode>
+        <shortcode>
+            <tag>solak_testimonial</tag>
+            <attributes>
+                <attribute>name</attribute>
+                <attribute>company</attribute>
+                <attribute type="link">link</attribute>
+            </attributes>
+        </shortcode>
+        <shortcode>
+            <tag>solak_text</tag>
+            <attributes>
+                <attribute>dynamic_params</attribute>
+            </attributes>
+        </shortcode>
+        <shortcode>
+            <tag>solak_title</tag>
+            <attributes>
+                <attribute>dynamic_params</attribute>
+                <attribute>highlight_text</attribute>
+                <attribute>before_text</attribute>
+                <attribute>after_text</attribute>
+                <attribute>animated_text</attribute>
+                <attribute>rotation_text</attribute>
+            </attributes>
+        </shortcode>
+        <shortcode>
+            <tag>solak_accordion</tag>
+        </shortcode>
+        <shortcode>
+            <tag>solak_toggle</tag>
+            <attributes>
+                <attribute>title</attribute>
+                <attribute>dynamic_params</attribute>
+            </attributes>
+        </shortcode>
+        <shortcode>
+            <tag>solak_tooltip</tag>
+            <attributes>
+                <attribute>title</attribute>
+            </attributes>
+        </shortcode>
+        <shortcode>
+            <tag>solak_login</tag>
+            <attributes>
+                <attribute>heading</attribute>
+                <attribute>caption</attribute>
+                <attribute>redirection_link</attribute>
+                <attribute type="link">register_link</attribute>
+                <attribute>lost_password_link</attribute>
+            </attributes>
+        </shortcode>
+        <shortcode>
+            <tag>solak_lost_password</tag>
+            <attributes>
+                <attribute>heading</attribute>
+                <attribute>caption</attribute>
+                <attribute type="link">redirection_link</attribute>
+            </attributes>
+        </shortcode>
+        <shortcode>
+            <tag>solak_register</tag>
+            <attributes>
+                <attribute>heading</attribute>
+                <attribute>caption</attribute>
+                <attribute type="link">redirection_link</attribute>
+            </attributes>
+        </shortcode>
+        <shortcode>
+            <tag>solak_vimeo</tag>
+            <attributes>
+                <attribute>id</attribute>
+            </attributes>
+        </shortcode>
+        <shortcode>
+            <tag>solak_widget_area</tag>
+            <attributes>
+                <attribute>name</attribute>
+            </attributes>
+        </shortcode>
+        <shortcode>
+            <tag>solak_featured_products_slider</tag>
+        </shortcode>
+        <shortcode>
+            <tag>solak_youtube</tag>
+            <attributes>
+                <attribute>id</attribute>
+            </attributes>
+        </shortcode>
+        <shortcode>
+            <tag>solak_table</tag>
+        </shortcode>
+        <shortcode>
+            <tag>solak_tagline_box</tag>
+            <attributes>
+                <attribute type="link">link</attribute>
+                <attribute>button</attribute>
+                <attribute encoding="base64">title</attribute>
+                <attribute encoding="base64">description</attribute>
+                <attribute>dynamic_params</attribute>
+            </attributes>
+        </shortcode>
+        <shortcode>
+            <tag>solak_chart</tag>
+            <attributes>
+                <attribute>title</attribute>
+                <attribute>x_axis_label</attribute>
+                <attribute>y_axis_label</attribute>
+                <attribute>x_axis_labels</attribute>
+            </attributes>
+        </shortcode>
+        <shortcode>
+            <tag>solak_chart_dataset</tag>
+            <attributes>
+                <attribute>title</attribute>
+                <attribute>values</attribute>
+            </attributes>
+        </shortcode>
+        <shortcode>
+            <tag>solak_image_before_after</tag>
+            <attributes>
+                <attribute>before_label</attribute>
+                <attribute>after_label</attribute>
+                <attribute type="media-url">before_image</attribute>
+                <attribute type="media-url">after_image</attribute>
+            </attributes>
+        </shortcode>
+        <shortcode>
+            <tag ignore-content="1">solak_gallery</tag>
+            <attributes>
+                <attribute type="media-ids">image_ids</attribute>
+                <attribute>dynamic_params</attribute>
+            </attributes>
+        </shortcode>
+        <shortcode>
+            <tag ignore-content="1">solak_gallery_image</tag>
+            <attributes>
+                <attribute type="media-ids">image_id</attribute>
+                <attribute label="Gallery Image: Title">image_title</attribute>
+                <attribute label="Gallery Image: Caption">image_caption</attribute>
+            </attributes>
+        </shortcode>
+        <shortcode>
+            <tag>solak_dropcap</tag>
+        </shortcode>
+        <shortcode>
+            <tag>solak_video</tag>
+            <attributes>
+                <attribute>video</attribute>
+                <attribute>video_webm</attribute>
+                <attribute>preview_image</attribute>
+            </attributes>
+        </shortcode>
+        <shortcode>
+            <tag>solak_audio</tag>
+            <attributes>
+                <attribute>src</attribute>
+            </attributes>
+        </shortcode>
+        <shortcode>
+            <tag>solak_woo_cart_table</tag>
+        </shortcode>
+        <shortcode>
+            <tag>solak_form</tag>
+        </shortcode>
+        <shortcode>
+            <tag>solak_form_email</tag>
+            <attributes>
+                <attribute>label</attribute>
+                <attribute>placeholder</attribute>
+            </attributes>
+        </shortcode>
+        <shortcode>
+            <tag>solak_form_notice</tag>
+            <attributes>
+                <attribute encoding="base64">success</attribute>
+                <attribute encoding="base64">error</attribute>
+            </attributes>
+        </shortcode>
+        <shortcode>
+            <tag>solak_form_checkbox</tag>
+            <attributes>
+                <attribute>label</attribute>
+                <attribute>tooltip</attribute>
+                <attribute>options</attribute>
+            </attributes>
+        </shortcode>
+        <shortcode>
+            <tag>solak_form_radio</tag>
+            <attributes>
+                <attribute>label</attribute>
+                <attribute>tooltip</attribute>
+                <attribute>options</attribute>
+            </attributes>
+        </shortcode>
+        <shortcode>
+            <tag>solak_form_select</tag>
+            <attributes>
+                <attribute>label</attribute>
+                <attribute>tooltip</attribute>
+                <attribute>options</attribute>
+            </attributes>
+        </shortcode>
+        <shortcode>
+            <tag>solak_form_range</tag>
+            <attributes>
+                <attribute>label</attribute>
+                <attribute>tooltip</attribute>
+            </attributes>
+        </shortcode>
+        <shortcode>
+            <tag>solak_form_rating</tag>
+            <attributes>
+                <attribute>label</attribute>
+                <attribute>tooltip</attribute>
+            </attributes>
+        </shortcode>
+        <shortcode>
+            <tag>solak_form_date</tag>
+            <attributes>
+                <attribute>label</attribute>
+                <attribute>placeholder</attribute>
+                <attribute>tooltip</attribute>
+            </attributes>
+        </shortcode>
+        <shortcode>
+            <tag ignore-content="1">solak_form_image_select</tag>
+            <attributes>
+                <attribute>label</attribute>
+                <attribute>tooltip</attribute>
+            </attributes>
+        </shortcode>
+        <shortcode>
+            <tag>solak_form_date</tag>
+            <attributes>
+                <attribute>label</attribute>
+                <attribute>placeholder</attribute>
+                <attribute>tooltip</attribute>
+            </attributes>
+        </shortcode>
+        <shortcode>
+            <tag>solak_form_textarea</tag>
+            <attributes>
+                <attribute>label</attribute>
+                <attribute>placeholder</attribute>
+                <attribute>tooltip</attribute>
+            </attributes>
+        </shortcode>
+        <shortcode>
+            <tag>solak_form_text</tag>
+            <attributes>
+                <attribute>label</attribute>
+                <attribute>placeholder</attribute>
+                <attribute>tooltip</attribute>
+            </attributes>
+        </shortcode>
+        <shortcode>
+            <tag>solak_form_phone_number</tag>
+            <attributes>
+                <attribute>label</attribute>
+                <attribute>placeholder</attribute>
+                <attribute>tooltip</attribute>
+            </attributes>
+        </shortcode>
+        <shortcode>
+            <tag>solak_form_consent</tag>
+            <attributes>
+                <attribute encoding="base64">description</attribute>
+            </attributes>
+        </shortcode>        
+        <shortcode>
+            <tag>solak_form_submit</tag>
+        </shortcode>
+    </shortcodes>
+</wpml-config>

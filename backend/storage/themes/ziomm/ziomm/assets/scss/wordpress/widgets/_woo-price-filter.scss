@@ -1,0 +1,91 @@
+/* WIDGET: PRICE FILTER
+-------------------------------------------- */
+
+.vlt-widget.widget_price_filter {
+
+	.price_slider {
+		margin-bottom: px2rem(25px);
+	}
+
+	.price_slider_wrapper .ui-widget-content {
+		background-color: var(--vlt-color-2);
+		border: 0;
+	}
+
+	.ui-slider {
+		position: relative;
+		margin-right: 0.5em;
+		margin-left: 0.5em;
+		text-align: left;
+
+		&.ui-slider-horizontal {
+			height: 3px;
+
+			.ui-slider-range {
+				top: 0;
+				height: 100%;
+			}
+
+			.ui-slider-range-min {
+				left: -1px;
+			}
+
+			.ui-slider-range-max {
+				right: -1px;
+			}
+
+		}
+
+		.ui-slider-range {
+			position: absolute;
+			display: block;
+			font-size: 0.7em;
+			background-color: var(--vlt-accent-1);
+			border: 0;
+			border-radius: 0;
+			z-index: 1;
+		}
+
+		.ui-slider-handle {
+			position: absolute;
+			top: -.4em;
+			width: 1em;
+			height: 1em;
+			margin-left: -0.5em;
+			cursor: ew-resize;
+			background-color: var(--vlt-color-0);
+			border: 2px solid var(--vlt-accent-1);
+			border-radius: 1em;
+			outline: none;
+			z-index: 2;
+		}
+
+	}
+
+	.price_slider_amount {
+		font-size: px2rem(15px);
+		font-weight: 700;
+		color: var(--vlt-color-9);
+
+		.button {
+			display: inline-block;
+			padding: 0;
+			font-size: px2rem(14px);
+			font-weight: 700;
+			color: var(--vlt-color-9);
+			text-transform: uppercase;
+			cursor: pointer;
+			background-color: transparent;
+			border: none;
+			border-radius: 0;
+			transition: all var(--vlt-transition-duration) var(--vlt-transition-easing);
+
+			&:hover {
+				color: var(--vlt-accent-1);
+			}
+
+		}
+
+	}
+
+}

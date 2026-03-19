@@ -1,0 +1,93 @@
+/* MY ACCOUNT PAGE
+-------------------------------------------- */
+
+.woocommerce-MyAccount-navigation ul {
+	padding: 0;
+	margin: 0;
+	list-style-type: none;
+
+	li {
+
+		a {
+			display: flex;
+			padding: px2rem(18px) px2rem(35px);
+			font-size: px2rem(map-get($scales, "s8"));
+			font-weight: 700;
+			color: var(--vlt-color-9);
+			background-color: var(--vlt-color-2);
+		}
+
+		&:not(.is-active) a:hover {
+			background-color: var(--vlt-color-3);
+		}
+
+		&.is-active a {
+			color: var(--vlt-color-0);
+			cursor: default;
+			background-color: var(--vlt-accent-1);
+		}
+
+	}
+
+	li+li {
+		margin-top: px2rem(10px);
+	}
+
+}
+
+.woocommerce-MyAccount-content {
+
+	.addresses .title {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		padding-bottom: px2rem(15px);
+		margin-bottom: px2rem(30px);
+		border-bottom: 1px solid var(--vlt-color-2);
+	}
+
+	p strong {
+		color: var(--vlt-accent-1);
+	}
+
+}
+
+.woocommerce-EditAccountForm {
+
+	h3 {
+		margin: px2rem(30px) 0;
+	}
+
+}
+
+.vlt-form-edit-address {
+
+	h3 {
+		margin-bottom: px2rem(30px);
+	}
+
+}
+
+.vlt-woocommerce-form-login-wrapper,
+.vlt-woocommerce-reset-password-wrapper,
+.vlt-woocommerce-form-register-wrapper {
+
+	h3 {
+		margin-bottom: px2rem(30px);
+
+		&+p {
+			margin-bottom: px2rem(16px);
+		}
+
+	}
+
+	.login,
+	.lost_reset_password {
+		max-width: px2rem(450px);
+	}
+
+	.vlt-btn+.vlt-underline-link {
+		margin-left: px2rem(30px);
+	}
+
+}

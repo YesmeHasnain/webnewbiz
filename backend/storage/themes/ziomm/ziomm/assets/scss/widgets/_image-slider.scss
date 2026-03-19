@@ -1,0 +1,7 @@
+/* WIDGET: IMAGE SLIDER
+-------------------------------------------- */
+
+.vlt-image-slider {
+	@extend .vlt-post-media__gallery;
+	@extend .vlt-content-slider;
+}

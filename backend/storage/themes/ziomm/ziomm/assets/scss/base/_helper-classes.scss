@@ -1,0 +1,86 @@
+/* COLORS
+-------------------------------------------- */
+
+.has-white-color {
+	color: var(--vlt-color-0);
+}
+
+.has-white-background-color {
+	background-color: var(--vlt-color-0);
+}
+
+.has-black-color {
+	color: var(--vlt-color-9);
+}
+
+.has-black-background-color {
+	background-color: var(--vlt-color-9);
+}
+
+.has-gray-color {
+	color: var(--vlt-color-6);
+}
+
+.has-gray-background-color {
+	background-color: var(--vlt-color-6);
+}
+
+/* EM"s
+-------------------------------------------- */
+
+span.em-5,
+span.em-6,
+span.em-7 {
+	line-height: initial;
+	vertical-align: middle;
+}
+
+span.em-5 {
+	font-size: .5em;
+}
+
+span.em-6 {
+	font-size: .64em;
+}
+
+span.em-7 {
+	font-size: .74em;
+}
+
+/* GAPS
+-------------------------------------------- */
+
+.vlt-gap-30 {
+	@include gap(30px);
+}
+
+.vlt-gap-100 {
+	@include gap(100px);
+}
+
+.vlt-gap-120 {
+	@include gap(120px);
+}
+
+/* OTHERS
+-------------------------------------------- */
+
+.vlt-underline-link {
+	text-decoration: underline;
+}
+
+.spin {
+	animation: vlt_spin 5s linear infinite;
+}
+
+.center-mode {
+	position: absolute !important;
+	top: 50%;
+	left: 50%;
+	transform: translate3d(-50%, -50%, 0);
+	z-index: 1;
+}
+
+.z-index-n1 {
+	z-index: -1 !important;
+}

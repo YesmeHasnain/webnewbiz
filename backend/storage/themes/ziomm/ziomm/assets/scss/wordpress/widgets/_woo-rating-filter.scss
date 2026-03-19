@@ -1,0 +1,18 @@
+/* WIDGET: RATING FILTER
+-------------------------------------------- */
+
+.vlt-widget.widget_rating_filter {
+
+	a {
+		display: inline-flex;
+		align-items: center;
+		font-weight: 700;
+		line-height: 2.5;
+
+		.star-rating {
+			margin-right: px2rem(12px);
+		}
+
+	}
+
+}

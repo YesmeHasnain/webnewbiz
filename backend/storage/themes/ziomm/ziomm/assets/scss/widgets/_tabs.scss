@@ -1,0 +1,83 @@
+/* WIDGET: TABS
+-------------------------------------------- */
+
+.vlt-tabs {
+	padding: 0;
+	margin: 0;
+	list-style-type: none;
+
+	.vlt-tab+.vlt-tab {
+		margin-top: px2rem(32px);
+	}
+
+	.vlt-tab {
+		padding-left: px2rem(56px);
+
+		&__title {
+
+			a:hover {
+				color: inherit;
+			}
+
+			span {
+				position: absolute;
+				left: 0;
+				display: inline-flex;
+				width: px2rem(30px);
+				height: px2rem(30px);
+				color: var(--vlt-accent-1);
+				background-color: var(--vlt-color-2);
+				border-radius: 50%;
+
+				&::before,
+				&::after {
+					content: "";
+					position: absolute;
+					top: 50%;
+					left: 50%;
+					display: inline-flex;
+					background-color: currentColor;
+					transform: translate3d(-50%, -50%, 0);
+				}
+
+				// horizontal
+				&::before {
+					width: px2rem(12px);
+					height: px2rem(2px);
+				}
+
+				// vertical
+				&::after {
+					width: px2rem(2px);
+					height: px2rem(12px);
+					transition: transform var(--vlt-transition-duration) var(--vlt-transition-easing);
+				}
+
+			}
+
+		}
+
+		&__text {
+			display: none;
+			padding-top: px2rem(14px);
+			margin: 0;
+			font-size: px2rem(map-get($scales, "s8"));
+			line-height: 1.6;
+		}
+
+		&.active {
+
+			.vlt-tab__title {
+				color: var(--vlt-accent-1);
+
+				span::after {
+					transform: translate3d(-50%, -50%, 0) scaleY(0);
+				}
+
+			}
+
+		}
+
+	}
+
+}

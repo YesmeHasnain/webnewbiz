@@ -1,0 +1,106 @@
+a:4:{s:8:"template";s:4:"knor";s:4:"mods";a:3:{i:0;b:0;s:18:"nav_menu_locations";a:2:{s:7:"primary";i:11;s:10:"footermenu";i:10;}s:18:"custom_css_post_id";i:2048;}s:7:"options";a:2:{s:9:"site_icon";s:1:"0";s:23:"nav_menus_created_posts";a:0:{}}s:6:"wp_css";s:1861:"p.copyright-text, ul.footer-nav li a {
+    color: #0e0c1e99;
+}
+
+footer.theme-footer-wrapper .widget_text p, .footer-widget ul li a, p.copyright-text, ul.footer-nav li a {
+	font-weight: 400;
+}
+
+.footer-divider {
+    background: rgb(14 12 30 / 10%); 
+}
+
+.footer-social a {
+    color: #6080FF; 
+}
+
+ul.footer-nav li:before {
+    background: rgb(14 12 30 / 25%); 
+}
+
+.footer-widget ul li a:hover, ul.footer-nav li a:hover {
+	color: #0E0C1E;
+}
+
+.footer-bottom {
+    padding-top: 24px;
+    padding-bottom: 24px;
+}
+
+.theme-footer-wrapper .footer-top {
+    padding-top: 160px;
+    padding-bottom: 60px;
+}
+
+.header-login-btn.header-btn-bordered a:hover {
+    background: #6d57e8!important;
+    color: #fff;
+}
+
+.nav-menu-wrapper .mainmenu ul li a:hover {
+    color: #6d57e8;
+}
+
+.theme-banner-agency-wrapper a.banner-btn.banner-btn-rounded:hover {
+    background: #4464e7;
+}
+
+.theme-banner-agency-wrapper a.banner-btn-play:hover {
+	color: #4464e7;
+}
+
+.post-blocks-column-btn a:hover {
+    display: inline-block;
+    background-color: #4464e7; 
+}
+
+.slide-arrow-left.slick-arrow:hover, .slide-arrow-right.slick-arrow:hover {
+    border-color: #6080FF;
+}
+
+.footer-social a:hover {
+	color: #6d57e8;
+}
+
+.theme-feature-box-one-wrapper .theme-feature-box-icon {
+    width: 54px;
+    height: 54px;
+    text-align: center;
+    line-height: 54px;
+}
+
+.theme-feature-box-one-wrapper:hover .theme-feature-box-icon {
+    background: #fff!important;
+    color: #6080FF;
+}
+
+@media (min-width: 992px) and (max-width: 1199px) {
+	
+.header-login-btn {
+    display: block;
+}  
+
+	.header-login-btn a {
+		font-size: 17px;
+	}
+
+}
+
+
+.home-blog-one-grid-wrap .post-block-style-one-inner .post-block-content-wrap h3.post-title a:hover, .team-section-wrap .team-member-content h3 a:hover {
+	color: #6080FF!important;
+}
+
+.nav-menu-wrapper .mainmenu ul li a {
+    color: rgb(14 12 30 / 80%); 
+}
+
+
+
+
+
+
+
+
+
+";}

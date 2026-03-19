@@ -1,0 +1,15 @@
+/*
+Theme Name: Knor
+Theme URI: http://gossipthemes.com/minerva
+Author: Gossip Themes
+Author URI: http://gossipthemes.com
+Description: Digital Agency & Sass WordPress Theme
+Version: 1.0
+License: GNU General Public License v2 or later
+License URI: LICENSE
+Text Domain: knor
+Tags: two-columns, three-columns, four-columns, right-sidebar, custom-menu, featured-images, full-width-template
+*/
+
+
+

@@ -1,0 +1,68 @@
+/* WIDGET: RECENT POSTS
+-------------------------------------------- */
+
+.vlt-widget.vlt_widget_recent_posts,
+%widget-recent-posts {
+
+	.vlt-widget-post+.vlt-widget-post {
+		margin-top: px2rem(15px);
+	}
+
+	.vlt-widget-post {
+		display: flex;
+		align-items: center;
+
+		.vlt-widget-post__thumbnail+.vlt-widget-post__content {
+			margin-left: px2rem(22px);
+		}
+
+		&__thumbnail {
+			max-width: px2rem(90px);
+			overflow: hidden;
+			flex-shrink: 0;
+
+			img {
+				transition: transform var(--vlt-transition-duration) var(--vlt-transition-easing);
+				backface-visibility: hidden;
+			}
+
+		}
+
+		&__content {
+			overflow: hidden;
+			flex-basis: 100%;
+
+			h5 {
+				margin-bottom: px2rem(4px);
+				overflow: hidden;
+				font-size: px2rem(map-get($scales, "s8"));
+				line-height: 1.5;
+				text-overflow: ellipsis;
+				white-space: nowrap;
+
+				.vlt-offcanvas-sidebar--dark & {
+					color: var(--vlt-color-0);
+				}
+
+			}
+
+			span {
+				font-size: px2rem(map-get($scales, "s9"));
+				line-height: 1.7;
+				color: var(--vlt-color-6);
+
+				.vlt-offcanvas-sidebar--dark & {
+					color: var(--vlt-color-4);
+				}
+
+			}
+
+		}
+
+		&:hover .vlt-widget-post__thumbnail img {
+			transform: scale(1.1);
+		}
+
+	}
+
+}

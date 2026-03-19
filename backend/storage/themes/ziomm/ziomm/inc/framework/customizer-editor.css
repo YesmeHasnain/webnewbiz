@@ -1,0 +1,98 @@
+:root {
+	--vlt-primary-font: Inter;
+	--vlt-secondary-font: Bebas Neue;
+}
+
+.edit-post-visual-editor.editor-styles-wrapper {
+	font-family: Inter;
+	font-size: 1rem;
+	font-weight: 400;
+	line-height: 1.625;
+	text-transform: none;
+	color: #242424;
+}
+
+.editor-block-list__block h1,
+.wp-block-heading h1.editor-rich-text__tinymce,
+.editor-post-title__block .editor-post-title__input {
+	font-family: Bebas Neue;
+	font-size: 4.375rem;
+	font-weight: 400;
+	letter-spacing: 0.005em;
+	line-height: 1.15;
+	text-transform: none;
+	color: #101010;
+}
+
+.editor-block-list__block h2,
+.wp-block-heading h2.editor-rich-text__tinymce {
+	font-family: Bebas Neue;
+	font-size: 2.875rem;
+	font-weight: 400;
+	letter-spacing: 0.015em;
+	line-height: 1.15;
+	text-transform: none;
+	color: #101010;
+}
+
+.editor-block-list__block h3,
+.wp-block-heading h3.editor-rich-text__tinymce {
+	font-family: Bebas Neue;
+	font-size: 2.125rem;
+	font-weight: 400;
+	letter-spacing: 0.015em;
+	line-height: 1.3;
+	text-transform: none;
+	color: #101010;
+}
+
+.editor-block-list__block h4,
+.wp-block-heading h4.editor-rich-text__tinymce {
+	font-family: Bebas Neue;
+	font-size: 1.625rem;
+	font-weight: 400;
+	letter-spacing: 0.015em;
+	line-height: 1.3;
+	text-transform: none;
+	color: #101010;
+}
+
+.editor-block-list__block h5,
+.wp-block-heading h5.editor-rich-text__tinymce {
+	font-family: Inter;
+	font-size: 1.25rem;
+	font-weight: 700;
+	line-height: 1.5;
+	text-transform: none;
+	color: #101010;
+}
+
+.editor-block-list__block h6,
+.wp-block-heading h6.editor-rich-text__tinymce {
+	font-family: Inter;
+	font-size: 0.9375rem;
+	font-weight: 700;
+	line-height: 1.45;
+	text-transform: none;
+	color: #101010;
+}
+
+.wp-block-quote,
+.wp-block-pullquote {
+	font-family: Bebas Neue;
+	font-size: 2.125rem;
+	font-weight: 400;
+	letter-spacing: 0.015em;
+	line-height: 1.3;
+	text-transform: none;
+	color: #101010;
+}
+
+:root {
+	--vlt-accent-1-h: 346;
+	--vlt-accent-1-s: 83%;
+	--vlt-accent-1-l: 53%;
+	--vlt-accent-2-h: 30;
+	--vlt-accent-2-s: 100%;
+	--vlt-accent-2-l: 55%;
+}

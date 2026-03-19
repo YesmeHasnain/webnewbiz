@@ -1,0 +1,137 @@
+<?php
+
+use App\Http\Controllers\Api\AuthController;
+use App\Http\Controllers\Api\WebsiteController;
+use App\Http\Controllers\Api\BuilderController;
+use App\Http\Controllers\Api\WpPluginController;
+use App\Http\Controllers\Api\WpThemeController;
+use App\Http\Controllers\Api\WpOverviewController;
+use App\Http\Controllers\Api\BackupController;
+use App\Http\Controllers\Api\DomainController;
+use App\Http\Controllers\Api\WooCommerceController;
+use App\Http\Controllers\Api\BrandingController;
+use App\Http\Controllers\Api\WpBuilderController;
+use Illuminate\Support\Facades\Route;
+
+// Public auth routes
+Route::post('/auth/register', [AuthController::class, 'register']);
+Route::post('/auth/login', [AuthController::class, 'login']);
+
+// Public builder routes (no auth needed)
+Route::post('/builder/analyze', [BuilderController::class, 'analyze']);
+Route::post('/builder/analyze-questions', [BuilderController::class, 'analyzeWithQuestions']);
+Route::post('/builder/summarize', [BuilderController::class, 'summarize']);
+Route::get('/builder/layouts', [BuilderController::class, 'layouts']);
+Route::post('/builder/enhance-prompt', [BuilderController::class, 'enhancePrompt']);
+
+// Protected routes
+Route::middleware('auth:sanctum')->group(function () {
+    // Auth
+    Route::post('/auth/logout', [AuthController::class, 'logout']);
+    Route::get('/auth/me', [AuthController::class, 'me']);
+
+    // Websites
+    Route::get('/websites', [WebsiteController::class, 'index']);
+    Route::post('/websites/generate', [WebsiteController::class, 'generate']);
+    Route::get('/websites/{id}', [WebsiteController::class, 'show']);
+    Route::get('/websites/{id}/status', [WebsiteController::class, 'status']);
+    Route::post('/websites/{id}/rebuild', [WebsiteController::class, 'rebuild']);
+    Route::delete('/websites/{id}', [WebsiteController::class, 'destroy']);
+
+    // Website Management APIs
+    Route::prefix('websites/{websiteId}')->group(function () {
+        // Overview & Site Info
+        Route::get('/overview', [WpOverviewController::class, 'index']);
+        Route::get('/updates', [WpOverviewController::class, 'updates']);
+        Route::post('/cache/clear', [WpOverviewController::class, 'clearCache']);
+        Route::get('/wp-pages', [WpOverviewController::class, 'pages']);
+        Route::get('/options', [WpOverviewController::class, 'options']);
+        Route::put('/options', [WpOverviewController::class, 'updateOptions']);
+
+        // Plugins
+        Route::get('/plugins', [WpPluginController::class, 'index']);
+        Route::post('/plugins/activate', [WpPluginController::class, 'activate']);
+        Route::post('/plugins/deactivate', [WpPluginController::class, 'deactivate']);
+        Route::post('/plugins/install', [WpPluginController::class, 'install']);
+        Route::post('/plugins/update', [WpPluginController::class, 'update']);
+        Route::delete('/plugins', [WpPluginController::class, 'destroy']);
+
+        // Themes
+        Route::get('/themes', [WpThemeController::class, 'index']);
+        Route::post('/themes/activate', [WpThemeController::class, 'activate']);
+        Route::post('/themes/install', [WpThemeController::class, 'install']);
+        Route::post('/themes/update', [WpThemeController::class, 'update']);
+        Route::delete('/themes', [WpThemeController::class, 'destroy']);
+
+        // Backups
+        Route::get('/backups', [BackupController::class, 'index']);
+        Route::post('/backups', [BackupController::class, 'store']);
+        Route::get('/backups/{backupId}/download', [BackupController::class, 'download']);
+        Route::post('/backups/{backupId}/restore', [BackupController::class, 'restore']);
+        Route::delete('/backups/{backupId}', [BackupController::class, 'destroy']);
+
+        // Domains
+        Route::get('/domains', [DomainController::class, 'index']);
+        Route::post('/domains', [DomainController::class, 'store']);
+        Route::delete('/domains/{domainId}', [DomainController::class, 'destroy']);
+
+        // Branding / Logo
+        Route::get('/branding/logo', [BrandingController::class, 'getLogo']);
+        Route::post('/branding/logo', [BrandingController::class, 'uploadLogo']);
+        Route::delete('/branding/logo', [BrandingController::class, 'removeLogo']);
+        Route::post('/branding/logo/generate', [BrandingController::class, 'generateLogo']);
+
+        // WooCommerce
+        Route::get('/woo/products', [WooCommerceController::class, 'products']);
+        Route::get('/woo/products/{productId}', [WooCommerceController::class, 'showProduct']);
+        Route::post('/woo/products', [WooCommerceController::class, 'createProduct']);
+        Route::put('/woo/products/{productId}', [WooCommerceController::class, 'updateProduct']);
+        Route::delete('/woo/products/{productId}', [WooCommerceController::class, 'deleteProduct']);
+        Route::get('/woo/orders', [WooCommerceController::class, 'orders']);
+        Route::get('/woo/categories', [WooCommerceController::class, 'categories']);
+
+        // WebNewBiz Builder Plugin
+        Route::prefix('wnb')->group(function () {
+            Route::get('/dashboard', [WpBuilderController::class, 'dashboard']);
+            Route::get('/analytics', [WpBuilderController::class, 'analytics']);
+
+            Route::get('/performance', [WpBuilderController::class, 'performanceGet']);
+            Route::post('/performance', [WpBuilderController::class, 'performanceSave']);
+
+            Route::get('/cache', [WpBuilderController::class, 'cacheStats']);
+            Route::post('/cache/purge', [WpBuilderController::class, 'cachePurge']);
+            Route::post('/cache/settings', [WpBuilderController::class, 'cacheSettings']);
+
+            Route::get('/security', [WpBuilderController::class, 'securityGet']);
+            Route::post('/security', [WpBuilderController::class, 'securitySave']);
+
+            Route::get('/backups', [WpBuilderController::class, 'backupList']);
+            Route::post('/backups', [WpBuilderController::class, 'backupCreate']);
+            Route::delete('/backups/{backupId}', [WpBuilderController::class, 'backupDelete']);
+            Route::post('/backups/{backupId}/restore', [WpBuilderController::class, 'backupRestore']);
+
+            Route::get('/database', [WpBuilderController::class, 'databaseStats']);
+            Route::post('/database/cleanup', [WpBuilderController::class, 'databaseCleanup']);
+            Route::post('/database/optimize', [WpBuilderController::class, 'databaseOptimize']);
+
+            Route::get('/maintenance', [WpBuilderController::class, 'maintenanceGet']);
+            Route::post('/maintenance/toggle', [WpBuilderController::class, 'maintenanceToggle']);
+            Route::post('/maintenance/settings', [WpBuilderController::class, 'maintenanceSave']);
+
+            Route::get('/images', [WpBuilderController::class, 'imagesStats']);
+            Route::post('/images/optimize', [WpBuilderController::class, 'imagesOptimize']);
+            Route::post('/images/settings', [WpBuilderController::class, 'imagesSettings']);
+
+            Route::get('/seo', [WpBuilderController::class, 'seoGet']);
+            Route::post('/seo', [WpBuilderController::class, 'seoSave']);
+            Route::post('/seo/redirects', [WpBuilderController::class, 'seoRedirectAdd']);
+            Route::delete('/seo/redirects', [WpBuilderController::class, 'seoRedirectDelete']);
+            Route::post('/seo/sitemap', [WpBuilderController::class, 'seoSitemap']);
+            Route::post('/seo/robots', [WpBuilderController::class, 'seoRobots']);
+
+            Route::post('/ai/generate', [WpBuilderController::class, 'aiGenerate']);
+            Route::get('/ai/history', [WpBuilderController::class, 'aiHistory']);
+            Route::post('/ai/history/clear', [WpBuilderController::class, 'aiHistory']);
+        });
+    });
+});

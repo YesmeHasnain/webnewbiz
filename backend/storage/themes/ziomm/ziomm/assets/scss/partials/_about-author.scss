@@ -1,0 +1,55 @@
+/* PARTIAL: ABOUT AUTHOR
+-------------------------------------------- */
+
+.vlt-about-author {
+	display: flex;
+	padding: px2rem(60px);
+	background-color: var(--vlt-color-1);
+
+	&__avatar {
+		max-width: px2rem(130px);
+		flex-shrink: 0;
+
+		@include media-breakpoint-down(lg) {
+			display: none;
+		}
+
+		img {
+			border-radius: 50%;
+		}
+
+	}
+
+	&__content {
+		flex-basis: 100%;
+	}
+
+	.vlt-about-author__avatar+.vlt-about-author__content {
+		margin-left: px2rem(40px);
+
+		@include media-breakpoint-down(lg) {
+			margin-left: 0;
+		}
+
+	}
+
+	&__header {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		margin-bottom: px2rem(18px);
+		color: var(--vlt-color-6);
+	}
+
+	&__link {
+		font-size: px2rem(map-get($scales, "s9"));
+		line-height: 1.7;
+	}
+
+	&__text {
+		margin-bottom: 0;
+		font-size: px2rem(map-get($scales, "s8"));
+		line-height: 1.6;
+	}
+
+}

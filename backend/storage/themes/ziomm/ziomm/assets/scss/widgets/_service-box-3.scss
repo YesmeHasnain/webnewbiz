@@ -1,0 +1,49 @@
+/* WIDGET: SERVICE BOX 3
+-------------------------------------------- */
+
+.vlt-service-box--style-3 {
+	position: relative;
+	overflow: hidden;
+	z-index: 1;
+
+	.vlt-service-box__background {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		background-color: var(--vlt-accent-2);
+		transition: transform var(--vlt-transition-duration) var(--vlt-transition-easing);
+		backface-visibility: hidden;
+		z-index: -1;
+	}
+
+	.vlt-service-box__content {
+		padding: px2rem(80px) px2rem(60px);
+	}
+
+	.vlt-service-box__title {
+
+		a:hover {
+			color: inherit;
+		}
+
+	}
+
+	.vlt-service-box__text {
+		margin-top: px2rem(22px);
+		margin-bottom: 0;
+		font-size: px2rem(map-get($scales, "s8"));
+		line-height: 1.6;
+		color: var(--vlt-color-9);
+	}
+
+	&:hover {
+
+		.vlt-service-box__background {
+			transform: scale(1.05);
+		}
+
+	}
+
+}

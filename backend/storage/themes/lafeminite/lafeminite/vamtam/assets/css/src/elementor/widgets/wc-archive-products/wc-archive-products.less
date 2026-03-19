@@ -1,0 +1,29 @@
+// Archive Products.
+@import '../products-base/products-base.less';
+
+.elementor-widget-wc-archive-products {
+	// Base Theme Widget Styles.
+	&.vamtam-has-theme-widget-styles {
+		.products-base();
+
+		.woocommerce-result-count,
+		.woocommerce-ordering {
+			margin: 0 0 1em;
+		}
+
+		.woocommerce-result-count {
+			font-size: max(14px);
+			line-height: 3.0em;
+		}
+
+		ul.products {
+			padding-top: 1em;
+		}
+
+		.woocommerce-ordering select.orderby {
+			min-height: 40px;
+			padding-bottom: 10px;
+			padding-top: 10px;
+		}
+	}
+}

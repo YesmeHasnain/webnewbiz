@@ -1,0 +1,189 @@
+@use '../../utils' as *;
+
+/*----------------------------------------*/
+/*  6.1 Footer Style 1
+/*----------------------------------------*/
+
+//footer widget style
+.#{$theme-prefix}-footer{
+    &-ptb{
+        @media #{$lg} {
+            padding-top: 120px;
+        }
+    }
+    &-text{
+        @media #{$xs1} {
+            flex-wrap: wrap;
+        }
+       &-thumb{
+           padding-right: 25px;
+           @media #{$xs1} {
+            padding-bottom: 20px;
+           }
+           & img{
+               border-radius: 50%;
+           }
+       }
+       &-heading{
+        transform: translateY(-28px);
+        @media #{$lg,$xs} {
+            transform: translateY(0px);
+        }
+       }
+       &-title{
+           font-size: 150px;
+           font-weight: 700;
+           margin: 0;
+           line-height: 1.04;
+           letter-spacing: -9px;
+           text-transform: uppercase;
+           color: var(--tp-heading-secondary);
+           @media #{$x3l} {
+            font-size: 125px;
+           }
+           @media #{$xxl} {
+            font-size: 110px;
+           }
+           @media #{$xl} {
+            font-size: 90px;
+           }
+           @media #{$lg} {
+            font-size: 70px;
+           }
+           @media #{$md} {
+            font-size: 80px;
+           }
+           @media #{$xs} {
+            font-size: 60px;
+           }
+           @media #{$xs1} {
+            font-size: 50px;
+           }
+       }
+    }
+    &-wrapper{
+        @media #{$xl,$lg} {
+            padding-bottom: 120px;
+        }
+        @media #{$lg,$md,$xs} {
+            flex-wrap: wrap;
+        }
+        @media #{$md,$xs} {
+            padding-bottom: 50px;
+        }
+        &-right{
+            display: flex;
+            justify-content: end;
+            @media #{$xl,$lg} {
+                padding-bottom: 120px;
+            }
+            @media #{$lg,$md,$xs} {
+                flex-wrap: wrap;
+            }
+            @media #{$md,$xs} {
+                padding-bottom: 50px;
+                justify-content: start;
+            }
+        }
+    }
+    &-info{
+        &-item{
+            &:not(:last-of-type){
+                margin-bottom: 40px;
+            }
+            & span{
+                display: block;
+                font-size: 22px;
+                font-weight: 400;
+                margin-bottom: 24px;
+                color: rgba(255, 255, 255, 0.50);
+                @media #{$xl,$lg} {
+                    margin-bottom: 15px;
+                }
+            }
+            & a{
+                font-size: 40px;
+                font-weight: 500;
+                display: inline;
+                background-size: 0% 2px, 0 2px;
+                background-position: 100% 100%, 0 100%;
+                color: var(--tp-heading-secondary);
+                background-repeat: no-repeat;
+                transition: 0.3s linear;
+                background-image: linear-gradient(#F5F7F5, #F5F7F5), linear-gradient(#F5F7F5, #F5F7F5);
+                &:hover{
+                    background-size: 0% 2px, 100% 2px;
+                }
+                @media #{$xl,$lg,$md} {
+                    font-size: 35px;
+                }
+                @media #{$xs} {
+                    font-size: 30px;
+                }
+            }
+        }
+    }
+    &-copyright{
+        padding: 0 35px 50px;
+        @media #{$xs} {
+            padding: 0;
+            padding-bottom: 30px;
+        }
+        &-logo{
+            @media #{$md,$xs} {
+                padding-bottom: 30px;
+            }
+        }
+        &-social{
+            @media #{$md,$xs} {
+                padding-bottom: 20px;
+            }
+            & a{
+                display: inline-block;
+                font-size: 18px;
+                font-weight: 400;
+                padding: 7px 45px;
+                border-radius: 40px;
+                color: var(--tp-heading-secondary);
+                border: 1.5px solid rgba(255, 255, 255, 0.20);
+                &:not(:last-of-type){
+                    margin-right: 8px;
+                }
+                &:hover{
+                    color: var(--tp-heading-primary);
+                    background-color: var(--tp-heading-secondary);
+                }
+                @media #{$lg} {
+                    padding: 7px 30px;
+                }
+                @media #{$md,$xs} {
+                    margin-bottom: 20px;
+                }
+            }
+        }
+        &-text{
+            & p{
+                font-size: 16px;
+                font-weight: 500;
+                color: var(--tp-common-white);
+            }
+        }
+    }
+}
+
+/* footer col design for home 1 */
+.tp-footer-col{
+    &-1{
+
+    }
+    &-2{
+
+    }
+    &-3{
+
+    }
+    &-4{
+
+    }
+}
+

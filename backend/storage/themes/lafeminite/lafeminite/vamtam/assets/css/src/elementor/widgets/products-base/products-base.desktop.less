@@ -1,0 +1,37 @@
+// Products / Archive Products / Product Related / Upsells - Desktop.
+
+// Theme-dependant.
+.products-base-desktop() {
+	// WC Products
+	ul.products li.product:not(.product-category) {
+
+		.vamtam-product-content {
+			padding-left: 10px;
+			padding-right: 10px;
+		}
+
+		&:hover {
+			.vamtam-product-content {
+				transform: none;
+			}
+		}
+
+		.woocommerce-loop-product__link {
+			order: 1;
+		}
+		.vamtam-add-to-cart-wrap {
+			order: 2;
+			a.button,
+			a.added_to_cart {
+				position: absolute;
+				left: 10px;
+				bottom: 10px;
+				width: calc(100% - 20px);
+			}
+		}
+		.vamtam-product-content {
+			z-index: 1;
+			order: 3;
+		}
+	}
+}

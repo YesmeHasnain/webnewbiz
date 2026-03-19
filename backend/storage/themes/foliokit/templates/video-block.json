@@ -1,0 +1,58 @@
+{
+    "version": "0.4",
+    "title": "Video &#8211; Block",
+    "type": "section",
+    "metadata": {
+        "template_type": "section-other",
+        "include_in_zip": "1",
+        "elementor_pro_required": "1",
+        "wp_page_template": "default"
+    },
+    "content": [
+        {
+            "id": "67fb422d",
+            "settings": {
+                "layout": "full_width",
+                "gap": "no",
+                "ekit_section_parallax_multi_items": []
+            },
+            "elements": [
+                {
+                    "id": "dc1eb02",
+                    "settings": {
+                        "_column_size": 100,
+                        "_inline_size": null
+                    },
+                    "elements": [
+                        {
+                            "id": "307b63d",
+                            "settings": {
+                                "youtube_url": "https:\/\/www.youtube.com\/watch?v=a3ICNMQW7Ok",
+                                "vimeo_url": "https:\/\/vimeo.com\/235215203",
+                                "dailymotion_url": "https:\/\/www.dailymotion.com\/video\/x6tqhqb",
+                                "show_image_overlay": "yes",
+                                "image_overlay": {
+                                    "url": "https:\/\/wordpress-355652-1662348.cloudwaysapps.com\/wp-content\/uploads\/2020\/08\/Group-2.png",
+                                    "id": 133
+                                },
+                                "show_play_icon": "",
+                                "lightbox": "yes"
+                            },
+                            "elements": [],
+                            "isInner": false,
+                            "widgetType": "video",
+                            "elType": "widget"
+                        }
+                    ],
+                    "isInner": false,
+                    "elType": "column"
+                }
+            ],
+            "isInner": false,
+            "elType": "section"
+        }
+    ],
+    "page_settings": {
+        "hide_title": "yes"
+    }
+}

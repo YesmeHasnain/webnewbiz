@@ -1,0 +1,104 @@
+/* WORK: INSTAGRAM
+-------------------------------------------- */
+
+.vp-portfolio__items-style-ziomm_work_instagram {
+
+	// Links.
+	--vp-items-style-work-instagram--links__color: inherit;
+	--vp-items-style-work-instagram--links__text-decoration: none;
+	--vp-items-style-work-instagram--links-hover__color: var(--vlt-accent-1);
+
+	// Image.
+	--vp-items-style-work-instagram--image-hover__transform: scale(1.05);
+	--vp-items-style-work-instagram--image__border-radius: 0;
+
+	// Overlay.
+	--vp-items-style-work-instagram--overlay__color: var(--vlt-color-0);
+	--vp-items-style-work-instagram--overlay__background-color: hsla(var(--vlt-accent-1-h), var(--vlt-accent-1-s), var(--vlt-accent-1-l), .8);
+
+	// Transitions.
+	--vp-items-style-work-instagram-transition-duration: var(--vlt-transition-duration);
+	--vp-items-style-work-instagram-transition-easing: var(--vlt-transition-easing);
+
+	.vp-portfolio__item {
+		border-radius: var(--vp-items-style-work-instagram--image__border-radius);
+
+		// fix for safari border-radius.
+		// https://github.com/nk-crew/visual-portfolio/issues/150
+		z-index: 0;
+	}
+
+	.vp-portfolio__item a {
+		color: var(--vp-items-style-work-instagram--links__color);
+		text-decoration: var(--vp-items-style-work-instagram--links__text-decoration);
+		outline: none;
+		box-shadow: none;
+
+		&:hover,
+		&:focus {
+			color: var(--vp-items-style-work-instagram--links-hover__color);
+		}
+
+	}
+
+	.vp-portfolio__item .vp-portfolio__item-img-wrap a {
+		transition: var(--vp-items-style-work-instagram-transition-duration) color var(--vp-items-style-work-instagram-transition-easing);
+	}
+
+	.vp-portfolio__item-img-overlay {
+		position: absolute;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		left: 0;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		color: var(--vp-items-style-work-instagram--overlay__color);
+		text-decoration: var(--vp-items-style-work-instagram--overlay__text-decoration);
+		background-color: var(--vp-items-style-work-instagram--overlay__background-color);
+		opacity: 0;
+		transition: var(--vp-items-style-work-instagram-transition-duration) opacity var(--vp-items-style-work-instagram-transition-easing);
+		will-change: opacity;
+
+		// Fix FireFox image blinking
+		// https://github.com/nk-o/visual-portfolio/issues/92
+		z-index: 2;
+
+		i {
+			font-size: px2rem(24px);
+			opacity: 0;
+			transition: all var(--vp-items-style-work-instagram-transition-duration) var(--vp-items-style-work-instagram-transition-easing);
+			transform: translate3d(0, 100%, 0) scale(1);
+			will-change: transform, opacity;
+		}
+
+	}
+
+	// Transitions
+	.vp-portfolio__item-img img {
+		transition: var(--vp-items-style-work-instagram-transition-duration) transform var(--vp-items-style-work-instagram-transition-easing), var(--vp-items-style-work-instagram-transition-duration) opacity var(--vp-items-style-work-instagram-transition-easing);
+		will-change: transform, opacity;
+	}
+
+	.vp-portfolio__item:hover,
+	.vp-portfolio__item-focus {
+
+		.vp-portfolio__item-img-overlay {
+			opacity: 1;
+
+			i {
+				opacity: 1;
+				transition-delay: 100ms;
+				transform: translate3d(0, 0, 0) scale(1);
+			}
+
+		}
+
+		.vp-portfolio__item-img img {
+			transform: var(--vp-items-style-work-instagram--image-hover__transform);
+		}
+
+	}
+
+}

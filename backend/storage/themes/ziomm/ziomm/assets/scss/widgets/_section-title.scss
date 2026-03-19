@@ -1,0 +1,20 @@
+/* WIDGET: SECTION TITLE
+-------------------------------------------- */
+
+.vlt-section-title {
+
+	h1.vlt-section-title__heading,
+	h2.vlt-section-title__heading,
+	h3.vlt-section-title__heading,
+	h4.vlt-section-title__heading,
+	h5.vlt-section-title__heading,
+	h6.vlt-section-title__heading {
+		margin: 0;
+	}
+
+	&__description {
+		margin-top: px2rem(26px);
+		margin-bottom: 0;
+	}
+
+}

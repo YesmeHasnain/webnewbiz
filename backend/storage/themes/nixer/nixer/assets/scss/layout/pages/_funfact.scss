@@ -1,0 +1,78 @@
+@use '../../utils' as *;
+
+/*----------------------------------------*/
+/*  8.5 Funfact Css
+/*----------------------------------------*/
+
+.#{$theme-prefix}-funfact{
+    &-ptb{
+      @media #{$lg,$md,$xs} {
+        padding-top: 80px;
+        padding-bottom: 80px;
+      }
+    }
+    &-heading{
+      @media #{$md,$xs} {
+        margin-bottom: 50px;
+      }
+      & .tp-section-title{
+        font-size: 60px;
+        font-weight: 400;
+        letter-spacing: -0.6px;
+        color: var(--tp-heading-secondary);
+        font-family: var(--tp-ff-heading-2);
+        @media #{$lg,$md} {
+          font-size: 55px;
+        }
+        @media #{$xs} {
+          font-size: 45px;
+        }
+        & span{
+          padding-left: 115px;
+          @media #{$xs} {
+            padding-left: 0;
+          }
+        }
+        & br{
+          @media #{$xl,$lg,$md,$xs} {
+            display: none;
+          }
+        }
+      }
+    }
+    &-item{
+      &-title{
+        position: relative;
+        font-size: 40px;
+        font-weight: 400;
+        line-height: 1;
+        padding-left: 30px;
+        margin-bottom: 25px;
+        color: var(--tp-heading-secondary);
+        font-family: var(--tp-ff-heading-2);
+        @media #{$xs} {
+          font-size: 32px;
+        }
+        &::before{
+          position: absolute;
+          content: '';
+          top: 50%;
+          left: 0;
+          width: 15px;
+          height: 15px;
+          transform: translateY(-50%);
+          background-color: var(--tp-heading-secondary);
+        }
+      }
+      & p{
+        font-size: 20px;
+        color: #929298;
+        & br{
+          @media #{$xl,$lg,$md,$xs} {
+            display: none;
+          }
+        }
+      }
+    }
+}
+

@@ -1,0 +1,140 @@
+<?php $nixer_redux_demo = get_option('redux_demo'); 
+$nixer_page_id = get_query_var('nixer_page_id', 0); ?>
+<!DOCTYPE html>
+<html <?php language_attributes(); ?>>
+<head>
+	<meta charset="<?php bloginfo( 'charset' ); ?>">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<?php if ( ! function_exists( 'has_site_icon' ) || ! has_site_icon() ) { ?>
+		<?php if(isset($nixer_redux_demo['favicon']['url'])){?>
+		<link rel="shortcut icon" href="<?php echo esc_url($nixer_redux_demo['favicon']['url']); ?>">
+		<?php }?>
+	<?php }?>
+	<?php wp_head(); ?>
+</head>
+<body id="body" <?php body_class(); ?>>
+	<?php
+		wp_body_open();
+	?>
+
+	<?php if (!empty($nixer_redux_demo['pre-switch'])): ?>
+		<div id="loading">
+			<div class="loader-mask">
+				<div class="loader">
+				  <div></div>
+				  <div></div>
+				</div>
+			</div>
+		</div>
+	<?php endif ?>
+
+	<div class="back-to-top-wrapper">
+		<button id="back_to_top" type="button" class="back-to-top-btn">
+			<svg width="12" height="7" viewBox="0 0 12 7" fill="none" xmlns="http://www.w3.org/2000/svg">
+				<path d="M11 6L6 1L1 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+			</svg>               
+		</button>
+	</div>
+
+	<?php if (!empty($nixer_redux_demo['h8-right-item']) && !empty($nixer_redux_demo['h8-mini-cart-switch'])): ?>
+		<?php get_template_part( 'header/header-templates/header', 'minicart' ); ?>
+	<?php endif ?>
+	<?php get_template_part( 'header/header-templates/header', 'canvas' ); ?>
+
+	<header class="tp-header-8-ptb tp-header-transparent">
+		<div class="tp-header-main-sticky p-relative">
+			<div class="container container-1720">
+				<div class="d-flex justify-content-between align-items-center">
+					<div class="tp-header-8-menu d-none d-xl-block">
+						<div class="tp-main-menu">
+							<nav class="tp-mobile-menu-active">
+								<?php
+								wp_nav_menu( 
+									array( 
+										'theme_location' 	=> 'quaternary',
+										'container' 		=> '',
+										'menu_class' 		=> '',
+										'menu_id' 			=> '',
+										'menu'            	=> '',
+										'container_class' 	=> '',
+										'container_id'    	=> '',
+										'echo'            	=> true,
+										'fallback_cb'       => 'wp_bootstrap_navwalker::fallback',
+										'walker'            => new nixer_wp_bootstrap_navwalker(),
+										'before'          	=> '',
+										'after'           	=> '',
+										'link_before'     	=> '',
+										'link_after'      	=> '',
+										'items_wrap'      	=> '<ul class="%2$s">%3$s</ul>',
+										'depth'           	=> 3,
+									)
+								); ?>
+							</nav>
+						</div>
+					</div>
+					<div class="tp-header-8-logo">
+						<a href="<?php echo esc_url(home_url('/')); ?>">
+							<?php if (!empty($nixer_redux_demo['h8-logo']['url'])) { ?>
+								<img data-width="120" src="<?php echo esc_url($nixer_redux_demo['h8-logo']['url']); ?>" alt="<?php bloginfo( 'name' ); ?>">
+							<?php } else { ?>
+								<img data-width="120" src="<?php echo esc_url(get_template_directory_uri());?>/assets/img/logo/logo-black.png" alt="<?php bloginfo( 'name' ); ?>">
+							<?php } ?>
+						</a>
+					</div>
+					<?php if (!empty($nixer_redux_demo['h8-right-item'])) { ?>
+						<div class="tp-header-8-box d-flex align-items-center">
+							<?php if (!empty($nixer_redux_demo['h8-mini-cart-switch'])): ?>
+								<div class="tp-header-6-cart d-none d-xl-block">
+									<div class="tp-header-3-cart p-relative">
+										<button class="cartmini-open-btn">
+											<span>
+												<svg xmlns="http://www.w3.org/2000/svg" width="19" height="20" viewBox="0 0 19 20" fill="none">
+													<path d="M5.14062 6.09765V5.22429C5.14062 3.19845 6.90564 1.20862 9.09973 1.01955C11.7131 0.785448 13.917 2.68524 13.917 5.05322V6.29573M12.943 9.99602H12.9517M6.11483 9.99602H6.12359M6.60789 19H12.4588C16.3789 19 17.081 17.5504 17.2858 15.7857L18.0171 10.3834C18.2804 8.18652 17.5978 6.39478 13.4339 6.39478H5.63274C1.46885 6.39478 0.786251 8.18652 1.04954 10.3834L1.7809 15.7857C1.98568 17.5504 2.68779 19 6.60789 19Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+												</svg>
+											</span>
+											<em><?php echo WC()->cart->get_cart_contents_count(); ?></em>
+										</button>
+									</div>
+								</div>
+							<?php endif ?>
+							<?php if (!empty($nixer_redux_demo['h8-button-switch-1']) || !empty($nixer_redux_demo['h8-button-switch-2'])): ?>
+								<div class="tp-header-6-btn-box d-none d-xl-block">
+									<?php if (!empty($nixer_redux_demo['h8-link-button-1']) && !empty($nixer_redux_demo['h8-text-button-1'])): ?>	
+										<a href="<?php echo esc_attr($nixer_redux_demo['h8-link-button-1']); ?>">
+											<?php echo esc_attr($nixer_redux_demo['h8-text-button-1']); ?>
+										</a>
+									<?php endif ?>
+									<?php if (!empty($nixer_redux_demo['h8-link-button-2']) && !empty($nixer_redux_demo['h8-text-button-2'])): ?>
+										<a href="<?php echo esc_attr($nixer_redux_demo['h8-link-button-2']); ?>">
+											<?php echo esc_attr($nixer_redux_demo['h8-text-button-2']); ?>
+										</a>
+									<?php endif ?>
+								</div>
+							<?php endif ?>
+							<div class="tp-header-2-hamburger d-block d-xl-none">
+								<div class="tp-header-hamburger offcanvas-open-btn">
+									<button class="tp-hamburger-btn">
+										<span></span>
+										<span></span>
+									</button>
+								</div>
+							</div>
+						</div>
+					<?php } else { ?>
+						<div class="tp-header-8-box d-flex align-items-center d-block d-xl-none">
+							<div class="tp-header-2-hamburger d-block d-xl-none">
+								<div class="tp-header-hamburger offcanvas-open-btn">
+									<button class="tp-hamburger-btn">
+										<span></span>
+										<span></span>
+									</button>
+								</div>
+							</div>
+						</div>
+					<?php } ?>
+				</div>
+			</div>
+		</div>
+	</header>
+	<div id="smooth-wrapper">
+        <div id="smooth-content">

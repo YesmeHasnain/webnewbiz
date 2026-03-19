@@ -1,0 +1,32 @@
+/* Gutenberg Editor Stylesheet
+ * Version: 1.0
+ *
+ * Powered by VLThemes
+ */
+
+@import "abstracts/mixins";
+@import "abstracts/variables";
+
+// block
+
+.wp-block {
+	max-width: 1140px;
+}
+
+// links
+
+.editor-styles-wrapper a {
+	color: var(--vlt-accent-1);
+}
+
+// preformatted
+
+.wp-block-code,
+.wp-block-preformatted pre,
+.wp-block-verse pre,
+pre.wp-block-verse {
+	padding: px2rem(35px);
+	font-family: Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+	color: var(--vlt-color-9);
+	background-color: var(--vlt-color-1);
+}

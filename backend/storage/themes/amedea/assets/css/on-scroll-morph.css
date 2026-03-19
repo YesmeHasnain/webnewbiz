@@ -1,0 +1,211 @@
+/*  
+
+	Author : Amedea
+	Author URI : http://amedea.pro
+	Author : Moskva Yigit
+	Author URI : http://moskvayigit.com
+	Version : 0.0.3.3
+
+	Table of Contents
+	- On-Scroll Morph
+	 
+*/
+
+/*----------------------------
+	.-- On-Scroll Morph
+-----------------------------*/
+
+.morph--light,
+.morph--dark {
+    overflow: hidden;
+}
+
+.morph--light{
+	color:#fff;
+}
+
+.morph--dark{
+	color:#000;
+}
+
+.content-morph-wrap {
+	margin: 0;
+	color: #fff;
+	font-family: sans-serif;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+.intro--morph {
+	height: calc(100vh - 3rem);
+	padding-top: 10vh;
+    text-align: center;
+    place-items: center;
+    display: grid;
+    grid-template-areas: 'intro';
+    margin-bottom: 80vh;
+}
+
+.intro--morph__title {
+	grid-area: intro;
+    place-items: center;
+    margin: 0;
+    display: grid;
+    position: relative;
+    z-index: 100;
+}
+
+.intro--morph__title-pre {
+    font-size: clamp(2rem,10vw,5rem);
+    font-weight: 400;
+}
+
+.intro--morph__title-sub {
+    font-size: 1.5rem;
+    margin: 1rem 0;
+}
+
+.content-morph-wrap {
+	display: grid;
+	gap: 40vh;
+	margin-bottom: 40vh;
+}
+
+.content-morph {
+	flex: none;
+	display: grid;	
+	place-items: center;
+	line-height: 1.2;
+	grid-template-areas: 'title' 'layout' '...';
+	grid-template-rows: 3.5vw auto 3.5vw;
+	gap: 1rem;
+}
+
+.content--intro {
+	grid-area: intro;
+}
+
+.content_morph__img-wrap {
+	grid-area: layout;
+}
+
+.content_morph__img {
+	--img-width: 60vw;
+	--img-height: 40vh;
+	--img-ar: auto;
+	--img-inner-margin-x: 0px;
+	--img-inner-margin-y: 0px;
+	position: relative;
+	overflow: hidden;
+	display: grid;
+	place-items: center;
+	width: var(--img-width);
+	height: var(--img-height);
+	aspect-ratio: var(--img-ar);
+}
+
+.content_morph__img--1 {
+	--img-width: 70vw;
+	--img-height: auto;
+	--img-ar: 16/8;
+}
+
+.content_morph__img--2 {
+	--img-width: 100vw;
+	--img-height: 100vh;
+}
+
+.content_morph__img--3 {
+	--img-width: 100vw;
+	--img-height: 200vh;
+}
+
+.content_morph__img--4 {
+	--img-width: 40vw;
+	--img-height: auto;
+	--img-ar: 0.8;
+}
+
+.content_morph__img--5 {
+	--img-width: 60vw;
+	--img-height: auto;
+	--img-ar: 1;
+}
+
+.content_morph__img--6 {
+	--img-width: 70vw;
+	--img-height: auto;
+	--img-ar: 16/8;
+}
+
+.content_morph__img-inner {
+	grid-area: 1 / -1;
+	width: calc(100% + var(--img-inner-margin-x) * 2);
+	height: calc(100% + var(--img-inner-margin-y) * 2);
+	background-size: cover;
+	background-position: 50% 50%;
+}
+
+.content_morph__img-inner--hidden {
+	opacity: 0;
+}
+
+.content_morph__text {
+	position: relative;
+	z-index: 100;
+	grid-area: title;
+	font-size: clamp(2rem, 6vw, 4rem);
+	margin: 0;
+	display: flex;
+	flex-direction: column;
+	font-weight: 400;
+	line-height: 0.8;
+}
+
+.content_morph__text span span {
+	display: inline-block;
+}
+
+.content_morph__text span span.whitespace {
+	white-space: pre;
+}
+
+.content_morph__text--large {
+	font-size: clamp(2rem, 7vw, 6rem);
+}
+
+.content_morph__text--center {
+	text-align: center;
+	align-self: stretch;
+	justify-content: space-between;
+	grid-row: 1 / span 3;
+}
+
+.content_morph__text--left {
+	justify-self: start;
+	padding: 3rem;
+	grid-area: layout;
+	align-self: center;
+}
+
+.content_morph__text-tiny {
+	text-transform: none;
+	font-family: sans-serif;
+	font-size: 1.5rem;
+	font-weight: 300;
+	max-width: 400px;
+	line-height: 1.2;
+	margin-top: 10vh;
+}
+
+@media screen and (min-width: 53em) {
+
+	.content_morph__img--4 {
+		--img-width: 30vw;
+	}
+
+	.content_morph__img--5 {
+		--img-width: 40vw;
+	}
+
+}

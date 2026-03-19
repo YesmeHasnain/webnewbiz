@@ -1,0 +1,54 @@
+// Vamtam Sticky Header.
+.vamtam-sticky-header {
+	z-index: 100;
+	transition: transform .2s ease !important;
+	will-change: transform;
+	left: 0;
+	right: 0;
+
+	// This fade-in is added for the case of initial scroll during page load.
+	// It serves as safeguard against the quick flickering of the header going to a fixed hidden state.
+	> .elementor-container {
+		opacity: 0;
+		// Added here to avoid conflicts with other anims on section.
+		@keyframes vamtam-sticky-header-fadein {
+			0%   { opacity: 0; }
+			90%  { opacity: 0; }
+			99%  { opacity: 1; }
+			100% { opacity: 1; }
+		}
+		animation: vamtam-sticky-header-fadein 1s ease forwards;
+	}
+
+	&.vamtam-sticky-header--transparent-header {
+		transition: transform        .15s linear,
+					background-color .35s ease !important;
+		will-change: transform, background-color;
+	}
+
+	&[class*="vamtam-sticky-header--fixed"] {
+		position: fixed !important;
+	}
+
+	&.vamtam-sticky-header--fixed-shown {
+
+		&.vamtam-sticky-header--transparent-header {
+			background-color: var(--vamtam-sticky-header-bg-color) !important;
+		}
+
+		transform: translateY(0);
+	}
+
+	&.vamtam-sticky-header--fixed-hidden {
+		transform: translateY(-100%);
+	}
+}
+// Vamtam Sticky Header - Body padding normalization.
+[data-elementor-type="header"] {
+	margin-left: var(--vamtam-sticky-mleft);
+	margin-right: var(--vamtam-sticky-mright);
+}
+
+/* --- Widgets --- */
+// Glob import all max widget styles.
+@import '../../elementor/widgets/**/*.desktop.less';

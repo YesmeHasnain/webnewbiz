@@ -1,0 +1,30 @@
+/* PAGE: 404
+-------------------------------------------- */
+
+.vlt-page--404 {
+
+	.vlt-page-error-content {
+		display: flex;
+		justify-content: center;
+		min-height: calc(100vh - 100px);
+		padding: px2rem(100px) 0;
+		text-align: center;
+		flex-direction: column;
+	}
+
+	h1 {
+		font-size: px2rem(map-get($scales, "s1"));
+		line-height: 1;
+		letter-spacing: 0.005em;
+
+		span {
+			font-size: .8em;
+		}
+
+	}
+
+	p {
+		margin: px2rem(16px) 0 px2rem(53px);
+	}
+
+}

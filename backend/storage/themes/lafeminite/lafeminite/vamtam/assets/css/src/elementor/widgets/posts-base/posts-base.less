@@ -1,0 +1,99 @@
+// Posts / Archive Posts.
+
+// Theme-dependant.
+.posts-base() {
+	// Pagination Border.
+	&.elementor-show-pagination-border-yes {
+		.elementor-pagination .page-numbers {
+			border: 1px solid var(--vamtam-default-line-color);
+		}
+	}
+
+	&.elementor-posts--thumbnail-top .elementor-posts--skin-cards .elementor-post__card .elementor-post__thumbnail__link {
+		margin: 0;
+	}
+
+	.elementor-posts--skin-cards .elementor-post__card .elementor-post__badge {
+		position: relative;
+		display: inline-block;
+	}
+
+	&.elementor-posts--align-center:not(.elementor-grid-1) .elementor-posts.elementor-grid.elementor-posts--skin-classic .elementor-post__excerpt p {
+		hyphens: auto;
+	}
+
+	&.elementor-sticky .elementor-posts--skin-cards .elementor-post__card {
+		display: flex;
+		justify-content: flex-start;
+		align-content: center;
+		flex-wrap: nowrap;
+		align-items: center;
+
+		.elementor-post__thumbnail {
+			height: 100vh;
+		}
+
+		.elementor-post__badge,
+		.elementor-post__text,
+		.elementor-post__meta-data,
+		.elementor-post__avatar {
+			width: 100%;
+			max-width: 50%;
+			margin: auto !important;
+			display: block;
+			position: absolute;
+			top: 30%;
+			left: auto;
+		}
+
+		.elementor-post__avatar {
+			top: calc(30% - 10px);
+		}
+
+		.elementor-post__badge {
+			height: 71px;
+			max-height: 71px;
+			border: none;
+		}
+
+		.elementor-post__meta-data {
+			top: calc(30% + 71px);
+			height: 65px;
+			max-height: 65px;
+			padding: 20px 5%;
+			background: var(--vamtam-accent-color-5);
+		}
+
+		.elementor-post__text {
+			top: calc(30% + 131px);
+			padding: 0px 5%;
+			background: var(--vamtam-accent-color-5);
+		}
+	}
+
+	.elementor-post__read-more {
+		position: relative;
+		padding-right: 1em;
+
+		&::after {
+			font-family: 'theme-icons';
+			content: "\e901";
+			font-style: normal;
+			font-weight: normal;
+			font-variant: normal;
+			text-transform: none;
+			line-height: 1;
+			-webkit-font-smoothing: antialiased;
+
+			position: absolute;
+			bottom: -0.5em;
+			right: 0;
+			font-size: 1.8em;
+			transition: right .2s ease;
+		}
+
+		&:hover::after{
+			right: -0.2em;
+		}
+	}
+}

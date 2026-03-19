@@ -1,0 +1,54 @@
+<?php
+/**
+ * Template Name: Page no header no footer
+ * Template Post Type: page
+ *
+ * @package WordPress
+ * @subpackage Vasia
+ * @since Vasia 1.0
+ */
+?>
+<!DOCTYPE html>
+<!--[if lte IE 9 ]><html class="ie lt-ie9" <?php language_attributes(); ?>> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!--><html <?php language_attributes(); ?>> <!--<![endif]-->
+<head>
+	<meta charset="<?php bloginfo( 'charset' ); ?>" />
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="profile" href="http://gmpg.org/xfn/11" />
+	<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
+
+	<?php wp_head(); ?>
+</head>
+<body <?php body_class(); ?>>
+<?php do_action('vasia_before_page' ); ?>
+<?php do_action('vasia_after_header'); ?>
+<div id="wrapper">
+
+	<div id="main" class="">
+		<div class="container">	
+			<?php
+				
+				if ( is_woocommerce_activated() && (is_cart() || is_checkout()) ){
+					?>
+					<div class="process-box">
+					<?php
+					the_custom_logo();
+					vasia_checkout_process();
+					?>
+					</div>
+					<?php
+				} 
+
+			?>
+			<?php while ( have_posts() ) : the_post(); ?>
+				<?php the_content(); ?>
+			<?php endwhile; // end of the loop. ?>
+		</div>
+	</div>
+
+</div>
+<?php do_action( 'vasia_after_page' ); ?>
+
+<?php wp_footer(); ?>
+</body>
+</html>

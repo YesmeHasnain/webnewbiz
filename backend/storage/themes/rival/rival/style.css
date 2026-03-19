@@ -1,0 +1,396 @@
+/*
+Theme Name: Rival
+Theme URI: http://shthemes.net/demosd/rival
+Author: Shtheme
+Author URI: https://themeforest.net/user/shtheme
+Description: In 2024, our default theme lets you create a responsive business website with a sleek, modern design. Feature your favorite homepage content in either a grid or a slider. Use the three widget areas to customize your website, and change your content's layout with a full-width page template and a contributor page to show off your authors. Creating a business website with WordPress has never been easier.
+Version: 1.0
+Tested up to: 5.0
+Requires PHP: 7.0
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Tags: two-columns, three-columns, left-sidebar, right-sidebar, custom-background, custom-header, custom-menu, editor-style, featured-images, flexible-header, full-width-template, microformats, post-formats, rtl-language-support, sticky-post, theme-options, translation-ready
+Text Domain: rival
+
+This theme, like WordPress, is licensed under the GPL.
+Use it to make something cool, have fun, and share what you've learned with others.
+*/
+
+/* ========TABLE OF CONTENTS==========
+00. Body, links, hgroup, paragraphs, general styles
+01. Fixed header & Navigation
+02. Section Intro (Home)
+03. Section About
+04. Section Resume
+05. Section Portfolio
+06. Section Blog
+07. Section Contactimageup, paragraphs, general styles
+---------------------------------------------------*/
+
+
+
+:root {
+  --primary-color: #C3512F;
+  --secondary-color: #9d9d9d;
+}
+
+.postContent .postTitle .postMeta{
+    display: flex;
+}
+.postContent .postTitle .postMeta span.metaCategory{
+    display: flex;
+}
+.postContent .postTitle .postMeta span.metaCategory ul.post-categories{
+    margin: 0px 3px;
+}
+.postContent .postTitle .postMeta span.metaAuthor{
+    margin-right: 3px;
+}
+.postContent .postTitle .postMeta span.metaAuthor a{
+    text-transform: capitalize;
+}
+.postContent .postTitle .postMeta span.metaComment{
+    color: var(--primary-color);
+    margin-left: 3px;
+}
+.postContent blockquote p{
+    font-size: 16px;
+    line-height: 25px;
+    color: var(--primary-color);
+}
+.postContent .tagsSingle ul.tagsListSingle a{
+    background: var(--primary-color);
+    color: #ffffff;
+    display: inline-block;
+    padding: 5px 12px;
+    font-size: 11px;
+    -webkit-border-radius: 40px;
+    margin-right: 3px;
+}
+.postContent .tagsSingle ul.tagsListSingle a:hover{
+    background: #fafafa;
+    color: var(--primary-color);
+}
+.comments .img{
+    height: 39px;
+}
+.sidebar .widget_search .searchForm input:first-child{
+    border: none;
+    padding: 12px 10px;
+    font-size: 13px;
+    width: 100%;
+    background: #fafafa;
+    color: #999999;
+}
+.sidebar .widget_categories ul li{
+    color: var(--primary-color);
+    font-size: 12px;
+    line-height: 30px;
+}
+.sidebar .widget_categories ul li a{
+    color: #999999;
+    font-size: 14px;
+}
+.sidebar .widget_tag_cloud .tagcloud ul li{
+    display: inline-block;
+    margin-bottom: 5px;
+    margin-right: 1px;
+}
+.sidebar .widget_tag_cloud .tagcloud ul li a{
+    background: rgba(0, 0, 0, 0);
+    color: #343434;
+    display: inline-block;
+    padding: 5px 12px;
+    border: 1px solid #DCDCDC;
+    -webkit-border-radius: 40px;
+    font-size: 11px!important;
+}
+.sidebar .widget_tag_cloud .tagcloud ul li a:hover{
+    color: var(--primary-color);
+}
+.sidebar .widget_archive ul li{
+    line-height: 30px;
+}
+.sidebar .widget_archive ul li a{
+    color: var(--primary-color);
+}
+p.comment-form-cookies-consent{
+    display: none;
+}
+.replyForm .inputColumns .column2 input{
+    background: #ffffff;
+    border: none;
+    color: #666666;
+    font-family: inherit;
+    font-size: 13px;
+    margin: 0 0 14px;
+    outline: 0 none;
+    padding: 12px 10px;
+    resize: none;
+    width: 95%;
+    border: 1px solid #efefef;
+}
+.comment-respond h2.count{
+    font-family: 'ralewaysemibold', Arial, sans-serif;
+}
+.comment .commentContent .commentsInfo .author{
+    color: #343434;
+	font-size: 16px;
+}
+.comment .commentContent .commentsInfo .date{
+    color: var(--primary-color);
+    font-size: 11px;
+}
+.comment .commentContent p{
+    font-size: 13px;
+    line-height: 23px;
+    margin-top: 10px;
+}
+.comment .reply-btn{
+    position: absolute;
+    top: 5px;
+    right: 0px;
+}
+.comment .reply-btn a{
+    background: rgba(0, 0, 0, 0);
+    color: #343434;
+    padding: 0px 15px;
+    display: inline-block;
+    border: 1px solid #DCDCDC;
+    text-transform: uppercase;
+    -webkit-border-radius: 40px;
+    font-size: 11px;
+}
+.comment-respond h2.count a{
+    color: #343434;
+}
+#cancel-comment-reply-link{
+    float: right;
+    background: rgba(0, 0, 0, 0);
+    color: #343434;
+    padding: 4px 20px;
+    display: inline-block;
+    border: 1px solid #DCDCDC;
+    text-transform: uppercase;
+    -webkit-border-radius: 40px;
+    top: -4px;
+    position: relative;
+}
+#cancel-comment-reply-link:hover{
+    color: var(--primary-color);
+}
+@media only screen and (max-width: 768px) {
+    .comment .reply-btn{
+        position: relative;
+        top: 0px;
+        right: -45px;
+        float: left;
+        margin-bottom: 20px;
+    }
+}
+.postContent #gallery-1{
+    display: none;
+}
+.pagination ul li .page-numbers.current{
+    color: var(--primary-color);
+}
+.dialog-widget.elementor-lightbox{
+    display: none!important;
+}
+#about .info ul li a{
+    color: var(--secondary-color);
+}
+#about .info .infoSocial ul li a{
+    color: var(--primary-color);
+}
+#portfolio .filterNav ul li a{
+    text-transform: capitalize;
+}
+#blog .postMedia h3 a{
+    text-transform: capitalize;
+    color: #fff;
+}
+
+#blog .postDetails .postMeta{
+    display: flex;
+}
+#blog .postDetails .postMeta span.metaCategory{
+    display: flex;
+}
+#blog .postDetails .postMeta span.metaCategory ul.post-categories{
+    margin: 0px 3px;
+}
+#blog .postDetails .postMeta span.metaAuthor{
+    margin-right: 3px;
+}
+#blog .postDetails .postMeta span.metaAuthor a{
+    text-transform: capitalize;
+}
+#blog .postDetails .postMeta span.metaComment{
+    margin-left: 3px;
+    color: var(--primary-color);
+}
+#contact .contactForm .inputColumns .column1 input,
+#contact .contactForm .inputColumns .column2 input{
+    background: #ffffff;
+    border: none;
+    color: #666666;
+    font-family: inherit;
+    font-size: 13px;
+    margin: 0 0 14px;
+    outline: 0 none;
+    padding: 12px 10px;
+    resize: none;
+    width: 95%;
+    border: 1px solid #efefef;
+}
+#contact .contactForm .wpcf7-form br{
+    display: none;
+}
+.wpcf7-spinner{
+    display: none;
+}
+#contact .contactForm .wpcf7-form .wpcf7-submit{
+    background: rgba(0, 0, 0, 0);
+    color: #343434;
+    padding: 8px 25px;
+    display: inline-block;
+    border: 1px solid #DCDCDC;
+    text-transform: uppercase;
+    cursor: pointer;
+    -webkit-border-radius: 40px;
+    font-family: 'ralewaysemibold', Arial, sans-serif;
+}
+#contact .contactForm .wpcf7-form .wpcf7-submit:hover{
+    color: var(--primary-color);
+}
+#contact .contactForm .wpcf7-form .wpcf7-not-valid-tip{
+    color: #333;
+    padding-bottom: 10px;
+}
+#contact .contactForm .wpcf7-form .wpcf7-response-output{
+    margin: 2em 1em 1em;
+    color: #333;
+    border-color: #333!important;
+}
+.logged-in #header{
+    top: 32px;
+}
+@media (min-width: 601px) and (max-width: 782px) {
+    .logged-in #header{
+        top: 46px;
+    }
+}
+@media only screen and (max-width: 600px) {
+    .logged-in #header{
+        top: 0px;
+    }
+}
+.v-middle{
+    padding: 220px 0px;
+}
+.v-middle .text-center{
+    text-align: center;
+}
+.v-middle h1.display-2{
+    font-size: 160px;
+    line-height: 160px;
+    padding-bottom: 40px;
+    color: #343434;
+    font-family: 'ralewaysemibold', Arial, sans-serif;
+}
+.v-middle h1.display-3{
+    font-size: 55px;
+    padding-bottom: 30px;
+    color: #343434;
+    font-family: 'ralewaysemibold', Arial, sans-serif;
+}
+.v-middle p{
+    font-size: 17px;
+    padding-bottom: 40px;
+    color: #343434;
+    font-family: 'ralewaysemibold', Arial, sans-serif;
+}
+.v-middle .text-center a.site-button{
+    background: rgba(0, 0, 0, 0);
+    color: #343434;
+    padding: 10px 25px;
+    display: inline-block;
+    border: 1px solid #DCDCDC;
+    text-transform: uppercase;
+    cursor: pointer;
+    -webkit-border-radius: 40px;
+}
+.v-middle .text-center a.site-button:hover{
+    color: var(--primary-color);
+}
+#about .innerProfile .imgProfile img{
+    -webkit-border-radius: 100%;
+    height: -webkit-fill-available;
+}
+.search-custom{
+    padding: 30px 30px;
+    padding-top: 35px;
+    background-color: var(--tp-grey-2);
+    margin-left: 40px;
+}
+.search-custom h4{
+    position: relative;
+    display: inline-block;
+    font-weight: 700;
+    color: #343434;
+    font-size: 18px;
+    text-transform: uppercase;
+    padding-left: 10px;
+    margin-bottom: 20px;
+}
+.search-custom .sidebar__search-form{
+    position: relative;
+}
+.search-custom .sidebar__search-form input{
+    border: none;
+    padding: 12px 10px;
+    font-size: 13px;
+    width: 100%;
+    background: #fafafa;
+    color: #999999;
+    height: 55px;
+    line-height: 55px;
+    text-transform: capitalize;
+    outline: none;
+}
+.search-custom .sidebar__search-form button{
+    position: absolute;
+    top: 14px;
+    right: 25px;
+    border: none;
+    cursor: pointer;
+    color: var(--primary-color);
+    background: #fafafa;
+    font-size: 20px;
+}
+.wp-caption-text , .gallery-caption , .bypostauthor , .sticky{
+    color: #000000;
+    font-weight: 600!important;
+    font-size: 15px!important;
+}
+.alignright,
+.wp-block-image .alignright
+{
+    float: right;
+    margin-left: 25px;
+    margin-top: 8px;
+}
+.alignleft,
+.wp-block-image .alignleft{
+    float: left;
+    margin-right: 20px;
+    margin-top: 8px;
+}
+.wp-caption.aligncenter {
+    width: 100% !important;
+    text-align: center;
+}
+.screen-reader-text {
+    display: none;
+}

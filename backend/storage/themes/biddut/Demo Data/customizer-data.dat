@@ -1,0 +1,75 @@
+a:4:{s:8:"template";s:6:"biddut";s:4:"mods";a:16:{i:0;b:0;s:18:"nav_menu_locations";a:1:{s:9:"main-menu";i:15;}s:18:"custom_css_post_id";i:4655;s:11:"custom_logo";s:0:"";s:20:"header_topbar_switch";b:1;s:19:"header_right_switch";b:1;s:20:"header_search_switch";b:1;s:23:"header_backtotop_switch";b:1;s:24:"header_top_button_switch";b:1;s:16:"breadcrumb_image";s:70:"https://wp.aqlova.com/biddut/wp-content/uploads/2024/08/breadcurmb.jpg";s:18:"header_button_link";s:141:"https://wp.aqlova.com/biddut/contact/?customize_changeset_uuid=14514b28-a042-45d8-b5a6-32c682028a15&amp;customize_messenger_channel=preview-0";s:30:"biddut_footer_elementor_switch";b:1;s:23:"biddut_footer_templates";s:4:"6298";s:30:"biddut_header_elementor_switch";b:1;s:23:"biddut_header_templates";s:4:"6707";s:23:"header_side_info_switch";b:1;}s:7:"options";a:22:{s:9:"site_icon";s:2:"40";s:22:"woocommerce_demo_store";s:2:"no";s:29:"woocommerce_demo_store_notice";s:79:"This is a demo store for testing purposes &mdash; no orders shall be fulfilled.";s:29:"woocommerce_shop_page_display";s:0:"";s:36:"woocommerce_category_archive_display";s:0:"";s:35:"woocommerce_default_catalog_orderby";s:10:"menu_order";s:27:"woocommerce_catalog_columns";s:1:"3";s:24:"woocommerce_catalog_rows";s:1:"3";s:30:"woocommerce_single_image_width";s:3:"600";s:33:"woocommerce_thumbnail_image_width";s:3:"300";s:30:"woocommerce_thumbnail_cropping";s:3:"1:1";s:43:"woocommerce_thumbnail_cropping_custom_width";s:1:"4";s:44:"woocommerce_thumbnail_cropping_custom_height";s:1:"3";s:34:"woocommerce_checkout_company_field";s:6:"hidden";s:36:"woocommerce_checkout_address_2_field";s:8:"optional";s:32:"woocommerce_checkout_phone_field";s:8:"optional";s:46:"woocommerce_checkout_highlight_required_fields";s:3:"yes";s:55:"woocommerce_checkout_terms_and_conditions_checkbox_text";s:44:"I have read and agree to the website [terms]";s:40:"woocommerce_checkout_privacy_policy_text";s:161:"Your personal data will be used to process your order, support your experience throughout this website, and for other purposes described in our [privacy_policy].";s:26:"wp_page_for_privacy_policy";s:1:"3";s:25:"woocommerce_terms_page_id";s:0:"";s:23:"nav_menus_created_posts";a:0:{}}s:6:"wp_css";s:1215:"@media (min-width: 1200px) and (max-width: 1480px) {
+	.tp-choose-image-shapes {
+		img {
+			width: 590px !important;
+		}
+	}
+}
+
+
+
+@media (min-width: 1479px) and (max-width: 1780px) {
+	.tp-choose-image-shapes {
+		img {
+			width: 790px !important;
+		}
+	}
+}
+
+@media only screen and (min-width: 1600px) and (max-width: 1700px) {
+  .custome_light_image  img {
+    max-width: 50%;
+  }
+}
+	
+@media screen and (max-width: 1600px) {
+  .custome_light_image div img {
+    display: none;
+  }
+}
+
+	
+@media screen and (max-width: 1399px) {
+  .custome_cable_image div span {
+    display: none !important;
+  }
+}
+
+@media (max-width: 577px) {
+	.tp-gallery-img .gallery-item {
+		width: auto;
+	}
+}
+.search__wrapper .search__logo img {
+	width: 150px;
+}
+
+.search__popup {
+	height: auto;
+}
+.tp-service-7-thumb img {
+	border-radius: 20px !important;
+}
+
+.tp-project-7-thumb img {
+	border-radius: 20px !important;
+}
+ul {
+	list-style: none !important;
+}
+
+.tp-header-7-main-menu nav ul li > a.active {
+	color: var(--tp-theme-3);
+}
+
+.comeing-soon .homemenu-thumb::before {
+  position: absolute;
+  z-index: 22;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  content: "";
+  backdrop-filter: blur(6px);
+  background-color: rgba(0, 0, 0, 0.2);
+}";}

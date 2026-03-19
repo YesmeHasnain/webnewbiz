@@ -1,0 +1,213 @@
+@use '../../utils' as *;
+
+/*----------------------------------------*/
+/*  6.2 Footer Style 2
+/*----------------------------------------*/
+
+//footer widget style
+.#{$theme-prefix}-footer-2{
+    &-widget{
+        &-content{
+            & p{
+                font-weight: 500;
+                color: rgba(255, 255, 255, 0.80);
+                & br{
+                    @media #{$lg,$md,$xs} {
+                        display: none;
+                    }
+                }
+            }
+            & ul{
+                & li{
+                    list-style: none;
+                    font-size: 18px;
+                    font-weight: 500;
+                    margin-bottom: 10px;
+                    color: rgba(255, 255, 255, 0.80);
+                    @include transition();
+                    & a{
+                        &:hover{
+                            color: var(--tp-common-white);
+                        }
+                    }
+                }
+            }
+            &-contact{
+                & a{
+                    display: block;
+                    font-size: 18px;
+                    font-weight: 500;
+                    margin-bottom: 12px;
+                    color: rgba(255, 255, 255, 0.90);
+                    &:hover{
+                        color: var(--tp-common-white);
+                    }
+                }
+            }
+            &-input{
+                position: relative;
+                & input{
+                    color: #F3F3F4;
+                    font-size: 16px;
+                    font-weight: 500;
+                    padding-right: 40px;
+                    background-color: transparent;
+                    border: 1px solid rgba(255, 255, 255, 0.10);
+                    &:focus{
+                        border-color: var(--tp-heading-secondary);
+                    }
+                    &::placeholder{
+                        color: #F3F3F4;
+                        font-size: 16px;
+                        font-weight: 500;
+                    }
+                }
+                & button{
+                    position: absolute;
+                    top: 50%;
+                    right: 20px;
+                    transform: translateY(-50%);
+                }
+            }
+        }
+        &-title{
+            color: #F3F3F4;
+            font-size: 26px;
+            font-weight: 500;
+            margin-bottom: 35px;
+            letter-spacing: -0.26px;
+        }
+    }
+    &-copyright{
+        &-ptb{
+            padding: 35px 0;
+            border-top: 1px solid rgba(255, 255, 255, 0.10);
+            &.inner-color{
+                & .tp-footer-2-copyright-text{
+                    & p{
+                        color: var(--tp-text-2);
+                    }
+                }
+            }
+        }
+        &-text{
+            @media #{$md,$xs} {
+                padding-bottom: 20px;
+            }
+            & p{
+                color: rgba(255, 255, 255, 0.60);
+                & a{
+                    color: var(--tp-heading-secondary);
+                    &:hover{
+                        text-decoration: underline;
+                    }
+                }
+            }
+        }
+        &-social{
+            & a{
+                display: inline-block;
+                color: #F3F3F4;
+                font-size: 14px;
+                font-weight: 500;
+                padding: 4px 36px;
+                letter-spacing: -0.14px;
+                text-transform: uppercase;
+                border-radius: 40px;
+                border: 1px solid #454545;
+                background: #292929;
+                &:not(:last-of-type){
+                    margin-right: 8px;
+                    @media #{$lg} {
+                        margin-right: 0;
+                    }
+                }
+                @media #{$xs1} {
+                    margin-bottom: 10px;
+                }
+                &:hover{
+                    color: var(--tp-heading-primary);
+                    background-color: var(--tp-heading-secondary);
+                }
+            }
+        }
+    }
+    &-wrapper{
+        &.inner-color{
+            border-bottom: 2px solid rgba(18, 18, 18, 0.20);
+            & .tp-footer-2-widget{
+                &-content {
+                    & p{
+                        color: var(--tp-text-2);
+                    }
+                    &-contact {
+                        & a{
+                            color: var(--tp-text-2);
+                            &:hover{
+                                color: var(--tp-heading-primary);
+                            }
+                        }
+                    }
+                    &-input{
+                        & input{
+                            border: none;
+                            padding-left: 0;
+                            color: var(--tp-heading-primary);
+                            border-bottom: 1px solid rgba(18, 18, 18, 0.20);
+                            &::placeholder{
+                                color: var(--tp-text-2);
+                            }
+                            &:focus{
+                                border-color: var(--tp-heading-primary);
+                            }
+                        }
+                        & button{
+                            color: var(--tp-text-2);
+                        }
+                    }
+                }
+                &-title{
+                    color: var(--tp-heading-primary);
+                }
+                & ul{
+                    & li{
+                        color: var(--tp-text-2);
+                        & a{
+                            &:hover{
+                                color: var(--tp-heading-primary);
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+/* footer col design for home 2 */
+.tp-footer-2-col{
+    &-1{
+    
+    }
+    &-2{
+        padding-left: 10px;
+        @media #{$xs} {
+            padding-left: 0;
+        }
+    }
+    &-3{
+        margin-left: -100px;
+        @media #{$lg} {
+            margin-left: -35px;
+        }
+        @media #{$md,$xs} {
+            margin-left: 0;
+        }
+    }
+    &-4{
+        margin-left: -20px;
+        @media #{$md,$xs} {
+            margin-left: 0;
+        }
+    }
+}

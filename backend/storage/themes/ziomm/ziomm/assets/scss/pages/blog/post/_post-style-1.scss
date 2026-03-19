@@ -1,0 +1,33 @@
+/* POST: STYLE 1
+-------------------------------------------- */
+
+.vlt-post--style-1 {
+
+	.vlt-post-media+.vlt-post-content,
+	.vp-portfolio__item-img-wrap+.vlt-post-content {
+		margin-top: px2rem(48px);
+	}
+
+	.vlt-post-header {
+
+		.vlt-post-meta {
+			margin-bottom: px2rem(16px);
+			color: var(--vlt-color-9);
+		}
+
+	}
+
+	.vlt-post-excerpt {
+		margin-top: px2rem(20px);
+	}
+
+	.vlt-post-footer {
+		margin-top: px2rem(33px);
+
+		.vlt-link-with-arrow {
+			color: var(--vlt-accent-1);
+		}
+
+	}
+
+}

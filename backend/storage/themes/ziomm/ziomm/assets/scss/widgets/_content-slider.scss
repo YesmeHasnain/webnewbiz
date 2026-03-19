@@ -1,0 +1,32 @@
+/* WIDGET: CONTENT SLIDER
+-------------------------------------------- */
+
+.vlt-content-slider {
+	width: 100%;
+
+	&[data-slides-centered="yes"] {
+
+		.swiper-slide {
+			overflow: unset;
+
+			@include media-breakpoint-up(md) {
+				width: auto !important;
+			}
+
+		}
+
+		.swiper-container {
+			overflow: unset;
+		}
+
+	}
+
+	&[data-slides-max-width="yes"] {
+
+		.swiper-slide {
+			max-width: calc(1200px - 30px);
+		}
+
+	}
+
+}

@@ -1,0 +1,63 @@
+/* PLUGIN: SUPERFISH
+-------------------------------------------- */
+
+.sf-menu,
+.sf-menu * {
+	padding: 0;
+	margin: 0;
+	list-style: none;
+}
+
+.sf-menu li {
+	position: relative;
+}
+
+.sf-menu ul {
+	position: absolute;
+	top: 100%;
+	left: 0;
+	display: none;
+	z-index: 99;
+}
+
+.sf-menu a,
+.sf-menu li.sfHover>ul,
+.sf-menu li:hover>ul {
+	display: block;
+}
+
+.sf-menu>li {
+	float: left;
+}
+
+.sf-menu a {
+	position: relative;
+}
+
+.sf-menu ul ul {
+	top: 0;
+	left: 100%;
+}
+
+.sf-menu>li.left>ul {
+	right: 0;
+	left: auto;
+}
+
+.sf-menu ul li.left>ul {
+	right: 100%;
+	left: auto;
+}
+
+.sf-menu .sf-mega {
+	position: absolute;
+	top: 100%;
+	left: 0;
+	display: none;
+	z-index: 99;
+}
+
+.sf-menu li.sfHover>.sf-mega,
+.sf-menu li:hover>.sf-mega {
+	display: block;
+}
