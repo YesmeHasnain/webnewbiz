@@ -52,6 +52,9 @@ export interface LayoutOption {
   description: string;
   style: string;
   primary_color: string;
+  accent: string;
+  preview_bg: string;
+  is_dark: boolean;
   keywords: string[];
   best_for: string[];
 }

@@ -13,7 +13,7 @@ return [
         'accent' => '#FFB800',
         'preview_bg' => '#080808',
         'best_for' => ['Sports', 'Fitness', 'Tech', 'Auto', 'Agency'],
-        'keywords' => ['gym', 'fitness', 'sports', 'training', 'automotive', 'car', 'tech', 'agency', 'gaming', 'esports', 'basketball', 'football', 'boxing', 'martial arts', 'crossfit'],
+        'keywords' => ['gym', 'fitness', 'sports', 'training', 'automotive', 'car', 'auto', 'motorcycle', 'bike', 'tech', 'agency', 'gaming', 'esports', 'basketball', 'football', 'boxing', 'martial arts', 'crossfit', 'supplement', 'protein', 'athlete', 'workout', 'streetwear', 'urban', 'sneakers', 'skate', 'extreme', 'adventure', 'outdoor'],
     ],
     'ivory' => [
         'class' => \App\Services\Layouts\LayoutIvory::class,
@@ -23,7 +23,7 @@ return [
         'accent' => '#D4A574',
         'preview_bg' => '#FAFAF8',
         'best_for' => ['Medical', 'Legal', 'Finance', 'Education'],
-        'keywords' => ['medical', 'doctor', 'clinic', 'hospital', 'dental', 'law', 'legal', 'attorney', 'lawyer', 'finance', 'accounting', 'bank', 'insurance', 'education', 'school', 'university', 'tutoring', 'consulting'],
+        'keywords' => ['medical', 'doctor', 'clinic', 'hospital', 'dental', 'dentist', 'health', 'healthcare', 'wellness', 'therapy', 'therapist', 'physiotherapy', 'chiropractic', 'veterinary', 'vet', 'pet', 'pharmacy', 'lab', 'law', 'legal', 'attorney', 'lawyer', 'firm', 'finance', 'accounting', 'accountant', 'bank', 'insurance', 'tax', 'investment', 'wealth', 'education', 'school', 'university', 'college', 'tutoring', 'consulting', 'consultant', 'advisory', 'nonprofit', 'charity', 'foundation'],
     ],
     'azure' => [
         'class' => \App\Services\Layouts\LayoutAzure::class,
@@ -33,7 +33,7 @@ return [
         'accent' => '#06B6D4',
         'preview_bg' => '#F8FAFC',
         'best_for' => ['SaaS', 'Tech', 'Agency', 'Startup'],
-        'keywords' => ['saas', 'software', 'app', 'startup', 'digital', 'marketing', 'seo', 'web design', 'it', 'technology', 'cloud', 'ai', 'data', 'analytics'],
+        'keywords' => ['saas', 'software', 'app', 'startup', 'digital', 'marketing', 'seo', 'web design', 'it', 'technology', 'cloud', 'ai', 'data', 'analytics', 'automation', 'platform', 'dashboard', 'crm', 'erp', 'api', 'devops', 'cyber', 'security', 'hosting', 'domain', 'fintech', 'proptech', 'edtech', 'healthtech'],
     ],
     'blush' => [
         'class' => \App\Services\Layouts\LayoutBlush::class,
@@ -42,8 +42,8 @@ return [
         'primary' => '#C9A87C',
         'accent' => '#D4A574',
         'preview_bg' => '#FBF9F7',
-        'best_for' => ['Beauty', 'Wedding', 'Spa', 'Fashion'],
-        'keywords' => ['beauty', 'salon', 'spa', 'wedding', 'event', 'planner', 'fashion', 'boutique', 'cosmetics', 'hair', 'nail', 'skincare', 'makeup', 'florist', 'bakery'],
+        'best_for' => ['Beauty', 'Wedding', 'Spa', 'Fashion', 'Ecommerce'],
+        'keywords' => ['beauty', 'salon', 'spa', 'wedding', 'event', 'planner', 'fashion', 'boutique', 'cosmetics', 'hair', 'nail', 'skincare', 'makeup', 'florist', 'bakery', 'clothing', 'apparel', 'dress', 'bridal', 'jewelry', 'accessories', 'perfume', 'fragrance', 'candle', 'gift', 'shop', 'store', 'ecommerce', 'online store', 'retail', 'handmade', 'craft', 'decor', 'home decor', 'furniture', 'lifestyle', 'yoga', 'meditation', 'pilates'],
     ],
     'ember' => [
         'class' => \App\Services\Layouts\LayoutEmber::class,
@@ -53,7 +53,7 @@ return [
         'accent' => '#F59E0B',
         'preview_bg' => '#0C0A09',
         'best_for' => ['Restaurant', 'Food', 'Entertainment', 'Nightlife'],
-        'keywords' => ['restaurant', 'food', 'cafe', 'bar', 'pizza', 'sushi', 'catering', 'chef', 'entertainment', 'nightclub', 'music', 'dj', 'event venue', 'brewery'],
+        'keywords' => ['restaurant', 'food', 'cafe', 'coffee', 'bar', 'pizza', 'sushi', 'catering', 'chef', 'entertainment', 'nightclub', 'music', 'dj', 'event venue', 'brewery', 'bakery', 'bistro', 'grill', 'bbq', 'steakhouse', 'seafood', 'thai', 'chinese', 'indian', 'mexican', 'italian', 'kitchen', 'diner', 'pub', 'lounge', 'ice cream', 'dessert', 'food truck', 'meal prep', 'groceries', 'organic'],
     ],
     'forest' => [
         'class' => \App\Services\Layouts\LayoutForest::class,
@@ -63,7 +63,7 @@ return [
         'accent' => '#95D5B2',
         'preview_bg' => '#FAFAF5',
         'best_for' => ['Real Estate', 'Construction', 'Home Services', 'Landscaping'],
-        'keywords' => ['real estate', 'property', 'construction', 'contractor', 'plumbing', 'electrical', 'hvac', 'roofing', 'landscaping', 'cleaning', 'moving', 'handyman', 'pest control', 'painting'],
+        'keywords' => ['real estate', 'property', 'construction', 'contractor', 'plumbing', 'plumber', 'electrical', 'hvac', 'roofing', 'landscaping', 'cleaning', 'moving', 'handyman', 'pest control', 'painting', 'builder', 'renovation', 'remodeling', 'flooring', 'carpentry', 'concrete', 'fencing', 'garage', 'window', 'door', 'home improvement', 'home renovation', 'demolition', 'excavation', 'pool', 'garden', 'tree service', 'lawn care', 'irrigation', 'pressure washing'],
     ],
     'slate' => [
         'class' => \App\Services\Layouts\LayoutSlate::class,
@@ -73,7 +73,7 @@ return [
         'accent' => '#94A3B8',
         'preview_bg' => '#FAFAFA',
         'best_for' => ['Portfolio', 'Photography', 'Creative', 'Architecture'],
-        'keywords' => ['portfolio', 'photography', 'photographer', 'creative', 'design', 'architect', 'architecture', 'interior design', 'art', 'gallery', 'studio', 'freelance', 'graphic design'],
+        'keywords' => ['portfolio', 'photography', 'photographer', 'creative', 'design', 'designer', 'architect', 'architecture', 'interior design', 'art', 'gallery', 'studio', 'freelance', 'graphic design', 'branding', 'illustration', 'videography', 'video production', 'film', 'animation', 'motion design', 'ux', 'ui', 'product design', 'print', 'publishing', 'magazine', 'editorial', 'model', 'talent', 'agency creative'],
     ],
     'royal' => [
         'class' => \App\Services\Layouts\LayoutRoyal::class,
@@ -83,7 +83,7 @@ return [
         'accent' => '#A78BFA',
         'preview_bg' => '#0C0A1A',
         'best_for' => ['Hospitality', 'Hotel', 'Luxury Retail', 'Jewelry'],
-        'keywords' => ['hotel', 'resort', 'luxury', 'jewelry', 'watch', 'wine', 'concierge', 'vip', 'premium', 'exclusive', 'travel', 'cruise', 'limousine', 'yacht'],
+        'keywords' => ['hotel', 'resort', 'luxury', 'jewelry', 'watch', 'wine', 'concierge', 'vip', 'premium', 'exclusive', 'travel', 'cruise', 'limousine', 'yacht', 'villa', 'mansion', 'penthouse', 'diamond', 'gold', 'silver', 'platinum', 'fine dining', 'michelin', 'chauffeur', 'private', 'bespoke', 'tailor', 'couture', 'haute', 'wedding venue', 'banquet', 'gala', 'country club', 'members club'],
     ],
     'biddut' => [
         'class' => \App\Services\Layouts\LayoutBiddut::class,
@@ -95,6 +95,6 @@ return [
         'theme_based' => true,
         'theme_slug' => 'biddut',
         'best_for' => ['Electrical Services', 'Contractors', 'Home Services', 'Industrial'],
-        'keywords' => ['electric', 'electrical', 'electrician', 'wiring', 'power', 'voltage', 'circuit', 'panel', 'generator', 'solar', 'energy', 'utility', 'service', 'services', 'contractor', 'maintenance', 'repair', 'installation', 'industrial', 'commercial services', 'home services', 'ac repair', 'heating', 'cooling', 'appliance'],
+        'keywords' => ['electric', 'electrical', 'electrician', 'wiring', 'power', 'voltage', 'circuit', 'panel', 'generator', 'solar', 'energy', 'utility', 'contractor', 'maintenance', 'repair', 'installation', 'industrial', 'commercial services', 'home services', 'ac repair', 'heating', 'cooling', 'appliance', 'factory', 'manufacturing', 'warehouse', 'logistics', 'trucking', 'shipping', 'freight'],
     ],
 ];

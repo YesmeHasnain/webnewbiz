@@ -276,10 +276,10 @@ HTACCESS;
             return $currentTheme;
         }
 
-        // Otherwise, let AI match
+        // Otherwise, use variety-aware matcher
         try {
             $matcher = app(ThemeMatcherService::class);
-            return $matcher->match($businessType, $prompt);
+            return $matcher->recommendWithVariety($businessType, $prompt, $this->website->user_id);
         } catch (\Exception $e) {
             Log::warning("Theme matching failed: {$e->getMessage()}");
             return 'azure';
@@ -293,7 +293,7 @@ HTACCESS;
         $businessName = $this->website->name;
         $businessType = $this->website->business_type ?? 'business';
         $prompt = $this->website->ai_prompt ?? "A {$businessType} called {$businessName}";
-        $theme = $this->website->ai_theme ?? 'azure';
+        $theme = $this->website->ai_theme ?: 'azure';
 
         try {
             $aiService = app(AIContentService::class);
@@ -469,13 +469,23 @@ HTACCESS;
         $pages = $this->website->pages ?: ['home', 'about', 'services', 'contact'];
         $pdo = $this->getPdo($dbName);
 
+        // Normalize page slugs — AI sometimes returns capitalized values
+        $pages = array_map(fn($p) => Str::slug($p), $pages);
+        $pages = array_unique($pages);
+
+        // Remove 'shop' from Elementor pages — WooCommerce creates its own Shop page
+        $pages = array_values(array_filter($pages, fn($p) => $p !== 'shop'));
+
         // Map page types for layout building
         $pageTypeMap = [
             'home' => 'home',
             'about' => 'about',
+            'about-us' => 'about',
             'services' => 'services',
+            'our-services' => 'services',
             'portfolio' => 'portfolio',
             'contact' => 'contact',
+            'contact-us' => 'contact',
         ];
 
         // Extract page content from AI response
@@ -485,10 +495,10 @@ HTACCESS;
             $pageType = $pageTypeMap[$pageSlug] ?? 'home';
             $title = match ($pageSlug) {
                 'home' => 'Home',
-                'about' => 'About Us',
-                'services' => 'Our Services',
+                'about', 'about-us' => 'About Us',
+                'services', 'our-services' => 'Our Services',
                 'portfolio' => 'Portfolio',
-                'contact' => 'Contact Us',
+                'contact', 'contact-us' => 'Contact Us',
                 default => ucfirst($pageSlug),
             };
 
@@ -503,16 +513,17 @@ HTACCESS;
 
             // Add WooCommerce products section to home page if WooCommerce is installed
             $wpPath = config('webnewbiz.xampp_htdocs', 'C:/xampp/htdocs') . '/' . $this->website->slug;
-            if ($pageSlug === 'home' && File::exists("{$wpPath}/wp-content/plugins/woocommerce/woocommerce.php")) {
+            if ($pageType === 'home' && File::exists("{$wpPath}/wp-content/plugins/woocommerce/woocommerce.php")) {
                 $elements[] = $this->buildProductsSection($content, $layout);
             }
 
             // Create the page with Elementor data
             $now = now()->format('Y-m-d H:i:s');
-            $slug = Str::slug($title);
+            // Use the pageType as slug for consistency (home, about, services, portfolio, contact)
+            $postName = $pageType;
 
             $stmt = $pdo->prepare("INSERT INTO wp_posts (post_author, post_date, post_date_gmt, post_content, post_title, post_excerpt, post_status, comment_status, ping_status, post_name, post_type, post_modified, post_modified_gmt, to_ping, pinged, post_content_filtered) VALUES (1, ?, ?, '', ?, '', 'publish', 'closed', 'closed', ?, 'page', ?, ?, '', '', '')");
-            $stmt->execute([$now, $now, $title, $pageSlug, $now, $now]);
+            $stmt->execute([$now, $now, $title, $postName, $now, $now]);
             $postId = (int) $pdo->lastInsertId();
 
             if ($postId && !empty($elements)) {
@@ -537,7 +548,7 @@ HTACCESS;
             }
 
             // Set as front page if home
-            if ($pageSlug === 'home') {
+            if ($pageType === 'home') {
                 $pdo->exec("INSERT INTO wp_options (option_name, option_value) VALUES ('page_on_front', '{$postId}') ON DUPLICATE KEY UPDATE option_value = '{$postId}'");
                 $pdo->exec("INSERT INTO wp_options (option_name, option_value) VALUES ('show_on_front', 'page') ON DUPLICATE KEY UPDATE option_value = 'page'");
                 $this->website->update(['home_page_id' => $postId]);
@@ -609,19 +620,25 @@ HTACCESS;
         $sitePath = config('webnewbiz.xampp_htdocs', 'C:/xampp/htdocs') . '/' . $this->website->slug;
         $hasWoo = File::exists("{$sitePath}/wp-content/plugins/woocommerce/woocommerce.php");
 
+        // Normalize slugs (AI sometimes returns capitalized values)
+        $pageSlugs = array_values(array_unique(array_map(fn($p) => Str::slug($p), $pageSlugs)));
+
         // Convert sequential ['home','about',...] to associative ['home'=>'Home','about'=>'About Us',...]
         $pageLabels = [
             'home' => 'Home',
             'shop' => 'Shop',
             'about' => 'About Us',
+            'about-us' => 'About Us',
             'services' => 'Services',
+            'our-services' => 'Services',
             'portfolio' => 'Portfolio',
             'contact' => 'Contact',
+            'contact-us' => 'Contact',
         ];
 
-        // Add Shop to nav for ecommerce sites
+        // Add Shop to nav for ecommerce sites (after Home)
         if ($hasWoo && !in_array('shop', $pageSlugs)) {
-            array_splice($pageSlugs, 1, 0, ['shop']); // after Home
+            array_splice($pageSlugs, 1, 0, ['shop']);
         }
 
         $pages = [];

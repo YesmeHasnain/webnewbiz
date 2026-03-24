@@ -76,21 +76,38 @@ Return ONLY valid JSON, no markdown.";
             $analysis['pages'] = $analysis['pages'] ?? ['home', 'about', 'services', 'contact'];
             $analysis['reasoning'] = $analysis['reasoning'] ?? 'A modern, versatile layout suitable for most businesses.';
 
-            // Validate recommended_layout — use keyword matching if AI gave invalid or no layout
+            // Validate recommended_layout — use variety-aware matching
             $validLayouts = array_keys(config('layouts', []));
-            if (empty($analysis['recommended_layout']) || !in_array($analysis['recommended_layout'], $validLayouts)) {
-                $analysis['recommended_layout'] = $matcher->keywordFallback(
-                    $analysis['business_type'],
-                    $prompt
+            $userId = auth()->id();
+            $aiLayout = $analysis['recommended_layout'] ?? '';
+
+            if (empty($aiLayout) || !in_array($aiLayout, $validLayouts)) {
+                // AI gave invalid layout — use our matcher with variety
+                $analysis['recommended_layout'] = $matcher->recommendWithVariety(
+                    $analysis['business_type'], $prompt, $userId
                 );
+            } else {
+                // AI layout is valid — but check if user already has it, swap if so
+                $usedLayouts = $userId ? \App\Models\Website::where('user_id', $userId)
+                    ->whereNotNull('ai_theme')
+                    ->orderByDesc('created_at')
+                    ->limit(4)
+                    ->pluck('ai_theme')->toArray() : [];
+
+                if (in_array($aiLayout, $usedLayouts)) {
+                    // User already has this layout — find a close alternative
+                    $analysis['recommended_layout'] = $matcher->recommendWithVariety(
+                        $analysis['business_type'], $prompt, $userId
+                    );
+                }
             }
 
             return response()->json($analysis);
         } catch (\Exception $e) {
             Log::warning("Gemini analyze failed: {$e->getMessage()}");
 
-            // Use keyword matching to recommend the best layout
-            $matchedLayout = $matcher->keywordFallback('business', $prompt);
+            // Use variety-aware matching
+            $matchedLayout = $matcher->recommendWithVariety('business', $prompt, auth()->id());
 
             return response()->json([
                 'business_name' => 'My Business',
@@ -153,7 +170,15 @@ Return ONLY valid JSON.",
                 if ($parsed && isset($parsed['questions'])) {
                     $parsed['business_name'] = $parsed['business_name'] ?? '';
                     $parsed['business_type'] = $parsed['business_type'] ?? '';
-                    $parsed['suggested_style'] = $parsed['suggested_style'] ?? 'azure';
+                    // Validate suggested_style with variety
+                    $validLayouts = array_keys(config('layouts', []));
+                    $suggestedStyle = $parsed['suggested_style'] ?? '';
+                    if (!in_array($suggestedStyle, $validLayouts)) {
+                        $suggestedStyle = app(ThemeMatcherService::class)->recommendWithVariety(
+                            $parsed['business_type'] ?? '', $prompt, auth()->id()
+                        );
+                    }
+                    $parsed['suggested_style'] = $suggestedStyle;
 
                     // Ensure type field exists on all questions
                     foreach ($parsed['questions'] as &$q) {
@@ -372,7 +397,7 @@ Rules:
             'business_name' => '',
             'business_type' => '',
             'questions' => $questions,
-            'suggested_style' => 'azure',
+            'suggested_style' => app(ThemeMatcherService::class)->recommendWithVariety('', '', auth()->id()),
         ];
     }
 

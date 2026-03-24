@@ -2,6 +2,7 @@
 
 namespace App\Services;
 
+use App\Models\Website;
 use App\Services\Layouts\AbstractLayout;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Log;
@@ -59,11 +60,64 @@ class ThemeMatcherService
     }
 
     /**
-     * Keyword-based layout matching.
+     * Recommend layout with variety — avoids repeating user's recent layouts.
+     * Returns the best layout slug that the user hasn't used recently.
      */
-    public function keywordFallback(string $businessType, string $prompt = '', ?array $layouts = null): string
+    public function recommendWithVariety(string $businessType, string $prompt, ?int $userId = null): string
     {
-        $layouts = $layouts ?? config('layouts', []);
+        $scores = $this->scoreLayouts($businessType, $prompt);
+        $usedLayouts = [];
+
+        // Get layouts the user has already used (most recent first)
+        if ($userId) {
+            $usedLayouts = Website::where('user_id', $userId)
+                ->whereNotNull('ai_theme')
+                ->where('ai_theme', '!=', '')
+                ->orderByDesc('created_at')
+                ->limit(6)
+                ->pluck('ai_theme')
+                ->toArray();
+        }
+
+        // Sort by score descending
+        arsort($scores);
+
+        // If we have scores, try to pick a high-scoring layout the user hasn't used
+        $bestScore = max($scores);
+        if ($bestScore > 0) {
+            // Get all layouts within 40% of best score (close contenders)
+            $threshold = $bestScore * 0.6;
+            $candidates = array_filter($scores, fn($s) => $s >= $threshold);
+
+            // Prefer unused layouts among candidates
+            foreach (array_keys($candidates) as $slug) {
+                if (!in_array($slug, $usedLayouts)) {
+                    return $slug;
+                }
+            }
+            // All candidates used — return the best one anyway
+            return array_key_first($candidates);
+        }
+
+        // No keyword match — pick from unused layouts, cycling through all
+        $allSlugs = array_keys(config('layouts', []));
+        $unused = array_diff($allSlugs, $usedLayouts);
+        if (!empty($unused)) {
+            // Randomize among unused layouts
+            $unused = array_values($unused);
+            return $unused[array_rand($unused)];
+        }
+
+        // User has used ALL layouts — random pick
+        return $allSlugs[array_rand($allSlugs)];
+    }
+
+    /**
+     * Score all layouts against a business type and prompt.
+     */
+    public function scoreLayouts(string $businessType, string $prompt = ''): array
+    {
+        $layouts = config('layouts', []);
         $text = strtolower($businessType . ' ' . $prompt);
         $scores = [];
 
@@ -71,17 +125,42 @@ class ThemeMatcherService
             $keywords = $cfg['keywords'] ?? [];
             $score = 0;
             foreach ($keywords as $keyword) {
-                if (str_contains($text, $keyword)) {
-                    $score += strlen($keyword);
+                $kw = strtolower($keyword);
+                if (preg_match('/\b' . preg_quote($kw, '/') . '\b/', $text)) {
+                    $score += strlen($kw) * 3;
+                } elseif (str_contains($text, $kw)) {
+                    $score += strlen($kw);
+                }
+            }
+            foreach ($cfg['best_for'] ?? [] as $category) {
+                if (str_contains($text, strtolower($category))) {
+                    $score += 20;
                 }
             }
             $scores[$slug] = $score;
         }
 
+        return $scores;
+    }
+
+    /**
+     * Keyword-based layout matching with word-boundary scoring.
+     */
+    public function keywordFallback(string $businessType, string $prompt = '', ?array $layouts = null): string
+    {
+        $scores = $this->scoreLayouts($businessType, $prompt);
         arsort($scores);
         $best = array_key_first($scores);
 
-        return ($scores[$best] > 0) ? $best : 'azure'; // azure is the most versatile fallback
+        if ($scores[$best] > 0) {
+            return $best;
+        }
+
+        // Smart fallback: rotate through versatile layouts
+        $text = strtolower($businessType . ' ' . $prompt);
+        $fallbacks = ['azure', 'noir', 'ivory', 'blush', 'forest', 'slate'];
+        $hash = crc32($text);
+        return $fallbacks[abs($hash) % count($fallbacks)];
     }
 
     /**

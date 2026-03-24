@@ -275,53 +275,88 @@ export default function BuilderWizard() {
                 <h1 style={{ fontSize: 30, fontWeight: 800, letterSpacing: '-.03em', margin: '0 0 8px', color: '#111' }}>Choose Your Design</h1>
                 <p style={{ color: '#999', fontSize: 15, margin: 0 }}>Each layout is crafted for specific industries</p>
               </div>
-              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 16, marginBottom: 32 }}>
+              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 14, marginBottom: 32 }}>
                 {layouts.map(layout => {
                   const selected = selectedLayout === layout.slug;
                   const recommended = analysis?.recommended_layout === layout.slug;
+                  const color = layoutColors[layout.slug] || '#2563EB';
+                  const accent = layout.accent || color;
+                  const isDark = layout.is_dark;
+                  const previewBg = layout.preview_bg || '#fff';
                   return (
                     <button
                       key={layout.slug}
                       onClick={() => setSelectedLayout(layout.slug)}
                       style={{
-                        padding: 20, borderRadius: 16, border: '2px solid',
-                        borderColor: selected ? '#111' : '#f0f0f0',
-                        background: selected ? '#fafafa' : '#fff',
+                        padding: 0, borderRadius: 16, border: '2px solid',
+                        borderColor: selected ? color : '#f0f0f0',
+                        background: '#fff',
                         textAlign: 'left', cursor: 'pointer',
                         transition: 'all .25s cubic-bezier(.4,0,.2,1)',
                         transform: selected ? 'scale(1.03)' : 'scale(1)',
-                        boxShadow: selected ? '0 8px 30px rgba(0,0,0,.08)' : '0 1px 3px rgba(0,0,0,.03)',
+                        boxShadow: selected ? `0 8px 30px ${color}22` : '0 1px 3px rgba(0,0,0,.03)',
                         position: 'relative', overflow: 'hidden',
                       }}
                     >
-                      {recommended && (
-                        <div style={{
-                          position: 'absolute', top: 10, right: 10,
-                          background: '#d1fae5', color: '#065f46', fontSize: 10, fontWeight: 700,
-                          padding: '3px 8px', borderRadius: 6, letterSpacing: '.3px',
-                        }}>AI PICK</div>
-                      )}
+                      {/* Mini preview bar showing layout's color palette */}
                       <div style={{
-                        width: 44, height: 44, borderRadius: 12, marginBottom: 12,
-                        background: `linear-gradient(135deg, ${layoutColors[layout.slug] || '#2563EB'}, ${layoutColors[layout.slug] || '#2563EB'}aa)`,
-                        display: 'flex', alignItems: 'center', justifyContent: 'center',
-                        fontSize: 22, boxShadow: `0 4px 14px ${layoutColors[layout.slug] || '#2563EB'}33`,
+                        height: 48, background: previewBg, position: 'relative',
+                        display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 4,
+                        borderBottom: '1px solid #f0f0f0',
                       }}>
-                        {layoutEmojis[layout.slug] || '🎨'}
+                        {/* Mini "hero" mockup */}
+                        <div style={{ width: '70%', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 3 }}>
+                          <div style={{ width: '60%', height: 4, borderRadius: 2, background: isDark ? '#fff' : '#333', opacity: 0.8 }} />
+                          <div style={{ width: '40%', height: 3, borderRadius: 2, background: isDark ? 'rgba(255,255,255,0.3)' : 'rgba(0,0,0,0.15)' }} />
+                          <div style={{ display: 'flex', gap: 3, marginTop: 2 }}>
+                            <div style={{ width: 20, height: 6, borderRadius: 3, background: color }} />
+                            <div style={{ width: 20, height: 6, borderRadius: 3, border: `1px solid ${isDark ? 'rgba(255,255,255,0.3)' : 'rgba(0,0,0,0.2)'}`, background: 'transparent' }} />
+                          </div>
+                        </div>
+                        {/* Color dots */}
+                        <div style={{ position: 'absolute', right: 8, top: 8, display: 'flex', gap: 3 }}>
+                          <div style={{ width: 8, height: 8, borderRadius: '50%', background: color, boxShadow: `0 0 0 1px rgba(0,0,0,.1)` }} />
+                          <div style={{ width: 8, height: 8, borderRadius: '50%', background: accent, boxShadow: `0 0 0 1px rgba(0,0,0,.1)` }} />
+                        </div>
+                        {recommended && (
+                          <div style={{
+                            position: 'absolute', top: 6, left: 8,
+                            background: '#d1fae5', color: '#065f46', fontSize: 9, fontWeight: 700,
+                            padding: '2px 6px', borderRadius: 4, letterSpacing: '.3px',
+                          }}>AI PICK</div>
+                        )}
                       </div>
-                      <div style={{ fontSize: 15, fontWeight: 700, color: '#111', marginBottom: 2, textTransform: 'capitalize' }}>
-                        {layout.name}
-                      </div>
-                      <div style={{ fontSize: 12, color: '#999', marginBottom: 8, textTransform: 'capitalize' }}>
-                        {layout.style}
-                      </div>
-                      <div style={{ fontSize: 11, color: '#bbb', lineHeight: 1.5 }}>
-                        {layout.best_for?.slice(0, 3).join(' · ')}
+                      <div style={{ padding: '14px 16px 16px' }}>
+                        <div style={{ display: 'flex', alignItems: 'center', gap: 8, marginBottom: 6 }}>
+                          <span style={{ fontSize: 18 }}>{layoutEmojis[layout.slug] || '🎨'}</span>
+                          <div>
+                            <div style={{ fontSize: 14, fontWeight: 700, color: '#111', textTransform: 'capitalize' }}>
+                              {layout.name}
+                            </div>
+                            <div style={{ fontSize: 11, color: '#999', textTransform: 'capitalize' }}>
+                              {layout.style}{isDark ? ' · dark' : ' · light'}
+                            </div>
+                          </div>
+                        </div>
+                        {layout.description && (
+                          <div style={{ fontSize: 11, color: '#aaa', lineHeight: 1.4, marginBottom: 8 }}>
+                            {layout.description}
+                          </div>
+                        )}
+                        <div style={{ display: 'flex', flexWrap: 'wrap', gap: 4 }}>
+                          {layout.best_for?.slice(0, 3).map((tag: string) => (
+                            <span key={tag} style={{
+                              fontSize: 10, padding: '2px 7px', borderRadius: 4,
+                              background: selected ? `${color}15` : '#f5f5f5',
+                              color: selected ? color : '#888', fontWeight: 500,
+                            }}>{tag}</span>
+                          ))}
+                        </div>
                       </div>
                       {selected && (
                         <div style={{
                           position: 'absolute', bottom: 0, left: 0, right: 0, height: 3,
-                          background: layoutColors[layout.slug] || '#2563EB',
+                          background: `linear-gradient(90deg, ${color}, ${accent})`,
                         }} />
                       )}
                     </button>
