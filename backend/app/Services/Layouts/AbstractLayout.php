@@ -291,9 +291,18 @@ abstract class AbstractLayout
         ];
     }
 
-    /** Button widget — _flex_size:'none' prevents stretching inside flex containers */
+    /** Button widget — width:auto prevents stretching inside flex containers */
     public static function button(string $text, string $url = '#', array $settings = []): array
     {
+        // custom_css forces widget to not stretch in flex row containers
+        $flexCss = 'selector{flex-grow:0!important;flex-shrink:0!important;width:auto!important;}';
+        $existingCss = $settings['custom_css'] ?? '';
+        if ($existingCss) {
+            $settings['custom_css'] = $existingCss . ' ' . $flexCss;
+        } else {
+            $settings['custom_css'] = $flexCss;
+        }
+
         return [
             'id' => self::eid(),
             'elType' => 'widget',
@@ -301,7 +310,6 @@ abstract class AbstractLayout
             'settings' => array_merge([
                 'text' => $text,
                 'align' => 'center',
-                '_flex_size' => 'none',
                 'link' => ['url' => $url, 'is_external' => false, 'nofollow' => false],
             ], $settings),
             'elements' => [],

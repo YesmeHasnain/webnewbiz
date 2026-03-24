@@ -225,6 +225,10 @@ $pdo->exec("INSERT INTO wp_options (option_name, option_value, autoload) VALUES 
 $cpts = serialize(['post', 'page', 'elementor-hf']);
 $pdo->exec("INSERT INTO wp_options (option_name, option_value, autoload) VALUES ('elementor_cpt_support', " . $pdo->quote($cpts) . ", 'yes') ON DUPLICATE KEY UPDATE option_value = " . $pdo->quote($cpts));
 
+// Disable WooCommerce "coming soon" mode (WC 9+ enables this by default)
+$pdo->exec("INSERT INTO wp_options (option_name, option_value, autoload) VALUES ('woocommerce_coming_soon', 'no', 'yes') ON DUPLICATE KEY UPDATE option_value = 'no'");
+$pdo->exec("INSERT INTO wp_options (option_name, option_value, autoload) VALUES ('woocommerce_feature_site_visibility_badge_enabled', 'no', 'yes') ON DUPLICATE KEY UPDATE option_value = 'no'");
+
 // Remove default content
 $pdo->exec("DELETE FROM wp_posts WHERE post_type = 'post' AND post_title = 'Hello world!'");
 $pdo->exec("DELETE FROM wp_posts WHERE post_type = 'page' AND post_title = 'Sample Page'");

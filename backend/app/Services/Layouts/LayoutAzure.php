@@ -107,15 +107,6 @@ body,body.elementor-template-canvas{background:var(--azure-bg);color:var(--azure
 .azure-photo img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .7s ease;}
 .azure-photo:hover img{transform:scale(1.04);}
 
-/* Footer */
-.azure-fc h4{font-size:14px;font-weight:700;color:{$c['text']};margin-bottom:20px;}
-.azure-fc ul{list-style:none;display:flex;flex-direction:column;gap:12px;padding:0;margin:0;}
-.azure-fc a{font-size:14px;color:{$c['muted']};text-decoration:none;transition:color .3s;}
-.azure-fc a:hover{color:{$c['primary']};}
-.azure-social{display:flex;gap:10px;margin-top:24px;}
-.azure-social a{width:40px;height:40px;border:1px solid {$c['border']};border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:16px;text-decoration:none;color:{$c['muted']};transition:all .3s;background:{$c['surface']};}
-.azure-social a:hover{border-color:{$c['primary']};color:{$c['primary']};background:rgba(37,99,235,0.05);transform:translateY(-3px);}
-
 /* Contact info */
 .azure-ci{display:flex;align-items:flex-start;gap:12px;margin-bottom:16px;}
 .azure-ci-i{width:40px;height:40px;min-width:40px;background:linear-gradient(135deg,rgba(37,99,235,0.1),rgba(6,182,212,0.1));border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:16px;}
@@ -135,8 +126,6 @@ body,body.elementor-template-canvas{background:var(--azure-bg);color:var(--azure
 @media(max-width:767px){
   .azure-fcard.e-con,.azure-bcard.e-con,.azure-stat.e-con,.azure-photo.e-con{--width:100% !important;width:100% !important;}
   .azure-tcard.e-con{--width:100% !important;width:100% !important;}
-  .azure-nav{padding:0 20px !important;}
-  .azure-nav ul{display:none !important;}
 }
 {$this->woocommerceCss()}
 </style>

@@ -91,12 +91,6 @@ body,body.elementor-template-canvas{background:var(--slate-bg);color:var(--slate
 .slate-tcard{transition:transform .4s ease;}
 .slate-tcard:hover{transform:translateY(-3px);}
 
-/* Footer */
-.slate-fc h4{font-size:11px;font-weight:600;letter-spacing:3px;text-transform:uppercase;color:var(--slate-accent);margin-bottom:20px;}
-.slate-fc ul{list-style:none;display:flex;flex-direction:column;gap:10px;padding:0;margin:0;}
-.slate-fc a{font-size:14px;color:rgba(255,255,255,0.5);text-decoration:none;transition:color .3s;}
-.slate-fc a:hover{color:rgba(255,255,255,0.85);}
-
 /* Contact info */
 .slate-ci{display:flex;align-items:flex-start;gap:12px;margin-bottom:16px;}
 .slate-ci-i{width:36px;height:36px;min-width:36px;background:rgba(148,163,184,0.1);display:flex;align-items:center;justify-content:center;font-size:16px;}
@@ -120,7 +114,6 @@ body,body.elementor-template-canvas{background:var(--slate-bg);color:var(--slate
 }
 @media(max-width:767px){
   .slate-card.e-con,.slate-tcard.e-con,.slate-stat.e-con,.slate-photo.e-con{--width:100% !important;width:100% !important;}
-  .slate-nav ul{display:none !important;}
   .slate-ci{flex-direction:column;align-items:center;text-align:center;}
 }
 {$this->woocommerceCss()}

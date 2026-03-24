@@ -1126,6 +1126,9 @@ PHPSCRIPT;
         $this->setOption($pdo, 'woocommerce_task_list_hidden', 'yes');
         $this->setOption($pdo, 'woocommerce_task_list_complete', 'yes');
         $this->setOption($pdo, 'woocommerce_show_marketplace_suggestions', 'no');
+        // Disable WooCommerce "coming soon" / "launch your store" mode (WC 9+)
+        $this->setOption($pdo, 'woocommerce_coming_soon', 'no');
+        $this->setOption($pdo, 'woocommerce_feature_site_visibility_badge_enabled', 'no');
 
         // Create sample products with images
         $products = $this->getProductsForBusiness($content, $businessType);

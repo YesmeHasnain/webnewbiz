@@ -98,17 +98,6 @@ body,body.elementor-template-canvas{background:var(--forest-bg);color:var(--fore
 .forest-cta .eyebrow{color:var(--forest-accent);}
 .forest-cta .eyebrow::before{background:var(--forest-accent);}
 
-/* Footer */
-.forest-fc h4{font-family:'{$f['heading']}',serif;font-size:14px;font-weight:700;color:var(--forest-text);margin-bottom:20px;padding-bottom:14px;border-bottom:1px solid var(--forest-border);}
-.forest-fc ul{list-style:none;display:flex;flex-direction:column;gap:10px;padding:0;margin:0;}
-.forest-fc a{font-size:14px;color:var(--forest-muted);text-decoration:none;display:flex;align-items:center;gap:8px;transition:color .3s;}
-.forest-fc a::before{content:'›';color:var(--forest-secondary);transition:color .3s;}
-.forest-fc a:hover{color:var(--forest-text);}
-.forest-fc a:hover::before{color:var(--forest-primary);}
-.forest-social{display:flex;gap:8px;margin-top:20px;}
-.forest-social a{width:38px;height:38px;border:1px solid var(--forest-border);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:16px;text-decoration:none;color:var(--forest-muted);transition:all .3s;}
-.forest-social a:hover{border-color:var(--forest-primary);color:var(--forest-primary);background:rgba(45,106,79,.05);transform:translateY(-3px);}
-
 /* Contact info */
 .forest-ci{display:flex;align-items:flex-start;gap:12px;margin-bottom:14px;}
 .forest-ci-i{width:40px;height:40px;min-width:40px;background:rgba(45,106,79,.06);border:1px solid rgba(45,106,79,.12);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:16px;}
@@ -147,8 +136,6 @@ body,body.elementor-template-canvas{background:var(--forest-bg);color:var(--fore
 @media(max-width:767px){
   .forest-card.e-con,.forest-bcard.e-con,.forest-stat.e-con,.forest-photo.e-con{--width:100% !important;width:100% !important;}
   .forest-tcard.e-con{--width:100% !important;width:100% !important;}
-  .forest-nav ul{display:none !important;}
-  .forest-nav{padding:0 24px !important;height:64px !important;}
 }
 {$this->woocommerceCss()}
 </style>

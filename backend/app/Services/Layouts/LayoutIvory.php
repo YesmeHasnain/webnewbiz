@@ -117,37 +117,6 @@ body,body.elementor-template-canvas{background:var(--ivory-bg);color:var(--ivory
 .ivory-photo img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .7s ease;}
 .ivory-photo:hover img{transform:scale(1.04);}
 
-/* Footer */
-.ivory-fc h4{font-size:10px;font-weight:600;letter-spacing:4px;text-transform:uppercase;color:rgba(255,255,255,0.45);margin-bottom:22px;padding-bottom:14px;border-bottom:1px solid rgba(255,255,255,0.1);}
-.ivory-fc ul{list-style:none;display:flex;flex-direction:column;gap:11px;padding:0;margin:0;}
-.ivory-fc a{font-size:14px;color:rgba(255,255,255,0.45);text-decoration:none;display:flex;align-items:center;gap:8px;transition:color .3s;}
-.ivory-fc a::before{content:'\\203A';color:rgba(212,165,116,0.5);transition:color .3s;}
-.ivory-fc a:hover{color:rgba(255,255,255,0.85);}
-.ivory-fc a:hover::before{color:var(--ivory-accent);}
-.ivory-social{display:flex;gap:10px;margin-top:24px;}
-.ivory-social a{width:36px;height:36px;border:1px solid rgba(255,255,255,0.1);border-radius:8px;display:flex;align-items:center;justify-content:center;text-decoration:none;color:rgba(255,255,255,0.35);transition:all .3s;}
-.ivory-social a:hover{border-color:var(--ivory-accent);color:var(--ivory-accent);background:rgba(212,165,116,0.08);transform:translateY(-3px);}
-.ivory-social a svg{width:16px;height:16px;}
-
-/* Footer contact items */
-.ivory-fci{display:flex;align-items:center;gap:10px;margin-bottom:14px;}
-.ivory-fci svg{color:var(--ivory-accent);flex-shrink:0;opacity:.7;}
-.ivory-fci span{font-size:13.5px;color:rgba(255,255,255,0.5);line-height:1.5;}
-
-/* Footer office hours */
-.ivory-fhours{display:flex;flex-direction:column;gap:0;}
-.ivory-fhours-row{display:flex;justify-content:space-between;align-items:center;padding:10px 0;border-bottom:1px solid rgba(255,255,255,0.06);font-size:13.5px;color:rgba(255,255,255,0.5);}
-.ivory-fhours-row:last-child{border-bottom:none;}
-.ivory-fhours-row span:first-child{font-weight:500;}
-.ivory-fhours-closed span:last-child{color:rgba(255,255,255,0.25);font-style:italic;}
-
-/* Trust badges strip */
-.ivory-trust-strip{display:flex;align-items:center;justify-content:center;gap:0;flex-wrap:wrap;width:100%;}
-.ivory-trust-badge{display:inline-flex;align-items:center;gap:7px;font-size:10px;font-weight:600;letter-spacing:2.5px;text-transform:uppercase;color:rgba(255,255,255,0.4);padding:6px 20px;white-space:nowrap;}
-.ivory-trust-badge svg{color:var(--ivory-accent);opacity:.65;}
-.ivory-trust-sep{width:1px;height:14px;background:rgba(255,255,255,0.1);margin:0 4px;}
-@media(max-width:767px){.ivory-trust-strip{flex-direction:column;gap:4px;}.ivory-trust-sep{display:none;}}
-
 /* Badge */
 .ivory-badge{display:inline-flex;align-items:center;gap:5px;margin-top:14px;padding:5px 12px;border-radius:50px;font-size:10px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;background:rgba(27,77,62,0.06);border:1px solid rgba(27,77,62,0.15);color:var(--ivory-primary);}
 
@@ -168,7 +137,6 @@ body,body.elementor-template-canvas{background:var(--ivory-bg);color:var(--ivory
 @media(max-width:767px){
   .ivory-card.e-con,.ivory-bcard.e-con,.ivory-stat.e-con,.ivory-photo.e-con{--width:100% !important;width:100% !important;}
   .ivory-tcard.e-con{--width:100% !important;width:100% !important;}
-  .ivory-nav ul{display:none !important;}
   .sp-features{grid-template-columns:1fr;}
 }
 {$this->woocommerceCss()}
@@ -1190,6 +1158,31 @@ if(ham&&mob){ham.addEventListener("click",function(){ham.classList.toggle("activ
         }
 
         $sections = [];
+
+        // ── Footer-scoped CSS (HFE footer is separate from page, needs own styles) ──
+        $sections[] = self::html('<style>
+.ivory-fc h4{font-size:10px;font-weight:600;letter-spacing:4px;text-transform:uppercase;color:#FFFFFF;margin-bottom:22px;padding-bottom:14px;border-bottom:1px solid rgba(255,255,255,0.15);}
+.ivory-fc ul{list-style:none;display:flex;flex-direction:column;gap:11px;padding:0;margin:0;}
+.ivory-fc a{font-size:14px;color:rgba(255,255,255,0.8);text-decoration:none;display:flex;align-items:center;gap:8px;transition:color .3s;}
+.ivory-fc a::before{content:\'\\203A\';color:' . $c['accent'] . ';transition:color .3s;}
+.ivory-fc a:hover{color:#FFFFFF;}
+.ivory-fci{display:flex;align-items:center;gap:10px;margin-bottom:14px;}
+.ivory-fci svg{color:' . $c['accent'] . ';flex-shrink:0;}
+.ivory-fci span{font-size:13.5px;color:rgba(255,255,255,0.85);line-height:1.5;}
+.ivory-fhours{display:flex;flex-direction:column;gap:0;}
+.ivory-fhours-row{display:flex;justify-content:space-between;align-items:center;padding:10px 0;border-bottom:1px solid rgba(255,255,255,0.1);font-size:13.5px;color:rgba(255,255,255,0.85);}
+.ivory-fhours-row:last-child{border-bottom:none;}
+.ivory-fhours-row span:first-child{font-weight:500;}
+.ivory-fhours-closed span:last-child{color:rgba(255,255,255,0.4);font-style:italic;}
+.ivory-social{display:flex;gap:10px;}
+.ivory-social a{width:36px;height:36px;border:1px solid rgba(255,255,255,0.2);border-radius:8px;display:flex;align-items:center;justify-content:center;text-decoration:none;color:rgba(255,255,255,0.6);transition:all .3s;}
+.ivory-social a:hover{border-color:' . $c['accent'] . ';color:' . $c['accent'] . ';transform:translateY(-3px);}
+.ivory-social a::before{display:none;}
+.ivory-trust-strip{display:flex;align-items:center;justify-content:center;gap:0;flex-wrap:wrap;width:100%;}
+.ivory-trust-badge{display:inline-flex;align-items:center;gap:7px;font-size:10px;font-weight:600;letter-spacing:2.5px;text-transform:uppercase;color:rgba(255,255,255,0.7);padding:6px 20px;white-space:nowrap;}
+.ivory-trust-badge svg{color:' . $c['accent'] . ';}
+.ivory-trust-sep{width:1px;height:14px;background:rgba(255,255,255,0.15);margin:0 4px;}
+</style>');
 
         // ── Main footer wrapper ──
         $sections[] = self::container([

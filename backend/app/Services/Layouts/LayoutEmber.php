@@ -126,17 +126,6 @@ body,body.elementor-template-canvas{background:var(--ember-bg);color:var(--ember
 .ember-stat-n{font-family:'{$f['heading']}',sans-serif;font-size:60px;font-weight:900;color:var(--ember-primary);line-height:1;}
 .ember-stat-l{font-size:11px;letter-spacing:3px;text-transform:uppercase;color:rgba(250,250,249,.3);margin-top:6px;font-weight:600;}
 
-/* Footer */
-.ember-fc h4{font-size:10px;font-weight:700;letter-spacing:4px;text-transform:uppercase;color:rgba(250,250,249,.4);margin-bottom:22px;padding-bottom:14px;border-bottom:1px solid var(--ember-border);}
-.ember-fc ul{list-style:none;display:flex;flex-direction:column;gap:11px;padding:0;margin:0;}
-.ember-fc a{font-size:14px;color:rgba(250,250,249,.35);text-decoration:none;display:flex;align-items:center;gap:8px;transition:color .3s;}
-.ember-fc a::before{content:'›';color:rgba(220,38,38,.35);transition:color .3s;}
-.ember-fc a:hover{color:rgba(250,250,249,.75);}
-.ember-fc a:hover::before{color:var(--ember-primary);}
-.ember-social{display:flex;gap:8px;margin-top:24px;}
-.ember-social a{width:38px;height:38px;border:1px solid var(--ember-border);border-radius:4px;display:flex;align-items:center;justify-content:center;font-size:16px;text-decoration:none;color:rgba(250,250,249,.3);transition:all .3s;}
-.ember-social a:hover{border-color:var(--ember-primary);color:var(--ember-primary);background:rgba(220,38,38,.06);transform:translateY(-3px);}
-
 /* Contact info block */
 .ember-ci{display:flex;align-items:flex-start;gap:10px;margin-bottom:14px;}
 .ember-ci-i{width:34px;height:34px;min-width:34px;background:rgba(220,38,38,.08);border:1px solid rgba(220,38,38,.15);border-radius:4px;display:flex;align-items:center;justify-content:center;font-size:14px;}
@@ -218,7 +207,6 @@ body,body.elementor-template-canvas{background:var(--ember-bg);color:var(--ember
 @media(max-width:767px){
   .ember-card.e-con,.ember-bcard.e-con,.ember-stat.e-con,.ember-photo.e-con{--width:100% !important;width:100% !important;}
   .ember-tcard.e-con{--width:100% !important;width:100% !important;}
-  .ember-nav ul{display:none !important;}
   .ep-features{grid-template-columns:1fr;}
   .ember-menu-item-name{font-size:16px;}
   .ember-testimonial-text{font-size:17px;line-height:1.8;}

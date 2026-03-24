@@ -191,17 +191,6 @@ body,body.elementor-template-canvas{background:var(--royal-bg);color:var(--royal
 .royal-pho{position:absolute;inset:0;background:linear-gradient(to top,rgba(12,10,26,.7) 0%,transparent 50%);opacity:0;transition:opacity .4s;}
 .royal-photo:hover .royal-pho{opacity:1;}
 
-/* Footer */
-.royal-fc h4{font-size:10px;font-weight:600;letter-spacing:4px;text-transform:uppercase;color:rgba(245,243,255,.4);margin-bottom:22px;padding-bottom:14px;border-bottom:1px solid var(--royal-border);}
-.royal-fc ul{list-style:none;display:flex;flex-direction:column;gap:11px;padding:0;margin:0;}
-.royal-fc a{font-size:14px;color:rgba(245,243,255,.35);text-decoration:none;display:flex;align-items:center;gap:8px;transition:color .3s;}
-.royal-fc a::before{content:'\\203A';color:rgba(124,58,237,.4);transition:color .3s;}
-.royal-fc a:hover{color:rgba(245,243,255,.75);}
-.royal-fc a:hover::before{color:var(--royal-primary);}
-.royal-social{display:flex;gap:8px;margin-top:24px;}
-.royal-social a{width:38px;height:38px;border:1px solid var(--royal-border);border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:16px;text-decoration:none;color:rgba(245,243,255,.3);transition:all .3s;}
-.royal-social a:hover{border-color:var(--royal-primary);color:var(--royal-accent);background:rgba(124,58,237,.08);transform:translateY(-3px);}
-
 /* Contact info block */
 .royal-ci{display:flex;align-items:flex-start;gap:10px;margin-bottom:14px;}
 .royal-ci-i{width:34px;height:34px;min-width:34px;background:rgba(124,58,237,.08);border:1px solid rgba(124,58,237,.15);border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:14px;}
@@ -235,7 +224,6 @@ body,body.elementor-template-canvas{background:var(--royal-bg);color:var(--royal
 @media(max-width:767px){
   .royal-card.e-con,.royal-bcard.e-con,.royal-stat.e-con,.royal-photo.e-con{--width:100% !important;width:100% !important;}
   .royal-tcard.e-con{--width:100% !important;width:100% !important;}
-  .royal-nav ul{display:none !important;}
   .sp-features{grid-template-columns:1fr;}
 }
 {$this->woocommerceCss()}

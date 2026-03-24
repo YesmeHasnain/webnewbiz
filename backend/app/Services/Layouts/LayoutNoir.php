@@ -124,17 +124,6 @@ body,body.elementor-template-canvas{background:var(--black);color:var(--white);f
 .noir-stat-n{font-family:'{$f['heading']}',sans-serif;font-size:56px;font-weight:900;color:var(--accent);line-height:1;}
 .noir-stat-l{font-size:10px;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,.3);margin-top:5px;}
 
-/* Footer */
-.noir-fc h4{font-size:10px;font-weight:600;letter-spacing:4px;text-transform:uppercase;color:rgba(255,255,255,.4);margin-bottom:22px;padding-bottom:14px;border-bottom:1px solid var(--border);}
-.noir-fc ul{list-style:none;display:flex;flex-direction:column;gap:11px;padding:0;margin:0;}
-.noir-fc a{font-size:14px;color:rgba(255,255,255,.35);text-decoration:none;display:flex;align-items:center;gap:8px;transition:color .3s;}
-.noir-fc a::before{content:'›';color:rgba(255,69,0,.35);transition:color .3s;}
-.noir-fc a:hover{color:rgba(255,255,255,.75);}
-.noir-fc a:hover::before{color:var(--accent);}
-.noir-social{display:flex;gap:8px;margin-top:24px;}
-.noir-social a{width:38px;height:38px;border:1px solid var(--border);border-radius:4px;display:flex;align-items:center;justify-content:center;font-size:16px;text-decoration:none;color:rgba(255,255,255,.3);transition:all .3s;}
-.noir-social a:hover{border-color:var(--accent);color:var(--accent);background:rgba(255,69,0,.05);transform:translateY(-3px);}
-
 /* Contact info block */
 .noir-ci{display:flex;align-items:flex-start;gap:10px;margin-bottom:14px;}
 .noir-ci-i{width:34px;height:34px;min-width:34px;background:rgba(255,69,0,.06);border:1px solid rgba(255,69,0,.12);border-radius:4px;display:flex;align-items:center;justify-content:center;font-size:14px;}
@@ -175,7 +164,6 @@ body,body.elementor-template-canvas{background:var(--black);color:var(--white);f
 @media(max-width:767px){
   .noir-card.e-con,.noir-bcard.e-con,.noir-stat.e-con,.noir-photo.e-con{--width:100% !important;width:100% !important;}
   .noir-tcard.e-con{--width:100% !important;width:100% !important;}
-  .noir-nav ul{display:none !important;}
   .sp-features{grid-template-columns:1fr;}
 }
 {$this->woocommerceCss()}

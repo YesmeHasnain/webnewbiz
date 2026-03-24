@@ -113,15 +113,6 @@ body,body.elementor-template-canvas{background:var(--blush-bg);color:var(--blush
 .blush-divider{width:60px;height:1px;background:var(--blush-gold);margin:24px 0;}
 .blush-divider-center{width:60px;height:1px;background:var(--blush-gold);margin:24px auto;}
 
-/* Footer */
-.blush-fc h4{font-size:11px;font-weight:400;letter-spacing:4px;text-transform:uppercase;color:var(--blush-gold);margin-bottom:22px;padding-bottom:14px;border-bottom:1px solid var(--blush-border);font-family:'{$f['body']}',sans-serif;}
-.blush-fc ul{list-style:none;display:flex;flex-direction:column;gap:11px;padding:0;margin:0;}
-.blush-fc a{font-size:14px;color:var(--blush-muted);text-decoration:none;display:flex;align-items:center;gap:8px;transition:color .3s;}
-.blush-fc a:hover{color:var(--blush-text);}
-.blush-social{display:flex;gap:10px;margin-top:24px;}
-.blush-social a{width:38px;height:38px;border:1px solid var(--blush-border);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:16px;text-decoration:none;color:var(--blush-muted);transition:all .3s;}
-.blush-social a:hover{border-color:var(--blush-gold);color:var(--blush-gold);background:rgba(201,168,124,.06);transform:translateY(-3px);}
-
 /* Contact info */
 .blush-ci{display:flex;align-items:flex-start;gap:12px;margin-bottom:16px;}
 .blush-ci-i{width:40px;height:40px;min-width:40px;background:rgba(201,168,124,.08);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:16px;}
@@ -146,7 +137,6 @@ body,body.elementor-template-canvas{background:var(--blush-bg);color:var(--blush
 @media(max-width:767px){
   .blush-scard.e-con,.blush-bcard.e-con,.blush-stat.e-con,.blush-photo.e-con{--width:100% !important;width:100% !important;}
   .blush-tcard.e-con{--width:100% !important;width:100% !important;}
-  .blush-nav ul{display:none !important;}
   .blush-features{grid-template-columns:1fr;}
 }
 {$this->woocommerceCss()}
