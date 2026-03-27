@@ -58,6 +58,11 @@ Route::middleware('auth:sanctum')->group(function () {
     Route::post('/projects/{id}/chat', [ProjectController::class, 'chat']);
     Route::get('/projects/{id}/stream', [ProjectController::class, 'stream']);
     Route::get('/projects/{id}/messages', [ProjectController::class, 'messages']);
+    Route::post('/projects/{id}/files/create', [ProjectController::class, 'createFile']);
+    Route::post('/projects/{id}/files/rename', [ProjectController::class, 'renameFile']);
+    Route::post('/projects/{id}/terminal', [ProjectController::class, 'terminal']);
+    Route::post('/projects/{id}/git', [ProjectController::class, 'git']);
+    Route::get('/projects/{id}/search', [ProjectController::class, 'search']);
 
     // Deploy & Hosting
     Route::get('/deployments', [DeployController::class, 'index']);
@@ -65,6 +70,9 @@ Route::middleware('auth:sanctum')->group(function () {
     Route::get('/deployments/{id}', [DeployController::class, 'show']);
     Route::post('/deployments/{id}/domain', [DeployController::class, 'addDomain']);
     Route::post('/deployments/{id}/stop', [DeployController::class, 'stop']);
+    Route::post('/deployments/{id}/redeploy', [DeployController::class, 'redeploy']);
+    Route::get('/deployments/{id}/logs', [DeployController::class, 'logs']);
+    Route::post('/deployments/{id}/email', [DeployController::class, 'setupEmail']);
 
     // Universal Converter
     Route::get('/conversions', [ConverterController::class, 'index']);

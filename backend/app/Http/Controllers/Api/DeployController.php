@@ -6,11 +6,13 @@ use App\Http\Controllers\Controller;
 use App\Models\Deployment;
 use App\Models\Project;
 use App\Models\App;
+use App\Services\DeployService;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 
 class DeployController extends Controller
 {
+    public function __construct(private DeployService $deployService) {}
     public function index(Request $request): JsonResponse
     {
         $deployments = Deployment::where('user_id', $request->user()->id)
@@ -103,5 +105,26 @@ class DeployController extends Controller
         $deployment = Deployment::where('user_id', $request->user()->id)->findOrFail($id);
         $deployment->update(['status' => 'stopped']);
         return response()->json(['message' => 'Deployment stopped.']);
+    }
+
+    public function redeploy(Request $request, int $id): JsonResponse
+    {
+        $deployment = Deployment::where('user_id', $request->user()->id)->findOrFail($id);
+        $result = $this->deployService->redeploy($deployment);
+        return response()->json($result);
+    }
+
+    public function logs(Request $request, int $id): JsonResponse
+    {
+        $deployment = Deployment::where('user_id', $request->user()->id)->findOrFail($id);
+        return response()->json($this->deployService->getLogs($deployment));
+    }
+
+    public function setupEmail(Request $request, int $id): JsonResponse
+    {
+        $deployment = Deployment::where('user_id', $request->user()->id)->findOrFail($id);
+        $validated = $request->validate(['domain' => 'required|string|max:255']);
+        $result = $this->deployService->setupEmail($deployment, $validated['domain']);
+        return response()->json($result);
     }
 }

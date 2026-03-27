@@ -100,7 +100,7 @@ export interface Project {
   name: string;
   slug: string;
   description: string | null;
-  framework: 'html' | 'react' | 'nextjs';
+  framework: 'html' | 'react' | 'nextjs' | 'vue' | 'angular' | 'svelte';
   status: 'draft' | 'generating' | 'ready' | 'deployed';
   ai_prompt: string | null;
   file_tree: FileTreeNode[];

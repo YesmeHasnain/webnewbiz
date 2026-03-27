@@ -6,8 +6,11 @@ import FileExplorer from '../components/builder/FileExplorer';
 import CodeEditor from '../components/builder/CodeEditor';
 import PreviewPanel from '../components/builder/PreviewPanel';
 import AiChatPanel from '../components/builder/AiChatPanel';
+import Terminal from '../components/builder/Terminal';
+import GitPanel from '../components/builder/GitPanel';
+import SearchPanel from '../components/builder/SearchPanel';
 
-type SidebarTab = 'files' | 'ai' | 'search' | 'settings';
+type SidebarTab = 'files' | 'ai' | 'search' | 'git' | 'settings';
 
 export default function CodeBuilder() {
   const { id } = useParams<{ id: string }>();
@@ -35,12 +38,12 @@ export default function CodeBuilder() {
   const [editorWidth, setEditorWidth] = useState(50); // percentage of remaining
   const [showCreateModal, setShowCreateModal] = useState(!id);
   const [sidebarCollapsed, setSidebarCollapsed] = useState(false);
-  const [bottomPanelHeight, setBottomPanelHeight] = useState(0);
+  const [bottomPanelHeight] = useState(0);
   const [showBottomPanel, setShowBottomPanel] = useState(false);
 
   // Create modal state
   const [newName, setNewName] = useState('');
-  const [newFramework, setNewFramework] = useState<'html' | 'react' | 'nextjs'>('html');
+  const [newFramework, setNewFramework] = useState<'html' | 'react' | 'nextjs' | 'vue' | 'angular' | 'svelte'>('html');
   const [newPrompt, setNewPrompt] = useState('');
   const [creating, setCreating] = useState(false);
 
@@ -333,6 +336,9 @@ export default function CodeBuilder() {
                   { id: 'html' as const, name: 'HTML/CSS/JS', icon: '🌐', desc: 'Vanilla web' },
                   { id: 'react' as const, name: 'React', icon: '⚛️', desc: 'Component-based' },
                   { id: 'nextjs' as const, name: 'Next.js', icon: '▲', desc: 'Full-stack React' },
+                  { id: 'vue' as const, name: 'Vue.js', icon: '💚', desc: 'Progressive JS' },
+                  { id: 'angular' as const, name: 'Angular', icon: '🅰️', desc: 'Enterprise apps' },
+                  { id: 'svelte' as const, name: 'Svelte', icon: '🔥', desc: 'Compiled UI' },
                 ]).map((fw) => (
                   <button
                     key={fw.id}
@@ -448,9 +454,12 @@ export default function CodeBuilder() {
           <span className={`px-2.5 py-1 rounded-md text-xs font-medium ${
             project?.framework === 'react' ? 'bg-cyan-500/10 text-cyan-400 border border-cyan-500/20' :
             project?.framework === 'nextjs' ? 'bg-white/10 text-white border border-white/20' :
+            project?.framework === 'vue' ? 'bg-emerald-500/10 text-emerald-400 border border-emerald-500/20' :
+            project?.framework === 'angular' ? 'bg-red-500/10 text-red-400 border border-red-500/20' :
+            project?.framework === 'svelte' ? 'bg-orange-500/10 text-orange-400 border border-orange-500/20' :
             'bg-orange-500/10 text-orange-400 border border-orange-500/20'
           }`}>
-            {project?.framework === 'html' ? 'HTML' : project?.framework === 'react' ? 'React' : 'Next.js'}
+            {{ html: 'HTML', react: 'React', nextjs: 'Next.js', vue: 'Vue.js', angular: 'Angular', svelte: 'Svelte' }[project?.framework || 'html']}
           </span>
           <span className={`px-2.5 py-1 rounded-md text-xs font-medium flex items-center gap-1.5 ${
             chatLoading ? 'bg-amber-500/10 text-amber-400 border border-amber-500/20' :
@@ -471,6 +480,7 @@ export default function CodeBuilder() {
             { id: 'files' as SidebarTab, icon: <><path d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-6l-2-2H5a2 2 0 00-2 2z" /></>, tip: 'Files' },
             { id: 'ai' as SidebarTab, icon: <><path d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" /></>, tip: 'AI Assistant' },
             { id: 'search' as SidebarTab, icon: <><circle cx="11" cy="11" r="8" /><path d="M21 21l-4.35-4.35" /></>, tip: 'Search' },
+            { id: 'git' as SidebarTab, icon: <><path d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" /></>, tip: 'Git' },
           ]).map((item) => (
             <button
               key={item.id}
@@ -515,7 +525,7 @@ export default function CodeBuilder() {
               {/* Sidebar header */}
               <div className="h-10 flex items-center justify-between px-4 border-b border-[#1a1d27] flex-shrink-0">
                 <span className="text-xs font-semibold text-gray-400 uppercase tracking-wider">
-                  {sidebarTab === 'files' ? 'Explorer' : sidebarTab === 'ai' ? 'AI Assistant' : sidebarTab === 'search' ? 'Search' : 'Settings'}
+                  {sidebarTab === 'files' ? 'Explorer' : sidebarTab === 'ai' ? 'AI Assistant' : sidebarTab === 'search' ? 'Search' : sidebarTab === 'git' ? 'Source Control' : 'Settings'}
                 </span>
                 <button onClick={() => setSidebarCollapsed(true)} className="text-gray-600 hover:text-gray-300 transition p-1">
                   <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -527,16 +537,36 @@ export default function CodeBuilder() {
               {/* Sidebar content */}
               <div className="flex-1 min-h-0 overflow-hidden">
                 {sidebarTab === 'files' && (
-                  <FileExplorer fileTree={fileTree} activeFile={activeFile} onFileSelect={handleFileSelect} onFileDelete={handleFileDelete} />
+                  <FileExplorer
+                    fileTree={fileTree}
+                    activeFile={activeFile}
+                    onFileSelect={handleFileSelect}
+                    onFileDelete={handleFileDelete}
+                    onFileCreate={async (path, type) => {
+                      if (!project) return;
+                      try {
+                        const res = await projectService.createFile(project.id, path, type);
+                        setFileTree(res.data.file_tree);
+                        if (type === 'file') await openFile(project.id, path);
+                      } catch (err) { console.error('Failed to create:', err); }
+                    }}
+                    onFileRename={async (from, to) => {
+                      if (!project) return;
+                      try {
+                        const res = await projectService.renameFile(project.id, from, to);
+                        setFileTree(res.data.file_tree);
+                      } catch (err) { console.error('Failed to rename:', err); }
+                    }}
+                  />
                 )}
                 {sidebarTab === 'ai' && (
                   <AiChatPanel messages={messages} isLoading={chatLoading} onSend={handleChatSend} />
                 )}
-                {sidebarTab === 'search' && (
-                  <div className="p-4">
-                    <input placeholder="Search in files..." className="w-full bg-[#0a0a12] border border-[#1e1e2e] rounded-lg px-3 py-2 text-sm text-white outline-none focus:border-blue-500/50" />
-                    <p className="text-xs text-gray-600 mt-3 text-center">Search across all project files</p>
-                  </div>
+                {sidebarTab === 'search' && project && (
+                  <SearchPanel projectId={project.id} onFileSelect={handleFileSelect} />
+                )}
+                {sidebarTab === 'git' && project && (
+                  <GitPanel projectId={project.id} />
                 )}
                 {sidebarTab === 'settings' && (
                   <div className="p-4 space-y-4">
@@ -589,22 +619,34 @@ export default function CodeBuilder() {
           </div>
 
           {/* Bottom panel (Terminal) */}
-          {showBottomPanel && (
+          {showBottomPanel && project && (
             <>
               <div className="h-px bg-[#1a1d27]" />
-              <div className="bg-[#0d1017] border-t border-[#1a1d27]" style={{ height: bottomPanelHeight || 200 }}>
-                <div className="flex items-center h-9 px-4 border-b border-[#1a1d27] gap-4">
+              <div className="bg-[#0a0a12] border-t border-[#1a1d27] flex flex-col" style={{ height: bottomPanelHeight || 220 }}>
+                <div className="flex items-center h-9 px-4 border-b border-[#1a1d27] gap-4 flex-shrink-0">
                   <span className="text-xs text-blue-400 font-medium border-b-2 border-blue-400 pb-2 pt-2">Terminal</span>
-                  <span className="text-xs text-gray-600 hover:text-gray-400 cursor-pointer pb-2 pt-2">Console</span>
                   <div className="flex-1" />
-                  <button onClick={() => setShowBottomPanel(false)} className="text-gray-600 hover:text-white">
+                  <button onClick={() => setShowBottomPanel(false)} className="text-gray-600 hover:text-white transition">
                     <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
                     </svg>
                   </button>
                 </div>
-                <div className="p-3 font-mono text-xs text-gray-500">
-                  <span className="text-emerald-400">$</span> Ready
+                <div className="flex-1 min-h-0">
+                  <Terminal
+                    projectId={project.id}
+                    onCommand={async (cmd) => {
+                      const res = await projectService.terminal(project.id, cmd);
+                      // Refresh file tree after commands that might change files
+                      if (/^(touch|mkdir|rm|mv|cp|npm|npx|git|yarn|pnpm)/.test(cmd)) {
+                        try {
+                          const projRes = await projectService.get(project.id);
+                          setFileTree(projRes.data.file_tree || []);
+                        } catch {}
+                      }
+                      return res.data;
+                    }}
+                  />
                 </div>
               </div>
             </>

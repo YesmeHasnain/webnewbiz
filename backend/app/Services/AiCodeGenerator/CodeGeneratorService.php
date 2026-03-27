@@ -184,9 +184,12 @@ class CodeGeneratorService
     {
         $framework = $project->framework;
         $frameworkNote = match ($framework) {
-            'react' => 'This is a REACT project. Use React 18 CDN + Babel standalone for browser-based JSX. Create .jsx component files.',
-            'nextjs' => 'This is a Next.js-style project. Create multi-page with shared components.',
-            default => 'This is an HTML/CSS/JS project. Create separate .html files for each page.',
+            'react' => 'REACT project. React 18 CDN + Babel standalone. Create .jsx files with hooks.',
+            'nextjs' => 'Next.js project. Multi-page with shared components, App Router, page.tsx.',
+            'vue' => 'VUE 3 project. Use Vue 3 CDN (unpkg.com/vue@3). Composition API, reactive refs.',
+            'angular' => 'ANGULAR-style project. Component-based with services and templates.',
+            'svelte' => 'SVELTE-inspired project. Reactive components, minimal boilerplate.',
+            default => 'HTML/CSS/JS project. Create separate .html files for each page.',
         };
 
         return <<<PROMPT

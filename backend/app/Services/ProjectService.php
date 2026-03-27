@@ -130,6 +130,23 @@ class ProjectService
     }
 
     /**
+     * Create a directory.
+     */
+    public function createDirectory(Project $project, string $path): void
+    {
+        $this->validatePath($path);
+        $fullPath = $project->storagePath() . '/' . $path;
+        File::ensureDirectoryExists($fullPath);
+
+        // Put a .gitkeep so empty dirs show in tree
+        if (count(File::allFiles($fullPath)) === 0) {
+            File::put($fullPath . '/.gitkeep', '');
+        }
+
+        $project->update(['file_tree' => $this->buildFileTree($project)]);
+    }
+
+    /**
      * Delete a file.
      */
     public function deleteFile(Project $project, string $path): bool

@@ -64,4 +64,33 @@ return [
         'access_key' => env('UNSPLASH_ACCESS_KEY'),
     ],
 
+    // AWS Services
+    'aws' => [
+        'key'              => env('AWS_ACCESS_KEY_ID'),
+        'secret'           => env('AWS_SECRET_ACCESS_KEY'),
+        'region'           => env('AWS_DEFAULT_REGION', 'us-east-1'),
+        's3_bucket'        => env('AWS_S3_BUCKET', 'webnewbiz-deploys'),
+        'cloudfront_id'    => env('AWS_CLOUDFRONT_DIST_ID'),
+    ],
+
+    // Stripe Payments
+    'stripe' => [
+        'key'            => env('STRIPE_KEY'),
+        'secret'         => env('STRIPE_SECRET'),
+        'webhook_secret' => env('STRIPE_WEBHOOK_SECRET'),
+    ],
+
+    // Twilio SMS
+    'twilio' => [
+        'sid'   => env('TWILIO_SID'),
+        'token' => env('TWILIO_TOKEN'),
+        'phone' => env('TWILIO_PHONE'),
+    ],
+
+    // Shopify
+    'shopify' => [
+        'api_key'    => env('SHOPIFY_API_KEY'),
+        'api_secret' => env('SHOPIFY_API_SECRET'),
+    ],
+
 ];

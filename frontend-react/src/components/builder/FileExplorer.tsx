@@ -6,6 +6,8 @@ interface Props {
   activeFile: string | null;
   onFileSelect: (path: string) => void;
   onFileDelete?: (path: string) => void;
+  onFileCreate?: (path: string, type: 'file' | 'directory') => void;
+  onFileRename?: (from: string, to: string) => void;
 }
 
 function getFileColor(name: string): string {
@@ -88,9 +90,61 @@ function FolderItem({ node, activeFile, onFileSelect, onFileDelete, depth = 0 }:
   );
 }
 
-export default function FileExplorer({ fileTree, activeFile, onFileSelect, onFileDelete }: Props) {
+export default function FileExplorer({ fileTree, activeFile, onFileSelect, onFileDelete, onFileCreate }: Props) {
+  const [showNewInput, setShowNewInput] = useState<'file' | 'directory' | null>(null);
+  const [newItemName, setNewItemName] = useState('');
+
+  const handleCreate = () => {
+    if (!newItemName.trim() || !showNewInput || !onFileCreate) return;
+    onFileCreate(newItemName.trim(), showNewInput);
+    setNewItemName('');
+    setShowNewInput(null);
+  };
+
   return (
     <div className="flex flex-col h-full bg-[#0f1119]">
+      {/* Action buttons */}
+      {onFileCreate && (
+        <div className="flex items-center gap-1 px-3 py-1.5 border-b border-[#1a1d27]">
+          <button
+            onClick={() => setShowNewInput(showNewInput === 'file' ? null : 'file')}
+            className={`p-1.5 rounded-md transition ${showNewInput === 'file' ? 'bg-blue-600/20 text-blue-400' : 'text-gray-600 hover:text-gray-300 hover:bg-white/5'}`}
+            title="New File"
+          >
+            <svg className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth={1.5} viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V9a2 2 0 012-2h2a2 2 0 012 2v9a2 2 0 01-2 2h-2zM12 11v4m-2-2h4" />
+            </svg>
+          </button>
+          <button
+            onClick={() => setShowNewInput(showNewInput === 'directory' ? null : 'directory')}
+            className={`p-1.5 rounded-md transition ${showNewInput === 'directory' ? 'bg-blue-600/20 text-blue-400' : 'text-gray-600 hover:text-gray-300 hover:bg-white/5'}`}
+            title="New Folder"
+          >
+            <svg className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth={1.5} viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" d="M12 10v6m3-3H9m9.75-6.75h-6.172a2.25 2.25 0 01-1.59-.659l-.829-.828A2.25 2.25 0 0011.568 4H6.75a2.25 2.25 0 00-2.25 2.25v11.5a2.25 2.25 0 002.25 2.25h10.5a2.25 2.25 0 002.25-2.25v-8.5a2.25 2.25 0 00-2.25-2.25z" />
+            </svg>
+          </button>
+        </div>
+      )}
+
+      {/* New item input */}
+      {showNewInput && (
+        <div className="px-3 py-2 border-b border-[#1a1d27]">
+          <input
+            value={newItemName}
+            onChange={(e) => setNewItemName(e.target.value)}
+            placeholder={showNewInput === 'file' ? 'filename.ext' : 'folder-name'}
+            className="w-full bg-[#0a0a12] border border-blue-500/50 rounded-md px-2 py-1.5 text-xs text-white outline-none placeholder-gray-600"
+            autoFocus
+            onKeyDown={(e) => {
+              if (e.key === 'Enter') handleCreate();
+              if (e.key === 'Escape') { setShowNewInput(null); setNewItemName(''); }
+            }}
+            onBlur={() => { if (!newItemName.trim()) { setShowNewInput(null); } }}
+          />
+        </div>
+      )}
+
       <div className="flex-1 overflow-y-auto py-1 custom-scrollbar">
         {fileTree.length === 0 ? (
           <div className="px-4 py-8 text-center">
