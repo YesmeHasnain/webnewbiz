@@ -22,6 +22,7 @@ use App\Http\Controllers\Api\StoreSubmissionController;
 use App\Http\Controllers\Api\AnalyticsController;
 use App\Http\Controllers\Api\IntegrationController;
 use App\Http\Controllers\Api\FigmaController;
+use App\Http\Controllers\Api\StripeWebhookController;
 use App\Http\Controllers\Api\Crm\ContactController;
 use App\Http\Controllers\Api\Crm\PipelineController;
 use App\Http\Controllers\Api\Crm\CampaignController;
@@ -42,6 +43,9 @@ Route::get('/projects/{id}/preview/{path?}', [ProjectController::class, 'preview
 
 // Public analytics tracking (no auth — called from deployed sites)
 Route::post('/track', [AnalyticsController::class, 'track']);
+
+// Stripe webhook (no auth — verified by signature)
+Route::post('/billing/webhook', [StripeWebhookController::class, 'handle']);
 
 // Public builder routes (no auth needed)
 Route::post('/builder/analyze', [BuilderController::class, 'analyze']);
