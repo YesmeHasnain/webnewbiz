@@ -21,6 +21,15 @@ use App\Http\Controllers\Api\ConverterController;
 use App\Http\Controllers\Api\StoreSubmissionController;
 use App\Http\Controllers\Api\AnalyticsController;
 use App\Http\Controllers\Api\IntegrationController;
+use App\Http\Controllers\Api\FigmaController;
+use App\Http\Controllers\Api\Crm\ContactController;
+use App\Http\Controllers\Api\Crm\PipelineController;
+use App\Http\Controllers\Api\Crm\CampaignController;
+use App\Http\Controllers\Api\Crm\SequenceController;
+use App\Http\Controllers\Api\Crm\WorkflowController;
+use App\Http\Controllers\Api\Crm\CalendarController;
+use App\Http\Controllers\Api\Crm\InvoiceController as CrmInvoiceController;
+use App\Http\Controllers\Api\Crm\ConversationController;
 use Illuminate\Support\Facades\Route;
 
 // Public auth routes
@@ -229,5 +238,63 @@ Route::middleware('auth:sanctum')->group(function () {
             Route::get('/ai/history', [WpBuilderController::class, 'aiHistory']);
             Route::post('/ai/history/clear', [WpBuilderController::class, 'aiHistory']);
         });
+    });
+
+    // ═══ FIGMA PLUGIN ═══
+    Route::post('/figma/generate-design', [FigmaController::class, 'generateDesign']);
+    Route::post('/figma/image-to-design', [FigmaController::class, 'imageToDesign']);
+    Route::post('/figma/export-to-code', [FigmaController::class, 'exportToCode']);
+    Route::get('/figma/projects', [FigmaController::class, 'projects']);
+
+    // ═══ CRM ROUTES ═══
+    Route::prefix('crm')->group(function () {
+        // Contacts
+        Route::get('/contacts', [ContactController::class, 'index']);
+        Route::post('/contacts', [ContactController::class, 'store']);
+        Route::get('/contacts/{id}', [ContactController::class, 'show']);
+        Route::put('/contacts/{id}', [ContactController::class, 'update']);
+        Route::delete('/contacts/{id}', [ContactController::class, 'destroy']);
+
+        // Pipelines & Deals
+        Route::get('/pipelines', [PipelineController::class, 'index']);
+        Route::post('/pipelines', [PipelineController::class, 'store']);
+        Route::get('/deals', [PipelineController::class, 'deals']);
+        Route::post('/deals', [PipelineController::class, 'storeDeal']);
+        Route::put('/deals/{id}', [PipelineController::class, 'updateDeal']);
+        Route::put('/deals/{id}/stage', [PipelineController::class, 'updateDealStage']);
+
+        // Email Campaigns
+        Route::get('/campaigns', [CampaignController::class, 'index']);
+        Route::post('/campaigns', [CampaignController::class, 'store']);
+        Route::post('/campaigns/{id}/send', [CampaignController::class, 'send']);
+        Route::get('/campaigns/{id}/stats', [CampaignController::class, 'stats']);
+
+        // Sequences
+        Route::get('/sequences', [SequenceController::class, 'index']);
+        Route::post('/sequences', [SequenceController::class, 'store']);
+        Route::put('/sequences/{id}', [SequenceController::class, 'update']);
+
+        // Workflows
+        Route::get('/workflows', [WorkflowController::class, 'index']);
+        Route::post('/workflows', [WorkflowController::class, 'store']);
+        Route::put('/workflows/{id}', [WorkflowController::class, 'update']);
+        Route::post('/workflows/{id}/activate', [WorkflowController::class, 'activate']);
+
+        // Calendar & Bookings
+        Route::get('/calendars', [CalendarController::class, 'index']);
+        Route::post('/calendars', [CalendarController::class, 'store']);
+        Route::get('/bookings', [CalendarController::class, 'bookings']);
+        Route::post('/bookings', [CalendarController::class, 'storeBooking']);
+
+        // Invoices
+        Route::get('/invoices', [CrmInvoiceController::class, 'index']);
+        Route::post('/invoices', [CrmInvoiceController::class, 'store']);
+        Route::get('/invoices/{id}', [CrmInvoiceController::class, 'show']);
+        Route::post('/invoices/{id}/paid', [CrmInvoiceController::class, 'markPaid']);
+
+        // Conversations
+        Route::get('/conversations', [ConversationController::class, 'index']);
+        Route::get('/conversations/{id}/messages', [ConversationController::class, 'messages']);
+        Route::post('/conversations/{id}/messages', [ConversationController::class, 'sendMessage']);
     });
 });

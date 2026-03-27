@@ -32,6 +32,15 @@ const AppBuilder = lazy(() => import('./pages/AppBuilder'));
 const Deployments = lazy(() => import('./pages/Deployments'));
 const PlatformAnalytics = lazy(() => import('./pages/PlatformAnalytics'));
 const Integrations = lazy(() => import('./pages/Integrations'));
+const CrmDashboard = lazy(() => import('./pages/crm/CrmDashboard'));
+const Contacts = lazy(() => import('./pages/crm/Contacts'));
+const CrmPipeline = lazy(() => import('./pages/crm/Pipeline'));
+const Campaigns = lazy(() => import('./pages/crm/Campaigns'));
+const Sequences = lazy(() => import('./pages/crm/Sequences'));
+const CrmWorkflows = lazy(() => import('./pages/crm/Workflows'));
+const CalendarPage = lazy(() => import('./pages/crm/CalendarPage'));
+const CrmInvoices = lazy(() => import('./pages/crm/Invoices'));
+const CrmConversations = lazy(() => import('./pages/crm/Conversations'));
 
 export default function App() {
   return (
@@ -69,6 +78,17 @@ export default function App() {
 
           {/* Billing & Credits */}
           <Route path="/billing" element={<AuthGuard><Suspense fallback={null}><Billing /></Suspense></AuthGuard>} />
+
+          {/* CRM Standalone Routes */}
+          <Route path="/crm" element={<AuthGuard><Suspense fallback={null}><CrmDashboard /></Suspense></AuthGuard>} />
+          <Route path="/crm/contacts" element={<AuthGuard><Suspense fallback={null}><Contacts /></Suspense></AuthGuard>} />
+          <Route path="/crm/pipeline" element={<AuthGuard><Suspense fallback={null}><CrmPipeline /></Suspense></AuthGuard>} />
+          <Route path="/crm/campaigns" element={<AuthGuard><Suspense fallback={null}><Campaigns /></Suspense></AuthGuard>} />
+          <Route path="/crm/sequences" element={<AuthGuard><Suspense fallback={null}><Sequences /></Suspense></AuthGuard>} />
+          <Route path="/crm/workflows" element={<AuthGuard><Suspense fallback={null}><CrmWorkflows /></Suspense></AuthGuard>} />
+          <Route path="/crm/calendar" element={<AuthGuard><Suspense fallback={null}><CalendarPage /></Suspense></AuthGuard>} />
+          <Route path="/crm/invoices" element={<AuthGuard><Suspense fallback={null}><CrmInvoices /></Suspense></AuthGuard>} />
+          <Route path="/crm/conversations" element={<AuthGuard><Suspense fallback={null}><CrmConversations /></Suspense></AuthGuard>} />
 
           {/* Website management */}
           <Route path="/websites/:id" element={<AuthGuard><WebsiteLayout /></AuthGuard>}>
