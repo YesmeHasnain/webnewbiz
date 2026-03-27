@@ -25,6 +25,20 @@ import SecurityPage from './pages/website/SecurityPage';
 import SeoPage from './pages/website/SeoPage';
 import LogoAssets from './pages/website/LogoAssets';
 import AiEditor from './pages/website/AiEditor';
+import DomainsPage from './pages/website/DomainsPage';
+import EcomCustomers from './pages/website/EcomCustomers';
+import EcomEmails from './pages/website/EcomEmails';
+import EcomSettings from './pages/website/EcomSettings';
+import BrandingOverview from './pages/website/BrandingOverview';
+import { BusinessCard, SocialMedia, SocialPublishing, AdCampaigns, LinkInBio, EmailSignature, BrandedInvoices } from './pages/website/BrandingTool';
+import SeoAudit from './pages/website/SeoAudit';
+import SeoSuggestions from './pages/website/SeoSuggestions';
+import SeoPages from './pages/website/SeoPages';
+import SeoHistory from './pages/website/SeoHistory';
+import BoosterPages from './pages/website/BoosterPages';
+import BoosterCloudflare from './pages/website/BoosterCloudflare';
+import BoosterSettings from './pages/website/BoosterSettings';
+import { CrmDashboardSub, CrmCampaignsSub, CrmLeads, CrmSubscribers, CrmBookingsSub, CrmAbandonedCarts, CrmChatbot } from './pages/website/WebsiteCrm';
 import { lazy, Suspense } from 'react';
 const CodeBuilder = lazy(() => import('./pages/CodeBuilder'));
 const Billing = lazy(() => import('./pages/Billing'));
@@ -41,6 +55,7 @@ const CrmWorkflows = lazy(() => import('./pages/crm/Workflows'));
 const CalendarPage = lazy(() => import('./pages/crm/CalendarPage'));
 const CrmInvoices = lazy(() => import('./pages/crm/Invoices'));
 const CrmConversations = lazy(() => import('./pages/crm/Conversations'));
+const CrmReports = lazy(() => import('./pages/crm/Reports'));
 
 export default function App() {
   return (
@@ -89,6 +104,7 @@ export default function App() {
           <Route path="/crm/calendar" element={<AuthGuard><Suspense fallback={null}><CalendarPage /></Suspense></AuthGuard>} />
           <Route path="/crm/invoices" element={<AuthGuard><Suspense fallback={null}><CrmInvoices /></Suspense></AuthGuard>} />
           <Route path="/crm/conversations" element={<AuthGuard><Suspense fallback={null}><CrmConversations /></Suspense></AuthGuard>} />
+          <Route path="/crm/reports" element={<AuthGuard><Suspense fallback={null}><CrmReports /></Suspense></AuthGuard>} />
 
           {/* Website management */}
           <Route path="/websites/:id" element={<AuthGuard><WebsiteLayout /></AuthGuard>}>
@@ -100,22 +116,22 @@ export default function App() {
             {/* Ecommerce */}
             <Route path="ecommerce/orders" element={<WooOrders />} />
             <Route path="ecommerce/products" element={<WooProducts />} />
-            <Route path="ecommerce/customers" element={<ComingSoon />} />
-            <Route path="ecommerce/emails" element={<ComingSoon />} />
-            <Route path="ecommerce/settings" element={<ComingSoon />} />
+            <Route path="ecommerce/customers" element={<EcomCustomers />} />
+            <Route path="ecommerce/emails" element={<EcomEmails />} />
+            <Route path="ecommerce/settings" element={<EcomSettings />} />
 
             {/* Domains & Backups */}
-            <Route path="domains" element={<ComingSoon />} />
+            <Route path="domains" element={<DomainsPage />} />
             <Route path="backups" element={<BackupsPage />} />
 
             {/* CRM */}
-            <Route path="crm/dashboard" element={<ComingSoon />} />
-            <Route path="crm/campaigns" element={<ComingSoon />} />
-            <Route path="crm/leads" element={<ComingSoon />} />
-            <Route path="crm/subscribers" element={<ComingSoon />} />
-            <Route path="crm/bookings" element={<ComingSoon />} />
-            <Route path="crm/abandoned-carts" element={<ComingSoon />} />
-            <Route path="crm/chatbot" element={<ComingSoon />} />
+            <Route path="crm/dashboard" element={<CrmDashboardSub />} />
+            <Route path="crm/campaigns" element={<CrmCampaignsSub />} />
+            <Route path="crm/leads" element={<CrmLeads />} />
+            <Route path="crm/subscribers" element={<CrmSubscribers />} />
+            <Route path="crm/bookings" element={<CrmBookingsSub />} />
+            <Route path="crm/abandoned-carts" element={<CrmAbandonedCarts />} />
+            <Route path="crm/chatbot" element={<CrmChatbot />} />
 
             {/* Security */}
             <Route path="security" element={<SecurityPage />} />
@@ -124,15 +140,15 @@ export default function App() {
             <Route path="analytics" element={<AnalyticsPage />} />
 
             {/* Branding */}
-            <Route path="branding/overview" element={<ComingSoon />} />
+            <Route path="branding/overview" element={<BrandingOverview />} />
             <Route path="branding/logo-assets" element={<LogoAssets />} />
-            <Route path="branding/business-card" element={<ComingSoon />} />
-            <Route path="branding/social-media" element={<ComingSoon />} />
-            <Route path="branding/social-publishing" element={<ComingSoon />} />
-            <Route path="branding/ad-campaigns" element={<ComingSoon />} />
-            <Route path="branding/link-in-bio" element={<ComingSoon />} />
-            <Route path="branding/email-signature" element={<ComingSoon />} />
-            <Route path="branding/invoices" element={<ComingSoon />} />
+            <Route path="branding/business-card" element={<BusinessCard />} />
+            <Route path="branding/social-media" element={<SocialMedia />} />
+            <Route path="branding/social-publishing" element={<SocialPublishing />} />
+            <Route path="branding/ad-campaigns" element={<AdCampaigns />} />
+            <Route path="branding/link-in-bio" element={<LinkInBio />} />
+            <Route path="branding/email-signature" element={<EmailSignature />} />
+            <Route path="branding/invoices" element={<BrandedInvoices />} />
 
             {/* Plugins & Themes */}
             <Route path="plugins" element={<WordPressPlugins />} />
@@ -140,17 +156,17 @@ export default function App() {
 
             {/* Website Booster */}
             <Route path="booster/main" element={<BoosterMain />} />
-            <Route path="booster/pages" element={<ComingSoon />} />
+            <Route path="booster/pages" element={<BoosterPages />} />
             <Route path="booster/image-optimizer" element={<ImageOptimizerPage />} />
-            <Route path="booster/cloudflare" element={<ComingSoon />} />
-            <Route path="booster/settings" element={<ComingSoon />} />
+            <Route path="booster/cloudflare" element={<BoosterCloudflare />} />
+            <Route path="booster/settings" element={<BoosterSettings />} />
 
             {/* SEO Tools */}
             <Route path="seo/dashboard" element={<SeoPage />} />
-            <Route path="seo/audit" element={<ComingSoon />} />
-            <Route path="seo/suggestions" element={<ComingSoon />} />
-            <Route path="seo/pages" element={<ComingSoon />} />
-            <Route path="seo/history" element={<ComingSoon />} />
+            <Route path="seo/audit" element={<SeoAudit />} />
+            <Route path="seo/suggestions" element={<SeoSuggestions />} />
+            <Route path="seo/pages" element={<SeoPages />} />
+            <Route path="seo/history" element={<SeoHistory />} />
           </Route>
 
           {/* Catch-all */}
