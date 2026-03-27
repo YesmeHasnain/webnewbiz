@@ -19,9 +19,9 @@ class User extends Authenticatable
      * @var list<string>
      */
     protected $fillable = [
-        'name',
-        'email',
-        'password',
+        'name', 'email', 'password',
+        'credits', 'subscription_tier', 'stripe_customer_id',
+        'stripe_subscription_id', 'subscription_ends_at',
     ];
 
     /**
@@ -44,11 +44,27 @@ class User extends Authenticatable
         return [
             'email_verified_at' => 'datetime',
             'password' => 'hashed',
+            'subscription_ends_at' => 'datetime',
         ];
     }
 
     public function websites()
     {
         return $this->hasMany(\App\Models\Website::class);
+    }
+
+    public function creditTransactions()
+    {
+        return $this->hasMany(CreditTransaction::class);
+    }
+
+    public function invoices()
+    {
+        return $this->hasMany(Invoice::class);
+    }
+
+    public function isSubscribed(): bool
+    {
+        return $this->subscription_tier !== 'free' && $this->subscription_ends_at?->isFuture();
     }
 }

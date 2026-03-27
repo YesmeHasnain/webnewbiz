@@ -24,6 +24,14 @@ import BackupsPage from './pages/website/BackupsPage';
 import SecurityPage from './pages/website/SecurityPage';
 import SeoPage from './pages/website/SeoPage';
 import LogoAssets from './pages/website/LogoAssets';
+import AiEditor from './pages/website/AiEditor';
+import { lazy, Suspense } from 'react';
+const CodeBuilder = lazy(() => import('./pages/CodeBuilder'));
+const Billing = lazy(() => import('./pages/Billing'));
+const AppBuilder = lazy(() => import('./pages/AppBuilder'));
+const Deployments = lazy(() => import('./pages/Deployments'));
+const PlatformAnalytics = lazy(() => import('./pages/PlatformAnalytics'));
+const Integrations = lazy(() => import('./pages/Integrations'));
 
 export default function App() {
   return (
@@ -42,11 +50,32 @@ export default function App() {
           <Route path="/builder" element={<AuthGuard><BuilderWizard /></AuthGuard>} />
           <Route path="/builder/progress/:id" element={<AuthGuard><BuildProgress /></AuthGuard>} />
 
+          {/* Code Builder (Lovable-style) */}
+          <Route path="/code-builder" element={<AuthGuard><Suspense fallback={null}><CodeBuilder /></Suspense></AuthGuard>} />
+          <Route path="/code-builder/:id" element={<AuthGuard><Suspense fallback={null}><CodeBuilder /></Suspense></AuthGuard>} />
+
+          {/* App Builder */}
+          <Route path="/app-builder" element={<AuthGuard><Suspense fallback={null}><AppBuilder /></Suspense></AuthGuard>} />
+          <Route path="/app-builder/:id" element={<AuthGuard><Suspense fallback={null}><AppBuilder /></Suspense></AuthGuard>} />
+
+          {/* Deployments */}
+          <Route path="/deployments" element={<AuthGuard><Suspense fallback={null}><Deployments /></Suspense></AuthGuard>} />
+
+          {/* Analytics */}
+          <Route path="/analytics" element={<AuthGuard><Suspense fallback={null}><PlatformAnalytics /></Suspense></AuthGuard>} />
+
+          {/* Integrations */}
+          <Route path="/integrations" element={<AuthGuard><Suspense fallback={null}><Integrations /></Suspense></AuthGuard>} />
+
+          {/* Billing & Credits */}
+          <Route path="/billing" element={<AuthGuard><Suspense fallback={null}><Billing /></Suspense></AuthGuard>} />
+
           {/* Website management */}
           <Route path="/websites/:id" element={<AuthGuard><WebsiteLayout /></AuthGuard>}>
             <Route index element={<Navigate to="manage" replace />} />
             <Route path="manage" element={<WebsiteManage />} />
             <Route path="ai-builder" element={<AIBuilder />} />
+            <Route path="ai-editor" element={<AiEditor />} />
 
             {/* Ecommerce */}
             <Route path="ecommerce/orders" element={<WooOrders />} />

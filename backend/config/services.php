@@ -35,6 +35,15 @@ return [
         ],
     ],
 
+    // AI Provider: 'grok', 'gemini', or 'claude' (switch with AI_PROVIDER in .env)
+    'ai_provider' => env('AI_PROVIDER', 'grok'),
+
+    'grok' => [
+        'api_key' => env('GROK_API_KEY'),
+        'model' => env('GROK_MODEL', 'grok-3-mini'),
+        'api_url' => 'https://api.x.ai/v1',
+    ],
+
     'anthropic' => [
         'api_key' => env('ANTHROPIC_API_KEY'),
         'model' => env('ANTHROPIC_MODEL', 'claude-sonnet-4-20250514'),

@@ -1011,6 +1011,13 @@ HTML;
         $this->setOption($pdo, 'webnewbiz_connected_at', now()->toDateTimeString());
         $this->setOption($pdo, 'wnb_claude_api_key', env('ANTHROPIC_API_KEY', ''));
 
+        // AI Copilot — platform token + website ID for copilot widget
+        $platformApiUrl = config('app.url', 'http://localhost:8000');
+        $platformToken = $this->website->user->createToken('copilot-' . $this->website->slug)->plainTextToken ?? '';
+        $this->setOption($pdo, 'webnewbiz_platform_token', $platformToken);
+        $this->setOption($pdo, 'webnewbiz_website_id', (string) $this->website->id);
+        $this->setOption($pdo, 'webnewbiz_platform_api_url', $platformApiUrl);
+
         // Clear ALL Elementor caches so it regenerates on first visit
         $pdo->exec("DELETE FROM wp_postmeta WHERE meta_key = '_elementor_element_cache'");
         $pdo->exec("DELETE FROM wp_postmeta WHERE meta_key = '_elementor_css'");
@@ -2827,6 +2834,13 @@ CUSTSCRIPT;
         $this->setOption($pdo, 'webnewbiz_platform_url', config('app.frontend_url', 'http://localhost:4200') . '/dashboard');
         $this->setOption($pdo, 'webnewbiz_connected_at', now()->toDateTimeString());
         $this->setOption($pdo, 'wnb_claude_api_key', env('ANTHROPIC_API_KEY', ''));
+
+        // AI Copilot — platform token + website ID for copilot widget
+        $platformApiUrl2 = config('app.url', 'http://localhost:8000');
+        $platformToken2 = $this->website->user->createToken('copilot-' . $this->website->slug)->plainTextToken ?? '';
+        $this->setOption($pdo, 'webnewbiz_platform_token', $platformToken2);
+        $this->setOption($pdo, 'webnewbiz_website_id', (string) $this->website->id);
+        $this->setOption($pdo, 'webnewbiz_platform_api_url', $platformApiUrl2);
 
         // Clear ALL Elementor caches
         $pdo->exec("DELETE FROM wp_postmeta WHERE meta_key = '_elementor_element_cache'");

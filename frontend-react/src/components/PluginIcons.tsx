@@ -33,8 +33,16 @@ const SLUG_ALIAS: Record<string, string> = {
 /* Custom plugins with local or inline icons (not on wp.org) */
 const CUSTOM_ICON_SLUGS = new Set(['webnewbiz-builder']);
 
+/* Some plugins use different icon formats on wp.org */
+const ICON_OVERRIDES: Record<string, string> = {
+  elementor: 'https://ps.w.org/elementor/assets/icon.svg',
+  woocommerce: 'https://ps.w.org/woocommerce/assets/icon-128x128.gif',
+  'header-footer-elementor': 'https://ps.w.org/header-footer-elementor/assets/icon-128x128.jpg',
+};
+
 function getIconUrl(slug: string): string {
   const resolved = SLUG_ALIAS[slug] || slug;
+  if (ICON_OVERRIDES[resolved]) return ICON_OVERRIDES[resolved];
   return `https://ps.w.org/${resolved}/assets/icon-128x128.png`;
 }
 

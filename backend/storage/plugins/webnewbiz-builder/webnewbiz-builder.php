@@ -54,6 +54,7 @@ final class WebNewBiz_Builder {
         if (class_exists('WebNewBiz_SEO'))             WebNewBiz_SEO::instance();
         if (class_exists('WebNewBiz_Analytics'))        WebNewBiz_Analytics::instance();
         if (class_exists('WebNewBiz_AIAssistant'))      WebNewBiz_AIAssistant::instance();
+        if (class_exists('WebNewBiz_AICopilot'))       WebNewBiz_AICopilot::instance();
     }
 
     /**
@@ -74,6 +75,7 @@ final class WebNewBiz_Builder {
             'class-maintenance.php',
             'class-whitelabel.php',
             'class-ai-assistant.php',
+            'class-ai-copilot.php',
         ];
 
         foreach ($includes as $file) {

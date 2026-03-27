@@ -1,0 +1,44 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(php -r \":*)",
+      "Bash(grep -n \"public function buildHeader\\\\|public function buildFooter\" \"c:/Users/1/Desktop/Webnewbiz/backend/app/Services/Layouts/\"*.php)",
+      "Bash(__NEW_LINE_714f3fea3f1fad71__ echo:*)",
+      "Read(//c/Users/1/Desktop/Webnewbiz/**)",
+      "Bash(__NEW_LINE_351c762e35c62cbb__ echo:*)",
+      "Bash(__NEW_LINE_7be90a3fe3cee2cb__ echo:*)",
+      "Bash(__NEW_LINE_118d5d53b93dc3b5__ echo:*)",
+      "Bash(__NEW_LINE_23d678714dc28f40__ echo:*)",
+      "Bash(__NEW_LINE_63810391a885e976__ echo:*)",
+      "Bash(for f:*)",
+      "Bash(do php:*)",
+      "Bash(git add:*)",
+      "Bash(git commit:*)",
+      "Bash(git push:*)",
+      "Bash(npx tsc:*)",
+      "Read(//c/xampp/**)",
+      "Bash(./mysql/bin/mysql -u root -e \"SHOW DATABASES LIKE ''wp_clothify'';\")",
+      "Bash(\"C:/xampp/apache/bin/httpd.exe\" -k restart)",
+      "Bash(tasklist)",
+      "Bash(\"C:/xampp/mysql/bin/mysql\" -u root -e \"SELECT ''MySQL is working'';\")",
+      "Read(//c/Users/1/Desktop/Webnewbiz/backend php artisan tinker --execute=\n$sites = App/Models/**)",
+      "Read(//c/Users/1/Desktop/Webnewbiz/backend php artisan tinker --execute=\n$site = App/Models/Website::find\\(46\\);\n$token = Illuminate/Support/Facades/**)",
+      "Read(//c/Users/1/Desktop/Webnewbiz/backend php artisan tinker --execute=\n$site = App/Models/Website::find\\(46\\);\n$user = App/Models/User::find\\($site->user_id\\);\n/ Create Sanctum token for copilot\n$token = $user->createToken\\('copilot-' . $site->slug\\)->plainTextToken;\necho 'Platform Token: ' . $token . PHP_EOL;\necho 'Website ID: ' . $site->id . PHP_EOL;\n/ Set these in WordPress via bridge\n$bridge = new App/Services/WpBridgeService\\(\\);\n/**)",
+      "Read(//c/Users/1/Desktop/Webnewbiz/backend php artisan tinker --execute=\n$site = App/Models/Website::find\\(46\\);\necho $site->url . '/**)",
+      "Bash(find c:Users1DesktopWebnewbizfrontend-react/src -type f \\\\\\(-name *.ts -o -name *.tsx -o -name *.json -o -name *.css \\\\\\))",
+      "Bash(find c:Users1DesktopWebnewbizbackendappJobs -type f -name *.php)",
+      "Bash(npm install:*)",
+      "Bash(npm run:*)",
+      "Bash(where claude:*)",
+      "Bash(claude --version)",
+      "Bash(taskkill //F //IM php.exe)",
+      "Bash(\"C:/xampp/mysql/bin/mysql\" -u root -h 127.0.0.1 -e \":*)",
+      "Bash(grep project.*5 c:/Users/1/Desktop/Webnewbiz/backend/storage/logs/laravel.log)"
+    ],
+    "additionalDirectories": [
+      "C:\\xampp\\htdocs\\modern-apparel-co-1\\wp-content\\plugins\\webnewbiz-builder\\assets\\js",
+      "C:\\xampp\\htdocs\\modern-apparel-co-1\\wp-content\\plugins\\webnewbiz-builder\\assets\\css",
+      "C:\\Users\\1\\Desktop\\Webnewbiz"
+    ]
+  }
+}

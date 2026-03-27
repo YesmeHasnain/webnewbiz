@@ -1,6 +1,6 @@
 import { useState, useRef, useEffect, useCallback } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { builderPluginService } from '../services/builder-plugin.service';
+import { aiChatService, type ChatMessage as AiMsg } from '../services/ai-chat.service';
 
 interface Message {
   id: string;
@@ -84,13 +84,14 @@ export default function AiChatWidget({ websiteId, websiteName, baseRoute }: AiCh
     setSending(true);
 
     try {
-      const res = await builderPluginService.aiGenerate(websiteId, {
-        type: 'chat',
-        prompt: text.trim(),
-        tone: 'professional',
-      });
+      // Build history for Claude context
+      const history: AiMsg[] = messages.map(m => ({
+        role: m.role === 'user' ? 'user' as const : 'assistant' as const,
+        content: m.text,
+      }));
 
-      const aiText = res.data?.content || res.data?.data?.content || res.data?.message || 'I\'ve processed your request. Check the relevant section in your dashboard for details.';
+      const res = await aiChatService.sendMessage(Number(websiteId), text.trim(), history);
+      const aiText = res.data?.reply || 'I\'ve processed your request. Check the relevant section in your dashboard for details.';
 
       const aiMsg: Message = { id: uid(), role: 'ai', text: aiText, time: now() };
       setMessages(prev => [...prev, aiMsg]);

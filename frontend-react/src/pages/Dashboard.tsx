@@ -255,6 +255,15 @@ export default function Dashboard() {
                       <div className="db-add-desc">Start with a fresh WordPress install</div>
                     </div>
                   </Link>
+                  <Link to="/code-builder" className="db-add-item" onClick={() => setAddMenuOpen(false)}>
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+                      <polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/>
+                    </svg>
+                    <div>
+                      <div className="db-add-title">Code Builder</div>
+                      <div className="db-add-desc">Build with AI - HTML, React, Next.js</div>
+                    </div>
+                  </Link>
                 </div>
               )}
             </div>

@@ -29,7 +29,9 @@
       "Bash(echo \"exit: $?\" ls /c/xampp/htdocs/hop-entral/)",
       "Bash(test -f /c/xampp/htdocs/hop-entral/wp-load.php)",
       "Bash(# Restart MySQL via XAMPP /c/xampp/mysql/bin/mysqld.exe --defaults-file=/c/xampp/mysql/bin/my.ini & sleep 3 && netstat -an)",
-      "Bash(mkdir:*)"
+      "Bash(mkdir:*)",
+      "Bash(python3 -c \"import sys,json; d=json.load\\(sys.stdin\\); print\\(f''''{len\\(d\\)} plans loaded''''\\)\")",
+      "Read(//c/Users/1/Desktop/Webnewbiz/backend php artisan tinker --execute=\n$apps = App/Models/**)"
     ],
     "additionalDirectories": [
       "\\tmp"

@@ -141,6 +141,35 @@ try {
         case 'logo.remove':            handle_logo_remove(); break;
         case 'logo.generate':          handle_logo_generate(); break;
 
+        // AI Copilot — Elementor
+        case 'elementor.page.get':         handle_elementor_page_get(); break;
+        case 'elementor.page.update':      handle_elementor_page_update(); break;
+        case 'elementor.page.editables':   handle_elementor_page_editables(); break;
+        case 'elementor.page.create':      handle_elementor_page_create(); break;
+        case 'elementor.section.add':      handle_elementor_section_add(); break;
+        case 'elementor.section.remove':   handle_elementor_section_remove(); break;
+        case 'elementor.section.reorder':  handle_elementor_section_reorder(); break;
+        case 'elementor.css.regenerate':   handle_elementor_css_regenerate(); break;
+        case 'elementor.global.colors':    handle_elementor_global_colors(); break;
+        case 'elementor.global.fonts':     handle_elementor_global_fonts(); break;
+
+        // AI Copilot — Media
+        case 'media.upload_url':           handle_media_upload_url(); break;
+        case 'media.list':                 handle_media_list(); break;
+
+        // AI Copilot — Menus
+        case 'menu.list':                  handle_menu_list(); break;
+        case 'menu.update':               handle_menu_update(); break;
+
+        // AI Copilot — SEO (page-level)
+        case 'seo.page.get':              handle_seo_page_get(); break;
+        case 'seo.page.update':           handle_seo_page_update(); break;
+
+        // AI Copilot — Posts
+        case 'posts.create':              handle_posts_create(); break;
+        case 'posts.update':              handle_posts_update(); break;
+        case 'posts.delete':              handle_posts_delete(); break;
+
         default:
             wnb_err("Unknown action: {$action}");
     }
@@ -1430,5 +1459,1114 @@ function handle_logo_generate() {
         'logo_url' => $uploadDir['url'] . '/' . $filename,
         'logo_id'  => $attachId,
         'message'  => 'AI logo applied successfully',
+    ]]);
+}
+
+// ══════════════════════════════════════════════════════════════
+// ─── AI COPILOT — ELEMENTOR ─────────────────────────────────
+// ══════════════════════════════════════════════════════════════
+
+/**
+ * Get full Elementor data for a page.
+ * POST params: page_id
+ */
+function handle_elementor_page_get() {
+    $pageId = intval($_POST['page_id'] ?? 0);
+    if (!$pageId) wnb_err('Missing page_id');
+
+    $post = get_post($pageId);
+    if (!$post) wnb_err('Page not found');
+
+    $elementorData = get_post_meta($pageId, '_elementor_data', true);
+    $editMode = get_post_meta($pageId, '_elementor_edit_mode', true);
+    $pageSettings = get_post_meta($pageId, '_elementor_page_settings', true);
+
+    wnb_ok(['data' => [
+        'page_id'        => $pageId,
+        'title'          => $post->post_title,
+        'status'         => $post->post_status,
+        'post_type'      => $post->post_type,
+        'url'            => get_permalink($pageId),
+        'edit_mode'      => $editMode ?: 'builder',
+        'page_settings'  => $pageSettings ?: [],
+        'elementor_data' => $elementorData ? json_decode($elementorData, true) : [],
+    ]]);
+}
+
+/**
+ * Update Elementor data for a page (with cache clearing).
+ * POST params: page_id, elementor_data (JSON string), title (optional)
+ */
+function handle_elementor_page_update() {
+    global $wpdb;
+    $pageId = intval($_POST['page_id'] ?? 0);
+    if (!$pageId) wnb_err('Missing page_id');
+
+    $post = get_post($pageId);
+    if (!$post) wnb_err('Page not found');
+
+    // Accept base64-encoded data (avoids form-encoding corruption) or raw JSON
+    $newData = '';
+    if (!empty($_POST['elementor_data_b64'])) {
+        $newData = base64_decode($_POST['elementor_data_b64']);
+    } elseif (!empty($_POST['elementor_data'])) {
+        $newData = $_POST['elementor_data'];
+    }
+    if (!$newData) wnb_err('Missing elementor_data');
+
+    // Validate JSON
+    $decoded = json_decode($newData, true);
+    if (json_last_error() !== JSON_ERROR_NONE) {
+        wnb_err('Invalid elementor_data JSON: ' . json_last_error_msg());
+    }
+
+    // Store before-state for undo
+    $beforeData = get_post_meta($pageId, '_elementor_data', true);
+
+    // Update Elementor data
+    update_post_meta($pageId, '_elementor_data', wp_slash($newData));
+    update_post_meta($pageId, '_elementor_edit_mode', 'builder');
+
+    // Update title if provided
+    if (!empty($_POST['title'])) {
+        wp_update_post(['ID' => $pageId, 'post_title' => sanitize_text_field($_POST['title'])]);
+    }
+
+    // Clear Elementor caches for this page
+    delete_post_meta($pageId, '_elementor_element_cache');
+
+    // Delete CSS cache file
+    $uploadDir = wp_upload_dir();
+    $cssFile = $uploadDir['basedir'] . '/elementor/css/post-' . $pageId . '.css';
+    if (file_exists($cssFile)) @unlink($cssFile);
+
+    // Mark CSS as needing regeneration
+    update_post_meta($pageId, '_elementor_css', '');
+
+    wnb_ok(['data' => [
+        'page_id'     => $pageId,
+        'before_data' => $beforeData ?: '[]',
+        'message'     => 'Elementor data updated',
+    ]]);
+}
+
+/**
+ * Extract editable elements from a page's Elementor data.
+ * Returns a flat list of editable widgets with their IDs and content.
+ * POST params: page_id
+ */
+function handle_elementor_page_editables() {
+    $pageId = intval($_POST['page_id'] ?? 0);
+    if (!$pageId) wnb_err('Missing page_id');
+
+    $elementorData = get_post_meta($pageId, '_elementor_data', true);
+    if (!$elementorData) wnb_err('No Elementor data found for this page');
+
+    $data = json_decode($elementorData, true);
+    if (!$data) wnb_err('Invalid Elementor data');
+
+    $editables = [];
+    _extract_editables_recursive($data, $editables);
+
+    wnb_ok(['data' => [
+        'page_id'   => $pageId,
+        'title'     => get_the_title($pageId),
+        'editables' => $editables,
+        'total'     => count($editables),
+    ]]);
+}
+
+/**
+ * Recursively extract editable elements from Elementor tree.
+ */
+function _extract_editables_recursive($elements, &$editables, $path = '') {
+    if (!is_array($elements)) return;
+
+    foreach ($elements as $idx => $el) {
+        $elType = $el['elType'] ?? '';
+        $widgetType = $el['widgetType'] ?? '';
+        $id = $el['id'] ?? '';
+        $settings = $el['settings'] ?? [];
+        $currentPath = $path ? "{$path}/{$idx}" : (string)$idx;
+
+        // Extract based on element/widget type
+        if ($elType === 'widget') {
+            $editable = [
+                'id'          => $id,
+                'widget_type' => $widgetType,
+                'path'        => $currentPath,
+            ];
+
+            switch ($widgetType) {
+                case 'heading':
+                    $editable['fields'] = [
+                        'title' => $settings['title'] ?? '',
+                    ];
+                    $editable['style'] = _extract_style_props($settings, ['title_color', 'typography_typography', 'typography_font_size', 'typography_font_family', 'align']);
+                    break;
+
+                case 'text-editor':
+                    $editable['fields'] = [
+                        'editor' => $settings['editor'] ?? '',
+                    ];
+                    break;
+
+                case 'button':
+                    $editable['fields'] = [
+                        'text' => $settings['text'] ?? '',
+                        'link' => $settings['link']['url'] ?? '',
+                    ];
+                    $editable['style'] = _extract_style_props($settings, ['button_text_color', 'background_color', 'typography_typography', 'border_radius']);
+                    break;
+
+                case 'image':
+                    $editable['fields'] = [
+                        'image_url' => $settings['image']['url'] ?? '',
+                        'image_id'  => $settings['image']['id'] ?? '',
+                        'alt'       => $settings['image']['alt'] ?? '',
+                        'caption'   => $settings['caption'] ?? '',
+                    ];
+                    break;
+
+                case 'icon-list':
+                    $items = [];
+                    foreach (($settings['icon_list'] ?? []) as $item) {
+                        $items[] = [
+                            'text' => $item['text'] ?? '',
+                            'link' => $item['link']['url'] ?? '',
+                        ];
+                    }
+                    $editable['fields'] = ['items' => $items];
+                    break;
+
+                case 'icon-box':
+                    $editable['fields'] = [
+                        'title_text'   => $settings['title_text'] ?? '',
+                        'description_text' => $settings['description_text'] ?? '',
+                        'link'         => $settings['link']['url'] ?? '',
+                    ];
+                    break;
+
+                case 'image-box':
+                    $editable['fields'] = [
+                        'title_text'   => $settings['title_text'] ?? '',
+                        'description_text' => $settings['description_text'] ?? '',
+                        'image_url'    => $settings['image']['url'] ?? '',
+                    ];
+                    break;
+
+                case 'counter':
+                    $editable['fields'] = [
+                        'starting_number' => $settings['starting_number'] ?? '',
+                        'ending_number'   => $settings['ending_number'] ?? '',
+                        'prefix'          => $settings['prefix'] ?? '',
+                        'suffix'          => $settings['suffix'] ?? '',
+                        'title'           => $settings['title'] ?? '',
+                    ];
+                    break;
+
+                case 'progress':
+                    $editable['fields'] = [
+                        'title'   => $settings['title'] ?? '',
+                        'percent' => $settings['percent'] ?? '',
+                    ];
+                    break;
+
+                case 'testimonial':
+                    $editable['fields'] = [
+                        'testimonial_content' => $settings['testimonial_content'] ?? '',
+                        'testimonial_name'    => $settings['testimonial_name'] ?? '',
+                        'testimonial_job'     => $settings['testimonial_job'] ?? '',
+                    ];
+                    break;
+
+                case 'tabs':
+                case 'accordion':
+                case 'toggle':
+                    $items = [];
+                    $tabKey = ($widgetType === 'tabs') ? 'tabs' : (($widgetType === 'accordion') ? 'tabs' : 'tabs');
+                    foreach (($settings[$tabKey] ?? []) as $tab) {
+                        $items[] = [
+                            'title'   => $tab['tab_title'] ?? '',
+                            'content' => $tab['tab_content'] ?? '',
+                        ];
+                    }
+                    $editable['fields'] = ['items' => $items];
+                    break;
+
+                case 'price-list':
+                    $items = [];
+                    foreach (($settings['price_list'] ?? []) as $item) {
+                        $items[] = [
+                            'title'       => $item['title'] ?? '',
+                            'description' => $item['item_description'] ?? '',
+                            'price'       => $item['price'] ?? '',
+                        ];
+                    }
+                    $editable['fields'] = ['items' => $items];
+                    break;
+
+                case 'price-table':
+                    $editable['fields'] = [
+                        'heading'     => $settings['heading'] ?? '',
+                        'sub_heading' => $settings['sub_heading'] ?? '',
+                        'price'       => $settings['price'] ?? '',
+                        'currency'    => $settings['currency_symbol'] ?? '',
+                        'period'      => $settings['period'] ?? '',
+                        'button_text' => $settings['button_text'] ?? '',
+                        'button_url'  => $settings['button_url']['url'] ?? '',
+                        'ribbon_text' => $settings['ribbon_title'] ?? '',
+                    ];
+                    $features = [];
+                    foreach (($settings['features_list'] ?? []) as $f) {
+                        $features[] = $f['item_text'] ?? '';
+                    }
+                    $editable['fields']['features'] = $features;
+                    break;
+
+                case 'call-to-action':
+                    $editable['fields'] = [
+                        'title'       => $settings['title'] ?? '',
+                        'description' => $settings['description'] ?? '',
+                        'button'      => $settings['button'] ?? '',
+                        'ribbon_text' => $settings['ribbon_title'] ?? '',
+                    ];
+                    break;
+
+                case 'form':
+                    $fields = [];
+                    foreach (($settings['form_fields'] ?? []) as $f) {
+                        $fields[] = [
+                            'field_id'    => $f['custom_id'] ?? '',
+                            'field_label' => $f['field_label'] ?? '',
+                            'field_type'  => $f['field_type'] ?? '',
+                            'placeholder' => $f['placeholder'] ?? '',
+                            'required'    => $f['required'] ?? '',
+                        ];
+                    }
+                    $editable['fields'] = [
+                        'form_name' => $settings['form_name'] ?? '',
+                        'fields'    => $fields,
+                        'button_text' => $settings['submit_button'] ?? $settings['button_text'] ?? '',
+                    ];
+                    break;
+
+                case 'nav-menu':
+                case 'wp-widget-nav_menu':
+                    $editable['fields'] = [
+                        'menu_id' => $settings['menu'] ?? $settings['nav_menu'] ?? '',
+                    ];
+                    break;
+
+                case 'google-maps':
+                    $editable['fields'] = [
+                        'address' => $settings['address'] ?? '',
+                    ];
+                    break;
+
+                case 'social-icons':
+                    $icons = [];
+                    foreach (($settings['social_icon_list'] ?? []) as $icon) {
+                        $icons[] = [
+                            'social' => $icon['social_icon']['value'] ?? '',
+                            'link'   => $icon['link']['url'] ?? '',
+                        ];
+                    }
+                    $editable['fields'] = ['icons' => $icons];
+                    break;
+
+                // Biddut theme custom widgets
+                case 'tp-slider':
+                    $slides = [];
+                    foreach (($settings['slider_list'] ?? []) as $s) {
+                        $slides[] = [
+                            'title'    => $s['tp_slider_title'] ?? '',
+                            'subtitle' => $s['tp_slider_sub_title'] ?? '',
+                            'btn_text' => $s['tp_btn_btn_text'] ?? '',
+                            'btn_link' => $s['tp_btn_btn_link']['url'] ?? '',
+                            'image'    => $s['tp_slider_image']['url'] ?? '',
+                        ];
+                    }
+                    $editable['fields'] = ['slides' => $slides];
+                    break;
+
+                case 'tp-team':
+                    $members = [];
+                    foreach (($settings['teams'] ?? []) as $t) {
+                        $members[] = [
+                            'name'  => $t['title'] ?? '',
+                            'role'  => $t['designation'] ?? '',
+                            'image' => $t['image']['url'] ?? '',
+                        ];
+                    }
+                    $editable['fields'] = ['members' => $members];
+                    break;
+
+                case 'tp-services-box':
+                    $services = [];
+                    foreach (($settings['tp_service_list'] ?? []) as $s) {
+                        $services[] = [
+                            'title'       => $s['tp_service_title'] ?? '',
+                            'description' => $s['tp_service_description'] ?? '',
+                            'image'       => $s['tp_box_image']['url'] ?? '',
+                        ];
+                    }
+                    $editable['fields'] = ['services' => $services];
+                    break;
+
+                case 'tp-testimonial-2':
+                    $reviews = [];
+                    foreach (($settings['reviews_list'] ?? []) as $r) {
+                        $reviews[] = [
+                            'name'   => $r['reviewer_name'] ?? '',
+                            'review' => $r['review_content'] ?? '',
+                            'image'  => $r['reviewer_image']['url'] ?? '',
+                        ];
+                    }
+                    $editable['fields'] = ['reviews' => $reviews];
+                    break;
+
+                default:
+                    // For unknown widgets, try to extract common text fields
+                    $commonFields = [];
+                    foreach (['title', 'description', 'content', 'text', 'heading', 'editor'] as $key) {
+                        if (isset($settings[$key]) && is_string($settings[$key]) && trim($settings[$key]) !== '') {
+                            $commonFields[$key] = $settings[$key];
+                        }
+                    }
+                    if (!empty($commonFields)) {
+                        $editable['fields'] = $commonFields;
+                    } else {
+                        continue 2; // Skip widgets with no editable content
+                    }
+                    break;
+            }
+
+            $editables[] = $editable;
+        }
+
+        // Extract container/section/column background info
+        if (in_array($elType, ['container', 'section', 'column'])) {
+            $bgImage = $settings['background_image']['url'] ?? '';
+            $bgColor = $settings['background_color'] ?? '';
+            $bgOverlay = $settings['background_overlay_color'] ?? '';
+
+            if ($bgImage || $bgColor) {
+                $editables[] = [
+                    'id'          => $id,
+                    'widget_type' => '__container',
+                    'el_type'     => $elType,
+                    'path'        => $currentPath,
+                    'fields'      => [],
+                    'style'       => array_filter([
+                        'background_image' => $bgImage,
+                        'background_color' => $bgColor,
+                        'background_overlay_color' => $bgOverlay,
+                    ]),
+                ];
+            }
+        }
+
+        // Recurse into children
+        if (!empty($el['elements'])) {
+            _extract_editables_recursive($el['elements'], $editables, $currentPath);
+        }
+    }
+}
+
+/**
+ * Extract style properties from settings.
+ */
+function _extract_style_props($settings, $keys) {
+    $result = [];
+    foreach ($keys as $key) {
+        if (isset($settings[$key]) && $settings[$key] !== '') {
+            $result[$key] = $settings[$key];
+        }
+    }
+    return $result;
+}
+
+/**
+ * Create a new Elementor page.
+ * POST params: title, elementor_data (JSON string), status (optional, default 'publish'), template (optional)
+ */
+function handle_elementor_page_create() {
+    $title = sanitize_text_field($_POST['title'] ?? '');
+    if (!$title) wnb_err('Missing title');
+
+    $elementorData = $_POST['elementor_data'] ?? '[]';
+    $status = sanitize_text_field($_POST['status'] ?? 'publish');
+    $template = sanitize_text_field($_POST['template'] ?? 'elementor_header_footer');
+
+    // Validate JSON
+    $decoded = json_decode($elementorData, true);
+    if (json_last_error() !== JSON_ERROR_NONE) {
+        wnb_err('Invalid elementor_data JSON');
+    }
+
+    $pageId = wp_insert_post([
+        'post_title'  => $title,
+        'post_status' => $status,
+        'post_type'   => 'page',
+        'post_content' => '',
+    ]);
+
+    if (is_wp_error($pageId)) {
+        wnb_err($pageId->get_error_message());
+    }
+
+    // Set Elementor meta
+    update_post_meta($pageId, '_elementor_data', wp_slash($elementorData));
+    update_post_meta($pageId, '_elementor_edit_mode', 'builder');
+    update_post_meta($pageId, '_elementor_version', defined('ELEMENTOR_VERSION') ? ELEMENTOR_VERSION : '3.25.0');
+    update_post_meta($pageId, '_wp_page_template', $template);
+
+    wnb_ok(['data' => [
+        'page_id' => $pageId,
+        'title'   => $title,
+        'url'     => get_permalink($pageId),
+        'message' => "Page '{$title}' created",
+    ]]);
+}
+
+/**
+ * Add a section/container to a page at a specific position.
+ * POST params: page_id, position (int, -1 for end), section_data (JSON)
+ */
+function handle_elementor_section_add() {
+    global $wpdb;
+    $pageId = intval($_POST['page_id'] ?? 0);
+    if (!$pageId) wnb_err('Missing page_id');
+
+    $sectionData = $_POST['section_data'] ?? '';
+    if (!$sectionData) wnb_err('Missing section_data');
+
+    $section = json_decode($sectionData, true);
+    if (json_last_error() !== JSON_ERROR_NONE) {
+        wnb_err('Invalid section_data JSON');
+    }
+
+    $elementorData = get_post_meta($pageId, '_elementor_data', true);
+    $data = $elementorData ? json_decode($elementorData, true) : [];
+    if (!is_array($data)) $data = [];
+
+    $position = intval($_POST['position'] ?? -1);
+    if ($position < 0 || $position >= count($data)) {
+        $data[] = $section;
+    } else {
+        array_splice($data, $position, 0, [$section]);
+    }
+
+    $newJson = json_encode($data, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
+    $beforeData = $elementorData ?: '[]';
+    update_post_meta($pageId, '_elementor_data', wp_slash($newJson));
+    delete_post_meta($pageId, '_elementor_element_cache');
+
+    wnb_ok(['data' => [
+        'page_id'     => $pageId,
+        'before_data' => $beforeData,
+        'total_sections' => count($data),
+        'message'     => 'Section added',
+    ]]);
+}
+
+/**
+ * Remove a section/container by element ID.
+ * POST params: page_id, element_id
+ */
+function handle_elementor_section_remove() {
+    $pageId = intval($_POST['page_id'] ?? 0);
+    if (!$pageId) wnb_err('Missing page_id');
+
+    $elementId = $_POST['element_id'] ?? '';
+    if (!$elementId) wnb_err('Missing element_id');
+
+    $elementorData = get_post_meta($pageId, '_elementor_data', true);
+    $data = $elementorData ? json_decode($elementorData, true) : [];
+    if (!is_array($data)) wnb_err('No Elementor data');
+
+    $beforeData = $elementorData;
+    $removed = _remove_element_by_id($data, $elementId);
+
+    if (!$removed) wnb_err("Element '{$elementId}' not found");
+
+    $newJson = json_encode($data, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
+    update_post_meta($pageId, '_elementor_data', wp_slash($newJson));
+    delete_post_meta($pageId, '_elementor_element_cache');
+
+    wnb_ok(['data' => [
+        'page_id'     => $pageId,
+        'before_data' => $beforeData,
+        'message'     => "Element '{$elementId}' removed",
+    ]]);
+}
+
+function _remove_element_by_id(&$elements, $targetId) {
+    foreach ($elements as $idx => &$el) {
+        if (($el['id'] ?? '') === $targetId) {
+            array_splice($elements, $idx, 1);
+            return true;
+        }
+        if (!empty($el['elements']) && _remove_element_by_id($el['elements'], $targetId)) {
+            return true;
+        }
+    }
+    return false;
+}
+
+/**
+ * Reorder top-level sections.
+ * POST params: page_id, order (JSON array of element IDs in desired order)
+ */
+function handle_elementor_section_reorder() {
+    $pageId = intval($_POST['page_id'] ?? 0);
+    if (!$pageId) wnb_err('Missing page_id');
+
+    $order = $_POST['order'] ?? '';
+    $orderArr = json_decode($order, true);
+    if (!is_array($orderArr)) wnb_err('Invalid order — must be JSON array of element IDs');
+
+    $elementorData = get_post_meta($pageId, '_elementor_data', true);
+    $data = $elementorData ? json_decode($elementorData, true) : [];
+    if (!is_array($data)) wnb_err('No Elementor data');
+
+    $beforeData = $elementorData;
+
+    // Build lookup by ID
+    $byId = [];
+    foreach ($data as $el) {
+        $byId[$el['id'] ?? ''] = $el;
+    }
+
+    $reordered = [];
+    foreach ($orderArr as $id) {
+        if (isset($byId[$id])) {
+            $reordered[] = $byId[$id];
+            unset($byId[$id]);
+        }
+    }
+    // Append any remaining sections not in the order array
+    foreach ($byId as $el) {
+        $reordered[] = $el;
+    }
+
+    $newJson = json_encode($reordered, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
+    update_post_meta($pageId, '_elementor_data', wp_slash($newJson));
+    delete_post_meta($pageId, '_elementor_element_cache');
+
+    wnb_ok(['data' => [
+        'page_id'     => $pageId,
+        'before_data' => $beforeData,
+        'message'     => 'Sections reordered',
+    ]]);
+}
+
+/**
+ * Force regenerate Elementor CSS for a page (or all pages).
+ * POST params: page_id (optional, 0 = all)
+ */
+function handle_elementor_css_regenerate() {
+    global $wpdb;
+    $pageId = intval($_POST['page_id'] ?? 0);
+
+    if ($pageId > 0) {
+        // Single page
+        delete_post_meta($pageId, '_elementor_element_cache');
+        delete_post_meta($pageId, '_elementor_css');
+
+        $uploadDir = wp_upload_dir();
+        $cssFile = $uploadDir['basedir'] . '/elementor/css/post-' . $pageId . '.css';
+        if (file_exists($cssFile)) @unlink($cssFile);
+
+        wnb_ok(['message' => "CSS regeneration triggered for page {$pageId}"]);
+    } else {
+        // All pages
+        $wpdb->query("DELETE FROM {$wpdb->postmeta} WHERE meta_key = '_elementor_element_cache'");
+        $wpdb->query("DELETE FROM {$wpdb->postmeta} WHERE meta_key = '_elementor_css'");
+
+        $uploadDir = wp_upload_dir();
+        $cssDir = $uploadDir['basedir'] . '/elementor/css';
+        if (is_dir($cssDir)) {
+            array_map('unlink', glob($cssDir . '/*.css'));
+        }
+
+        if (class_exists('\Elementor\Plugin')) {
+            \Elementor\Plugin::$instance->files_manager->clear_cache();
+        }
+
+        wnb_ok(['message' => 'CSS regeneration triggered for all pages']);
+    }
+}
+
+/**
+ * Get/set Elementor global colors.
+ * POST params: colors (JSON, optional — if provided, sets; otherwise gets)
+ */
+function handle_elementor_global_colors() {
+    global $wpdb;
+
+    // Find the active kit
+    $kitId = intval(get_option('elementor_active_kit', 0));
+    if (!$kitId) wnb_err('No Elementor active kit found');
+
+    $kitData = get_post_meta($kitId, '_elementor_page_settings', true);
+    if (!is_array($kitData)) $kitData = [];
+
+    $colorsInput = $_POST['colors'] ?? '';
+
+    if ($colorsInput) {
+        // SET mode
+        $newColors = json_decode($colorsInput, true);
+        if (!is_array($newColors)) wnb_err('Invalid colors JSON');
+
+        $kitData['system_colors'] = $newColors;
+        update_post_meta($kitId, '_elementor_page_settings', $kitData);
+
+        // Clear CSS cache
+        delete_post_meta($kitId, '_elementor_css');
+        $wpdb->query("DELETE FROM {$wpdb->postmeta} WHERE meta_key = '_elementor_css'");
+
+        wnb_ok(['data' => ['colors' => $newColors, 'message' => 'Global colors updated']]);
+    } else {
+        // GET mode
+        $colors = $kitData['system_colors'] ?? [];
+        wnb_ok(['data' => ['colors' => $colors, 'kit_id' => $kitId]]);
+    }
+}
+
+/**
+ * Get/set Elementor global fonts.
+ * POST params: fonts (JSON, optional)
+ */
+function handle_elementor_global_fonts() {
+    global $wpdb;
+
+    $kitId = intval(get_option('elementor_active_kit', 0));
+    if (!$kitId) wnb_err('No Elementor active kit found');
+
+    $kitData = get_post_meta($kitId, '_elementor_page_settings', true);
+    if (!is_array($kitData)) $kitData = [];
+
+    $fontsInput = $_POST['fonts'] ?? '';
+
+    if ($fontsInput) {
+        $newFonts = json_decode($fontsInput, true);
+        if (!is_array($newFonts)) wnb_err('Invalid fonts JSON');
+
+        $kitData['system_typography'] = $newFonts;
+        update_post_meta($kitId, '_elementor_page_settings', $kitData);
+
+        $wpdb->query("DELETE FROM {$wpdb->postmeta} WHERE meta_key = '_elementor_css'");
+
+        wnb_ok(['data' => ['fonts' => $newFonts, 'message' => 'Global fonts updated']]);
+    } else {
+        $fonts = $kitData['system_typography'] ?? [];
+        wnb_ok(['data' => ['fonts' => $fonts, 'kit_id' => $kitId]]);
+    }
+}
+
+// ══════════════════════════════════════════════════════════════
+// ─── AI COPILOT — MEDIA ─────────────────────────────────────
+// ══════════════════════════════════════════════════════════════
+
+/**
+ * Upload media from URL.
+ * POST params: image_url, alt_text (optional), title (optional)
+ */
+function handle_media_upload_url() {
+    require_once ABSPATH . 'wp-admin/includes/image.php';
+    require_once ABSPATH . 'wp-admin/includes/media.php';
+
+    $imageUrl = $_POST['image_url'] ?? '';
+    if (!$imageUrl) wnb_err('Missing image_url');
+
+    $altText = sanitize_text_field($_POST['alt_text'] ?? '');
+    $title = sanitize_text_field($_POST['title'] ?? '');
+
+    // Download
+    $tmp = download_url($imageUrl, 60);
+    if (is_wp_error($tmp)) {
+        wnb_err('Download failed: ' . $tmp->get_error_message());
+    }
+
+    $urlPath = parse_url($imageUrl, PHP_URL_PATH);
+    $filename = basename($urlPath);
+    if (!$filename || strlen($filename) < 3) {
+        $filename = 'image-' . time() . '.jpg';
+    }
+
+    $fileArray = [
+        'name'     => $filename,
+        'tmp_name' => $tmp,
+    ];
+
+    $attachId = media_handle_sideload($fileArray, 0, $title ?: $filename);
+    if (is_wp_error($attachId)) {
+        @unlink($tmp);
+        wnb_err('Upload failed: ' . $attachId->get_error_message());
+    }
+
+    if ($altText) {
+        update_post_meta($attachId, '_wp_attachment_image_alt', $altText);
+    }
+
+    wnb_ok(['data' => [
+        'attachment_id' => $attachId,
+        'url'           => wp_get_attachment_url($attachId),
+        'title'         => $title ?: $filename,
+        'alt'           => $altText,
+        'message'       => 'Image uploaded',
+    ]]);
+}
+
+/**
+ * List media items.
+ * POST params: per_page (optional, default 20), page (optional, default 1), type (optional: image, video, etc.)
+ */
+function handle_media_list() {
+    $perPage = intval($_POST['per_page'] ?? 20);
+    $page = intval($_POST['page'] ?? 1);
+    $type = sanitize_text_field($_POST['type'] ?? 'image');
+
+    $args = [
+        'post_type'      => 'attachment',
+        'post_status'    => 'inherit',
+        'posts_per_page' => min($perPage, 100),
+        'paged'          => $page,
+        'orderby'        => 'date',
+        'order'          => 'DESC',
+    ];
+
+    if ($type) {
+        $args['post_mime_type'] = $type;
+    }
+
+    $query = new WP_Query($args);
+    $items = [];
+
+    foreach ($query->posts as $att) {
+        $meta = wp_get_attachment_metadata($att->ID);
+        $items[] = [
+            'id'       => $att->ID,
+            'url'      => wp_get_attachment_url($att->ID),
+            'title'    => $att->post_title,
+            'alt'      => get_post_meta($att->ID, '_wp_attachment_image_alt', true),
+            'mime'     => $att->post_mime_type,
+            'width'    => $meta['width'] ?? null,
+            'height'   => $meta['height'] ?? null,
+            'filesize' => $meta['filesize'] ?? null,
+            'date'     => $att->post_date,
+        ];
+    }
+
+    wnb_ok(['data' => [
+        'items' => $items,
+        'total' => $query->found_posts,
+        'pages' => $query->max_num_pages,
+    ]]);
+}
+
+// ══════════════════════════════════════════════════════════════
+// ─── AI COPILOT — MENUS ─────────────────────────────────────
+// ══════════════════════════════════════════════════════════════
+
+/**
+ * Get all menus and their items.
+ */
+function handle_menu_list() {
+    $menus = wp_get_nav_menus();
+    $result = [];
+
+    foreach ($menus as $menu) {
+        $items = wp_get_nav_menu_items($menu->term_id);
+        $menuItems = [];
+        if ($items) {
+            foreach ($items as $item) {
+                $menuItems[] = [
+                    'id'        => $item->ID,
+                    'title'     => $item->title,
+                    'url'       => $item->url,
+                    'type'      => $item->type,
+                    'object'    => $item->object,
+                    'object_id' => $item->object_id,
+                    'parent'    => $item->menu_item_parent,
+                    'order'     => $item->menu_order,
+                    'classes'   => $item->classes,
+                ];
+            }
+        }
+
+        $locations = get_nav_menu_locations();
+        $assignedTo = [];
+        foreach ($locations as $loc => $menuId) {
+            if ($menuId == $menu->term_id) {
+                $assignedTo[] = $loc;
+            }
+        }
+
+        $result[] = [
+            'id'          => $menu->term_id,
+            'name'        => $menu->name,
+            'slug'        => $menu->slug,
+            'count'       => $menu->count,
+            'locations'   => $assignedTo,
+            'items'       => $menuItems,
+        ];
+    }
+
+    wnb_ok(['data' => $result]);
+}
+
+/**
+ * Update menu items.
+ * POST params: menu_id, items (JSON array of {title, url, type, object, object_id, parent, order})
+ */
+function handle_menu_update() {
+    $menuId = intval($_POST['menu_id'] ?? 0);
+    if (!$menuId) wnb_err('Missing menu_id');
+
+    $itemsJson = $_POST['items'] ?? '';
+    $items = json_decode($itemsJson, true);
+    if (!is_array($items)) wnb_err('Invalid items JSON');
+
+    $menu = wp_get_nav_menu_object($menuId);
+    if (!$menu) wnb_err("Menu not found: {$menuId}");
+
+    // Remove existing items
+    $existingItems = wp_get_nav_menu_items($menuId);
+    if ($existingItems) {
+        foreach ($existingItems as $item) {
+            wp_delete_post($item->ID, true);
+        }
+    }
+
+    // Add new items
+    $createdItems = [];
+    foreach ($items as $idx => $item) {
+        $args = [
+            'menu-item-title'     => $item['title'] ?? 'Menu Item',
+            'menu-item-url'       => $item['url'] ?? '#',
+            'menu-item-status'    => 'publish',
+            'menu-item-position'  => $item['order'] ?? ($idx + 1),
+            'menu-item-type'      => $item['type'] ?? 'custom',
+        ];
+
+        if (($item['type'] ?? '') === 'post_type' && !empty($item['object_id'])) {
+            $args['menu-item-object'] = $item['object'] ?? 'page';
+            $args['menu-item-object-id'] = $item['object_id'];
+        }
+
+        if (!empty($item['parent'])) {
+            $args['menu-item-parent-id'] = $item['parent'];
+        }
+
+        $newItemId = wp_update_nav_menu_item($menuId, 0, $args);
+        if (!is_wp_error($newItemId)) {
+            $createdItems[] = $newItemId;
+        }
+    }
+
+    wnb_ok(['data' => [
+        'menu_id'  => $menuId,
+        'items'    => count($createdItems),
+        'message'  => 'Menu updated',
+    ]]);
+}
+
+// ══════════════════════════════════════════════════════════════
+// ─── AI COPILOT — SEO (PAGE-LEVEL) ─────────────────────────
+// ══════════════════════════════════════════════════════════════
+
+/**
+ * Get SEO meta for a page.
+ * POST params: page_id
+ */
+function handle_seo_page_get() {
+    $pageId = intval($_POST['page_id'] ?? 0);
+    if (!$pageId) wnb_err('Missing page_id');
+
+    $post = get_post($pageId);
+    if (!$post) wnb_err('Page not found');
+
+    // Try Yoast, RankMath, or raw meta
+    $meta = [
+        'title'       => get_post_meta($pageId, '_yoast_wpseo_title', true)
+                        ?: get_post_meta($pageId, 'rank_math_title', true)
+                        ?: $post->post_title,
+        'description' => get_post_meta($pageId, '_yoast_wpseo_metadesc', true)
+                        ?: get_post_meta($pageId, 'rank_math_description', true)
+                        ?: '',
+        'focus_keyword' => get_post_meta($pageId, '_yoast_wpseo_focuskw', true)
+                          ?: get_post_meta($pageId, 'rank_math_focus_keyword', true)
+                          ?: '',
+        'og_title'    => get_post_meta($pageId, '_yoast_wpseo_opengraph-title', true)
+                        ?: get_post_meta($pageId, 'rank_math_facebook_title', true) ?: '',
+        'og_desc'     => get_post_meta($pageId, '_yoast_wpseo_opengraph-description', true)
+                        ?: get_post_meta($pageId, 'rank_math_facebook_description', true) ?: '',
+        'canonical'   => get_post_meta($pageId, '_yoast_wpseo_canonical', true)
+                        ?: get_post_meta($pageId, 'rank_math_canonical_url', true) ?: '',
+    ];
+
+    wnb_ok(['data' => [
+        'page_id'  => $pageId,
+        'title'    => $post->post_title,
+        'url'      => get_permalink($pageId),
+        'seo_meta' => $meta,
+    ]]);
+}
+
+/**
+ * Update SEO meta for a page.
+ * POST params: page_id, seo_title, seo_description, focus_keyword, og_title, og_desc, canonical
+ */
+function handle_seo_page_update() {
+    $pageId = intval($_POST['page_id'] ?? 0);
+    if (!$pageId) wnb_err('Missing page_id');
+
+    $post = get_post($pageId);
+    if (!$post) wnb_err('Page not found');
+
+    // Detect which SEO plugin is active
+    $isYoast = defined('WPSEO_VERSION');
+    $isRankMath = class_exists('RankMath');
+
+    $fields = [
+        'seo_title'      => $_POST['seo_title'] ?? null,
+        'seo_description' => $_POST['seo_description'] ?? null,
+        'focus_keyword'  => $_POST['focus_keyword'] ?? null,
+        'og_title'       => $_POST['og_title'] ?? null,
+        'og_desc'        => $_POST['og_desc'] ?? null,
+        'canonical'      => $_POST['canonical'] ?? null,
+    ];
+
+    $updated = [];
+    foreach ($fields as $key => $val) {
+        if ($val === null) continue;
+
+        $val = sanitize_text_field($val);
+
+        if ($isYoast) {
+            $yoastKey = match($key) {
+                'seo_title'      => '_yoast_wpseo_title',
+                'seo_description' => '_yoast_wpseo_metadesc',
+                'focus_keyword'  => '_yoast_wpseo_focuskw',
+                'og_title'       => '_yoast_wpseo_opengraph-title',
+                'og_desc'        => '_yoast_wpseo_opengraph-description',
+                'canonical'      => '_yoast_wpseo_canonical',
+            };
+            update_post_meta($pageId, $yoastKey, $val);
+        } elseif ($isRankMath) {
+            $rmKey = match($key) {
+                'seo_title'      => 'rank_math_title',
+                'seo_description' => 'rank_math_description',
+                'focus_keyword'  => 'rank_math_focus_keyword',
+                'og_title'       => 'rank_math_facebook_title',
+                'og_desc'        => 'rank_math_facebook_description',
+                'canonical'      => 'rank_math_canonical_url',
+            };
+            update_post_meta($pageId, $rmKey, $val);
+        } else {
+            // Fallback: store as custom meta
+            update_post_meta($pageId, '_wnb_seo_' . $key, $val);
+        }
+
+        $updated[] = $key;
+    }
+
+    wnb_ok(['data' => [
+        'page_id' => $pageId,
+        'updated' => $updated,
+        'message' => 'SEO meta updated',
+    ]]);
+}
+
+// ══════════════════════════════════════════════════════════════
+// ─── AI COPILOT — POSTS ─────────────────────────────────────
+// ══════════════════════════════════════════════════════════════
+
+/**
+ * Create a new post/page.
+ * POST params: title, content, post_type (optional: post/page), status (optional), categories (JSON array of IDs)
+ */
+function handle_posts_create() {
+    $title = sanitize_text_field($_POST['title'] ?? '');
+    if (!$title) wnb_err('Missing title');
+
+    $content = $_POST['content'] ?? '';
+    $postType = sanitize_text_field($_POST['post_type'] ?? 'post');
+    $status = sanitize_text_field($_POST['status'] ?? 'publish');
+
+    $postId = wp_insert_post([
+        'post_title'   => $title,
+        'post_content' => $content,
+        'post_type'    => $postType,
+        'post_status'  => $status,
+    ]);
+
+    if (is_wp_error($postId)) {
+        wnb_err($postId->get_error_message());
+    }
+
+    // Assign categories if provided
+    $categories = $_POST['categories'] ?? '';
+    if ($categories) {
+        $catIds = json_decode($categories, true);
+        if (is_array($catIds)) {
+            wp_set_post_categories($postId, $catIds);
+        }
+    }
+
+    wnb_ok(['data' => [
+        'post_id' => $postId,
+        'title'   => $title,
+        'url'     => get_permalink($postId),
+        'message' => ucfirst($postType) . " '{$title}' created",
+    ]]);
+}
+
+/**
+ * Update a post/page.
+ * POST params: post_id, title (optional), content (optional), status (optional)
+ */
+function handle_posts_update() {
+    $postId = intval($_POST['post_id'] ?? 0);
+    if (!$postId) wnb_err('Missing post_id');
+
+    $post = get_post($postId);
+    if (!$post) wnb_err('Post not found');
+
+    $args = ['ID' => $postId];
+    if (isset($_POST['title'])) $args['post_title'] = sanitize_text_field($_POST['title']);
+    if (isset($_POST['content'])) $args['post_content'] = $_POST['content'];
+    if (isset($_POST['status'])) $args['post_status'] = sanitize_text_field($_POST['status']);
+
+    $result = wp_update_post($args);
+    if (is_wp_error($result)) {
+        wnb_err($result->get_error_message());
+    }
+
+    wnb_ok(['data' => [
+        'post_id' => $postId,
+        'message' => 'Post updated',
+    ]]);
+}
+
+/**
+ * Delete a post/page.
+ * POST params: post_id, force (optional: '1' to permanently delete)
+ */
+function handle_posts_delete() {
+    $postId = intval($_POST['post_id'] ?? 0);
+    if (!$postId) wnb_err('Missing post_id');
+
+    $force = ($_POST['force'] ?? '0') === '1';
+
+    $result = wp_delete_post($postId, $force);
+    if (!$result) wnb_err('Failed to delete post');
+
+    wnb_ok(['data' => [
+        'post_id' => $postId,
+        'message' => $force ? 'Post permanently deleted' : 'Post moved to trash',
     ]]);
 }

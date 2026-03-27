@@ -93,6 +93,36 @@ export interface StatusResponse {
   wp_admin_url?: string;
 }
 
+// ─── Code Builder Project Types ───
+
+export interface Project {
+  id: number;
+  name: string;
+  slug: string;
+  description: string | null;
+  framework: 'html' | 'react' | 'nextjs';
+  status: 'draft' | 'generating' | 'ready' | 'deployed';
+  ai_prompt: string | null;
+  file_tree: FileTreeNode[];
+  created_at: string;
+  updated_at: string;
+}
+
+export interface FileTreeNode {
+  name: string;
+  path: string;
+  type: 'file' | 'directory';
+  children?: FileTreeNode[];
+}
+
+export interface ProjectMessage {
+  id: number;
+  role: 'user' | 'assistant';
+  content: string;
+  files_changed: string[] | null;
+  created_at: string;
+}
+
 // ─── WP Management Types ───
 
 export interface WpPlugin {

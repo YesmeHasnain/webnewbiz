@@ -341,4 +341,154 @@ class WpBridgeService
     {
         return $this->call($website, 'wnb.ai.history', ['history_action' => $action]);
     }
+
+    // ─── AI Copilot — Elementor ───
+
+    public function getElementorPageData(Website $website, int $pageId): array
+    {
+        return $this->call($website, 'elementor.page.get', ['page_id' => $pageId]);
+    }
+
+    public function updateElementorPageData(Website $website, int $pageId, string $elementorData, ?string $title = null): array
+    {
+        $params = ['page_id' => $pageId, 'elementor_data_b64' => base64_encode($elementorData)];
+        if ($title !== null) $params['title'] = $title;
+        return $this->call($website, 'elementor.page.update', $params);
+    }
+
+    public function getElementorEditables(Website $website, int $pageId): array
+    {
+        return $this->call($website, 'elementor.page.editables', ['page_id' => $pageId]);
+    }
+
+    public function createElementorPage(Website $website, string $title, string $elementorData, string $status = 'publish'): array
+    {
+        return $this->call($website, 'elementor.page.create', [
+            'title' => $title,
+            'elementor_data' => $elementorData,
+            'status' => $status,
+        ]);
+    }
+
+    public function addElementorSection(Website $website, int $pageId, string $sectionData, int $position = -1): array
+    {
+        return $this->call($website, 'elementor.section.add', [
+            'page_id' => $pageId,
+            'section_data' => $sectionData,
+            'position' => $position,
+        ]);
+    }
+
+    public function removeElementorSection(Website $website, int $pageId, string $elementId): array
+    {
+        return $this->call($website, 'elementor.section.remove', [
+            'page_id' => $pageId,
+            'element_id' => $elementId,
+        ]);
+    }
+
+    public function reorderElementorSections(Website $website, int $pageId, array $order): array
+    {
+        return $this->call($website, 'elementor.section.reorder', [
+            'page_id' => $pageId,
+            'order' => json_encode($order),
+        ]);
+    }
+
+    public function regenerateElementorCss(Website $website, int $pageId = 0): array
+    {
+        return $this->call($website, 'elementor.css.regenerate', ['page_id' => $pageId]);
+    }
+
+    public function getGlobalColors(Website $website): array
+    {
+        return $this->call($website, 'elementor.global.colors');
+    }
+
+    public function setGlobalColors(Website $website, array $colors): array
+    {
+        return $this->call($website, 'elementor.global.colors', ['colors' => json_encode($colors)]);
+    }
+
+    public function getGlobalFonts(Website $website): array
+    {
+        return $this->call($website, 'elementor.global.fonts');
+    }
+
+    public function setGlobalFonts(Website $website, array $fonts): array
+    {
+        return $this->call($website, 'elementor.global.fonts', ['fonts' => json_encode($fonts)]);
+    }
+
+    // ─── AI Copilot — Media ───
+
+    public function uploadMediaFromUrl(Website $website, string $imageUrl, string $altText = '', string $title = ''): array
+    {
+        return $this->call($website, 'media.upload_url', [
+            'image_url' => $imageUrl,
+            'alt_text' => $altText,
+            'title' => $title,
+        ]);
+    }
+
+    public function listMedia(Website $website, int $perPage = 20, int $page = 1, string $type = 'image'): array
+    {
+        return $this->call($website, 'media.list', [
+            'per_page' => $perPage,
+            'page' => $page,
+            'type' => $type,
+        ]);
+    }
+
+    // ─── AI Copilot — Menus ───
+
+    public function listMenus(Website $website): array
+    {
+        return $this->call($website, 'menu.list');
+    }
+
+    public function updateMenu(Website $website, int $menuId, array $items): array
+    {
+        return $this->call($website, 'menu.update', [
+            'menu_id' => $menuId,
+            'items' => json_encode($items),
+        ]);
+    }
+
+    // ─── AI Copilot — SEO (page-level) ───
+
+    public function getPageSeo(Website $website, int $pageId): array
+    {
+        return $this->call($website, 'seo.page.get', ['page_id' => $pageId]);
+    }
+
+    public function updatePageSeo(Website $website, int $pageId, array $seoData): array
+    {
+        return $this->call($website, 'seo.page.update', array_merge(['page_id' => $pageId], $seoData));
+    }
+
+    // ─── AI Copilot — Posts ───
+
+    public function createPost(Website $website, string $title, string $content, string $postType = 'post', string $status = 'publish'): array
+    {
+        return $this->call($website, 'posts.create', [
+            'title' => $title,
+            'content' => $content,
+            'post_type' => $postType,
+            'status' => $status,
+        ]);
+    }
+
+    public function updatePost(Website $website, int $postId, array $data): array
+    {
+        return $this->call($website, 'posts.update', array_merge(['post_id' => $postId], $data));
+    }
+
+    public function deletePost(Website $website, int $postId, bool $force = false): array
+    {
+        return $this->call($website, 'posts.delete', [
+            'post_id' => $postId,
+            'force' => $force ? '1' : '0',
+        ]);
+    }
 }

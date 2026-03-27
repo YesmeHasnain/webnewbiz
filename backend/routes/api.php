@@ -11,11 +11,28 @@ use App\Http\Controllers\Api\DomainController;
 use App\Http\Controllers\Api\WooCommerceController;
 use App\Http\Controllers\Api\BrandingController;
 use App\Http\Controllers\Api\WpBuilderController;
+use App\Http\Controllers\Api\AiChatController;
+use App\Http\Controllers\Api\AiCopilotController;
+use App\Http\Controllers\Api\ProjectController;
+use App\Http\Controllers\Api\BillingController;
+use App\Http\Controllers\Api\AppController;
+use App\Http\Controllers\Api\DeployController;
+use App\Http\Controllers\Api\ConverterController;
+use App\Http\Controllers\Api\StoreSubmissionController;
+use App\Http\Controllers\Api\AnalyticsController;
+use App\Http\Controllers\Api\IntegrationController;
 use Illuminate\Support\Facades\Route;
 
 // Public auth routes
 Route::post('/auth/register', [AuthController::class, 'register']);
 Route::post('/auth/login', [AuthController::class, 'login']);
+
+// Project preview (no auth — served in iframe)
+Route::get('/projects/{id}/preview/{path?}', [ProjectController::class, 'preview'])
+    ->where('path', '.*');
+
+// Public analytics tracking (no auth — called from deployed sites)
+Route::post('/track', [AnalyticsController::class, 'track']);
 
 // Public builder routes (no auth needed)
 Route::post('/builder/analyze', [BuilderController::class, 'analyze']);
@@ -29,6 +46,64 @@ Route::middleware('auth:sanctum')->group(function () {
     // Auth
     Route::post('/auth/logout', [AuthController::class, 'logout']);
     Route::get('/auth/me', [AuthController::class, 'me']);
+
+    // Code Builder Projects
+    Route::get('/projects', [ProjectController::class, 'index']);
+    Route::post('/projects', [ProjectController::class, 'store']);
+    Route::get('/projects/{id}', [ProjectController::class, 'show']);
+    Route::delete('/projects/{id}', [ProjectController::class, 'destroy']);
+    Route::get('/projects/{id}/files', [ProjectController::class, 'readFile']);
+    Route::put('/projects/{id}/files', [ProjectController::class, 'writeFile']);
+    Route::delete('/projects/{id}/files', [ProjectController::class, 'deleteFile']);
+    Route::post('/projects/{id}/chat', [ProjectController::class, 'chat']);
+    Route::get('/projects/{id}/stream', [ProjectController::class, 'stream']);
+    Route::get('/projects/{id}/messages', [ProjectController::class, 'messages']);
+
+    // Deploy & Hosting
+    Route::get('/deployments', [DeployController::class, 'index']);
+    Route::post('/deployments', [DeployController::class, 'deploy']);
+    Route::get('/deployments/{id}', [DeployController::class, 'show']);
+    Route::post('/deployments/{id}/domain', [DeployController::class, 'addDomain']);
+    Route::post('/deployments/{id}/stop', [DeployController::class, 'stop']);
+
+    // Universal Converter
+    Route::get('/conversions', [ConverterController::class, 'index']);
+    Route::post('/conversions', [ConverterController::class, 'convert']);
+    Route::get('/conversions/{id}', [ConverterController::class, 'show']);
+
+    // App Store Submissions
+    Route::get('/submissions', [StoreSubmissionController::class, 'index']);
+    Route::post('/submissions', [StoreSubmissionController::class, 'submit']);
+    Route::get('/submissions/{id}', [StoreSubmissionController::class, 'show']);
+
+    // Unified Analytics
+    Route::get('/analytics/overview', [AnalyticsController::class, 'overview']);
+
+    // Integrations (Shopify, Squarespace)
+    Route::get('/integrations', [IntegrationController::class, 'index']);
+    Route::post('/integrations', [IntegrationController::class, 'connect']);
+    Route::post('/integrations/{id}/disconnect', [IntegrationController::class, 'disconnect']);
+    Route::delete('/integrations/{id}', [IntegrationController::class, 'destroy']);
+
+    // Billing & Credits
+    Route::get('/billing/overview', [BillingController::class, 'overview']);
+    Route::get('/billing/plans', [BillingController::class, 'plans']);
+    Route::get('/billing/packages', [BillingController::class, 'packages']);
+    Route::get('/billing/transactions', [BillingController::class, 'transactions']);
+    Route::get('/billing/invoices', [BillingController::class, 'invoices']);
+    Route::post('/billing/purchase-credits', [BillingController::class, 'purchaseCredits']);
+    Route::post('/billing/subscribe', [BillingController::class, 'subscribe']);
+
+    // App Builder
+    Route::get('/apps', [AppController::class, 'index']);
+    Route::post('/apps', [AppController::class, 'store']);
+    Route::get('/apps/{id}', [AppController::class, 'show']);
+    Route::delete('/apps/{id}', [AppController::class, 'destroy']);
+    Route::get('/apps/{id}/files', [AppController::class, 'readFile']);
+    Route::put('/apps/{id}/files', [AppController::class, 'writeFile']);
+    Route::post('/apps/{id}/chat', [AppController::class, 'chat']);
+    Route::get('/apps/{id}/stream', [AppController::class, 'stream']);
+    Route::get('/apps/{id}/messages', [AppController::class, 'messages']);
 
     // Websites
     Route::get('/websites', [WebsiteController::class, 'index']);
@@ -89,6 +164,19 @@ Route::middleware('auth:sanctum')->group(function () {
         Route::delete('/woo/products/{productId}', [WooCommerceController::class, 'deleteProduct']);
         Route::get('/woo/orders', [WooCommerceController::class, 'orders']);
         Route::get('/woo/categories', [WooCommerceController::class, 'categories']);
+
+        // AI Chat Assistant (legacy)
+        Route::post('/ai-chat', [AiChatController::class, 'chat']);
+        Route::get('/ai-chat/suggestions', [AiChatController::class, 'suggestions']);
+
+        // AI Copilot (premium)
+        Route::prefix('copilot')->group(function () {
+            Route::post('/chat', [AiCopilotController::class, 'chat']);
+            Route::get('/suggestions', [AiCopilotController::class, 'suggestions']);
+            Route::get('/sessions', [AiCopilotController::class, 'sessions']);
+            Route::get('/session/{sessionId}', [AiCopilotController::class, 'session']);
+            Route::post('/undo/{actionId}', [AiCopilotController::class, 'undo']);
+        });
 
         // WebNewBiz Builder Plugin
         Route::prefix('wnb')->group(function () {
