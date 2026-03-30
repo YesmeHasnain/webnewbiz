@@ -140,16 +140,38 @@ export default function CodeBuilder() {
           stopPolling();
           setChatLoading(false);
           addOutput('Build completed successfully.');
+
+          // Update chat message
           setMessages(prev => {
             const last = prev[prev.length - 1];
             if (last?.role === 'assistant' && last.id === -1)
               return [...prev.slice(0, -1), { ...last, id: Date.now(), content: data.text || 'Code generation complete!', files_changed: data.files_changed }];
             return prev;
           });
-          if (data.file_tree?.length) setFileTree(data.file_tree);
-          if (data.files_changed?.length) { await openFile(pid, data.files_changed[0]); }
+
+          // Reload full project from server to get fresh file_tree
+          try {
+            const freshProject = await projectService.get(pid);
+            setProject(freshProject.data);
+            setFileTree(freshProject.data.file_tree || []);
+          } catch {
+            if (data.file_tree?.length) setFileTree(data.file_tree);
+          }
+
+          // Open first changed file in editor
+          if (data.files_changed?.length) {
+            const firstFile = data.files_changed.find((f: string) => f.endsWith('.html')) || data.files_changed[0];
+            await openFile(pid, firstFile);
+          }
+
+          // Auto-switch to preview to show the generated website
+          setTopView('preview');
           setIframeKey(k => k + 1);
+
+          // Reload messages from DB
           try { const m = await projectService.getMessages(pid); setMessages(m.data); } catch { }
+
+          addOutput(`Files created: ${data.files_changed?.join(', ') || 'unknown'}`);
         }
       } catch { }
     }, 3000);
