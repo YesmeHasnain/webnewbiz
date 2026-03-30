@@ -96,12 +96,15 @@ class ClaudeCliService
         $promptFileEsc = str_replace('\\', '/', $promptFile);
 
         if ($this->isWindows()) {
-            // Windows: write a .bat wrapper
+            // Windows: write a .bat wrapper with proper quoting
+            $winDoneFile = str_replace('/', '\\', $doneFile);
+            $winProjectDir = str_replace('/', '\\', $projectDir);
+            $winPromptFile = str_replace('/', '\\', $promptFile);
+
             $batContent = "@echo off\r\n";
-            $batContent .= "cd /d \"" . $projectDir . "\"\r\n";
-            $batContent .= $claudeCmd . " > \"" . $doneFileEsc . "\" 2>&1\r\n";
-            // Cleanup
-            $batContent .= "del \"" . str_replace('/', '\\', $promptFileEsc) . "\" 2>nul\r\n";
+            $batContent .= "cd /d \"" . $winProjectDir . "\"\r\n";
+            $batContent .= $claudeCmd . " > \"" . $winDoneFile . "\" 2>&1\r\n";
+            $batContent .= "del \"" . $winPromptFile . "\" 2>nul\r\n";
             if ($sysPromptFile) {
                 $batContent .= "del \"" . str_replace('/', '\\', $sysPromptFile) . "\" 2>nul\r\n";
             }
@@ -109,7 +112,7 @@ class ClaudeCliService
             $batFile = tempnam(sys_get_temp_dir(), 'claude_bg_') . '.bat';
             File::put($batFile, $batContent);
 
-            pclose(popen('start /B cmd /c "' . $batFile . '"', 'r'));
+            pclose(popen('start /B cmd /c "' . str_replace('/', '\\', $batFile) . '"', 'r'));
         } else {
             // Unix
             $bgCmd = $claudeCmd . ' > ' . escapeshellarg($doneFileEsc) . ' 2>&1';

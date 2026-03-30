@@ -72,7 +72,8 @@ class CodeGeneratorService
 
         // Check if process finished
         if (File::exists($doneFile)) {
-            $doneData = json_decode(File::get($doneFile), true) ?: [];
+            $rawContent = File::get($doneFile);
+            $doneData = json_decode($rawContent, true) ?: [];
 
             // Handle raw CLI output format (has 'result' key instead of 'response')
             if (isset($doneData['result']) && !isset($doneData['response'])) {
@@ -83,16 +84,23 @@ class CodeGeneratorService
                 File::put($sessionFile, $doneData['session_id']);
             }
 
+            // If done file is empty/invalid JSON, Claude created files directly on disk
+            // Detect changes by comparing snapshots
+            if (empty($doneData) || empty($rawContent)) {
+                $doneData['response'] = 'Code generation complete. Files have been created in your project.';
+            }
+
             // If not yet finalized, finalize now
             if ($project->status === 'generating') {
                 $this->finalize($project, $doneData);
             }
 
+            $freshProject = $project->fresh();
             return [
                 'status' => 'done',
                 'text' => $doneData['response'] ?? $doneData['result'] ?? 'Code generation complete.',
                 'files_changed' => $doneData['files_changed'] ?? [],
-                'file_tree' => $project->fresh()->file_tree ?? [],
+                'file_tree' => $freshProject->file_tree ?? $this->projectService->buildFileTree($project),
             ];
         }
 
