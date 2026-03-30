@@ -62,10 +62,8 @@ const defaultTasks = [
 function TaskPlan({ filesChanged, isComplete }: { filesChanged: string[]; isComplete: boolean }) {
   const completedFiles = new Set(filesChanged || []);
 
-  // Use actual files if available, otherwise show default pending tasks
-  const tasks = filesChanged && filesChanged.length > 0
-    ? getTasksFromFiles(filesChanged)
-    : defaultTasks;
+  // ALWAYS show default tasks — mark completed ones based on filesChanged
+  const tasks = defaultTasks;
 
   return (
     <div className="space-y-1 mt-3">

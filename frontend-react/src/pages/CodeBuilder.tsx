@@ -145,13 +145,13 @@ export default function CodeBuilder() {
         const data = res.data;
         if (data.file_tree?.length) { setFileTree(data.file_tree); setIframeKey(k => k + 1); }
 
-        // ALWAYS update assistant message with latest files_changed (for real-time task plan)
+        // Update ONLY files_changed — keep original content (description + task plan)
         setMessages(prev => {
           const last = prev[prev.length - 1];
           if (last?.role === 'assistant' && last.id === -1) {
             return [...prev.slice(0, -1), {
               ...last,
-              content: data.text || last.content,
+              // Don't overwrite content — keep the description text
               files_changed: data.files_changed?.length ? data.files_changed : last.files_changed,
             }];
           }
