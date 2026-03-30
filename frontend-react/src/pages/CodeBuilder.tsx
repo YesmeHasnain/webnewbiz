@@ -74,7 +74,10 @@ export default function CodeBuilder() {
       const [projRes, msgRes] = await Promise.all([projectService.get(pid), projectService.getMessages(pid)]);
       setProject(projRes.data);
       setFileTree(projRes.data.file_tree || []);
-      setMessages(msgRes.data);
+      // Don't overwrite messages if we have an initial prompt (race condition)
+      if (!initialPrompt) {
+        setMessages(msgRes.data);
+      }
       const first = findFirstFile(projRes.data.file_tree || []);
       if (first) await openFile(pid, first);
     } catch { } finally { setLoading(false); }
