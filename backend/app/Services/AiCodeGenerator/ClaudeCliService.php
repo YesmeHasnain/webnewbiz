@@ -139,6 +139,7 @@ class ClaudeCliService
         $cmd .= ' --output-format json';
         $cmd .= ' --dangerously-skip-permissions';
         $cmd .= ' --model opus';
+        $cmd .= ' --max-turns 15';
 
         if ($existingSession) {
             $cmd .= ' --resume ' . escapeshellarg($existingSession);
