@@ -60,7 +60,7 @@ export default function PromptPage() {
         <p className="text-gray-500 text-center mb-10 text-lg">Create stunning apps & websites by chatting with AI.</p>
 
         {/* Prompt box */}
-        <div className="w-full max-w-2xl bg-[#12121a] border border-[#1e1e2e] rounded-2xl overflow-hidden shadow-2xl shadow-black/50">
+        <div className="w-full max-w-2xl bg-[#12121a] border border-[#1e1e2e] rounded-2xl shadow-2xl shadow-black/50">
           <textarea
             value={prompt}
             onChange={e => setPrompt(e.target.value)}
@@ -88,7 +88,7 @@ export default function PromptPage() {
                 {showFwPicker && (
                   <>
                     <div className="fixed inset-0 z-10" onClick={() => setShowFwPicker(false)} />
-                    <div className="absolute bottom-full left-0 mb-2 bg-[#1a1d27] border border-[#2a2d37] rounded-xl overflow-hidden shadow-xl z-20 w-48">
+                    <div className="absolute top-full left-0 mt-2 bg-[#1a1d27] border border-[#2a2d37] rounded-xl overflow-hidden shadow-xl z-20 w-48">
                       {frameworks.map(fw => (
                         <button
                           key={fw.id}

@@ -192,43 +192,103 @@ class CodeGeneratorService
     private function buildSystemPrompt(Project $project): string
     {
         $framework = $project->framework;
-        $frameworkNote = match ($framework) {
-            'react' => 'REACT project. React 18 CDN + Babel standalone. Create .jsx files with hooks.',
-            'nextjs' => 'Next.js project. Multi-page with shared components, App Router, page.tsx.',
-            'vue' => 'VUE 3 project. Use Vue 3 CDN (unpkg.com/vue@3). Composition API, reactive refs.',
-            'angular' => 'ANGULAR-style project. Component-based with services and templates.',
-            'svelte' => 'SVELTE-inspired project. Reactive components, minimal boilerplate.',
-            default => 'HTML/CSS/JS project. Create separate .html files for each page.',
+
+        $fileStructure = match ($framework) {
+            'react' => <<<'FS'
+## FILE STRUCTURE — You MUST create these files:
+```
+index.html              ← Main HTML (loads React CDN + Babel + Tailwind CDN + main App.jsx)
+src/
+  App.jsx               ← Main App component with Router/page switching
+  components/
+    Navbar.jsx           ← Sticky navigation with mobile hamburger menu
+    Footer.jsx           ← Footer with links and social icons
+    Hero.jsx             ← Hero section component
+    About.jsx            ← About section component
+    Skills.jsx           ← Skills/features component
+    Projects.jsx         ← Projects/portfolio gallery component
+    Contact.jsx          ← Contact form component
+  pages/
+    HomePage.jsx         ← Home page combining Hero + sections
+    AboutPage.jsx        ← Full about page
+    ContactPage.jsx      ← Contact page with form
+styles.css              ← Custom CSS animations and styles
+```
+Use React 18 CDN + Babel standalone for browser JSX. Each component in its OWN file.
+In index.html load: React CDN, ReactDOM CDN, Babel standalone, Tailwind CDN.
+In index.html add: <script type="text/babel" src="src/App.jsx"></script>
+Each .jsx file must use: const { useState, useEffect } = React; (no imports, CDN mode)
+FS,
+            'nextjs' => <<<'FS'
+## FILE STRUCTURE — Create these files:
+```
+index.html, src/App.jsx, src/components/Navbar.jsx, src/components/Footer.jsx,
+src/components/Hero.jsx, src/components/About.jsx, src/components/Skills.jsx,
+src/components/Projects.jsx, src/components/Contact.jsx,
+src/pages/HomePage.jsx, src/pages/AboutPage.jsx, src/pages/ContactPage.jsx, styles.css
+```
+Use React 18 CDN + Babel standalone. Next.js-inspired component architecture.
+FS,
+            'vue' => <<<'FS'
+## FILE STRUCTURE — Create these files:
+```
+index.html (loads Vue 3 CDN + Tailwind CDN + mounts app),
+src/App.js, src/components/Navbar.js, src/components/Footer.js,
+src/components/Hero.js, src/components/About.js, src/components/Skills.js,
+src/components/Contact.js, styles.css
+```
+Use Vue 3 CDN (unpkg.com/vue@3). Composition API with setup(). Each component in own file.
+FS,
+            default => <<<'FS'
+## FILE STRUCTURE — Create these SEPARATE files:
+```
+index.html              ← Home page
+about.html              ← About page
+services.html           ← Services page
+portfolio.html          ← Portfolio/projects page
+contact.html            ← Contact page with form
+css/
+  styles.css            ← All styles
+  animations.css        ← CSS animations
+js/
+  main.js               ← Navigation, hamburger menu, smooth scroll
+  form.js               ← Contact form validation
+```
+Each HTML page must be a COMPLETE standalone file with full nav + footer.
+FS,
         };
 
         return <<<PROMPT
-You are building a website project called "{$project->name}".
-{$frameworkNote}
+You are a senior full-stack developer building a production website called "{$project->name}".
 
-## DESIGN STANDARDS — You MUST follow these:
+## CRITICAL RULES:
+1. Create MULTIPLE FILES in SEPARATE FOLDERS. Never put all code in one file.
+2. Every component/page MUST be in its OWN file.
+3. DELETE the existing starter template files (App.jsx, index.html) and CREATE fresh ones.
+4. The file structure below is MANDATORY — create every single file listed.
 
-1. **Premium Design**: Every page must look like a \$10,000+ professionally designed website. Think Dribbble/Awwwards quality.
+{$fileStructure}
 
-2. **Visual Requirements**:
-   - Hero sections: Full-viewport, dramatic gradients or background images, large bold typography (text-5xl to text-7xl), subtle animations
-   - Rich color palette with gradients (bg-gradient-to-r/br), never flat/boring single colors
-   - Generous whitespace (py-20, py-24, py-32 between sections)
-   - Cards with rounded-2xl/3xl, shadow-xl/2xl, backdrop-blur for glass effects
-   - Hover effects on ALL interactive elements (scale, shadow, color transitions)
-   - CSS animations for visual interest (fade-in, float, gradient-shift)
-   - Beautiful buttons: rounded-full or rounded-xl, gradient backgrounds, px-8 py-4
+## DESIGN STANDARDS (Awwwards/Dribbble quality):
+- Dark theme: bg-gray-950/bg-[#0a0a0f] background, white text, blue/purple gradients
+- Hero: Full-viewport, dramatic gradient background, text-5xl to text-7xl bold heading, animated entrance
+- Cards: rounded-2xl, border border-gray-800, shadow-xl, backdrop-blur glass effects
+- Buttons: rounded-full or rounded-xl, gradient bg (blue-600 to purple-600), hover scale effect
+- Spacing: generous (py-20, py-24, py-32 between sections)
+- Hover effects on ALL interactive elements (scale, shadow, color transitions)
+- CSS animations: fade-in on scroll, floating elements, gradient-shift backgrounds
+- Images: Use https://images.unsplash.com/photo-{id}?w=800&h=600&fit=crop
+- Typography: Inter font from Google Fonts, bold headings, generous line-height
+- Mobile responsive: Tailwind sm:/md:/lg: breakpoints, hamburger menu on mobile
+- Tailwind CSS via CDN: <script src="https://cdn.tailwindcss.com"></script>
 
-3. **Images**: Use https://images.unsplash.com/photo-{id}?w=800&h=600&fit=crop for high-quality relevant images. Choose photo IDs that match the content.
-
-4. **Typography**: Use Inter font from Google Fonts. Bold headings, generous line-height.
-
-5. **Multi-Page**: Create AT LEAST 5 fully-designed pages (Home, About, Services/Products, Portfolio/Gallery, Contact). Every page must have consistent nav + footer.
-
-6. **Mobile Responsive**: Use Tailwind's sm:, md:, lg:, xl: breakpoints. Mobile hamburger menu with JavaScript toggle.
-
-7. **Tailwind CSS**: Use CDN: <script src="https://cdn.tailwindcss.com"></script>
-
-8. **Code Quality**: Complete files only — never placeholder comments. Production-ready code.
+## QUALITY:
+- Production-ready code only. No placeholder text like "Lorem ipsum".
+- Real content that matches the project description.
+- Every file must be complete — no comments like "// add more here".
+- Smooth scrolling navigation between sections.
+- Form validation with success/error states.
+- At least 5 fully designed sections/pages.
 PROMPT;
     }
 }

@@ -101,15 +101,33 @@ export default function AiChatPanel({ messages, isLoading, onSend }: Props) {
 
                     {/* Task plan detection */}
                     {msg.id === -1 && isLoading ? (
-                      <div className="space-y-2">
+                      <div className="space-y-3">
                         <p className="text-sm text-gray-300 leading-relaxed">{msg.content}</p>
-                        <div className="flex items-center gap-2 mt-2">
+
+                        {/* Files being created — real-time */}
+                        {msg.files_changed && msg.files_changed.length > 0 && (
+                          <div className="space-y-1.5">
+                            {msg.files_changed.map((f, i) => (
+                              <div key={i} className="flex items-center gap-2 px-3 py-1.5 bg-[#12121a] rounded-lg border border-[#1e1e2e] animate-fadeIn">
+                                <svg className="w-3 h-3 text-blue-400 animate-spin flex-shrink-0" fill="none" viewBox="0 0 24 24"><circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" /><path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4z" /></svg>
+                                <span className="text-xs text-gray-400">Writing</span>
+                                <span className="text-xs text-blue-400 font-mono bg-[#1a1d27] px-2 py-0.5 rounded">{f}</span>
+                              </div>
+                            ))}
+                          </div>
+                        )}
+
+                        <div className="flex items-center gap-2">
                           <div className="flex gap-1">
                             <div className="w-1.5 h-1.5 bg-blue-400 rounded-full animate-bounce" />
                             <div className="w-1.5 h-1.5 bg-blue-400 rounded-full animate-bounce" style={{ animationDelay: '150ms' }} />
                             <div className="w-1.5 h-1.5 bg-blue-400 rounded-full animate-bounce" style={{ animationDelay: '300ms' }} />
                           </div>
-                          <span className="text-xs text-gray-500">Generating code...</span>
+                          <span className="text-xs text-gray-500">
+                            {msg.files_changed && msg.files_changed.length > 0
+                              ? `Creating files... (${msg.files_changed.length} so far)`
+                              : 'Generating code...'}
+                          </span>
                         </div>
                       </div>
                     ) : (
