@@ -7,6 +7,7 @@ import CodeEditor from '../components/builder/CodeEditor';
 import PreviewPanel from '../components/builder/PreviewPanel';
 import AiChatPanel from '../components/builder/AiChatPanel';
 import Terminal from '../components/builder/Terminal';
+import DatabasePanel from '../components/builder/DatabasePanel';
 
 type TopView = 'preview' | 'code' | 'chat' | 'settings';
 type BottomTab = 'output' | 'terminal';
@@ -31,6 +32,7 @@ export default function CodeBuilder() {
   const [bottomOpen, setBottomOpen] = useState(false);
   const [iframeKey, setIframeKey] = useState(0);
   const [showSettings, setShowSettings] = useState(false);
+  const [showDatabase, setShowDatabase] = useState(false);
   const [outputLog, setOutputLog] = useState<string[]>([]);
 
   // Stream polling
@@ -240,6 +242,9 @@ export default function CodeBuilder() {
 
   return (
     <div className="fixed inset-0 bg-[#0d1017] flex flex-col text-sm">
+      {/* Database Panel */}
+      {showDatabase && <DatabasePanel onClose={() => setShowDatabase(false)} />}
+
       {/* ═══ TOP BAR ═══ */}
       <header className="h-12 bg-[#0d1017] border-b border-[#1a1d27] flex items-center px-4 justify-between flex-shrink-0 z-30">
         <div className="flex items-center gap-3">
@@ -280,7 +285,11 @@ export default function CodeBuilder() {
                     </button>
                   ))}
                   <div className="border-t border-[#2a2d37] my-1" />
-                  <button className="w-full flex items-center gap-3 px-4 py-2.5 text-xs text-gray-300 hover:bg-white/5"><span>⚙️</span><span>All project settings</span><svg className="w-3 h-3 ml-auto text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" /></svg></button>
+                  <div className="px-4 py-1.5"><span className="text-[10px] text-gray-600 uppercase">Integrations</span></div>
+                  <button onClick={() => { setShowDatabase(true); setShowSettings(false); }} className="w-full flex items-center gap-3 px-4 py-2.5 text-xs text-gray-300 hover:bg-white/5 transition">
+                    <svg className="w-4 h-4 text-gray-500" fill="currentColor" viewBox="0 0 20 20"><path d="M3 12v3c0 1.657 3.134 3 7 3s7-1.343 7-3v-3c0 1.657-3.134 3-7 3s-7-1.343-7-3z" /><path d="M3 7v3c0 1.657 3.134 3 7 3s7-1.343 7-3V7c0 1.657-3.134 3-7 3S3 8.657 3 7z" /><path d="M17 5c0 1.657-3.134 3-7 3S3 6.657 3 5s3.134-3 7-3 7 1.343 7 3z" /></svg>
+                    <span>Database</span>
+                  </button>
                 </div>
               </>
             )}

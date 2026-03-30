@@ -200,6 +200,22 @@ export default function AiChatPanel({ messages, isLoading, onSend }: Props) {
                               Your website is ready! Here's what was built:
                             </p>
                             <TaskPlan filesChanged={msg.files_changed} isComplete={true} />
+
+                            {/* Summary from Claude — shown after task plan */}
+                            {msg.content && !msg.content.startsWith("I'll build") && (
+                              <div className="mt-4 pt-3 border-t border-[#1e1e2e]">
+                                <p className="text-sm text-gray-300 leading-relaxed whitespace-pre-wrap">{msg.content}</p>
+                              </div>
+                            )}
+
+                            {/* Version checkpoint */}
+                            <div className="mt-4 bg-[#12121a] border border-[#1e1e2e] rounded-xl px-4 py-3 flex items-center justify-between">
+                              <div>
+                                <p className="text-xs text-gray-300 font-medium">Website generated</p>
+                                <p className="text-[11px] text-gray-600">Version 1 at {new Date(msg.created_at).toLocaleString()}</p>
+                              </div>
+                              <svg className="w-4 h-4 text-gray-600" fill="none" stroke="currentColor" strokeWidth={1.5} viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M17.593 3.322c1.1.128 1.907 1.077 1.907 2.185V21L12 17.25 4.5 21V5.507c0-1.108.806-2.057 1.907-2.185a48.507 48.507 0 0111.186 0z" /></svg>
+                            </div>
                           </div>
                         ) : (
                           <p className="text-sm text-gray-300 leading-relaxed whitespace-pre-wrap">{msg.content}</p>
