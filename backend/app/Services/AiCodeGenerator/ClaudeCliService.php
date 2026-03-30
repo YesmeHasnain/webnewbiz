@@ -138,7 +138,7 @@ class ClaudeCliService
         $cmd .= ' --print';
         $cmd .= ' --output-format json';
         $cmd .= ' --dangerously-skip-permissions';
-        $cmd .= ' --model haiku';
+        $cmd .= ' --model sonnet';
 
         if ($existingSession) {
             $cmd .= ' --resume ' . escapeshellarg($existingSession);

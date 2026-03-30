@@ -301,6 +301,17 @@ class CodeGeneratorService
 Website name: "{$name}". {$techInstructions}
 Create: index.html, about.html, services.html, contact.html, css/styles.css, js/main.js.
 Same navbar+footer on each page. Tailwind CDN. Inter font. Responsive. Overwrite index.html first.
+
+DESIGN REQUIREMENTS:
+- Large hero section (full viewport height) with gradient background and big bold heading
+- Use real Unsplash images: <img src="https://images.unsplash.com/photo-ID?w=800&h=600&fit=crop">
+- Each page must have 4+ sections with generous spacing (py-20 to py-32)
+- Cards with rounded-2xl, shadow-xl, hover:scale-105 transitions
+- Smooth scroll animations using IntersectionObserver in js/main.js
+- CSS animations in css/styles.css (fadeIn, slideUp on scroll)
+- Mobile hamburger menu
+- Footer with quick links, social icons, hours/contact info
+- Professional premium quality — NOT basic/simple
 PROMPT;
     }
 }
