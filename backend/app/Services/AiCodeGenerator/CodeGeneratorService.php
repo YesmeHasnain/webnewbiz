@@ -306,7 +306,7 @@ RULES:
 4. Each page must have the SAME navbar and footer with links to all other pages.
 5. Create css/styles.css for custom styles and js/main.js for interactivity.
 6. OVERWRITE the existing index.html. Start with index.html FIRST.
-7. Dark theme, Tailwind CSS CDN, Inter font, premium design, responsive, real content.
+7. Tailwind CSS CDN, Inter font, premium Awwwards-quality design, fully responsive, real content. Use whatever theme the user describes (light/dark/colorful).
 8. Every file must be complete production-ready code.
 PROMPT;
     }
