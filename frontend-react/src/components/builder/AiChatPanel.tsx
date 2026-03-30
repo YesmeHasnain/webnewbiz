@@ -14,28 +14,80 @@ const suggestions = [
   { icon: '📝', text: 'Create a blog with article cards, categories, and newsletter signup' },
 ];
 
-function parseTaskPlan(content: string): Array<{ task: string; status: 'done' | 'running' | 'pending'; file?: string }> | null {
-  // Try to detect task-like patterns in AI response
-  const lines = content.split('\n');
-  const tasks: Array<{ task: string; status: 'done' | 'running' | 'pending'; file?: string }> = [];
+// Expected files for task plan
+const expectedTasks = [
+  { file: 'index.html', label: 'Build home page with hero section' },
+  { file: 'about.html', label: 'Create about page' },
+  { file: 'services.html', label: 'Build services/features page' },
+  { file: 'contact.html', label: 'Create contact page with form' },
+  { file: 'css/styles.css', label: 'Write custom styles and animations' },
+  { file: 'js/main.js', label: 'Add interactivity and navigation' },
+];
 
-  for (const line of lines) {
-    const trimmed = line.trim();
-    if (trimmed.match(/^[-*]\s+/)) {
-      tasks.push({ task: trimmed.replace(/^[-*]\s+/, ''), status: 'done' });
-    }
-  }
+function TaskPlan({ filesChanged, isComplete }: { filesChanged: string[]; isComplete: boolean }) {
+  const completedFiles = new Set(filesChanged || []);
 
-  return tasks.length >= 3 ? tasks : null;
-}
+  return (
+    <div className="space-y-1 mt-3">
+      <div className="flex items-center gap-2 mb-2">
+        <svg className="w-4 h-4 text-gray-400" fill="none" stroke="currentColor" strokeWidth={1.5} viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" d="M8.25 6.75h12M8.25 12h12m-12 5.25h12M3.75 6.75h.007v.008H3.75V6.75zm.375 0a.375.375 0 11-.75 0 .375.375 0 01.75 0zM3.75 12h.007v.008H3.75V12zm.375 0a.375.375 0 11-.75 0 .375.375 0 01.75 0zm-.375 5.25h.007v.008H3.75v-.008zm.375 0a.375.375 0 11-.75 0 .375.375 0 01.75 0z" />
+        </svg>
+        <span className="text-xs font-semibold text-gray-300">Plan</span>
+      </div>
 
-function extractFilesFromContent(content: string): string[] {
-  const filePatterns = content.match(/(?:Writing|Creating|Updated|Modified)\s+[`"]?([a-zA-Z0-9_/.-]+\.[a-zA-Z]+)[`"]?/gi);
-  if (!filePatterns) return [];
-  return filePatterns.map(m => {
-    const match = m.match(/[`"]?([a-zA-Z0-9_/.-]+\.[a-zA-Z]+)[`"]?$/);
-    return match ? match[1] : '';
-  }).filter(Boolean);
+      {expectedTasks.map((task, i) => {
+        const isDone = completedFiles.has(task.file) || isComplete;
+        const isActive = !isDone && completedFiles.size > 0 && i === [...expectedTasks].findIndex(t => !completedFiles.has(t.file));
+
+        return (
+          <div key={task.file} className="flex items-start gap-2.5 py-1.5">
+            {/* Status icon */}
+            {isDone ? (
+              <div className="w-5 h-5 rounded-full bg-emerald-500/20 flex items-center justify-center flex-shrink-0 mt-0.5">
+                <svg className="w-3 h-3 text-emerald-400" fill="none" stroke="currentColor" strokeWidth={3} viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+                </svg>
+              </div>
+            ) : isActive ? (
+              <div className="w-5 h-5 rounded-full border-2 border-blue-400 flex items-center justify-center flex-shrink-0 mt-0.5">
+                <div className="w-2 h-2 bg-blue-400 rounded-full animate-pulse" />
+              </div>
+            ) : (
+              <div className="w-5 h-5 rounded-full border border-[#2a2d37] flex-shrink-0 mt-0.5" />
+            )}
+
+            {/* Task content */}
+            <div className="flex-1 min-w-0">
+              <p className={`text-xs leading-relaxed ${isDone ? 'text-gray-300 font-medium' : isActive ? 'text-white font-medium' : 'text-gray-600'}`}>
+                {task.label}
+              </p>
+              {/* Show file being written */}
+              {isActive && (
+                <div className="flex items-center gap-1.5 mt-1">
+                  <svg className="w-3 h-3 text-blue-400 animate-spin flex-shrink-0" fill="none" viewBox="0 0 24 24">
+                    <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" />
+                    <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4z" />
+                  </svg>
+                  <span className="text-[11px] text-gray-500">Writing</span>
+                  <code className="text-[11px] text-blue-400 bg-[#1a1d27] px-1.5 py-0.5 rounded">{task.file}</code>
+                </div>
+              )}
+            </div>
+          </div>
+        );
+      })}
+
+      {isComplete && (
+        <div className="flex items-center gap-2 mt-2 pt-2 border-t border-[#1e1e2e]">
+          <svg className="w-4 h-4 text-emerald-400" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+          </svg>
+          <span className="text-xs text-emerald-400 font-medium">Plan completed</span>
+        </div>
+      )}
+    </div>
+  );
 }
 
 export default function AiChatPanel({ messages, isLoading, onSend }: Props) {
@@ -62,7 +114,6 @@ export default function AiChatPanel({ messages, isLoading, onSend }: Props) {
 
   return (
     <div className="flex flex-col h-full">
-      {/* Messages area */}
       <div className="flex-1 overflow-y-auto">
         {!hasMessages ? (
           <div className="flex flex-col items-center justify-center h-full px-6">
@@ -72,7 +123,7 @@ export default function AiChatPanel({ messages, isLoading, onSend }: Props) {
               </svg>
             </div>
             <h3 className="text-sm font-semibold text-white mb-1">AI Code Assistant</h3>
-            <p className="text-xs text-gray-500 text-center mb-6">Describe what you want to build and I'll generate the code for you</p>
+            <p className="text-xs text-gray-500 text-center mb-6">Describe what you want to build</p>
             <div className="space-y-2 w-full">
               {suggestions.map((s, i) => (
                 <button key={i} onClick={() => onSend(s.text)} className="w-full flex items-start gap-3 px-4 py-3 bg-[#12121a] border border-[#1e1e2e] rounded-xl text-left hover:border-blue-500/30 hover:bg-blue-600/5 transition group">
@@ -92,58 +143,30 @@ export default function AiChatPanel({ messages, isLoading, onSend }: Props) {
                   </div>
                 ) : (
                   <div>
-                    {/* AI label */}
                     <div className="flex items-center gap-2 mb-2">
                       <div className="w-5 h-5 bg-gradient-to-br from-blue-500 to-purple-600 rounded-md flex items-center justify-center text-[10px] text-white font-bold">W</div>
                       <span className="text-xs text-gray-500 font-medium">WebNewBiz AI</span>
-                      {msg.id === -1 && <span className="text-xs text-gray-600">...</span>}
                     </div>
 
-                    {/* Task plan detection */}
                     {msg.id === -1 && isLoading ? (
-                      <div className="space-y-3">
-                        <p className="text-sm text-gray-300 leading-relaxed">{msg.content}</p>
-
-                        {/* Files being created — real-time */}
-                        {msg.files_changed && msg.files_changed.length > 0 && (
-                          <div className="space-y-1.5">
-                            {msg.files_changed.map((f, i) => (
-                              <div key={i} className="flex items-center gap-2 px-3 py-1.5 bg-[#12121a] rounded-lg border border-[#1e1e2e] animate-fadeIn">
-                                <svg className="w-3 h-3 text-blue-400 animate-spin flex-shrink-0" fill="none" viewBox="0 0 24 24"><circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" /><path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4z" /></svg>
-                                <span className="text-xs text-gray-400">Writing</span>
-                                <span className="text-xs text-blue-400 font-mono bg-[#1a1d27] px-2 py-0.5 rounded">{f}</span>
-                              </div>
-                            ))}
-                          </div>
-                        )}
-
-                        <div className="flex items-center gap-2">
-                          <div className="flex gap-1">
-                            <div className="w-1.5 h-1.5 bg-blue-400 rounded-full animate-bounce" />
-                            <div className="w-1.5 h-1.5 bg-blue-400 rounded-full animate-bounce" style={{ animationDelay: '150ms' }} />
-                            <div className="w-1.5 h-1.5 bg-blue-400 rounded-full animate-bounce" style={{ animationDelay: '300ms' }} />
-                          </div>
-                          <span className="text-xs text-gray-500">
-                            {msg.files_changed && msg.files_changed.length > 0
-                              ? `Creating files... (${msg.files_changed.length} so far)`
-                              : 'Generating code...'}
-                          </span>
-                        </div>
+                      <div>
+                        <p className="text-sm text-gray-300 leading-relaxed mb-1">
+                          Building your website. Let me break this down into tasks:
+                        </p>
+                        <TaskPlan filesChanged={msg.files_changed || []} isComplete={false} />
                       </div>
                     ) : (
                       <div>
-                        <p className="text-sm text-gray-300 leading-relaxed whitespace-pre-wrap">{msg.content}</p>
-                        {/* Files changed */}
-                        {msg.files_changed && msg.files_changed.length > 0 && (
-                          <div className="mt-3 space-y-1">
-                            <p className="text-xs text-gray-500 font-medium">Files modified:</p>
-                            {msg.files_changed.map((f, i) => (
-                              <div key={i} className="flex items-center gap-2 px-3 py-1.5 bg-[#12121a] rounded-lg border border-[#1e1e2e]">
-                                <svg className="w-3 h-3 text-emerald-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" /></svg>
-                                <span className="text-xs text-gray-400 font-mono">{f}</span>
-                              </div>
-                            ))}
+                        {/* Completed message with task plan */}
+                        {msg.files_changed && msg.files_changed.length > 0 ? (
+                          <div>
+                            <p className="text-sm text-gray-300 leading-relaxed mb-1">
+                              Your website is ready! Here's what was built:
+                            </p>
+                            <TaskPlan filesChanged={msg.files_changed} isComplete={true} />
                           </div>
+                        ) : (
+                          <p className="text-sm text-gray-300 leading-relaxed whitespace-pre-wrap">{msg.content}</p>
                         )}
                       </div>
                     )}
@@ -156,7 +179,7 @@ export default function AiChatPanel({ messages, isLoading, onSend }: Props) {
         )}
       </div>
 
-      {/* Input area */}
+      {/* Input */}
       <div className="border-t border-[#1a1d27] p-4">
         <div className="bg-[#12121a] border border-[#1e1e2e] rounded-xl overflow-hidden focus-within:border-blue-500/30 transition">
           <textarea
@@ -169,11 +192,9 @@ export default function AiChatPanel({ messages, isLoading, onSend }: Props) {
             onKeyDown={e => { if (e.key === 'Enter' && !e.shiftKey) { e.preventDefault(); handleSend(); } }}
           />
           <div className="flex items-center justify-between px-3 py-2">
-            <div className="flex items-center gap-2">
-              <button className="p-1.5 text-gray-600 hover:text-gray-300 rounded-lg hover:bg-white/5 transition">
-                <svg className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth={1.5} viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M12 4v16m8-8H4" /></svg>
-              </button>
-            </div>
+            <button className="p-1.5 text-gray-600 hover:text-gray-300 rounded-lg hover:bg-white/5 transition">
+              <svg className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth={1.5} viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M12 4v16m8-8H4" /></svg>
+            </button>
             <button onClick={handleSend} disabled={!input.trim() || isLoading}
               className={`p-2 rounded-xl transition ${input.trim() && !isLoading ? 'bg-blue-600 hover:bg-blue-500 text-white' : 'bg-[#1a1d27] text-gray-600'}`}>
               <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path d="M10.894 2.553a1 1 0 00-1.788 0l-7 14a1 1 0 001.169 1.409l5-1.429A1 1 0 009 15.571V11a1 1 0 112 0v4.571a1 1 0 00.725.962l5 1.428a1 1 0 001.17-1.408l-7-14z" /></svg>
