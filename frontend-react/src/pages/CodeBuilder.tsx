@@ -127,15 +127,19 @@ export default function CodeBuilder() {
         const res = await projectService.getStream(pid);
         const data = res.data;
         if (data.file_tree?.length) { setFileTree(data.file_tree); setIframeKey(k => k + 1); }
-        if (data.text && data.text !== streamTextRef.current) {
-          streamTextRef.current = data.text;
-          setMessages(prev => {
-            const last = prev[prev.length - 1];
-            if (last?.role === 'assistant' && last.id === -1)
-              return [...prev.slice(0, -1), { ...last, content: data.text, files_changed: data.files_changed }];
-            return prev;
-          });
-        }
+
+        // ALWAYS update assistant message with latest files_changed (for real-time task plan)
+        setMessages(prev => {
+          const last = prev[prev.length - 1];
+          if (last?.role === 'assistant' && last.id === -1) {
+            return [...prev.slice(0, -1), {
+              ...last,
+              content: data.text || last.content,
+              files_changed: data.files_changed?.length ? data.files_changed : last.files_changed,
+            }];
+          }
+          return prev;
+        });
         if (data.status === 'done') {
           stopPolling();
           setChatLoading(false);
