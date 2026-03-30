@@ -35,6 +35,13 @@ class CodeGeneratorService
         // Mark project as generating
         $project->update(['status' => 'generating']);
 
+        // Delete starter template files so Claude creates fresh ones
+        $dir = $project->storagePath();
+        foreach (['index.html', 'App.jsx', 'styles.css'] as $starterFile) {
+            $path = $dir . '/' . $starterFile;
+            if (File::exists($path)) File::delete($path);
+        }
+
         // Prepare stream file (frontend polls this)
         $streamFile = $project->storagePath() . '/.claude-stream';
         File::put($streamFile, json_encode([
@@ -107,12 +114,18 @@ class CodeGeneratorService
                 $this->finalize($project, $doneData);
             }
 
-            $freshProject = $project->fresh();
+            // Always rebuild file tree from disk after finalize
+            $freshTree = $this->projectService->buildFileTree($project);
+            $project->update(['file_tree' => $freshTree]);
+
+            // Get all non-hidden files as "changed"
+            $allProjectFiles = $this->projectService->listFiles($project);
+
             return [
                 'status' => 'done',
                 'text' => $doneData['response'] ?? $doneData['result'] ?? 'Code generation complete.',
-                'files_changed' => $doneData['files_changed'] ?? [],
-                'file_tree' => $freshProject->file_tree ?? $this->projectService->buildFileTree($project),
+                'files_changed' => !empty($doneData['files_changed']) ? $doneData['files_changed'] : $allProjectFiles,
+                'file_tree' => $freshTree,
             ];
         }
 
