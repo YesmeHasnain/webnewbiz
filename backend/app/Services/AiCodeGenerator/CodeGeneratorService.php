@@ -35,12 +35,7 @@ class CodeGeneratorService
         // Mark project as generating
         $project->update(['status' => 'generating']);
 
-        // Delete starter template files so Claude creates fresh ones
-        $dir = $project->storagePath();
-        foreach (['index.html', 'App.jsx', 'styles.css'] as $starterFile) {
-            $path = $dir . '/' . $starterFile;
-            if (File::exists($path)) File::delete($path);
-        }
+        // Don't delete starter files — Claude will overwrite them
 
         // Prepare stream file (frontend polls this)
         $streamFile = $project->storagePath() . '/.claude-stream';
@@ -366,8 +361,9 @@ You are a senior full-stack developer building a production website called "{$pr
 ## CRITICAL RULES:
 1. Create MULTIPLE FILES in SEPARATE FOLDERS. Never put all code in one file.
 2. Every component/page MUST be in its OWN file.
-3. DELETE the existing starter template files (App.jsx, index.html) and CREATE fresh ones.
+3. OVERWRITE the existing index.html with your generated content. Replace it completely.
 4. The file structure below is MANDATORY — create every single file listed.
+5. START with index.html FIRST, then create other files.
 
 {$fileStructure}
 
