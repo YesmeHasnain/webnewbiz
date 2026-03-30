@@ -117,6 +117,59 @@ class CodeGeneratorService
     }
 
     /**
+     * Extract code blocks from Claude's response and write them as files.
+     */
+    private function extractAndWriteFiles(Project $project, string $response): array
+    {
+        $dir = $project->storagePath();
+        $filesCreated = [];
+
+        // Pattern: ```filename.ext or ```language:filename.ext followed by code block
+        // Also matches: **filename.ext** followed by ```code```
+        $patterns = [
+            // Match: filename (path/to/file.ext) followed by code block
+            '/(?:^|\n)(?:#+\s*)?(?:\*\*)?`?([a-zA-Z0-9_\/.-]+\.[a-zA-Z]{1,10})`?(?:\*\*)?(?:\s*[-:])?\s*\n```[a-z]*\n([\s\S]*?)```/m',
+            // Match: ```path/to/file.ext\n...code...\n```
+            '/```([a-zA-Z0-9_\/.-]+\.[a-zA-Z]{1,10})\n([\s\S]*?)```/m',
+        ];
+
+        foreach ($patterns as $pattern) {
+            if (preg_match_all($pattern, $response, $matches, PREG_SET_ORDER)) {
+                foreach ($matches as $match) {
+                    $filePath = trim($match[1]);
+                    $content = $match[2];
+
+                    // Skip obviously wrong paths
+                    if (str_contains($filePath, '..') || strlen($filePath) > 200) continue;
+                    if (in_array($filePath, ['.env', '.gitignore', 'package.json', 'package-lock.json'])) continue;
+
+                    $fullPath = $dir . '/' . $filePath;
+                    File::ensureDirectoryExists(dirname($fullPath));
+                    File::put($fullPath, $content);
+                    $filesCreated[] = $filePath;
+                }
+            }
+        }
+
+        // If no files extracted via patterns, check if response contains a single large code block
+        // that should replace index.html or App.jsx
+        if (empty($filesCreated)) {
+            if (preg_match('/```(?:html|jsx?|tsx?)\n([\s\S]*?)```/', $response, $match)) {
+                $code = $match[1];
+                if (str_contains($code, '<!DOCTYPE') || str_contains($code, '<html')) {
+                    File::put($dir . '/index.html', $code);
+                    $filesCreated[] = 'index.html';
+                } elseif (str_contains($code, 'function') || str_contains($code, 'const')) {
+                    File::put($dir . '/App.jsx', $code);
+                    $filesCreated[] = 'App.jsx';
+                }
+            }
+        }
+
+        return $filesCreated;
+    }
+
+    /**
      * Finalize after Claude CLI completes.
      */
     private function finalize(Project $project, array $doneData): void
@@ -127,15 +180,22 @@ class CodeGeneratorService
             $beforeSnapshot = json_decode(File::get($snapshotFile), true) ?: [];
         }
 
+        // Extract code blocks from response and write as files
+        $responseText = $doneData['response'] ?? $doneData['result'] ?? '';
+        $extractedFiles = $this->extractAndWriteFiles($project, $responseText);
+
         $afterSnapshot = $this->getFileSnapshot($project);
         $filesChanged = $this->diffSnapshots($beforeSnapshot, $afterSnapshot);
 
-        // Save AI response (handle both 'response' and 'result' keys)
+        // Merge extracted files with diff-detected changes
+        $allFiles = array_unique(array_merge(array_keys($filesChanged), $extractedFiles));
+
+        // Save AI response
         ProjectMessage::create([
             'project_id'    => $project->id,
             'role'          => 'assistant',
             'content'       => $doneData['response'] ?? $doneData['result'] ?? 'Code generation complete.',
-            'files_changed' => $filesChanged,
+            'files_changed' => $allFiles,
         ]);
 
         // Update project
@@ -145,7 +205,7 @@ class CodeGeneratorService
         ]);
 
         // Update done file with files_changed
-        $doneData['files_changed'] = $filesChanged;
+        $doneData['files_changed'] = $allFiles;
         File::put($project->storagePath() . '/.claude-done', json_encode($doneData));
 
         // Cleanup
@@ -281,6 +341,23 @@ You are a senior full-stack developer building a production website called "{$pr
 - Typography: Inter font from Google Fonts, bold headings, generous line-height
 - Mobile responsive: Tailwind sm:/md:/lg: breakpoints, hamburger menu on mobile
 - Tailwind CSS via CDN: <script src="https://cdn.tailwindcss.com"></script>
+
+## OUTPUT FORMAT — CRITICAL:
+For EACH file you create, output it like this:
+
+index.html
+```html
+<!DOCTYPE html>
+...full code here...
+```
+
+src/components/Hero.jsx
+```jsx
+...full code here...
+```
+
+EVERY file must have its filename on the line BEFORE the code block.
+Create ALL files listed in the file structure above.
 
 ## QUALITY:
 - Production-ready code only. No placeholder text like "Lorem ipsum".
