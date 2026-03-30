@@ -50,9 +50,21 @@ export default function CodeBuilder() {
   useEffect(() => {
     if (project && initialPrompt && !sentInitialRef.current && !chatLoading) {
       sentInitialRef.current = true;
-      // Clear any existing messages and start fresh
-      setMessages([]);
-      setTimeout(() => handleChatSend(initialPrompt, project), 300);
+
+      // Set messages directly — don't rely on handleChatSend for initial prompt
+      const description = `I'll build a modern, production-ready website for "${project.name}". Let me break this down into tasks:`;
+      setMessages([
+        { id: Date.now(), role: 'user', content: initialPrompt, files_changed: null, created_at: new Date().toISOString() },
+        { id: -1, role: 'assistant', content: description, files_changed: [], created_at: new Date().toISOString() },
+      ]);
+      setChatLoading(true);
+
+      // Start generation
+      projectService.chat(project.id, initialPrompt).then(() => {
+        startStreamPolling(project.id);
+      }).catch(() => {
+        setChatLoading(false);
+      });
     }
   }, [project, initialPrompt]);
 
