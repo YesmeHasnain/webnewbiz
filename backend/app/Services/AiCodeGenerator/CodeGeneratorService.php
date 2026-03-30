@@ -138,9 +138,17 @@ class CodeGeneratorService
             }
         } catch (\Throwable $e) {}
 
-        // During generation, return ALL project files as "changed"
-        // This ensures task plan shows progress for all files
-        $allFiles = $this->projectService->listFiles($project);
+        // Return files as "changed" — but only if they have real content (>1KB)
+        // This prevents index.html showing as "done" when it's still the loading template
+        $allFiles = [];
+        $projectDir = $project->storagePath();
+        foreach ($this->projectService->listFiles($project) as $file) {
+            $fullPath = $projectDir . '/' . $file;
+            $size = file_exists($fullPath) ? filesize($fullPath) : 0;
+            if ($size > 1000) {
+                $allFiles[] = $file;
+            }
+        }
 
         return [
             'status' => 'generating',
