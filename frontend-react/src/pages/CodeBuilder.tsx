@@ -191,7 +191,11 @@ export default function CodeBuilder() {
     addOutput(`> ${message}`);
     addOutput('Starting code generation...');
     setMessages(prev => [...prev, { id: Date.now(), role: 'user', content: message, files_changed: null, created_at: new Date().toISOString() }]);
-    setMessages(prev => [...prev, { id: -1, role: 'assistant', content: 'Analyzing your request...', files_changed: null, created_at: new Date().toISOString() }]);
+
+    // Build Bolt-style description based on user prompt
+    const description = `I'll build a modern, production-ready website for "${proj.name}". Let me break this down into tasks:`;
+
+    setMessages(prev => [...prev, { id: -1, role: 'assistant', content: description, files_changed: [], created_at: new Date().toISOString() }]);
     try {
       await projectService.chat(proj.id, message);
       startStreamPolling(proj.id);

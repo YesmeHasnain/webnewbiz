@@ -49,9 +49,23 @@ function getTasksFromFiles(files: string[]): Array<{ file: string; label: string
   return tasks;
 }
 
+// Default tasks shown before any files are created
+const defaultTasks = [
+  { file: 'index.html', label: 'Build home page with hero section' },
+  { file: 'about.html', label: 'Create about page' },
+  { file: 'services.html', label: 'Build services/features page' },
+  { file: 'contact.html', label: 'Create contact page with form' },
+  { file: 'css/styles.css', label: 'Write custom styles and animations' },
+  { file: 'js/main.js', label: 'Add interactivity and navigation' },
+];
+
 function TaskPlan({ filesChanged, isComplete }: { filesChanged: string[]; isComplete: boolean }) {
   const completedFiles = new Set(filesChanged || []);
-  const tasks = getTasksFromFiles(filesChanged || []);
+
+  // Use actual files if available, otherwise show default pending tasks
+  const tasks = filesChanged && filesChanged.length > 0
+    ? getTasksFromFiles(filesChanged)
+    : defaultTasks;
 
   return (
     <div className="space-y-1 mt-3">
@@ -63,8 +77,8 @@ function TaskPlan({ filesChanged, isComplete }: { filesChanged: string[]; isComp
       </div>
 
       {tasks.map((task, i) => {
-        const isDone = completedFiles.has(task.file) || isComplete;
-        const isActive = !isDone && i === tasks.findIndex(t => !completedFiles.has(t.file));
+        const isDone = isComplete || (completedFiles.size > 0 && completedFiles.has(task.file));
+        const isActive = !isDone && !isComplete && completedFiles.size > 0 && i === tasks.findIndex(t => !completedFiles.has(t.file));
 
         return (
           <div key={task.file} className="flex items-start gap-2.5 py-1.5">
@@ -176,9 +190,7 @@ export default function AiChatPanel({ messages, isLoading, onSend }: Props) {
 
                     {msg.id === -1 && isLoading ? (
                       <div>
-                        <p className="text-sm text-gray-300 leading-relaxed mb-1">
-                          Building your website. Let me break this down into tasks:
-                        </p>
+                        <p className="text-sm text-gray-300 leading-relaxed mb-1">{msg.content}</p>
                         <TaskPlan filesChanged={msg.files_changed || []} isComplete={false} />
                       </div>
                     ) : (
