@@ -74,6 +74,15 @@ class CodeGeneratorService
         if (File::exists($doneFile)) {
             $doneData = json_decode(File::get($doneFile), true) ?: [];
 
+            // Handle raw CLI output format (has 'result' key instead of 'response')
+            if (isset($doneData['result']) && !isset($doneData['response'])) {
+                $doneData['response'] = $doneData['result'];
+            }
+            if (isset($doneData['session_id'])) {
+                $sessionFile = $project->storagePath() . '/.claude-session';
+                File::put($sessionFile, $doneData['session_id']);
+            }
+
             // If not yet finalized, finalize now
             if ($project->status === 'generating') {
                 $this->finalize($project, $doneData);
@@ -81,7 +90,7 @@ class CodeGeneratorService
 
             return [
                 'status' => 'done',
-                'text' => $doneData['response'] ?? '',
+                'text' => $doneData['response'] ?? $doneData['result'] ?? 'Code generation complete.',
                 'files_changed' => $doneData['files_changed'] ?? [],
                 'file_tree' => $project->fresh()->file_tree ?? [],
             ];
@@ -121,11 +130,11 @@ class CodeGeneratorService
         $afterSnapshot = $this->getFileSnapshot($project);
         $filesChanged = $this->diffSnapshots($beforeSnapshot, $afterSnapshot);
 
-        // Save AI response
+        // Save AI response (handle both 'response' and 'result' keys)
         ProjectMessage::create([
             'project_id'    => $project->id,
             'role'          => 'assistant',
-            'content'       => $doneData['response'] ?? 'Code generation complete.',
+            'content'       => $doneData['response'] ?? $doneData['result'] ?? 'Code generation complete.',
             'files_changed' => $filesChanged,
         ]);
 

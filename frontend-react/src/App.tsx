@@ -40,6 +40,7 @@ import BoosterCloudflare from './pages/website/BoosterCloudflare';
 import BoosterSettings from './pages/website/BoosterSettings';
 import { CrmDashboardSub, CrmCampaignsSub, CrmLeads, CrmSubscribers, CrmBookingsSub, CrmAbandonedCarts, CrmChatbot } from './pages/website/WebsiteCrm';
 import { lazy, Suspense } from 'react';
+const PromptPage = lazy(() => import('./pages/PromptPage'));
 const CodeBuilder = lazy(() => import('./pages/CodeBuilder'));
 const Billing = lazy(() => import('./pages/Billing'));
 const AppBuilder = lazy(() => import('./pages/AppBuilder'));
@@ -75,7 +76,7 @@ export default function App() {
           <Route path="/builder/progress/:id" element={<AuthGuard><BuildProgress /></AuthGuard>} />
 
           {/* Code Builder (Lovable-style) */}
-          <Route path="/code-builder" element={<AuthGuard><Suspense fallback={null}><CodeBuilder /></Suspense></AuthGuard>} />
+          <Route path="/code-builder" element={<AuthGuard><Suspense fallback={null}><PromptPage /></Suspense></AuthGuard>} />
           <Route path="/code-builder/:id" element={<AuthGuard><Suspense fallback={null}><CodeBuilder /></Suspense></AuthGuard>} />
 
           {/* App Builder */}

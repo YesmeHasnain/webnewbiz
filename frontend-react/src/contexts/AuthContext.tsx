@@ -11,7 +11,7 @@ interface AuthContextType {
 }
 
 // Dev default user — auth bypassed for now
-const devUser: User = { id: 6, name: 'Hasnain', email: 'zenesadigital7234@gmail.com' } as User;
+const devUser: User = { id: 1, name: 'Hasnain', email: 'zenesadigital7234@gmail.com' } as User;
 
 const AuthContext = createContext<AuthContextType>({
   user: devUser,

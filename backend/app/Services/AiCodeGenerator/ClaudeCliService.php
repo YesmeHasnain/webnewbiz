@@ -7,118 +7,64 @@ use App\Models\Project;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Log;
 
-/**
- * Wraps Claude Code CLI for code generation.
- * Uses shell_exec with a temp script to ensure full environment inheritance on Windows.
- */
 class ClaudeCliService
 {
-    /**
-     * Run Claude Code CLI in the project directory.
-     */
     public function run(Project|App $project, string $prompt, ?string $systemPrompt = null): array
     {
         $projectDir = $project->storagePath();
         File::ensureDirectoryExists($projectDir);
 
-        // Check for existing session (for follow-up messages)
         $sessionFile = $projectDir . '/.claude-session';
         $existingSession = File::exists($sessionFile) ? trim(File::get($sessionFile)) : null;
 
-        Log::info('Claude CLI: Starting', [
-            'project' => $project->id,
-            'resume'  => $existingSession ? 'yes' : 'no',
-            'prompt'  => mb_substr($prompt, 0, 100) . '...',
-        ]);
-
-        // Write prompt to temp file (avoids shell escaping issues with long prompts)
         $promptFile = tempnam(sys_get_temp_dir(), 'claude_prompt_');
         File::put($promptFile, $prompt);
 
-        // Write system prompt to temp file if provided
         $sysPromptFile = null;
         if ($systemPrompt) {
             $sysPromptFile = tempnam(sys_get_temp_dir(), 'claude_sys_');
             File::put($sysPromptFile, $systemPrompt);
         }
 
-        // Build the shell script
-        $scriptContent = $this->buildScript($projectDir, $promptFile, $sysPromptFile, $existingSession);
-        $scriptFile = tempnam(sys_get_temp_dir(), 'claude_run_') . '.sh';
-        File::put($scriptFile, $scriptContent);
+        $cmd = $this->buildCommand($projectDir, $promptFile, $sysPromptFile, $existingSession);
 
-        // Execute — use proc_open for full env inheritance
-        $descriptors = [
-            0 => ['pipe', 'r'],  // stdin
-            1 => ['pipe', 'w'],  // stdout
-            2 => ['pipe', 'w'],  // stderr
-        ];
+        Log::info('Claude CLI: Running', ['project' => $project->id, 'cmd_length' => strlen($cmd)]);
 
-        $proc = proc_open("bash " . escapeshellarg($scriptFile), $descriptors, $pipes, $projectDir);
+        $descriptors = [0 => ['pipe', 'r'], 1 => ['pipe', 'w'], 2 => ['pipe', 'w']];
+        $proc = proc_open($cmd, $descriptors, $pipes, $projectDir);
 
         if (!is_resource($proc)) {
-            $this->cleanup($promptFile, $sysPromptFile, $scriptFile);
+            $this->cleanup($promptFile, $sysPromptFile);
             return ['success' => false, 'response' => 'Failed to start Claude Code process', 'session_id' => null];
         }
 
-        fclose($pipes[0]); // close stdin
-
+        fclose($pipes[0]);
         $stdout = stream_get_contents($pipes[1]);
         $stderr = stream_get_contents($pipes[2]);
         fclose($pipes[1]);
         fclose($pipes[2]);
-
         $exitCode = proc_close($proc);
 
-        // Cleanup temp files
-        $this->cleanup($promptFile, $sysPromptFile, $scriptFile);
+        $this->cleanup($promptFile, $sysPromptFile);
 
         if ($exitCode !== 0) {
-            Log::error('Claude CLI exited with error', [
-                'exit_code' => $exitCode,
-                'stderr'    => mb_substr($stderr, 0, 500),
-                'stdout'    => mb_substr($stdout, 0, 500),
-            ]);
-            return [
-                'success'    => false,
-                'response'   => 'Claude Code error: ' . ($stderr ?: $stdout ?: "Exit code {$exitCode}"),
-                'session_id' => null,
-            ];
+            Log::error('Claude CLI error', ['exit' => $exitCode, 'stderr' => mb_substr($stderr, 0, 500)]);
+            return ['success' => false, 'response' => 'Claude error: ' . ($stderr ?: $stdout ?: "Exit {$exitCode}"), 'session_id' => null];
         }
 
-        // Parse JSON output
         $result = json_decode($stdout, true);
         if (!$result) {
-            Log::warning('Claude CLI: non-JSON output', ['length' => strlen($stdout)]);
             return ['success' => true, 'response' => $stdout, 'session_id' => null];
         }
 
-        $responseText = $result['result'] ?? $stdout;
         $sessionId = $result['session_id'] ?? null;
-
-        // Save session ID for follow-up messages
         if ($sessionId) {
             File::put($sessionFile, $sessionId);
         }
 
-        Log::info('Claude CLI: Done', [
-            'project'    => $project->id,
-            'cost'       => $result['cost_usd'] ?? 0,
-            'duration'   => ($result['duration_ms'] ?? 0) . 'ms',
-            'turns'      => $result['num_turns'] ?? 0,
-        ]);
-
-        return [
-            'success'    => true,
-            'response'   => $responseText,
-            'session_id' => $sessionId,
-        ];
+        return ['success' => true, 'response' => $result['result'] ?? $stdout, 'session_id' => $sessionId];
     }
 
-    /**
-     * Run Claude Code CLI in background — returns immediately.
-     * Output is written to .claude-done file when complete.
-     */
     public function runAsync(Project|App $project, string $prompt, ?string $systemPrompt = null): void
     {
         $projectDir = $project->storagePath();
@@ -127,7 +73,6 @@ class ClaudeCliService
         $sessionFile = $projectDir . '/.claude-session';
         $existingSession = File::exists($sessionFile) ? trim(File::get($sessionFile)) : null;
 
-        // Write prompt + system prompt to temp files
         $promptFile = tempnam(sys_get_temp_dir(), 'claude_prompt_');
         File::put($promptFile, $prompt);
 
@@ -137,141 +82,112 @@ class ClaudeCliService
             File::put($sysPromptFile, $systemPrompt);
         }
 
-        // Build a wrapper script that runs Claude and writes result to .claude-done
-        $doneFile = str_replace('\\', '/', $projectDir . '/.claude-done');
-        $streamFile = str_replace('\\', '/', $projectDir . '/.claude-stream');
+        $doneFile = $projectDir . '/.claude-done';
+        $streamFile = $projectDir . '/.claude-stream';
 
-        $claudePath = $this->findClaudeBinary();
-        $escapedDir = str_replace('\\', '/', $projectDir);
-        $escapedPrompt = str_replace('\\', '/', $promptFile);
+        @unlink($doneFile);
+        File::put($streamFile, json_encode(['status' => 'running', 'text' => 'Claude is writing code...']));
 
-        $script = "#!/bin/bash\n";
-        $script .= "cd " . escapeshellarg($escapedDir) . "\n\n";
+        $claudeCmd = $this->buildCommand($projectDir, $promptFile, $sysPromptFile, $existingSession);
 
-        // Update stream file to show running
-        $script .= "echo '{\"status\":\"running\",\"text\":\"Claude is writing code...\"}' > " . escapeshellarg($streamFile) . "\n\n";
+        // Build a wrapper that captures output to .claude-done
+        $doneFileEsc = str_replace('\\', '/', $doneFile);
+        $sessionFileEsc = str_replace('\\', '/', $sessionFile);
+        $promptFileEsc = str_replace('\\', '/', $promptFile);
 
-        // Build claude command — capture output to variable
-        $script .= "OUTPUT=$(" . escapeshellarg($claudePath);
-        $script .= " --print";
-        $script .= " --output-format json";
-        $script .= " --dangerously-skip-permissions";
-        $script .= " --model sonnet";
+        if ($this->isWindows()) {
+            // Windows: write a .bat wrapper
+            $batContent = "@echo off\r\n";
+            $batContent .= "cd /d \"" . $projectDir . "\"\r\n";
+            $batContent .= $claudeCmd . " > \"" . $doneFileEsc . "\" 2>&1\r\n";
+            // Cleanup
+            $batContent .= "del \"" . str_replace('/', '\\', $promptFileEsc) . "\" 2>nul\r\n";
+            if ($sysPromptFile) {
+                $batContent .= "del \"" . str_replace('/', '\\', $sysPromptFile) . "\" 2>nul\r\n";
+            }
 
-        if ($existingSession) {
-            $script .= " --resume " . escapeshellarg($existingSession);
-        }
-        if ($sysPromptFile) {
-            $script .= " --append-system-prompt-file " . escapeshellarg(str_replace('\\', '/', $sysPromptFile));
-        }
-        $script .= ' "$(cat ' . escapeshellarg($escapedPrompt) . ')"';
-        $script .= " 2>/dev/null)\n\n";
+            $batFile = tempnam(sys_get_temp_dir(), 'claude_bg_') . '.bat';
+            File::put($batFile, $batContent);
 
-        // Extract result and session_id from JSON output, write to done file
-        $script .= "RESULT=$(echo \"\$OUTPUT\" | python3 -c \"import sys,json; d=json.load(sys.stdin); print(json.dumps({'response':d.get('result',''),'session_id':d.get('session_id',''),'cost':d.get('cost_usd',0),'duration':d.get('duration_ms',0),'turns':d.get('num_turns',0)}))\" 2>/dev/null || echo '{\"response\":\"Code generation complete.\",\"session_id\":\"\"}')\n";
-        $script .= "echo \"\$RESULT\" > " . escapeshellarg($doneFile) . "\n\n";
-
-        // Save session ID
-        $script .= "SESSION_ID=$(echo \"\$RESULT\" | python3 -c \"import sys,json; print(json.load(sys.stdin).get('session_id',''))\" 2>/dev/null)\n";
-        $script .= "if [ -n \"\$SESSION_ID\" ]; then echo \"\$SESSION_ID\" > " . escapeshellarg(str_replace('\\', '/', $sessionFile)) . "; fi\n\n";
-
-        // Cleanup temp files
-        $script .= "rm -f " . escapeshellarg($escapedPrompt) . "\n";
-        if ($sysPromptFile) {
-            $script .= "rm -f " . escapeshellarg(str_replace('\\', '/', $sysPromptFile)) . "\n";
-        }
-
-        $scriptFile = tempnam(sys_get_temp_dir(), 'claude_bg_') . '.sh';
-        File::put($scriptFile, $script);
-
-        // Remove old done file
-        @unlink($projectDir . '/.claude-done');
-
-        // Start background process — must work on Windows
-        $scriptPath = str_replace('\\', '/', $scriptFile);
-        if (strtoupper(substr(PHP_OS, 0, 3)) === 'WIN') {
-            // Windows: use "start /B bash ..." to run detached
-            $bgCmd = 'start /B bash ' . escapeshellarg($scriptPath);
-            pclose(popen($bgCmd, 'r'));
+            pclose(popen('start /B cmd /c "' . $batFile . '"', 'r'));
         } else {
-            $bgCmd = "bash " . escapeshellarg($scriptPath) . " > /dev/null 2>&1 &";
+            // Unix
+            $bgCmd = $claudeCmd . ' > ' . escapeshellarg($doneFileEsc) . ' 2>&1';
+            $bgCmd .= '; rm -f ' . escapeshellarg($promptFileEsc);
+            if ($sysPromptFile) {
+                $bgCmd .= ' ' . escapeshellarg(str_replace('\\', '/', $sysPromptFile));
+            }
+            $bgCmd .= ' &';
+
             proc_close(proc_open($bgCmd, [['file', '/dev/null', 'r'], ['file', '/dev/null', 'w'], ['file', '/dev/null', 'w']], $pipes, $projectDir));
         }
 
-        Log::info('Claude CLI: Started background process', [
-            'app' => $project->id,
-            'resume'  => $existingSession ? 'yes' : 'no',
-        ]);
+        Log::info('Claude CLI: Background started', ['project' => $project->id]);
     }
 
-    /**
-     * Build a bash script that runs Claude Code CLI.
-     * This ensures full environment inheritance regardless of how PHP is invoked.
-     */
-    private function buildScript(string $projectDir, string $promptFile, ?string $sysPromptFile, ?string $existingSession): string
+    private function buildCommand(string $projectDir, string $promptFile, ?string $sysPromptFile, ?string $existingSession): string
     {
-        $claudePath = $this->findClaudeBinary();
-        $escapedDir = str_replace('\\', '/', $projectDir);
-        $escapedPrompt = str_replace('\\', '/', $promptFile);
+        $claude = $this->findClaudeBinary();
+        $promptContent = File::get($promptFile);
 
-        $script = "#!/bin/bash\n";
-        $script .= "cd " . escapeshellarg($escapedDir) . "\n";
-
-        // Build claude command
-        $script .= escapeshellarg($claudePath);
-        $script .= " --print";
-        $script .= " --output-format json";
-        $script .= " --dangerously-skip-permissions";
-        $script .= " --model sonnet";
+        // Build command directly — no bash wrapper needed
+        $cmd = escapeshellarg($claude);
+        $cmd .= ' --print';
+        $cmd .= ' --output-format json';
+        $cmd .= ' --dangerously-skip-permissions';
+        $cmd .= ' --model sonnet';
 
         if ($existingSession) {
-            $script .= " --resume " . escapeshellarg($existingSession);
+            $cmd .= ' --resume ' . escapeshellarg($existingSession);
         }
-
         if ($sysPromptFile) {
-            $escapedSys = str_replace('\\', '/', $sysPromptFile);
-            $script .= " --append-system-prompt-file " . escapeshellarg($escapedSys);
+            $cmd .= ' --append-system-prompt-file ' . escapeshellarg(str_replace('\\', '/', $sysPromptFile));
         }
 
-        // Read prompt from file to avoid shell escaping issues
-        $script .= ' "$(cat ' . escapeshellarg($escapedPrompt) . ')"';
-        $script .= "\n";
+        // Pass prompt directly as argument (escaped)
+        $cmd .= ' ' . escapeshellarg($promptContent);
 
-        return $script;
+        return $cmd;
     }
 
-    /**
-     * Find the Claude Code binary path.
-     */
     private function findClaudeBinary(): string
     {
-        $home = getenv('USERPROFILE') ?: getenv('HOME') ?: '';
-        $home = str_replace('\\', '/', $home);
-
-        $paths = [
-            $home . '/.local/bin/claude',
-            '/usr/local/bin/claude',
-            '/usr/bin/claude',
-        ];
-
-        foreach ($paths as $path) {
-            if (File::exists($path) || File::exists($path . '.exe')) {
-                return $path;
+        // Windows: check common npm global paths
+        if ($this->isWindows()) {
+            $appData = getenv('APPDATA') ?: '';
+            $paths = [
+                $appData . '\\npm\\claude.cmd',
+                $appData . '\\npm\\claude',
+                'C:\\Program Files\\nodejs\\claude.cmd',
+            ];
+            foreach ($paths as $p) {
+                if (file_exists($p)) return $p;
             }
+
+            // Try where command
+            $result = trim(shell_exec('where claude 2>nul') ?? '');
+            if ($result) return explode("\n", $result)[0];
+        }
+
+        // Unix paths
+        $home = getenv('HOME') ?: '';
+        $paths = [$home . '/.local/bin/claude', '/usr/local/bin/claude', '/usr/bin/claude'];
+        foreach ($paths as $p) {
+            if (file_exists($p)) return $p;
         }
 
         return 'claude';
     }
 
-    /**
-     * Clean up temporary files.
-     */
+    private function isWindows(): bool
+    {
+        return strtoupper(substr(PHP_OS, 0, 3)) === 'WIN';
+    }
+
     private function cleanup(string ...$files): void
     {
-        foreach ($files as $file) {
-            if ($file && File::exists($file)) {
-                @unlink($file);
-            }
+        foreach ($files as $f) {
+            if ($f && file_exists($f)) @unlink($f);
         }
     }
 }
