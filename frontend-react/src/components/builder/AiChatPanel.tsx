@@ -14,18 +14,44 @@ const suggestions = [
   { icon: '📝', text: 'Create a blog with article cards, categories, and newsletter signup' },
 ];
 
-// Expected files for task plan
-const expectedTasks = [
-  { file: 'index.html', label: 'Build home page with hero section' },
-  { file: 'about.html', label: 'Create about page' },
-  { file: 'services.html', label: 'Build services/features page' },
-  { file: 'contact.html', label: 'Create contact page with form' },
-  { file: 'css/styles.css', label: 'Write custom styles and animations' },
-  { file: 'js/main.js', label: 'Add interactivity and navigation' },
-];
+function getTasksFromFiles(files: string[]): Array<{ file: string; label: string }> {
+  // Build task list dynamically from actual files
+  const tasks: Array<{ file: string; label: string }> = [];
+  const labelMap: Record<string, string> = {
+    'index.html': 'Build home page with hero section',
+    'about.html': 'Create about page',
+    'services.html': 'Build services/features page',
+    'contact.html': 'Create contact page with form',
+    'portfolio.html': 'Create portfolio/gallery page',
+    'pricing.html': 'Build pricing page',
+    'css/styles.css': 'Write custom styles and animations',
+    'css/animations.css': 'Add CSS animations',
+    'js/main.js': 'Add interactivity and navigation',
+    'js/form.js': 'Build form validation',
+    'styles.css': 'Write custom styles',
+    'App.jsx': 'Build main React app component',
+    'src/App.jsx': 'Create React app with routing',
+    'src/components/Navbar.jsx': 'Build navigation component',
+    'src/components/Hero.jsx': 'Create hero section',
+    'src/components/About.jsx': 'Build about section',
+    'src/components/Footer.jsx': 'Create footer component',
+    'src/components/Contact.jsx': 'Build contact form',
+    'src/components/Skills.jsx': 'Create skills/features section',
+    'src/components/Projects.jsx': 'Build projects gallery',
+    'src/pages/HomePage.jsx': 'Create home page',
+    'src/pages/AboutPage.jsx': 'Create about page',
+    'src/pages/ContactPage.jsx': 'Create contact page',
+  };
+
+  for (const f of files) {
+    tasks.push({ file: f, label: labelMap[f] || `Create ${f}` });
+  }
+  return tasks;
+}
 
 function TaskPlan({ filesChanged, isComplete }: { filesChanged: string[]; isComplete: boolean }) {
   const completedFiles = new Set(filesChanged || []);
+  const tasks = getTasksFromFiles(filesChanged || []);
 
   return (
     <div className="space-y-1 mt-3">
@@ -36,9 +62,9 @@ function TaskPlan({ filesChanged, isComplete }: { filesChanged: string[]; isComp
         <span className="text-xs font-semibold text-gray-300">Plan</span>
       </div>
 
-      {expectedTasks.map((task, i) => {
+      {tasks.map((task, i) => {
         const isDone = completedFiles.has(task.file) || isComplete;
-        const isActive = !isDone && completedFiles.size > 0 && i === [...expectedTasks].findIndex(t => !completedFiles.has(t.file));
+        const isActive = !isDone && i === tasks.findIndex(t => !completedFiles.has(t.file));
 
         return (
           <div key={task.file} className="flex items-start gap-2.5 py-1.5">

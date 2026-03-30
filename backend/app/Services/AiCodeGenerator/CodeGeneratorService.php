@@ -138,13 +138,14 @@ class CodeGeneratorService
             }
         } catch (\Throwable $e) {}
 
-        $currentFiles = $this->getFileSnapshot($project);
-        $changedFiles = array_keys($this->diffSnapshots($beforeSnapshot, $currentFiles));
+        // During generation, return ALL project files as "changed"
+        // This ensures task plan shows progress for all files
+        $allFiles = $this->projectService->listFiles($project);
 
         return [
             'status' => 'generating',
             'text' => $streamData['text'] ?? 'AI is generating code...',
-            'files_changed' => $changedFiles,
+            'files_changed' => $allFiles,
             'file_tree' => $fileTree,
         ];
     }
