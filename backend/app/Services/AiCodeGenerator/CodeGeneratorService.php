@@ -333,21 +333,13 @@ src/components/Contact.js, styles.css
 Use Vue 3 CDN (unpkg.com/vue@3). Composition API with setup(). Each component in own file.
 FS,
             default => <<<'FS'
-## FILE STRUCTURE — Create these SEPARATE files:
+## FILE STRUCTURE — Create these files:
 ```
-index.html              ← Home page
-about.html              ← About page
-services.html           ← Services page
-portfolio.html          ← Portfolio/projects page
-contact.html            ← Contact page with form
-css/
-  styles.css            ← All styles
-  animations.css        ← CSS animations
-js/
-  main.js               ← Navigation, hamburger menu, smooth scroll
-  form.js               ← Contact form validation
+index.html              ← Single-page website with ALL sections (hero, about, features, gallery, contact form, footer)
+css/styles.css          ← All custom styles + animations
+js/main.js              ← Navigation, smooth scroll, form validation, animations
 ```
-Each HTML page must be a COMPLETE standalone file with full nav + footer.
+Put ALL content in index.html as sections. Link css/styles.css and js/main.js from index.html.
 FS,
         };
 
@@ -363,43 +355,15 @@ You are a senior full-stack developer building a production website called "{$pr
 
 {$fileStructure}
 
-## DESIGN STANDARDS (Awwwards/Dribbble quality):
-- Dark theme: bg-gray-950/bg-[#0a0a0f] background, white text, blue/purple gradients
-- Hero: Full-viewport, dramatic gradient background, text-5xl to text-7xl bold heading, animated entrance
-- Cards: rounded-2xl, border border-gray-800, shadow-xl, backdrop-blur glass effects
-- Buttons: rounded-full or rounded-xl, gradient bg (blue-600 to purple-600), hover scale effect
-- Spacing: generous (py-20, py-24, py-32 between sections)
-- Hover effects on ALL interactive elements (scale, shadow, color transitions)
-- CSS animations: fade-in on scroll, floating elements, gradient-shift backgrounds
-- Images: Use https://images.unsplash.com/photo-{id}?w=800&h=600&fit=crop
-- Typography: Inter font from Google Fonts, bold headings, generous line-height
-- Mobile responsive: Tailwind sm:/md:/lg: breakpoints, hamburger menu on mobile
-- Tailwind CSS via CDN: <script src="https://cdn.tailwindcss.com"></script>
+## DESIGN:
+- Dark theme with Tailwind CSS CDN: <script src="https://cdn.tailwindcss.com"></script>
+- Inter font from Google Fonts
+- Premium quality: gradients, hover effects, animations, responsive
+- Real content (no lorem ipsum), production-ready code
 
-## OUTPUT FORMAT — CRITICAL:
-For EACH file you create, output it like this:
-
-index.html
-```html
-<!DOCTYPE html>
-...full code here...
-```
-
-src/components/Hero.jsx
-```jsx
-...full code here...
-```
-
-EVERY file must have its filename on the line BEFORE the code block.
-Create ALL files listed in the file structure above.
-
-## QUALITY:
-- Production-ready code only. No placeholder text like "Lorem ipsum".
-- Real content that matches the project description.
-- Every file must be complete — no comments like "// add more here".
-- Smooth scrolling navigation between sections.
-- Form validation with success/error states.
-- At least 5 fully designed sections/pages.
+## IMPORTANT:
+- OVERWRITE index.html completely with generated content
+- Start creating index.html FIRST
 PROMPT;
     }
 }
