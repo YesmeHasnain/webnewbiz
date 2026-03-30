@@ -72,7 +72,19 @@ class CodeGeneratorService
 
         // Check if process finished
         if (File::exists($doneFile)) {
-            $rawContent = File::get($doneFile);
+            $rawContent = '';
+            try { $rawContent = File::get($doneFile); } catch (\Throwable $e) {
+                // File might be locked by Claude CLI still writing — treat as still generating
+                return [
+                    'status' => 'generating',
+                    'text' => 'AI is finishing up...',
+                    'files_changed' => array_keys($this->diffSnapshots(
+                        json_decode(File::get($project->storagePath() . '/.claude-before-snapshot') ?: '[]', true) ?: [],
+                        $this->getFileSnapshot($project)
+                    )),
+                    'file_tree' => $this->projectService->buildFileTree($project),
+                ];
+            }
             $doneData = json_decode($rawContent, true) ?: [];
 
             // Handle raw CLI output format (has 'result' key instead of 'response')
@@ -107,19 +119,28 @@ class CodeGeneratorService
         // Still running — return current progress
         $fileTree = $this->projectService->buildFileTree($project);
 
-        // Read stream file for Claude's output so far
         $streamData = [];
-        if (File::exists($streamFile)) {
-            $streamData = json_decode(File::get($streamFile), true) ?: [];
-        }
+        try {
+            if (File::exists($streamFile)) {
+                $streamData = json_decode(File::get($streamFile), true) ?: [];
+            }
+        } catch (\Throwable $e) {}
+
+        $beforeSnapshot = [];
+        try {
+            $snapshotPath = $project->storagePath() . '/.claude-before-snapshot';
+            if (File::exists($snapshotPath)) {
+                $beforeSnapshot = json_decode(File::get($snapshotPath), true) ?: [];
+            }
+        } catch (\Throwable $e) {}
+
+        $currentFiles = $this->getFileSnapshot($project);
+        $changedFiles = array_keys($this->diffSnapshots($beforeSnapshot, $currentFiles));
 
         return [
             'status' => 'generating',
             'text' => $streamData['text'] ?? 'AI is generating code...',
-            'files_changed' => array_keys($this->diffSnapshots(
-                json_decode(File::get($project->storagePath() . '/.claude-before-snapshot') ?: '[]', true) ?: [],
-                $this->getFileSnapshot($project)
-            )),
+            'files_changed' => $changedFiles,
             'file_tree' => $fileTree,
         ];
     }
