@@ -284,86 +284,30 @@ class CodeGeneratorService
      */
     private function buildSystemPrompt(Project $project): string
     {
+        $name = $project->name;
         $framework = $project->framework;
 
-        $fileStructure = match ($framework) {
-            'react' => <<<'FS'
-## FILE STRUCTURE — You MUST create these files:
-```
-index.html              ← Main HTML (loads React CDN + Babel + Tailwind CDN + main App.jsx)
-src/
-  App.jsx               ← Main App component with Router/page switching
-  components/
-    Navbar.jsx           ← Sticky navigation with mobile hamburger menu
-    Footer.jsx           ← Footer with links and social icons
-    Hero.jsx             ← Hero section component
-    About.jsx            ← About section component
-    Skills.jsx           ← Skills/features component
-    Projects.jsx         ← Projects/portfolio gallery component
-    Contact.jsx          ← Contact form component
-  pages/
-    HomePage.jsx         ← Home page combining Hero + sections
-    AboutPage.jsx        ← Full about page
-    ContactPage.jsx      ← Contact page with form
-styles.css              ← Custom CSS animations and styles
-```
-Use React 18 CDN + Babel standalone for browser JSX. Each component in its OWN file.
-In index.html load: React CDN, ReactDOM CDN, Babel standalone, Tailwind CDN.
-In index.html add: <script type="text/babel" src="src/App.jsx"></script>
-Each .jsx file must use: const { useState, useEffect } = React; (no imports, CDN mode)
-FS,
-            'nextjs' => <<<'FS'
-## FILE STRUCTURE — Create these files:
-```
-index.html, src/App.jsx, src/components/Navbar.jsx, src/components/Footer.jsx,
-src/components/Hero.jsx, src/components/About.jsx, src/components/Skills.jsx,
-src/components/Projects.jsx, src/components/Contact.jsx,
-src/pages/HomePage.jsx, src/pages/AboutPage.jsx, src/pages/ContactPage.jsx, styles.css
-```
-Use React 18 CDN + Babel standalone. Next.js-inspired component architecture.
-FS,
-            'vue' => <<<'FS'
-## FILE STRUCTURE — Create these files:
-```
-index.html (loads Vue 3 CDN + Tailwind CDN + mounts app),
-src/App.js, src/components/Navbar.js, src/components/Footer.js,
-src/components/Hero.js, src/components/About.js, src/components/Skills.js,
-src/components/Contact.js, styles.css
-```
-Use Vue 3 CDN (unpkg.com/vue@3). Composition API with setup(). Each component in own file.
-FS,
-            default => <<<'FS'
-## FILE STRUCTURE — Create these files:
-```
-index.html              ← Single-page website with ALL sections (hero, about, features, gallery, contact form, footer)
-css/styles.css          ← All custom styles + animations
-js/main.js              ← Navigation, smooth scroll, form validation, animations
-```
-Put ALL content in index.html as sections. Link css/styles.css and js/main.js from index.html.
-FS,
+        $techInstructions = match ($framework) {
+            'react' => 'Use React 18 CDN + Babel standalone + Tailwind CDN. Create .jsx component files. Use const { useState } = React; (CDN mode, no imports).',
+            'nextjs' => 'Use React 18 CDN + Babel standalone + Tailwind CDN. Next.js-inspired architecture with .jsx files.',
+            'vue' => 'Use Vue 3 CDN (unpkg.com/vue@3) + Tailwind CDN. Composition API with setup().',
+            'angular' => 'Use vanilla JS with Angular-inspired component architecture + Tailwind CDN.',
+            'svelte' => 'Use vanilla JS with Svelte-inspired reactive patterns + Tailwind CDN.',
+            default => 'Use plain HTML/CSS/JS + Tailwind CDN.',
         };
 
         return <<<PROMPT
-You are a senior full-stack developer building a production website called "{$project->name}".
+Build a MULTI-PAGE website called "{$name}".
 
-## CRITICAL RULES:
-1. Create MULTIPLE FILES in SEPARATE FOLDERS. Never put all code in one file.
-2. Every component/page MUST be in its OWN file.
-3. OVERWRITE the existing index.html with your generated content. Replace it completely.
-4. The file structure below is MANDATORY — create every single file listed.
-5. START with index.html FIRST, then create other files.
-
-{$fileStructure}
-
-## DESIGN:
-- Dark theme with Tailwind CSS CDN: <script src="https://cdn.tailwindcss.com"></script>
-- Inter font from Google Fonts
-- Premium quality: gradients, hover effects, animations, responsive
-- Real content (no lorem ipsum), production-ready code
-
-## IMPORTANT:
-- OVERWRITE index.html completely with generated content
-- Start creating index.html FIRST
+RULES:
+1. The website name/brand is "{$name}" — use this exact name in navbar, title, footer.
+2. Framework: {$framework}. {$techInstructions}
+3. Create SEPARATE HTML files for each page: index.html, about.html, services.html, contact.html (minimum 4 pages).
+4. Each page must have the SAME navbar and footer with links to all other pages.
+5. Create css/styles.css for custom styles and js/main.js for interactivity.
+6. OVERWRITE the existing index.html. Start with index.html FIRST.
+7. Dark theme, Tailwind CSS CDN, Inter font, premium design, responsive, real content.
+8. Every file must be complete production-ready code.
 PROMPT;
     }
 }

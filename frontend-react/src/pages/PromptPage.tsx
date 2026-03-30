@@ -15,18 +15,19 @@ const frameworks: Array<{ id: Framework; name: string; icon: string; color: stri
 
 export default function PromptPage() {
   const navigate = useNavigate();
+  const [siteName, setSiteName] = useState('');
   const [prompt, setPrompt] = useState('');
-  const [selectedFw, setSelectedFw] = useState<Framework>('react');
+  const [selectedFw, setSelectedFw] = useState<Framework>('html');
   const [showFwPicker, setShowFwPicker] = useState(false);
   const [building, setBuilding] = useState(false);
 
   const currentFw = frameworks.find(f => f.id === selectedFw)!;
 
   const handleBuild = async () => {
-    if (!prompt.trim() || building) return;
+    if (!prompt.trim() || !siteName.trim() || building) return;
     setBuilding(true);
     try {
-      const name = prompt.split(' ').slice(0, 5).join(' ').substring(0, 50) || 'New Project';
+      const name = siteName.trim();
       const res = await projectService.create({ name, framework: selectedFw });
       const proj = res.data.project;
       navigate(`/code-builder/${proj.id}?prompt=${encodeURIComponent(prompt)}`);
@@ -58,6 +59,16 @@ export default function PromptPage() {
           What will you <span className="italic bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">build</span> today?
         </h1>
         <p className="text-gray-500 text-center mb-10 text-lg">Create stunning apps & websites by chatting with AI.</p>
+
+        {/* Site name input */}
+        <div className="w-full max-w-2xl mb-4">
+          <input
+            value={siteName}
+            onChange={e => setSiteName(e.target.value)}
+            placeholder="Your website name (e.g. FitZone, TechHub, Bella Cafe)"
+            className="w-full bg-[#12121a] border border-[#1e1e2e] rounded-xl px-5 py-3.5 text-white text-sm outline-none placeholder-gray-600 focus:border-blue-500/50 transition"
+          />
+        </div>
 
         {/* Prompt box */}
         <div className="w-full max-w-2xl bg-[#12121a] border border-[#1e1e2e] rounded-2xl shadow-2xl shadow-black/50">
@@ -108,7 +119,7 @@ export default function PromptPage() {
 
             <button
               onClick={handleBuild}
-              disabled={!prompt.trim() || building}
+              disabled={!prompt.trim() || !siteName.trim() || building}
               className="flex items-center gap-2 px-5 py-2 bg-blue-600 hover:bg-blue-500 disabled:opacity-40 disabled:cursor-not-allowed rounded-xl text-sm text-white font-medium transition shadow-lg shadow-blue-600/20"
             >
               {building ? (
