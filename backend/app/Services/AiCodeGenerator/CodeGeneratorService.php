@@ -73,19 +73,15 @@ class CodeGeneratorService
         $doneFile = $project->storagePath() . '/.claude-done';
 
         // Check if process finished
-        if (File::exists($doneFile)) {
+        // .claude-done must exist AND have content (>10 bytes) to be considered done
+        // Empty file = Claude CLI still running (bat wrapper created file but hasn't written yet)
+        $doneFileExists = File::exists($doneFile);
+        $doneFileSize = $doneFileExists ? @filesize($doneFile) : 0;
+
+        if ($doneFileExists && $doneFileSize > 10) {
             $rawContent = '';
             try { $rawContent = File::get($doneFile); } catch (\Throwable $e) {
-                // File might be locked by Claude CLI still writing — treat as still generating
-                return [
-                    'status' => 'generating',
-                    'text' => 'AI is finishing up...',
-                    'files_changed' => array_keys($this->diffSnapshots(
-                        json_decode(File::get($project->storagePath() . '/.claude-before-snapshot') ?: '[]', true) ?: [],
-                        $this->getFileSnapshot($project)
-                    )),
-                    'file_tree' => $this->projectService->buildFileTree($project),
-                ];
+                // File locked — still generating
             }
             $doneData = json_decode($rawContent, true) ?: [];
 
