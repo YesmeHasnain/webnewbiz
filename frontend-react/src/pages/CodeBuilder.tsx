@@ -45,12 +45,14 @@ export default function CodeBuilder() {
     loadProject(parseInt(id));
   }, [id]);
 
-  // Auto-send initial prompt
+  // Auto-send initial prompt from PromptPage
   const sentInitialRef = useRef(false);
   useEffect(() => {
-    if (project && initialPrompt && !sentInitialRef.current) {
+    if (project && initialPrompt && !sentInitialRef.current && !chatLoading) {
       sentInitialRef.current = true;
-      setTimeout(() => handleChatSend(initialPrompt, project), 500);
+      // Clear any existing messages and start fresh
+      setMessages([]);
+      setTimeout(() => handleChatSend(initialPrompt, project), 300);
     }
   }, [project, initialPrompt]);
 
