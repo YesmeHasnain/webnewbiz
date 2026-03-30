@@ -298,17 +298,9 @@ class CodeGeneratorService
         };
 
         return <<<PROMPT
-Build a MULTI-PAGE website called "{$name}".
-
-RULES:
-1. The website name/brand is "{$name}" — use this exact name in navbar, title, footer.
-2. Framework: {$framework}. {$techInstructions}
-3. Create SEPARATE HTML files for each page: index.html, about.html, services.html, contact.html (minimum 4 pages).
-4. Each page must have the SAME navbar and footer with links to all other pages.
-5. Create css/styles.css for custom styles and js/main.js for interactivity.
-6. OVERWRITE the existing index.html. Start with index.html FIRST.
-7. Tailwind CSS CDN, Inter font, premium Awwwards-quality design, fully responsive, real content. Use whatever theme the user describes (light/dark/colorful).
-8. Every file must be complete production-ready code.
+Website name: "{$name}". {$techInstructions}
+Create: index.html, about.html, services.html, contact.html, css/styles.css, js/main.js.
+Same navbar+footer on each page. Tailwind CDN. Inter font. Responsive. Overwrite index.html first.
 PROMPT;
     }
 }
