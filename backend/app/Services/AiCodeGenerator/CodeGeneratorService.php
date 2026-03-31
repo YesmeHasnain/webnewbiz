@@ -296,20 +296,60 @@ class CodeGeneratorService
         $name = $project->name;
         $framework = $project->framework;
 
-        $techInstructions = match ($framework) {
-            'react' => 'Use React 18 CDN + Babel standalone + Tailwind CDN. Create .jsx component files. Use const { useState } = React; (CDN mode, no imports).',
-            'nextjs' => 'Use React 18 CDN + Babel standalone + Tailwind CDN. Next.js-inspired architecture with .jsx files.',
-            'vue' => 'Use Vue 3 CDN (unpkg.com/vue@3) + Tailwind CDN. Composition API with setup().',
-            'angular' => 'Use vanilla JS with Angular-inspired component architecture + Tailwind CDN.',
-            'svelte' => 'Use vanilla JS with Svelte-inspired reactive patterns + Tailwind CDN.',
-            default => 'Use plain HTML/CSS/JS + Tailwind CDN.',
+        $instructions = match ($framework) {
+            'react' => <<<FW
+Use React 18 CDN + Babel standalone + Tailwind CDN.
+Files to create:
+- index.html (loads React CDN, ReactDOM CDN, Babel standalone, Tailwind CDN, and src/App.jsx)
+- src/App.jsx (main app with page routing using useState — Home/About/Services/Contact pages)
+- src/components/Navbar.jsx (shared navbar with page links using onClick)
+- src/components/Footer.jsx (shared footer)
+- src/components/Hero.jsx (hero section)
+- src/components/About.jsx (about section with content)
+- src/components/Services.jsx (services/features section)
+- src/components/Contact.jsx (contact form with validation)
+- css/styles.css (custom animations)
+
+RULES for React CDN:
+- In index.html: <script src="https://unpkg.com/react@18/umd/react.development.min.js"></script> <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.min.js"></script> <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+- In index.html: <script type="text/babel" data-type="module" src="src/App.jsx"></script>
+- Every .jsx file starts with: const { useState, useEffect } = React;
+- NO import statements. NO export statements. All components are global functions.
+- App.jsx must load all components via <script type="text/babel" src="src/components/Navbar.jsx"> tags in index.html
+- Use useState for page routing: const [page, setPage] = useState('home');
+- Each page must have FULL content (multiple sections, not just a heading)
+FW,
+            'vue' => <<<FW
+Use Vue 3 CDN + Tailwind CDN.
+Files: index.html (loads Vue 3 CDN, mounts app), src/App.js (main app with routing), src/components/Navbar.js, src/components/Hero.js, src/components/About.js, src/components/Services.js, src/components/Contact.js, src/components/Footer.js, css/styles.css.
+Use Composition API. Each component defined with app.component(). Use reactive refs. Full content on every page.
+FW,
+            'nextjs' => <<<FW
+Use React 18 CDN + Babel standalone + Tailwind CDN. Same rules as React but with Next.js-inspired file structure.
+Files: index.html, src/App.jsx, src/pages/Home.jsx, src/pages/About.jsx, src/pages/Services.jsx, src/pages/Contact.jsx, src/components/Navbar.jsx, src/components/Footer.jsx, css/styles.css.
+NO import/export. Global functions. Full content on every page.
+FW,
+            'angular' => <<<FW
+Use vanilla JS with Angular-inspired component architecture + Tailwind CDN.
+Files: index.html (main page with all sections), about.html, services.html, contact.html, css/styles.css, js/main.js, js/components.js.
+Each HTML page is standalone with full nav+footer. Full content on every page.
+FW,
+            'svelte' => <<<FW
+Use vanilla JS with Svelte-inspired reactive patterns + Tailwind CDN.
+Files: index.html (main page with reactive JS), about.html, services.html, contact.html, css/styles.css, js/main.js.
+Each HTML page is standalone with full nav+footer. Full content on every page.
+FW,
+            default => <<<FW
+Use plain HTML/CSS/JS + Tailwind CDN.
+Files: index.html, about.html, services.html, contact.html, css/styles.css, js/main.js.
+Each HTML page is standalone with full nav+footer. Full content on every page.
+FW,
         };
 
         return <<<PROMPT
-Website: "{$name}". {$techInstructions}
-Files: index.html, about.html, services.html, contact.html, css/styles.css, js/main.js.
-Shared navbar+footer. Tailwind CDN. Inter font. Responsive. Unsplash images. Premium design with animations.
-IMPORTANT: Create index.html FIRST with full content, then other pages.
+Website: "{$name}". Tailwind CDN. Inter font. Responsive. Unsplash images. Premium design with animations and hover effects.
+{$instructions}
+IMPORTANT: Create index.html FIRST with full content. Every page must have MULTIPLE sections with real content — NOT just a hero/banner. Each page needs at least 4 sections.
 PROMPT;
     }
 }
