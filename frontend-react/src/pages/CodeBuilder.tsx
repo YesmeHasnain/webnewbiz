@@ -315,7 +315,7 @@ export default function CodeBuilder() {
       <div className="flex-1 flex min-h-0">
         {/* LEFT — AI Chat (always visible) */}
         <div className="w-[420px] flex-shrink-0 border-r border-[#1a1d27] flex flex-col bg-[#0a0a0f]">
-          <AiChatPanel messages={messages} isLoading={chatLoading} onSend={handleChatSend} />
+          <AiChatPanel messages={messages} isLoading={chatLoading} onSend={handleChatSend} framework={project?.framework || 'html'} />
         </div>
 
         {/* RIGHT — Preview / Code / File Explorer */}

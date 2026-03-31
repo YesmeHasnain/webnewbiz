@@ -5,6 +5,7 @@ interface Props {
   messages: ProjectMessage[];
   isLoading: boolean;
   onSend: (message: string) => void;
+  framework?: string;
 }
 
 const suggestions = [
@@ -49,21 +50,46 @@ function getTasksFromFiles(files: string[]): Array<{ file: string; label: string
   return tasks;
 }
 
-// Default tasks shown before any files are created
-const defaultTasks = [
-  { file: 'index.html', label: 'Build home page with hero section' },
-  { file: 'about.html', label: 'Create about page' },
-  { file: 'services.html', label: 'Build services/features page' },
-  { file: 'contact.html', label: 'Create contact page with form' },
-  { file: 'css/styles.css', label: 'Write custom styles and animations' },
-  { file: 'js/main.js', label: 'Add interactivity and navigation' },
-];
+// Framework-specific default tasks
+function getDefaultTasks(framework: string) {
+  if (framework === 'react' || framework === 'nextjs') {
+    return [
+      { file: 'index.html', label: 'Setup main HTML with React CDN' },
+      { file: 'src/App.jsx', label: 'Build main app with routing' },
+      { file: 'src/components/Navbar.jsx', label: 'Create navigation component' },
+      { file: 'src/components/Hero.jsx', label: 'Build hero section' },
+      { file: 'src/components/About.jsx', label: 'Create about section' },
+      { file: 'src/components/Services.jsx', label: 'Build services section' },
+      { file: 'src/components/Contact.jsx', label: 'Create contact form' },
+      { file: 'src/components/Footer.jsx', label: 'Build footer component' },
+      { file: 'css/styles.css', label: 'Write custom styles and animations' },
+    ];
+  }
+  if (framework === 'vue') {
+    return [
+      { file: 'index.html', label: 'Setup main HTML with Vue CDN' },
+      { file: 'src/App.js', label: 'Build main Vue app' },
+      { file: 'src/components/Navbar.js', label: 'Create navigation' },
+      { file: 'src/components/Hero.js', label: 'Build hero section' },
+      { file: 'src/components/About.js', label: 'Create about section' },
+      { file: 'src/components/Contact.js', label: 'Build contact form' },
+      { file: 'css/styles.css', label: 'Write custom styles' },
+    ];
+  }
+  // HTML, Angular, Svelte — multi-page HTML
+  return [
+    { file: 'index.html', label: 'Build home page with hero section' },
+    { file: 'about.html', label: 'Create about page' },
+    { file: 'services.html', label: 'Build services/features page' },
+    { file: 'contact.html', label: 'Create contact page with form' },
+    { file: 'css/styles.css', label: 'Write custom styles and animations' },
+    { file: 'js/main.js', label: 'Add interactivity and navigation' },
+  ];
+}
 
-function TaskPlan({ filesChanged, isComplete }: { filesChanged: string[]; isComplete: boolean }) {
+function TaskPlan({ filesChanged, isComplete, framework = 'html' }: { filesChanged: string[]; isComplete: boolean; framework?: string }) {
   const completedFiles = new Set(filesChanged || []);
-
-  // ALWAYS show default tasks — mark completed ones based on filesChanged
-  const tasks = defaultTasks;
+  const tasks = getDefaultTasks(framework);
 
   return (
     <div className="space-y-1 mt-3">
@@ -128,7 +154,7 @@ function TaskPlan({ filesChanged, isComplete }: { filesChanged: string[]; isComp
   );
 }
 
-export default function AiChatPanel({ messages, isLoading, onSend }: Props) {
+export default function AiChatPanel({ messages, isLoading, onSend, framework = 'html' }: Props) {
   const [input, setInput] = useState('');
   const messagesEndRef = useRef<HTMLDivElement>(null);
   const textareaRef = useRef<HTMLTextAreaElement>(null);
@@ -189,7 +215,7 @@ export default function AiChatPanel({ messages, isLoading, onSend }: Props) {
                     {msg.id === -1 && isLoading ? (
                       <div>
                         <p className="text-sm text-gray-300 leading-relaxed mb-1">{msg.content}</p>
-                        <TaskPlan filesChanged={msg.files_changed || []} isComplete={false} />
+                        <TaskPlan filesChanged={msg.files_changed || []} isComplete={false} framework={framework} />
                       </div>
                     ) : (
                       <div>
@@ -199,7 +225,7 @@ export default function AiChatPanel({ messages, isLoading, onSend }: Props) {
                             <p className="text-sm text-gray-300 leading-relaxed mb-1">
                               Your website is ready! Here's what was built:
                             </p>
-                            <TaskPlan filesChanged={msg.files_changed} isComplete={true} />
+                            <TaskPlan filesChanged={msg.files_changed} isComplete={true} framework={framework} />
 
                             {/* Summary from Claude — shown after task plan */}
                             {msg.content && !msg.content.startsWith("I'll build") && (
