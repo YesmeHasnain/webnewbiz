@@ -18,6 +18,7 @@ export default function PromptPage() {
   const [siteName, setSiteName] = useState('');
   const [prompt, setPrompt] = useState('');
   const [selectedFw, setSelectedFw] = useState<Framework>('html');
+  const [pageType, setPageType] = useState<'single' | 'multi'>('multi');
   const [showFwPicker, setShowFwPicker] = useState(false);
   const [building, setBuilding] = useState(false);
 
@@ -30,7 +31,7 @@ export default function PromptPage() {
       const name = siteName.trim();
       const res = await projectService.create({ name, framework: selectedFw });
       const proj = res.data.project;
-      navigate(`/code-builder/${proj.id}?prompt=${encodeURIComponent(prompt)}`);
+      navigate(`/code-builder/${proj.id}?prompt=${encodeURIComponent(prompt)}&pageType=${pageType}`);
     } catch {
       setBuilding(false);
     }
@@ -114,6 +115,16 @@ export default function PromptPage() {
                     </div>
                   </>
                 )}
+              </div>
+
+              {/* Page type selector */}
+              <div className="flex items-center bg-[#1a1d27] rounded-lg p-0.5">
+                <button onClick={() => setPageType('single')} className={`px-3 py-1.5 rounded-md text-xs font-medium transition ${pageType === 'single' ? 'bg-[#22252f] text-white' : 'text-gray-500 hover:text-gray-300'}`}>
+                  Single Page
+                </button>
+                <button onClick={() => setPageType('multi')} className={`px-3 py-1.5 rounded-md text-xs font-medium transition ${pageType === 'multi' ? 'bg-[#22252f] text-white' : 'text-gray-500 hover:text-gray-300'}`}>
+                  Multi Page
+                </button>
               </div>
             </div>
 

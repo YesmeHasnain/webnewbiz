@@ -51,8 +51,12 @@ class CodeGeneratorService
         $snapshotFile = $project->storagePath() . '/.claude-before-snapshot';
         File::put($snapshotFile, json_encode($beforeSnapshot));
 
+        // Detect page type from user message prefix
+        $isSinglePage = str_contains($userMessage, '[SINGLE PAGE WEBSITE]');
+        $userMessage = str_replace(['[SINGLE PAGE WEBSITE] ', '[MULTI PAGE WEBSITE] '], '', $userMessage);
+
         // Build system prompt
-        $systemPrompt = $this->buildSystemPrompt($project);
+        $systemPrompt = $this->buildSystemPrompt($project, $isSinglePage);
 
         // Start Claude CLI in background
         $this->claudeCli->runAsync($project, $userMessage, $systemPrompt);
@@ -291,10 +295,32 @@ class CodeGeneratorService
     /**
      * Build system prompt.
      */
-    private function buildSystemPrompt(Project $project): string
+    private function buildSystemPrompt(Project $project, bool $isSinglePage = false): string
     {
         $name = $project->name;
         $framework = $project->framework;
+
+        // Single page — override framework instructions
+        if ($isSinglePage) {
+            $fwNote = match ($framework) {
+                'react', 'nextjs' => 'Use React 18 CDN + Babel standalone. Put ALL code in one App.jsx. Scripts: react.production.min.js, react-dom.production.min.js, babel.min.js. <script type="text/babel" src="App.jsx"></script>. NO import/export.',
+                'vue' => 'Use Vue 3 CDN. Put ALL code in one App.js.',
+                default => 'Use plain HTML/CSS/JS.',
+            };
+            $files = match ($framework) {
+                'react', 'nextjs' => 'index.html, App.jsx, css/styles.css',
+                'vue' => 'index.html, App.js, css/styles.css',
+                default => 'index.html, css/styles.css, js/main.js',
+            };
+            return <<<PROMPT
+Website: "{$name}". {$fwNote}. Tailwind CDN. Inter font. Responsive. Unsplash images. Premium design.
+SINGLE PAGE WEBSITE — all content in ONE page. Create files: {$files}.
+Put ALL sections in one scrollable page: Hero, About, Features/Services, Gallery/Portfolio, Testimonials, Contact Form, Footer.
+Use smooth scroll navigation. Each section must have FULL content (not placeholder).
+Ignore any multi-page requests in user prompt — this MUST be single page.
+IMPORTANT: Create index.html FIRST.
+PROMPT;
+        }
 
         $instructions = match ($framework) {
             'react' => <<<FW
@@ -361,6 +387,7 @@ FW,
         return <<<PROMPT
 Website: "{$name}". Tailwind CDN. Inter font. Responsive. Unsplash images. Premium design with animations and hover effects.
 {$instructions}
+MULTI PAGE WEBSITE — create separate pages. Ignore any single-page requests in user prompt.
 IMPORTANT: Create index.html FIRST with full content. Every page must have MULTIPLE sections with real content — NOT just a hero/banner. Each page needs at least 4 sections.
 PROMPT;
     }

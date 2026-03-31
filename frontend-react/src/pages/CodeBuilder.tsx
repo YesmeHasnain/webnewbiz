@@ -17,6 +17,7 @@ export default function CodeBuilder() {
   const navigate = useNavigate();
   const [searchParams] = useSearchParams();
   const initialPrompt = searchParams.get('prompt');
+  const pageType = searchParams.get('pageType') || 'multi';
 
   const [project, setProject] = useState<Project | null>(null);
   const [loading, setLoading] = useState(true);
@@ -62,7 +63,10 @@ export default function CodeBuilder() {
       setChatLoading(true);
 
       // Start generation
-      projectService.chat(project.id, initialPrompt).then(() => {
+      const fullPrompt = pageType === 'single'
+        ? `[SINGLE PAGE WEBSITE] ${initialPrompt}`
+        : `[MULTI PAGE WEBSITE] ${initialPrompt}`;
+      projectService.chat(project.id, fullPrompt).then(() => {
         startStreamPolling(project.id);
       }).catch(() => {
         setChatLoading(false);
@@ -309,7 +313,7 @@ export default function CodeBuilder() {
       <div className="flex-1 flex min-h-0">
         {/* LEFT — AI Chat (always visible) */}
         <div className="w-[420px] flex-shrink-0 border-r border-[#1a1d27] flex flex-col bg-[#0a0a0f]">
-          <AiChatPanel messages={messages} isLoading={chatLoading} onSend={handleChatSend} framework={project?.framework || 'html'} />
+          <AiChatPanel messages={messages} isLoading={chatLoading} onSend={handleChatSend} framework={project?.framework || 'html'} pageType={pageType} />
         </div>
 
         {/* RIGHT — Preview / Code / File Explorer */}

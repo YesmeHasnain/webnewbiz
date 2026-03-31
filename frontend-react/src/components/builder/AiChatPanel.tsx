@@ -6,6 +6,7 @@ interface Props {
   isLoading: boolean;
   onSend: (message: string) => void;
   framework?: string;
+  pageType?: string;
 }
 
 const suggestions = [
@@ -51,7 +52,24 @@ function getTasksFromFiles(files: string[]): Array<{ file: string; label: string
 }
 
 // Framework-specific default tasks
-function getDefaultTasks(framework: string) {
+function getDefaultTasks(framework: string, pageType: string = 'multi') {
+  // Single page — all frameworks get same simple tasks
+  if (pageType === 'single') {
+    if (framework === 'react' || framework === 'nextjs' || framework === 'vue') {
+      return [
+        { file: 'index.html', label: 'Setup HTML with CDN scripts' },
+        { file: 'App.jsx', label: 'Build all sections (Hero, About, Services, Contact, Footer)' },
+        { file: 'css/styles.css', label: 'Write custom styles and animations' },
+      ];
+    }
+    return [
+      { file: 'index.html', label: 'Build complete single-page website' },
+      { file: 'css/styles.css', label: 'Write custom styles and animations' },
+      { file: 'js/main.js', label: 'Add interactivity and navigation' },
+    ];
+  }
+
+  // Multi page
   if (framework === 'react' || framework === 'nextjs') {
     return [
       { file: 'index.html', label: 'Setup HTML with React CDN' },
@@ -83,9 +101,9 @@ function getDefaultTasks(framework: string) {
   ];
 }
 
-function TaskPlan({ filesChanged, isComplete, framework = 'html' }: { filesChanged: string[]; isComplete: boolean; framework?: string }) {
+function TaskPlan({ filesChanged, isComplete, framework = 'html', pageType = 'multi' }: { filesChanged: string[]; isComplete: boolean; framework?: string; pageType?: string }) {
   const completedFiles = new Set(filesChanged || []);
-  const tasks = getDefaultTasks(framework);
+  const tasks = getDefaultTasks(framework, pageType);
 
   return (
     <div className="space-y-1 mt-3">
@@ -160,7 +178,7 @@ function TaskPlan({ filesChanged, isComplete, framework = 'html' }: { filesChang
   );
 }
 
-export default function AiChatPanel({ messages, isLoading, onSend, framework = 'html' }: Props) {
+export default function AiChatPanel({ messages, isLoading, onSend, framework = 'html', pageType = 'multi' }: Props) {
   const [input, setInput] = useState('');
   const messagesEndRef = useRef<HTMLDivElement>(null);
   const textareaRef = useRef<HTMLTextAreaElement>(null);
@@ -221,7 +239,7 @@ export default function AiChatPanel({ messages, isLoading, onSend, framework = '
                     {msg.id === -1 && isLoading ? (
                       <div>
                         <p className="text-sm text-gray-300 leading-relaxed mb-1">{msg.content}</p>
-                        <TaskPlan filesChanged={msg.files_changed || []} isComplete={false} framework={framework} />
+                        <TaskPlan filesChanged={msg.files_changed || []} isComplete={false} framework={framework} pageType={pageType} />
                       </div>
                     ) : (
                       <div>
@@ -231,7 +249,7 @@ export default function AiChatPanel({ messages, isLoading, onSend, framework = '
                             <p className="text-sm text-gray-300 leading-relaxed mb-1">
                               Your website is ready! Here's what was built:
                             </p>
-                            <TaskPlan filesChanged={msg.files_changed} isComplete={true} framework={framework} />
+                            <TaskPlan filesChanged={msg.files_changed} isComplete={true} framework={framework} pageType={pageType} />
 
                             {/* Summary from Claude — shown after task plan */}
                             {msg.content && !msg.content.startsWith("I'll build") && (
