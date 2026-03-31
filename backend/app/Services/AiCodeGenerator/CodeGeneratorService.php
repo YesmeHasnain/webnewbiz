@@ -305,8 +305,11 @@ Files to create:
 - css/styles.css (custom animations)
 
 CRITICAL RULES for React CDN:
-- index.html must have: <script src="https://unpkg.com/react@18/umd/react.development.min.js"></script> <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.min.js"></script> <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
-- index.html must have: <script type="text/babel" src="App.jsx"></script>
+- index.html MUST have these EXACT scripts in this order in <head>:
+  <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+  <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+- Then in <body> AFTER <div id="root"></div>: <script type="text/babel" src="App.jsx"></script>
 - Put ALL components (Navbar, Hero, About, Services, Contact, Footer, App) in ONE App.jsx file
 - Do NOT create separate component files — everything in App.jsx
 - Start App.jsx with: const { useState, useEffect } = React;
