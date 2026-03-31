@@ -322,7 +322,14 @@ CRITICAL RULES:
 - Start App.jsx with: const { useState, useEffect } = React;
 - NO import/export statements anywhere
 - End App.jsx with: ReactDOM.createRoot(document.getElementById('root')).render(<App />);
-- Each page must have FULL content (4+ sections)
+- MULTI-PAGE ROUTING: App component MUST use const [page, setPage] = useState('home');
+  Navbar links call setPage('about'), setPage('services'), setPage('contact')
+  App renders different page content based on page state:
+  if (page === 'home') return <HomePage />
+  if (page === 'about') return <AboutPage />
+  Create separate page components: HomePage, AboutPage, ServicesPage, ContactPage
+  Each page has FULL content (hero + 4 sections minimum)
+  Navbar highlights active page
 FW,
             'vue' => <<<FW
 Use Vue 3 CDN + Tailwind CDN.
