@@ -11,7 +11,7 @@ import BuilderWizard from './pages/BuilderWizard';
 import BuildProgress from './pages/BuildProgress';
 import WebsiteLayout from './pages/website/WebsiteLayout';
 import WebsiteManage from './pages/website/WebsiteManage';
-import ComingSoon from './pages/website/ComingSoon';
+// ComingSoon no longer used — all pages implemented
 import WooProducts from './pages/website/WooProducts';
 import WooOrders from './pages/website/WooOrders';
 import AIBuilder from './pages/website/AIBuilder';
