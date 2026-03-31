@@ -54,8 +54,14 @@ function getTasksFromFiles(files: string[]): Array<{ file: string; label: string
 function getDefaultTasks(framework: string) {
   if (framework === 'react' || framework === 'nextjs') {
     return [
-      { file: 'index.html', label: 'Setup HTML with React CDN and Babel' },
-      { file: 'App.jsx', label: 'Build all React components (Navbar, Hero, About, Services, Contact, Footer, App)' },
+      { file: 'index.html', label: 'Setup HTML with React CDN' },
+      { file: 'App.jsx', label: 'Build main app with routing' },
+      { file: 'src/components/Navbar.jsx', label: 'Create navigation component' },
+      { file: 'src/components/Hero.jsx', label: 'Build hero section' },
+      { file: 'src/components/About.jsx', label: 'Create about section' },
+      { file: 'src/components/Services.jsx', label: 'Build services section' },
+      { file: 'src/components/Contact.jsx', label: 'Create contact form' },
+      { file: 'src/components/Footer.jsx', label: 'Build footer component' },
       { file: 'css/styles.css', label: 'Write custom styles and animations' },
     ];
   }
@@ -91,8 +97,12 @@ function TaskPlan({ filesChanged, isComplete, framework = 'html' }: { filesChang
       </div>
 
       {tasks.map((task, i) => {
-        const isDone = isComplete || (completedFiles.size > 0 && completedFiles.has(task.file));
-        const isActive = !isDone && !isComplete && completedFiles.size > 0 && i === tasks.findIndex(t => !completedFiles.has(t.file));
+        const fileExists = completedFiles.has(task.file);
+        // Green checkmark ONLY when generation is fully complete
+        const isDone = isComplete && fileExists;
+        // During generation: show "writing" for files that exist, "active" for next file
+        const isWriting = !isComplete && fileExists;
+        const isActive = !isComplete && !fileExists && completedFiles.size > 0 && i === tasks.findIndex(t => !completedFiles.has(t.file));
 
         return (
           <div key={task.file} className="flex items-start gap-2.5 py-1.5">
@@ -100,6 +110,12 @@ function TaskPlan({ filesChanged, isComplete, framework = 'html' }: { filesChang
             {isDone ? (
               <div className="w-5 h-5 rounded-full bg-emerald-500/20 flex items-center justify-center flex-shrink-0 mt-0.5">
                 <svg className="w-3 h-3 text-emerald-400" fill="none" stroke="currentColor" strokeWidth={3} viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+                </svg>
+              </div>
+            ) : isWriting ? (
+              <div className="w-5 h-5 rounded-full bg-blue-500/20 flex items-center justify-center flex-shrink-0 mt-0.5">
+                <svg className="w-3 h-3 text-blue-400" fill="none" stroke="currentColor" strokeWidth={3} viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
                 </svg>
               </div>
@@ -113,11 +129,11 @@ function TaskPlan({ filesChanged, isComplete, framework = 'html' }: { filesChang
 
             {/* Task content */}
             <div className="flex-1 min-w-0">
-              <p className={`text-xs leading-relaxed ${isDone ? 'text-gray-300 font-medium' : isActive ? 'text-white font-medium' : 'text-gray-600'}`}>
+              <p className={`text-xs leading-relaxed ${isDone ? 'text-gray-300 font-medium' : isWriting ? 'text-blue-300 font-medium' : isActive ? 'text-white font-medium' : 'text-gray-600'}`}>
                 {task.label}
               </p>
               {/* Show file being written */}
-              {isActive && (
+              {(isActive || isWriting) && (
                 <div className="flex items-center gap-1.5 mt-1">
                   <svg className="w-3 h-3 text-blue-400 animate-spin flex-shrink-0" fill="none" viewBox="0 0 24 24">
                     <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" />

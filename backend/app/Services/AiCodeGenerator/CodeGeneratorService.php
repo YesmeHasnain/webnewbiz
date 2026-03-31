@@ -299,24 +299,30 @@ class CodeGeneratorService
         $instructions = match ($framework) {
             'react' => <<<FW
 Use React 18 CDN + Babel standalone + Tailwind CDN.
-Files to create:
-- index.html (loads React CDN, ReactDOM CDN, Babel standalone, Tailwind CDN, and one inline script)
-- App.jsx (ALL components in ONE file — Navbar, Footer, Hero, About, Services, Contact, App — then ReactDOM.createRoot render)
+
+Create these files:
+- index.html (loads CDN scripts + App.jsx)
+- App.jsx (ALL components combined in ONE file for browser rendering)
+- src/components/Navbar.jsx (copy of Navbar component)
+- src/components/Hero.jsx (copy of Hero component)
+- src/components/About.jsx (copy of About component)
+- src/components/Services.jsx (copy of Services component)
+- src/components/Contact.jsx (copy of Contact component)
+- src/components/Footer.jsx (copy of Footer component)
 - css/styles.css (custom animations)
 
-CRITICAL RULES for React CDN:
-- index.html MUST have these EXACT scripts in this order in <head>:
+CRITICAL RULES:
+- index.html MUST have these EXACT scripts in <head>:
   <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
   <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
   <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
-- Then in <body> AFTER <div id="root"></div>: <script type="text/babel" src="App.jsx"></script>
-- Put ALL components (Navbar, Hero, About, Services, Contact, Footer, App) in ONE App.jsx file
-- Do NOT create separate component files — everything in App.jsx
+- In <body>: <div id="root"></div> then <script type="text/babel" src="App.jsx"></script>
+- App.jsx must contain ALL components (Navbar, Hero, About, Services, Contact, Footer, App) in ONE file
+- ALSO create each component as a separate file in src/components/ (same code as in App.jsx)
 - Start App.jsx with: const { useState, useEffect } = React;
-- NO import/export statements
-- Use useState for page routing
+- NO import/export statements anywhere
 - End App.jsx with: ReactDOM.createRoot(document.getElementById('root')).render(<App />);
-- Each page section must have FULL content (4+ sections, not just heading)
+- Each page must have FULL content (4+ sections)
 FW,
             'vue' => <<<FW
 Use Vue 3 CDN + Tailwind CDN.

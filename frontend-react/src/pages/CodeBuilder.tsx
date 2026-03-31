@@ -172,7 +172,11 @@ export default function CodeBuilder() {
             return prev;
           });
 
-          // Reload full project from server to get fresh file_tree
+          // IMMEDIATELY switch to preview — no delay
+          setTopView('preview');
+          setIframeKey(k => k + 1);
+
+          // Then reload project data in background
           try {
             const freshProject = await projectService.get(pid);
             setProject(freshProject.data);
@@ -180,16 +184,6 @@ export default function CodeBuilder() {
           } catch {
             if (data.file_tree?.length) setFileTree(data.file_tree);
           }
-
-          // Open first changed file in editor
-          if (data.files_changed?.length) {
-            const firstFile = data.files_changed.find((f: string) => f.endsWith('.html')) || data.files_changed[0];
-            await openFile(pid, firstFile);
-          }
-
-          // Auto-switch to preview to show the generated website
-          setTopView('preview');
-          setIframeKey(k => k + 1);
 
           // Reload messages from DB
           try { const m = await projectService.getMessages(pid); setMessages(m.data); } catch { }
