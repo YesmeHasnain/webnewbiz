@@ -215,6 +215,8 @@ class ProjectService
             'html', 'htm' => 'text/html',
             'css'         => 'text/css',
             'js', 'mjs'   => 'application/javascript',
+            'jsx', 'tsx'  => 'application/javascript',
+            'ts'          => 'application/javascript',
             'json'        => 'application/json',
             'svg'         => 'image/svg+xml',
             'png'         => 'image/png',
