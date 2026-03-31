@@ -54,25 +54,15 @@ function getTasksFromFiles(files: string[]): Array<{ file: string; label: string
 function getDefaultTasks(framework: string) {
   if (framework === 'react' || framework === 'nextjs') {
     return [
-      { file: 'index.html', label: 'Setup main HTML with React CDN' },
-      { file: 'src/App.jsx', label: 'Build main app with routing' },
-      { file: 'src/components/Navbar.jsx', label: 'Create navigation component' },
-      { file: 'src/components/Hero.jsx', label: 'Build hero section' },
-      { file: 'src/components/About.jsx', label: 'Create about section' },
-      { file: 'src/components/Services.jsx', label: 'Build services section' },
-      { file: 'src/components/Contact.jsx', label: 'Create contact form' },
-      { file: 'src/components/Footer.jsx', label: 'Build footer component' },
+      { file: 'index.html', label: 'Setup HTML with React CDN and Babel' },
+      { file: 'App.jsx', label: 'Build all React components (Navbar, Hero, About, Services, Contact, Footer, App)' },
       { file: 'css/styles.css', label: 'Write custom styles and animations' },
     ];
   }
   if (framework === 'vue') {
     return [
-      { file: 'index.html', label: 'Setup main HTML with Vue CDN' },
-      { file: 'src/App.js', label: 'Build main Vue app' },
-      { file: 'src/components/Navbar.js', label: 'Create navigation' },
-      { file: 'src/components/Hero.js', label: 'Build hero section' },
-      { file: 'src/components/About.js', label: 'Create about section' },
-      { file: 'src/components/Contact.js', label: 'Build contact form' },
+      { file: 'index.html', label: 'Setup HTML with Vue 3 CDN' },
+      { file: 'App.js', label: 'Build all Vue components' },
       { file: 'css/styles.css', label: 'Write custom styles' },
     ];
   }

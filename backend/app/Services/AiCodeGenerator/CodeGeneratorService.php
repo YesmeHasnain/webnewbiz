@@ -300,34 +300,30 @@ class CodeGeneratorService
             'react' => <<<FW
 Use React 18 CDN + Babel standalone + Tailwind CDN.
 Files to create:
-- index.html (loads React CDN, ReactDOM CDN, Babel standalone, Tailwind CDN, and src/App.jsx)
-- src/App.jsx (main app with page routing using useState — Home/About/Services/Contact pages)
-- src/components/Navbar.jsx (shared navbar with page links using onClick)
-- src/components/Footer.jsx (shared footer)
-- src/components/Hero.jsx (hero section)
-- src/components/About.jsx (about section with content)
-- src/components/Services.jsx (services/features section)
-- src/components/Contact.jsx (contact form with validation)
+- index.html (loads React CDN, ReactDOM CDN, Babel standalone, Tailwind CDN, and one inline script)
+- App.jsx (ALL components in ONE file — Navbar, Footer, Hero, About, Services, Contact, App — then ReactDOM.createRoot render)
 - css/styles.css (custom animations)
 
-RULES for React CDN:
-- In index.html: <script src="https://unpkg.com/react@18/umd/react.development.min.js"></script> <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.min.js"></script> <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
-- In index.html: <script type="text/babel" data-type="module" src="src/App.jsx"></script>
-- Every .jsx file starts with: const { useState, useEffect } = React;
-- NO import statements. NO export statements. All components are global functions.
-- App.jsx must load all components via <script type="text/babel" src="src/components/Navbar.jsx"> tags in index.html
-- Use useState for page routing: const [page, setPage] = useState('home');
-- Each page must have FULL content (multiple sections, not just a heading)
+CRITICAL RULES for React CDN:
+- index.html must have: <script src="https://unpkg.com/react@18/umd/react.development.min.js"></script> <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.min.js"></script> <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+- index.html must have: <script type="text/babel" src="App.jsx"></script>
+- Put ALL components (Navbar, Hero, About, Services, Contact, Footer, App) in ONE App.jsx file
+- Do NOT create separate component files — everything in App.jsx
+- Start App.jsx with: const { useState, useEffect } = React;
+- NO import/export statements
+- Use useState for page routing
+- End App.jsx with: ReactDOM.createRoot(document.getElementById('root')).render(<App />);
+- Each page section must have FULL content (4+ sections, not just heading)
 FW,
             'vue' => <<<FW
 Use Vue 3 CDN + Tailwind CDN.
-Files: index.html (loads Vue 3 CDN, mounts app), src/App.js (main app with routing), src/components/Navbar.js, src/components/Hero.js, src/components/About.js, src/components/Services.js, src/components/Contact.js, src/components/Footer.js, css/styles.css.
-Use Composition API. Each component defined with app.component(). Use reactive refs. Full content on every page.
+Files: index.html (loads Vue 3 CDN + Tailwind CDN + all code inline or in App.js), App.js (ALL components in ONE file), css/styles.css.
+Put ALL Vue components in ONE App.js file. NO separate component files. Use app.component() for each. Full content on every page.
 FW,
             'nextjs' => <<<FW
-Use React 18 CDN + Babel standalone + Tailwind CDN. Same rules as React but with Next.js-inspired file structure.
-Files: index.html, src/App.jsx, src/pages/Home.jsx, src/pages/About.jsx, src/pages/Services.jsx, src/pages/Contact.jsx, src/components/Navbar.jsx, src/components/Footer.jsx, css/styles.css.
-NO import/export. Global functions. Full content on every page.
+Use React 18 CDN + Babel standalone + Tailwind CDN. Same rules as React.
+Files: index.html, App.jsx (ALL components in ONE file), css/styles.css.
+Put ALL components in ONE App.jsx. NO separate files. NO import/export. Full content on every page.
 FW,
             'angular' => <<<FW
 Use vanilla JS with Angular-inspired component architecture + Tailwind CDN.
