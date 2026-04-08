@@ -35,6 +35,7 @@ export interface GenerateParams {
   prompt: string;
   layout: string;
   pages: string[];
+  structure?: { title: string; slug: string; sections: { type: string; label: string; prompt?: string }[] }[];
 }
 
 export interface AnalysisResult {

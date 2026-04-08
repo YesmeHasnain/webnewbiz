@@ -53,6 +53,8 @@ Route::post('/builder/analyze-questions', [BuilderController::class, 'analyzeWit
 Route::post('/builder/summarize', [BuilderController::class, 'summarize']);
 Route::get('/builder/layouts', [BuilderController::class, 'layouts']);
 Route::post('/builder/enhance-prompt', [BuilderController::class, 'enhancePrompt']);
+Route::post('/builder/site-plan', [BuilderController::class, 'sitePlan']);
+Route::post('/builder/generate-page-sections', [BuilderController::class, 'generatePageSections']);
 
 // Protected routes
 Route::middleware('auth:sanctum')->group(function () {

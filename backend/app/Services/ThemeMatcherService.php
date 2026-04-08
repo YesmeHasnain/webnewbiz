@@ -114,6 +114,7 @@ class ThemeMatcherService
 
     /**
      * Score all layouts against a business type and prompt.
+     * Includes style/mood keywords so "dark luxury barber" → noir/royal, not azure.
      */
     public function scoreLayouts(string $businessType, string $prompt = ''): array
     {
@@ -121,9 +122,43 @@ class ThemeMatcherService
         $text = strtolower($businessType . ' ' . $prompt);
         $scores = [];
 
+        // Style/mood keywords that boost themes by their design style
+        $styleBoosts = [
+            'dark'      => ['noir' => 25, 'ember' => 25, 'royal' => 25],
+            'bold'      => ['noir' => 20, 'ember' => 20],
+            'luxury'    => ['royal' => 30, 'blush' => 15],
+            'luxurious' => ['royal' => 30, 'blush' => 15],
+            'premium'   => ['royal' => 20, 'noir' => 15, 'blush' => 10],
+            'elegant'   => ['blush' => 25, 'royal' => 20, 'ivory' => 15],
+            'modern'    => ['azure' => 20, 'slate' => 15],
+            'minimal'   => ['slate' => 30, 'azure' => 15],
+            'minimalist'=> ['slate' => 30, 'azure' => 15],
+            'clean'     => ['ivory' => 20, 'azure' => 15, 'slate' => 15],
+            'warm'      => ['ember' => 20, 'blush' => 15, 'forest' => 10],
+            'cozy'      => ['ember' => 15, 'blush' => 15, 'forest' => 10],
+            'professional' => ['ivory' => 20, 'azure' => 15, 'forest' => 10],
+            'corporate' => ['azure' => 20, 'ivory' => 15],
+            'natural'   => ['forest' => 25, 'ivory' => 10],
+            'green'     => ['forest' => 20],
+            'earthy'    => ['forest' => 20, 'ember' => 10],
+            'creative'  => ['slate' => 20, 'noir' => 15],
+            'artistic'  => ['slate' => 25, 'noir' => 10],
+            'vibrant'   => ['noir' => 15, 'ember' => 15, 'azure' => 10],
+            'edgy'      => ['noir' => 25, 'ember' => 15],
+            'urban'     => ['noir' => 20, 'slate' => 15],
+            'rustic'    => ['ember' => 20, 'forest' => 15],
+            'vintage'   => ['blush' => 15, 'ember' => 15],
+            'upscale'   => ['royal' => 25, 'blush' => 15],
+            'classy'    => ['royal' => 20, 'blush' => 20],
+            'feminine'  => ['blush' => 30],
+            'masculine' => ['noir' => 25, 'ember' => 15],
+        ];
+
         foreach ($layouts as $slug => $cfg) {
             $keywords = $cfg['keywords'] ?? [];
             $score = 0;
+
+            // Business keyword matching
             foreach ($keywords as $keyword) {
                 $kw = strtolower($keyword);
                 if (preg_match('/\b' . preg_quote($kw, '/') . '\b/', $text)) {
@@ -137,6 +172,14 @@ class ThemeMatcherService
                     $score += 20;
                 }
             }
+
+            // Style/mood keyword boosts
+            foreach ($styleBoosts as $word => $boosts) {
+                if (preg_match('/\b' . preg_quote($word, '/') . '\b/', $text) && isset($boosts[$slug])) {
+                    $score += $boosts[$slug];
+                }
+            }
+
             $scores[$slug] = $score;
         }
 

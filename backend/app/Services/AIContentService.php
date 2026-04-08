@@ -38,11 +38,19 @@ class AIContentService
     }
 
     /**
-     * Generate content using Claude API (primary) with Gemini fallback.
+     * Generate content using Claude CLI (primary) → Claude API → Gemini fallback.
      */
     public function generateContent(string $prompt, ?string $systemPrompt = null): array
     {
-        // Try Claude first
+        // Try Claude CLI first (no API key needed)
+        $cliResult = $this->generateWithClaudeCli($prompt, $systemPrompt);
+        if ($cliResult['success']) {
+            return $cliResult;
+        }
+
+        Log::warning('Claude CLI failed, trying Claude API: ' . ($cliResult['message'] ?? 'Unknown'));
+
+        // Try Claude API
         $claudeResult = $this->generateWithClaude($prompt, $systemPrompt);
         if ($claudeResult['success']) {
             return $claudeResult;
@@ -52,6 +60,91 @@ class AIContentService
 
         // Fallback to Gemini
         return $this->generateWithGemini($prompt);
+    }
+
+    /**
+     * Generate content using Claude CLI (installed globally via npm).
+     */
+    private function generateWithClaudeCli(string $prompt, ?string $systemPrompt = null): array
+    {
+        $claudeBin = $this->findClaudeBinary();
+        if (!$claudeBin) {
+            return ['success' => false, 'message' => 'Claude CLI not found'];
+        }
+
+        try {
+            $fullPrompt = $prompt;
+            if ($systemPrompt) {
+                $fullPrompt = $systemPrompt . "\n\n" . $prompt;
+            }
+
+            $promptFile = tempnam(sys_get_temp_dir(), 'claude_wp_') . '.txt';
+            file_put_contents($promptFile, $fullPrompt);
+
+            // Use stdin pipe to pass prompt (avoids argument length limits)
+            $cmd = escapeshellarg($claudeBin);
+            $cmd .= ' --print';
+            $cmd .= ' --dangerously-skip-permissions';
+            $cmd .= ' --max-turns 1';
+
+            Log::info('Claude CLI (WordPress): Running content generation');
+
+            $descriptors = [0 => ['file', $promptFile, 'r'], 1 => ['pipe', 'w'], 2 => ['pipe', 'w']];
+            $proc = proc_open($cmd, $descriptors, $pipes, sys_get_temp_dir());
+
+            if (!is_resource($proc)) {
+                @unlink($promptFile);
+                return ['success' => false, 'message' => 'Failed to start Claude CLI process'];
+            }
+            $stdout = stream_get_contents($pipes[1]);
+            $stderr = stream_get_contents($pipes[2]);
+            fclose($pipes[1]);
+            fclose($pipes[2]);
+            $exitCode = proc_close($proc);
+            @unlink($promptFile);
+
+            if ($exitCode !== 0) {
+                Log::error('Claude CLI error', ['exit' => $exitCode, 'stderr' => mb_substr($stderr, 0, 500)]);
+                return ['success' => false, 'message' => 'Claude CLI error: ' . ($stderr ?: "Exit {$exitCode}")];
+            }
+
+            if (empty(trim($stdout))) {
+                return ['success' => false, 'message' => 'Claude CLI returned empty response'];
+            }
+
+            Log::info('Claude CLI content generated successfully', ['length' => strlen($stdout)]);
+            return ['success' => true, 'data' => $stdout];
+        } catch (\Exception $e) {
+            Log::error('Claude CLI exception: ' . $e->getMessage());
+            return ['success' => false, 'message' => $e->getMessage()];
+        }
+    }
+
+    /**
+     * Find Claude CLI binary path.
+     */
+    private function findClaudeBinary(): ?string
+    {
+        if (strtoupper(substr(PHP_OS, 0, 3)) === 'WIN') {
+            $appData = getenv('APPDATA') ?: '';
+            $paths = [
+                $appData . '\\npm\\claude.cmd',
+                $appData . '\\npm\\claude',
+                'C:\\Program Files\\nodejs\\claude.cmd',
+            ];
+            foreach ($paths as $p) {
+                if (file_exists($p)) return $p;
+            }
+            $result = trim(shell_exec('where claude 2>nul') ?? '');
+            if ($result) return explode("\n", $result)[0];
+        } else {
+            $home = getenv('HOME') ?: '';
+            $paths = [$home . '/.local/bin/claude', '/usr/local/bin/claude', '/usr/bin/claude'];
+            foreach ($paths as $p) {
+                if (file_exists($p)) return $p;
+            }
+        }
+        return null;
     }
 
     /**
@@ -407,13 +500,19 @@ Important rules:
      */
     public function quickComplete(string $prompt): string
     {
-        // Try Gemini first
+        // Try Claude CLI first
+        $result = $this->generateWithClaudeCli($prompt);
+        if ($result['success'] && !empty($result['data'])) {
+            return trim($result['data']);
+        }
+
+        // Try Gemini
         $result = $this->generateWithGemini($prompt);
         if ($result['success'] && !empty($result['data'])) {
             return trim($result['data']);
         }
 
-        // Fallback to Claude
+        // Fallback to Claude API
         $result = $this->generateWithClaude($prompt);
         if ($result['success'] && !empty($result['data'])) {
             return trim($result['data']);
@@ -542,14 +641,18 @@ Example format:
 
 Return ONLY the JSON array.";
 
-        // Fallback chain: GLM → Claude → Gemini
-        $result = $this->generateWithGlm($prompt, $systemPrompt);
+        // Fallback chain: Claude CLI → GLM → Claude API → Gemini
+        $result = $this->generateWithClaudeCli($prompt, $systemPrompt);
         if (!$result['success']) {
-            Log::warning('GLM site plan failed, trying Claude: ' . ($result['message'] ?? ''));
+            Log::warning('Claude CLI site plan failed, trying GLM: ' . ($result['message'] ?? ''));
+            $result = $this->generateWithGlm($prompt, $systemPrompt);
+        }
+        if (!$result['success']) {
+            Log::warning('GLM site plan failed, trying Claude API: ' . ($result['message'] ?? ''));
             $result = $this->generateWithClaude($prompt, $systemPrompt);
         }
         if (!$result['success']) {
-            Log::warning('Claude site plan failed, trying Gemini: ' . ($result['message'] ?? ''));
+            Log::warning('Claude API site plan failed, trying Gemini: ' . ($result['message'] ?? ''));
             $result = $this->generateWithGemini($prompt);
         }
         if (!$result['success']) {

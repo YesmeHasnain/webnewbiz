@@ -8,6 +8,8 @@ import Login from './pages/Login';
 import Register from './pages/Register';
 import Dashboard from './pages/Dashboard';
 import BuilderWizard from './pages/BuilderWizard';
+import WebsiteGenerator from './pages/WebsiteGenerator';
+import StructureEditor from './pages/StructureEditor';
 import BuildProgress from './pages/BuildProgress';
 import WebsiteLayout from './pages/website/WebsiteLayout';
 import WebsiteManage from './pages/website/WebsiteManage';
@@ -72,7 +74,9 @@ export default function App() {
 
           {/* Auth required */}
           <Route path="/dashboard" element={<AuthGuard><Dashboard /></AuthGuard>} />
-          <Route path="/builder" element={<AuthGuard><BuilderWizard /></AuthGuard>} />
+          <Route path="/builder" element={<AuthGuard><WebsiteGenerator /></AuthGuard>} />
+          <Route path="/builder/customize" element={<AuthGuard><StructureEditor /></AuthGuard>} />
+          <Route path="/builder-old" element={<AuthGuard><BuilderWizard /></AuthGuard>} />
           <Route path="/builder/progress/:id" element={<AuthGuard><BuildProgress /></AuthGuard>} />
 
           {/* Code Builder (Lovable-style) */}

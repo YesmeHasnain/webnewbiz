@@ -73,6 +73,7 @@ class WebsiteController extends Controller
             'prompt' => 'required|string|min:10',
             'layout' => 'required|string|in:noir,ivory,azure,blush,ember,forest,slate,royal,biddut',
             'pages' => 'nullable|array',
+            'structure' => 'nullable|array',
         ]);
 
         $slug = strtolower(preg_replace('/[^a-z0-9]+/', '-', strtolower($request->business_name)));
@@ -85,6 +86,16 @@ class WebsiteController extends Controller
             $slug = $baseSlug . '-' . $counter++;
         }
 
+        $structure = $request->structure;
+        $pagesList = $request->pages ?? ['home', 'about', 'services', 'contact'];
+
+        // If structure provided, build pages_structure for ProvisionJob
+        $pagesStructure = null;
+        if ($structure && is_array($structure)) {
+            $pagesStructure = $structure;
+            $pagesList = array_map(fn($p) => $p['slug'] ?? 'home', $structure);
+        }
+
         $website = Website::create([
             'user_id' => $request->user()->id,
             'name' => $request->business_name,
@@ -95,7 +106,8 @@ class WebsiteController extends Controller
             'status' => 'pending',
             'build_step' => 'queued',
             'build_log' => ['Queued for building...'],
-            'pages' => $request->pages ?? ['home', 'about', 'services', 'contact'],
+            'pages' => $pagesList,
+            'ai_generated_content' => $pagesStructure ? ['structure' => $pagesStructure] : null,
         ]);
 
         ProvisionWebsiteJob::dispatch($website);

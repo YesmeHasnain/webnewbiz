@@ -101,11 +101,15 @@ class ProvisionWebsiteJob implements ShouldQueue
                 $this->configureSite($dbName, $content);
             }
 
-            // Step 8: Regenerate Elementor CSS
+            // Step 8: Regenerate Elementor CSS (non-blocking)
             $this->updateStep('complete', 'Generating styles...');
-            $this->regenerateElementorCss($sitePath, $siteUrl);
+            try {
+                $this->regenerateElementorCss($sitePath, $siteUrl);
+            } catch (\Exception $e) {
+                Log::warning("CSS regen failed (non-critical): {$e->getMessage()}");
+            }
 
-            // Step 9: Complete
+            // Step 9: Complete — always mark active after all build steps
             $this->website->update([
                 'status' => 'active',
                 'build_step' => 'complete',
@@ -168,9 +172,9 @@ class ProvisionWebsiteJob implements ShouldQueue
         }
         $this->updateStep('wordpress_install', 'Files copied.');
 
-        // 2. Create database and import template SQL
-        DB::statement("DROP DATABASE IF EXISTS `{$dbName}`");
-        DB::statement("CREATE DATABASE `{$dbName}`");
+        // 2. Create database and import template SQL (must use MySQL, not default SQLite)
+        DB::connection('mysql')->statement("DROP DATABASE IF EXISTS `{$dbName}`");
+        DB::connection('mysql')->statement("CREATE DATABASE `{$dbName}`");
 
         // Import SQL dump via mysql CLI
         $user = config('database.connections.mysql.username', 'root');
@@ -306,7 +310,10 @@ HTACCESS;
             );
 
             if ($result['success'] && !empty($result['data'])) {
-                $this->website->update(['ai_generated_content' => $result['data']]);
+                // Merge with existing content (preserve structure from customize page)
+                $existing = $this->website->ai_generated_content ?? [];
+                $merged = is_array($existing) ? array_merge($existing, $result['data']) : $result['data'];
+                $this->website->update(['ai_generated_content' => $merged]);
                 $this->updateStep('ai_content', 'AI content generated.');
                 return $result['data'];
             }
@@ -317,7 +324,10 @@ HTACCESS;
         // Fallback content
         $this->updateStep('ai_content', 'Using default content.');
         $fallback = $this->buildFallbackContent($businessName, $businessType);
-        $this->website->update(['ai_generated_content' => $fallback]);
+        // Merge with existing (preserve structure)
+        $existing = $this->website->ai_generated_content ?? [];
+        $merged = is_array($existing) ? array_merge($existing, $fallback) : $fallback;
+        $this->website->update(['ai_generated_content' => $merged]);
         return $fallback;
     }
 
@@ -491,15 +501,66 @@ HTACCESS;
         // Extract page content from AI response
         $pagesContent = $content['pages'] ?? [];
 
+        // Get structure from customize page
+        $structure = $this->website->ai_generated_content['structure'] ?? null;
+
+        // Track used page types to avoid duplicates
+        $usedTypes = [];
+        $availableTypes = ['home', 'about', 'services', 'portfolio', 'contact'];
+
         foreach ($pages as $pageSlug) {
-            $pageType = $pageTypeMap[$pageSlug] ?? 'home';
-            $title = match ($pageSlug) {
+            // Find this page in structure (try slug, then title, then partial match)
+            $structurePage = null;
+            if ($structure) {
+                // Pass 1: exact slug match
+                foreach ($structure as $sp) {
+                    $spSlug = Str::slug($sp['slug'] ?? $sp['title'] ?? '');
+                    if ($spSlug === $pageSlug) {
+                        $structurePage = $sp;
+                        break;
+                    }
+                }
+                // Pass 2: title-to-slug match (e.g., "Services & Rituals" → "services-rituals")
+                if (!$structurePage) {
+                    foreach ($structure as $sp) {
+                        $titleSlug = Str::slug($sp['title'] ?? '');
+                        if ($titleSlug === $pageSlug) {
+                            $structurePage = $sp;
+                            break;
+                        }
+                    }
+                }
+                // Pass 3: partial match (page slug contains structure slug or vice versa)
+                if (!$structurePage) {
+                    foreach ($structure as $sp) {
+                        $spSlug = Str::slug($sp['slug'] ?? $sp['title'] ?? '');
+                        if ($spSlug && $pageSlug && (str_contains($pageSlug, $spSlug) || str_contains($spSlug, $pageSlug))) {
+                            $structurePage = $sp;
+                            break;
+                        }
+                    }
+                }
+            }
+
+            // Determine page type for layout builder
+            $pageType = $pageTypeMap[$pageSlug] ?? $this->guessPageType($pageSlug, $structurePage);
+
+            // If this type already used, pick next available type
+            if (in_array($pageType, $usedTypes)) {
+                $remaining = array_diff($availableTypes, $usedTypes);
+                $pageType = !empty($remaining) ? array_shift($remaining) : 'services';
+            }
+            $usedTypes[] = $pageType;
+
+            // Title from structure or default
+            $title = $structurePage['title'] ?? match ($pageSlug) {
                 'home' => 'Home',
                 'about', 'about-us' => 'About Us',
                 'services', 'our-services' => 'Our Services',
                 'portfolio' => 'Portfolio',
-                'contact', 'contact-us' => 'Contact Us',
-                default => ucfirst($pageSlug),
+                'packages' => 'Packages',
+                'contact', 'contact-us', 'connect' => 'Contact Us',
+                default => ucfirst(str_replace('-', ' ', $pageSlug)),
             };
 
             // Get page-specific content from AI data
@@ -508,8 +569,21 @@ HTACCESS;
             // Merge top-level content fields for backward compat
             $mergedContent = array_merge($content, $pageContent);
 
-            // Build Elementor elements using the layout
-            $elements = $layout->buildPage($pageType, $mergedContent, $imageUrls);
+            // Use DynamicSectionBuilder when structure exists.
+            // When no structure: generate a default structure based on page type
+            // so every page goes through DynamicSectionBuilder for unique, AI-powered content.
+            if (!$structurePage || empty($structurePage['sections'])) {
+                $structurePage = ['title' => $title, 'slug' => $pageSlug, 'sections' => $this->generateDefaultSections($pageType, $title)];
+            }
+
+            $dynBuilder = new \App\Services\DynamicSectionBuilder(
+                $layout, $mergedContent, $imageUrls,
+                $this->website->name, $this->website->business_type ?? 'business',
+                $this->website->ai_prompt ?? ''
+            );
+            // Generate AI content for this page's sections
+            $dynBuilder->generatePageContent($structurePage['sections'], $title);
+            $elements = $dynBuilder->buildPage($structurePage['sections'], $title);
 
             // Add WooCommerce products section to home page if WooCommerce is installed
             $wpPath = config('webnewbiz.xampp_htdocs', 'C:/xampp/htdocs') . '/' . $this->website->slug;
@@ -519,8 +593,8 @@ HTACCESS;
 
             // Create the page with Elementor data
             $now = now()->format('Y-m-d H:i:s');
-            // Use the pageType as slug for consistency (home, about, services, portfolio, contact)
-            $postName = $pageType;
+            // Use actual page slug for unique URLs
+            $postName = $pageSlug;
 
             $stmt = $pdo->prepare("INSERT INTO wp_posts (post_author, post_date, post_date_gmt, post_content, post_title, post_excerpt, post_status, comment_status, ping_status, post_name, post_type, post_modified, post_modified_gmt, to_ping, pinged, post_content_filtered) VALUES (1, ?, ?, '', ?, '', 'publish', 'closed', 'closed', ?, 'page', ?, ?, '', '', '')");
             $stmt->execute([$now, $now, $title, $postName, $now, $now]);
@@ -623,7 +697,8 @@ HTACCESS;
         // Normalize slugs (AI sometimes returns capitalized values)
         $pageSlugs = array_values(array_unique(array_map(fn($p) => Str::slug($p), $pageSlugs)));
 
-        // Convert sequential ['home','about',...] to associative ['home'=>'Home','about'=>'About Us',...]
+        // Build page labels from structure if available, otherwise use defaults
+        $structure = $this->website->ai_generated_content['structure'] ?? null;
         $pageLabels = [
             'home' => 'Home',
             'shop' => 'Shop',
@@ -635,6 +710,13 @@ HTACCESS;
             'contact' => 'Contact',
             'contact-us' => 'Contact',
         ];
+        // Override with custom structure titles
+        if ($structure) {
+            foreach ($structure as $page) {
+                $slug = Str::slug($page['slug'] ?? $page['title'] ?? '');
+                if ($slug) $pageLabels[$slug] = $page['title'] ?? ucfirst($slug);
+            }
+        }
 
         // Add Shop to nav for ecommerce sites (after Home)
         if ($hasWoo && !in_array('shop', $pageSlugs)) {
@@ -643,7 +725,7 @@ HTACCESS;
 
         $pages = [];
         foreach ($pageSlugs as $slug) {
-            $pages[$slug] = $pageLabels[$slug] ?? ucfirst($slug);
+            $pages[$slug] = $pageLabels[$slug] ?? ucfirst(str_replace('-', ' ', $slug));
         }
 
         // Build contact info from content
@@ -665,7 +747,6 @@ HTACCESS;
                 $headerElements = $this->buildEcommerceHeader($businessName, $pages, $colors, $content);
                 $this->createHfeTemplate($pdo, 'type_header', 'Site Header', $headerElements, $siteUrl);
             } else {
-                // Standard layout header
                 $headerElements = $layout->buildHeader($businessName, $pages);
                 $this->createHfeTemplate($pdo, 'type_header', 'Site Header', $headerElements, $siteUrl);
             }
@@ -673,6 +754,49 @@ HTACCESS;
             // Build and insert footer
             $footerElements = $layout->buildFooter($businessName, $pages, $contactInfo);
             $this->createHfeTemplate($pdo, 'type_footer', 'Site Footer', $footerElements, $siteUrl);
+
+            // Fix all nav URLs in header, footer, AND page content.
+            // URLs are stored in two formats inside _elementor_data JSON:
+            //   1. Button widget: "url":"/about/" (unescaped quotes)
+            //   2. HTML widget:   href=\"/about/\" (backslash-escaped quotes in JSON string)
+            // We fix BOTH patterns using PHP str_replace on each meta row.
+            $siteBase = $this->website->slug;
+            $rows = $pdo->query("SELECT meta_id, meta_value FROM wp_postmeta WHERE meta_key = '_elementor_data'")->fetchAll(\PDO::FETCH_ASSOC);
+            foreach ($rows as $row) {
+                $val = $row['meta_value'];
+                $changed = false;
+                foreach ($pageSlugs as $navSlug) {
+                    if ($navSlug === 'home') continue;
+                    // Pattern 1: Elementor button/link URLs — "url":"/about/"
+                    $old1 = '"/' . $navSlug . '/"';
+                    $new1 = '"/' . $siteBase . '/' . $navSlug . '/"';
+                    // Pattern 2: HTML href in JSON strings — \"/about/\" (backslash-escaped quotes)
+                    $old2 = '\\\"/' . $navSlug . '/\\\"';
+                    $new2 = '\\\"/' . $siteBase . '/' . $navSlug . '/\\\"';
+                    // Pattern 3: Without trailing slash
+                    $old3 = '"/' . $navSlug . '"';
+                    $new3 = '"/' . $siteBase . '/' . $navSlug . '"';
+                    if (str_contains($val, $old1) || str_contains($val, $old2) || str_contains($val, $old3)) {
+                        $val = str_replace([$old1, $old2, $old3], [$new1, $new2, $new3], $val);
+                        $changed = true;
+                    }
+                }
+                // Fix home link: href=\"/\" and "url":"/"
+                $homePatterns = [
+                    ['href=\\\"/\\\"', 'href=\\\"/' . $siteBase . '/\\\"'],
+                    ['"url":"/"', '"url":"/' . $siteBase . '/"'],
+                ];
+                foreach ($homePatterns as [$oldH, $newH]) {
+                    if (str_contains($val, $oldH)) {
+                        $val = str_replace($oldH, $newH, $val);
+                        $changed = true;
+                    }
+                }
+                if ($changed) {
+                    $stmt = $pdo->prepare("UPDATE wp_postmeta SET meta_value = ? WHERE meta_id = ?");
+                    $stmt->execute([$val, $row['meta_id']]);
+                }
+            }
 
             $this->updateStep('header_footer', 'Header & footer created.');
         } catch (\Exception $e) {
@@ -911,7 +1035,25 @@ HTML;
     private function fixSiteUrls(string $json): string
     {
         $slug = $this->website->slug;
+
+        // Build complete page list: standard + all custom pages from website
         $pageNames = ['about', 'services', 'portfolio', 'contact', 'shop', 'cart', 'checkout', 'myaccount', 'my-account', 'wishlist', 'faq', 'menu'];
+        // Add actual website pages (custom pages like "vip-lounge", "our-barbers", "blog", etc.)
+        $websitePages = $this->website->pages ?? [];
+        foreach ($websitePages as $p) {
+            $ps = Str::slug($p);
+            if ($ps && $ps !== 'home' && !in_array($ps, $pageNames)) {
+                $pageNames[] = $ps;
+            }
+        }
+        // Also add pages from structure
+        $structure = $this->website->ai_generated_content['structure'] ?? [];
+        foreach ($structure as $sp) {
+            $ps = Str::slug($sp['slug'] ?? $sp['title'] ?? '');
+            if ($ps && $ps !== 'home' && !in_array($ps, $pageNames)) {
+                $pageNames[] = $ps;
+            }
+        }
 
         foreach ($pageNames as $page) {
             // Unescaped: href="/about/" → href="/slug/about/"
@@ -2930,6 +3072,80 @@ REGEN;
         );
         $pdo->setAttribute(\PDO::ATTR_ERRMODE, \PDO::ERRMODE_EXCEPTION);
         return $pdo;
+    }
+
+    /**
+     * Generate default section structure for a page when no customize structure exists.
+     * Each page type gets unique sections so no two pages look the same.
+     */
+    private function generateDefaultSections(string $pageType, string $title): array
+    {
+        return match ($pageType) {
+            'home' => [
+                ['type' => 'hero', 'label' => $title],
+                ['type' => 'features', 'label' => 'What We Offer'],
+                ['type' => 'about_preview', 'label' => 'Our Story'],
+                ['type' => 'stats', 'label' => 'By The Numbers'],
+                ['type' => 'testimonials', 'label' => 'What Our Clients Say'],
+                ['type' => 'cta', 'label' => 'Get Started Today'],
+            ],
+            'about' => [
+                ['type' => 'hero', 'label' => $title],
+                ['type' => 'about_preview', 'label' => 'Who We Are'],
+                ['type' => 'team', 'label' => 'Meet Our Team'],
+                ['type' => 'process', 'label' => 'How We Work'],
+            ],
+            'services' => [
+                ['type' => 'hero', 'label' => $title],
+                ['type' => 'features', 'label' => 'Our Services'],
+                ['type' => 'pricing', 'label' => 'Pricing & Packages'],
+                ['type' => 'faq', 'label' => 'Frequently Asked Questions'],
+                ['type' => 'cta', 'label' => 'Ready To Start?'],
+            ],
+            'portfolio' => [
+                ['type' => 'hero', 'label' => $title],
+                ['type' => 'gallery', 'label' => 'Our Best Work'],
+                ['type' => 'about_preview', 'label' => 'Behind The Scenes'],
+                ['type' => 'cta', 'label' => 'Start Your Project'],
+            ],
+            'contact' => [
+                ['type' => 'hero', 'label' => $title],
+                ['type' => 'contact_form', 'label' => 'Send Us A Message'],
+                ['type' => 'faq', 'label' => 'Before You Reach Out'],
+            ],
+            default => [
+                ['type' => 'hero', 'label' => $title],
+                ['type' => 'features', 'label' => 'Highlights'],
+                ['type' => 'about_preview', 'label' => 'Learn More'],
+                ['type' => 'cta', 'label' => 'Get In Touch'],
+            ],
+        };
+    }
+
+    /**
+     * Guess page type from slug and structure sections for layout builder.
+     */
+    private function guessPageType(string $slug, ?array $structurePage): string
+    {
+        // Check section types in structure to determine best page type
+        if ($structurePage && !empty($structurePage['sections'])) {
+            $types = array_column($structurePage['sections'], 'type');
+            if (in_array('contact_form', $types)) return 'contact';
+            if (in_array('gallery', $types)) return 'portfolio';
+            if (in_array('pricing', $types)) return 'services';
+            if (in_array('team', $types)) return 'about';
+            if (in_array('faq', $types)) return 'services';
+        }
+
+        // Keyword matching on slug
+        $slugLower = strtolower($slug);
+        if (str_contains($slugLower, 'contact') || str_contains($slugLower, 'connect') || str_contains($slugLower, 'consult')) return 'contact';
+        if (str_contains($slugLower, 'about') || str_contains($slugLower, 'story') || str_contains($slugLower, 'team') || str_contains($slugLower, 'legacy')) return 'about';
+        if (str_contains($slugLower, 'service') || str_contains($slugLower, 'package') || str_contains($slugLower, 'pricing') || str_contains($slugLower, 'invest')) return 'services';
+        if (str_contains($slugLower, 'portfolio') || str_contains($slugLower, 'gallery') || str_contains($slugLower, 'work') || str_contains($slugLower, 'collection')) return 'portfolio';
+        if (str_contains($slugLower, 'blog') || str_contains($slugLower, 'news') || str_contains($slugLower, 'insight')) return 'about'; // blog uses about layout
+
+        return 'services'; // fallback to services (generic content page)
     }
 
     private function setPostMeta(\PDO $pdo, int $postId, string $key, string $value): void

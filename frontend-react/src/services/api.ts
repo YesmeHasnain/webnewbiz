@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 // Dev token — auth bypassed for now
-const DEV_TOKEN = '1|3tbABBBRkj5Z6PY1JU43vbwNyyPuovm7mTMtBFbTbd790932';
+const DEV_TOKEN = '2|zDWCzTpd0dJLQjm9ZPW5qEfS8agHBny9OyKiklCd32990a83';
 
 const api = axios.create({
   baseURL: '/api',
